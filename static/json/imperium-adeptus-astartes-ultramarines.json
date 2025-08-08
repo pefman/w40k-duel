@@ -1,0 +1,5211 @@
+{
+  "factionname": "Imperium - Adeptus Astartes - Ultramarines",
+  "units": [
+    {
+      "id": "2ae8-40ec-ba34-dfe5",
+      "name": "Captain Sicarius",
+      "type": "model",
+      "entries": [
+        {
+          "id": "9855-a302-b6f-5d15",
+          "name": "Artisan Plasma Pistol",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Artisan Plasma Pistol",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "12\""
+                },
+                {
+                  "name": "A",
+                  "value": "1"
+                },
+                {
+                  "name": "BS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "8"
+                },
+                {
+                  "name": "AP",
+                  "value": "-3"
+                },
+                {
+                  "name": "D",
+                  "value": "2"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Pistol"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "9a28-8c88-5392-1c98",
+          "name": "Talassarian Tempest Blade",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Talassarian Tempest Blade",
+              "type": "Melee Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "Melee"
+                },
+                {
+                  "name": "A",
+                  "value": "6"
+                },
+                {
+                  "name": "WS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "5"
+                },
+                {
+                  "name": "AP",
+                  "value": "-2"
+                },
+                {
+                  "name": "D",
+                  "value": "2"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Lethal Hits"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Lead From the Front",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this model is leading a unit, models in that unit have the Scouts 6\" ability and ranged weapons equipped by models in that unit have the [ASSAULT] ability."
+            }
+          ]
+        },
+        {
+          "name": "Captain Sicarius",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "6\""
+            },
+            {
+              "name": "T",
+              "value": "4"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "5"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "name": "Knight Champion of Macragge",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Once per turn, when an enemy unit ends a Normal, Advance or Fall Back move within 9\" of this model, if this model’s unit is not within Engagement Range of one or more enemy units, it can make a Normal move of up to 6\"."
+            }
+          ]
+        },
+        {
+          "name": "Leader",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model can be attached to the following units:\n\n■ Assault Intercessor Squad\n■ Bladeguard Veteran Squad\n■ Company Heroes\n■ Sternguard Veteran Squad\n■ Tactical Squad"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "85"
+        }
+      ]
+    },
+    {
+      "id": "9855-a302-b6f-5d15",
+      "name": "Artisan Plasma Pistol",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Artisan Plasma Pistol",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "12\""
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "8"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Pistol"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "9a28-8c88-5392-1c98",
+      "name": "Talassarian Tempest Blade",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Talassarian Tempest Blade",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "6"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Lethal Hits"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b180-3cac-9124-b818",
+      "name": "Chaplain Cassius [Legends]",
+      "type": "model",
+      "entries": [
+        {
+          "id": "29d6-c305-6ff-e055",
+          "name": "Infernus",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Infernus",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "12\""
+                },
+                {
+                  "name": "A",
+                  "value": "D6"
+                },
+                {
+                  "name": "BS",
+                  "value": "N/A"
+                },
+                {
+                  "name": "S",
+                  "value": "4"
+                },
+                {
+                  "name": "AP",
+                  "value": "-1"
+                },
+                {
+                  "name": "D",
+                  "value": "1"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Anti-Infantry 4+, Devastating Wounds, Ignores Cover, Torrent"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "fd26-e418-17b8-7c0a",
+          "name": "Artificer Crozius",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Artificer Crozius",
+              "type": "Melee Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "Melee"
+                },
+                {
+                  "name": "A",
+                  "value": "5"
+                },
+                {
+                  "name": "WS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "6"
+                },
+                {
+                  "name": "AP",
+                  "value": "-1"
+                },
+                {
+                  "name": "D",
+                  "value": "2"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "-"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Chaplain Cassius",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "6\""
+            },
+            {
+              "name": "T",
+              "value": "4"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "4"
+            },
+            {
+              "name": "LD",
+              "value": "5+"
+            },
+            {
+              "name": "OC",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "name": "Catechism of Death",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this model is leading a unit, melee weapons equipped by models in that unit have the [DEVASTATING WOUNDS] ability."
+            }
+          ]
+        },
+        {
+          "name": "Inspired Retribution",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this model is leading a unit, each time a model in that unit is destroyed by a melee attack, if that model has not fought this phase, roll one D6. On a 4+, do not remove it from play; that destroyed model can fight after the attacking model’s unit has finished making its attacks, and is then removed from play."
+            }
+          ]
+        },
+        {
+          "name": "Leader",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model can be attached to the following units:\n\n■ Assault Squad\n■ Command Squad\n■ Sternguard Veteran Squad\n■ Tactical Squad\n■ Tyrannic War Veterans\n■ Vanguard Veteran Squad"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "80"
+        }
+      ]
+    },
+    {
+      "id": "29d6-c305-6ff-e055",
+      "name": "Infernus",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Infernus",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "12\""
+            },
+            {
+              "name": "A",
+              "value": "D6"
+            },
+            {
+              "name": "BS",
+              "value": "N/A"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Infantry 4+, Devastating Wounds, Ignores Cover, Torrent"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fd26-e418-17b8-7c0a",
+      "name": "Artificer Crozius",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Artificer Crozius",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "5"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "3ef1-1647-cd7b-a40b",
+      "name": "Chief Librarian Tigurius",
+      "type": "model",
+      "entries": [
+        {
+          "id": "4aab-43dc-b23-cff",
+          "name": "Storm of the Emperor’s Wrath",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "➤ Storm of the Emperor’s Wrath - Witchfire",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "18\""
+                },
+                {
+                  "name": "A",
+                  "value": "D6"
+                },
+                {
+                  "name": "BS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "6"
+                },
+                {
+                  "name": "AP",
+                  "value": "-2"
+                },
+                {
+                  "name": "D",
+                  "value": "2"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Blast, Psychic"
+                }
+              ]
+            },
+            {
+              "name": "➤ Storm of the Emperor’s Wrath - Focused Witchfire",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "18\""
+                },
+                {
+                  "name": "A",
+                  "value": "2D6"
+                },
+                {
+                  "name": "BS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "6"
+                },
+                {
+                  "name": "AP",
+                  "value": "-2"
+                },
+                {
+                  "name": "D",
+                  "value": "2"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Blast, Hazardous, Psychic"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "c6ea-3c75-3e25-90aa",
+          "name": "Rod of Tigurius",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Rod of Tigurius",
+              "type": "Melee Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "Melee"
+                },
+                {
+                  "name": "A",
+                  "value": "5"
+                },
+                {
+                  "name": "WS",
+                  "value": "3+"
+                },
+                {
+                  "name": "S",
+                  "value": "7"
+                },
+                {
+                  "name": "AP",
+                  "value": "-2"
+                },
+                {
+                  "name": "D",
+                  "value": "D3"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Psychic"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Chief Librarian Tigurius",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "6\""
+            },
+            {
+              "name": "T",
+              "value": "4"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "4"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "name": "Hood of Hellfire",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this model is leading a unit, models in that unit have the Feel No Pain 4+ ability against Psychic Attacks and mortal wounds."
+            }
+          ]
+        },
+        {
+          "name": "Master of Prescience (Psychic)",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this model is leading a unit, each time an attack targets that unit, subtract 1 from the Hit roll. In addition, once per battle round, you can target that unit with one of the following Stratagems for 0CP: Counter-offensive; Fire Overwatch; Go to Ground;\nHeroic Intervention."
+            }
+          ]
+        },
+        {
+          "name": "Leader",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model can be attached to the following units:\n\n■ Assault Intercessor Squad\n■ Bladeguard Veteran Squad\n■ Desolation Squad\n■ Devastator Squad\n■ Intercessor Squad\n■ Sternguard Veteran Squad\n■ Tactical Squad"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "75"
+        }
+      ]
+    },
+    {
+      "id": "4aab-43dc-b23-cff",
+      "name": "Storm of the Emperor’s Wrath",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "➤ Storm of the Emperor’s Wrath - Witchfire",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "18\""
+            },
+            {
+              "name": "A",
+              "value": "D6"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Blast, Psychic"
+            }
+          ]
+        },
+        {
+          "name": "➤ Storm of the Emperor’s Wrath - Focused Witchfire",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "18\""
+            },
+            {
+              "name": "A",
+              "value": "2D6"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Blast, Hazardous, Psychic"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c6ea-3c75-3e25-90aa",
+      "name": "Rod of Tigurius",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Rod of Tigurius",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "5"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "7"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "D3"
+            },
+            {
+              "name": "Keywords",
+              "value": "Psychic"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "5380-5757-2c46-31cc",
+      "name": "Marneus Calgar",
+      "type": "unit",
+      "entries": [
+        {
+          "id": "9ee9-60dc-e65-b0c5",
+          "name": "Marneus Calgar",
+          "type": "model",
+          "entries": [
+            {
+              "id": "482e-2b4f-616-d783",
+              "name": "Gauntlets of Ultramar",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Gauntlets of Ultramar",
+                  "type": "Ranged Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "18\""
+                    },
+                    {
+                      "name": "A",
+                      "value": "4"
+                    },
+                    {
+                      "name": "BS",
+                      "value": "2+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "4"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-1"
+                    },
+                    {
+                      "name": "D",
+                      "value": "2"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "Pistol, Twin-linked"
+                    }
+                  ]
+                },
+                {
+                  "name": "Gauntlets of Ultramar",
+                  "type": "Melee Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "Melee"
+                    },
+                    {
+                      "name": "A",
+                      "value": "6"
+                    },
+                    {
+                      "name": "WS",
+                      "value": "2+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "8"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-3"
+                    },
+                    {
+                      "name": "D",
+                      "value": "3"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "Twin-linked"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "3719-2013-c91c-1838",
+          "name": "Victrix Honour Guard",
+          "type": "model",
+          "entries": [
+            {
+              "id": "639c-f60f-581e-71d",
+              "name": "Victrix Power Sword",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Victrix Power Sword",
+                  "type": "Melee Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "Melee"
+                    },
+                    {
+                      "name": "A",
+                      "value": "5"
+                    },
+                    {
+                      "name": "WS",
+                      "value": "2+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "5"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-2"
+                    },
+                    {
+                      "name": "D",
+                      "value": "2"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "-"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Marneus Calgar",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "6\""
+            },
+            {
+              "name": "T",
+              "value": "6"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "6"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "name": "Victrix Honour Guard",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "6\""
+            },
+            {
+              "name": "T",
+              "value": "4"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "3"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "name": "Inspiring Leader",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this model is leading a unit, that unit is eligible to shoot and declare a charge in a turn in which it Advanced or Fell Back."
+            }
+          ]
+        },
+        {
+          "name": "Master Tactician",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "At the start of your Command phase, if this unit’s Marneus Calgar model is your WARLORD and is on the battlefield, you gain 1CP."
+            }
+          ]
+        },
+        {
+          "name": "Honour Guard of Macragge",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this unit contains one or more Victrix Honour Guard models, this unit’s Marneus Calgar model has the Feel No Pain 4+ ability."
+            }
+          ]
+        },
+        {
+          "name": "Leader",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This unit can be attached to the following units:\n\n■ Aggressor Squad\n■ Assault Intercessor Squad\n■ Bladeguard Veteran Squad\n■ Company Heroes\n■ Eradicator Squad\n■ Heavy Intercessor Squad\n■ Infernus Squad\n■ Intercessor Squad\n■ Sternguard Veteran Squad\n■ Tactical Squad"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "200"
+        },
+        {
+          "name": "Crusade Points",
+          "typeid": "b03b-c239-15a5-da55",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeid": "75bb-ded1-c86d-bdf0",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeid": "a623-fe74-1d33-cddf",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeid": "716d-91b7-d55a-1022",
+          "value": "0"
+        },
+        {
+          "name": "Honour Points",
+          "typeid": "8135-9a2f-6627-09e2",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "9ee9-60dc-e65-b0c5",
+      "name": "Marneus Calgar",
+      "type": "model",
+      "entries": [
+        {
+          "id": "482e-2b4f-616-d783",
+          "name": "Gauntlets of Ultramar",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Gauntlets of Ultramar",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "18\""
+                },
+                {
+                  "name": "A",
+                  "value": "4"
+                },
+                {
+                  "name": "BS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "4"
+                },
+                {
+                  "name": "AP",
+                  "value": "-1"
+                },
+                {
+                  "name": "D",
+                  "value": "2"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Pistol, Twin-linked"
+                }
+              ]
+            },
+            {
+              "name": "Gauntlets of Ultramar",
+              "type": "Melee Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "Melee"
+                },
+                {
+                  "name": "A",
+                  "value": "6"
+                },
+                {
+                  "name": "WS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "8"
+                },
+                {
+                  "name": "AP",
+                  "value": "-3"
+                },
+                {
+                  "name": "D",
+                  "value": "3"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Twin-linked"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "482e-2b4f-616-d783",
+      "name": "Gauntlets of Ultramar",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Gauntlets of Ultramar",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "18\""
+            },
+            {
+              "name": "A",
+              "value": "4"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Pistol, Twin-linked"
+            }
+          ]
+        },
+        {
+          "name": "Gauntlets of Ultramar",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "6"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "8"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "3"
+            },
+            {
+              "name": "Keywords",
+              "value": "Twin-linked"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "3719-2013-c91c-1838",
+      "name": "Victrix Honour Guard",
+      "type": "model",
+      "entries": [
+        {
+          "id": "639c-f60f-581e-71d",
+          "name": "Victrix Power Sword",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Victrix Power Sword",
+              "type": "Melee Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "Melee"
+                },
+                {
+                  "name": "A",
+                  "value": "5"
+                },
+                {
+                  "name": "WS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "5"
+                },
+                {
+                  "name": "AP",
+                  "value": "-2"
+                },
+                {
+                  "name": "D",
+                  "value": "2"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "-"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "639c-f60f-581e-71d",
+      "name": "Victrix Power Sword",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Victrix Power Sword",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "5"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "4aea-b1cc-6c69-1c44",
+      "name": "Roboute Guilliman",
+      "type": "model",
+      "entries": [
+        {
+          "id": "b5b2-5c6-e593-69a7",
+          "name": "Hand of Dominion",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Hand of Dominion",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "30\""
+                },
+                {
+                  "name": "A",
+                  "value": "2"
+                },
+                {
+                  "name": "BS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "6"
+                },
+                {
+                  "name": "AP",
+                  "value": "-2"
+                },
+                {
+                  "name": "D",
+                  "value": "2"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Rapid Fire 2"
+                }
+              ]
+            },
+            {
+              "name": "Hand of Dominion",
+              "type": "Melee Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "Melee"
+                },
+                {
+                  "name": "A",
+                  "value": "7"
+                },
+                {
+                  "name": "WS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "14"
+                },
+                {
+                  "name": "AP",
+                  "value": "-4"
+                },
+                {
+                  "name": "D",
+                  "value": "4"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Lethal Hits"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "4c53-6d36-742f-85ca",
+          "name": "The Emperor's Sword",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "The Emperor's Sword",
+              "type": "Melee Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "Melee"
+                },
+                {
+                  "name": "A",
+                  "value": "14"
+                },
+                {
+                  "name": "WS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "8"
+                },
+                {
+                  "name": "AP",
+                  "value": "-3"
+                },
+                {
+                  "name": "D",
+                  "value": "2"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Devastating Wounds"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Roboute Guilliman",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "8\""
+            },
+            {
+              "name": "T",
+              "value": "9"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "10"
+            },
+            {
+              "name": "LD",
+              "value": "5+"
+            },
+            {
+              "name": "OC",
+              "value": "4"
+            }
+          ]
+        },
+        {
+          "name": "Author of the Codex",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "At the Start of your Command phase, select two Author of the Codex abilities (see left). Until the start of your next Command phase, this model has those abilities.’\n\nPrimarch of the XIII (Aura): While a friendly Adeptus Astartes unit is within 6\" of this model, add 1 to the Objective Control characteristic of models in that unit and you can re-roll Battle-shock and Leadership tests taken for that unit.\n\nMaster of Battle: After you have selected an enemy unit using the Oath of Moment ability, select a second enemy unit. Until the start of your next Command phase, if your Oath of Moment target is destroyed, that second enemy unit becomes your Oath of Moment target until you select a new one.\n\nSupreme Strategist: Once per battle round, you can target one friendly ADEPTUS ASTARTES unit within 12\" of this model with a Stratagem. If it does, reduce the CP cost of that use of that Stratagem by 1CP."
+            }
+          ]
+        },
+        {
+          "name": "Ultramarines Bodyguard",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this model is within 3\" of one or more friendly Adeptus Astartes Infantry units, this model has the Lone Operative ability"
+            }
+          ]
+        },
+        {
+          "name": "Armour of Fate",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "The first time this model is destroyed, roll one D6 at the end of the phase: on a 3+, set this model back up on the battlefield as close as possible to where it was destroyed and not within Engagement Range of any enemy models, with 6 wounds remaining."
+            }
+          ]
+        },
+        {
+          "name": "Supreme Commander",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "If this model is in your army, it must be your Warlord."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "320"
+        },
+        {
+          "name": "Crusade Points",
+          "typeid": "b03b-c239-15a5-da55",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeid": "75bb-ded1-c86d-bdf0",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeid": "a623-fe74-1d33-cddf",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeid": "716d-91b7-d55a-1022",
+          "value": "0"
+        },
+        {
+          "name": "Honour Points",
+          "typeid": "8135-9a2f-6627-09e2",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "b5b2-5c6-e593-69a7",
+      "name": "Hand of Dominion",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Hand of Dominion",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "30\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Rapid Fire 2"
+            }
+          ]
+        },
+        {
+          "name": "Hand of Dominion",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "7"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "14"
+            },
+            {
+              "name": "AP",
+              "value": "-4"
+            },
+            {
+              "name": "D",
+              "value": "4"
+            },
+            {
+              "name": "Keywords",
+              "value": "Lethal Hits"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "4c53-6d36-742f-85ca",
+      "name": "The Emperor's Sword",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "The Emperor's Sword",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "14"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "8"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Devastating Wounds"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2263-82ee-3db6-8be9",
+      "name": "Sergeant Chronus [Legends]",
+      "type": "model",
+      "entries": [
+        {
+          "id": "f94a-1524-9f9b-2229",
+          "name": "Chronus' Servo-Arm",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Chronus' Servo-Arm",
+              "type": "Melee Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "Melee"
+                },
+                {
+                  "name": "A",
+                  "value": "3"
+                },
+                {
+                  "name": "WS",
+                  "value": "3+"
+                },
+                {
+                  "name": "S",
+                  "value": "8"
+                },
+                {
+                  "name": "AP",
+                  "value": "-2"
+                },
+                {
+                  "name": "D",
+                  "value": "3"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "-"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Sergeant Chronus",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "6\""
+            },
+            {
+              "name": "T",
+              "value": "4"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "3"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "name": "Tank Commander",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this model is commanding a Vehicle model (see reverse):\n\n■ Ranged weapons equipped by that Vehicle model have a Ballistic Skill characteristic of 2+.\n■ Each time that Vehicle model is selected to shoot, you can re-roll one Wound roll when resolving those attacks.\n\nIf your army includes one or more of the Vehicle models listed below, Sergeant Chronus must start the battle embarked within one of those models as if it were a Transport. Sergeant Chronus can only disembark from that Vehicle if it is destroyed. While embarked in this way, Sergeant Chronus is said to be commanding that Vehicle.\n\n■ Hunter\n■ Land Raider\n■ Land Raider Crusader\n■ Land Raider Redeemer\n■ Predator Annihilator\n■ Predator Destructor\n■ Stalker\n■ Vindicator\n■ Whirlwind"
+            }
+          ]
+        },
+        {
+          "name": "Chronus",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "When this model disembarks from a Vehicle model it was commanding, it has the Lone Operative ability until the end of the battle."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "75"
+        }
+      ]
+    },
+    {
+      "id": "f94a-1524-9f9b-2229",
+      "name": "Chronus' Servo-Arm",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Chronus' Servo-Arm",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "3"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "8"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "3"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "696a-899e-514b-4a04",
+      "name": "Sergeant Telion [Legends]",
+      "type": "model",
+      "entries": [
+        {
+          "id": "9b80-b34f-cdbd-2a95",
+          "name": "Combat Knife",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Combat Knife",
+              "type": "Melee Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "Melee"
+                },
+                {
+                  "name": "A",
+                  "value": "4"
+                },
+                {
+                  "name": "WS",
+                  "value": "3+"
+                },
+                {
+                  "name": "S",
+                  "value": "4"
+                },
+                {
+                  "name": "AP",
+                  "value": "0"
+                },
+                {
+                  "name": "D",
+                  "value": "1"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "-"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "4e39-8d0-ac97-29f3",
+          "name": "Quietus",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Quietus",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "36\""
+                },
+                {
+                  "name": "A",
+                  "value": "2"
+                },
+                {
+                  "name": "BS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "4"
+                },
+                {
+                  "name": "AP",
+                  "value": "-2"
+                },
+                {
+                  "name": "D",
+                  "value": "3"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Precision"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Sergeant Telion",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "6\""
+            },
+            {
+              "name": "T",
+              "value": "4"
+            },
+            {
+              "name": "SV",
+              "value": "4+"
+            },
+            {
+              "name": "W",
+              "value": "3"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "name": "Voice of Experience",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this model is leading a unit, improve the Objective Control characteristic of models in that unit by 1 and each time a model in that unit makes an attack, add 1 to the Hit roll."
+            }
+          ]
+        },
+        {
+          "name": "Guiding Hand",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this model is leading a unit, each time that unit is selected to shoot or fight, select one of the following abilities to apply to weapons equipped by models in that unit until the end of the phase:\n\n\n■ [LETHAL HITS]\n■ [PRECISION]\n■ [SUSTAINED HITS 1]"
+            }
+          ]
+        },
+        {
+          "name": "Leader",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model can be attached to the following units:\n\n■ Scout Squad\n■ Scout Sniper Squad"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "70"
+        }
+      ]
+    },
+    {
+      "id": "9b80-b34f-cdbd-2a95",
+      "name": "Combat Knife",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Combat Knife",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "4"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "4e39-8d0-ac97-29f3",
+      "name": "Quietus",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Quietus",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "36\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "3"
+            },
+            {
+              "name": "Keywords",
+              "value": "Precision"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "8770-b0eb-f430-1dda",
+      "name": "Tyrannic War Veterans [Legends]",
+      "type": "unit",
+      "profiles": [
+        {
+          "name": "Tyrannic War Veterans",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Weapons equipped by models in this unit have the [DEVASTATING WOUNDS] ability when targeting Tyranids units."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "85"
+        }
+      ]
+    },
+    {
+      "id": "169a-7229-ea50-1c4f",
+      "name": "Uriel Ventris",
+      "type": "model",
+      "entries": [
+        {
+          "id": "c23e-8f46-8323-119a",
+          "name": "Invictus",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Invictus",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "24\""
+                },
+                {
+                  "name": "A",
+                  "value": "2"
+                },
+                {
+                  "name": "BS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "4"
+                },
+                {
+                  "name": "AP",
+                  "value": "-1"
+                },
+                {
+                  "name": "D",
+                  "value": "2"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "-"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "18ee-7f57-3498-4e48",
+          "name": "Sword of Idaeus",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Sword of Idaeus",
+              "type": "Melee Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "Melee"
+                },
+                {
+                  "name": "A",
+                  "value": "6"
+                },
+                {
+                  "name": "WS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "6"
+                },
+                {
+                  "name": "AP",
+                  "value": "-2"
+                },
+                {
+                  "name": "D",
+                  "value": "2"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Sustained Hits 1"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Uriel Ventris",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "6\""
+            },
+            {
+              "name": "T",
+              "value": "4"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "5"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "name": "Unorthodox Strategist [Aura]",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Each time your opponent targets a unit from their army with a  stratagem, if that unit is within 12\" of this model, increase the cost of that use of that Stratagem by 1CP (this is not cumulative with any other rules that would increase the CP cost of that Stratagem)."
+            }
+          ]
+        },
+        {
+          "name": "Master of the Fleet",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "During the Declare Battle Formations step, if your army includes this model, select one Phobos, Gravis, or Tacticus Adeptus Astartes Infantry unit from your army.  That unit gains the Deep Strike ability."
+            }
+          ]
+        },
+        {
+          "name": "Leader",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model can be attached to the following units:\n\n■ Assault Intercessor Squad\n■ Bladeguard Veteran Squad'\n■ Company Heroes\n■ Intercessor Squad\n■ Sternguard Veteran Squad\n■ Tactical Squad"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "95"
+        },
+        {
+          "name": "Crusade Points",
+          "typeid": "b03b-c239-15a5-da55",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeid": "75bb-ded1-c86d-bdf0",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeid": "a623-fe74-1d33-cddf",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeid": "716d-91b7-d55a-1022",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "c23e-8f46-8323-119a",
+      "name": "Invictus",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Invictus",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "24\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "18ee-7f57-3498-4e48",
+      "name": "Sword of Idaeus",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Sword of Idaeus",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "6"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Sustained Hits 1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f4a3-1616-2f8e-59a3",
+      "name": "Ultramarines Honour Guard [Legends]",
+      "type": "unit",
+      "entries": [
+        {
+          "id": "e564-61b6-32d3-b64",
+          "name": "Company Ancient",
+          "type": "model",
+          "entries": [
+            {
+              "id": "c5d7-c2cb-af6c-86fb",
+              "name": "Power Weapon",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Power Weapon",
+                  "type": "Melee Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "Melee"
+                    },
+                    {
+                      "name": "A",
+                      "value": "3"
+                    },
+                    {
+                      "name": "WS",
+                      "value": "3+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "5"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-2"
+                    },
+                    {
+                      "name": "D",
+                      "value": "2"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "-"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "profiles": [
+            {
+              "name": "Astartes Banner",
+              "type": "Abilities",
+              "lines": [
+                {
+                  "name": "Description",
+                  "value": "While this unit contains a Company Ancient, add 1 to the Objective Control characteristic of models in this unit."
+                }
+              ]
+            },
+            {
+              "name": "Ultramarines Honor Guard",
+              "type": "Unit",
+              "lines": [
+                {
+                  "name": "M",
+                  "value": "6\""
+                },
+                {
+                  "name": "T",
+                  "value": "4"
+                },
+                {
+                  "name": "SV",
+                  "value": "2+"
+                },
+                {
+                  "name": "W",
+                  "value": "2"
+                },
+                {
+                  "name": "LD",
+                  "value": "6+"
+                },
+                {
+                  "name": "OC",
+                  "value": "1"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "7644-5e19-93bc-8df9",
+          "name": "Company Champion",
+          "type": "model",
+          "entries": [
+            {
+              "id": "7767-29cf-cef8-6ecd",
+              "name": "Power Weapon",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Power Weapon",
+                  "type": "Melee Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "Melee"
+                    },
+                    {
+                      "name": "A",
+                      "value": "3"
+                    },
+                    {
+                      "name": "WS",
+                      "value": "3+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "5"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-2"
+                    },
+                    {
+                      "name": "D",
+                      "value": "2"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "-"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "profiles": [
+            {
+              "name": "Honour or Death",
+              "type": "Abilities",
+              "lines": [
+                {
+                  "name": "Description",
+                  "value": "While this unit contains a Company Champion, add 1 to Advance and Charge rolls made for this unit and you can target this unit with the Heroic  Intervention Stratagem for 0CP, even if you have already used that Stratagem on a different unit this phase."
+                }
+              ]
+            },
+            {
+              "name": "Ultramarines Honor Guard",
+              "type": "Unit",
+              "lines": [
+                {
+                  "name": "M",
+                  "value": "6\""
+                },
+                {
+                  "name": "T",
+                  "value": "4"
+                },
+                {
+                  "name": "SV",
+                  "value": "2+"
+                },
+                {
+                  "name": "W",
+                  "value": "2"
+                },
+                {
+                  "name": "LD",
+                  "value": "6+"
+                },
+                {
+                  "name": "OC",
+                  "value": "1"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "f09a-dc4e-80f4-4674",
+          "name": "Honour Guard",
+          "type": "model",
+          "entries": [
+            {
+              "id": "1469-61ff-7db2-90b4",
+              "name": "Power Weapon",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Power Weapon",
+                  "type": "Melee Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "Melee"
+                    },
+                    {
+                      "name": "A",
+                      "value": "3"
+                    },
+                    {
+                      "name": "WS",
+                      "value": "3+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "5"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-2"
+                    },
+                    {
+                      "name": "D",
+                      "value": "2"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "-"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "profiles": [
+            {
+              "name": "Ultramarines Honor Guard",
+              "type": "Unit",
+              "lines": [
+                {
+                  "name": "M",
+                  "value": "6\""
+                },
+                {
+                  "name": "T",
+                  "value": "4"
+                },
+                {
+                  "name": "SV",
+                  "value": "2+"
+                },
+                {
+                  "name": "W",
+                  "value": "2"
+                },
+                {
+                  "name": "LD",
+                  "value": "6+"
+                },
+                {
+                  "name": "OC",
+                  "value": "1"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Honour Guard",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While a Captain or Chapter Master model is leading this unit, each time an attack targets this unit, subtract 1 from the Wound roll."
+            }
+          ]
+        },
+        {
+          "name": "Honour Guard of Macragge",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "MARNEUS CALGAR can be attached to this unit. If a CAPTAIN model from your army with the Leader ability can be attached to a COMMAND SQUAD, it can be attached to this unit instead."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "155"
+        }
+      ]
+    },
+    {
+      "id": "e564-61b6-32d3-b64",
+      "name": "Company Ancient",
+      "type": "model",
+      "entries": [
+        {
+          "id": "c5d7-c2cb-af6c-86fb",
+          "name": "Power Weapon",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Power Weapon",
+              "type": "Melee Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "Melee"
+                },
+                {
+                  "name": "A",
+                  "value": "3"
+                },
+                {
+                  "name": "WS",
+                  "value": "3+"
+                },
+                {
+                  "name": "S",
+                  "value": "5"
+                },
+                {
+                  "name": "AP",
+                  "value": "-2"
+                },
+                {
+                  "name": "D",
+                  "value": "2"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "-"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Astartes Banner",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this unit contains a Company Ancient, add 1 to the Objective Control characteristic of models in this unit."
+            }
+          ]
+        },
+        {
+          "name": "Ultramarines Honor Guard",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "6\""
+            },
+            {
+              "name": "T",
+              "value": "4"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "2"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c5d7-c2cb-af6c-86fb",
+      "name": "Power Weapon",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Power Weapon",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "3"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "7644-5e19-93bc-8df9",
+      "name": "Company Champion",
+      "type": "model",
+      "entries": [
+        {
+          "id": "7767-29cf-cef8-6ecd",
+          "name": "Power Weapon",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Power Weapon",
+              "type": "Melee Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "Melee"
+                },
+                {
+                  "name": "A",
+                  "value": "3"
+                },
+                {
+                  "name": "WS",
+                  "value": "3+"
+                },
+                {
+                  "name": "S",
+                  "value": "5"
+                },
+                {
+                  "name": "AP",
+                  "value": "-2"
+                },
+                {
+                  "name": "D",
+                  "value": "2"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "-"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Honour or Death",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this unit contains a Company Champion, add 1 to Advance and Charge rolls made for this unit and you can target this unit with the Heroic  Intervention Stratagem for 0CP, even if you have already used that Stratagem on a different unit this phase."
+            }
+          ]
+        },
+        {
+          "name": "Ultramarines Honor Guard",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "6\""
+            },
+            {
+              "name": "T",
+              "value": "4"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "2"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "7767-29cf-cef8-6ecd",
+      "name": "Power Weapon",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Power Weapon",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "3"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f09a-dc4e-80f4-4674",
+      "name": "Honour Guard",
+      "type": "model",
+      "entries": [
+        {
+          "id": "1469-61ff-7db2-90b4",
+          "name": "Power Weapon",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Power Weapon",
+              "type": "Melee Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "Melee"
+                },
+                {
+                  "name": "A",
+                  "value": "3"
+                },
+                {
+                  "name": "WS",
+                  "value": "3+"
+                },
+                {
+                  "name": "S",
+                  "value": "5"
+                },
+                {
+                  "name": "AP",
+                  "value": "-2"
+                },
+                {
+                  "name": "D",
+                  "value": "2"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "-"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Ultramarines Honor Guard",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "6\""
+            },
+            {
+              "name": "T",
+              "value": "4"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "2"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1469-61ff-7db2-90b4",
+      "name": "Power Weapon",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Power Weapon",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "3"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b07a-c1e9-24e5-09ee",
+      "name": "Lieutenant Titus",
+      "type": "model",
+      "entries": [
+        {
+          "id": "b7b4-404b-0db9-cbb1",
+          "name": "Heavy Bolt Pistol",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Heavy Bolt Pistol",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "18\""
+                },
+                {
+                  "name": "A",
+                  "value": "1"
+                },
+                {
+                  "name": "BS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "4"
+                },
+                {
+                  "name": "AP",
+                  "value": "-1"
+                },
+                {
+                  "name": "D",
+                  "value": "1"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Pistol"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "35ed-7fa0-b68f-79d7",
+          "name": "Astartes Chainsword",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Astartes Chainsword",
+              "type": "Melee Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "Melee"
+                },
+                {
+                  "name": "A",
+                  "value": "8"
+                },
+                {
+                  "name": "WS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "4"
+                },
+                {
+                  "name": "AP",
+                  "value": "-1"
+                },
+                {
+                  "name": "D",
+                  "value": "1"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Anti-Infantry 2+"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Lieutenant Titus",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "6\""
+            },
+            {
+              "name": "T",
+              "value": "4"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "5"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "name": "Press the Attack",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": ": Weapons equipped by models in this model’s unit have the [SUSTAINED HITS 1] ability."
+            }
+          ]
+        },
+        {
+          "name": "Honour of the Chapter",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "If this model is destroyed by a melee attack, if it has not fought this phase, roll one D6: on a 2+, do not remove it from play. This model can fight after the attacking unit has finished making its attacks, and is then removed from play."
+            }
+          ]
+        },
+        {
+          "name": "Leader",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model can be attached to the following units:\n\n■ Assault Intercessor Squad\n■ Bladeguard Veteran Squad\n■ Hellblaster Squad\n■ Infernus Squad\n■ Intercessor Squad\n■ Sternguard Veteran Squad"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "70"
+        },
+        {
+          "name": "Crusade Points",
+          "typeid": "b03b-c239-15a5-da55",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeid": "75bb-ded1-c86d-bdf0",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeid": "a623-fe74-1d33-cddf",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeid": "716d-91b7-d55a-1022",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "b7b4-404b-0db9-cbb1",
+      "name": "Heavy Bolt Pistol",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Heavy Bolt Pistol",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "18\""
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Pistol"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "35ed-7fa0-b68f-79d7",
+      "name": "Astartes Chainsword",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Astartes Chainsword",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "8"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Infantry 2+"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2ae8-40ec-ba34-dfe5",
+      "name": "Captain Sicarius",
+      "type": "model",
+      "entries": [
+        {
+          "id": "9855-a302-b6f-5d15",
+          "name": "Artisan Plasma Pistol",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Artisan Plasma Pistol",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "12\""
+                },
+                {
+                  "name": "A",
+                  "value": "1"
+                },
+                {
+                  "name": "BS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "8"
+                },
+                {
+                  "name": "AP",
+                  "value": "-3"
+                },
+                {
+                  "name": "D",
+                  "value": "2"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Pistol"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "9a28-8c88-5392-1c98",
+          "name": "Talassarian Tempest Blade",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Talassarian Tempest Blade",
+              "type": "Melee Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "Melee"
+                },
+                {
+                  "name": "A",
+                  "value": "6"
+                },
+                {
+                  "name": "WS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "5"
+                },
+                {
+                  "name": "AP",
+                  "value": "-2"
+                },
+                {
+                  "name": "D",
+                  "value": "2"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Lethal Hits"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Lead From the Front",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this model is leading a unit, models in that unit have the Scouts 6\" ability and ranged weapons equipped by models in that unit have the [ASSAULT] ability."
+            }
+          ]
+        },
+        {
+          "name": "Captain Sicarius",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "6\""
+            },
+            {
+              "name": "T",
+              "value": "4"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "5"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "name": "Knight Champion of Macragge",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Once per turn, when an enemy unit ends a Normal, Advance or Fall Back move within 9\" of this model, if this model’s unit is not within Engagement Range of one or more enemy units, it can make a Normal move of up to 6\"."
+            }
+          ]
+        },
+        {
+          "name": "Leader",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model can be attached to the following units:\n\n■ Assault Intercessor Squad\n■ Bladeguard Veteran Squad\n■ Company Heroes\n■ Sternguard Veteran Squad\n■ Tactical Squad"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "85"
+        }
+      ]
+    },
+    {
+      "id": "b180-3cac-9124-b818",
+      "name": "Chaplain Cassius [Legends]",
+      "type": "model",
+      "entries": [
+        {
+          "id": "29d6-c305-6ff-e055",
+          "name": "Infernus",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Infernus",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "12\""
+                },
+                {
+                  "name": "A",
+                  "value": "D6"
+                },
+                {
+                  "name": "BS",
+                  "value": "N/A"
+                },
+                {
+                  "name": "S",
+                  "value": "4"
+                },
+                {
+                  "name": "AP",
+                  "value": "-1"
+                },
+                {
+                  "name": "D",
+                  "value": "1"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Anti-Infantry 4+, Devastating Wounds, Ignores Cover, Torrent"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "fd26-e418-17b8-7c0a",
+          "name": "Artificer Crozius",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Artificer Crozius",
+              "type": "Melee Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "Melee"
+                },
+                {
+                  "name": "A",
+                  "value": "5"
+                },
+                {
+                  "name": "WS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "6"
+                },
+                {
+                  "name": "AP",
+                  "value": "-1"
+                },
+                {
+                  "name": "D",
+                  "value": "2"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "-"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Chaplain Cassius",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "6\""
+            },
+            {
+              "name": "T",
+              "value": "4"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "4"
+            },
+            {
+              "name": "LD",
+              "value": "5+"
+            },
+            {
+              "name": "OC",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "name": "Catechism of Death",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this model is leading a unit, melee weapons equipped by models in that unit have the [DEVASTATING WOUNDS] ability."
+            }
+          ]
+        },
+        {
+          "name": "Inspired Retribution",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this model is leading a unit, each time a model in that unit is destroyed by a melee attack, if that model has not fought this phase, roll one D6. On a 4+, do not remove it from play; that destroyed model can fight after the attacking model’s unit has finished making its attacks, and is then removed from play."
+            }
+          ]
+        },
+        {
+          "name": "Leader",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model can be attached to the following units:\n\n■ Assault Squad\n■ Command Squad\n■ Sternguard Veteran Squad\n■ Tactical Squad\n■ Tyrannic War Veterans\n■ Vanguard Veteran Squad"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "80"
+        }
+      ]
+    },
+    {
+      "id": "3ef1-1647-cd7b-a40b",
+      "name": "Chief Librarian Tigurius",
+      "type": "model",
+      "entries": [
+        {
+          "id": "4aab-43dc-b23-cff",
+          "name": "Storm of the Emperor’s Wrath",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "➤ Storm of the Emperor’s Wrath - Witchfire",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "18\""
+                },
+                {
+                  "name": "A",
+                  "value": "D6"
+                },
+                {
+                  "name": "BS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "6"
+                },
+                {
+                  "name": "AP",
+                  "value": "-2"
+                },
+                {
+                  "name": "D",
+                  "value": "2"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Blast, Psychic"
+                }
+              ]
+            },
+            {
+              "name": "➤ Storm of the Emperor’s Wrath - Focused Witchfire",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "18\""
+                },
+                {
+                  "name": "A",
+                  "value": "2D6"
+                },
+                {
+                  "name": "BS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "6"
+                },
+                {
+                  "name": "AP",
+                  "value": "-2"
+                },
+                {
+                  "name": "D",
+                  "value": "2"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Blast, Hazardous, Psychic"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "c6ea-3c75-3e25-90aa",
+          "name": "Rod of Tigurius",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Rod of Tigurius",
+              "type": "Melee Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "Melee"
+                },
+                {
+                  "name": "A",
+                  "value": "5"
+                },
+                {
+                  "name": "WS",
+                  "value": "3+"
+                },
+                {
+                  "name": "S",
+                  "value": "7"
+                },
+                {
+                  "name": "AP",
+                  "value": "-2"
+                },
+                {
+                  "name": "D",
+                  "value": "D3"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Psychic"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Chief Librarian Tigurius",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "6\""
+            },
+            {
+              "name": "T",
+              "value": "4"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "4"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "name": "Hood of Hellfire",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this model is leading a unit, models in that unit have the Feel No Pain 4+ ability against Psychic Attacks and mortal wounds."
+            }
+          ]
+        },
+        {
+          "name": "Master of Prescience (Psychic)",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this model is leading a unit, each time an attack targets that unit, subtract 1 from the Hit roll. In addition, once per battle round, you can target that unit with one of the following Stratagems for 0CP: Counter-offensive; Fire Overwatch; Go to Ground;\nHeroic Intervention."
+            }
+          ]
+        },
+        {
+          "name": "Leader",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model can be attached to the following units:\n\n■ Assault Intercessor Squad\n■ Bladeguard Veteran Squad\n■ Desolation Squad\n■ Devastator Squad\n■ Intercessor Squad\n■ Sternguard Veteran Squad\n■ Tactical Squad"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "75"
+        }
+      ]
+    },
+    {
+      "id": "5380-5757-2c46-31cc",
+      "name": "Marneus Calgar",
+      "type": "unit",
+      "entries": [
+        {
+          "id": "9ee9-60dc-e65-b0c5",
+          "name": "Marneus Calgar",
+          "type": "model",
+          "entries": [
+            {
+              "id": "482e-2b4f-616-d783",
+              "name": "Gauntlets of Ultramar",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Gauntlets of Ultramar",
+                  "type": "Ranged Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "18\""
+                    },
+                    {
+                      "name": "A",
+                      "value": "4"
+                    },
+                    {
+                      "name": "BS",
+                      "value": "2+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "4"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-1"
+                    },
+                    {
+                      "name": "D",
+                      "value": "2"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "Pistol, Twin-linked"
+                    }
+                  ]
+                },
+                {
+                  "name": "Gauntlets of Ultramar",
+                  "type": "Melee Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "Melee"
+                    },
+                    {
+                      "name": "A",
+                      "value": "6"
+                    },
+                    {
+                      "name": "WS",
+                      "value": "2+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "8"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-3"
+                    },
+                    {
+                      "name": "D",
+                      "value": "3"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "Twin-linked"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "3719-2013-c91c-1838",
+          "name": "Victrix Honour Guard",
+          "type": "model",
+          "entries": [
+            {
+              "id": "639c-f60f-581e-71d",
+              "name": "Victrix Power Sword",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Victrix Power Sword",
+                  "type": "Melee Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "Melee"
+                    },
+                    {
+                      "name": "A",
+                      "value": "5"
+                    },
+                    {
+                      "name": "WS",
+                      "value": "2+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "5"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-2"
+                    },
+                    {
+                      "name": "D",
+                      "value": "2"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "-"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Marneus Calgar",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "6\""
+            },
+            {
+              "name": "T",
+              "value": "6"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "6"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "name": "Victrix Honour Guard",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "6\""
+            },
+            {
+              "name": "T",
+              "value": "4"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "3"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "name": "Inspiring Leader",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this model is leading a unit, that unit is eligible to shoot and declare a charge in a turn in which it Advanced or Fell Back."
+            }
+          ]
+        },
+        {
+          "name": "Master Tactician",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "At the start of your Command phase, if this unit’s Marneus Calgar model is your WARLORD and is on the battlefield, you gain 1CP."
+            }
+          ]
+        },
+        {
+          "name": "Honour Guard of Macragge",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this unit contains one or more Victrix Honour Guard models, this unit’s Marneus Calgar model has the Feel No Pain 4+ ability."
+            }
+          ]
+        },
+        {
+          "name": "Leader",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This unit can be attached to the following units:\n\n■ Aggressor Squad\n■ Assault Intercessor Squad\n■ Bladeguard Veteran Squad\n■ Company Heroes\n■ Eradicator Squad\n■ Heavy Intercessor Squad\n■ Infernus Squad\n■ Intercessor Squad\n■ Sternguard Veteran Squad\n■ Tactical Squad"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "200"
+        },
+        {
+          "name": "Crusade Points",
+          "typeid": "b03b-c239-15a5-da55",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeid": "75bb-ded1-c86d-bdf0",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeid": "a623-fe74-1d33-cddf",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeid": "716d-91b7-d55a-1022",
+          "value": "0"
+        },
+        {
+          "name": "Honour Points",
+          "typeid": "8135-9a2f-6627-09e2",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "4aea-b1cc-6c69-1c44",
+      "name": "Roboute Guilliman",
+      "type": "model",
+      "entries": [
+        {
+          "id": "b5b2-5c6-e593-69a7",
+          "name": "Hand of Dominion",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Hand of Dominion",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "30\""
+                },
+                {
+                  "name": "A",
+                  "value": "2"
+                },
+                {
+                  "name": "BS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "6"
+                },
+                {
+                  "name": "AP",
+                  "value": "-2"
+                },
+                {
+                  "name": "D",
+                  "value": "2"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Rapid Fire 2"
+                }
+              ]
+            },
+            {
+              "name": "Hand of Dominion",
+              "type": "Melee Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "Melee"
+                },
+                {
+                  "name": "A",
+                  "value": "7"
+                },
+                {
+                  "name": "WS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "14"
+                },
+                {
+                  "name": "AP",
+                  "value": "-4"
+                },
+                {
+                  "name": "D",
+                  "value": "4"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Lethal Hits"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "4c53-6d36-742f-85ca",
+          "name": "The Emperor's Sword",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "The Emperor's Sword",
+              "type": "Melee Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "Melee"
+                },
+                {
+                  "name": "A",
+                  "value": "14"
+                },
+                {
+                  "name": "WS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "8"
+                },
+                {
+                  "name": "AP",
+                  "value": "-3"
+                },
+                {
+                  "name": "D",
+                  "value": "2"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Devastating Wounds"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Roboute Guilliman",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "8\""
+            },
+            {
+              "name": "T",
+              "value": "9"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "10"
+            },
+            {
+              "name": "LD",
+              "value": "5+"
+            },
+            {
+              "name": "OC",
+              "value": "4"
+            }
+          ]
+        },
+        {
+          "name": "Author of the Codex",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "At the Start of your Command phase, select two Author of the Codex abilities (see left). Until the start of your next Command phase, this model has those abilities.’\n\nPrimarch of the XIII (Aura): While a friendly Adeptus Astartes unit is within 6\" of this model, add 1 to the Objective Control characteristic of models in that unit and you can re-roll Battle-shock and Leadership tests taken for that unit.\n\nMaster of Battle: After you have selected an enemy unit using the Oath of Moment ability, select a second enemy unit. Until the start of your next Command phase, if your Oath of Moment target is destroyed, that second enemy unit becomes your Oath of Moment target until you select a new one.\n\nSupreme Strategist: Once per battle round, you can target one friendly ADEPTUS ASTARTES unit within 12\" of this model with a Stratagem. If it does, reduce the CP cost of that use of that Stratagem by 1CP."
+            }
+          ]
+        },
+        {
+          "name": "Ultramarines Bodyguard",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this model is within 3\" of one or more friendly Adeptus Astartes Infantry units, this model has the Lone Operative ability"
+            }
+          ]
+        },
+        {
+          "name": "Armour of Fate",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "The first time this model is destroyed, roll one D6 at the end of the phase: on a 3+, set this model back up on the battlefield as close as possible to where it was destroyed and not within Engagement Range of any enemy models, with 6 wounds remaining."
+            }
+          ]
+        },
+        {
+          "name": "Supreme Commander",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "If this model is in your army, it must be your Warlord."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "320"
+        },
+        {
+          "name": "Crusade Points",
+          "typeid": "b03b-c239-15a5-da55",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeid": "75bb-ded1-c86d-bdf0",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeid": "a623-fe74-1d33-cddf",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeid": "716d-91b7-d55a-1022",
+          "value": "0"
+        },
+        {
+          "name": "Honour Points",
+          "typeid": "8135-9a2f-6627-09e2",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "2263-82ee-3db6-8be9",
+      "name": "Sergeant Chronus [Legends]",
+      "type": "model",
+      "entries": [
+        {
+          "id": "f94a-1524-9f9b-2229",
+          "name": "Chronus' Servo-Arm",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Chronus' Servo-Arm",
+              "type": "Melee Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "Melee"
+                },
+                {
+                  "name": "A",
+                  "value": "3"
+                },
+                {
+                  "name": "WS",
+                  "value": "3+"
+                },
+                {
+                  "name": "S",
+                  "value": "8"
+                },
+                {
+                  "name": "AP",
+                  "value": "-2"
+                },
+                {
+                  "name": "D",
+                  "value": "3"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "-"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Sergeant Chronus",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "6\""
+            },
+            {
+              "name": "T",
+              "value": "4"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "3"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "name": "Tank Commander",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this model is commanding a Vehicle model (see reverse):\n\n■ Ranged weapons equipped by that Vehicle model have a Ballistic Skill characteristic of 2+.\n■ Each time that Vehicle model is selected to shoot, you can re-roll one Wound roll when resolving those attacks.\n\nIf your army includes one or more of the Vehicle models listed below, Sergeant Chronus must start the battle embarked within one of those models as if it were a Transport. Sergeant Chronus can only disembark from that Vehicle if it is destroyed. While embarked in this way, Sergeant Chronus is said to be commanding that Vehicle.\n\n■ Hunter\n■ Land Raider\n■ Land Raider Crusader\n■ Land Raider Redeemer\n■ Predator Annihilator\n■ Predator Destructor\n■ Stalker\n■ Vindicator\n■ Whirlwind"
+            }
+          ]
+        },
+        {
+          "name": "Chronus",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "When this model disembarks from a Vehicle model it was commanding, it has the Lone Operative ability until the end of the battle."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "75"
+        }
+      ]
+    },
+    {
+      "id": "696a-899e-514b-4a04",
+      "name": "Sergeant Telion [Legends]",
+      "type": "model",
+      "entries": [
+        {
+          "id": "9b80-b34f-cdbd-2a95",
+          "name": "Combat Knife",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Combat Knife",
+              "type": "Melee Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "Melee"
+                },
+                {
+                  "name": "A",
+                  "value": "4"
+                },
+                {
+                  "name": "WS",
+                  "value": "3+"
+                },
+                {
+                  "name": "S",
+                  "value": "4"
+                },
+                {
+                  "name": "AP",
+                  "value": "0"
+                },
+                {
+                  "name": "D",
+                  "value": "1"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "-"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "4e39-8d0-ac97-29f3",
+          "name": "Quietus",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Quietus",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "36\""
+                },
+                {
+                  "name": "A",
+                  "value": "2"
+                },
+                {
+                  "name": "BS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "4"
+                },
+                {
+                  "name": "AP",
+                  "value": "-2"
+                },
+                {
+                  "name": "D",
+                  "value": "3"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Precision"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Sergeant Telion",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "6\""
+            },
+            {
+              "name": "T",
+              "value": "4"
+            },
+            {
+              "name": "SV",
+              "value": "4+"
+            },
+            {
+              "name": "W",
+              "value": "3"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "name": "Voice of Experience",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this model is leading a unit, improve the Objective Control characteristic of models in that unit by 1 and each time a model in that unit makes an attack, add 1 to the Hit roll."
+            }
+          ]
+        },
+        {
+          "name": "Guiding Hand",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this model is leading a unit, each time that unit is selected to shoot or fight, select one of the following abilities to apply to weapons equipped by models in that unit until the end of the phase:\n\n\n■ [LETHAL HITS]\n■ [PRECISION]\n■ [SUSTAINED HITS 1]"
+            }
+          ]
+        },
+        {
+          "name": "Leader",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model can be attached to the following units:\n\n■ Scout Squad\n■ Scout Sniper Squad"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "70"
+        }
+      ]
+    },
+    {
+      "id": "8770-b0eb-f430-1dda",
+      "name": "Tyrannic War Veterans [Legends]",
+      "type": "unit",
+      "profiles": [
+        {
+          "name": "Tyrannic War Veterans",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Weapons equipped by models in this unit have the [DEVASTATING WOUNDS] ability when targeting Tyranids units."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "85"
+        }
+      ]
+    },
+    {
+      "id": "169a-7229-ea50-1c4f",
+      "name": "Uriel Ventris",
+      "type": "model",
+      "entries": [
+        {
+          "id": "c23e-8f46-8323-119a",
+          "name": "Invictus",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Invictus",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "24\""
+                },
+                {
+                  "name": "A",
+                  "value": "2"
+                },
+                {
+                  "name": "BS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "4"
+                },
+                {
+                  "name": "AP",
+                  "value": "-1"
+                },
+                {
+                  "name": "D",
+                  "value": "2"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "-"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "18ee-7f57-3498-4e48",
+          "name": "Sword of Idaeus",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Sword of Idaeus",
+              "type": "Melee Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "Melee"
+                },
+                {
+                  "name": "A",
+                  "value": "6"
+                },
+                {
+                  "name": "WS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "6"
+                },
+                {
+                  "name": "AP",
+                  "value": "-2"
+                },
+                {
+                  "name": "D",
+                  "value": "2"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Sustained Hits 1"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Uriel Ventris",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "6\""
+            },
+            {
+              "name": "T",
+              "value": "4"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "5"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "name": "Unorthodox Strategist [Aura]",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Each time your opponent targets a unit from their army with a  stratagem, if that unit is within 12\" of this model, increase the cost of that use of that Stratagem by 1CP (this is not cumulative with any other rules that would increase the CP cost of that Stratagem)."
+            }
+          ]
+        },
+        {
+          "name": "Master of the Fleet",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "During the Declare Battle Formations step, if your army includes this model, select one Phobos, Gravis, or Tacticus Adeptus Astartes Infantry unit from your army.  That unit gains the Deep Strike ability."
+            }
+          ]
+        },
+        {
+          "name": "Leader",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model can be attached to the following units:\n\n■ Assault Intercessor Squad\n■ Bladeguard Veteran Squad'\n■ Company Heroes\n■ Intercessor Squad\n■ Sternguard Veteran Squad\n■ Tactical Squad"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "95"
+        },
+        {
+          "name": "Crusade Points",
+          "typeid": "b03b-c239-15a5-da55",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeid": "75bb-ded1-c86d-bdf0",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeid": "a623-fe74-1d33-cddf",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeid": "716d-91b7-d55a-1022",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "f4a3-1616-2f8e-59a3",
+      "name": "Ultramarines Honour Guard [Legends]",
+      "type": "unit",
+      "entries": [
+        {
+          "id": "e564-61b6-32d3-b64",
+          "name": "Company Ancient",
+          "type": "model",
+          "entries": [
+            {
+              "id": "c5d7-c2cb-af6c-86fb",
+              "name": "Power Weapon",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Power Weapon",
+                  "type": "Melee Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "Melee"
+                    },
+                    {
+                      "name": "A",
+                      "value": "3"
+                    },
+                    {
+                      "name": "WS",
+                      "value": "3+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "5"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-2"
+                    },
+                    {
+                      "name": "D",
+                      "value": "2"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "-"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "profiles": [
+            {
+              "name": "Astartes Banner",
+              "type": "Abilities",
+              "lines": [
+                {
+                  "name": "Description",
+                  "value": "While this unit contains a Company Ancient, add 1 to the Objective Control characteristic of models in this unit."
+                }
+              ]
+            },
+            {
+              "name": "Ultramarines Honor Guard",
+              "type": "Unit",
+              "lines": [
+                {
+                  "name": "M",
+                  "value": "6\""
+                },
+                {
+                  "name": "T",
+                  "value": "4"
+                },
+                {
+                  "name": "SV",
+                  "value": "2+"
+                },
+                {
+                  "name": "W",
+                  "value": "2"
+                },
+                {
+                  "name": "LD",
+                  "value": "6+"
+                },
+                {
+                  "name": "OC",
+                  "value": "1"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "7644-5e19-93bc-8df9",
+          "name": "Company Champion",
+          "type": "model",
+          "entries": [
+            {
+              "id": "7767-29cf-cef8-6ecd",
+              "name": "Power Weapon",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Power Weapon",
+                  "type": "Melee Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "Melee"
+                    },
+                    {
+                      "name": "A",
+                      "value": "3"
+                    },
+                    {
+                      "name": "WS",
+                      "value": "3+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "5"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-2"
+                    },
+                    {
+                      "name": "D",
+                      "value": "2"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "-"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "profiles": [
+            {
+              "name": "Honour or Death",
+              "type": "Abilities",
+              "lines": [
+                {
+                  "name": "Description",
+                  "value": "While this unit contains a Company Champion, add 1 to Advance and Charge rolls made for this unit and you can target this unit with the Heroic  Intervention Stratagem for 0CP, even if you have already used that Stratagem on a different unit this phase."
+                }
+              ]
+            },
+            {
+              "name": "Ultramarines Honor Guard",
+              "type": "Unit",
+              "lines": [
+                {
+                  "name": "M",
+                  "value": "6\""
+                },
+                {
+                  "name": "T",
+                  "value": "4"
+                },
+                {
+                  "name": "SV",
+                  "value": "2+"
+                },
+                {
+                  "name": "W",
+                  "value": "2"
+                },
+                {
+                  "name": "LD",
+                  "value": "6+"
+                },
+                {
+                  "name": "OC",
+                  "value": "1"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "f09a-dc4e-80f4-4674",
+          "name": "Honour Guard",
+          "type": "model",
+          "entries": [
+            {
+              "id": "1469-61ff-7db2-90b4",
+              "name": "Power Weapon",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Power Weapon",
+                  "type": "Melee Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "Melee"
+                    },
+                    {
+                      "name": "A",
+                      "value": "3"
+                    },
+                    {
+                      "name": "WS",
+                      "value": "3+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "5"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-2"
+                    },
+                    {
+                      "name": "D",
+                      "value": "2"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "-"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "profiles": [
+            {
+              "name": "Ultramarines Honor Guard",
+              "type": "Unit",
+              "lines": [
+                {
+                  "name": "M",
+                  "value": "6\""
+                },
+                {
+                  "name": "T",
+                  "value": "4"
+                },
+                {
+                  "name": "SV",
+                  "value": "2+"
+                },
+                {
+                  "name": "W",
+                  "value": "2"
+                },
+                {
+                  "name": "LD",
+                  "value": "6+"
+                },
+                {
+                  "name": "OC",
+                  "value": "1"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Honour Guard",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While a Captain or Chapter Master model is leading this unit, each time an attack targets this unit, subtract 1 from the Wound roll."
+            }
+          ]
+        },
+        {
+          "name": "Honour Guard of Macragge",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "MARNEUS CALGAR can be attached to this unit. If a CAPTAIN model from your army with the Leader ability can be attached to a COMMAND SQUAD, it can be attached to this unit instead."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "155"
+        }
+      ]
+    },
+    {
+      "id": "b07a-c1e9-24e5-09ee",
+      "name": "Lieutenant Titus",
+      "type": "model",
+      "entries": [
+        {
+          "id": "b7b4-404b-0db9-cbb1",
+          "name": "Heavy Bolt Pistol",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Heavy Bolt Pistol",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "18\""
+                },
+                {
+                  "name": "A",
+                  "value": "1"
+                },
+                {
+                  "name": "BS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "4"
+                },
+                {
+                  "name": "AP",
+                  "value": "-1"
+                },
+                {
+                  "name": "D",
+                  "value": "1"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Pistol"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "35ed-7fa0-b68f-79d7",
+          "name": "Astartes Chainsword",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Astartes Chainsword",
+              "type": "Melee Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "Melee"
+                },
+                {
+                  "name": "A",
+                  "value": "8"
+                },
+                {
+                  "name": "WS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "4"
+                },
+                {
+                  "name": "AP",
+                  "value": "-1"
+                },
+                {
+                  "name": "D",
+                  "value": "1"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Anti-Infantry 2+"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Lieutenant Titus",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "6\""
+            },
+            {
+              "name": "T",
+              "value": "4"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "5"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "name": "Press the Attack",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": ": Weapons equipped by models in this model’s unit have the [SUSTAINED HITS 1] ability."
+            }
+          ]
+        },
+        {
+          "name": "Honour of the Chapter",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "If this model is destroyed by a melee attack, if it has not fought this phase, roll one D6: on a 2+, do not remove it from play. This model can fight after the attacking unit has finished making its attacks, and is then removed from play."
+            }
+          ]
+        },
+        {
+          "name": "Leader",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model can be attached to the following units:\n\n■ Assault Intercessor Squad\n■ Bladeguard Veteran Squad\n■ Hellblaster Squad\n■ Infernus Squad\n■ Intercessor Squad\n■ Sternguard Veteran Squad"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "70"
+        },
+        {
+          "name": "Crusade Points",
+          "typeid": "b03b-c239-15a5-da55",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeid": "75bb-ded1-c86d-bdf0",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeid": "a623-fe74-1d33-cddf",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeid": "716d-91b7-d55a-1022",
+          "value": "0"
+        }
+      ]
+    }
+  ]
+}

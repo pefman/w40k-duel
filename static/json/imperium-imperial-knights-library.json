@@ -1,0 +1,5114 @@
+{
+  "factionname": "Imperium - Imperial Knights - Library",
+  "units": [
+    {
+      "id": "55fb-9c91-1a4f-3037",
+      "name": "Canis Rex",
+      "type": "unit",
+      "entries": [
+        {
+          "id": "84c0-f59d-901a-e94f",
+          "name": "Canis Rex",
+          "type": "model",
+          "entries": [
+            {
+              "id": "f1aa-b2e0-2fa8-4c39",
+              "name": "Chainbreaker las-impulsor",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "➤ Chainbreaker las-impulsor - high intensity",
+                  "type": "Ranged Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "24\""
+                    },
+                    {
+                      "name": "A",
+                      "value": "D6"
+                    },
+                    {
+                      "name": "BS",
+                      "value": "2+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "14"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-3"
+                    },
+                    {
+                      "name": "D",
+                      "value": "4"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "Blast, Sustained Hits 1"
+                    }
+                  ]
+                },
+                {
+                  "name": "➤ Chainbreaker las-impulsor - low intensity",
+                  "type": "Ranged Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "36\""
+                    },
+                    {
+                      "name": "A",
+                      "value": "2D6"
+                    },
+                    {
+                      "name": "BS",
+                      "value": "2+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "7"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-1"
+                    },
+                    {
+                      "name": "D",
+                      "value": "2"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "Blast, Sustained Hits 1"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "70b4-8523-6b7c-1b0a",
+              "name": "Freedom's Hand",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "➤ Freedom's Hand - strike",
+                  "type": "Melee Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "Melee"
+                    },
+                    {
+                      "name": "A",
+                      "value": "5"
+                    },
+                    {
+                      "name": "WS",
+                      "value": "2+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "20"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-3"
+                    },
+                    {
+                      "name": "D",
+                      "value": "9"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "Sustained Hits 1"
+                    }
+                  ]
+                },
+                {
+                  "name": "➤ Freedom's Hand - sweep",
+                  "type": "Melee Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "Melee"
+                    },
+                    {
+                      "name": "A",
+                      "value": "10"
+                    },
+                    {
+                      "name": "WS",
+                      "value": "2+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "10"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-2"
+                    },
+                    {
+                      "name": "D",
+                      "value": "3"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "Sustained Hits 1"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "43a9-66c5-ec02-baa9",
+              "name": "Chainbreaker multi-laser",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Chainbreaker multi-laser",
+                  "type": "Ranged Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "36\""
+                    },
+                    {
+                      "name": "A",
+                      "value": "4"
+                    },
+                    {
+                      "name": "BS",
+                      "value": "2+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "6"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "0"
+                    },
+                    {
+                      "name": "D",
+                      "value": "1"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "Sustained Hits 1"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "profiles": [
+            {
+              "name": "Canis Rex",
+              "type": "Unit",
+              "lines": [
+                {
+                  "name": "M",
+                  "value": "10\""
+                },
+                {
+                  "name": "T",
+                  "value": "11"
+                },
+                {
+                  "name": "SV",
+                  "value": "3+"
+                },
+                {
+                  "name": "W",
+                  "value": "26"
+                },
+                {
+                  "name": "LD",
+                  "value": "5+"
+                },
+                {
+                  "name": "OC",
+                  "value": "10"
+                }
+              ]
+            },
+            {
+              "name": "Chainbreaker",
+              "type": "Abilities",
+              "lines": [
+                {
+                  "name": "Description",
+                  "value": "Each time this model makes an attack, an unmodified successful Hit roll of 5+ scores a Critical Hit."
+                }
+              ]
+            },
+            {
+              "name": "Legendary Freeblade",
+              "type": "Abilities",
+              "lines": [
+                {
+                  "name": "Description",
+                  "value": "Once per turn, one unit from your army with this ability can use it when its unit is targeted with a Stratagem. If it does, reduce the CP cost of that use of that Stratagem by 1CP."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "a41b-81a0-ca89-75c1",
+          "name": "Sir Hekhtur",
+          "type": "model",
+          "entries": [
+            {
+              "id": "b74a-d992-b5eb-23ff",
+              "name": "Close combat weapon",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Close combat weapon",
+                  "type": "Melee Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "Melee"
+                    },
+                    {
+                      "name": "A",
+                      "value": "2"
+                    },
+                    {
+                      "name": "WS",
+                      "value": "2+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "3"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "0"
+                    },
+                    {
+                      "name": "D",
+                      "value": "1"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "-"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "e8b4-ffab-1b5c-d2a0",
+              "name": "Hekhtur's pistol",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Hekhtur's pistol",
+                  "type": "Ranged Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "12\""
+                    },
+                    {
+                      "name": "A",
+                      "value": "1"
+                    },
+                    {
+                      "name": "BS",
+                      "value": "2+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "5"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-1"
+                    },
+                    {
+                      "name": "D",
+                      "value": "2"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "Pistol"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "profiles": [
+            {
+              "name": "Sir Hekhtur",
+              "type": "Unit",
+              "lines": [
+                {
+                  "name": "M",
+                  "value": "6\""
+                },
+                {
+                  "name": "T",
+                  "value": "3"
+                },
+                {
+                  "name": "SV",
+                  "value": "4+"
+                },
+                {
+                  "name": "W",
+                  "value": "3"
+                },
+                {
+                  "name": "LD",
+                  "value": "5+"
+                },
+                {
+                  "name": "OC",
+                  "value": "1"
+                }
+              ]
+            },
+            {
+              "name": "Using Sir Hekhtur",
+              "type": "Abilities",
+              "lines": [
+                {
+                  "name": "Description",
+                  "value": "When your Canis Rex model is destroyed, Sir Hekhtur is treated as a model disembarking from a destroyed TRANSPORT – set him up within 3\" of your Canis Rex model before it is removed. Sir Hekhtur then uses the profile, wargear, abilities and keywords shown on this side of the card, but cannot be selected as the target of any of your Stratagems other than Core Stratagems. Your Canis Rex unit is not considered to be destroyed until Sir Hekhtur is also destroyed."
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "380"
+        },
+        {
+          "name": "Crusade Points",
+          "typeid": "b03b-c239-15a5-da55",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeid": "75bb-ded1-c86d-bdf0",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeid": "a623-fe74-1d33-cddf",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeid": "716d-91b7-d55a-1022",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "84c0-f59d-901a-e94f",
+      "name": "Canis Rex",
+      "type": "model",
+      "entries": [
+        {
+          "id": "f1aa-b2e0-2fa8-4c39",
+          "name": "Chainbreaker las-impulsor",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "➤ Chainbreaker las-impulsor - high intensity",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "24\""
+                },
+                {
+                  "name": "A",
+                  "value": "D6"
+                },
+                {
+                  "name": "BS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "14"
+                },
+                {
+                  "name": "AP",
+                  "value": "-3"
+                },
+                {
+                  "name": "D",
+                  "value": "4"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Blast, Sustained Hits 1"
+                }
+              ]
+            },
+            {
+              "name": "➤ Chainbreaker las-impulsor - low intensity",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "36\""
+                },
+                {
+                  "name": "A",
+                  "value": "2D6"
+                },
+                {
+                  "name": "BS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "7"
+                },
+                {
+                  "name": "AP",
+                  "value": "-1"
+                },
+                {
+                  "name": "D",
+                  "value": "2"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Blast, Sustained Hits 1"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "70b4-8523-6b7c-1b0a",
+          "name": "Freedom's Hand",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "➤ Freedom's Hand - strike",
+              "type": "Melee Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "Melee"
+                },
+                {
+                  "name": "A",
+                  "value": "5"
+                },
+                {
+                  "name": "WS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "20"
+                },
+                {
+                  "name": "AP",
+                  "value": "-3"
+                },
+                {
+                  "name": "D",
+                  "value": "9"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Sustained Hits 1"
+                }
+              ]
+            },
+            {
+              "name": "➤ Freedom's Hand - sweep",
+              "type": "Melee Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "Melee"
+                },
+                {
+                  "name": "A",
+                  "value": "10"
+                },
+                {
+                  "name": "WS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "10"
+                },
+                {
+                  "name": "AP",
+                  "value": "-2"
+                },
+                {
+                  "name": "D",
+                  "value": "3"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Sustained Hits 1"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "43a9-66c5-ec02-baa9",
+          "name": "Chainbreaker multi-laser",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Chainbreaker multi-laser",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "36\""
+                },
+                {
+                  "name": "A",
+                  "value": "4"
+                },
+                {
+                  "name": "BS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "6"
+                },
+                {
+                  "name": "AP",
+                  "value": "0"
+                },
+                {
+                  "name": "D",
+                  "value": "1"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Sustained Hits 1"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Canis Rex",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "10\""
+            },
+            {
+              "name": "T",
+              "value": "11"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "26"
+            },
+            {
+              "name": "LD",
+              "value": "5+"
+            },
+            {
+              "name": "OC",
+              "value": "10"
+            }
+          ]
+        },
+        {
+          "name": "Chainbreaker",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Each time this model makes an attack, an unmodified successful Hit roll of 5+ scores a Critical Hit."
+            }
+          ]
+        },
+        {
+          "name": "Legendary Freeblade",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Once per turn, one unit from your army with this ability can use it when its unit is targeted with a Stratagem. If it does, reduce the CP cost of that use of that Stratagem by 1CP."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f1aa-b2e0-2fa8-4c39",
+      "name": "Chainbreaker las-impulsor",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "➤ Chainbreaker las-impulsor - high intensity",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "24\""
+            },
+            {
+              "name": "A",
+              "value": "D6"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "14"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "4"
+            },
+            {
+              "name": "Keywords",
+              "value": "Blast, Sustained Hits 1"
+            }
+          ]
+        },
+        {
+          "name": "➤ Chainbreaker las-impulsor - low intensity",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "36\""
+            },
+            {
+              "name": "A",
+              "value": "2D6"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "7"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Blast, Sustained Hits 1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "70b4-8523-6b7c-1b0a",
+      "name": "Freedom's Hand",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "➤ Freedom's Hand - strike",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "5"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "20"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "9"
+            },
+            {
+              "name": "Keywords",
+              "value": "Sustained Hits 1"
+            }
+          ]
+        },
+        {
+          "name": "➤ Freedom's Hand - sweep",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "10"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "10"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "3"
+            },
+            {
+              "name": "Keywords",
+              "value": "Sustained Hits 1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "43a9-66c5-ec02-baa9",
+      "name": "Chainbreaker multi-laser",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Chainbreaker multi-laser",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "36\""
+            },
+            {
+              "name": "A",
+              "value": "4"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Sustained Hits 1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a41b-81a0-ca89-75c1",
+      "name": "Sir Hekhtur",
+      "type": "model",
+      "entries": [
+        {
+          "id": "b74a-d992-b5eb-23ff",
+          "name": "Close combat weapon",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Close combat weapon",
+              "type": "Melee Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "Melee"
+                },
+                {
+                  "name": "A",
+                  "value": "2"
+                },
+                {
+                  "name": "WS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "3"
+                },
+                {
+                  "name": "AP",
+                  "value": "0"
+                },
+                {
+                  "name": "D",
+                  "value": "1"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "-"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "e8b4-ffab-1b5c-d2a0",
+          "name": "Hekhtur's pistol",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Hekhtur's pistol",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "12\""
+                },
+                {
+                  "name": "A",
+                  "value": "1"
+                },
+                {
+                  "name": "BS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "5"
+                },
+                {
+                  "name": "AP",
+                  "value": "-1"
+                },
+                {
+                  "name": "D",
+                  "value": "2"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Pistol"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Sir Hekhtur",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "6\""
+            },
+            {
+              "name": "T",
+              "value": "3"
+            },
+            {
+              "name": "SV",
+              "value": "4+"
+            },
+            {
+              "name": "W",
+              "value": "3"
+            },
+            {
+              "name": "LD",
+              "value": "5+"
+            },
+            {
+              "name": "OC",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "name": "Using Sir Hekhtur",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "When your Canis Rex model is destroyed, Sir Hekhtur is treated as a model disembarking from a destroyed TRANSPORT – set him up within 3\" of your Canis Rex model before it is removed. Sir Hekhtur then uses the profile, wargear, abilities and keywords shown on this side of the card, but cannot be selected as the target of any of your Stratagems other than Core Stratagems. Your Canis Rex unit is not considered to be destroyed until Sir Hekhtur is also destroyed."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b74a-d992-b5eb-23ff",
+      "name": "Close combat weapon",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Close combat weapon",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "3"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "e8b4-ffab-1b5c-d2a0",
+      "name": "Hekhtur's pistol",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Hekhtur's pistol",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "12\""
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Pistol"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "5bbd-c5d3-58d7-e391",
+      "name": "Armiger Warglaive",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Armiger Warglaive",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "12\""
+            },
+            {
+              "name": "T",
+              "value": "9"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "14"
+            },
+            {
+              "name": "LD",
+              "value": "7+"
+            },
+            {
+              "name": "OC",
+              "value": "6"
+            }
+          ]
+        },
+        {
+          "name": "Impetuous Glory",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Each time this model makes a Charge move, until the end of the turn, melee weapons equipped by this model have the [SUSTAINED HITS 1] ability."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "140"
+        },
+        {
+          "name": "Crusade Points",
+          "typeid": "b03b-c239-15a5-da55",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeid": "75bb-ded1-c86d-bdf0",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeid": "a623-fe74-1d33-cddf",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeid": "716d-91b7-d55a-1022",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "7314-3c4a-36ab-a594",
+      "name": "Armiger Helverin",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Armiger Helverin",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "12\""
+            },
+            {
+              "name": "T",
+              "value": "9"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "14"
+            },
+            {
+              "name": "LD",
+              "value": "7+"
+            },
+            {
+              "name": "OC",
+              "value": "6"
+            }
+          ]
+        },
+        {
+          "name": "Skyfire Protocols",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this model is either wholly within your deployment zone or within range of an objective marker you control, its Armiger autocannons have the [ANTI-FLY 2+] ability."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "130"
+        },
+        {
+          "name": "Crusade Points",
+          "typeid": "b03b-c239-15a5-da55",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeid": "75bb-ded1-c86d-bdf0",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeid": "a623-fe74-1d33-cddf",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeid": "716d-91b7-d55a-1022",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "8441-8356-5e7c-69ee",
+      "name": "Knight Paladin",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Knight Paladin",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "10\""
+            },
+            {
+              "name": "T",
+              "value": "11"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "26"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "10"
+            }
+          ]
+        },
+        {
+          "name": "Seasoned Noble",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Once per phase, you can re-roll one Hit roll, one Wound roll or one saving throw made for this model."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "345"
+        },
+        {
+          "name": "Crusade Points",
+          "typeid": "b03b-c239-15a5-da55",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeid": "75bb-ded1-c86d-bdf0",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeid": "a623-fe74-1d33-cddf",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeid": "716d-91b7-d55a-1022",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "9efd-ec72-353f-4b23",
+      "name": "Knight Errant",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Knight Errant",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "10\""
+            },
+            {
+              "name": "T",
+              "value": "11"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "26"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "10"
+            }
+          ]
+        },
+        {
+          "name": "Aggressive Assault",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Each time this model makes a ranged attack against the closest eligible target, add 1 to the Hit roll."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "345"
+        },
+        {
+          "name": "Crusade Points",
+          "typeid": "b03b-c239-15a5-da55",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeid": "75bb-ded1-c86d-bdf0",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeid": "a623-fe74-1d33-cddf",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeid": "716d-91b7-d55a-1022",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "eb4-4a67-11e9-3cb8",
+      "name": "Knight Gallant",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Knight Gallant",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "12\""
+            },
+            {
+              "name": "T",
+              "value": "11"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "26"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "10"
+            }
+          ]
+        },
+        {
+          "name": "Martial Pride",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Each time a melee attack targets this model, subtract 1 from the Hit roll."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "345"
+        },
+        {
+          "name": "Crusade Points",
+          "typeid": "b03b-c239-15a5-da55",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeid": "75bb-ded1-c86d-bdf0",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeid": "a623-fe74-1d33-cddf",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeid": "716d-91b7-d55a-1022",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "c609-c87e-f9dd-5006",
+      "name": "Knight Warden",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Knight Warden",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "10\""
+            },
+            {
+              "name": "T",
+              "value": "11"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "26"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "10"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "365"
+        },
+        {
+          "name": "Crusade Points",
+          "typeid": "b03b-c239-15a5-da55",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeid": "75bb-ded1-c86d-bdf0",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeid": "a623-fe74-1d33-cddf",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeid": "716d-91b7-d55a-1022",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "1e27-a6de-3840-a050",
+      "name": "Knight Crusader",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Knight Crusader",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "10\""
+            },
+            {
+              "name": "T",
+              "value": "11"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "26"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "10"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "365"
+        },
+        {
+          "name": "Crusade Points",
+          "typeid": "b03b-c239-15a5-da55",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeid": "75bb-ded1-c86d-bdf0",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeid": "a623-fe74-1d33-cddf",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeid": "716d-91b7-d55a-1022",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "ebd9-7175-3f0c-72a9",
+      "name": "Knight Preceptor",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Knight Preceptor",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "10\""
+            },
+            {
+              "name": "T",
+              "value": "11"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "26"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "10"
+            }
+          ]
+        },
+        {
+          "name": "Exemplar of the Code",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "At the start of the battle, select one unit from your opponent’s army. Each time this model makes an attack that targets that unit, you can re-roll the Hit roll."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "335"
+        },
+        {
+          "name": "Crusade Points",
+          "typeid": "b03b-c239-15a5-da55",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeid": "75bb-ded1-c86d-bdf0",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeid": "a623-fe74-1d33-cddf",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeid": "716d-91b7-d55a-1022",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "6e36-f85-1c3b-8bf3",
+      "name": "Knight Castellan",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Knight Castellan",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "8\""
+            },
+            {
+              "name": "T",
+              "value": "12"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "28"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "10"
+            }
+          ]
+        },
+        {
+          "name": "Ion Aegis (Aura)",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While a friendly ARMIGER model is within 6\" of this model, that ARMIGER models has the Benefits of Cover."
+            }
+          ]
+        },
+        {
+          "name": "Titan Hunter",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Each time a ranged attack made by this model is allocated to a MONSTER or VEHICLE model, re-roll a Damage roll of 1."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "395"
+        },
+        {
+          "name": "Crusade Points",
+          "typeid": "b03b-c239-15a5-da55",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeid": "75bb-ded1-c86d-bdf0",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeid": "a623-fe74-1d33-cddf",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeid": "716d-91b7-d55a-1022",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "8fb9-50b2-adc6-161a",
+      "name": "Knight Valiant",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Knight Valiant",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "8\""
+            },
+            {
+              "name": "T",
+              "value": "12"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "28"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "10"
+            }
+          ]
+        },
+        {
+          "name": "Ion Aegis (Aura)",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While a friendly ARMIGER model is within 6\" of this model, that ARMIGER models has the Benefits of Cover."
+            }
+          ]
+        },
+        {
+          "name": "Overwhelming Firestorm",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "In your Shooting phase, after this model has shot, select one enemy unit hit by this model this phase. That unit must take a Battle-shock test."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "395"
+        },
+        {
+          "name": "Crusade Points",
+          "typeid": "b03b-c239-15a5-da55",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeid": "75bb-ded1-c86d-bdf0",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeid": "a623-fe74-1d33-cddf",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeid": "716d-91b7-d55a-1022",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "ad65-d3cb-c677-7cb3",
+      "name": "Warlord",
+      "type": "upgrade"
+    },
+    {
+      "id": "441c-a2a8-59a4-85a4",
+      "name": "Meltagun",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Meltagun",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "12\""
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "BS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "9"
+            },
+            {
+              "name": "AP",
+              "value": "-4"
+            },
+            {
+              "name": "D",
+              "value": "D6"
+            },
+            {
+              "name": "Keywords",
+              "value": "Melta 2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "eedf-6059-a15-3c86",
+      "name": "Questoris heavy stubber",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Questoris heavy stubber",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "36\""
+            },
+            {
+              "name": "A",
+              "value": "3"
+            },
+            {
+              "name": "BS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Rapid Fire 3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "65ed-f9fa-c767-15d",
+      "name": "Twin meltagun",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Twin meltagun",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "12\""
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "BS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "9"
+            },
+            {
+              "name": "AP",
+              "value": "-4"
+            },
+            {
+              "name": "D",
+              "value": "D6"
+            },
+            {
+              "name": "Keywords",
+              "value": "Melta 2, Twin-Linked"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "288c-1cbc-8340-9c0a",
+      "name": "Titanic feet",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Titanic feet",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "4"
+            },
+            {
+              "name": "WS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "8"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "4fc1-2679-a110-3cd",
+      "name": "Avenger gatling cannon",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Avenger gatling cannon",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "36\""
+            },
+            {
+              "name": "A",
+              "value": "18"
+            },
+            {
+              "name": "BS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "d6c0-4d42-c3c4-db8a",
+      "name": "Rapid-fire battle cannon",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Rapid-fire battle cannon",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "72\""
+            },
+            {
+              "name": "A",
+              "value": "D6+3"
+            },
+            {
+              "name": "BS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "10"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "3"
+            },
+            {
+              "name": "Keywords",
+              "value": "Blast, Rapid Fire D6+3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "86c9-46db-4de-4a5d",
+      "name": "Thermal cannon",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Thermal cannon",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "24\""
+            },
+            {
+              "name": "A",
+              "value": "2D3"
+            },
+            {
+              "name": "BS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "12"
+            },
+            {
+              "name": "AP",
+              "value": "-4"
+            },
+            {
+              "name": "D",
+              "value": "D6"
+            },
+            {
+              "name": "Keywords",
+              "value": "Blast, Melta 6"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "58a1-cee7-82ae-f860",
+      "name": "Shieldbreaker missile launcher",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Shieldbreaker missile launcher",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "72\""
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "BS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "12"
+            },
+            {
+              "name": "AP",
+              "value": "-6"
+            },
+            {
+              "name": "D",
+              "value": "D6+1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Titanic 4+, Devastating Wounds"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "5235-ab7-8eda-29b7",
+      "name": "Twin siegebreaker cannon",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Twin siegebreaker cannon",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "36\""
+            },
+            {
+              "name": "A",
+              "value": "D6"
+            },
+            {
+              "name": "BS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Blast, Twin-Linked"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ca02-db54-10e6-f20e",
+      "name": "Heavy flamer",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Heavy flamer",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "12\""
+            },
+            {
+              "name": "A",
+              "value": "D6"
+            },
+            {
+              "name": "BS",
+              "value": "N/A"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Ignores Cover, Torrent"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "5a84-ea91-b707-1656",
+      "name": "Detachment",
+      "type": "upgrade"
+    },
+    {
+      "id": "f8d0-fdf2-2e5e-3b74",
+      "name": "Acastus Knight Asterius",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Acastus Knight Asterius",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "8\""
+            },
+            {
+              "name": "T",
+              "value": "13"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "30"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "10"
+            }
+          ]
+        },
+        {
+          "name": "Sunderer of Fortresses",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Each time this model makes an attack that targets a VEHICLE, improve the Strength and Damage characteristics of that attack by 1. If that attack targets a FORTIFICATION, improve the Strength and Damage characteristics of that attack by 2 instead."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "765"
+        }
+      ]
+    },
+    {
+      "id": "61c9-8baf-22b4-5d84",
+      "name": "Acastus Knight Porphyrion",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Acastus Knight Porphyrion",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "8\""
+            },
+            {
+              "name": "T",
+              "value": "13"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "30"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "10"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "700"
+        },
+        {
+          "name": "Crusade Points",
+          "typeid": "b03b-c239-15a5-da55",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeid": "75bb-ded1-c86d-bdf0",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeid": "a623-fe74-1d33-cddf",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeid": "716d-91b7-d55a-1022",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "9ee-e289-bc6c-d943",
+      "name": "Cerastus Knight Lancer",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Cerastus Knight Lancer",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "14\""
+            },
+            {
+              "name": "T",
+              "value": "11"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "28"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "10"
+            }
+          ]
+        },
+        {
+          "name": "Shock Charge",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "You can target this model with the Tank Shock Stratagem for 0CP, and can do so even if you have already targeted a different unit with that Stratagem this phase."
+            }
+          ]
+        },
+        {
+          "name": "Invulnerable Save (4+)",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model has a 4+ invulnerable save."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "365"
+        },
+        {
+          "name": "Crusade Points",
+          "typeid": "b03b-c239-15a5-da55",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeid": "75bb-ded1-c86d-bdf0",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeid": "a623-fe74-1d33-cddf",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeid": "716d-91b7-d55a-1022",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "1654-5c17-474e-2d84",
+      "name": "Cerastus Knight Castigator",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Cerastus Knight Castigator",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "12\""
+            },
+            {
+              "name": "T",
+              "value": "11"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "28"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "10"
+            }
+          ]
+        },
+        {
+          "name": "Storm of Bolts",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "In your Shooting phase, after this model has shot, select one unit (excluding MONSTERS and VEHICLES) hit by one or more of those attacks. Until the start of your next turn, while this model is on the battlefield, that enemy unit is suppressed. While a unit is suppressed, each time a model in that unit makes an attack, subtract 1 from the Hit roll."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "365"
+        },
+        {
+          "name": "Crusade Points",
+          "typeid": "b03b-c239-15a5-da55",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeid": "75bb-ded1-c86d-bdf0",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeid": "a623-fe74-1d33-cddf",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeid": "716d-91b7-d55a-1022",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "11d3-167b-6dff-a4c2",
+      "name": "Cerastus Knight Acheron",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Cerastus Knight Acheron",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "12\""
+            },
+            {
+              "name": "T",
+              "value": "11"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "28"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "10"
+            }
+          ]
+        },
+        {
+          "name": "Searing Flames",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "In your Shooting phase, after this model has shot, select one enemy unit hit by one or more of those attacks made with an Acheron flame cannon. Until the end of the phase, that enemy unit cannot have the Benefit of Cover."
+            }
+          ]
+        },
+        {
+          "name": "Cerastus Knight Acheron",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model has a 5+ invulnerable save against ranged attacks only."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "365"
+        },
+        {
+          "name": "Crusade Points",
+          "typeid": "b03b-c239-15a5-da55",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeid": "75bb-ded1-c86d-bdf0",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeid": "a623-fe74-1d33-cddf",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeid": "716d-91b7-d55a-1022",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "1187-f3db-ea97-bada",
+      "name": "Reaper chainsword",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "➤ Reaper chainsword - strike",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "4"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "14"
+            },
+            {
+              "name": "AP",
+              "value": "-4"
+            },
+            {
+              "name": "D",
+              "value": "6"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "➤ Reaper chainsword - sweep",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "12"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "9"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "46b4-d0f2-76f3-1fbb",
+      "name": "Thunderstrike gauntlet",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "➤ Thunderstrike gauntlet - strike",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "4"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "20"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "8"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "➤ Thunderstrike gauntlet - sweep",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "8"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "10"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "3"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "37a7-d156-1e4c-8fe1",
+      "name": "Cerastus Knight Atrapos",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Cerastus Knight Atrapos",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "12\""
+            },
+            {
+              "name": "T",
+              "value": "11"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "28"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "10"
+            }
+          ]
+        },
+        {
+          "name": "Macro-extinction Protocols",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Each time this model makes an attack that targets a MONSTER or VEHICLE unit, add 1 to the Hit roll. If that target is TITANIC or TOWERING, add 1 to the Wound roll as well."
+            }
+          ]
+        },
+        {
+          "name": "Invulnerable Save (5+)",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model has a 5+ invulnerable save."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "365"
+        },
+        {
+          "name": "Crusade Points",
+          "typeid": "b03b-c239-15a5-da55",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeid": "75bb-ded1-c86d-bdf0",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeid": "a623-fe74-1d33-cddf",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeid": "716d-91b7-d55a-1022",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "adfa-19fc-7337-7350",
+      "name": "Questoris Knight Magaera",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Questoris Knight Magaera",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "10\""
+            },
+            {
+              "name": "T",
+              "value": "11"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "26"
+            },
+            {
+              "name": "LD",
+              "value": "+6"
+            },
+            {
+              "name": "OC",
+              "value": "10"
+            }
+          ]
+        },
+        {
+          "name": "Repair Auto-simulacra",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "At the end of your Command phase, this model regains up to D3 lost wounds."
+            }
+          ]
+        },
+        {
+          "name": "Invulnerable Save",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model has a 5+ invulnerable save."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "355"
+        },
+        {
+          "name": "Crusade Points",
+          "typeid": "b03b-c239-15a5-da55",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeid": "75bb-ded1-c86d-bdf0",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeid": "a623-fe74-1d33-cddf",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeid": "716d-91b7-d55a-1022",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "f8f3-a438-1212-93e8",
+      "name": "Questoris Knight Styrix",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Questoris Knight Styrix",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "10\""
+            },
+            {
+              "name": "T",
+              "value": "11"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "26"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "10"
+            }
+          ]
+        },
+        {
+          "name": "Invulnerable Save",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model has a 5+ invulnerable save."
+            }
+          ]
+        },
+        {
+          "name": "Grav-pinned",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "In your Shooting phase, after this model has shot, if an enemy INFANTRY unit was hit by one or more of those attacks made with a graviton crusher, until the end of your opponent’s next turn, that enemy unit is grav-pinned. While a unit is grav-pinned, subtract 2 from that unit’s Move characteristic and subtract 2 from Charge rolls made for that unit."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "355"
+        },
+        {
+          "name": "Crusade Points",
+          "typeid": "b03b-c239-15a5-da55",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeid": "75bb-ded1-c86d-bdf0",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeid": "a623-fe74-1d33-cddf",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeid": "716d-91b7-d55a-1022",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "399f-6556-27f-71",
+      "name": "Hekaton siege claw",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "➤ Hekaton siege claw - strike",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "4"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "20"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "8"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "➤ Hekaton siege claw - sweep",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "8"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "10"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "3"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "3c65-a624-17db-64c4",
+      "name": "Twin rad cleanser",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Twin rad cleanser",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "12\""
+            },
+            {
+              "name": "A",
+              "value": "D6"
+            },
+            {
+              "name": "BS",
+              "value": "N/A"
+            },
+            {
+              "name": "S",
+              "value": "2"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Torrent, Ignores Cover, Anti-Infantry 2+, Twin-linked"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "e3dd-7e90-140a-b3ab",
+      "name": "Armiger Moirax",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Armiger Moirax",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "12\""
+            },
+            {
+              "name": "T",
+              "value": "9"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "14"
+            },
+            {
+              "name": "LD",
+              "value": "7+"
+            },
+            {
+              "name": "OC",
+              "value": "6"
+            }
+          ]
+        },
+        {
+          "name": "Protection Protocols",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "You can target this unit with the Heroic Intervention Stratagem for 0CP, and can do so even if you have already targeted a different unit with that Stratagem this phase."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "150"
+        },
+        {
+          "name": "Crusade Points",
+          "typeid": "b03b-c239-15a5-da55",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeid": "75bb-ded1-c86d-bdf0",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeid": "a623-fe74-1d33-cddf",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeid": "716d-91b7-d55a-1022",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "e82c-6f8c-2b97-a287",
+      "name": "Show Imperial Knights",
+      "type": "upgrade"
+    },
+    {
+      "id": "3a05-e1f7-7966-ce43",
+      "name": "Titanic feet",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Titanic feet",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "6"
+            },
+            {
+              "name": "WS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "10"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "541e-cd89-cb31-4ee6",
+      "name": "Armoured feet",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Armoured feet",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "4"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "55fb-9c91-1a4f-3037",
+      "name": "Canis Rex",
+      "type": "unit",
+      "entries": [
+        {
+          "id": "84c0-f59d-901a-e94f",
+          "name": "Canis Rex",
+          "type": "model",
+          "entries": [
+            {
+              "id": "f1aa-b2e0-2fa8-4c39",
+              "name": "Chainbreaker las-impulsor",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "➤ Chainbreaker las-impulsor - high intensity",
+                  "type": "Ranged Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "24\""
+                    },
+                    {
+                      "name": "A",
+                      "value": "D6"
+                    },
+                    {
+                      "name": "BS",
+                      "value": "2+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "14"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-3"
+                    },
+                    {
+                      "name": "D",
+                      "value": "4"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "Blast, Sustained Hits 1"
+                    }
+                  ]
+                },
+                {
+                  "name": "➤ Chainbreaker las-impulsor - low intensity",
+                  "type": "Ranged Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "36\""
+                    },
+                    {
+                      "name": "A",
+                      "value": "2D6"
+                    },
+                    {
+                      "name": "BS",
+                      "value": "2+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "7"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-1"
+                    },
+                    {
+                      "name": "D",
+                      "value": "2"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "Blast, Sustained Hits 1"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "70b4-8523-6b7c-1b0a",
+              "name": "Freedom's Hand",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "➤ Freedom's Hand - strike",
+                  "type": "Melee Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "Melee"
+                    },
+                    {
+                      "name": "A",
+                      "value": "5"
+                    },
+                    {
+                      "name": "WS",
+                      "value": "2+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "20"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-3"
+                    },
+                    {
+                      "name": "D",
+                      "value": "9"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "Sustained Hits 1"
+                    }
+                  ]
+                },
+                {
+                  "name": "➤ Freedom's Hand - sweep",
+                  "type": "Melee Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "Melee"
+                    },
+                    {
+                      "name": "A",
+                      "value": "10"
+                    },
+                    {
+                      "name": "WS",
+                      "value": "2+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "10"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-2"
+                    },
+                    {
+                      "name": "D",
+                      "value": "3"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "Sustained Hits 1"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "43a9-66c5-ec02-baa9",
+              "name": "Chainbreaker multi-laser",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Chainbreaker multi-laser",
+                  "type": "Ranged Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "36\""
+                    },
+                    {
+                      "name": "A",
+                      "value": "4"
+                    },
+                    {
+                      "name": "BS",
+                      "value": "2+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "6"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "0"
+                    },
+                    {
+                      "name": "D",
+                      "value": "1"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "Sustained Hits 1"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "profiles": [
+            {
+              "name": "Canis Rex",
+              "type": "Unit",
+              "lines": [
+                {
+                  "name": "M",
+                  "value": "10\""
+                },
+                {
+                  "name": "T",
+                  "value": "11"
+                },
+                {
+                  "name": "SV",
+                  "value": "3+"
+                },
+                {
+                  "name": "W",
+                  "value": "26"
+                },
+                {
+                  "name": "LD",
+                  "value": "5+"
+                },
+                {
+                  "name": "OC",
+                  "value": "10"
+                }
+              ]
+            },
+            {
+              "name": "Chainbreaker",
+              "type": "Abilities",
+              "lines": [
+                {
+                  "name": "Description",
+                  "value": "Each time this model makes an attack, an unmodified successful Hit roll of 5+ scores a Critical Hit."
+                }
+              ]
+            },
+            {
+              "name": "Legendary Freeblade",
+              "type": "Abilities",
+              "lines": [
+                {
+                  "name": "Description",
+                  "value": "Once per turn, one unit from your army with this ability can use it when its unit is targeted with a Stratagem. If it does, reduce the CP cost of that use of that Stratagem by 1CP."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "a41b-81a0-ca89-75c1",
+          "name": "Sir Hekhtur",
+          "type": "model",
+          "entries": [
+            {
+              "id": "b74a-d992-b5eb-23ff",
+              "name": "Close combat weapon",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Close combat weapon",
+                  "type": "Melee Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "Melee"
+                    },
+                    {
+                      "name": "A",
+                      "value": "2"
+                    },
+                    {
+                      "name": "WS",
+                      "value": "2+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "3"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "0"
+                    },
+                    {
+                      "name": "D",
+                      "value": "1"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "-"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "e8b4-ffab-1b5c-d2a0",
+              "name": "Hekhtur's pistol",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Hekhtur's pistol",
+                  "type": "Ranged Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "12\""
+                    },
+                    {
+                      "name": "A",
+                      "value": "1"
+                    },
+                    {
+                      "name": "BS",
+                      "value": "2+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "5"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-1"
+                    },
+                    {
+                      "name": "D",
+                      "value": "2"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "Pistol"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "profiles": [
+            {
+              "name": "Sir Hekhtur",
+              "type": "Unit",
+              "lines": [
+                {
+                  "name": "M",
+                  "value": "6\""
+                },
+                {
+                  "name": "T",
+                  "value": "3"
+                },
+                {
+                  "name": "SV",
+                  "value": "4+"
+                },
+                {
+                  "name": "W",
+                  "value": "3"
+                },
+                {
+                  "name": "LD",
+                  "value": "5+"
+                },
+                {
+                  "name": "OC",
+                  "value": "1"
+                }
+              ]
+            },
+            {
+              "name": "Using Sir Hekhtur",
+              "type": "Abilities",
+              "lines": [
+                {
+                  "name": "Description",
+                  "value": "When your Canis Rex model is destroyed, Sir Hekhtur is treated as a model disembarking from a destroyed TRANSPORT – set him up within 3\" of your Canis Rex model before it is removed. Sir Hekhtur then uses the profile, wargear, abilities and keywords shown on this side of the card, but cannot be selected as the target of any of your Stratagems other than Core Stratagems. Your Canis Rex unit is not considered to be destroyed until Sir Hekhtur is also destroyed."
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "380"
+        },
+        {
+          "name": "Crusade Points",
+          "typeid": "b03b-c239-15a5-da55",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeid": "75bb-ded1-c86d-bdf0",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeid": "a623-fe74-1d33-cddf",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeid": "716d-91b7-d55a-1022",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "5bbd-c5d3-58d7-e391",
+      "name": "Armiger Warglaive",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Armiger Warglaive",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "12\""
+            },
+            {
+              "name": "T",
+              "value": "9"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "14"
+            },
+            {
+              "name": "LD",
+              "value": "7+"
+            },
+            {
+              "name": "OC",
+              "value": "6"
+            }
+          ]
+        },
+        {
+          "name": "Impetuous Glory",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Each time this model makes a Charge move, until the end of the turn, melee weapons equipped by this model have the [SUSTAINED HITS 1] ability."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "140"
+        },
+        {
+          "name": "Crusade Points",
+          "typeid": "b03b-c239-15a5-da55",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeid": "75bb-ded1-c86d-bdf0",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeid": "a623-fe74-1d33-cddf",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeid": "716d-91b7-d55a-1022",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "7314-3c4a-36ab-a594",
+      "name": "Armiger Helverin",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Armiger Helverin",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "12\""
+            },
+            {
+              "name": "T",
+              "value": "9"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "14"
+            },
+            {
+              "name": "LD",
+              "value": "7+"
+            },
+            {
+              "name": "OC",
+              "value": "6"
+            }
+          ]
+        },
+        {
+          "name": "Skyfire Protocols",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this model is either wholly within your deployment zone or within range of an objective marker you control, its Armiger autocannons have the [ANTI-FLY 2+] ability."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "130"
+        },
+        {
+          "name": "Crusade Points",
+          "typeid": "b03b-c239-15a5-da55",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeid": "75bb-ded1-c86d-bdf0",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeid": "a623-fe74-1d33-cddf",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeid": "716d-91b7-d55a-1022",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "8441-8356-5e7c-69ee",
+      "name": "Knight Paladin",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Knight Paladin",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "10\""
+            },
+            {
+              "name": "T",
+              "value": "11"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "26"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "10"
+            }
+          ]
+        },
+        {
+          "name": "Seasoned Noble",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Once per phase, you can re-roll one Hit roll, one Wound roll or one saving throw made for this model."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "345"
+        },
+        {
+          "name": "Crusade Points",
+          "typeid": "b03b-c239-15a5-da55",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeid": "75bb-ded1-c86d-bdf0",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeid": "a623-fe74-1d33-cddf",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeid": "716d-91b7-d55a-1022",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "9efd-ec72-353f-4b23",
+      "name": "Knight Errant",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Knight Errant",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "10\""
+            },
+            {
+              "name": "T",
+              "value": "11"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "26"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "10"
+            }
+          ]
+        },
+        {
+          "name": "Aggressive Assault",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Each time this model makes a ranged attack against the closest eligible target, add 1 to the Hit roll."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "345"
+        },
+        {
+          "name": "Crusade Points",
+          "typeid": "b03b-c239-15a5-da55",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeid": "75bb-ded1-c86d-bdf0",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeid": "a623-fe74-1d33-cddf",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeid": "716d-91b7-d55a-1022",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "eb4-4a67-11e9-3cb8",
+      "name": "Knight Gallant",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Knight Gallant",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "12\""
+            },
+            {
+              "name": "T",
+              "value": "11"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "26"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "10"
+            }
+          ]
+        },
+        {
+          "name": "Martial Pride",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Each time a melee attack targets this model, subtract 1 from the Hit roll."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "345"
+        },
+        {
+          "name": "Crusade Points",
+          "typeid": "b03b-c239-15a5-da55",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeid": "75bb-ded1-c86d-bdf0",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeid": "a623-fe74-1d33-cddf",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeid": "716d-91b7-d55a-1022",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "c609-c87e-f9dd-5006",
+      "name": "Knight Warden",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Knight Warden",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "10\""
+            },
+            {
+              "name": "T",
+              "value": "11"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "26"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "10"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "365"
+        },
+        {
+          "name": "Crusade Points",
+          "typeid": "b03b-c239-15a5-da55",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeid": "75bb-ded1-c86d-bdf0",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeid": "a623-fe74-1d33-cddf",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeid": "716d-91b7-d55a-1022",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "1e27-a6de-3840-a050",
+      "name": "Knight Crusader",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Knight Crusader",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "10\""
+            },
+            {
+              "name": "T",
+              "value": "11"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "26"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "10"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "365"
+        },
+        {
+          "name": "Crusade Points",
+          "typeid": "b03b-c239-15a5-da55",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeid": "75bb-ded1-c86d-bdf0",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeid": "a623-fe74-1d33-cddf",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeid": "716d-91b7-d55a-1022",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "ebd9-7175-3f0c-72a9",
+      "name": "Knight Preceptor",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Knight Preceptor",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "10\""
+            },
+            {
+              "name": "T",
+              "value": "11"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "26"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "10"
+            }
+          ]
+        },
+        {
+          "name": "Exemplar of the Code",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "At the start of the battle, select one unit from your opponent’s army. Each time this model makes an attack that targets that unit, you can re-roll the Hit roll."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "335"
+        },
+        {
+          "name": "Crusade Points",
+          "typeid": "b03b-c239-15a5-da55",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeid": "75bb-ded1-c86d-bdf0",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeid": "a623-fe74-1d33-cddf",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeid": "716d-91b7-d55a-1022",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "6e36-f85-1c3b-8bf3",
+      "name": "Knight Castellan",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Knight Castellan",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "8\""
+            },
+            {
+              "name": "T",
+              "value": "12"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "28"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "10"
+            }
+          ]
+        },
+        {
+          "name": "Ion Aegis (Aura)",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While a friendly ARMIGER model is within 6\" of this model, that ARMIGER models has the Benefits of Cover."
+            }
+          ]
+        },
+        {
+          "name": "Titan Hunter",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Each time a ranged attack made by this model is allocated to a MONSTER or VEHICLE model, re-roll a Damage roll of 1."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "395"
+        },
+        {
+          "name": "Crusade Points",
+          "typeid": "b03b-c239-15a5-da55",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeid": "75bb-ded1-c86d-bdf0",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeid": "a623-fe74-1d33-cddf",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeid": "716d-91b7-d55a-1022",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "8fb9-50b2-adc6-161a",
+      "name": "Knight Valiant",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Knight Valiant",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "8\""
+            },
+            {
+              "name": "T",
+              "value": "12"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "28"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "10"
+            }
+          ]
+        },
+        {
+          "name": "Ion Aegis (Aura)",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While a friendly ARMIGER model is within 6\" of this model, that ARMIGER models has the Benefits of Cover."
+            }
+          ]
+        },
+        {
+          "name": "Overwhelming Firestorm",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "In your Shooting phase, after this model has shot, select one enemy unit hit by this model this phase. That unit must take a Battle-shock test."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "395"
+        },
+        {
+          "name": "Crusade Points",
+          "typeid": "b03b-c239-15a5-da55",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeid": "75bb-ded1-c86d-bdf0",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeid": "a623-fe74-1d33-cddf",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeid": "716d-91b7-d55a-1022",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "f8d0-fdf2-2e5e-3b74",
+      "name": "Acastus Knight Asterius",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Acastus Knight Asterius",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "8\""
+            },
+            {
+              "name": "T",
+              "value": "13"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "30"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "10"
+            }
+          ]
+        },
+        {
+          "name": "Sunderer of Fortresses",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Each time this model makes an attack that targets a VEHICLE, improve the Strength and Damage characteristics of that attack by 1. If that attack targets a FORTIFICATION, improve the Strength and Damage characteristics of that attack by 2 instead."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "765"
+        }
+      ]
+    },
+    {
+      "id": "61c9-8baf-22b4-5d84",
+      "name": "Acastus Knight Porphyrion",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Acastus Knight Porphyrion",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "8\""
+            },
+            {
+              "name": "T",
+              "value": "13"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "30"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "10"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "700"
+        },
+        {
+          "name": "Crusade Points",
+          "typeid": "b03b-c239-15a5-da55",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeid": "75bb-ded1-c86d-bdf0",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeid": "a623-fe74-1d33-cddf",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeid": "716d-91b7-d55a-1022",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "9ee-e289-bc6c-d943",
+      "name": "Cerastus Knight Lancer",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Cerastus Knight Lancer",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "14\""
+            },
+            {
+              "name": "T",
+              "value": "11"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "28"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "10"
+            }
+          ]
+        },
+        {
+          "name": "Shock Charge",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "You can target this model with the Tank Shock Stratagem for 0CP, and can do so even if you have already targeted a different unit with that Stratagem this phase."
+            }
+          ]
+        },
+        {
+          "name": "Invulnerable Save (4+)",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model has a 4+ invulnerable save."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "365"
+        },
+        {
+          "name": "Crusade Points",
+          "typeid": "b03b-c239-15a5-da55",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeid": "75bb-ded1-c86d-bdf0",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeid": "a623-fe74-1d33-cddf",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeid": "716d-91b7-d55a-1022",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "1654-5c17-474e-2d84",
+      "name": "Cerastus Knight Castigator",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Cerastus Knight Castigator",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "12\""
+            },
+            {
+              "name": "T",
+              "value": "11"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "28"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "10"
+            }
+          ]
+        },
+        {
+          "name": "Storm of Bolts",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "In your Shooting phase, after this model has shot, select one unit (excluding MONSTERS and VEHICLES) hit by one or more of those attacks. Until the start of your next turn, while this model is on the battlefield, that enemy unit is suppressed. While a unit is suppressed, each time a model in that unit makes an attack, subtract 1 from the Hit roll."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "365"
+        },
+        {
+          "name": "Crusade Points",
+          "typeid": "b03b-c239-15a5-da55",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeid": "75bb-ded1-c86d-bdf0",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeid": "a623-fe74-1d33-cddf",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeid": "716d-91b7-d55a-1022",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "11d3-167b-6dff-a4c2",
+      "name": "Cerastus Knight Acheron",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Cerastus Knight Acheron",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "12\""
+            },
+            {
+              "name": "T",
+              "value": "11"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "28"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "10"
+            }
+          ]
+        },
+        {
+          "name": "Searing Flames",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "In your Shooting phase, after this model has shot, select one enemy unit hit by one or more of those attacks made with an Acheron flame cannon. Until the end of the phase, that enemy unit cannot have the Benefit of Cover."
+            }
+          ]
+        },
+        {
+          "name": "Cerastus Knight Acheron",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model has a 5+ invulnerable save against ranged attacks only."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "365"
+        },
+        {
+          "name": "Crusade Points",
+          "typeid": "b03b-c239-15a5-da55",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeid": "75bb-ded1-c86d-bdf0",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeid": "a623-fe74-1d33-cddf",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeid": "716d-91b7-d55a-1022",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "37a7-d156-1e4c-8fe1",
+      "name": "Cerastus Knight Atrapos",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Cerastus Knight Atrapos",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "12\""
+            },
+            {
+              "name": "T",
+              "value": "11"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "28"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "10"
+            }
+          ]
+        },
+        {
+          "name": "Macro-extinction Protocols",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Each time this model makes an attack that targets a MONSTER or VEHICLE unit, add 1 to the Hit roll. If that target is TITANIC or TOWERING, add 1 to the Wound roll as well."
+            }
+          ]
+        },
+        {
+          "name": "Invulnerable Save (5+)",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model has a 5+ invulnerable save."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "365"
+        },
+        {
+          "name": "Crusade Points",
+          "typeid": "b03b-c239-15a5-da55",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeid": "75bb-ded1-c86d-bdf0",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeid": "a623-fe74-1d33-cddf",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeid": "716d-91b7-d55a-1022",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "adfa-19fc-7337-7350",
+      "name": "Questoris Knight Magaera",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Questoris Knight Magaera",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "10\""
+            },
+            {
+              "name": "T",
+              "value": "11"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "26"
+            },
+            {
+              "name": "LD",
+              "value": "+6"
+            },
+            {
+              "name": "OC",
+              "value": "10"
+            }
+          ]
+        },
+        {
+          "name": "Repair Auto-simulacra",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "At the end of your Command phase, this model regains up to D3 lost wounds."
+            }
+          ]
+        },
+        {
+          "name": "Invulnerable Save",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model has a 5+ invulnerable save."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "355"
+        },
+        {
+          "name": "Crusade Points",
+          "typeid": "b03b-c239-15a5-da55",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeid": "75bb-ded1-c86d-bdf0",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeid": "a623-fe74-1d33-cddf",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeid": "716d-91b7-d55a-1022",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "f8f3-a438-1212-93e8",
+      "name": "Questoris Knight Styrix",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Questoris Knight Styrix",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "10\""
+            },
+            {
+              "name": "T",
+              "value": "11"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "26"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "10"
+            }
+          ]
+        },
+        {
+          "name": "Invulnerable Save",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model has a 5+ invulnerable save."
+            }
+          ]
+        },
+        {
+          "name": "Grav-pinned",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "In your Shooting phase, after this model has shot, if an enemy INFANTRY unit was hit by one or more of those attacks made with a graviton crusher, until the end of your opponent’s next turn, that enemy unit is grav-pinned. While a unit is grav-pinned, subtract 2 from that unit’s Move characteristic and subtract 2 from Charge rolls made for that unit."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "355"
+        },
+        {
+          "name": "Crusade Points",
+          "typeid": "b03b-c239-15a5-da55",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeid": "75bb-ded1-c86d-bdf0",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeid": "a623-fe74-1d33-cddf",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeid": "716d-91b7-d55a-1022",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "e3dd-7e90-140a-b3ab",
+      "name": "Armiger Moirax",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Armiger Moirax",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "12\""
+            },
+            {
+              "name": "T",
+              "value": "9"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "14"
+            },
+            {
+              "name": "LD",
+              "value": "7+"
+            },
+            {
+              "name": "OC",
+              "value": "6"
+            }
+          ]
+        },
+        {
+          "name": "Protection Protocols",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "You can target this unit with the Heroic Intervention Stratagem for 0CP, and can do so even if you have already targeted a different unit with that Stratagem this phase."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "150"
+        },
+        {
+          "name": "Crusade Points",
+          "typeid": "b03b-c239-15a5-da55",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeid": "75bb-ded1-c86d-bdf0",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeid": "a623-fe74-1d33-cddf",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeid": "716d-91b7-d55a-1022",
+          "value": "0"
+        }
+      ]
+    }
+  ]
+}

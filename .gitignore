@@ -30,3 +30,12 @@ go.work.sum
 # Editor/IDE
 # .idea/
 # .vscode/
+
+# Project-specific ignores
+w40k-duel          # Main binary
+bin/               # Built binaries
+tmp/               # Temporary files
+*.log              # Log files
+server.log         # Server logs
+static/raw/        # Downloaded .cat files (temporary)
+necron_*.json      # Test files

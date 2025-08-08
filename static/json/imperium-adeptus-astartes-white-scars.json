@@ -1,0 +1,300 @@
+{
+  "factionname": "Imperium - Adeptus Astartes - White Scars",
+  "units": [
+    {
+      "id": "63f3-6aeb-c9ed-abfc",
+      "name": "Kor'sarro Khan",
+      "type": "model",
+      "entries": [
+        {
+          "id": "1d9c-e037-5d69-4b67",
+          "name": "Moonfang",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Moonfang",
+              "type": "Melee Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "Melee"
+                },
+                {
+                  "name": "A",
+                  "value": "6"
+                },
+                {
+                  "name": "WS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "5"
+                },
+                {
+                  "name": "AP",
+                  "value": "-2"
+                },
+                {
+                  "name": "D",
+                  "value": "2"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Devastating Wounds, Precision"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Kor'sarro Khan",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "6\""
+            },
+            {
+              "name": "T",
+              "value": "4"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "5"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "name": "For the Khan!",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this model is leading a unit, ranged weapons equipped by models in that unit have the [ASSAULT] ability and melee weapons equipped by models in that unit have the [LANCE] ability."
+            }
+          ]
+        },
+        {
+          "name": "Trophy Taker",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Each time this model destroys an enemy Character model, you gain 1CP"
+            }
+          ]
+        },
+        {
+          "name": "Leader",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model can be attached to the following units:\n\n■ Assault Intercessor Squad\n■ Bladeguard Veteran Squad\n■ Intercessor Squad\n■ Sternguard Veteran Squad\n■ Tactical Squad\n■ Company Heroes"
+            }
+          ]
+        },
+        {
+          "name": "Inspiring Commander",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "If you include this model in your army, until the end of the battle, non-Character models in Outrider Squad units from your army have an Objective Control characteristic of 3 while they are not Battle-shocked."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "70"
+        }
+      ]
+    },
+    {
+      "id": "1d9c-e037-5d69-4b67",
+      "name": "Moonfang",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Moonfang",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "6"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Devastating Wounds, Precision"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "63f3-6aeb-c9ed-abfc",
+      "name": "Kor'sarro Khan",
+      "type": "model",
+      "entries": [
+        {
+          "id": "1d9c-e037-5d69-4b67",
+          "name": "Moonfang",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Moonfang",
+              "type": "Melee Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "Melee"
+                },
+                {
+                  "name": "A",
+                  "value": "6"
+                },
+                {
+                  "name": "WS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "5"
+                },
+                {
+                  "name": "AP",
+                  "value": "-2"
+                },
+                {
+                  "name": "D",
+                  "value": "2"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Devastating Wounds, Precision"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Kor'sarro Khan",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "6\""
+            },
+            {
+              "name": "T",
+              "value": "4"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "5"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "name": "For the Khan!",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this model is leading a unit, ranged weapons equipped by models in that unit have the [ASSAULT] ability and melee weapons equipped by models in that unit have the [LANCE] ability."
+            }
+          ]
+        },
+        {
+          "name": "Trophy Taker",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Each time this model destroys an enemy Character model, you gain 1CP"
+            }
+          ]
+        },
+        {
+          "name": "Leader",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model can be attached to the following units:\n\n■ Assault Intercessor Squad\n■ Bladeguard Veteran Squad\n■ Intercessor Squad\n■ Sternguard Veteran Squad\n■ Tactical Squad\n■ Company Heroes"
+            }
+          ]
+        },
+        {
+          "name": "Inspiring Commander",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "If you include this model in your army, until the end of the battle, non-Character models in Outrider Squad units from your army have an Objective Control characteristic of 3 while they are not Battle-shocked."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "70"
+        }
+      ]
+    }
+  ]
+}

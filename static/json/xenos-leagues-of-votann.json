@@ -1,0 +1,5171 @@
+{
+  "factionname": "Xenos - Leagues of Votann",
+  "units": [
+    {
+      "id": "5914-3326-fac9-bf29",
+      "name": "Detachment",
+      "type": "upgrade",
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "2e6e-95a1-60ad-7b1c",
+      "name": "Ûthar the Destined",
+      "type": "model",
+      "entries": [
+        {
+          "id": "677d-60c2-7663-aa31",
+          "name": "Blade of the Ancestors",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Blade of the Ancestors",
+              "type": "Melee Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "Melee"
+                },
+                {
+                  "name": "A",
+                  "value": "5"
+                },
+                {
+                  "name": "WS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "6"
+                },
+                {
+                  "name": "AP",
+                  "value": "-3"
+                },
+                {
+                  "name": "D",
+                  "value": "2"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Devastating Wounds"
+                }
+              ]
+            }
+          ],
+          "costs": [
+            {
+              "name": "pts",
+              "typeid": "51b2-306e-1021-d207",
+              "value": "0"
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Ûthar the Destined",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "5\""
+            },
+            {
+              "name": "T",
+              "value": "5"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "5"
+            },
+            {
+              "name": "LD",
+              "value": "7+"
+            },
+            {
+              "name": "OC",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "name": "Ancestral Fortune",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Once per turn, you can change one Hit roll or one Wound roll made for this model to an unmodified 6."
+            }
+          ]
+        },
+        {
+          "name": "The Destined",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Each time an attack is allocated to this model, change the Damage characteristic of that attack to 1."
+            }
+          ]
+        },
+        {
+          "name": "Leader",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model can be attached to the following units:\n- Einhyr Hearthguard\n- Hearthkyn Warriors"
+            }
+          ]
+        },
+        {
+          "name": "Invulnerable Save",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model has a 4+ invulnerable save."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "80"
+        }
+      ]
+    },
+    {
+      "id": "677d-60c2-7663-aa31",
+      "name": "Blade of the Ancestors",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Blade of the Ancestors",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "5"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Devastating Wounds"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "ba4f-c3f9-6925-af0c",
+      "name": "Hearthkyn Warriors",
+      "type": "unit",
+      "entries": [
+        {
+          "id": "4782-445d-730e-6b69",
+          "name": "Hearthkyn Warrior",
+          "type": "model",
+          "entries": [
+            {
+              "id": "31fd-4b29-165b-4d32",
+              "name": "Autoch-pattern bolt pistol",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Autoch-pattern bolt pistol",
+                  "type": "Ranged Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "12\""
+                    },
+                    {
+                      "name": "A",
+                      "value": "1"
+                    },
+                    {
+                      "name": "BS",
+                      "value": "4+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "4"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "0"
+                    },
+                    {
+                      "name": "D",
+                      "value": "1"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "Pistol"
+                    }
+                  ]
+                }
+              ],
+              "costs": [
+                {
+                  "name": "pts",
+                  "typeid": "51b2-306e-1021-d207",
+                  "value": "0"
+                }
+              ]
+            },
+            {
+              "id": "88c5-45b5-7075-ee60",
+              "name": "Close combat weapon",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Close combat weapon",
+                  "type": "Melee Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "Melee"
+                    },
+                    {
+                      "name": "A",
+                      "value": "1"
+                    },
+                    {
+                      "name": "WS",
+                      "value": "4+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "4"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "0"
+                    },
+                    {
+                      "name": "D",
+                      "value": "1"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "-"
+                    }
+                  ]
+                }
+              ],
+              "costs": [
+                {
+                  "name": "pts",
+                  "typeid": "51b2-306e-1021-d207",
+                  "value": "0"
+                }
+              ]
+            }
+          ],
+          "costs": [
+            {
+              "name": "pts",
+              "typeid": "51b2-306e-1021-d207",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "id": "a6be-cc47-2ad2-1889",
+          "name": "Theyn",
+          "type": "model",
+          "entries": [
+            {
+              "id": "50c2-759c-861f-8dcb",
+              "name": "Close combat weapon",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Close combat weapon",
+                  "type": "Melee Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "Melee"
+                    },
+                    {
+                      "name": "A",
+                      "value": "1"
+                    },
+                    {
+                      "name": "WS",
+                      "value": "4+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "4"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "0"
+                    },
+                    {
+                      "name": "D",
+                      "value": "1"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "-"
+                    }
+                  ]
+                }
+              ],
+              "costs": [
+                {
+                  "name": "pts",
+                  "typeid": "51b2-306e-1021-d207",
+                  "value": "0"
+                }
+              ]
+            }
+          ],
+          "costs": [
+            {
+              "name": "pts",
+              "typeid": "51b2-306e-1021-d207",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "id": "3d4a-9d09-be51-1a5f",
+          "name": "Hearthkyn Warrior w/ heavy weapon",
+          "type": "model",
+          "entries": [
+            {
+              "id": "40db-4ad2-97bb-b576",
+              "name": "Close combat weapon",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Close combat weapon",
+                  "type": "Melee Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "Melee"
+                    },
+                    {
+                      "name": "A",
+                      "value": "1"
+                    },
+                    {
+                      "name": "WS",
+                      "value": "4+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "4"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "0"
+                    },
+                    {
+                      "name": "D",
+                      "value": "1"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "-"
+                    }
+                  ]
+                }
+              ],
+              "costs": [
+                {
+                  "name": "pts",
+                  "typeid": "51b2-306e-1021-d207",
+                  "value": "0"
+                }
+              ]
+            },
+            {
+              "id": "76f8-82c5-db79-b160",
+              "name": "Autoch-pattern bolt pistol",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Autoch-pattern bolt pistol",
+                  "type": "Ranged Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "12\""
+                    },
+                    {
+                      "name": "A",
+                      "value": "1"
+                    },
+                    {
+                      "name": "BS",
+                      "value": "4+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "4"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "0"
+                    },
+                    {
+                      "name": "D",
+                      "value": "1"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "Pistol"
+                    }
+                  ]
+                }
+              ],
+              "costs": [
+                {
+                  "name": "pts",
+                  "typeid": "51b2-306e-1021-d207",
+                  "value": "0"
+                }
+              ]
+            }
+          ],
+          "costs": [
+            {
+              "name": "pts",
+              "typeid": "51b2-306e-1021-d207",
+              "value": "0"
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Luck Has, Need Keeps, Toil Earns",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "At the end of your Command phase, if this unit is within range of an objective marker you control, that objective marker remains under your control, even if you have no models within range of it, until your opponent controls it at the start or end of any turn."
+            }
+          ]
+        },
+        {
+          "name": "Hearthkyn Warriors",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "5\""
+            },
+            {
+              "name": "T",
+              "value": "5"
+            },
+            {
+              "name": "SV",
+              "value": "4+"
+            },
+            {
+              "name": "W",
+              "value": "1"
+            },
+            {
+              "name": "LD",
+              "value": "7+"
+            },
+            {
+              "name": "OC",
+              "value": "2"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "100"
+        }
+      ]
+    },
+    {
+      "id": "4782-445d-730e-6b69",
+      "name": "Hearthkyn Warrior",
+      "type": "model",
+      "entries": [
+        {
+          "id": "31fd-4b29-165b-4d32",
+          "name": "Autoch-pattern bolt pistol",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Autoch-pattern bolt pistol",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "12\""
+                },
+                {
+                  "name": "A",
+                  "value": "1"
+                },
+                {
+                  "name": "BS",
+                  "value": "4+"
+                },
+                {
+                  "name": "S",
+                  "value": "4"
+                },
+                {
+                  "name": "AP",
+                  "value": "0"
+                },
+                {
+                  "name": "D",
+                  "value": "1"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Pistol"
+                }
+              ]
+            }
+          ],
+          "costs": [
+            {
+              "name": "pts",
+              "typeid": "51b2-306e-1021-d207",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "id": "88c5-45b5-7075-ee60",
+          "name": "Close combat weapon",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Close combat weapon",
+              "type": "Melee Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "Melee"
+                },
+                {
+                  "name": "A",
+                  "value": "1"
+                },
+                {
+                  "name": "WS",
+                  "value": "4+"
+                },
+                {
+                  "name": "S",
+                  "value": "4"
+                },
+                {
+                  "name": "AP",
+                  "value": "0"
+                },
+                {
+                  "name": "D",
+                  "value": "1"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "-"
+                }
+              ]
+            }
+          ],
+          "costs": [
+            {
+              "name": "pts",
+              "typeid": "51b2-306e-1021-d207",
+              "value": "0"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "31fd-4b29-165b-4d32",
+      "name": "Autoch-pattern bolt pistol",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Autoch-pattern bolt pistol",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "12\""
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Pistol"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "88c5-45b5-7075-ee60",
+      "name": "Close combat weapon",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Close combat weapon",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "WS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "a6be-cc47-2ad2-1889",
+      "name": "Theyn",
+      "type": "model",
+      "entries": [
+        {
+          "id": "50c2-759c-861f-8dcb",
+          "name": "Close combat weapon",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Close combat weapon",
+              "type": "Melee Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "Melee"
+                },
+                {
+                  "name": "A",
+                  "value": "1"
+                },
+                {
+                  "name": "WS",
+                  "value": "4+"
+                },
+                {
+                  "name": "S",
+                  "value": "4"
+                },
+                {
+                  "name": "AP",
+                  "value": "0"
+                },
+                {
+                  "name": "D",
+                  "value": "1"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "-"
+                }
+              ]
+            }
+          ],
+          "costs": [
+            {
+              "name": "pts",
+              "typeid": "51b2-306e-1021-d207",
+              "value": "0"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "50c2-759c-861f-8dcb",
+      "name": "Close combat weapon",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Close combat weapon",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "WS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "3d4a-9d09-be51-1a5f",
+      "name": "Hearthkyn Warrior w/ heavy weapon",
+      "type": "model",
+      "entries": [
+        {
+          "id": "40db-4ad2-97bb-b576",
+          "name": "Close combat weapon",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Close combat weapon",
+              "type": "Melee Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "Melee"
+                },
+                {
+                  "name": "A",
+                  "value": "1"
+                },
+                {
+                  "name": "WS",
+                  "value": "4+"
+                },
+                {
+                  "name": "S",
+                  "value": "4"
+                },
+                {
+                  "name": "AP",
+                  "value": "0"
+                },
+                {
+                  "name": "D",
+                  "value": "1"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "-"
+                }
+              ]
+            }
+          ],
+          "costs": [
+            {
+              "name": "pts",
+              "typeid": "51b2-306e-1021-d207",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "id": "76f8-82c5-db79-b160",
+          "name": "Autoch-pattern bolt pistol",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Autoch-pattern bolt pistol",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "12\""
+                },
+                {
+                  "name": "A",
+                  "value": "1"
+                },
+                {
+                  "name": "BS",
+                  "value": "4+"
+                },
+                {
+                  "name": "S",
+                  "value": "4"
+                },
+                {
+                  "name": "AP",
+                  "value": "0"
+                },
+                {
+                  "name": "D",
+                  "value": "1"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Pistol"
+                }
+              ]
+            }
+          ],
+          "costs": [
+            {
+              "name": "pts",
+              "typeid": "51b2-306e-1021-d207",
+              "value": "0"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "40db-4ad2-97bb-b576",
+      "name": "Close combat weapon",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Close combat weapon",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "WS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "76f8-82c5-db79-b160",
+      "name": "Autoch-pattern bolt pistol",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Autoch-pattern bolt pistol",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "12\""
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Pistol"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "0369-3c56-a9d1-307d",
+      "name": "Rampart crest",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Rampart crest",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While the bearer is leading a unit, models in that unit have a 5+ invulnerable save."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "1b00-2abb-718f-def6",
+      "name": "Kâhl",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Kâhl",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "5\""
+            },
+            {
+              "name": "T",
+              "value": "5"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "4"
+            },
+            {
+              "name": "LD",
+              "value": "7+"
+            },
+            {
+              "name": "OC",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "name": "Kindred Hero",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this model is leading a unit, weapons equipped by models in that unit have the [LETHAL HITS] ability."
+            }
+          ]
+        },
+        {
+          "name": "Leader",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model can be attached to the following units:\n- EINHYR HEARTHGUARD\n- HEARTHKYN WARRIORS"
+            }
+          ]
+        },
+        {
+          "name": "Invulnerable Save",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model has a 4+ invulnerable save."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "70"
+        }
+      ]
+    },
+    {
+      "id": "6a0b-0a93-2494-57f9",
+      "name": "Autoch-pattern combi-bolter",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Autoch-pattern combi-bolter",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "24\""
+            },
+            {
+              "name": "A",
+              "value": "4"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "c675-e98e-8cfd-c5b4",
+      "name": "Volkanite disintegrator",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Volkanite disintegrator",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "18\""
+            },
+            {
+              "name": "A",
+              "value": "3"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Devastating Wounds"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "92b3-11ff-2a27-cd0c",
+      "name": "Warlord",
+      "type": "upgrade",
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "0a19-2550-9aad-a268",
+      "name": "Teleport crest",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Teleport crest",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this model is leading a unit, models in that unit have the Deep Strike ability."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "2cc6-e2bf-635f-1260",
+      "name": "Einhyr Champion",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Leader",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model can be attached to the following unit:\n- EINHYR HEARTHGUARD"
+            }
+          ]
+        },
+        {
+          "name": "Einhyr Champion",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "5\""
+            },
+            {
+              "name": "T",
+              "value": "6"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "5"
+            },
+            {
+              "name": "LD",
+              "value": "7+"
+            },
+            {
+              "name": "OC",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "name": "Exemplar of the Einhyr",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this model is leading a unit, you can re-roll Charge rolls made for that unit."
+            }
+          ]
+        },
+        {
+          "name": "Mass Driver Accelerators",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Each time this model ends a Charge move, you can select one enemy unit within Engagement Range of this unit and roll one D6: on a 2-5, that enemy unit suffers D3 mortal wounds; on a 6, that enemy unit suffers D3+3 mortal wounds."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "60"
+        }
+      ]
+    },
+    {
+      "id": "7133-f7e4-5925-8200",
+      "name": "Weavefield crest",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Weavefield crest",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "The bearer has a 4+ invulnerable save."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "d3a3-2d20-bd7e-6778",
+      "name": "Grimnyr",
+      "type": "unit",
+      "entries": [
+        {
+          "id": "6e98-3c8a-32e3-e9f1",
+          "name": "Grimnyr",
+          "type": "model",
+          "entries": [
+            {
+              "id": "b834-a21b-b88c-b267",
+              "name": "Ancestral ward stave",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Ancestral ward stave",
+                  "type": "Melee Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "Melee"
+                    },
+                    {
+                      "name": "A",
+                      "value": "1"
+                    },
+                    {
+                      "name": "WS",
+                      "value": "3+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "7"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-1"
+                    },
+                    {
+                      "name": "D",
+                      "value": "D3"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "Psychic"
+                    }
+                  ]
+                }
+              ],
+              "costs": [
+                {
+                  "name": "pts",
+                  "typeid": "51b2-306e-1021-d207",
+                  "value": "0"
+                }
+              ]
+            },
+            {
+              "id": "ffcf-690c-5fc4-a7bb",
+              "name": "Ancestral Wrath",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "➤ Ancestral Wrath - witchfire",
+                  "type": "Ranged Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "24\""
+                    },
+                    {
+                      "name": "A",
+                      "value": "3"
+                    },
+                    {
+                      "name": "BS",
+                      "value": "2+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "6"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-2"
+                    },
+                    {
+                      "name": "D",
+                      "value": "D3"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "Psychic"
+                    }
+                  ]
+                },
+                {
+                  "name": "➤ Ancestral Wrath - focused witchfire",
+                  "type": "Ranged Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "24\""
+                    },
+                    {
+                      "name": "A",
+                      "value": "6"
+                    },
+                    {
+                      "name": "BS",
+                      "value": "2+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "6"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-2"
+                    },
+                    {
+                      "name": "D",
+                      "value": "D3"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "Hazardous, Psychic"
+                    }
+                  ]
+                }
+              ],
+              "costs": [
+                {
+                  "name": "pts",
+                  "typeid": "51b2-306e-1021-d207",
+                  "value": "0"
+                }
+              ]
+            }
+          ],
+          "profiles": [
+            {
+              "name": "Grimnyr",
+              "type": "Unit",
+              "lines": [
+                {
+                  "name": "M",
+                  "value": "5\""
+                },
+                {
+                  "name": "T",
+                  "value": "5"
+                },
+                {
+                  "name": "SV",
+                  "value": "4+"
+                },
+                {
+                  "name": "W",
+                  "value": "4"
+                },
+                {
+                  "name": "LD",
+                  "value": "6+"
+                },
+                {
+                  "name": "OC",
+                  "value": "1"
+                }
+              ]
+            }
+          ],
+          "costs": [
+            {
+              "name": "pts",
+              "typeid": "51b2-306e-1021-d207",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "id": "dd28-bb7a-0c2a-4a5f",
+          "name": "CORV",
+          "type": "model",
+          "entries": [
+            {
+              "id": "bfa6-9975-6fdc-d5c6",
+              "name": "Autoch-pattern bolter",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Autoch-pattern bolter",
+                  "type": "Ranged Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "24\""
+                    },
+                    {
+                      "name": "A",
+                      "value": "2"
+                    },
+                    {
+                      "name": "BS",
+                      "value": "4+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "4"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "0"
+                    },
+                    {
+                      "name": "D",
+                      "value": "1"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "-"
+                    }
+                  ]
+                }
+              ],
+              "costs": [
+                {
+                  "name": "pts",
+                  "typeid": "51b2-306e-1021-d207",
+                  "value": "0"
+                }
+              ]
+            },
+            {
+              "id": "116e-d7d8-401d-236c",
+              "name": "Close combat weapon",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Close combat weapon",
+                  "type": "Melee Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "Melee"
+                    },
+                    {
+                      "name": "A",
+                      "value": "1"
+                    },
+                    {
+                      "name": "WS",
+                      "value": "4+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "3"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "0"
+                    },
+                    {
+                      "name": "D",
+                      "value": "1"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "-"
+                    }
+                  ]
+                }
+              ],
+              "costs": [
+                {
+                  "name": "pts",
+                  "typeid": "51b2-306e-1021-d207",
+                  "value": "0"
+                }
+              ]
+            }
+          ],
+          "profiles": [
+            {
+              "name": "CORV",
+              "type": "Unit",
+              "lines": [
+                {
+                  "name": "M",
+                  "value": "5\""
+                },
+                {
+                  "name": "T",
+                  "value": "5"
+                },
+                {
+                  "name": "SV",
+                  "value": "4+"
+                },
+                {
+                  "name": "W",
+                  "value": "1"
+                },
+                {
+                  "name": "LD",
+                  "value": "6+"
+                },
+                {
+                  "name": "OC",
+                  "value": "1"
+                }
+              ]
+            }
+          ],
+          "costs": [
+            {
+              "name": "pts",
+              "typeid": "51b2-306e-1021-d207",
+              "value": "0"
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Leader",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model can be attached to the following unit:\n- HEARTHKYN WARRIORS"
+            }
+          ]
+        },
+        {
+          "name": "Invulnerable Save",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Models in this unit have a 4+ invulnerable save."
+            }
+          ]
+        },
+        {
+          "name": "Fortify (Psychic)",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this model is leading a unit, improve the Toughness characteristic of models in that unit by 1."
+            }
+          ]
+        },
+        {
+          "name": "Grimnyr's Regard",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Once per battle, after this model’s unit fails a Battle-shock test, this model can use this ability. If it does, that unit is no longer Battle-shocked."
+            }
+          ]
+        },
+        {
+          "name": "Unit Composition",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "If this unit’s Grimnyr model is ever destroyed, all of this unit’s remaining CORV models are also destroyed. While embarking within a ^^**Transport^^** and while embarked within a ^^**Transport^^**, each CORV model takes up the space of 0 models.’"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "65"
+        }
+      ]
+    },
+    {
+      "id": "6e98-3c8a-32e3-e9f1",
+      "name": "Grimnyr",
+      "type": "model",
+      "entries": [
+        {
+          "id": "b834-a21b-b88c-b267",
+          "name": "Ancestral ward stave",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Ancestral ward stave",
+              "type": "Melee Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "Melee"
+                },
+                {
+                  "name": "A",
+                  "value": "1"
+                },
+                {
+                  "name": "WS",
+                  "value": "3+"
+                },
+                {
+                  "name": "S",
+                  "value": "7"
+                },
+                {
+                  "name": "AP",
+                  "value": "-1"
+                },
+                {
+                  "name": "D",
+                  "value": "D3"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Psychic"
+                }
+              ]
+            }
+          ],
+          "costs": [
+            {
+              "name": "pts",
+              "typeid": "51b2-306e-1021-d207",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "id": "ffcf-690c-5fc4-a7bb",
+          "name": "Ancestral Wrath",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "➤ Ancestral Wrath - witchfire",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "24\""
+                },
+                {
+                  "name": "A",
+                  "value": "3"
+                },
+                {
+                  "name": "BS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "6"
+                },
+                {
+                  "name": "AP",
+                  "value": "-2"
+                },
+                {
+                  "name": "D",
+                  "value": "D3"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Psychic"
+                }
+              ]
+            },
+            {
+              "name": "➤ Ancestral Wrath - focused witchfire",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "24\""
+                },
+                {
+                  "name": "A",
+                  "value": "6"
+                },
+                {
+                  "name": "BS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "6"
+                },
+                {
+                  "name": "AP",
+                  "value": "-2"
+                },
+                {
+                  "name": "D",
+                  "value": "D3"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Hazardous, Psychic"
+                }
+              ]
+            }
+          ],
+          "costs": [
+            {
+              "name": "pts",
+              "typeid": "51b2-306e-1021-d207",
+              "value": "0"
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Grimnyr",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "5\""
+            },
+            {
+              "name": "T",
+              "value": "5"
+            },
+            {
+              "name": "SV",
+              "value": "4+"
+            },
+            {
+              "name": "W",
+              "value": "4"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "1"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "b834-a21b-b88c-b267",
+      "name": "Ancestral ward stave",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Ancestral ward stave",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "7"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "D3"
+            },
+            {
+              "name": "Keywords",
+              "value": "Psychic"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "ffcf-690c-5fc4-a7bb",
+      "name": "Ancestral Wrath",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "➤ Ancestral Wrath - witchfire",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "24\""
+            },
+            {
+              "name": "A",
+              "value": "3"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "D3"
+            },
+            {
+              "name": "Keywords",
+              "value": "Psychic"
+            }
+          ]
+        },
+        {
+          "name": "➤ Ancestral Wrath - focused witchfire",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "24\""
+            },
+            {
+              "name": "A",
+              "value": "6"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "D3"
+            },
+            {
+              "name": "Keywords",
+              "value": "Hazardous, Psychic"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "dd28-bb7a-0c2a-4a5f",
+      "name": "CORV",
+      "type": "model",
+      "entries": [
+        {
+          "id": "bfa6-9975-6fdc-d5c6",
+          "name": "Autoch-pattern bolter",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Autoch-pattern bolter",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "24\""
+                },
+                {
+                  "name": "A",
+                  "value": "2"
+                },
+                {
+                  "name": "BS",
+                  "value": "4+"
+                },
+                {
+                  "name": "S",
+                  "value": "4"
+                },
+                {
+                  "name": "AP",
+                  "value": "0"
+                },
+                {
+                  "name": "D",
+                  "value": "1"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "-"
+                }
+              ]
+            }
+          ],
+          "costs": [
+            {
+              "name": "pts",
+              "typeid": "51b2-306e-1021-d207",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "id": "116e-d7d8-401d-236c",
+          "name": "Close combat weapon",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Close combat weapon",
+              "type": "Melee Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "Melee"
+                },
+                {
+                  "name": "A",
+                  "value": "1"
+                },
+                {
+                  "name": "WS",
+                  "value": "4+"
+                },
+                {
+                  "name": "S",
+                  "value": "3"
+                },
+                {
+                  "name": "AP",
+                  "value": "0"
+                },
+                {
+                  "name": "D",
+                  "value": "1"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "-"
+                }
+              ]
+            }
+          ],
+          "costs": [
+            {
+              "name": "pts",
+              "typeid": "51b2-306e-1021-d207",
+              "value": "0"
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "CORV",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "5\""
+            },
+            {
+              "name": "T",
+              "value": "5"
+            },
+            {
+              "name": "SV",
+              "value": "4+"
+            },
+            {
+              "name": "W",
+              "value": "1"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "1"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "bfa6-9975-6fdc-d5c6",
+      "name": "Autoch-pattern bolter",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Autoch-pattern bolter",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "24\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "116e-d7d8-401d-236c",
+      "name": "Close combat weapon",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Close combat weapon",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "WS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "3"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "3bb3-2054-8746-01ca",
+      "name": "Autoch-pattern bolter",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Autoch-pattern bolter",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "24\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "8f33-5601-3707-78f4",
+      "name": "Brôkhyr Iron-master",
+      "type": "unit",
+      "profiles": [
+        {
+          "name": "Multi-spectral visor",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this model is leading a unit, each time a model in that unit makes a ranged attack, add 1 to the Hit roll."
+            }
+          ]
+        },
+        {
+          "name": "Brôkhyr's Guild",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "At the end of your Movement phase, this unit can repair one friendly LEAGUES OF VOTANN VEHICLE or EXO-FRAME model within 3\" of it. That model regains up to D3 lost wounds, or up to 3 lost wounds instead if this unit contains an Ironkyn Assistant. Each model can only be repaired once per turn."
+            }
+          ]
+        },
+        {
+          "name": "Leader",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model can be attached to the following unit:\n- HEARTHKYN WARRIORS\n- BRÔKHYR THUNDERKYN"
+            }
+          ]
+        },
+        {
+          "name": "Unit Composition",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "If this unit’s Brôkhyr Iron‑master model is ever destroyed, all of this unit’s remaining E‑COG models are also destroyed. While embarking within a ^^**Transport^^** and while embarked within a ^^**Transport^^**, each E‑COG model takes up the space of 0 models."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "65"
+        }
+      ]
+    },
+    {
+      "id": "09d3-6357-7888-00d9",
+      "name": "Einhyr Hearthguard",
+      "type": "unit",
+      "entries": [
+        {
+          "id": "35b8-185c-c7f5-78ad",
+          "name": "Hesyr",
+          "type": "model",
+          "entries": [
+            {
+              "id": "7d63-69eb-f909-ef5c",
+              "name": "Exo-armour grenade launcher",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Exo-armour grenade launcher",
+                  "type": "Ranged Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "18\""
+                    },
+                    {
+                      "name": "A",
+                      "value": "D6"
+                    },
+                    {
+                      "name": "BS",
+                      "value": "3+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "4"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "0"
+                    },
+                    {
+                      "name": "D",
+                      "value": "1"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "Blast"
+                    }
+                  ]
+                }
+              ],
+              "costs": [
+                {
+                  "name": "pts",
+                  "typeid": "51b2-306e-1021-d207",
+                  "value": "0"
+                }
+              ]
+            }
+          ],
+          "profiles": [
+            {
+              "name": "Einhyr Hearthguard",
+              "type": "Unit",
+              "lines": [
+                {
+                  "name": "M",
+                  "value": "5\""
+                },
+                {
+                  "name": "T",
+                  "value": "6"
+                },
+                {
+                  "name": "SV",
+                  "value": "2+"
+                },
+                {
+                  "name": "W",
+                  "value": "2"
+                },
+                {
+                  "name": "LD",
+                  "value": "7+"
+                },
+                {
+                  "name": "OC",
+                  "value": "1"
+                }
+              ]
+            }
+          ],
+          "costs": [
+            {
+              "name": "pts",
+              "typeid": "51b2-306e-1021-d207",
+              "value": "0"
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Oathband Bodyguard",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While a CHARACTER is leading this unit, each time an attack targets this unit, if the Strength characteristic of that attack is greater than this unit’s Toughness characteristic, subtract 1 from the Wound roll."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "150"
+        },
+        {
+          "name": "Crusade Points",
+          "typeid": "b03b-c239-15a5-da55",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeid": "75bb-ded1-c86d-bdf0",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeid": "a623-fe74-1d33-cddf",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeid": "716d-91b7-d55a-1022",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "35b8-185c-c7f5-78ad",
+      "name": "Hesyr",
+      "type": "model",
+      "entries": [
+        {
+          "id": "7d63-69eb-f909-ef5c",
+          "name": "Exo-armour grenade launcher",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Exo-armour grenade launcher",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "18\""
+                },
+                {
+                  "name": "A",
+                  "value": "D6"
+                },
+                {
+                  "name": "BS",
+                  "value": "3+"
+                },
+                {
+                  "name": "S",
+                  "value": "4"
+                },
+                {
+                  "name": "AP",
+                  "value": "0"
+                },
+                {
+                  "name": "D",
+                  "value": "1"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Blast"
+                }
+              ]
+            }
+          ],
+          "costs": [
+            {
+              "name": "pts",
+              "typeid": "51b2-306e-1021-d207",
+              "value": "0"
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Einhyr Hearthguard",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "5\""
+            },
+            {
+              "name": "T",
+              "value": "6"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "2"
+            },
+            {
+              "name": "LD",
+              "value": "7+"
+            },
+            {
+              "name": "OC",
+              "value": "1"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "7d63-69eb-f909-ef5c",
+      "name": "Exo-armour grenade launcher",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Exo-armour grenade launcher",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "18\""
+            },
+            {
+              "name": "A",
+              "value": "D6"
+            },
+            {
+              "name": "BS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Blast"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "415a-e6f6-d17f-d700",
+      "name": "Cthonian Beserks",
+      "type": "unit",
+      "profiles": [
+        {
+          "name": "Cyberstimms",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Each time a model in this unit is destroyed by a melee attack, if that model has not fought this phase, roll one D6: on a 4+, do not remove it from play. The destroyed model can fight after the attacking model’s unit has finished making its attacks, and is then removed from play."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "100"
+        }
+      ]
+    },
+    {
+      "id": "9086-5272-398b-bbce",
+      "name": "Hernkyn Pioneers",
+      "type": "unit",
+      "profiles": [
+        {
+          "name": "Outflanking Mag-Riders",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "At the end of your opponent’s turn, if this unit is within 6\" of any battlefield edge and is not within Engagement Range of any enemy units, you can remove this unit from the battlefield and place it into Strategic Reserves."
+            }
+          ]
+        },
+        {
+          "name": "Hernkyn Pioneer",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "12\""
+            },
+            {
+              "name": "T",
+              "value": "6"
+            },
+            {
+              "name": "SV",
+              "value": "4+"
+            },
+            {
+              "name": "W",
+              "value": "3"
+            },
+            {
+              "name": "LD",
+              "value": "7+"
+            },
+            {
+              "name": "OC",
+              "value": "2"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "90"
+        }
+      ]
+    },
+    {
+      "id": "4a84-915b-cfe5-a091",
+      "name": "Bolt revolver",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Bolt revolver",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "9\""
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Pistol"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "76f7-42ea-6b10-b6cf",
+      "name": "Bolt shotgun",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Bolt shotgun",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "12\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Assault"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "cb8c-f3cd-d4a8-de89",
+      "name": "Magna-coil autocannon",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Magna-coil autocannon",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "24\""
+            },
+            {
+              "name": "A",
+              "value": "3"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "7"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "a3cc-6145-2fad-5f97",
+      "name": "Plasma knife",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Plasma knife",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "WS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "9655-8367-7467-9e6e",
+      "name": "Sagitaur",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Sagitaur",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "12\""
+            },
+            {
+              "name": "T",
+              "value": "10"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "9"
+            },
+            {
+              "name": "LD",
+              "value": "7+"
+            },
+            {
+              "name": "OC",
+              "value": "3"
+            }
+          ]
+        },
+        {
+          "name": "Blistering Advance",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Units can disembark from this TRANSPORT after it has Advanced. Units that do so count as having made a Normal move that phase, and cannot declare a charge in the same turn, but can otherwise act normally in the remainder of the turn."
+            }
+          ]
+        },
+        {
+          "name": "Sagitaur",
+          "type": "Transport",
+          "lines": [
+            {
+              "name": "Capacity",
+              "value": "This model has a transport capacity of 6 LEAGUES OF VOTANN INFANTRY models. It cannot transport EXO-ARMOUR or EXO-FRAME models.\nAt the start of the Declare Battle Formations step, you can select one Hearthkyn Warriors unit from your army and split it into two units, each containing 5 models (when splitting a unit in this way, make a note of which models form each of the two new units). One of these units must start the battle embarked within this Transport; the other can start the battle embarked within another Transport, or it can be deployed as a separate unit."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "115"
+        }
+      ]
+    },
+    {
+      "id": "ea1b-99f6-c398-06b1",
+      "name": "Brôkhyr Thunderkyn",
+      "type": "unit",
+      "entries": [
+        {
+          "id": "5a3d-3f3e-69db-816c",
+          "name": "Brôkhyr Thunderkyn",
+          "type": "model",
+          "entries": [
+            {
+              "id": "dd84-5f5f-0c1a-9553",
+              "name": "Close combat weapon",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Close combat weapon",
+                  "type": "Melee Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "Melee"
+                    },
+                    {
+                      "name": "A",
+                      "value": "2"
+                    },
+                    {
+                      "name": "WS",
+                      "value": "4+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "4"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "0"
+                    },
+                    {
+                      "name": "D",
+                      "value": "1"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "-"
+                    }
+                  ]
+                }
+              ],
+              "costs": [
+                {
+                  "name": "pts",
+                  "typeid": "51b2-306e-1021-d207",
+                  "value": "0"
+                }
+              ]
+            }
+          ],
+          "costs": [
+            {
+              "name": "pts",
+              "typeid": "51b2-306e-1021-d207",
+              "value": "0"
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Brôkhyr Thunderkyn",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "5\""
+            },
+            {
+              "name": "T",
+              "value": "6"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "3"
+            },
+            {
+              "name": "LD",
+              "value": "7+"
+            },
+            {
+              "name": "OC",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "name": "Oathband Covering Fire",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Each time you target this unit with the Fire Overwatch Stratagem, hits are scored on unmodified Hit rolls of 5+ when resolving that Stratagem."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "80"
+        },
+        {
+          "name": "Crusade Points",
+          "typeid": "b03b-c239-15a5-da55",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeid": "75bb-ded1-c86d-bdf0",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeid": "a623-fe74-1d33-cddf",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeid": "716d-91b7-d55a-1022",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "5a3d-3f3e-69db-816c",
+      "name": "Brôkhyr Thunderkyn",
+      "type": "model",
+      "entries": [
+        {
+          "id": "dd84-5f5f-0c1a-9553",
+          "name": "Close combat weapon",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Close combat weapon",
+              "type": "Melee Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "Melee"
+                },
+                {
+                  "name": "A",
+                  "value": "2"
+                },
+                {
+                  "name": "WS",
+                  "value": "4+"
+                },
+                {
+                  "name": "S",
+                  "value": "4"
+                },
+                {
+                  "name": "AP",
+                  "value": "0"
+                },
+                {
+                  "name": "D",
+                  "value": "1"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "-"
+                }
+              ]
+            }
+          ],
+          "costs": [
+            {
+              "name": "pts",
+              "typeid": "51b2-306e-1021-d207",
+              "value": "0"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "dd84-5f5f-0c1a-9553",
+      "name": "Close combat weapon",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Close combat weapon",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "WS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "a110-e538-4e85-159b",
+      "name": "Hekaton Land Fortress",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Hekaton Land Fortress",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "10\""
+            },
+            {
+              "name": "T",
+              "value": "12"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "16"
+            },
+            {
+              "name": "LD",
+              "value": "7+"
+            },
+            {
+              "name": "OC",
+              "value": "5"
+            }
+          ]
+        },
+        {
+          "name": "Fire Support",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "In your Shooting phase, after this model has shot, select one enemy unit it scored one or more hits against this phase. Until the end of the phase, each time a friendly model that disembarked from this Transport this turn makes an attack that targets that enemy unit, you can re-roll the Wound roll."
+            }
+          ]
+        },
+        {
+          "name": "Damaged: 1-5 wounds remaining",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this model has 1-5 wounds remaining, each time this model makes an attack, subtract 1 from the Hit roll."
+            }
+          ]
+        },
+        {
+          "name": "Hekaton Land Fortress",
+          "type": "Transport",
+          "lines": [
+            {
+              "name": "Capacity",
+              "value": "This model has a transport capacity of 12 LEAGUES OF VOTANN INFANTRY models. Each EXO-ARMOUR model takes up the space of 2 models and each EXO-FRAME model takes up the space of 3 models."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "225"
+        }
+      ]
+    },
+    {
+      "id": "43cd-5e9f-e550-83e0",
+      "name": "Twin bolt cannon",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Twin bolt cannon",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "36\""
+            },
+            {
+              "name": "A",
+              "value": "3"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Sustained Hits 1, Twin-linked"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "8d16-a849-dd95-997f",
+      "name": "MATR autocannon",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "MATR autocannon",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "24\""
+            },
+            {
+              "name": "A",
+              "value": "6"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "7"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "5b0b-c18d-1470-44bb",
+      "name": "Hernkyn Yaegirs",
+      "type": "unit",
+      "profiles": [
+        {
+          "name": "Pragmatic Hunters",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Once per turn, when an enemy unit ends a Normal, Advance or Fall Back move within 9\" of this unit, if this unit is not within Engagement Range of one or more enemy units, it can make a Normal move of up to D6\"."
+            }
+          ]
+        },
+        {
+          "name": "Hernkyn Yaegirs",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "6\""
+            },
+            {
+              "name": "T",
+              "value": "5"
+            },
+            {
+              "name": "SV",
+              "value": "5+"
+            },
+            {
+              "name": "W",
+              "value": "1"
+            },
+            {
+              "name": "LD",
+              "value": "7+"
+            },
+            {
+              "name": "OC",
+              "value": "1"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "90"
+        },
+        {
+          "name": "Crusade Points",
+          "typeid": "b03b-c239-15a5-da55",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeid": "75bb-ded1-c86d-bdf0",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeid": "a623-fe74-1d33-cddf",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeid": "716d-91b7-d55a-1022",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "5914-3326-fac9-bf29",
+      "name": "Detachment Choice",
+      "type": "upgrade",
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "ba4f-c3f9-6925-af0c",
+      "name": "Hearthkyn Warriors",
+      "type": "unit",
+      "entries": [
+        {
+          "id": "4782-445d-730e-6b69",
+          "name": "Hearthkyn Warrior",
+          "type": "model",
+          "entries": [
+            {
+              "id": "31fd-4b29-165b-4d32",
+              "name": "Autoch-pattern bolt pistol",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Autoch-pattern bolt pistol",
+                  "type": "Ranged Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "12\""
+                    },
+                    {
+                      "name": "A",
+                      "value": "1"
+                    },
+                    {
+                      "name": "BS",
+                      "value": "4+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "4"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "0"
+                    },
+                    {
+                      "name": "D",
+                      "value": "1"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "Pistol"
+                    }
+                  ]
+                }
+              ],
+              "costs": [
+                {
+                  "name": "pts",
+                  "typeid": "51b2-306e-1021-d207",
+                  "value": "0"
+                }
+              ]
+            },
+            {
+              "id": "88c5-45b5-7075-ee60",
+              "name": "Close combat weapon",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Close combat weapon",
+                  "type": "Melee Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "Melee"
+                    },
+                    {
+                      "name": "A",
+                      "value": "1"
+                    },
+                    {
+                      "name": "WS",
+                      "value": "4+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "4"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "0"
+                    },
+                    {
+                      "name": "D",
+                      "value": "1"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "-"
+                    }
+                  ]
+                }
+              ],
+              "costs": [
+                {
+                  "name": "pts",
+                  "typeid": "51b2-306e-1021-d207",
+                  "value": "0"
+                }
+              ]
+            }
+          ],
+          "costs": [
+            {
+              "name": "pts",
+              "typeid": "51b2-306e-1021-d207",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "id": "a6be-cc47-2ad2-1889",
+          "name": "Theyn",
+          "type": "model",
+          "entries": [
+            {
+              "id": "50c2-759c-861f-8dcb",
+              "name": "Close combat weapon",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Close combat weapon",
+                  "type": "Melee Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "Melee"
+                    },
+                    {
+                      "name": "A",
+                      "value": "1"
+                    },
+                    {
+                      "name": "WS",
+                      "value": "4+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "4"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "0"
+                    },
+                    {
+                      "name": "D",
+                      "value": "1"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "-"
+                    }
+                  ]
+                }
+              ],
+              "costs": [
+                {
+                  "name": "pts",
+                  "typeid": "51b2-306e-1021-d207",
+                  "value": "0"
+                }
+              ]
+            }
+          ],
+          "costs": [
+            {
+              "name": "pts",
+              "typeid": "51b2-306e-1021-d207",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "id": "3d4a-9d09-be51-1a5f",
+          "name": "Hearthkyn Warrior w/ heavy weapon",
+          "type": "model",
+          "entries": [
+            {
+              "id": "40db-4ad2-97bb-b576",
+              "name": "Close combat weapon",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Close combat weapon",
+                  "type": "Melee Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "Melee"
+                    },
+                    {
+                      "name": "A",
+                      "value": "1"
+                    },
+                    {
+                      "name": "WS",
+                      "value": "4+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "4"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "0"
+                    },
+                    {
+                      "name": "D",
+                      "value": "1"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "-"
+                    }
+                  ]
+                }
+              ],
+              "costs": [
+                {
+                  "name": "pts",
+                  "typeid": "51b2-306e-1021-d207",
+                  "value": "0"
+                }
+              ]
+            },
+            {
+              "id": "76f8-82c5-db79-b160",
+              "name": "Autoch-pattern bolt pistol",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Autoch-pattern bolt pistol",
+                  "type": "Ranged Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "12\""
+                    },
+                    {
+                      "name": "A",
+                      "value": "1"
+                    },
+                    {
+                      "name": "BS",
+                      "value": "4+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "4"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "0"
+                    },
+                    {
+                      "name": "D",
+                      "value": "1"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "Pistol"
+                    }
+                  ]
+                }
+              ],
+              "costs": [
+                {
+                  "name": "pts",
+                  "typeid": "51b2-306e-1021-d207",
+                  "value": "0"
+                }
+              ]
+            }
+          ],
+          "costs": [
+            {
+              "name": "pts",
+              "typeid": "51b2-306e-1021-d207",
+              "value": "0"
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Luck Has, Need Keeps, Toil Earns",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "At the end of your Command phase, if this unit is within range of an objective marker you control, that objective marker remains under your control, even if you have no models within range of it, until your opponent controls it at the start or end of any turn."
+            }
+          ]
+        },
+        {
+          "name": "Hearthkyn Warriors",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "5\""
+            },
+            {
+              "name": "T",
+              "value": "5"
+            },
+            {
+              "name": "SV",
+              "value": "4+"
+            },
+            {
+              "name": "W",
+              "value": "1"
+            },
+            {
+              "name": "LD",
+              "value": "7+"
+            },
+            {
+              "name": "OC",
+              "value": "2"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "100"
+        }
+      ]
+    },
+    {
+      "id": "2e6e-95a1-60ad-7b1c",
+      "name": "Ûthar the Destined",
+      "type": "model",
+      "entries": [
+        {
+          "id": "677d-60c2-7663-aa31",
+          "name": "Blade of the Ancestors",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Blade of the Ancestors",
+              "type": "Melee Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "Melee"
+                },
+                {
+                  "name": "A",
+                  "value": "5"
+                },
+                {
+                  "name": "WS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "6"
+                },
+                {
+                  "name": "AP",
+                  "value": "-3"
+                },
+                {
+                  "name": "D",
+                  "value": "2"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Devastating Wounds"
+                }
+              ]
+            }
+          ],
+          "costs": [
+            {
+              "name": "pts",
+              "typeid": "51b2-306e-1021-d207",
+              "value": "0"
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Ûthar the Destined",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "5\""
+            },
+            {
+              "name": "T",
+              "value": "5"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "5"
+            },
+            {
+              "name": "LD",
+              "value": "7+"
+            },
+            {
+              "name": "OC",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "name": "Ancestral Fortune",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Once per turn, you can change one Hit roll or one Wound roll made for this model to an unmodified 6."
+            }
+          ]
+        },
+        {
+          "name": "The Destined",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Each time an attack is allocated to this model, change the Damage characteristic of that attack to 1."
+            }
+          ]
+        },
+        {
+          "name": "Leader",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model can be attached to the following units:\n- Einhyr Hearthguard\n- Hearthkyn Warriors"
+            }
+          ]
+        },
+        {
+          "name": "Invulnerable Save",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model has a 4+ invulnerable save."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "80"
+        }
+      ]
+    },
+    {
+      "id": "1b00-2abb-718f-def6",
+      "name": "Kâhl",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Kâhl",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "5\""
+            },
+            {
+              "name": "T",
+              "value": "5"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "4"
+            },
+            {
+              "name": "LD",
+              "value": "7+"
+            },
+            {
+              "name": "OC",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "name": "Kindred Hero",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this model is leading a unit, weapons equipped by models in that unit have the [LETHAL HITS] ability."
+            }
+          ]
+        },
+        {
+          "name": "Leader",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model can be attached to the following units:\n- EINHYR HEARTHGUARD\n- HEARTHKYN WARRIORS"
+            }
+          ]
+        },
+        {
+          "name": "Invulnerable Save",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model has a 4+ invulnerable save."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "70"
+        }
+      ]
+    },
+    {
+      "id": "2cc6-e2bf-635f-1260",
+      "name": "Einhyr Champion",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Leader",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model can be attached to the following unit:\n- EINHYR HEARTHGUARD"
+            }
+          ]
+        },
+        {
+          "name": "Einhyr Champion",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "5\""
+            },
+            {
+              "name": "T",
+              "value": "6"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "5"
+            },
+            {
+              "name": "LD",
+              "value": "7+"
+            },
+            {
+              "name": "OC",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "name": "Exemplar of the Einhyr",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this model is leading a unit, you can re-roll Charge rolls made for that unit."
+            }
+          ]
+        },
+        {
+          "name": "Mass Driver Accelerators",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Each time this model ends a Charge move, you can select one enemy unit within Engagement Range of this unit and roll one D6: on a 2-5, that enemy unit suffers D3 mortal wounds; on a 6, that enemy unit suffers D3+3 mortal wounds."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "60"
+        }
+      ]
+    },
+    {
+      "id": "d3a3-2d20-bd7e-6778",
+      "name": "Grimnyr",
+      "type": "unit",
+      "entries": [
+        {
+          "id": "6e98-3c8a-32e3-e9f1",
+          "name": "Grimnyr",
+          "type": "model",
+          "entries": [
+            {
+              "id": "b834-a21b-b88c-b267",
+              "name": "Ancestral ward stave",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Ancestral ward stave",
+                  "type": "Melee Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "Melee"
+                    },
+                    {
+                      "name": "A",
+                      "value": "1"
+                    },
+                    {
+                      "name": "WS",
+                      "value": "3+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "7"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-1"
+                    },
+                    {
+                      "name": "D",
+                      "value": "D3"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "Psychic"
+                    }
+                  ]
+                }
+              ],
+              "costs": [
+                {
+                  "name": "pts",
+                  "typeid": "51b2-306e-1021-d207",
+                  "value": "0"
+                }
+              ]
+            },
+            {
+              "id": "ffcf-690c-5fc4-a7bb",
+              "name": "Ancestral Wrath",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "➤ Ancestral Wrath - witchfire",
+                  "type": "Ranged Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "24\""
+                    },
+                    {
+                      "name": "A",
+                      "value": "3"
+                    },
+                    {
+                      "name": "BS",
+                      "value": "2+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "6"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-2"
+                    },
+                    {
+                      "name": "D",
+                      "value": "D3"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "Psychic"
+                    }
+                  ]
+                },
+                {
+                  "name": "➤ Ancestral Wrath - focused witchfire",
+                  "type": "Ranged Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "24\""
+                    },
+                    {
+                      "name": "A",
+                      "value": "6"
+                    },
+                    {
+                      "name": "BS",
+                      "value": "2+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "6"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-2"
+                    },
+                    {
+                      "name": "D",
+                      "value": "D3"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "Hazardous, Psychic"
+                    }
+                  ]
+                }
+              ],
+              "costs": [
+                {
+                  "name": "pts",
+                  "typeid": "51b2-306e-1021-d207",
+                  "value": "0"
+                }
+              ]
+            }
+          ],
+          "profiles": [
+            {
+              "name": "Grimnyr",
+              "type": "Unit",
+              "lines": [
+                {
+                  "name": "M",
+                  "value": "5\""
+                },
+                {
+                  "name": "T",
+                  "value": "5"
+                },
+                {
+                  "name": "SV",
+                  "value": "4+"
+                },
+                {
+                  "name": "W",
+                  "value": "4"
+                },
+                {
+                  "name": "LD",
+                  "value": "6+"
+                },
+                {
+                  "name": "OC",
+                  "value": "1"
+                }
+              ]
+            }
+          ],
+          "costs": [
+            {
+              "name": "pts",
+              "typeid": "51b2-306e-1021-d207",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "id": "dd28-bb7a-0c2a-4a5f",
+          "name": "CORV",
+          "type": "model",
+          "entries": [
+            {
+              "id": "bfa6-9975-6fdc-d5c6",
+              "name": "Autoch-pattern bolter",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Autoch-pattern bolter",
+                  "type": "Ranged Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "24\""
+                    },
+                    {
+                      "name": "A",
+                      "value": "2"
+                    },
+                    {
+                      "name": "BS",
+                      "value": "4+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "4"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "0"
+                    },
+                    {
+                      "name": "D",
+                      "value": "1"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "-"
+                    }
+                  ]
+                }
+              ],
+              "costs": [
+                {
+                  "name": "pts",
+                  "typeid": "51b2-306e-1021-d207",
+                  "value": "0"
+                }
+              ]
+            },
+            {
+              "id": "116e-d7d8-401d-236c",
+              "name": "Close combat weapon",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Close combat weapon",
+                  "type": "Melee Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "Melee"
+                    },
+                    {
+                      "name": "A",
+                      "value": "1"
+                    },
+                    {
+                      "name": "WS",
+                      "value": "4+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "3"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "0"
+                    },
+                    {
+                      "name": "D",
+                      "value": "1"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "-"
+                    }
+                  ]
+                }
+              ],
+              "costs": [
+                {
+                  "name": "pts",
+                  "typeid": "51b2-306e-1021-d207",
+                  "value": "0"
+                }
+              ]
+            }
+          ],
+          "profiles": [
+            {
+              "name": "CORV",
+              "type": "Unit",
+              "lines": [
+                {
+                  "name": "M",
+                  "value": "5\""
+                },
+                {
+                  "name": "T",
+                  "value": "5"
+                },
+                {
+                  "name": "SV",
+                  "value": "4+"
+                },
+                {
+                  "name": "W",
+                  "value": "1"
+                },
+                {
+                  "name": "LD",
+                  "value": "6+"
+                },
+                {
+                  "name": "OC",
+                  "value": "1"
+                }
+              ]
+            }
+          ],
+          "costs": [
+            {
+              "name": "pts",
+              "typeid": "51b2-306e-1021-d207",
+              "value": "0"
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Leader",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model can be attached to the following unit:\n- HEARTHKYN WARRIORS"
+            }
+          ]
+        },
+        {
+          "name": "Invulnerable Save",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Models in this unit have a 4+ invulnerable save."
+            }
+          ]
+        },
+        {
+          "name": "Fortify (Psychic)",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this model is leading a unit, improve the Toughness characteristic of models in that unit by 1."
+            }
+          ]
+        },
+        {
+          "name": "Grimnyr's Regard",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Once per battle, after this model’s unit fails a Battle-shock test, this model can use this ability. If it does, that unit is no longer Battle-shocked."
+            }
+          ]
+        },
+        {
+          "name": "Unit Composition",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "If this unit’s Grimnyr model is ever destroyed, all of this unit’s remaining CORV models are also destroyed. While embarking within a ^^**Transport^^** and while embarked within a ^^**Transport^^**, each CORV model takes up the space of 0 models.’"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "65"
+        }
+      ]
+    },
+    {
+      "id": "8f33-5601-3707-78f4",
+      "name": "Brôkhyr Iron-master",
+      "type": "unit",
+      "profiles": [
+        {
+          "name": "Multi-spectral visor",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this model is leading a unit, each time a model in that unit makes a ranged attack, add 1 to the Hit roll."
+            }
+          ]
+        },
+        {
+          "name": "Brôkhyr's Guild",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "At the end of your Movement phase, this unit can repair one friendly LEAGUES OF VOTANN VEHICLE or EXO-FRAME model within 3\" of it. That model regains up to D3 lost wounds, or up to 3 lost wounds instead if this unit contains an Ironkyn Assistant. Each model can only be repaired once per turn."
+            }
+          ]
+        },
+        {
+          "name": "Leader",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model can be attached to the following unit:\n- HEARTHKYN WARRIORS\n- BRÔKHYR THUNDERKYN"
+            }
+          ]
+        },
+        {
+          "name": "Unit Composition",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "If this unit’s Brôkhyr Iron‑master model is ever destroyed, all of this unit’s remaining E‑COG models are also destroyed. While embarking within a ^^**Transport^^** and while embarked within a ^^**Transport^^**, each E‑COG model takes up the space of 0 models."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "65"
+        }
+      ]
+    },
+    {
+      "id": "09d3-6357-7888-00d9",
+      "name": "Einhyr Hearthguard",
+      "type": "unit",
+      "entries": [
+        {
+          "id": "35b8-185c-c7f5-78ad",
+          "name": "Hesyr",
+          "type": "model",
+          "entries": [
+            {
+              "id": "7d63-69eb-f909-ef5c",
+              "name": "Exo-armour grenade launcher",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Exo-armour grenade launcher",
+                  "type": "Ranged Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "18\""
+                    },
+                    {
+                      "name": "A",
+                      "value": "D6"
+                    },
+                    {
+                      "name": "BS",
+                      "value": "3+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "4"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "0"
+                    },
+                    {
+                      "name": "D",
+                      "value": "1"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "Blast"
+                    }
+                  ]
+                }
+              ],
+              "costs": [
+                {
+                  "name": "pts",
+                  "typeid": "51b2-306e-1021-d207",
+                  "value": "0"
+                }
+              ]
+            }
+          ],
+          "profiles": [
+            {
+              "name": "Einhyr Hearthguard",
+              "type": "Unit",
+              "lines": [
+                {
+                  "name": "M",
+                  "value": "5\""
+                },
+                {
+                  "name": "T",
+                  "value": "6"
+                },
+                {
+                  "name": "SV",
+                  "value": "2+"
+                },
+                {
+                  "name": "W",
+                  "value": "2"
+                },
+                {
+                  "name": "LD",
+                  "value": "7+"
+                },
+                {
+                  "name": "OC",
+                  "value": "1"
+                }
+              ]
+            }
+          ],
+          "costs": [
+            {
+              "name": "pts",
+              "typeid": "51b2-306e-1021-d207",
+              "value": "0"
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Oathband Bodyguard",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While a CHARACTER is leading this unit, each time an attack targets this unit, if the Strength characteristic of that attack is greater than this unit’s Toughness characteristic, subtract 1 from the Wound roll."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "150"
+        },
+        {
+          "name": "Crusade Points",
+          "typeid": "b03b-c239-15a5-da55",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeid": "75bb-ded1-c86d-bdf0",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeid": "a623-fe74-1d33-cddf",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeid": "716d-91b7-d55a-1022",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "415a-e6f6-d17f-d700",
+      "name": "Cthonian Beserks",
+      "type": "unit",
+      "profiles": [
+        {
+          "name": "Cyberstimms",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Each time a model in this unit is destroyed by a melee attack, if that model has not fought this phase, roll one D6: on a 4+, do not remove it from play. The destroyed model can fight after the attacking model’s unit has finished making its attacks, and is then removed from play."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "100"
+        }
+      ]
+    },
+    {
+      "id": "9086-5272-398b-bbce",
+      "name": "Hernkyn Pioneers",
+      "type": "unit",
+      "profiles": [
+        {
+          "name": "Outflanking Mag-Riders",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "At the end of your opponent’s turn, if this unit is within 6\" of any battlefield edge and is not within Engagement Range of any enemy units, you can remove this unit from the battlefield and place it into Strategic Reserves."
+            }
+          ]
+        },
+        {
+          "name": "Hernkyn Pioneer",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "12\""
+            },
+            {
+              "name": "T",
+              "value": "6"
+            },
+            {
+              "name": "SV",
+              "value": "4+"
+            },
+            {
+              "name": "W",
+              "value": "3"
+            },
+            {
+              "name": "LD",
+              "value": "7+"
+            },
+            {
+              "name": "OC",
+              "value": "2"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "90"
+        }
+      ]
+    },
+    {
+      "id": "9655-8367-7467-9e6e",
+      "name": "Sagitaur",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Sagitaur",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "12\""
+            },
+            {
+              "name": "T",
+              "value": "10"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "9"
+            },
+            {
+              "name": "LD",
+              "value": "7+"
+            },
+            {
+              "name": "OC",
+              "value": "3"
+            }
+          ]
+        },
+        {
+          "name": "Blistering Advance",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Units can disembark from this TRANSPORT after it has Advanced. Units that do so count as having made a Normal move that phase, and cannot declare a charge in the same turn, but can otherwise act normally in the remainder of the turn."
+            }
+          ]
+        },
+        {
+          "name": "Sagitaur",
+          "type": "Transport",
+          "lines": [
+            {
+              "name": "Capacity",
+              "value": "This model has a transport capacity of 6 LEAGUES OF VOTANN INFANTRY models. It cannot transport EXO-ARMOUR or EXO-FRAME models.\nAt the start of the Declare Battle Formations step, you can select one Hearthkyn Warriors unit from your army and split it into two units, each containing 5 models (when splitting a unit in this way, make a note of which models form each of the two new units). One of these units must start the battle embarked within this Transport; the other can start the battle embarked within another Transport, or it can be deployed as a separate unit."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "115"
+        }
+      ]
+    },
+    {
+      "id": "ea1b-99f6-c398-06b1",
+      "name": "Brôkhyr Thunderkyn",
+      "type": "unit",
+      "entries": [
+        {
+          "id": "5a3d-3f3e-69db-816c",
+          "name": "Brôkhyr Thunderkyn",
+          "type": "model",
+          "entries": [
+            {
+              "id": "dd84-5f5f-0c1a-9553",
+              "name": "Close combat weapon",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Close combat weapon",
+                  "type": "Melee Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "Melee"
+                    },
+                    {
+                      "name": "A",
+                      "value": "2"
+                    },
+                    {
+                      "name": "WS",
+                      "value": "4+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "4"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "0"
+                    },
+                    {
+                      "name": "D",
+                      "value": "1"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "-"
+                    }
+                  ]
+                }
+              ],
+              "costs": [
+                {
+                  "name": "pts",
+                  "typeid": "51b2-306e-1021-d207",
+                  "value": "0"
+                }
+              ]
+            }
+          ],
+          "costs": [
+            {
+              "name": "pts",
+              "typeid": "51b2-306e-1021-d207",
+              "value": "0"
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Brôkhyr Thunderkyn",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "5\""
+            },
+            {
+              "name": "T",
+              "value": "6"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "3"
+            },
+            {
+              "name": "LD",
+              "value": "7+"
+            },
+            {
+              "name": "OC",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "name": "Oathband Covering Fire",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Each time you target this unit with the Fire Overwatch Stratagem, hits are scored on unmodified Hit rolls of 5+ when resolving that Stratagem."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "80"
+        },
+        {
+          "name": "Crusade Points",
+          "typeid": "b03b-c239-15a5-da55",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeid": "75bb-ded1-c86d-bdf0",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeid": "a623-fe74-1d33-cddf",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeid": "716d-91b7-d55a-1022",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "a110-e538-4e85-159b",
+      "name": "Hekaton Land Fortress",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Hekaton Land Fortress",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "10\""
+            },
+            {
+              "name": "T",
+              "value": "12"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "16"
+            },
+            {
+              "name": "LD",
+              "value": "7+"
+            },
+            {
+              "name": "OC",
+              "value": "5"
+            }
+          ]
+        },
+        {
+          "name": "Fire Support",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "In your Shooting phase, after this model has shot, select one enemy unit it scored one or more hits against this phase. Until the end of the phase, each time a friendly model that disembarked from this Transport this turn makes an attack that targets that enemy unit, you can re-roll the Wound roll."
+            }
+          ]
+        },
+        {
+          "name": "Damaged: 1-5 wounds remaining",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this model has 1-5 wounds remaining, each time this model makes an attack, subtract 1 from the Hit roll."
+            }
+          ]
+        },
+        {
+          "name": "Hekaton Land Fortress",
+          "type": "Transport",
+          "lines": [
+            {
+              "name": "Capacity",
+              "value": "This model has a transport capacity of 12 LEAGUES OF VOTANN INFANTRY models. Each EXO-ARMOUR model takes up the space of 2 models and each EXO-FRAME model takes up the space of 3 models."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "225"
+        }
+      ]
+    },
+    {
+      "name": "Show/Hide Options",
+      "type": "selectionEntry"
+    },
+    {
+      "id": "5b0b-c18d-1470-44bb",
+      "name": "Hernkyn Yaegirs",
+      "type": "unit",
+      "profiles": [
+        {
+          "name": "Pragmatic Hunters",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Once per turn, when an enemy unit ends a Normal, Advance or Fall Back move within 9\" of this unit, if this unit is not within Engagement Range of one or more enemy units, it can make a Normal move of up to D6\"."
+            }
+          ]
+        },
+        {
+          "name": "Hernkyn Yaegirs",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "6\""
+            },
+            {
+              "name": "T",
+              "value": "5"
+            },
+            {
+              "name": "SV",
+              "value": "5+"
+            },
+            {
+              "name": "W",
+              "value": "1"
+            },
+            {
+              "name": "LD",
+              "value": "7+"
+            },
+            {
+              "name": "OC",
+              "value": "1"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "90"
+        },
+        {
+          "name": "Crusade Points",
+          "typeid": "b03b-c239-15a5-da55",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeid": "75bb-ded1-c86d-bdf0",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeid": "a623-fe74-1d33-cddf",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeid": "716d-91b7-d55a-1022",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "name": "Order of Battle",
+      "type": "selectionEntry"
+    }
+  ]
+}

@@ -1,0 +1,423 @@
+{
+  "factionname": "Imperium - Adeptus Astartes - Raven Guard",
+  "units": [
+    {
+      "id": "339f-9776-243d-69a6",
+      "name": "Kayvaan Shrike",
+      "type": "model",
+      "entries": [
+        {
+          "id": "b2d0-b85d-3880-3efe",
+          "name": "Blackout",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Blackout",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "18\""
+                },
+                {
+                  "name": "A",
+                  "value": "2"
+                },
+                {
+                  "name": "BS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "5"
+                },
+                {
+                  "name": "AP",
+                  "value": "-1"
+                },
+                {
+                  "name": "D",
+                  "value": "2"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Pistol, Precision"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "e4fe-9ddc-4e91-c960",
+          "name": "The Raven's Talons",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "The Raven's Talons",
+              "type": "Melee Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "Melee"
+                },
+                {
+                  "name": "A",
+                  "value": "7"
+                },
+                {
+                  "name": "WS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "5"
+                },
+                {
+                  "name": "AP",
+                  "value": "-2"
+                },
+                {
+                  "name": "D",
+                  "value": "2"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Precision, Twin-linked"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Kayvaan Shrike",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "12\""
+            },
+            {
+              "name": "T",
+              "value": "4"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "5"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "name": "Trifold Path of Shadow",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this model is leading a unit, models  in this unit cannot be targeted by ranged attacks unless the attacking model is within 12\"."
+            }
+          ]
+        },
+        {
+          "name": "Echo of the Ravenspire",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "At the end of your opponent’s turn, if this model’s unit is not within Engagement Range of any enemy models, you can remove it from the battlefield and place it into Strategic Reserves."
+            }
+          ]
+        },
+        {
+          "name": "Leader",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model can be attached to the following units:\n\n■ Assault Intercessors with Jump Packs\n■ Vanguard Veteran Squad with Jump Packs"
+            }
+          ]
+        },
+        {
+          "name": "Inspiring Commander",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "If you include this model in your army, until the end of the battle, non-Character models in Assault\nIntercessors with Jump Packs units from your army have an Objective Control characteristic of 2 while they are not Battle-shocked."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "100"
+        }
+      ]
+    },
+    {
+      "id": "b2d0-b85d-3880-3efe",
+      "name": "Blackout",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Blackout",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "18\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Pistol, Precision"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "e4fe-9ddc-4e91-c960",
+      "name": "The Raven's Talons",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "The Raven's Talons",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "7"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Precision, Twin-linked"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "339f-9776-243d-69a6",
+      "name": "Kayvaan Shrike",
+      "type": "model",
+      "entries": [
+        {
+          "id": "b2d0-b85d-3880-3efe",
+          "name": "Blackout",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Blackout",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "18\""
+                },
+                {
+                  "name": "A",
+                  "value": "2"
+                },
+                {
+                  "name": "BS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "5"
+                },
+                {
+                  "name": "AP",
+                  "value": "-1"
+                },
+                {
+                  "name": "D",
+                  "value": "2"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Pistol, Precision"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "e4fe-9ddc-4e91-c960",
+          "name": "The Raven's Talons",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "The Raven's Talons",
+              "type": "Melee Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "Melee"
+                },
+                {
+                  "name": "A",
+                  "value": "7"
+                },
+                {
+                  "name": "WS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "5"
+                },
+                {
+                  "name": "AP",
+                  "value": "-2"
+                },
+                {
+                  "name": "D",
+                  "value": "2"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Precision, Twin-linked"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Kayvaan Shrike",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "12\""
+            },
+            {
+              "name": "T",
+              "value": "4"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "5"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "name": "Trifold Path of Shadow",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this model is leading a unit, models  in this unit cannot be targeted by ranged attacks unless the attacking model is within 12\"."
+            }
+          ]
+        },
+        {
+          "name": "Echo of the Ravenspire",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "At the end of your opponent’s turn, if this model’s unit is not within Engagement Range of any enemy models, you can remove it from the battlefield and place it into Strategic Reserves."
+            }
+          ]
+        },
+        {
+          "name": "Leader",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model can be attached to the following units:\n\n■ Assault Intercessors with Jump Packs\n■ Vanguard Veteran Squad with Jump Packs"
+            }
+          ]
+        },
+        {
+          "name": "Inspiring Commander",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "If you include this model in your army, until the end of the battle, non-Character models in Assault\nIntercessors with Jump Packs units from your army have an Objective Control characteristic of 2 while they are not Battle-shocked."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "100"
+        }
+      ]
+    }
+  ]
+}

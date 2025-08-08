@@ -1,0 +1,44 @@
+# Docker ignore file for W40K Duel
+
+# Git
+.git/
+.gitignore
+
+# Build artifacts
+bin/
+w40k-duel
+*.log
+
+# Temporary files
+tmp/
+*.tmp
+necron_*.json
+
+# IDE/Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Documentation (not needed in container)
+README.md
+*.md
+
+# Local test files
+server.log
+
+# Raw downloaded files (will be generated during build)
+static/raw/
+
+# Don't copy existing data (will be generated fresh)
+static/json/

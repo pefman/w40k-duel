@@ -1,0 +1,6654 @@
+{
+  "factionname": "Imperium - Adeptus Astartes - Dark Angels",
+  "units": [
+    {
+      "id": "81bd-ce4e-229f-a88",
+      "name": "Azrael",
+      "type": "model",
+      "entries": [
+        {
+          "id": "b4a7-5f8-b8d1-f3d7",
+          "name": "Lion's Wrath",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Lion's Wrath",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "24\""
+                },
+                {
+                  "name": "A",
+                  "value": "2"
+                },
+                {
+                  "name": "BS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "8"
+                },
+                {
+                  "name": "AP",
+                  "value": "-3"
+                },
+                {
+                  "name": "D",
+                  "value": "2"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Anti-Infantry 4+, Devastating Wounds, Rapid Fire 1"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "5846-a08b-2bb7-ec5a",
+          "name": "The Sword of Secrets",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "The Sword of Secrets",
+              "type": "Melee Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "Melee"
+                },
+                {
+                  "name": "A",
+                  "value": "6"
+                },
+                {
+                  "name": "WS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "6"
+                },
+                {
+                  "name": "AP",
+                  "value": "-4"
+                },
+                {
+                  "name": "D",
+                  "value": "2"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Devastating Wounds"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Azrael",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "6\""
+            },
+            {
+              "name": "T",
+              "value": "4"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "6"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "name": "Supreme Grand Master",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this model is leading a unit, weapons equipped by models in that unit have the [SUSTAINED HITS 1] ability."
+            }
+          ]
+        },
+        {
+          "name": "Masterful Tactician",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "At the start of your Command phase, if this model is on the battlefield, you gain 1CP."
+            }
+          ]
+        },
+        {
+          "name": "The Lion Helm",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Models in the bearer’s unit have a 4+ invulnerable save. In addition, once per battle, in any phase, the bearer can summon a Watcher in the Dark. When it does, until the end of the phase, models in the bearer’s unit have the Feel No Pain 4+ ability against mortal wounds."
+            }
+          ]
+        },
+        {
+          "name": "Invulnerable save",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "4+"
+            }
+          ]
+        },
+        {
+          "name": "Leader",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model can be attached to the following units:\n■ Assault Intercessor Squad\n■ Bladeguard Veteran Squad\n■ Hellblaster Squad\n■ Infernus Squad\n■ Inner Circle Companions\n■ Intercessor Squad\n■ Sternguard Veteran Squad\n■ Tactical Squad"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "115"
+        },
+        {
+          "name": "Crusade Points",
+          "typeid": "b03b-c239-15a5-da55",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeid": "75bb-ded1-c86d-bdf0",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeid": "a623-fe74-1d33-cddf",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeid": "716d-91b7-d55a-1022",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "b4a7-5f8-b8d1-f3d7",
+      "name": "Lion's Wrath",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Lion's Wrath",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "24\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "8"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Infantry 4+, Devastating Wounds, Rapid Fire 1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "5846-a08b-2bb7-ec5a",
+      "name": "The Sword of Secrets",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "The Sword of Secrets",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "6"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "-4"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Devastating Wounds"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bf62-244b-f9db-6cf",
+      "name": "Belial",
+      "type": "model",
+      "entries": [
+        {
+          "id": "4333-4e21-ec79-e05d",
+          "name": "Master-crafted storm bolter",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Master-crafted storm bolter",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "24\""
+                },
+                {
+                  "name": "A",
+                  "value": "2"
+                },
+                {
+                  "name": "BS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "4"
+                },
+                {
+                  "name": "AP",
+                  "value": "0"
+                },
+                {
+                  "name": "D",
+                  "value": "2"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Precision, Rapid Fire 2"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "1914-5431-ff58-3bc0",
+          "name": "The Sword of Silence",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "The Sword of Silence",
+              "type": "Melee Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "Melee"
+                },
+                {
+                  "name": "A",
+                  "value": "6"
+                },
+                {
+                  "name": "WS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "6"
+                },
+                {
+                  "name": "AP",
+                  "value": "-2"
+                },
+                {
+                  "name": "D",
+                  "value": "2"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Precision"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Belial",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "5\""
+            },
+            {
+              "name": "T",
+              "value": "5"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "6"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "name": "Grand Master of the Deathwing",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this model is leading a unit, each time a model in that unit makes an attack, if a Critical Hit is scored, that attack has the [PRECISION] ability."
+            }
+          ]
+        },
+        {
+          "name": "Strikes of Retribution",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Each time a melee attack is allocated to this model, after the attacking model’s unit has finished making its attacks, roll one D6 (to a maximum of six D6 per attacking unit): for each 4+, the attacking unit suffers 1 mortal wound."
+            }
+          ]
+        },
+        {
+          "name": "Invulnerable Save",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "4+"
+            }
+          ]
+        },
+        {
+          "name": "Leader",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This unit can be attached to the following units:\n■ Deathwing Knights\n■ Deathwing Terminator Squad\n■ Terminator Assault Squad\n■ Terminator Squad"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "85"
+        }
+      ]
+    },
+    {
+      "id": "4333-4e21-ec79-e05d",
+      "name": "Master-crafted storm bolter",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Master-crafted storm bolter",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "24\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Precision, Rapid Fire 2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1914-5431-ff58-3bc0",
+      "name": "The Sword of Silence",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "The Sword of Silence",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "6"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Precision"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "8f4b-c343-bef5-6779",
+      "name": "Sammael",
+      "type": "model",
+      "entries": [
+        {
+          "id": "31a7-cee5-c20b-1965",
+          "name": "Bolt Pistol",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Bolt Pistol",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "12\""
+                },
+                {
+                  "name": "A",
+                  "value": "1"
+                },
+                {
+                  "name": "BS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "4"
+                },
+                {
+                  "name": "AP",
+                  "value": "0"
+                },
+                {
+                  "name": "D",
+                  "value": "1"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Pistol"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "bfbe-ac79-2a43-5d81",
+          "name": "Master-crafted plasma cannon",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Master-crafted plasma cannon",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "36\""
+                },
+                {
+                  "name": "A",
+                  "value": "D3"
+                },
+                {
+                  "name": "BS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "8"
+                },
+                {
+                  "name": "AP",
+                  "value": "-3"
+                },
+                {
+                  "name": "D",
+                  "value": "2"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Blast"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "96b6-fc33-d163-4e2c",
+          "name": "Twin storm bolter",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Twin storm bolter",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "24\""
+                },
+                {
+                  "name": "A",
+                  "value": "2"
+                },
+                {
+                  "name": "BS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "4"
+                },
+                {
+                  "name": "AP",
+                  "value": "0"
+                },
+                {
+                  "name": "D",
+                  "value": "1"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Rapid Fire 2, Twin-Linked"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "af43-f417-3d3-66a6",
+          "name": "The Raven Sword",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "The Raven Sword",
+              "type": "Melee Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "Melee"
+                },
+                {
+                  "name": "A",
+                  "value": "6"
+                },
+                {
+                  "name": "WS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "6"
+                },
+                {
+                  "name": "AP",
+                  "value": "-3"
+                },
+                {
+                  "name": "D",
+                  "value": "2"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Sustained Hits 2"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Sammael",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "12\""
+            },
+            {
+              "name": "T",
+              "value": "5"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "7"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "2"
+            }
+          ]
+        },
+        {
+          "name": "Leader",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model can be attached to the following units:\n■ Outrider Squad\n■ Ravenwing Black Knights"
+            }
+          ]
+        },
+        {
+          "name": "Invulnerable Save",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "4+"
+            }
+          ]
+        },
+        {
+          "name": "Grand Master of the Ravenwing",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this model is leading a unit, that unit is eligible to shoot and declare a charge in a turn in which it Advanced. If that unit is already eligible to shoot and declare a charge in a turn in which it Advanced, add 1 to Advance and Charge rolls made for that unit instead."
+            }
+          ]
+        },
+        {
+          "name": "Cut Off Their Escape",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Each time an enemy unit (excluding Monsters and Vehicles) within Engagement Range of this model’s unit is selected to Fall Back, models in that enemy unit must take Desperate Escape tests as if their unit was Battle-shocked. When doing so, if that enemy unit is also Battle-shocked by other means, subtract 1 from each of those Desperate Escape tests."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "115"
+        },
+        {
+          "name": "Crusade Points",
+          "typeid": "b03b-c239-15a5-da55",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeid": "75bb-ded1-c86d-bdf0",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeid": "a623-fe74-1d33-cddf",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeid": "716d-91b7-d55a-1022",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "31a7-cee5-c20b-1965",
+      "name": "Bolt Pistol",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Bolt Pistol",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "12\""
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Pistol"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bfbe-ac79-2a43-5d81",
+      "name": "Master-crafted plasma cannon",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Master-crafted plasma cannon",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "36\""
+            },
+            {
+              "name": "A",
+              "value": "D3"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "8"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Blast"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "96b6-fc33-d163-4e2c",
+      "name": "Twin storm bolter",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Twin storm bolter",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "24\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Rapid Fire 2, Twin-Linked"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "af43-f417-3d3-66a6",
+      "name": "The Raven Sword",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "The Raven Sword",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "6"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Sustained Hits 2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "38c9-66a1-fe60-46af",
+      "name": "Ezekiel",
+      "type": "model",
+      "entries": [
+        {
+          "id": "da5e-dda8-cb14-4560",
+          "name": "The Deliverer",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "The Deliverer",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "12\""
+                },
+                {
+                  "name": "A",
+                  "value": "1"
+                },
+                {
+                  "name": "BS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "4"
+                },
+                {
+                  "name": "AP",
+                  "value": "-1"
+                },
+                {
+                  "name": "D",
+                  "value": "2"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Pistol, Precision"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "753f-d443-e1a-73a8",
+          "name": "Mind Wipe",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "➤ Mind Wipe - witchfire",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "12\""
+                },
+                {
+                  "name": "A",
+                  "value": "1"
+                },
+                {
+                  "name": "BS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "6"
+                },
+                {
+                  "name": "AP",
+                  "value": "-2"
+                },
+                {
+                  "name": "D",
+                  "value": "D6"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Devastating Wounds, Precision, Psychic"
+                }
+              ]
+            },
+            {
+              "name": "➤ Mind Wipe - focussed witchfire",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "12\""
+                },
+                {
+                  "name": "A",
+                  "value": "1"
+                },
+                {
+                  "name": "BS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "6"
+                },
+                {
+                  "name": "AP",
+                  "value": "-2"
+                },
+                {
+                  "name": "D",
+                  "value": "D6"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Anti-Character 4+, Devastating Wounds, Hazardous, Precision, Psychic"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "d54d-a3b1-1814-e7ca",
+          "name": "Traitor's Bane",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Traitor's Bane",
+              "type": "Melee Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "Melee"
+                },
+                {
+                  "name": "A",
+                  "value": "4"
+                },
+                {
+                  "name": "WS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "6"
+                },
+                {
+                  "name": "AP",
+                  "value": "-2"
+                },
+                {
+                  "name": "D",
+                  "value": "D3"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Anti-Chaos 2+, Psychic"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Ezekiel",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "6\""
+            },
+            {
+              "name": "T",
+              "value": "4"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "4"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "name": "Invulnerable save",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "4+"
+            }
+          ]
+        },
+        {
+          "name": "Engulfing Fear [Psychic]",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "In your Shooting phase, you can select one enemy unit within 18\" of this model. That enemy unit must take a Battle-shock test."
+            }
+          ]
+        },
+        {
+          "name": "Book of Salvation",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this model is leading a unit, add 1 to the Attacks characteristic of melee weapons equipped by models in that unit. When this model is destroyed, each friendly Adeptus Astartes unit within 6\" of this model must take a Battle-shock test."
+            }
+          ]
+        },
+        {
+          "name": "Leader",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model can be attached to the following units:\n■ Assault Intercessor Squad\n■ Bladeguard Veteran Squad\n■ Hellblaster Squad\n■ Infernus Squad\n■ Inner Circle Companions\n■ Intercessor Squad\n■ Sternguard Veterans Squad\n■ Tactical Squad"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "75"
+        }
+      ]
+    },
+    {
+      "id": "da5e-dda8-cb14-4560",
+      "name": "The Deliverer",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "The Deliverer",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "12\""
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Pistol, Precision"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "753f-d443-e1a-73a8",
+      "name": "Mind Wipe",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "➤ Mind Wipe - witchfire",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "12\""
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "D6"
+            },
+            {
+              "name": "Keywords",
+              "value": "Devastating Wounds, Precision, Psychic"
+            }
+          ]
+        },
+        {
+          "name": "➤ Mind Wipe - focussed witchfire",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "12\""
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "D6"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Character 4+, Devastating Wounds, Hazardous, Precision, Psychic"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "d54d-a3b1-1814-e7ca",
+      "name": "Traitor's Bane",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Traitor's Bane",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "4"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "D3"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Chaos 2+, Psychic"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "9bf9-1e30-e4b4-939c",
+      "name": "Asmodai",
+      "type": "model",
+      "entries": [
+        {
+          "id": "713c-b312-58f3-5bdf",
+          "name": "Heavy Bolt Pistol",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Heavy Bolt Pistol",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "18\""
+                },
+                {
+                  "name": "A",
+                  "value": "1"
+                },
+                {
+                  "name": "BS",
+                  "value": "3+"
+                },
+                {
+                  "name": "S",
+                  "value": "4"
+                },
+                {
+                  "name": "AP",
+                  "value": "-1"
+                },
+                {
+                  "name": "D",
+                  "value": "1"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Pistol"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "d373-91c9-3d89-e893",
+          "name": "Crozius Arcanum and Power Weapon",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "➤ Crozius Arcanum and Power Weapon - strike",
+              "type": "Melee Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "Melee"
+                },
+                {
+                  "name": "A",
+                  "value": "5"
+                },
+                {
+                  "name": "WS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "6"
+                },
+                {
+                  "name": "AP",
+                  "value": "-2"
+                },
+                {
+                  "name": "D",
+                  "value": "2"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "-"
+                }
+              ]
+            },
+            {
+              "name": "➤ Crozius Arcanum and Power Weapon - sweep",
+              "type": "Melee Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "Melee"
+                },
+                {
+                  "name": "A",
+                  "value": "8"
+                },
+                {
+                  "name": "WS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "5"
+                },
+                {
+                  "name": "AP",
+                  "value": "-2"
+                },
+                {
+                  "name": "D",
+                  "value": "1"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "-"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Asmodai",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "6\""
+            },
+            {
+              "name": "T",
+              "value": "4"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "4"
+            },
+            {
+              "name": "LD",
+              "value": "5+"
+            },
+            {
+              "name": "OC",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "name": "Invulnerable save",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "4+"
+            }
+          ]
+        },
+        {
+          "name": "Exemplar of Hate",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this model is leading a unit, each time a model in that unit makes a melee attack, you can re-roll the Hit roll."
+            }
+          ]
+        },
+        {
+          "name": "Feared Interrogator",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "At the start of the Fight phase, each enemy Character unit within 6\" of this model must take a Battle-shock test, subtracting 1 from that test when they do. In addition, each time this model destroys an enemy Character model with a melee attack, you gain 1CP."
+            }
+          ]
+        },
+        {
+          "name": "Leader",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model can be attached to the following units:\n■ Assault Intercessor Squad\n■ Bladeguard Veteran Squad\n■ Hellblaster Squad\n■ Infernus Squad\n■ Inner Circle Companions\n■ Intercessor Squad\n■ Sternguard Veteran Squad\n■ Tactical Squad"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "70"
+        }
+      ]
+    },
+    {
+      "id": "713c-b312-58f3-5bdf",
+      "name": "Heavy Bolt Pistol",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Heavy Bolt Pistol",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "18\""
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "BS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Pistol"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "d373-91c9-3d89-e893",
+      "name": "Crozius Arcanum and Power Weapon",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "➤ Crozius Arcanum and Power Weapon - strike",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "5"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "➤ Crozius Arcanum and Power Weapon - sweep",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "8"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "15d3-ebc7-d28b-daf4",
+      "name": "Lion El'Jonson",
+      "type": "model",
+      "entries": [
+        {
+          "id": "e177-275c-4a06-3e5d",
+          "name": "Arma Luminis",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "➤ Arma Luminis - bolt",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "12\""
+                },
+                {
+                  "name": "A",
+                  "value": "4"
+                },
+                {
+                  "name": "BS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "4"
+                },
+                {
+                  "name": "AP",
+                  "value": "-1"
+                },
+                {
+                  "name": "D",
+                  "value": "2"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Pistol"
+                }
+              ]
+            },
+            {
+              "name": "➤ Arma Luminis - plasma",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "12\""
+                },
+                {
+                  "name": "A",
+                  "value": "2"
+                },
+                {
+                  "name": "BS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "8"
+                },
+                {
+                  "name": "AP",
+                  "value": "-3"
+                },
+                {
+                  "name": "D",
+                  "value": "2"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Pistol"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "b81d-c41a-4951-ffe",
+          "name": "Fealty",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "➤ Fealty - strike",
+              "type": "Melee Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "Melee"
+                },
+                {
+                  "name": "A",
+                  "value": "8"
+                },
+                {
+                  "name": "WS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "12"
+                },
+                {
+                  "name": "AP",
+                  "value": "-4"
+                },
+                {
+                  "name": "D",
+                  "value": "4"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Lethal Hits"
+                }
+              ]
+            },
+            {
+              "name": "➤ Fealty - sweep",
+              "type": "Melee Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "Melee"
+                },
+                {
+                  "name": "A",
+                  "value": "16"
+                },
+                {
+                  "name": "WS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "6"
+                },
+                {
+                  "name": "AP",
+                  "value": "-3"
+                },
+                {
+                  "name": "D",
+                  "value": "2"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Sustained Hits 1"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Lion El'Jonson",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "8\""
+            },
+            {
+              "name": "T",
+              "value": "9"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "10"
+            },
+            {
+              "name": "LD",
+              "value": "5+"
+            },
+            {
+              "name": "OC",
+              "value": "4"
+            }
+          ]
+        },
+        {
+          "name": "Primarch of the First Legion",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "In your Command phase, select one Primarch of the First Legion abilities (see left). Until the start of your next Command phase, this model has that ability."
+            }
+          ]
+        },
+        {
+          "name": "Mist-wreathed Shadow Realms",
+          "type": "Primarch of the First Legion",
+          "lines": [
+            {
+              "name": "Effect",
+              "value": "In your Command phase, if this unit is not within Engagement Range of one or more enemy units, you can remove it from the battlefield and place it into Strategic Reserves."
+            }
+          ]
+        },
+        {
+          "name": "Martial Exemplar [Aura]",
+          "type": "Primarch of the First Legion",
+          "lines": [
+            {
+              "name": "Effect",
+              "value": "While a friendly Adeptus Astartes unit is within 6\" of this model, each time a model in that unit makes a melee attack, re-roll a hit roll of 1 and re-roll a wound roll of 1."
+            }
+          ]
+        },
+        {
+          "name": "No Hiding From the Watchers [Aura]",
+          "type": "Primarch of the First Legion",
+          "lines": [
+            {
+              "name": "Effect",
+              "value": "While a friendly Adeptus Astartes unit is within 6\" of this model, models in that unit have the Feel No Pain 4+ ability against mortal wounds."
+            }
+          ]
+        },
+        {
+          "name": "The Emperor's Shield",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Each time an attack is allocated to this model, if the Strength characteristic of that attack is greater than the Toughness characteristic of this model, subtract 1 from the Wound roll."
+            }
+          ]
+        },
+        {
+          "name": "Dark Angels Bodyguard",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this model is within 3\" of one or more friendly Adeptus Astartes Infantry units, this model has the Lone Operative ability."
+            }
+          ]
+        },
+        {
+          "name": "Invulnerable save",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "3+"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "315"
+        },
+        {
+          "name": "Crusade Points",
+          "typeid": "b03b-c239-15a5-da55",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeid": "75bb-ded1-c86d-bdf0",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeid": "a623-fe74-1d33-cddf",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeid": "716d-91b7-d55a-1022",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "e177-275c-4a06-3e5d",
+      "name": "Arma Luminis",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "➤ Arma Luminis - bolt",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "12\""
+            },
+            {
+              "name": "A",
+              "value": "4"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Pistol"
+            }
+          ]
+        },
+        {
+          "name": "➤ Arma Luminis - plasma",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "12\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "8"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Pistol"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b81d-c41a-4951-ffe",
+      "name": "Fealty",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "➤ Fealty - strike",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "8"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "12"
+            },
+            {
+              "name": "AP",
+              "value": "-4"
+            },
+            {
+              "name": "D",
+              "value": "4"
+            },
+            {
+              "name": "Keywords",
+              "value": "Lethal Hits"
+            }
+          ]
+        },
+        {
+          "name": "➤ Fealty - sweep",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "16"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Sustained Hits 1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "4b0d-45ff-fab3-7472",
+      "name": "Lazarus",
+      "type": "model",
+      "entries": [
+        {
+          "id": "3ad9-2652-f5e1-faa9",
+          "name": "Bolt pistol",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Bolt pistol",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "12\""
+                },
+                {
+                  "name": "A",
+                  "value": "1"
+                },
+                {
+                  "name": "BS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "4"
+                },
+                {
+                  "name": "AP",
+                  "value": "0"
+                },
+                {
+                  "name": "D",
+                  "value": "1"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Pistol"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "35f3-3981-8b17-9826",
+          "name": "Enmity’s Edge",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Enmity’s Edge",
+              "type": "Melee Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "Melee"
+                },
+                {
+                  "name": "A",
+                  "value": "6"
+                },
+                {
+                  "name": "WS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "6"
+                },
+                {
+                  "name": "AP",
+                  "value": "-3"
+                },
+                {
+                  "name": "D",
+                  "value": "2"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Anti-Psyker 2+"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Lazarus",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "6\""
+            },
+            {
+              "name": "T",
+              "value": "4"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "5"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "name": "Intractable Will",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this model is leading a unit, each time a model in that unit is destroyed by a melee attack, if that model has not fought this phase, roll one D6. On a 4+, do not remove it from play; that destroyed model can fight after the attacking unit has finished making its attacks, and is then removed from play."
+            }
+          ]
+        },
+        {
+          "name": "The Spiritshield Helm",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model has the Feel No Pain 3+ ability against Psychic Attacks and mortal wounds."
+            }
+          ]
+        },
+        {
+          "name": "Invulnerable Save",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "4+"
+            }
+          ]
+        },
+        {
+          "name": "Leader",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model can be attached to the following units:\n■ Assault Intercessor Squad\n■ Bladeguard Veteran Squad\n■ Infernus Squad\n■ Inner Circle Companions\n■ Intercessor Squad\n■ Sternguard Veteran Squad\n■ Tactical Squad"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "70"
+        }
+      ]
+    },
+    {
+      "id": "3ad9-2652-f5e1-faa9",
+      "name": "Bolt pistol",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Bolt pistol",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "12\""
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Pistol"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "35f3-3981-8b17-9826",
+      "name": "Enmity’s Edge",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Enmity’s Edge",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "6"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Psyker 2+"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "4f36-6609-efac-baa6",
+      "name": "Nephilim Jetfighter",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Nephilim Jetfighter",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "20+\""
+            },
+            {
+              "name": "T",
+              "value": "8"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "11"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "name": "Lightning-fast Manoeuvres",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Each time a ranged attack targets this model, subtract 1 from the Hit roll. If that attack was made by a model that can Fly, subtract 1 from the Wound roll as well."
+            }
+          ]
+        },
+        {
+          "name": "DAMAGED: 1-3 WOUNDS REMAINING",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this model has 1-3 wounds remaining, each time this model makes an attack, subtract 1 from the Hit roll."
+            }
+          ]
+        },
+        {
+          "name": "Invulnerable Save",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "5+"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "195"
+        }
+      ]
+    },
+    {
+      "id": "9b3d-e812-4248-522",
+      "name": "Ravenwing Dark Talon",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Ravenwing Dark Talon",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "20+\""
+            },
+            {
+              "name": "T",
+              "value": "8"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "11"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "name": "Invulnerable Save",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "5+"
+            }
+          ]
+        },
+        {
+          "name": "Stasis Bomb",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Once per battle, one model from your army with this ability can use it after it ends a Normal move. If it does, you can select one enemy unit (excluding Aircraft) that model moved over this phase. That unit suffers D3 mortal wounds and you must roll one D6: on a 1-3, that unit cannot Advance or Fall Back in your opponent’s next Movement phase; on a 4-6, that unit must Remain Stationary in your opponent’s next Movement phase. Each model can only use this ability once per battle."
+            }
+          ]
+        },
+        {
+          "name": "DAMAGED: 1-3 WOUNDS REMAINING",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this model has 1-3 wounds remaining, each time this model makes an attack, subtract 1 from the Hit roll."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "210"
+        }
+      ]
+    },
+    {
+      "id": "b4a0-d2fe-a988-f28b",
+      "name": "Land Speeder Vengeance",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Land Speeder Vengeance",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "14\""
+            },
+            {
+              "name": "T",
+              "value": "8"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "10"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "3"
+            }
+          ]
+        },
+        {
+          "name": "Invulnerable Save",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "5+"
+            }
+          ]
+        },
+        {
+          "name": "Storm of Vengeance",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Once per turn, in your opponent’s Shooting phase, when another friendly Adeptus Astartes unit within 6\" of this model is destroyed, one model with this ability can use it. If it does, after the attacking unit has finished making its attacks, that model can shoot as if it were your Shooting phase, but when resolving those attacks it can only target that enemy unit (and only if it is an eligible target)."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "120"
+        },
+        {
+          "name": "Crusade Points",
+          "typeid": "b03b-c239-15a5-da55",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeid": "75bb-ded1-c86d-bdf0",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeid": "a623-fe74-1d33-cddf",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeid": "716d-91b7-d55a-1022",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "152b-a271-df2b-21a9",
+      "name": "Ravenwing Darkshroud",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Invulnerable Save",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "5+"
+            }
+          ]
+        },
+        {
+          "name": "Icon of Old Caliban (Aura)",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While a friendly Adeptus Astartes unit is within 6\" of this model, models in that unit have the Stealth ability and each time a ranged attack targets that unit, that unit has the Benefit of Cover against that attack."
+            }
+          ]
+        },
+        {
+          "name": "Ravenwing Darkshroud",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "14\""
+            },
+            {
+              "name": "T",
+              "value": "8"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "10"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "3"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "115"
+        }
+      ]
+    },
+    {
+      "id": "212d-f302-aaaf-5c12",
+      "name": "Ravenwing Black Knights",
+      "type": "unit",
+      "profiles": [
+        {
+          "name": "Knights of Caliban",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Each time this unit is selected to fight, if it made a Charge move this turn, until the end of the phase, melee weapons equipped by models in this unit have the [ANTI-MONSTER 4+] and [ANTI-VEHICLE 4+] abilities."
+            }
+          ]
+        },
+        {
+          "name": "Attached Unit",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "If a Character unit from your army with the Leader ability can be attached to an Outrider Squad, it can be attached to this unit instead."
+            }
+          ]
+        },
+        {
+          "name": "Invulnerable Save",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "5+"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "90"
+        }
+      ]
+    },
+    {
+      "id": "e87d-f173-88b9-aa84",
+      "name": "Ravenwing Command Squad",
+      "type": "unit",
+      "entries": [
+        {
+          "id": "b342-4005-baec-3598",
+          "name": "Ravenwing Ancient",
+          "type": "model",
+          "entries": [
+            {
+              "id": "7883-4ff1-4189-8ec6",
+              "name": "Black Knight combat weapon",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Black Knight combat weapon",
+                  "type": "Melee Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "Melee"
+                    },
+                    {
+                      "name": "A",
+                      "value": "3"
+                    },
+                    {
+                      "name": "WS",
+                      "value": "3+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "5"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-2"
+                    },
+                    {
+                      "name": "D",
+                      "value": "1"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "Devastating Wounds"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "d330-eb86-bcd1-fdc4",
+              "name": "Bolt Pistol",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Bolt Pistol",
+                  "type": "Ranged Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "12\""
+                    },
+                    {
+                      "name": "A",
+                      "value": "1"
+                    },
+                    {
+                      "name": "BS",
+                      "value": "3+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "4"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "0"
+                    },
+                    {
+                      "name": "D",
+                      "value": "1"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "Pistol"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "profiles": [
+            {
+              "name": "Ravenwing Ancient",
+              "type": "Unit",
+              "lines": [
+                {
+                  "name": "M",
+                  "value": "12\""
+                },
+                {
+                  "name": "T",
+                  "value": "5"
+                },
+                {
+                  "name": "SV",
+                  "value": "3+"
+                },
+                {
+                  "name": "W",
+                  "value": "4"
+                },
+                {
+                  "name": "LD",
+                  "value": "6+"
+                },
+                {
+                  "name": "OC",
+                  "value": "2"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "d445-3ac1-64d5-fd4a",
+          "name": "Ravenwing Apothecary",
+          "type": "model",
+          "entries": [
+            {
+              "id": "48b6-4280-25f4-a306",
+              "name": "Black Knight combat weapon",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Black Knight combat weapon",
+                  "type": "Melee Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "Melee"
+                    },
+                    {
+                      "name": "A",
+                      "value": "3"
+                    },
+                    {
+                      "name": "WS",
+                      "value": "3+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "5"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-2"
+                    },
+                    {
+                      "name": "D",
+                      "value": "1"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "Devastating Wounds"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "3977-665d-ed2-21c9",
+              "name": "Bolt Pistol",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Bolt Pistol",
+                  "type": "Ranged Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "12\""
+                    },
+                    {
+                      "name": "A",
+                      "value": "1"
+                    },
+                    {
+                      "name": "BS",
+                      "value": "3+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "4"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "0"
+                    },
+                    {
+                      "name": "D",
+                      "value": "1"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "Pistol"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "profiles": [
+            {
+              "name": "Ravenwing Apothecary",
+              "type": "Unit",
+              "lines": [
+                {
+                  "name": "M",
+                  "value": "12\""
+                },
+                {
+                  "name": "T",
+                  "value": "5"
+                },
+                {
+                  "name": "SV",
+                  "value": "3+"
+                },
+                {
+                  "name": "W",
+                  "value": "4"
+                },
+                {
+                  "name": "LD",
+                  "value": "6+"
+                },
+                {
+                  "name": "OC",
+                  "value": "2"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "f227-6107-836d-3fee",
+          "name": "Ravenwing Champion",
+          "type": "model",
+          "profiles": [
+            {
+              "name": "Ravenwing Champion",
+              "type": "Unit",
+              "lines": [
+                {
+                  "name": "M",
+                  "value": "12\""
+                },
+                {
+                  "name": "T",
+                  "value": "5"
+                },
+                {
+                  "name": "SV",
+                  "value": "3+"
+                },
+                {
+                  "name": "W",
+                  "value": "4"
+                },
+                {
+                  "name": "LD",
+                  "value": "6+"
+                },
+                {
+                  "name": "OC",
+                  "value": "2"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Leader",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This unit can be attached to the following units:\n■ Outrider Squad\n■ Ravenwing Black Knights"
+            }
+          ]
+        },
+        {
+          "name": "Invulnerable Save",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "5+"
+            }
+          ]
+        },
+        {
+          "name": "Narthecium",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this unit contains a Ravenwing Apothecary, in your Command phase, you can return 1 destroyed model (excluding Character and Invader ATV models) to this unit."
+            }
+          ]
+        },
+        {
+          "name": "Astartes Banner",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this unit contains a Ravenwing Ancient, add 1 to the Objective Control characteristic of models in this unit."
+            }
+          ]
+        },
+        {
+          "name": "Honour or Death",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this unit contains a Ravenwing Champion, add 1 to Advance and Charge rolls made for this unit and you can target this unit with the Heroic Intervention Stratagem for 0CP."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "120"
+        },
+        {
+          "name": "Crusade Points",
+          "typeid": "b03b-c239-15a5-da55",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeid": "75bb-ded1-c86d-bdf0",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeid": "a623-fe74-1d33-cddf",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeid": "716d-91b7-d55a-1022",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "b342-4005-baec-3598",
+      "name": "Ravenwing Ancient",
+      "type": "model",
+      "entries": [
+        {
+          "id": "7883-4ff1-4189-8ec6",
+          "name": "Black Knight combat weapon",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Black Knight combat weapon",
+              "type": "Melee Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "Melee"
+                },
+                {
+                  "name": "A",
+                  "value": "3"
+                },
+                {
+                  "name": "WS",
+                  "value": "3+"
+                },
+                {
+                  "name": "S",
+                  "value": "5"
+                },
+                {
+                  "name": "AP",
+                  "value": "-2"
+                },
+                {
+                  "name": "D",
+                  "value": "1"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Devastating Wounds"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "d330-eb86-bcd1-fdc4",
+          "name": "Bolt Pistol",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Bolt Pistol",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "12\""
+                },
+                {
+                  "name": "A",
+                  "value": "1"
+                },
+                {
+                  "name": "BS",
+                  "value": "3+"
+                },
+                {
+                  "name": "S",
+                  "value": "4"
+                },
+                {
+                  "name": "AP",
+                  "value": "0"
+                },
+                {
+                  "name": "D",
+                  "value": "1"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Pistol"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Ravenwing Ancient",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "12\""
+            },
+            {
+              "name": "T",
+              "value": "5"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "4"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "7883-4ff1-4189-8ec6",
+      "name": "Black Knight combat weapon",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Black Knight combat weapon",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "3"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Devastating Wounds"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "d330-eb86-bcd1-fdc4",
+      "name": "Bolt Pistol",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Bolt Pistol",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "12\""
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "BS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Pistol"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "d445-3ac1-64d5-fd4a",
+      "name": "Ravenwing Apothecary",
+      "type": "model",
+      "entries": [
+        {
+          "id": "48b6-4280-25f4-a306",
+          "name": "Black Knight combat weapon",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Black Knight combat weapon",
+              "type": "Melee Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "Melee"
+                },
+                {
+                  "name": "A",
+                  "value": "3"
+                },
+                {
+                  "name": "WS",
+                  "value": "3+"
+                },
+                {
+                  "name": "S",
+                  "value": "5"
+                },
+                {
+                  "name": "AP",
+                  "value": "-2"
+                },
+                {
+                  "name": "D",
+                  "value": "1"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Devastating Wounds"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "3977-665d-ed2-21c9",
+          "name": "Bolt Pistol",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Bolt Pistol",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "12\""
+                },
+                {
+                  "name": "A",
+                  "value": "1"
+                },
+                {
+                  "name": "BS",
+                  "value": "3+"
+                },
+                {
+                  "name": "S",
+                  "value": "4"
+                },
+                {
+                  "name": "AP",
+                  "value": "0"
+                },
+                {
+                  "name": "D",
+                  "value": "1"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Pistol"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Ravenwing Apothecary",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "12\""
+            },
+            {
+              "name": "T",
+              "value": "5"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "4"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "48b6-4280-25f4-a306",
+      "name": "Black Knight combat weapon",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Black Knight combat weapon",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "3"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Devastating Wounds"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "3977-665d-ed2-21c9",
+      "name": "Bolt Pistol",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Bolt Pistol",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "12\""
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "BS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Pistol"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f227-6107-836d-3fee",
+      "name": "Ravenwing Champion",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Ravenwing Champion",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "12\""
+            },
+            {
+              "name": "T",
+              "value": "5"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "4"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a6cc-9a65-dbf1-71b0",
+      "name": "Deathwing Knights",
+      "type": "unit",
+      "entries": [
+        {
+          "id": "538b-1eed-aa38-a9ad",
+          "name": "Watcher in the Dark",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Watcher in the Dark",
+              "type": "Abilities",
+              "lines": [
+                {
+                  "name": "Description",
+                  "value": "Once per battle, in any phase, just after a mortal wound is allocated to an Adeptus Astartes model in this unit, this unit can summon a Watcher in the Dark. When it does, until the end of the phase, models in this unit have the Feel No Pain 4+ ability against mortal wounds."
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Inner Circle",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Each time an attack is allocated to a model in this unit, subtract 1 from the Damage characteristic of that attack."
+            }
+          ]
+        },
+        {
+          "name": "Invulnerable Save",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "4+"
+            }
+          ]
+        },
+        {
+          "name": "Attached Unit",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "If a Character unit from your army with the Leader ability can be attached to a Terminator Squad, it can be attached to this unit instead."
+            }
+          ]
+        },
+        {
+          "name": "Teleport Homer",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "At the start of the battle, you can set up one Teleport Homer token for this unit anywhere on the battlefield that is not in your opponent’s deployment zone. If you do, once per battle, you can target this unit with the Rapid Ingress Stratagem for 0CP, but when resolving that Stratagem, you must set this unit up within 3\" horizontally of that token and not within 9\" horizontally of any enemy models. That token is then removed."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "250"
+        },
+        {
+          "name": "Crusade Points",
+          "typeid": "b03b-c239-15a5-da55",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeid": "75bb-ded1-c86d-bdf0",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeid": "a623-fe74-1d33-cddf",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeid": "716d-91b7-d55a-1022",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "538b-1eed-aa38-a9ad",
+      "name": "Watcher in the Dark",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Watcher in the Dark",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Once per battle, in any phase, just after a mortal wound is allocated to an Adeptus Astartes model in this unit, this unit can summon a Watcher in the Dark. When it does, until the end of the phase, models in this unit have the Feel No Pain 4+ ability against mortal wounds."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "6135-d842-8e61-889d",
+      "name": "Deathwing Terminator Squad",
+      "type": "unit",
+      "entries": [
+        {
+          "id": "5638-9134-2d96-888",
+          "name": "Watcher in the Dark",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Watcher in the Dark",
+              "type": "Abilities",
+              "lines": [
+                {
+                  "name": "Description",
+                  "value": "Once per battle, in any phase, just after a mortal wound is allocated to an Adeptus Astartes model in this unit, this unit can summon a Watcher in the Dark. When it does, until the end of the phase, models in this unit have the Feel No Pain 4+ ability against mortal wounds."
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Invulnerable Save",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Models in this unit have a 4+ invulnerable save."
+            }
+          ]
+        },
+        {
+          "name": "Deathwing",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Each time a model in this unit makes an attack, you can ignore any or all modifiers to that attack’s Ballistic Skill or Weapon Skill characteristics and/or to the Hit roll.\nIn addition, each time a model in this unit makes an attack that targets your Oath of Moment target (see Codex: Space Marines), add 1 to the Hit roll."
+            }
+          ]
+        },
+        {
+          "name": "Attached Unit",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "If a Character unit from your army with the Leader ability can be attached to a Terminator Squad, it can be attached to this unit instead."
+            }
+          ]
+        },
+        {
+          "name": "Teleport Homer",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "At the start of the battle, you can set up one Teleport Homer token for this unit anywhere on the battlefield that is not in your opponent’s deployment zone. If you do, once per battle, you can target this unit with the Rapid Ingress Stratagem for 0CP, but when resolving that Stratagem, you must set this unit up within 3\" horizontally of that token and not within 9\" horizontally of any enemy models. That token is then removed."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "180"
+        }
+      ]
+    },
+    {
+      "id": "5638-9134-2d96-888",
+      "name": "Watcher in the Dark",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Watcher in the Dark",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Once per battle, in any phase, just after a mortal wound is allocated to an Adeptus Astartes model in this unit, this unit can summon a Watcher in the Dark. When it does, until the end of the phase, models in this unit have the Feel No Pain 4+ ability against mortal wounds."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f34-e2f9-c98e-1916",
+      "name": "Inner Circle Companions",
+      "type": "unit",
+      "profiles": [
+        {
+          "name": "Attached Unit",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "If a Character unit from your army with the Leader ability can be attached to a Sternguard Veteran Squad, it can be attached to this unit instead."
+            }
+          ]
+        },
+        {
+          "name": "Braziers of Judgement",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While a Character model is leading this unit, each time an attack targets this unit, subtract 1 from the Hit roll."
+            }
+          ]
+        },
+        {
+          "name": "Emnity for the Unworthy",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Each time a model in this unit makes an attack that targets a Character unit, add 1 to the Hit roll."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "90"
+        }
+      ]
+    },
+    {
+      "id": "a2b6-e35-67a8-d76e",
+      "name": "Ravenwing Talonmaster [Legends]",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Ravenwing Talonmaster [Legends]",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "16\""
+            },
+            {
+              "name": "T",
+              "value": "7"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "6"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "2"
+            }
+          ]
+        },
+        {
+          "name": "Talonmaster",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this model is within 3\" of one or more other friendly Adeptus Astartes Mounted or Adeptus Astartes Fly Vehicle units, this model has the Lone Operative ability."
+            }
+          ]
+        },
+        {
+          "name": "Nowhere To Hide",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While a friendly Adeptus Astartes Mounted or Adeptus Astartes Fly Vehicle unit is within 6\" of this model, ranged weapons equipped by models in that unit have the [IGNORES COVER] ability."
+            }
+          ]
+        },
+        {
+          "name": "Master of Manoeuvre",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Once per turn, when an enemy unit ends a Normal, Advance or Fall Back move within 9\" of this model, if this model is not within Engagement Range of one or more enemy units, this model can make a Normal move of up to 6\"."
+            }
+          ]
+        },
+        {
+          "name": "Invulnerable Save",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "5+"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "105"
+        }
+      ]
+    },
+    {
+      "id": "ebd0-6939-6305-6d16",
+      "name": "Deathwing Strikemaster [Legends]",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Deathwing Strikemaster [Legends]",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "5\""
+            },
+            {
+              "name": "T",
+              "value": "5"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "5"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "name": "Invulnerable Save",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "4+"
+            }
+          ]
+        },
+        {
+          "name": "Leader",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This unit can be attached to the following units:\n■ Deathwing Command Squad\n■ Deathwing Terminator Squad\n\n■ Relic Terminator Squad\n■ Terminator Assault Squad\n■ Terminator Squad"
+            }
+          ]
+        },
+        {
+          "name": "Tactical Precision",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this model is leading a unit, weapons equipped by models in that unit have the [LETHAL HITS] ability."
+            }
+          ]
+        },
+        {
+          "name": "Vanquish the Foe",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Each time this model makes an attack that targets an enemy unit that is Below Half-strength, add 1 to the Hit roll and add 1 to the Wound roll."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "80"
+        }
+      ]
+    },
+    {
+      "id": "48fb-ebd6-dd17-729b",
+      "name": "Deathwing Command Squad [Legends]",
+      "type": "unit",
+      "entries": [
+        {
+          "id": "dcdd-cda8-1160-dfda",
+          "name": "Watcher in the Dark",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Watcher in the Dark",
+              "type": "Abilities",
+              "lines": [
+                {
+                  "name": "Description",
+                  "value": "Once per battle, in any phase, just after a mortal wound is allocated to an Adeptus Astartes model in this unit, this unit can summon a Watcher in the Dark. When it does, until the end of the phase, models in this unit have the Feel No Pain 4+ ability against mortal wounds."
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Attached Unit",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "If a Character unit from your army with the Leader ability can be attached to a Terminator Squad, it can be attached to this unit instead."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "200"
+        }
+      ]
+    },
+    {
+      "id": "dcdd-cda8-1160-dfda",
+      "name": "Watcher in the Dark",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Watcher in the Dark",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Once per battle, in any phase, just after a mortal wound is allocated to an Adeptus Astartes model in this unit, this unit can summon a Watcher in the Dark. When it does, until the end of the phase, models in this unit have the Feel No Pain 4+ ability against mortal wounds."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "81bd-ce4e-229f-a88",
+      "name": "Azrael",
+      "type": "model",
+      "entries": [
+        {
+          "id": "b4a7-5f8-b8d1-f3d7",
+          "name": "Lion's Wrath",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Lion's Wrath",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "24\""
+                },
+                {
+                  "name": "A",
+                  "value": "2"
+                },
+                {
+                  "name": "BS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "8"
+                },
+                {
+                  "name": "AP",
+                  "value": "-3"
+                },
+                {
+                  "name": "D",
+                  "value": "2"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Anti-Infantry 4+, Devastating Wounds, Rapid Fire 1"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "5846-a08b-2bb7-ec5a",
+          "name": "The Sword of Secrets",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "The Sword of Secrets",
+              "type": "Melee Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "Melee"
+                },
+                {
+                  "name": "A",
+                  "value": "6"
+                },
+                {
+                  "name": "WS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "6"
+                },
+                {
+                  "name": "AP",
+                  "value": "-4"
+                },
+                {
+                  "name": "D",
+                  "value": "2"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Devastating Wounds"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Azrael",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "6\""
+            },
+            {
+              "name": "T",
+              "value": "4"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "6"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "name": "Supreme Grand Master",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this model is leading a unit, weapons equipped by models in that unit have the [SUSTAINED HITS 1] ability."
+            }
+          ]
+        },
+        {
+          "name": "Masterful Tactician",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "At the start of your Command phase, if this model is on the battlefield, you gain 1CP."
+            }
+          ]
+        },
+        {
+          "name": "The Lion Helm",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Models in the bearer’s unit have a 4+ invulnerable save. In addition, once per battle, in any phase, the bearer can summon a Watcher in the Dark. When it does, until the end of the phase, models in the bearer’s unit have the Feel No Pain 4+ ability against mortal wounds."
+            }
+          ]
+        },
+        {
+          "name": "Invulnerable save",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "4+"
+            }
+          ]
+        },
+        {
+          "name": "Leader",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model can be attached to the following units:\n■ Assault Intercessor Squad\n■ Bladeguard Veteran Squad\n■ Hellblaster Squad\n■ Infernus Squad\n■ Inner Circle Companions\n■ Intercessor Squad\n■ Sternguard Veteran Squad\n■ Tactical Squad"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "115"
+        },
+        {
+          "name": "Crusade Points",
+          "typeid": "b03b-c239-15a5-da55",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeid": "75bb-ded1-c86d-bdf0",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeid": "a623-fe74-1d33-cddf",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeid": "716d-91b7-d55a-1022",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "bf62-244b-f9db-6cf",
+      "name": "Belial",
+      "type": "model",
+      "entries": [
+        {
+          "id": "4333-4e21-ec79-e05d",
+          "name": "Master-crafted storm bolter",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Master-crafted storm bolter",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "24\""
+                },
+                {
+                  "name": "A",
+                  "value": "2"
+                },
+                {
+                  "name": "BS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "4"
+                },
+                {
+                  "name": "AP",
+                  "value": "0"
+                },
+                {
+                  "name": "D",
+                  "value": "2"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Precision, Rapid Fire 2"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "1914-5431-ff58-3bc0",
+          "name": "The Sword of Silence",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "The Sword of Silence",
+              "type": "Melee Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "Melee"
+                },
+                {
+                  "name": "A",
+                  "value": "6"
+                },
+                {
+                  "name": "WS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "6"
+                },
+                {
+                  "name": "AP",
+                  "value": "-2"
+                },
+                {
+                  "name": "D",
+                  "value": "2"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Precision"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Belial",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "5\""
+            },
+            {
+              "name": "T",
+              "value": "5"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "6"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "name": "Grand Master of the Deathwing",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this model is leading a unit, each time a model in that unit makes an attack, if a Critical Hit is scored, that attack has the [PRECISION] ability."
+            }
+          ]
+        },
+        {
+          "name": "Strikes of Retribution",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Each time a melee attack is allocated to this model, after the attacking model’s unit has finished making its attacks, roll one D6 (to a maximum of six D6 per attacking unit): for each 4+, the attacking unit suffers 1 mortal wound."
+            }
+          ]
+        },
+        {
+          "name": "Invulnerable Save",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "4+"
+            }
+          ]
+        },
+        {
+          "name": "Leader",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This unit can be attached to the following units:\n■ Deathwing Knights\n■ Deathwing Terminator Squad\n■ Terminator Assault Squad\n■ Terminator Squad"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "85"
+        }
+      ]
+    },
+    {
+      "id": "8f4b-c343-bef5-6779",
+      "name": "Sammael",
+      "type": "model",
+      "entries": [
+        {
+          "id": "31a7-cee5-c20b-1965",
+          "name": "Bolt Pistol",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Bolt Pistol",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "12\""
+                },
+                {
+                  "name": "A",
+                  "value": "1"
+                },
+                {
+                  "name": "BS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "4"
+                },
+                {
+                  "name": "AP",
+                  "value": "0"
+                },
+                {
+                  "name": "D",
+                  "value": "1"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Pistol"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "bfbe-ac79-2a43-5d81",
+          "name": "Master-crafted plasma cannon",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Master-crafted plasma cannon",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "36\""
+                },
+                {
+                  "name": "A",
+                  "value": "D3"
+                },
+                {
+                  "name": "BS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "8"
+                },
+                {
+                  "name": "AP",
+                  "value": "-3"
+                },
+                {
+                  "name": "D",
+                  "value": "2"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Blast"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "96b6-fc33-d163-4e2c",
+          "name": "Twin storm bolter",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Twin storm bolter",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "24\""
+                },
+                {
+                  "name": "A",
+                  "value": "2"
+                },
+                {
+                  "name": "BS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "4"
+                },
+                {
+                  "name": "AP",
+                  "value": "0"
+                },
+                {
+                  "name": "D",
+                  "value": "1"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Rapid Fire 2, Twin-Linked"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "af43-f417-3d3-66a6",
+          "name": "The Raven Sword",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "The Raven Sword",
+              "type": "Melee Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "Melee"
+                },
+                {
+                  "name": "A",
+                  "value": "6"
+                },
+                {
+                  "name": "WS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "6"
+                },
+                {
+                  "name": "AP",
+                  "value": "-3"
+                },
+                {
+                  "name": "D",
+                  "value": "2"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Sustained Hits 2"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Sammael",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "12\""
+            },
+            {
+              "name": "T",
+              "value": "5"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "7"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "2"
+            }
+          ]
+        },
+        {
+          "name": "Leader",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model can be attached to the following units:\n■ Outrider Squad\n■ Ravenwing Black Knights"
+            }
+          ]
+        },
+        {
+          "name": "Invulnerable Save",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "4+"
+            }
+          ]
+        },
+        {
+          "name": "Grand Master of the Ravenwing",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this model is leading a unit, that unit is eligible to shoot and declare a charge in a turn in which it Advanced. If that unit is already eligible to shoot and declare a charge in a turn in which it Advanced, add 1 to Advance and Charge rolls made for that unit instead."
+            }
+          ]
+        },
+        {
+          "name": "Cut Off Their Escape",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Each time an enemy unit (excluding Monsters and Vehicles) within Engagement Range of this model’s unit is selected to Fall Back, models in that enemy unit must take Desperate Escape tests as if their unit was Battle-shocked. When doing so, if that enemy unit is also Battle-shocked by other means, subtract 1 from each of those Desperate Escape tests."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "115"
+        },
+        {
+          "name": "Crusade Points",
+          "typeid": "b03b-c239-15a5-da55",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeid": "75bb-ded1-c86d-bdf0",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeid": "a623-fe74-1d33-cddf",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeid": "716d-91b7-d55a-1022",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "38c9-66a1-fe60-46af",
+      "name": "Ezekiel",
+      "type": "model",
+      "entries": [
+        {
+          "id": "da5e-dda8-cb14-4560",
+          "name": "The Deliverer",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "The Deliverer",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "12\""
+                },
+                {
+                  "name": "A",
+                  "value": "1"
+                },
+                {
+                  "name": "BS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "4"
+                },
+                {
+                  "name": "AP",
+                  "value": "-1"
+                },
+                {
+                  "name": "D",
+                  "value": "2"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Pistol, Precision"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "753f-d443-e1a-73a8",
+          "name": "Mind Wipe",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "➤ Mind Wipe - witchfire",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "12\""
+                },
+                {
+                  "name": "A",
+                  "value": "1"
+                },
+                {
+                  "name": "BS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "6"
+                },
+                {
+                  "name": "AP",
+                  "value": "-2"
+                },
+                {
+                  "name": "D",
+                  "value": "D6"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Devastating Wounds, Precision, Psychic"
+                }
+              ]
+            },
+            {
+              "name": "➤ Mind Wipe - focussed witchfire",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "12\""
+                },
+                {
+                  "name": "A",
+                  "value": "1"
+                },
+                {
+                  "name": "BS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "6"
+                },
+                {
+                  "name": "AP",
+                  "value": "-2"
+                },
+                {
+                  "name": "D",
+                  "value": "D6"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Anti-Character 4+, Devastating Wounds, Hazardous, Precision, Psychic"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "d54d-a3b1-1814-e7ca",
+          "name": "Traitor's Bane",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Traitor's Bane",
+              "type": "Melee Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "Melee"
+                },
+                {
+                  "name": "A",
+                  "value": "4"
+                },
+                {
+                  "name": "WS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "6"
+                },
+                {
+                  "name": "AP",
+                  "value": "-2"
+                },
+                {
+                  "name": "D",
+                  "value": "D3"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Anti-Chaos 2+, Psychic"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Ezekiel",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "6\""
+            },
+            {
+              "name": "T",
+              "value": "4"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "4"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "name": "Invulnerable save",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "4+"
+            }
+          ]
+        },
+        {
+          "name": "Engulfing Fear [Psychic]",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "In your Shooting phase, you can select one enemy unit within 18\" of this model. That enemy unit must take a Battle-shock test."
+            }
+          ]
+        },
+        {
+          "name": "Book of Salvation",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this model is leading a unit, add 1 to the Attacks characteristic of melee weapons equipped by models in that unit. When this model is destroyed, each friendly Adeptus Astartes unit within 6\" of this model must take a Battle-shock test."
+            }
+          ]
+        },
+        {
+          "name": "Leader",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model can be attached to the following units:\n■ Assault Intercessor Squad\n■ Bladeguard Veteran Squad\n■ Hellblaster Squad\n■ Infernus Squad\n■ Inner Circle Companions\n■ Intercessor Squad\n■ Sternguard Veterans Squad\n■ Tactical Squad"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "75"
+        }
+      ]
+    },
+    {
+      "id": "9bf9-1e30-e4b4-939c",
+      "name": "Asmodai",
+      "type": "model",
+      "entries": [
+        {
+          "id": "713c-b312-58f3-5bdf",
+          "name": "Heavy Bolt Pistol",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Heavy Bolt Pistol",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "18\""
+                },
+                {
+                  "name": "A",
+                  "value": "1"
+                },
+                {
+                  "name": "BS",
+                  "value": "3+"
+                },
+                {
+                  "name": "S",
+                  "value": "4"
+                },
+                {
+                  "name": "AP",
+                  "value": "-1"
+                },
+                {
+                  "name": "D",
+                  "value": "1"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Pistol"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "d373-91c9-3d89-e893",
+          "name": "Crozius Arcanum and Power Weapon",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "➤ Crozius Arcanum and Power Weapon - strike",
+              "type": "Melee Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "Melee"
+                },
+                {
+                  "name": "A",
+                  "value": "5"
+                },
+                {
+                  "name": "WS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "6"
+                },
+                {
+                  "name": "AP",
+                  "value": "-2"
+                },
+                {
+                  "name": "D",
+                  "value": "2"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "-"
+                }
+              ]
+            },
+            {
+              "name": "➤ Crozius Arcanum and Power Weapon - sweep",
+              "type": "Melee Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "Melee"
+                },
+                {
+                  "name": "A",
+                  "value": "8"
+                },
+                {
+                  "name": "WS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "5"
+                },
+                {
+                  "name": "AP",
+                  "value": "-2"
+                },
+                {
+                  "name": "D",
+                  "value": "1"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "-"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Asmodai",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "6\""
+            },
+            {
+              "name": "T",
+              "value": "4"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "4"
+            },
+            {
+              "name": "LD",
+              "value": "5+"
+            },
+            {
+              "name": "OC",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "name": "Invulnerable save",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "4+"
+            }
+          ]
+        },
+        {
+          "name": "Exemplar of Hate",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this model is leading a unit, each time a model in that unit makes a melee attack, you can re-roll the Hit roll."
+            }
+          ]
+        },
+        {
+          "name": "Feared Interrogator",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "At the start of the Fight phase, each enemy Character unit within 6\" of this model must take a Battle-shock test, subtracting 1 from that test when they do. In addition, each time this model destroys an enemy Character model with a melee attack, you gain 1CP."
+            }
+          ]
+        },
+        {
+          "name": "Leader",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model can be attached to the following units:\n■ Assault Intercessor Squad\n■ Bladeguard Veteran Squad\n■ Hellblaster Squad\n■ Infernus Squad\n■ Inner Circle Companions\n■ Intercessor Squad\n■ Sternguard Veteran Squad\n■ Tactical Squad"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "70"
+        }
+      ]
+    },
+    {
+      "id": "15d3-ebc7-d28b-daf4",
+      "name": "Lion El'Jonson",
+      "type": "model",
+      "entries": [
+        {
+          "id": "e177-275c-4a06-3e5d",
+          "name": "Arma Luminis",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "➤ Arma Luminis - bolt",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "12\""
+                },
+                {
+                  "name": "A",
+                  "value": "4"
+                },
+                {
+                  "name": "BS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "4"
+                },
+                {
+                  "name": "AP",
+                  "value": "-1"
+                },
+                {
+                  "name": "D",
+                  "value": "2"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Pistol"
+                }
+              ]
+            },
+            {
+              "name": "➤ Arma Luminis - plasma",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "12\""
+                },
+                {
+                  "name": "A",
+                  "value": "2"
+                },
+                {
+                  "name": "BS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "8"
+                },
+                {
+                  "name": "AP",
+                  "value": "-3"
+                },
+                {
+                  "name": "D",
+                  "value": "2"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Pistol"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "b81d-c41a-4951-ffe",
+          "name": "Fealty",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "➤ Fealty - strike",
+              "type": "Melee Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "Melee"
+                },
+                {
+                  "name": "A",
+                  "value": "8"
+                },
+                {
+                  "name": "WS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "12"
+                },
+                {
+                  "name": "AP",
+                  "value": "-4"
+                },
+                {
+                  "name": "D",
+                  "value": "4"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Lethal Hits"
+                }
+              ]
+            },
+            {
+              "name": "➤ Fealty - sweep",
+              "type": "Melee Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "Melee"
+                },
+                {
+                  "name": "A",
+                  "value": "16"
+                },
+                {
+                  "name": "WS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "6"
+                },
+                {
+                  "name": "AP",
+                  "value": "-3"
+                },
+                {
+                  "name": "D",
+                  "value": "2"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Sustained Hits 1"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Lion El'Jonson",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "8\""
+            },
+            {
+              "name": "T",
+              "value": "9"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "10"
+            },
+            {
+              "name": "LD",
+              "value": "5+"
+            },
+            {
+              "name": "OC",
+              "value": "4"
+            }
+          ]
+        },
+        {
+          "name": "Primarch of the First Legion",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "In your Command phase, select one Primarch of the First Legion abilities (see left). Until the start of your next Command phase, this model has that ability."
+            }
+          ]
+        },
+        {
+          "name": "Mist-wreathed Shadow Realms",
+          "type": "Primarch of the First Legion",
+          "lines": [
+            {
+              "name": "Effect",
+              "value": "In your Command phase, if this unit is not within Engagement Range of one or more enemy units, you can remove it from the battlefield and place it into Strategic Reserves."
+            }
+          ]
+        },
+        {
+          "name": "Martial Exemplar [Aura]",
+          "type": "Primarch of the First Legion",
+          "lines": [
+            {
+              "name": "Effect",
+              "value": "While a friendly Adeptus Astartes unit is within 6\" of this model, each time a model in that unit makes a melee attack, re-roll a hit roll of 1 and re-roll a wound roll of 1."
+            }
+          ]
+        },
+        {
+          "name": "No Hiding From the Watchers [Aura]",
+          "type": "Primarch of the First Legion",
+          "lines": [
+            {
+              "name": "Effect",
+              "value": "While a friendly Adeptus Astartes unit is within 6\" of this model, models in that unit have the Feel No Pain 4+ ability against mortal wounds."
+            }
+          ]
+        },
+        {
+          "name": "The Emperor's Shield",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Each time an attack is allocated to this model, if the Strength characteristic of that attack is greater than the Toughness characteristic of this model, subtract 1 from the Wound roll."
+            }
+          ]
+        },
+        {
+          "name": "Dark Angels Bodyguard",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this model is within 3\" of one or more friendly Adeptus Astartes Infantry units, this model has the Lone Operative ability."
+            }
+          ]
+        },
+        {
+          "name": "Invulnerable save",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "3+"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "315"
+        },
+        {
+          "name": "Crusade Points",
+          "typeid": "b03b-c239-15a5-da55",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeid": "75bb-ded1-c86d-bdf0",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeid": "a623-fe74-1d33-cddf",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeid": "716d-91b7-d55a-1022",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "4b0d-45ff-fab3-7472",
+      "name": "Lazarus",
+      "type": "model",
+      "entries": [
+        {
+          "id": "3ad9-2652-f5e1-faa9",
+          "name": "Bolt pistol",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Bolt pistol",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "12\""
+                },
+                {
+                  "name": "A",
+                  "value": "1"
+                },
+                {
+                  "name": "BS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "4"
+                },
+                {
+                  "name": "AP",
+                  "value": "0"
+                },
+                {
+                  "name": "D",
+                  "value": "1"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Pistol"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "35f3-3981-8b17-9826",
+          "name": "Enmity’s Edge",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Enmity’s Edge",
+              "type": "Melee Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "Melee"
+                },
+                {
+                  "name": "A",
+                  "value": "6"
+                },
+                {
+                  "name": "WS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "6"
+                },
+                {
+                  "name": "AP",
+                  "value": "-3"
+                },
+                {
+                  "name": "D",
+                  "value": "2"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Anti-Psyker 2+"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Lazarus",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "6\""
+            },
+            {
+              "name": "T",
+              "value": "4"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "5"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "name": "Intractable Will",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this model is leading a unit, each time a model in that unit is destroyed by a melee attack, if that model has not fought this phase, roll one D6. On a 4+, do not remove it from play; that destroyed model can fight after the attacking unit has finished making its attacks, and is then removed from play."
+            }
+          ]
+        },
+        {
+          "name": "The Spiritshield Helm",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model has the Feel No Pain 3+ ability against Psychic Attacks and mortal wounds."
+            }
+          ]
+        },
+        {
+          "name": "Invulnerable Save",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "4+"
+            }
+          ]
+        },
+        {
+          "name": "Leader",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model can be attached to the following units:\n■ Assault Intercessor Squad\n■ Bladeguard Veteran Squad\n■ Infernus Squad\n■ Inner Circle Companions\n■ Intercessor Squad\n■ Sternguard Veteran Squad\n■ Tactical Squad"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "70"
+        }
+      ]
+    },
+    {
+      "id": "4f36-6609-efac-baa6",
+      "name": "Nephilim Jetfighter",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Nephilim Jetfighter",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "20+\""
+            },
+            {
+              "name": "T",
+              "value": "8"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "11"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "name": "Lightning-fast Manoeuvres",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Each time a ranged attack targets this model, subtract 1 from the Hit roll. If that attack was made by a model that can Fly, subtract 1 from the Wound roll as well."
+            }
+          ]
+        },
+        {
+          "name": "DAMAGED: 1-3 WOUNDS REMAINING",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this model has 1-3 wounds remaining, each time this model makes an attack, subtract 1 from the Hit roll."
+            }
+          ]
+        },
+        {
+          "name": "Invulnerable Save",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "5+"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "195"
+        }
+      ]
+    },
+    {
+      "id": "9b3d-e812-4248-522",
+      "name": "Ravenwing Dark Talon",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Ravenwing Dark Talon",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "20+\""
+            },
+            {
+              "name": "T",
+              "value": "8"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "11"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "name": "Invulnerable Save",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "5+"
+            }
+          ]
+        },
+        {
+          "name": "Stasis Bomb",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Once per battle, one model from your army with this ability can use it after it ends a Normal move. If it does, you can select one enemy unit (excluding Aircraft) that model moved over this phase. That unit suffers D3 mortal wounds and you must roll one D6: on a 1-3, that unit cannot Advance or Fall Back in your opponent’s next Movement phase; on a 4-6, that unit must Remain Stationary in your opponent’s next Movement phase. Each model can only use this ability once per battle."
+            }
+          ]
+        },
+        {
+          "name": "DAMAGED: 1-3 WOUNDS REMAINING",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this model has 1-3 wounds remaining, each time this model makes an attack, subtract 1 from the Hit roll."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "210"
+        }
+      ]
+    },
+    {
+      "id": "b4a0-d2fe-a988-f28b",
+      "name": "Land Speeder Vengeance",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Land Speeder Vengeance",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "14\""
+            },
+            {
+              "name": "T",
+              "value": "8"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "10"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "3"
+            }
+          ]
+        },
+        {
+          "name": "Invulnerable Save",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "5+"
+            }
+          ]
+        },
+        {
+          "name": "Storm of Vengeance",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Once per turn, in your opponent’s Shooting phase, when another friendly Adeptus Astartes unit within 6\" of this model is destroyed, one model with this ability can use it. If it does, after the attacking unit has finished making its attacks, that model can shoot as if it were your Shooting phase, but when resolving those attacks it can only target that enemy unit (and only if it is an eligible target)."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "120"
+        },
+        {
+          "name": "Crusade Points",
+          "typeid": "b03b-c239-15a5-da55",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeid": "75bb-ded1-c86d-bdf0",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeid": "a623-fe74-1d33-cddf",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeid": "716d-91b7-d55a-1022",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "152b-a271-df2b-21a9",
+      "name": "Ravenwing Darkshroud",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Invulnerable Save",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "5+"
+            }
+          ]
+        },
+        {
+          "name": "Icon of Old Caliban (Aura)",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While a friendly Adeptus Astartes unit is within 6\" of this model, models in that unit have the Stealth ability and each time a ranged attack targets that unit, that unit has the Benefit of Cover against that attack."
+            }
+          ]
+        },
+        {
+          "name": "Ravenwing Darkshroud",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "14\""
+            },
+            {
+              "name": "T",
+              "value": "8"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "10"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "3"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "115"
+        }
+      ]
+    },
+    {
+      "id": "212d-f302-aaaf-5c12",
+      "name": "Ravenwing Black Knights",
+      "type": "unit",
+      "profiles": [
+        {
+          "name": "Knights of Caliban",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Each time this unit is selected to fight, if it made a Charge move this turn, until the end of the phase, melee weapons equipped by models in this unit have the [ANTI-MONSTER 4+] and [ANTI-VEHICLE 4+] abilities."
+            }
+          ]
+        },
+        {
+          "name": "Attached Unit",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "If a Character unit from your army with the Leader ability can be attached to an Outrider Squad, it can be attached to this unit instead."
+            }
+          ]
+        },
+        {
+          "name": "Invulnerable Save",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "5+"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "90"
+        }
+      ]
+    },
+    {
+      "id": "e87d-f173-88b9-aa84",
+      "name": "Ravenwing Command Squad",
+      "type": "unit",
+      "entries": [
+        {
+          "id": "b342-4005-baec-3598",
+          "name": "Ravenwing Ancient",
+          "type": "model",
+          "entries": [
+            {
+              "id": "7883-4ff1-4189-8ec6",
+              "name": "Black Knight combat weapon",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Black Knight combat weapon",
+                  "type": "Melee Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "Melee"
+                    },
+                    {
+                      "name": "A",
+                      "value": "3"
+                    },
+                    {
+                      "name": "WS",
+                      "value": "3+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "5"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-2"
+                    },
+                    {
+                      "name": "D",
+                      "value": "1"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "Devastating Wounds"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "d330-eb86-bcd1-fdc4",
+              "name": "Bolt Pistol",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Bolt Pistol",
+                  "type": "Ranged Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "12\""
+                    },
+                    {
+                      "name": "A",
+                      "value": "1"
+                    },
+                    {
+                      "name": "BS",
+                      "value": "3+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "4"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "0"
+                    },
+                    {
+                      "name": "D",
+                      "value": "1"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "Pistol"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "profiles": [
+            {
+              "name": "Ravenwing Ancient",
+              "type": "Unit",
+              "lines": [
+                {
+                  "name": "M",
+                  "value": "12\""
+                },
+                {
+                  "name": "T",
+                  "value": "5"
+                },
+                {
+                  "name": "SV",
+                  "value": "3+"
+                },
+                {
+                  "name": "W",
+                  "value": "4"
+                },
+                {
+                  "name": "LD",
+                  "value": "6+"
+                },
+                {
+                  "name": "OC",
+                  "value": "2"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "d445-3ac1-64d5-fd4a",
+          "name": "Ravenwing Apothecary",
+          "type": "model",
+          "entries": [
+            {
+              "id": "48b6-4280-25f4-a306",
+              "name": "Black Knight combat weapon",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Black Knight combat weapon",
+                  "type": "Melee Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "Melee"
+                    },
+                    {
+                      "name": "A",
+                      "value": "3"
+                    },
+                    {
+                      "name": "WS",
+                      "value": "3+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "5"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-2"
+                    },
+                    {
+                      "name": "D",
+                      "value": "1"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "Devastating Wounds"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "3977-665d-ed2-21c9",
+              "name": "Bolt Pistol",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Bolt Pistol",
+                  "type": "Ranged Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "12\""
+                    },
+                    {
+                      "name": "A",
+                      "value": "1"
+                    },
+                    {
+                      "name": "BS",
+                      "value": "3+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "4"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "0"
+                    },
+                    {
+                      "name": "D",
+                      "value": "1"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "Pistol"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "profiles": [
+            {
+              "name": "Ravenwing Apothecary",
+              "type": "Unit",
+              "lines": [
+                {
+                  "name": "M",
+                  "value": "12\""
+                },
+                {
+                  "name": "T",
+                  "value": "5"
+                },
+                {
+                  "name": "SV",
+                  "value": "3+"
+                },
+                {
+                  "name": "W",
+                  "value": "4"
+                },
+                {
+                  "name": "LD",
+                  "value": "6+"
+                },
+                {
+                  "name": "OC",
+                  "value": "2"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "f227-6107-836d-3fee",
+          "name": "Ravenwing Champion",
+          "type": "model",
+          "profiles": [
+            {
+              "name": "Ravenwing Champion",
+              "type": "Unit",
+              "lines": [
+                {
+                  "name": "M",
+                  "value": "12\""
+                },
+                {
+                  "name": "T",
+                  "value": "5"
+                },
+                {
+                  "name": "SV",
+                  "value": "3+"
+                },
+                {
+                  "name": "W",
+                  "value": "4"
+                },
+                {
+                  "name": "LD",
+                  "value": "6+"
+                },
+                {
+                  "name": "OC",
+                  "value": "2"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Leader",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This unit can be attached to the following units:\n■ Outrider Squad\n■ Ravenwing Black Knights"
+            }
+          ]
+        },
+        {
+          "name": "Invulnerable Save",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "5+"
+            }
+          ]
+        },
+        {
+          "name": "Narthecium",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this unit contains a Ravenwing Apothecary, in your Command phase, you can return 1 destroyed model (excluding Character and Invader ATV models) to this unit."
+            }
+          ]
+        },
+        {
+          "name": "Astartes Banner",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this unit contains a Ravenwing Ancient, add 1 to the Objective Control characteristic of models in this unit."
+            }
+          ]
+        },
+        {
+          "name": "Honour or Death",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this unit contains a Ravenwing Champion, add 1 to Advance and Charge rolls made for this unit and you can target this unit with the Heroic Intervention Stratagem for 0CP."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "120"
+        },
+        {
+          "name": "Crusade Points",
+          "typeid": "b03b-c239-15a5-da55",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeid": "75bb-ded1-c86d-bdf0",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeid": "a623-fe74-1d33-cddf",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeid": "716d-91b7-d55a-1022",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "a6cc-9a65-dbf1-71b0",
+      "name": "Deathwing Knights",
+      "type": "unit",
+      "entries": [
+        {
+          "id": "538b-1eed-aa38-a9ad",
+          "name": "Watcher in the Dark",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Watcher in the Dark",
+              "type": "Abilities",
+              "lines": [
+                {
+                  "name": "Description",
+                  "value": "Once per battle, in any phase, just after a mortal wound is allocated to an Adeptus Astartes model in this unit, this unit can summon a Watcher in the Dark. When it does, until the end of the phase, models in this unit have the Feel No Pain 4+ ability against mortal wounds."
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Inner Circle",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Each time an attack is allocated to a model in this unit, subtract 1 from the Damage characteristic of that attack."
+            }
+          ]
+        },
+        {
+          "name": "Invulnerable Save",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "4+"
+            }
+          ]
+        },
+        {
+          "name": "Attached Unit",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "If a Character unit from your army with the Leader ability can be attached to a Terminator Squad, it can be attached to this unit instead."
+            }
+          ]
+        },
+        {
+          "name": "Teleport Homer",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "At the start of the battle, you can set up one Teleport Homer token for this unit anywhere on the battlefield that is not in your opponent’s deployment zone. If you do, once per battle, you can target this unit with the Rapid Ingress Stratagem for 0CP, but when resolving that Stratagem, you must set this unit up within 3\" horizontally of that token and not within 9\" horizontally of any enemy models. That token is then removed."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "250"
+        },
+        {
+          "name": "Crusade Points",
+          "typeid": "b03b-c239-15a5-da55",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeid": "75bb-ded1-c86d-bdf0",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeid": "a623-fe74-1d33-cddf",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeid": "716d-91b7-d55a-1022",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "6135-d842-8e61-889d",
+      "name": "Deathwing Terminator Squad",
+      "type": "unit",
+      "entries": [
+        {
+          "id": "5638-9134-2d96-888",
+          "name": "Watcher in the Dark",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Watcher in the Dark",
+              "type": "Abilities",
+              "lines": [
+                {
+                  "name": "Description",
+                  "value": "Once per battle, in any phase, just after a mortal wound is allocated to an Adeptus Astartes model in this unit, this unit can summon a Watcher in the Dark. When it does, until the end of the phase, models in this unit have the Feel No Pain 4+ ability against mortal wounds."
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Invulnerable Save",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Models in this unit have a 4+ invulnerable save."
+            }
+          ]
+        },
+        {
+          "name": "Deathwing",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Each time a model in this unit makes an attack, you can ignore any or all modifiers to that attack’s Ballistic Skill or Weapon Skill characteristics and/or to the Hit roll.\nIn addition, each time a model in this unit makes an attack that targets your Oath of Moment target (see Codex: Space Marines), add 1 to the Hit roll."
+            }
+          ]
+        },
+        {
+          "name": "Attached Unit",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "If a Character unit from your army with the Leader ability can be attached to a Terminator Squad, it can be attached to this unit instead."
+            }
+          ]
+        },
+        {
+          "name": "Teleport Homer",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "At the start of the battle, you can set up one Teleport Homer token for this unit anywhere on the battlefield that is not in your opponent’s deployment zone. If you do, once per battle, you can target this unit with the Rapid Ingress Stratagem for 0CP, but when resolving that Stratagem, you must set this unit up within 3\" horizontally of that token and not within 9\" horizontally of any enemy models. That token is then removed."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "180"
+        }
+      ]
+    },
+    {
+      "id": "f34-e2f9-c98e-1916",
+      "name": "Inner Circle Companions",
+      "type": "unit",
+      "profiles": [
+        {
+          "name": "Attached Unit",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "If a Character unit from your army with the Leader ability can be attached to a Sternguard Veteran Squad, it can be attached to this unit instead."
+            }
+          ]
+        },
+        {
+          "name": "Braziers of Judgement",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While a Character model is leading this unit, each time an attack targets this unit, subtract 1 from the Hit roll."
+            }
+          ]
+        },
+        {
+          "name": "Emnity for the Unworthy",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Each time a model in this unit makes an attack that targets a Character unit, add 1 to the Hit roll."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "90"
+        }
+      ]
+    },
+    {
+      "id": "a2b6-e35-67a8-d76e",
+      "name": "Ravenwing Talonmaster [Legends]",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Ravenwing Talonmaster [Legends]",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "16\""
+            },
+            {
+              "name": "T",
+              "value": "7"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "6"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "2"
+            }
+          ]
+        },
+        {
+          "name": "Talonmaster",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this model is within 3\" of one or more other friendly Adeptus Astartes Mounted or Adeptus Astartes Fly Vehicle units, this model has the Lone Operative ability."
+            }
+          ]
+        },
+        {
+          "name": "Nowhere To Hide",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While a friendly Adeptus Astartes Mounted or Adeptus Astartes Fly Vehicle unit is within 6\" of this model, ranged weapons equipped by models in that unit have the [IGNORES COVER] ability."
+            }
+          ]
+        },
+        {
+          "name": "Master of Manoeuvre",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Once per turn, when an enemy unit ends a Normal, Advance or Fall Back move within 9\" of this model, if this model is not within Engagement Range of one or more enemy units, this model can make a Normal move of up to 6\"."
+            }
+          ]
+        },
+        {
+          "name": "Invulnerable Save",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "5+"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "105"
+        }
+      ]
+    },
+    {
+      "id": "ebd0-6939-6305-6d16",
+      "name": "Deathwing Strikemaster [Legends]",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Deathwing Strikemaster [Legends]",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "5\""
+            },
+            {
+              "name": "T",
+              "value": "5"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "5"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "name": "Invulnerable Save",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "4+"
+            }
+          ]
+        },
+        {
+          "name": "Leader",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This unit can be attached to the following units:\n■ Deathwing Command Squad\n■ Deathwing Terminator Squad\n\n■ Relic Terminator Squad\n■ Terminator Assault Squad\n■ Terminator Squad"
+            }
+          ]
+        },
+        {
+          "name": "Tactical Precision",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this model is leading a unit, weapons equipped by models in that unit have the [LETHAL HITS] ability."
+            }
+          ]
+        },
+        {
+          "name": "Vanquish the Foe",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Each time this model makes an attack that targets an enemy unit that is Below Half-strength, add 1 to the Hit roll and add 1 to the Wound roll."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "80"
+        }
+      ]
+    },
+    {
+      "id": "48fb-ebd6-dd17-729b",
+      "name": "Deathwing Command Squad [Legends]",
+      "type": "unit",
+      "entries": [
+        {
+          "id": "dcdd-cda8-1160-dfda",
+          "name": "Watcher in the Dark",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Watcher in the Dark",
+              "type": "Abilities",
+              "lines": [
+                {
+                  "name": "Description",
+                  "value": "Once per battle, in any phase, just after a mortal wound is allocated to an Adeptus Astartes model in this unit, this unit can summon a Watcher in the Dark. When it does, until the end of the phase, models in this unit have the Feel No Pain 4+ ability against mortal wounds."
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Attached Unit",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "If a Character unit from your army with the Leader ability can be attached to a Terminator Squad, it can be attached to this unit instead."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "200"
+        }
+      ]
+    }
+  ]
+}

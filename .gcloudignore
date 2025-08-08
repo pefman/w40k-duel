@@ -1,0 +1,36 @@
+# gcloudignore file for W40K Duel
+
+# Git
+.git/
+.gitignore
+
+# Build artifacts
+bin/
+w40k-duel
+*.log
+
+# IDE/Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Documentation
+README.md
+*.md
+
+# Local test files
+server.log
+
+# Docker
+Dockerfile*
+.dockerignore
+
+# Static data (will be generated during build)
+static/raw/
+static/json/

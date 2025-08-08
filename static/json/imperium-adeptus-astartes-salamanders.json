@@ -1,0 +1,821 @@
+{
+  "factionname": "Imperium - Adeptus Astartes - Salamanders",
+  "units": [
+    {
+      "id": "98c-87ea-f51b-1475",
+      "name": "Adrax Agatone",
+      "type": "model",
+      "entries": [
+        {
+          "id": "b529-1803-d893-87e5",
+          "name": "Drakkis",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Drakkis",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "12\""
+                },
+                {
+                  "name": "A",
+                  "value": "D6+3"
+                },
+                {
+                  "name": "BS",
+                  "value": "N/A"
+                },
+                {
+                  "name": "S",
+                  "value": "4"
+                },
+                {
+                  "name": "AP",
+                  "value": "-1"
+                },
+                {
+                  "name": "D",
+                  "value": "1"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Ignores Cover, Pistol, Torrent"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "d249-ea36-1254-17cb",
+          "name": "Malleus Noctum",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Malleus Noctum",
+              "type": "Melee Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "Melee"
+                },
+                {
+                  "name": "A",
+                  "value": "5"
+                },
+                {
+                  "name": "WS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "10"
+                },
+                {
+                  "name": "AP",
+                  "value": "-2"
+                },
+                {
+                  "name": "D",
+                  "value": "3"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "-"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Adrax Agatone",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "6\""
+            },
+            {
+              "name": "T",
+              "value": "4"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "5"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "name": "Unto the Anvil",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this model is leading a unit, each time a model in that unit makes a melee attack, you can re-roll the Wound roll."
+            }
+          ]
+        },
+        {
+          "name": "Lord of the Pyroclasts",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While an enemy unit is within Engagement Range of this model, halve the Objective Control characteristic of models in that enemy unit"
+            }
+          ]
+        },
+        {
+          "name": "Leader",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model can be attached to the following units:\n\n■ Assault Intercessor Squad\n■ Bladeguard Veteran Squad\n■ Company Heroes\n■ Infernus Squad\n■ Intercessor Squad\n■ Sternguard Veteran Squad\n■ Tactical Squad"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "85"
+        }
+      ]
+    },
+    {
+      "id": "b529-1803-d893-87e5",
+      "name": "Drakkis",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Drakkis",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "12\""
+            },
+            {
+              "name": "A",
+              "value": "D6+3"
+            },
+            {
+              "name": "BS",
+              "value": "N/A"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Ignores Cover, Pistol, Torrent"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "d249-ea36-1254-17cb",
+      "name": "Malleus Noctum",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Malleus Noctum",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "5"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "10"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "3"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b351-fccc-2121-1e1e",
+      "name": "Vulkan He'stan",
+      "type": "model",
+      "entries": [
+        {
+          "id": "76b1-5886-1825-8e3b",
+          "name": "Gauntlet of the Forge",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Gauntlet of the Forge",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "12\""
+                },
+                {
+                  "name": "A",
+                  "value": "D6+3"
+                },
+                {
+                  "name": "BS",
+                  "value": "N/A"
+                },
+                {
+                  "name": "S",
+                  "value": "6"
+                },
+                {
+                  "name": "AP",
+                  "value": "-1"
+                },
+                {
+                  "name": "D",
+                  "value": "1"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Ignores Cover, Torrent"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ee9-93ca-662-362b",
+          "name": "Spear of Vulkan",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Spear of Vulkan",
+              "type": "Melee Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "Melee"
+                },
+                {
+                  "name": "A",
+                  "value": "6"
+                },
+                {
+                  "name": "WS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "6"
+                },
+                {
+                  "name": "AP",
+                  "value": "-2"
+                },
+                {
+                  "name": "D",
+                  "value": "2"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "-"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Vulkan He'stan",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "6\""
+            },
+            {
+              "name": "T",
+              "value": "4"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "5"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "name": "Forgefather",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "In your Shooting phase, select one enemy unit within 24\" of and visible to this model. Until the end of the phase, each time a friendly Adeptus Astartes model makes a ranged attack with a Torrent or Melta weapon that targets that enemy unit, you can re-roll the Wound roll"
+            }
+          ]
+        },
+        {
+          "name": "Seeker of Lost Relics",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "At the start of the battle, select one objective marker on the battlefield. While this model is within  range of that objective marker, it has an Objective Control characteristic of 10, a Leadership characteristic of 5+ and the Feel No Pain 4+ ability."
+            }
+          ]
+        },
+        {
+          "name": "Leader",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model can be attached to the following units:\n\n■ Assault Intercessor Squad\n■ Company Heroes\n■ Infernus Squad\n■ Tactical Squad"
+            }
+          ]
+        },
+        {
+          "name": "Inspiring Commander",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "If you include this model in your army, until the end of the battle, non-Character models in Infernus Squad units from your army have an Objective Control characteristic of 2 while they are not Battle-shocked."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "100"
+        }
+      ]
+    },
+    {
+      "id": "76b1-5886-1825-8e3b",
+      "name": "Gauntlet of the Forge",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Gauntlet of the Forge",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "12\""
+            },
+            {
+              "name": "A",
+              "value": "D6+3"
+            },
+            {
+              "name": "BS",
+              "value": "N/A"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Ignores Cover, Torrent"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ee9-93ca-662-362b",
+      "name": "Spear of Vulkan",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Spear of Vulkan",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "6"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "98c-87ea-f51b-1475",
+      "name": "Adrax Agatone",
+      "type": "model",
+      "entries": [
+        {
+          "id": "b529-1803-d893-87e5",
+          "name": "Drakkis",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Drakkis",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "12\""
+                },
+                {
+                  "name": "A",
+                  "value": "D6+3"
+                },
+                {
+                  "name": "BS",
+                  "value": "N/A"
+                },
+                {
+                  "name": "S",
+                  "value": "4"
+                },
+                {
+                  "name": "AP",
+                  "value": "-1"
+                },
+                {
+                  "name": "D",
+                  "value": "1"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Ignores Cover, Pistol, Torrent"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "d249-ea36-1254-17cb",
+          "name": "Malleus Noctum",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Malleus Noctum",
+              "type": "Melee Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "Melee"
+                },
+                {
+                  "name": "A",
+                  "value": "5"
+                },
+                {
+                  "name": "WS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "10"
+                },
+                {
+                  "name": "AP",
+                  "value": "-2"
+                },
+                {
+                  "name": "D",
+                  "value": "3"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "-"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Adrax Agatone",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "6\""
+            },
+            {
+              "name": "T",
+              "value": "4"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "5"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "name": "Unto the Anvil",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this model is leading a unit, each time a model in that unit makes a melee attack, you can re-roll the Wound roll."
+            }
+          ]
+        },
+        {
+          "name": "Lord of the Pyroclasts",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While an enemy unit is within Engagement Range of this model, halve the Objective Control characteristic of models in that enemy unit"
+            }
+          ]
+        },
+        {
+          "name": "Leader",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model can be attached to the following units:\n\n■ Assault Intercessor Squad\n■ Bladeguard Veteran Squad\n■ Company Heroes\n■ Infernus Squad\n■ Intercessor Squad\n■ Sternguard Veteran Squad\n■ Tactical Squad"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "85"
+        }
+      ]
+    },
+    {
+      "id": "b351-fccc-2121-1e1e",
+      "name": "Vulkan He'stan",
+      "type": "model",
+      "entries": [
+        {
+          "id": "76b1-5886-1825-8e3b",
+          "name": "Gauntlet of the Forge",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Gauntlet of the Forge",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "12\""
+                },
+                {
+                  "name": "A",
+                  "value": "D6+3"
+                },
+                {
+                  "name": "BS",
+                  "value": "N/A"
+                },
+                {
+                  "name": "S",
+                  "value": "6"
+                },
+                {
+                  "name": "AP",
+                  "value": "-1"
+                },
+                {
+                  "name": "D",
+                  "value": "1"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Ignores Cover, Torrent"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ee9-93ca-662-362b",
+          "name": "Spear of Vulkan",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Spear of Vulkan",
+              "type": "Melee Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "Melee"
+                },
+                {
+                  "name": "A",
+                  "value": "6"
+                },
+                {
+                  "name": "WS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "6"
+                },
+                {
+                  "name": "AP",
+                  "value": "-2"
+                },
+                {
+                  "name": "D",
+                  "value": "2"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "-"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Vulkan He'stan",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "6\""
+            },
+            {
+              "name": "T",
+              "value": "4"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "5"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "name": "Forgefather",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "In your Shooting phase, select one enemy unit within 24\" of and visible to this model. Until the end of the phase, each time a friendly Adeptus Astartes model makes a ranged attack with a Torrent or Melta weapon that targets that enemy unit, you can re-roll the Wound roll"
+            }
+          ]
+        },
+        {
+          "name": "Seeker of Lost Relics",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "At the start of the battle, select one objective marker on the battlefield. While this model is within  range of that objective marker, it has an Objective Control characteristic of 10, a Leadership characteristic of 5+ and the Feel No Pain 4+ ability."
+            }
+          ]
+        },
+        {
+          "name": "Leader",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model can be attached to the following units:\n\n■ Assault Intercessor Squad\n■ Company Heroes\n■ Infernus Squad\n■ Tactical Squad"
+            }
+          ]
+        },
+        {
+          "name": "Inspiring Commander",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "If you include this model in your army, until the end of the battle, non-Character models in Infernus Squad units from your army have an Objective Control characteristic of 2 while they are not Battle-shocked."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "100"
+        }
+      ]
+    }
+  ]
+}

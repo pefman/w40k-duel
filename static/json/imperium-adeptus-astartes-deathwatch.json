@@ -1,0 +1,6031 @@
+{
+  "factionname": "Imperium - Adeptus Astartes - Deathwatch",
+  "units": [
+    {
+      "id": "f7c3-45d2-a7ac-d8bc",
+      "name": "Watch Master",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Watch Master",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "6\""
+            },
+            {
+              "name": "T",
+              "value": "4"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "5"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "name": "Invulnerable Save",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model has a 4+ invulnerable save."
+            }
+          ]
+        },
+        {
+          "name": "Strategic Knowledge",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this model is leading a unit, that unit is eligible to shoot and declare a charge in a turn in which it Advanced or Fell Back."
+            }
+          ]
+        },
+        {
+          "name": "Watch Master",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Once per battle round, one unit from your army with this ability can use it when its unit is targeted with a Stratagem. If it does, reduce the CP cost of that use of that Stratagem by 1CP."
+            }
+          ]
+        },
+        {
+          "name": "Leader",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model can be attached to the following units:\n- DEATHWATCH VETERANS\n- FORTIS KILL TEAM"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "105"
+        }
+      ]
+    },
+    {
+      "id": "3d7c-2de-31ea-b028",
+      "name": "Watch Captain Artemis",
+      "type": "model",
+      "entries": [
+        {
+          "id": "76ca-f0fb-310-285a",
+          "name": "Hellfire Extremis",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Hellfire Extremis",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "12\""
+                },
+                {
+                  "name": "A",
+                  "value": "D6"
+                },
+                {
+                  "name": "BS",
+                  "value": "N/A"
+                },
+                {
+                  "name": "S",
+                  "value": "4"
+                },
+                {
+                  "name": "AP",
+                  "value": "-1"
+                },
+                {
+                  "name": "D",
+                  "value": "1"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Anti-Infantry 4+, Devastating Wounds, Ignores Cover, Torrent"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "7c1e-5549-391f-bdbd",
+          "name": "Master-crafted power weapon",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Master-crafted power weapon",
+              "type": "Melee Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "Melee"
+                },
+                {
+                  "name": "A",
+                  "value": "6"
+                },
+                {
+                  "name": "WS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "5"
+                },
+                {
+                  "name": "AP",
+                  "value": "-2"
+                },
+                {
+                  "name": "D",
+                  "value": "2"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "-"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Invulnerable Save",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model has a 4+ invulnerable save."
+            }
+          ]
+        },
+        {
+          "name": "Tactical Instinct",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this model is leading a unit, weapons equipped by models in that unit have the [LETHAL HITS] ability."
+            }
+          ]
+        },
+        {
+          "name": "Watch Captain Artemis",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "6\""
+            },
+            {
+              "name": "T",
+              "value": "4"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "4"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "name": "Unstoppable Champion",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "The first time this model is destroyed, roll one D6 at the end of the phase. On a 2+, set this model back up on the battlefield, as close as possible to where it was destroyed and not within Engagement Range of any enemy units, with 1 wound remaining."
+            }
+          ]
+        },
+        {
+          "name": "Leader",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model can be attached to the following units: \n- DEATHWATCH VETERANS\n- FORTIS KILL TEAM"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "65"
+        }
+      ]
+    },
+    {
+      "id": "76ca-f0fb-310-285a",
+      "name": "Hellfire Extremis",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Hellfire Extremis",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "12\""
+            },
+            {
+              "name": "A",
+              "value": "D6"
+            },
+            {
+              "name": "BS",
+              "value": "N/A"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Infantry 4+, Devastating Wounds, Ignores Cover, Torrent"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "7c1e-5549-391f-bdbd",
+      "name": "Master-crafted power weapon",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Master-crafted power weapon",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "6"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b1c7-f5b7-e77d-94eb",
+      "name": "Assault Cannon",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Assault Cannon",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "24\""
+            },
+            {
+              "name": "A",
+              "value": "6"
+            },
+            {
+              "name": "BS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Devastating Wounds"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "e957-5634-ec98-9d3d",
+      "name": "Bolt pistol",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Bolt pistol",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "12\""
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "BS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Pistol"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "451b-6a39-1623-4724",
+      "name": "Cyclone Missile Launcher",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "➤ Cyclone Missile Launcher - frag",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "36\""
+            },
+            {
+              "name": "A",
+              "value": "2D6"
+            },
+            {
+              "name": "BS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Blast"
+            }
+          ]
+        },
+        {
+          "name": "➤ Cyclone Missile Launcher - krak",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "36\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "9"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "D6"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f705-bc58-183b-767",
+      "name": "Heavy flamer",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Heavy flamer",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "12\""
+            },
+            {
+              "name": "A",
+              "value": "D6"
+            },
+            {
+              "name": "BS",
+              "value": "N/A"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Ignores Cover, Torrent"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ef13-323d-7627-dc7",
+      "name": "Infernus heavy bolter",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "➤ Infernus heavy bolter - heavy bolter",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "36\""
+            },
+            {
+              "name": "A",
+              "value": "3"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Heavy, Sustained Hits 1"
+            }
+          ]
+        },
+        {
+          "name": "➤ Infernus heavy bolter - heavy flamer",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "12\""
+            },
+            {
+              "name": "A",
+              "value": "D6"
+            },
+            {
+              "name": "BS",
+              "value": "N/A"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Ignores cover, Torrent"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "6016-9994-5d1a-9ce7",
+      "name": "Plasma Cannon",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "➤ Plasma Cannon - Standard",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "36\""
+            },
+            {
+              "name": "A",
+              "value": "D3"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "7"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Blast, Heavy"
+            }
+          ]
+        },
+        {
+          "name": "➤ Plasma Cannon - Supercharge",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "36\""
+            },
+            {
+              "name": "A",
+              "value": "D3"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "8"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Blast, Hazardous, Heavy"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2902-b665-48b6-bb09",
+      "name": "Plasma pistol",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "➤ Plasma pistol - Standard",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "12\""
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "BS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "7"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Pistol"
+            }
+          ]
+        },
+        {
+          "name": "➤ Plasma pistol - Supercharge",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "12\""
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "BS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "8"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Hazardous, Pistol"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "9be1-2f4b-22b5-6780",
+      "name": "Long Vigil ranged weapon",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Long Vigil ranged weapon",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "24\""
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Infantry 4+, Devastating Wounds, Rapid Fire 1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "d861-972b-54f9-bdfa",
+      "name": "Corvus Blackstar",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Corvus Blackstar",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "20+\""
+            },
+            {
+              "name": "T",
+              "value": "10"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "14"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "name": "Blackstar Cluster Launcher",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Each time this model ends a Normal move, you can select one enemy unit it moved over during that move and roll six D6: for each 5+, that unit suffers 1 mortal wound."
+            }
+          ]
+        },
+        {
+          "name": "Damaged: 1-5 Wounds Remaining",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this model has 1-5 wounds remaining, each time this model makes an attack, subtract 1 from the Hit roll."
+            }
+          ]
+        },
+        {
+          "name": "Transport",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model has a transport capacity of 12 ADEPTUS ASTARTES INFANTRY or KILL TEAM models. Each JUMP PACK, GRAVIS or TERMINATOR model takes up the space of 2 models and each CENTURION model takes up the space of 3 models."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "180"
+        }
+      ]
+    },
+    {
+      "id": "4042-67ce-8d45-ed33",
+      "name": "Kill Team Cassius [Legends]",
+      "type": "unit",
+      "entries": [
+        {
+          "id": "92eb-83bc-dcff-9386",
+          "name": "Chaplain Cassius",
+          "type": "model",
+          "entries": [
+            {
+              "id": "9d6-495a-ec17-7924",
+              "name": "Artificer crozius",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Artificer crozius",
+                  "type": "Melee Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "Melee"
+                    },
+                    {
+                      "name": "A",
+                      "value": "5"
+                    },
+                    {
+                      "name": "WS",
+                      "value": "2+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "6"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-1"
+                    },
+                    {
+                      "name": "D",
+                      "value": "2"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "-"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "b2ed-4b07-c463-068b",
+              "name": "Warlord",
+              "type": "upgrade"
+            }
+          ],
+          "profiles": [
+            {
+              "name": "Chaplain Cassius",
+              "type": "Unit",
+              "lines": [
+                {
+                  "name": "M",
+                  "value": "6\""
+                },
+                {
+                  "name": "T",
+                  "value": "4"
+                },
+                {
+                  "name": "SV",
+                  "value": "3+"
+                },
+                {
+                  "name": "W",
+                  "value": "4"
+                },
+                {
+                  "name": "LD",
+                  "value": "5+"
+                },
+                {
+                  "name": "OC",
+                  "value": "2"
+                }
+              ]
+            },
+            {
+              "name": "Invulnerable Save",
+              "type": "Abilities",
+              "lines": [
+                {
+                  "name": "Description",
+                  "value": "Chaplain Cassius has a 4+ invulnerable save."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "fe0a-b5eb-1e1a-21bc",
+          "name": "Vael Donatus",
+          "type": "model",
+          "entries": [
+            {
+              "id": "38e3-8907-cd67-f400",
+              "name": "Close combat weapon",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Close combat weapon",
+                  "type": "Melee Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "Melee"
+                    },
+                    {
+                      "name": "A",
+                      "value": "3"
+                    },
+                    {
+                      "name": "WS",
+                      "value": "3+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "5"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-2"
+                    },
+                    {
+                      "name": "D",
+                      "value": "1"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "-"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "profiles": [
+            {
+              "name": "Vael Donatus",
+              "type": "Unit",
+              "lines": [
+                {
+                  "name": "M",
+                  "value": "6\""
+                },
+                {
+                  "name": "T",
+                  "value": "4"
+                },
+                {
+                  "name": "SV",
+                  "value": "3+"
+                },
+                {
+                  "name": "W",
+                  "value": "2"
+                },
+                {
+                  "name": "LD",
+                  "value": "6+"
+                },
+                {
+                  "name": "OC",
+                  "value": "2"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "743c-f14-a2c2-a12c",
+          "name": "Zameon Gydrael",
+          "type": "model",
+          "profiles": [
+            {
+              "name": "Zameon Gydrael",
+              "type": "Unit",
+              "lines": [
+                {
+                  "name": "M",
+                  "value": "6\""
+                },
+                {
+                  "name": "T",
+                  "value": "4"
+                },
+                {
+                  "name": "SV",
+                  "value": "3+"
+                },
+                {
+                  "name": "W",
+                  "value": "2"
+                },
+                {
+                  "name": "LD",
+                  "value": "6+"
+                },
+                {
+                  "name": "OC",
+                  "value": "2"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "572c-d3a3-e597-94a3",
+          "name": "Rodricus Grytt",
+          "type": "model",
+          "entries": [
+            {
+              "id": "a41e-6ed3-538-1a22",
+              "name": "Close combat weapon",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Close combat weapon",
+                  "type": "Melee Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "Melee"
+                    },
+                    {
+                      "name": "A",
+                      "value": "3"
+                    },
+                    {
+                      "name": "WS",
+                      "value": "3+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "5"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-2"
+                    },
+                    {
+                      "name": "D",
+                      "value": "1"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "-"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "25bb-751f-5e1a-d283",
+              "name": "Frag cannon",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Frag cannon",
+                  "type": "Ranged Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "18\""
+                    },
+                    {
+                      "name": "A",
+                      "value": "D3"
+                    },
+                    {
+                      "name": "BS",
+                      "value": "4+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "7"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-1"
+                    },
+                    {
+                      "name": "D",
+                      "value": "2"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "Blast, Heavy, Rapid Fire D3"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "profiles": [
+            {
+              "name": "Rodricus Grytt",
+              "type": "Unit",
+              "lines": [
+                {
+                  "name": "M",
+                  "value": "6\""
+                },
+                {
+                  "name": "T",
+                  "value": "4"
+                },
+                {
+                  "name": "SV",
+                  "value": "3+"
+                },
+                {
+                  "name": "W",
+                  "value": "2"
+                },
+                {
+                  "name": "LD",
+                  "value": "6+"
+                },
+                {
+                  "name": "OC",
+                  "value": "2"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "16d6-b842-a1d1-2d77",
+          "name": "Antor Delassio",
+          "type": "model",
+          "profiles": [
+            {
+              "name": "Antor Delassio",
+              "type": "Unit",
+              "lines": [
+                {
+                  "name": "M",
+                  "value": "12\""
+                },
+                {
+                  "name": "T",
+                  "value": "4"
+                },
+                {
+                  "name": "SV",
+                  "value": "3+"
+                },
+                {
+                  "name": "W",
+                  "value": "2"
+                },
+                {
+                  "name": "LD",
+                  "value": "6+"
+                },
+                {
+                  "name": "OC",
+                  "value": "2"
+                }
+              ]
+            },
+            {
+              "name": "Jump Pack",
+              "type": "Abilities",
+              "lines": [
+                {
+                  "name": "Description",
+                  "value": "The bearer has a Move characteristic of 12\" and can move over models and terrain as if they were not there."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "9636-f9b-1bbf-14b9",
+          "name": "Edryc Setorax",
+          "type": "model",
+          "entries": [
+            {
+              "id": "e102-1304-5c21-e122",
+              "name": "Twin lightning claws",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Twin lightning claws",
+                  "type": "Melee Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "Melee"
+                    },
+                    {
+                      "name": "A",
+                      "value": "4"
+                    },
+                    {
+                      "name": "WS",
+                      "value": "3+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "5"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-2"
+                    },
+                    {
+                      "name": "D",
+                      "value": "1"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "Twin-Linked"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "profiles": [
+            {
+              "name": "Edryc Setorax",
+              "type": "Unit",
+              "lines": [
+                {
+                  "name": "M",
+                  "value": "12\""
+                },
+                {
+                  "name": "T",
+                  "value": "4"
+                },
+                {
+                  "name": "SV",
+                  "value": "3+"
+                },
+                {
+                  "name": "W",
+                  "value": "2"
+                },
+                {
+                  "name": "LD",
+                  "value": "6+"
+                },
+                {
+                  "name": "OC",
+                  "value": "2"
+                }
+              ]
+            },
+            {
+              "name": "Jump Pack",
+              "type": "Abilities",
+              "lines": [
+                {
+                  "name": "Description",
+                  "value": "The bearer has a Move characteristic of 12\" and can move over models and terrain as if they were not there."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "16b6-4055-1e55-27d5",
+          "name": "Jensus Natorian",
+          "type": "model",
+          "entries": [
+            {
+              "id": "c48b-daed-df-20b",
+              "name": "Psychic Cleanse",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Psychic Cleanse",
+                  "type": "Ranged Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "24\""
+                    },
+                    {
+                      "name": "A",
+                      "value": "D6"
+                    },
+                    {
+                      "name": "BS",
+                      "value": "3+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "5"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-1"
+                    },
+                    {
+                      "name": "D",
+                      "value": "D3"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "Psychic"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "f536-dd2f-14d1-24c5",
+              "name": "Force weapon",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Force weapon",
+                  "type": "Melee Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "Melee"
+                    },
+                    {
+                      "name": "A",
+                      "value": "5"
+                    },
+                    {
+                      "name": "WS",
+                      "value": "2+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "5"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-3"
+                    },
+                    {
+                      "name": "D",
+                      "value": "D3"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "Psychic"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "profiles": [
+            {
+              "name": "Jensus Natorian",
+              "type": "Unit",
+              "lines": [
+                {
+                  "name": "M",
+                  "value": "6\""
+                },
+                {
+                  "name": "T",
+                  "value": "4"
+                },
+                {
+                  "name": "SV",
+                  "value": "3+"
+                },
+                {
+                  "name": "W",
+                  "value": "2"
+                },
+                {
+                  "name": "LD",
+                  "value": "6+"
+                },
+                {
+                  "name": "OC",
+                  "value": "2"
+                }
+              ]
+            },
+            {
+              "name": "Psychic Hood",
+              "type": "Abilities",
+              "lines": [
+                {
+                  "name": "Description",
+                  "value": "Models in the bearer’s unit have the Feel No Pain 4+ ability against Psychic Attacks."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "b42a-2552-4350-e1d1",
+          "name": "Drenn Redblade",
+          "type": "model",
+          "profiles": [
+            {
+              "name": "Drenn Redblade",
+              "type": "Unit",
+              "lines": [
+                {
+                  "name": "M",
+                  "value": "6\""
+                },
+                {
+                  "name": "T",
+                  "value": "4"
+                },
+                {
+                  "name": "SV",
+                  "value": "3+"
+                },
+                {
+                  "name": "W",
+                  "value": "2"
+                },
+                {
+                  "name": "LD",
+                  "value": "6+"
+                },
+                {
+                  "name": "OC",
+                  "value": "2"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "7e27-9914-e88-5858",
+          "name": "Garran Branatar",
+          "type": "model",
+          "entries": [
+            {
+              "id": "ad82-8000-8d9d-8fa8",
+              "name": "Heavy Flamer",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Heavy Flamer",
+                  "type": "Ranged Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "12\""
+                    },
+                    {
+                      "name": "A",
+                      "value": "D6"
+                    },
+                    {
+                      "name": "BS",
+                      "value": "N/A"
+                    },
+                    {
+                      "name": "S",
+                      "value": "5"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-1"
+                    },
+                    {
+                      "name": "D",
+                      "value": "1"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "Ignores Cover, Torrent"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "7828-f96a-2087-d351",
+              "name": "Power fist",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Power fist",
+                  "type": "Melee Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "Melee"
+                    },
+                    {
+                      "name": "A",
+                      "value": "3"
+                    },
+                    {
+                      "name": "WS",
+                      "value": "3+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "8"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-2"
+                    },
+                    {
+                      "name": "D",
+                      "value": "2"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "-"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "profiles": [
+            {
+              "name": "Garran Branatar",
+              "type": "Unit",
+              "lines": [
+                {
+                  "name": "M",
+                  "value": "5\""
+                },
+                {
+                  "name": "T",
+                  "value": "5"
+                },
+                {
+                  "name": "SV",
+                  "value": "2+"
+                },
+                {
+                  "name": "W",
+                  "value": "3"
+                },
+                {
+                  "name": "LD",
+                  "value": "6+"
+                },
+                {
+                  "name": "OC",
+                  "value": "2"
+                }
+              ]
+            },
+            {
+              "name": "Invulnerable Save",
+              "type": "Abilities",
+              "lines": [
+                {
+                  "name": "Description",
+                  "value": "Garran Branatar has a 4+ invulnerable save."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "3722-72d6-5151-5003",
+          "name": "Ennox Sorrlock",
+          "type": "model",
+          "entries": [
+            {
+              "id": "9a78-2788-8706-cfba",
+              "name": "Close combat weapon",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Close combat weapon",
+                  "type": "Melee Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "Melee"
+                    },
+                    {
+                      "name": "A",
+                      "value": "3"
+                    },
+                    {
+                      "name": "WS",
+                      "value": "3+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "5"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-2"
+                    },
+                    {
+                      "name": "D",
+                      "value": "1"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "-"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "profiles": [
+            {
+              "name": "Ennox Sorrlock",
+              "type": "Unit",
+              "lines": [
+                {
+                  "name": "M",
+                  "value": "6\""
+                },
+                {
+                  "name": "T",
+                  "value": "4"
+                },
+                {
+                  "name": "SV",
+                  "value": "3+"
+                },
+                {
+                  "name": "W",
+                  "value": "2"
+                },
+                {
+                  "name": "LD",
+                  "value": "6+"
+                },
+                {
+                  "name": "OC",
+                  "value": "2"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "cd4a-d623-f7b6-b8e6",
+          "name": "Jetek Suberei",
+          "type": "model",
+          "entries": [
+            {
+              "id": "eb83-8a1f-796b-5756",
+              "name": "Deathwatch twin boltgun",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Deathwatch twin boltgun",
+                  "type": "Ranged Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "24\""
+                    },
+                    {
+                      "name": "A",
+                      "value": "4"
+                    },
+                    {
+                      "name": "BS",
+                      "value": "3+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "4"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "0"
+                    },
+                    {
+                      "name": "D",
+                      "value": "1"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "-"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "profiles": [
+            {
+              "name": "Jetek Suberei",
+              "type": "Unit",
+              "lines": [
+                {
+                  "name": "M",
+                  "value": "12\""
+                },
+                {
+                  "name": "T",
+                  "value": "5"
+                },
+                {
+                  "name": "SV",
+                  "value": "3+"
+                },
+                {
+                  "name": "W",
+                  "value": "3"
+                },
+                {
+                  "name": "LD",
+                  "value": "6+"
+                },
+                {
+                  "name": "OC",
+                  "value": "2"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Catechism of Death",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this unit contains Chaplain Cassius, melee weapons equipped by models in this unit have the [DEVASTATING WOUNDS] ability."
+            }
+          ]
+        },
+        {
+          "name": "Unflinching",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "You can re-roll Battle-shock tests for this unit."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "220"
+        }
+      ]
+    },
+    {
+      "id": "92eb-83bc-dcff-9386",
+      "name": "Chaplain Cassius",
+      "type": "model",
+      "entries": [
+        {
+          "id": "9d6-495a-ec17-7924",
+          "name": "Artificer crozius",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Artificer crozius",
+              "type": "Melee Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "Melee"
+                },
+                {
+                  "name": "A",
+                  "value": "5"
+                },
+                {
+                  "name": "WS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "6"
+                },
+                {
+                  "name": "AP",
+                  "value": "-1"
+                },
+                {
+                  "name": "D",
+                  "value": "2"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "-"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "b2ed-4b07-c463-068b",
+          "name": "Warlord",
+          "type": "upgrade"
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Chaplain Cassius",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "6\""
+            },
+            {
+              "name": "T",
+              "value": "4"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "4"
+            },
+            {
+              "name": "LD",
+              "value": "5+"
+            },
+            {
+              "name": "OC",
+              "value": "2"
+            }
+          ]
+        },
+        {
+          "name": "Invulnerable Save",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Chaplain Cassius has a 4+ invulnerable save."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "9d6-495a-ec17-7924",
+      "name": "Artificer crozius",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Artificer crozius",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "5"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b2ed-4b07-c463-068b",
+      "name": "Warlord",
+      "type": "upgrade"
+    },
+    {
+      "id": "fe0a-b5eb-1e1a-21bc",
+      "name": "Vael Donatus",
+      "type": "model",
+      "entries": [
+        {
+          "id": "38e3-8907-cd67-f400",
+          "name": "Close combat weapon",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Close combat weapon",
+              "type": "Melee Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "Melee"
+                },
+                {
+                  "name": "A",
+                  "value": "3"
+                },
+                {
+                  "name": "WS",
+                  "value": "3+"
+                },
+                {
+                  "name": "S",
+                  "value": "5"
+                },
+                {
+                  "name": "AP",
+                  "value": "-2"
+                },
+                {
+                  "name": "D",
+                  "value": "1"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "-"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Vael Donatus",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "6\""
+            },
+            {
+              "name": "T",
+              "value": "4"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "2"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "38e3-8907-cd67-f400",
+      "name": "Close combat weapon",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Close combat weapon",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "3"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "743c-f14-a2c2-a12c",
+      "name": "Zameon Gydrael",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Zameon Gydrael",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "6\""
+            },
+            {
+              "name": "T",
+              "value": "4"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "2"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "572c-d3a3-e597-94a3",
+      "name": "Rodricus Grytt",
+      "type": "model",
+      "entries": [
+        {
+          "id": "a41e-6ed3-538-1a22",
+          "name": "Close combat weapon",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Close combat weapon",
+              "type": "Melee Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "Melee"
+                },
+                {
+                  "name": "A",
+                  "value": "3"
+                },
+                {
+                  "name": "WS",
+                  "value": "3+"
+                },
+                {
+                  "name": "S",
+                  "value": "5"
+                },
+                {
+                  "name": "AP",
+                  "value": "-2"
+                },
+                {
+                  "name": "D",
+                  "value": "1"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "-"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "25bb-751f-5e1a-d283",
+          "name": "Frag cannon",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Frag cannon",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "18\""
+                },
+                {
+                  "name": "A",
+                  "value": "D3"
+                },
+                {
+                  "name": "BS",
+                  "value": "4+"
+                },
+                {
+                  "name": "S",
+                  "value": "7"
+                },
+                {
+                  "name": "AP",
+                  "value": "-1"
+                },
+                {
+                  "name": "D",
+                  "value": "2"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Blast, Heavy, Rapid Fire D3"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Rodricus Grytt",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "6\""
+            },
+            {
+              "name": "T",
+              "value": "4"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "2"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a41e-6ed3-538-1a22",
+      "name": "Close combat weapon",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Close combat weapon",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "3"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "25bb-751f-5e1a-d283",
+      "name": "Frag cannon",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Frag cannon",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "18\""
+            },
+            {
+              "name": "A",
+              "value": "D3"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "7"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Blast, Heavy, Rapid Fire D3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "16d6-b842-a1d1-2d77",
+      "name": "Antor Delassio",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Antor Delassio",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "12\""
+            },
+            {
+              "name": "T",
+              "value": "4"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "2"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "2"
+            }
+          ]
+        },
+        {
+          "name": "Jump Pack",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "The bearer has a Move characteristic of 12\" and can move over models and terrain as if they were not there."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "9636-f9b-1bbf-14b9",
+      "name": "Edryc Setorax",
+      "type": "model",
+      "entries": [
+        {
+          "id": "e102-1304-5c21-e122",
+          "name": "Twin lightning claws",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Twin lightning claws",
+              "type": "Melee Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "Melee"
+                },
+                {
+                  "name": "A",
+                  "value": "4"
+                },
+                {
+                  "name": "WS",
+                  "value": "3+"
+                },
+                {
+                  "name": "S",
+                  "value": "5"
+                },
+                {
+                  "name": "AP",
+                  "value": "-2"
+                },
+                {
+                  "name": "D",
+                  "value": "1"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Twin-Linked"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Edryc Setorax",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "12\""
+            },
+            {
+              "name": "T",
+              "value": "4"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "2"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "2"
+            }
+          ]
+        },
+        {
+          "name": "Jump Pack",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "The bearer has a Move characteristic of 12\" and can move over models and terrain as if they were not there."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "e102-1304-5c21-e122",
+      "name": "Twin lightning claws",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Twin lightning claws",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "4"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Twin-Linked"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "16b6-4055-1e55-27d5",
+      "name": "Jensus Natorian",
+      "type": "model",
+      "entries": [
+        {
+          "id": "c48b-daed-df-20b",
+          "name": "Psychic Cleanse",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Psychic Cleanse",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "24\""
+                },
+                {
+                  "name": "A",
+                  "value": "D6"
+                },
+                {
+                  "name": "BS",
+                  "value": "3+"
+                },
+                {
+                  "name": "S",
+                  "value": "5"
+                },
+                {
+                  "name": "AP",
+                  "value": "-1"
+                },
+                {
+                  "name": "D",
+                  "value": "D3"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Psychic"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "f536-dd2f-14d1-24c5",
+          "name": "Force weapon",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Force weapon",
+              "type": "Melee Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "Melee"
+                },
+                {
+                  "name": "A",
+                  "value": "5"
+                },
+                {
+                  "name": "WS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "5"
+                },
+                {
+                  "name": "AP",
+                  "value": "-3"
+                },
+                {
+                  "name": "D",
+                  "value": "D3"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Psychic"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Jensus Natorian",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "6\""
+            },
+            {
+              "name": "T",
+              "value": "4"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "2"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "2"
+            }
+          ]
+        },
+        {
+          "name": "Psychic Hood",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Models in the bearer’s unit have the Feel No Pain 4+ ability against Psychic Attacks."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c48b-daed-df-20b",
+      "name": "Psychic Cleanse",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Psychic Cleanse",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "24\""
+            },
+            {
+              "name": "A",
+              "value": "D6"
+            },
+            {
+              "name": "BS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "D3"
+            },
+            {
+              "name": "Keywords",
+              "value": "Psychic"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f536-dd2f-14d1-24c5",
+      "name": "Force weapon",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Force weapon",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "5"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "D3"
+            },
+            {
+              "name": "Keywords",
+              "value": "Psychic"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b42a-2552-4350-e1d1",
+      "name": "Drenn Redblade",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Drenn Redblade",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "6\""
+            },
+            {
+              "name": "T",
+              "value": "4"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "2"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "7e27-9914-e88-5858",
+      "name": "Garran Branatar",
+      "type": "model",
+      "entries": [
+        {
+          "id": "ad82-8000-8d9d-8fa8",
+          "name": "Heavy Flamer",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Heavy Flamer",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "12\""
+                },
+                {
+                  "name": "A",
+                  "value": "D6"
+                },
+                {
+                  "name": "BS",
+                  "value": "N/A"
+                },
+                {
+                  "name": "S",
+                  "value": "5"
+                },
+                {
+                  "name": "AP",
+                  "value": "-1"
+                },
+                {
+                  "name": "D",
+                  "value": "1"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Ignores Cover, Torrent"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "7828-f96a-2087-d351",
+          "name": "Power fist",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Power fist",
+              "type": "Melee Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "Melee"
+                },
+                {
+                  "name": "A",
+                  "value": "3"
+                },
+                {
+                  "name": "WS",
+                  "value": "3+"
+                },
+                {
+                  "name": "S",
+                  "value": "8"
+                },
+                {
+                  "name": "AP",
+                  "value": "-2"
+                },
+                {
+                  "name": "D",
+                  "value": "2"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "-"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Garran Branatar",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "5\""
+            },
+            {
+              "name": "T",
+              "value": "5"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "3"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "2"
+            }
+          ]
+        },
+        {
+          "name": "Invulnerable Save",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Garran Branatar has a 4+ invulnerable save."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ad82-8000-8d9d-8fa8",
+      "name": "Heavy Flamer",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Heavy Flamer",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "12\""
+            },
+            {
+              "name": "A",
+              "value": "D6"
+            },
+            {
+              "name": "BS",
+              "value": "N/A"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Ignores Cover, Torrent"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "7828-f96a-2087-d351",
+      "name": "Power fist",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Power fist",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "3"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "8"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "3722-72d6-5151-5003",
+      "name": "Ennox Sorrlock",
+      "type": "model",
+      "entries": [
+        {
+          "id": "9a78-2788-8706-cfba",
+          "name": "Close combat weapon",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Close combat weapon",
+              "type": "Melee Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "Melee"
+                },
+                {
+                  "name": "A",
+                  "value": "3"
+                },
+                {
+                  "name": "WS",
+                  "value": "3+"
+                },
+                {
+                  "name": "S",
+                  "value": "5"
+                },
+                {
+                  "name": "AP",
+                  "value": "-2"
+                },
+                {
+                  "name": "D",
+                  "value": "1"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "-"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Ennox Sorrlock",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "6\""
+            },
+            {
+              "name": "T",
+              "value": "4"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "2"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "9a78-2788-8706-cfba",
+      "name": "Close combat weapon",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Close combat weapon",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "3"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cd4a-d623-f7b6-b8e6",
+      "name": "Jetek Suberei",
+      "type": "model",
+      "entries": [
+        {
+          "id": "eb83-8a1f-796b-5756",
+          "name": "Deathwatch twin boltgun",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Deathwatch twin boltgun",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "24\""
+                },
+                {
+                  "name": "A",
+                  "value": "4"
+                },
+                {
+                  "name": "BS",
+                  "value": "3+"
+                },
+                {
+                  "name": "S",
+                  "value": "4"
+                },
+                {
+                  "name": "AP",
+                  "value": "0"
+                },
+                {
+                  "name": "D",
+                  "value": "1"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "-"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Jetek Suberei",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "12\""
+            },
+            {
+              "name": "T",
+              "value": "5"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "3"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "eb83-8a1f-796b-5756",
+      "name": "Deathwatch twin boltgun",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Deathwatch twin boltgun",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "24\""
+            },
+            {
+              "name": "A",
+              "value": "4"
+            },
+            {
+              "name": "BS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "4a54-6fbc-9767-f009",
+      "name": "Twin boltgun",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Twin boltgun",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "24\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Twin-Linked"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2078-20a8-181f-a708",
+      "name": "Close combat weapon",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Close combat weapon",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "3"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "e3f6-2750-6e07-a27",
+      "name": "Long Vigil melee weapon",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Long Vigil melee weapon",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "3"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "390e-706b-a059-378b",
+      "name": "Deathwatch Terminator Squad",
+      "type": "unit",
+      "profiles": [
+        {
+          "name": "Terminatus Assault",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "You can re-roll Charge rolls made for this unit. Each time this unit ends a Charge move, each enemy unit within Engagement Range of this unit must take a Battle-shock test. If that enemy unit does not have the IMPERIUM or CHAOS keywords, subtract 1 from that test."
+            }
+          ]
+        },
+        {
+          "name": "Teleport Homer",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "At the start of the battle, you can set up one Teleport Homer token for this unit anywhere on the battlefield that is not in your opponent’s deployment zone. If you do, once per battle, you can target this unit with the Rapid Ingress Stratagem for 0CP, but when resolving that Stratagem, you must set this unit up within 3\" of that token and not within 9\" of any enemy models. That token is then removed."
+            }
+          ]
+        },
+        {
+          "name": "Invulnerable Save",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Models in this unit have a 4+ invulnerable save."
+            }
+          ]
+        },
+        {
+          "name": "Attached Unit",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "If a CHARACTER unit from your army with the Leader ability can be attached to a TERMINATOR SQUAD, it can be attached to this unit instead."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "190"
+        },
+        {
+          "name": "Crusade Points",
+          "typeid": "b03b-c239-15a5-da55",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeid": "75bb-ded1-c86d-bdf0",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeid": "a623-fe74-1d33-cddf",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeid": "716d-91b7-d55a-1022",
+          "value": "0"
+        },
+        {
+          "name": "Honour Points",
+          "typeid": "8135-9a2f-6627-09e2",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "4d-5d79-b348-19ee",
+      "name": "Boltgun",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Boltgun",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "24\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "3"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a077-e1c9-f8f0-d38",
+      "name": "Fortis Kill Team",
+      "type": "unit",
+      "entries": [
+        {
+          "id": "4962-be6c-d809-e206",
+          "name": "Kill Team Sergeant",
+          "type": "model",
+          "profiles": [
+            {
+              "name": "Kill Team Sergeant",
+              "type": "Unit",
+              "lines": [
+                {
+                  "name": "M",
+                  "value": "6\""
+                },
+                {
+                  "name": "T",
+                  "value": "4"
+                },
+                {
+                  "name": "SV",
+                  "value": "3+"
+                },
+                {
+                  "name": "W",
+                  "value": "2"
+                },
+                {
+                  "name": "LD",
+                  "value": "6+"
+                },
+                {
+                  "name": "OC",
+                  "value": "2"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Fortis Doctrines",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Each time a model in this unit makes an attack that targets a unit that is below its Starting Strength, add 1 to the Hit roll. If that attack targets a unit that is Below Half-strength, add 1 to the Hit roll and add 1 to the Wound roll instead."
+            }
+          ]
+        },
+        {
+          "name": "Attached Unit",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "If a CHARACTER from your army with the Leader ability can be attached to an INTERCESSOR SQUAD, it can be attached to this unit instead."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "200"
+        },
+        {
+          "name": "Crusade Points",
+          "typeid": "b03b-c239-15a5-da55",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeid": "75bb-ded1-c86d-bdf0",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeid": "a623-fe74-1d33-cddf",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeid": "716d-91b7-d55a-1022",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "4962-be6c-d809-e206",
+      "name": "Kill Team Sergeant",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Kill Team Sergeant",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "6\""
+            },
+            {
+              "name": "T",
+              "value": "4"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "2"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "93dc-1a01-97b3-6565",
+      "name": "Astartes chainsword",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Astartes chainsword",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "4"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "6cb-912c-c43-210b",
+      "name": "Indomitor Kill Team",
+      "type": "unit",
+      "profiles": [
+        {
+          "name": "Indomitor Doctrines",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Each time a model in this unit makes a ranged attack that targets the closest eligible target, or makes a melee attack in a turn in which it made a Charge move, improve the Strength characteristic of that attack by 2."
+            }
+          ]
+        },
+        {
+          "name": "Attached Unit",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "If a CHARACTER unit from your army can be attached to a HEAVY INTERCESSOR SQUAD, it can be attached to this unit instead."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "270"
+        },
+        {
+          "name": "Crusade Points",
+          "typeid": "b03b-c239-15a5-da55",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeid": "75bb-ded1-c86d-bdf0",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeid": "a623-fe74-1d33-cddf",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeid": "716d-91b7-d55a-1022",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "2544-5189-7806-30f3",
+      "name": "Spectrus Kill Team",
+      "type": "unit",
+      "profiles": [
+        {
+          "name": "Attached Unit",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "If a CHARACTER from your army with the Leader ability can be attached to an INFILTRATOR SQUAD, it can be attached to this unit instead. \nIf this unit has a Leader unit attached to it during the Declare Battle Formations step, that Leader unit gains the Infiltrators and Scouts 6\" abilities."
+            }
+          ]
+        },
+        {
+          "name": "Spectrus Doctrines",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "At the end of your opponent’s turn, if this unit is more than 6\" away from all enemy units, you can remove this unit from the battlefield and place it into Strategic Reserves."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "200"
+        },
+        {
+          "name": "Crusade Points",
+          "typeid": "b03b-c239-15a5-da55",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeid": "75bb-ded1-c86d-bdf0",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeid": "a623-fe74-1d33-cddf",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeid": "716d-91b7-d55a-1022",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "dd2b-2731-b885-d0ae",
+      "name": "Bolt pistol",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Bolt pistol",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "12\""
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "BS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Pistol"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c23d-db22-8cc8-dda9",
+      "name": "Close combat weapon",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Close combat weapon",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "3"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f706-6c9c-c899-9b5a",
+      "name": "Long Vigil ranged weapon",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Long Vigil ranged weapon",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "24\""
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Infantry 4+, Devastating Wounds, Rapid Fire 1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "386c-b933-68ce-5e31",
+      "name": "Plasma incinerator",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "➤ Plasma incinerator - Standard",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "24\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "7"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Assault, Heavy"
+            }
+          ]
+        },
+        {
+          "name": "➤ Plasma incinerator - Supercharge",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "24\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "8"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Assault, Hazardous, Heavy"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "66ab-476a-134e-ec7b",
+      "name": "Deathwatch Veterans",
+      "type": "unit",
+      "profiles": [
+        {
+          "name": "Death to the Alien",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Each time a model in this unit makes an attack, re-roll a Hit roll of 1. If the target of that attack does not have the IMPERIUM or CHAOS keywords, you can re-roll the Hit roll instead."
+            }
+          ]
+        },
+        {
+          "name": "Attached Unit",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "If a CHARACTER unit from your army with the Leader ability can be attached to a STERNGUARD VETERAN SQUAD, it can be attached to this unit instead."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "100"
+        }
+      ]
+    },
+    {
+      "id": "eca6-624b-8c87-5d69",
+      "name": "Power weapon",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Power weapon",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "3"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b547-440b-71ea-f424",
+      "name": "Astartes shield",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Astartes shield",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "The bearer has a 4+ invulnerable save."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "98a3-2db5-6cb1-40a1",
+      "name": "Xenophase blade",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Xenophase blade",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "4"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Devastating Wounds"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "716b-e411-72e7-1eb7",
+      "name": "Combi-weapon",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Combi-weapon",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "24\""
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Infantry 4+, Devastating Wounds, Rapid Fire 1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c679-f252-32b1-ebcc",
+      "name": "Talonstrike Kill Team",
+      "type": "unit",
+      "entries": [
+        {
+          "id": "68d2-9aaa-f6cb-f4dc",
+          "name": "Kill Team Sergeant w/ Jump Pack",
+          "type": "model",
+          "profiles": [
+            {
+              "name": "Kill Team Sergeant w/ Jump Pack",
+              "type": "Unit",
+              "lines": [
+                {
+                  "name": "M",
+                  "value": "12\""
+                },
+                {
+                  "name": "T",
+                  "value": "4"
+                },
+                {
+                  "name": "SV",
+                  "value": "3+"
+                },
+                {
+                  "name": "W",
+                  "value": "2"
+                },
+                {
+                  "name": "LD",
+                  "value": "6+"
+                },
+                {
+                  "name": "OC",
+                  "value": "1"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Talonstrike Doctrines",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Each time this unit is set up on the battlefield, until the end of the turn:\n- Improve the Armour Penetration characteristic of weapons equipped by models in this unit by 1. \n- Melee weapons equipped by models in this unit have the [LANCE] ability."
+            }
+          ]
+        },
+        {
+          "name": "Attached Unit",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "If a CHARACTER unit from your army with the Leader ability can be attached to an ASSAULT INTERCESSORS WITH JUMP PACKS unit, it can be attached to this unit instead."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "290"
+        },
+        {
+          "name": "Crusade Points",
+          "typeid": "b03b-c239-15a5-da55",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeid": "75bb-ded1-c86d-bdf0",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeid": "a623-fe74-1d33-cddf",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeid": "716d-91b7-d55a-1022",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "68d2-9aaa-f6cb-f4dc",
+      "name": "Kill Team Sergeant w/ Jump Pack",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Kill Team Sergeant w/ Jump Pack",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "12\""
+            },
+            {
+              "name": "T",
+              "value": "4"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "2"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ad6a-c679-52ea-6059",
+      "name": "Deathwatch bolt rifle",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Deathwatch bolt rifle",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "24\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Assault, Heavy, Lethal Hits"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "5732-0eb0-8308-e9c4",
+      "name": "Castellan launcher",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Castellan launcher",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "36\""
+            },
+            {
+              "name": "A",
+              "value": "D3"
+            },
+            {
+              "name": "BS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Blast, Indirect Fire"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f7c3-45d2-a7ac-d8bc",
+      "name": "Watch Master",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Watch Master",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "6\""
+            },
+            {
+              "name": "T",
+              "value": "4"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "5"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "name": "Invulnerable Save",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model has a 4+ invulnerable save."
+            }
+          ]
+        },
+        {
+          "name": "Strategic Knowledge",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this model is leading a unit, that unit is eligible to shoot and declare a charge in a turn in which it Advanced or Fell Back."
+            }
+          ]
+        },
+        {
+          "name": "Watch Master",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Once per battle round, one unit from your army with this ability can use it when its unit is targeted with a Stratagem. If it does, reduce the CP cost of that use of that Stratagem by 1CP."
+            }
+          ]
+        },
+        {
+          "name": "Leader",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model can be attached to the following units:\n- DEATHWATCH VETERANS\n- FORTIS KILL TEAM"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "105"
+        }
+      ]
+    },
+    {
+      "id": "3d7c-2de-31ea-b028",
+      "name": "Watch Captain Artemis",
+      "type": "model",
+      "entries": [
+        {
+          "id": "76ca-f0fb-310-285a",
+          "name": "Hellfire Extremis",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Hellfire Extremis",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "12\""
+                },
+                {
+                  "name": "A",
+                  "value": "D6"
+                },
+                {
+                  "name": "BS",
+                  "value": "N/A"
+                },
+                {
+                  "name": "S",
+                  "value": "4"
+                },
+                {
+                  "name": "AP",
+                  "value": "-1"
+                },
+                {
+                  "name": "D",
+                  "value": "1"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Anti-Infantry 4+, Devastating Wounds, Ignores Cover, Torrent"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "7c1e-5549-391f-bdbd",
+          "name": "Master-crafted power weapon",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Master-crafted power weapon",
+              "type": "Melee Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "Melee"
+                },
+                {
+                  "name": "A",
+                  "value": "6"
+                },
+                {
+                  "name": "WS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "5"
+                },
+                {
+                  "name": "AP",
+                  "value": "-2"
+                },
+                {
+                  "name": "D",
+                  "value": "2"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "-"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Invulnerable Save",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model has a 4+ invulnerable save."
+            }
+          ]
+        },
+        {
+          "name": "Tactical Instinct",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this model is leading a unit, weapons equipped by models in that unit have the [LETHAL HITS] ability."
+            }
+          ]
+        },
+        {
+          "name": "Watch Captain Artemis",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "6\""
+            },
+            {
+              "name": "T",
+              "value": "4"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "4"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "name": "Unstoppable Champion",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "The first time this model is destroyed, roll one D6 at the end of the phase. On a 2+, set this model back up on the battlefield, as close as possible to where it was destroyed and not within Engagement Range of any enemy units, with 1 wound remaining."
+            }
+          ]
+        },
+        {
+          "name": "Leader",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model can be attached to the following units: \n- DEATHWATCH VETERANS\n- FORTIS KILL TEAM"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "65"
+        }
+      ]
+    },
+    {
+      "id": "d861-972b-54f9-bdfa",
+      "name": "Corvus Blackstar",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Corvus Blackstar",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "20+\""
+            },
+            {
+              "name": "T",
+              "value": "10"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "14"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "name": "Blackstar Cluster Launcher",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Each time this model ends a Normal move, you can select one enemy unit it moved over during that move and roll six D6: for each 5+, that unit suffers 1 mortal wound."
+            }
+          ]
+        },
+        {
+          "name": "Damaged: 1-5 Wounds Remaining",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this model has 1-5 wounds remaining, each time this model makes an attack, subtract 1 from the Hit roll."
+            }
+          ]
+        },
+        {
+          "name": "Transport",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model has a transport capacity of 12 ADEPTUS ASTARTES INFANTRY or KILL TEAM models. Each JUMP PACK, GRAVIS or TERMINATOR model takes up the space of 2 models and each CENTURION model takes up the space of 3 models."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "180"
+        }
+      ]
+    },
+    {
+      "id": "4042-67ce-8d45-ed33",
+      "name": "Kill Team Cassius [Legends]",
+      "type": "unit",
+      "entries": [
+        {
+          "id": "92eb-83bc-dcff-9386",
+          "name": "Chaplain Cassius",
+          "type": "model",
+          "entries": [
+            {
+              "id": "9d6-495a-ec17-7924",
+              "name": "Artificer crozius",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Artificer crozius",
+                  "type": "Melee Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "Melee"
+                    },
+                    {
+                      "name": "A",
+                      "value": "5"
+                    },
+                    {
+                      "name": "WS",
+                      "value": "2+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "6"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-1"
+                    },
+                    {
+                      "name": "D",
+                      "value": "2"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "-"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "b2ed-4b07-c463-068b",
+              "name": "Warlord",
+              "type": "upgrade"
+            }
+          ],
+          "profiles": [
+            {
+              "name": "Chaplain Cassius",
+              "type": "Unit",
+              "lines": [
+                {
+                  "name": "M",
+                  "value": "6\""
+                },
+                {
+                  "name": "T",
+                  "value": "4"
+                },
+                {
+                  "name": "SV",
+                  "value": "3+"
+                },
+                {
+                  "name": "W",
+                  "value": "4"
+                },
+                {
+                  "name": "LD",
+                  "value": "5+"
+                },
+                {
+                  "name": "OC",
+                  "value": "2"
+                }
+              ]
+            },
+            {
+              "name": "Invulnerable Save",
+              "type": "Abilities",
+              "lines": [
+                {
+                  "name": "Description",
+                  "value": "Chaplain Cassius has a 4+ invulnerable save."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "fe0a-b5eb-1e1a-21bc",
+          "name": "Vael Donatus",
+          "type": "model",
+          "entries": [
+            {
+              "id": "38e3-8907-cd67-f400",
+              "name": "Close combat weapon",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Close combat weapon",
+                  "type": "Melee Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "Melee"
+                    },
+                    {
+                      "name": "A",
+                      "value": "3"
+                    },
+                    {
+                      "name": "WS",
+                      "value": "3+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "5"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-2"
+                    },
+                    {
+                      "name": "D",
+                      "value": "1"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "-"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "profiles": [
+            {
+              "name": "Vael Donatus",
+              "type": "Unit",
+              "lines": [
+                {
+                  "name": "M",
+                  "value": "6\""
+                },
+                {
+                  "name": "T",
+                  "value": "4"
+                },
+                {
+                  "name": "SV",
+                  "value": "3+"
+                },
+                {
+                  "name": "W",
+                  "value": "2"
+                },
+                {
+                  "name": "LD",
+                  "value": "6+"
+                },
+                {
+                  "name": "OC",
+                  "value": "2"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "743c-f14-a2c2-a12c",
+          "name": "Zameon Gydrael",
+          "type": "model",
+          "profiles": [
+            {
+              "name": "Zameon Gydrael",
+              "type": "Unit",
+              "lines": [
+                {
+                  "name": "M",
+                  "value": "6\""
+                },
+                {
+                  "name": "T",
+                  "value": "4"
+                },
+                {
+                  "name": "SV",
+                  "value": "3+"
+                },
+                {
+                  "name": "W",
+                  "value": "2"
+                },
+                {
+                  "name": "LD",
+                  "value": "6+"
+                },
+                {
+                  "name": "OC",
+                  "value": "2"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "572c-d3a3-e597-94a3",
+          "name": "Rodricus Grytt",
+          "type": "model",
+          "entries": [
+            {
+              "id": "a41e-6ed3-538-1a22",
+              "name": "Close combat weapon",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Close combat weapon",
+                  "type": "Melee Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "Melee"
+                    },
+                    {
+                      "name": "A",
+                      "value": "3"
+                    },
+                    {
+                      "name": "WS",
+                      "value": "3+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "5"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-2"
+                    },
+                    {
+                      "name": "D",
+                      "value": "1"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "-"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "25bb-751f-5e1a-d283",
+              "name": "Frag cannon",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Frag cannon",
+                  "type": "Ranged Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "18\""
+                    },
+                    {
+                      "name": "A",
+                      "value": "D3"
+                    },
+                    {
+                      "name": "BS",
+                      "value": "4+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "7"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-1"
+                    },
+                    {
+                      "name": "D",
+                      "value": "2"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "Blast, Heavy, Rapid Fire D3"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "profiles": [
+            {
+              "name": "Rodricus Grytt",
+              "type": "Unit",
+              "lines": [
+                {
+                  "name": "M",
+                  "value": "6\""
+                },
+                {
+                  "name": "T",
+                  "value": "4"
+                },
+                {
+                  "name": "SV",
+                  "value": "3+"
+                },
+                {
+                  "name": "W",
+                  "value": "2"
+                },
+                {
+                  "name": "LD",
+                  "value": "6+"
+                },
+                {
+                  "name": "OC",
+                  "value": "2"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "16d6-b842-a1d1-2d77",
+          "name": "Antor Delassio",
+          "type": "model",
+          "profiles": [
+            {
+              "name": "Antor Delassio",
+              "type": "Unit",
+              "lines": [
+                {
+                  "name": "M",
+                  "value": "12\""
+                },
+                {
+                  "name": "T",
+                  "value": "4"
+                },
+                {
+                  "name": "SV",
+                  "value": "3+"
+                },
+                {
+                  "name": "W",
+                  "value": "2"
+                },
+                {
+                  "name": "LD",
+                  "value": "6+"
+                },
+                {
+                  "name": "OC",
+                  "value": "2"
+                }
+              ]
+            },
+            {
+              "name": "Jump Pack",
+              "type": "Abilities",
+              "lines": [
+                {
+                  "name": "Description",
+                  "value": "The bearer has a Move characteristic of 12\" and can move over models and terrain as if they were not there."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "9636-f9b-1bbf-14b9",
+          "name": "Edryc Setorax",
+          "type": "model",
+          "entries": [
+            {
+              "id": "e102-1304-5c21-e122",
+              "name": "Twin lightning claws",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Twin lightning claws",
+                  "type": "Melee Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "Melee"
+                    },
+                    {
+                      "name": "A",
+                      "value": "4"
+                    },
+                    {
+                      "name": "WS",
+                      "value": "3+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "5"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-2"
+                    },
+                    {
+                      "name": "D",
+                      "value": "1"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "Twin-Linked"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "profiles": [
+            {
+              "name": "Edryc Setorax",
+              "type": "Unit",
+              "lines": [
+                {
+                  "name": "M",
+                  "value": "12\""
+                },
+                {
+                  "name": "T",
+                  "value": "4"
+                },
+                {
+                  "name": "SV",
+                  "value": "3+"
+                },
+                {
+                  "name": "W",
+                  "value": "2"
+                },
+                {
+                  "name": "LD",
+                  "value": "6+"
+                },
+                {
+                  "name": "OC",
+                  "value": "2"
+                }
+              ]
+            },
+            {
+              "name": "Jump Pack",
+              "type": "Abilities",
+              "lines": [
+                {
+                  "name": "Description",
+                  "value": "The bearer has a Move characteristic of 12\" and can move over models and terrain as if they were not there."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "16b6-4055-1e55-27d5",
+          "name": "Jensus Natorian",
+          "type": "model",
+          "entries": [
+            {
+              "id": "c48b-daed-df-20b",
+              "name": "Psychic Cleanse",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Psychic Cleanse",
+                  "type": "Ranged Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "24\""
+                    },
+                    {
+                      "name": "A",
+                      "value": "D6"
+                    },
+                    {
+                      "name": "BS",
+                      "value": "3+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "5"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-1"
+                    },
+                    {
+                      "name": "D",
+                      "value": "D3"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "Psychic"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "f536-dd2f-14d1-24c5",
+              "name": "Force weapon",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Force weapon",
+                  "type": "Melee Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "Melee"
+                    },
+                    {
+                      "name": "A",
+                      "value": "5"
+                    },
+                    {
+                      "name": "WS",
+                      "value": "2+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "5"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-3"
+                    },
+                    {
+                      "name": "D",
+                      "value": "D3"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "Psychic"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "profiles": [
+            {
+              "name": "Jensus Natorian",
+              "type": "Unit",
+              "lines": [
+                {
+                  "name": "M",
+                  "value": "6\""
+                },
+                {
+                  "name": "T",
+                  "value": "4"
+                },
+                {
+                  "name": "SV",
+                  "value": "3+"
+                },
+                {
+                  "name": "W",
+                  "value": "2"
+                },
+                {
+                  "name": "LD",
+                  "value": "6+"
+                },
+                {
+                  "name": "OC",
+                  "value": "2"
+                }
+              ]
+            },
+            {
+              "name": "Psychic Hood",
+              "type": "Abilities",
+              "lines": [
+                {
+                  "name": "Description",
+                  "value": "Models in the bearer’s unit have the Feel No Pain 4+ ability against Psychic Attacks."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "b42a-2552-4350-e1d1",
+          "name": "Drenn Redblade",
+          "type": "model",
+          "profiles": [
+            {
+              "name": "Drenn Redblade",
+              "type": "Unit",
+              "lines": [
+                {
+                  "name": "M",
+                  "value": "6\""
+                },
+                {
+                  "name": "T",
+                  "value": "4"
+                },
+                {
+                  "name": "SV",
+                  "value": "3+"
+                },
+                {
+                  "name": "W",
+                  "value": "2"
+                },
+                {
+                  "name": "LD",
+                  "value": "6+"
+                },
+                {
+                  "name": "OC",
+                  "value": "2"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "7e27-9914-e88-5858",
+          "name": "Garran Branatar",
+          "type": "model",
+          "entries": [
+            {
+              "id": "ad82-8000-8d9d-8fa8",
+              "name": "Heavy Flamer",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Heavy Flamer",
+                  "type": "Ranged Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "12\""
+                    },
+                    {
+                      "name": "A",
+                      "value": "D6"
+                    },
+                    {
+                      "name": "BS",
+                      "value": "N/A"
+                    },
+                    {
+                      "name": "S",
+                      "value": "5"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-1"
+                    },
+                    {
+                      "name": "D",
+                      "value": "1"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "Ignores Cover, Torrent"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "7828-f96a-2087-d351",
+              "name": "Power fist",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Power fist",
+                  "type": "Melee Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "Melee"
+                    },
+                    {
+                      "name": "A",
+                      "value": "3"
+                    },
+                    {
+                      "name": "WS",
+                      "value": "3+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "8"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-2"
+                    },
+                    {
+                      "name": "D",
+                      "value": "2"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "-"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "profiles": [
+            {
+              "name": "Garran Branatar",
+              "type": "Unit",
+              "lines": [
+                {
+                  "name": "M",
+                  "value": "5\""
+                },
+                {
+                  "name": "T",
+                  "value": "5"
+                },
+                {
+                  "name": "SV",
+                  "value": "2+"
+                },
+                {
+                  "name": "W",
+                  "value": "3"
+                },
+                {
+                  "name": "LD",
+                  "value": "6+"
+                },
+                {
+                  "name": "OC",
+                  "value": "2"
+                }
+              ]
+            },
+            {
+              "name": "Invulnerable Save",
+              "type": "Abilities",
+              "lines": [
+                {
+                  "name": "Description",
+                  "value": "Garran Branatar has a 4+ invulnerable save."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "3722-72d6-5151-5003",
+          "name": "Ennox Sorrlock",
+          "type": "model",
+          "entries": [
+            {
+              "id": "9a78-2788-8706-cfba",
+              "name": "Close combat weapon",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Close combat weapon",
+                  "type": "Melee Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "Melee"
+                    },
+                    {
+                      "name": "A",
+                      "value": "3"
+                    },
+                    {
+                      "name": "WS",
+                      "value": "3+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "5"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-2"
+                    },
+                    {
+                      "name": "D",
+                      "value": "1"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "-"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "profiles": [
+            {
+              "name": "Ennox Sorrlock",
+              "type": "Unit",
+              "lines": [
+                {
+                  "name": "M",
+                  "value": "6\""
+                },
+                {
+                  "name": "T",
+                  "value": "4"
+                },
+                {
+                  "name": "SV",
+                  "value": "3+"
+                },
+                {
+                  "name": "W",
+                  "value": "2"
+                },
+                {
+                  "name": "LD",
+                  "value": "6+"
+                },
+                {
+                  "name": "OC",
+                  "value": "2"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "cd4a-d623-f7b6-b8e6",
+          "name": "Jetek Suberei",
+          "type": "model",
+          "entries": [
+            {
+              "id": "eb83-8a1f-796b-5756",
+              "name": "Deathwatch twin boltgun",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Deathwatch twin boltgun",
+                  "type": "Ranged Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "24\""
+                    },
+                    {
+                      "name": "A",
+                      "value": "4"
+                    },
+                    {
+                      "name": "BS",
+                      "value": "3+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "4"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "0"
+                    },
+                    {
+                      "name": "D",
+                      "value": "1"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "-"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "profiles": [
+            {
+              "name": "Jetek Suberei",
+              "type": "Unit",
+              "lines": [
+                {
+                  "name": "M",
+                  "value": "12\""
+                },
+                {
+                  "name": "T",
+                  "value": "5"
+                },
+                {
+                  "name": "SV",
+                  "value": "3+"
+                },
+                {
+                  "name": "W",
+                  "value": "3"
+                },
+                {
+                  "name": "LD",
+                  "value": "6+"
+                },
+                {
+                  "name": "OC",
+                  "value": "2"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Catechism of Death",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this unit contains Chaplain Cassius, melee weapons equipped by models in this unit have the [DEVASTATING WOUNDS] ability."
+            }
+          ]
+        },
+        {
+          "name": "Unflinching",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "You can re-roll Battle-shock tests for this unit."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "220"
+        }
+      ]
+    },
+    {
+      "id": "390e-706b-a059-378b",
+      "name": "Deathwatch Terminator Squad",
+      "type": "unit",
+      "profiles": [
+        {
+          "name": "Terminatus Assault",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "You can re-roll Charge rolls made for this unit. Each time this unit ends a Charge move, each enemy unit within Engagement Range of this unit must take a Battle-shock test. If that enemy unit does not have the IMPERIUM or CHAOS keywords, subtract 1 from that test."
+            }
+          ]
+        },
+        {
+          "name": "Teleport Homer",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "At the start of the battle, you can set up one Teleport Homer token for this unit anywhere on the battlefield that is not in your opponent’s deployment zone. If you do, once per battle, you can target this unit with the Rapid Ingress Stratagem for 0CP, but when resolving that Stratagem, you must set this unit up within 3\" of that token and not within 9\" of any enemy models. That token is then removed."
+            }
+          ]
+        },
+        {
+          "name": "Invulnerable Save",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Models in this unit have a 4+ invulnerable save."
+            }
+          ]
+        },
+        {
+          "name": "Attached Unit",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "If a CHARACTER unit from your army with the Leader ability can be attached to a TERMINATOR SQUAD, it can be attached to this unit instead."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "190"
+        },
+        {
+          "name": "Crusade Points",
+          "typeid": "b03b-c239-15a5-da55",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeid": "75bb-ded1-c86d-bdf0",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeid": "a623-fe74-1d33-cddf",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeid": "716d-91b7-d55a-1022",
+          "value": "0"
+        },
+        {
+          "name": "Honour Points",
+          "typeid": "8135-9a2f-6627-09e2",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "a077-e1c9-f8f0-d38",
+      "name": "Fortis Kill Team",
+      "type": "unit",
+      "entries": [
+        {
+          "id": "4962-be6c-d809-e206",
+          "name": "Kill Team Sergeant",
+          "type": "model",
+          "profiles": [
+            {
+              "name": "Kill Team Sergeant",
+              "type": "Unit",
+              "lines": [
+                {
+                  "name": "M",
+                  "value": "6\""
+                },
+                {
+                  "name": "T",
+                  "value": "4"
+                },
+                {
+                  "name": "SV",
+                  "value": "3+"
+                },
+                {
+                  "name": "W",
+                  "value": "2"
+                },
+                {
+                  "name": "LD",
+                  "value": "6+"
+                },
+                {
+                  "name": "OC",
+                  "value": "2"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Fortis Doctrines",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Each time a model in this unit makes an attack that targets a unit that is below its Starting Strength, add 1 to the Hit roll. If that attack targets a unit that is Below Half-strength, add 1 to the Hit roll and add 1 to the Wound roll instead."
+            }
+          ]
+        },
+        {
+          "name": "Attached Unit",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "If a CHARACTER from your army with the Leader ability can be attached to an INTERCESSOR SQUAD, it can be attached to this unit instead."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "200"
+        },
+        {
+          "name": "Crusade Points",
+          "typeid": "b03b-c239-15a5-da55",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeid": "75bb-ded1-c86d-bdf0",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeid": "a623-fe74-1d33-cddf",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeid": "716d-91b7-d55a-1022",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "6cb-912c-c43-210b",
+      "name": "Indomitor Kill Team",
+      "type": "unit",
+      "profiles": [
+        {
+          "name": "Indomitor Doctrines",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Each time a model in this unit makes a ranged attack that targets the closest eligible target, or makes a melee attack in a turn in which it made a Charge move, improve the Strength characteristic of that attack by 2."
+            }
+          ]
+        },
+        {
+          "name": "Attached Unit",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "If a CHARACTER unit from your army can be attached to a HEAVY INTERCESSOR SQUAD, it can be attached to this unit instead."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "270"
+        },
+        {
+          "name": "Crusade Points",
+          "typeid": "b03b-c239-15a5-da55",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeid": "75bb-ded1-c86d-bdf0",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeid": "a623-fe74-1d33-cddf",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeid": "716d-91b7-d55a-1022",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "2544-5189-7806-30f3",
+      "name": "Spectrus Kill Team",
+      "type": "unit",
+      "profiles": [
+        {
+          "name": "Attached Unit",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "If a CHARACTER from your army with the Leader ability can be attached to an INFILTRATOR SQUAD, it can be attached to this unit instead. \nIf this unit has a Leader unit attached to it during the Declare Battle Formations step, that Leader unit gains the Infiltrators and Scouts 6\" abilities."
+            }
+          ]
+        },
+        {
+          "name": "Spectrus Doctrines",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "At the end of your opponent’s turn, if this unit is more than 6\" away from all enemy units, you can remove this unit from the battlefield and place it into Strategic Reserves."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "200"
+        },
+        {
+          "name": "Crusade Points",
+          "typeid": "b03b-c239-15a5-da55",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeid": "75bb-ded1-c86d-bdf0",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeid": "a623-fe74-1d33-cddf",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeid": "716d-91b7-d55a-1022",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "66ab-476a-134e-ec7b",
+      "name": "Deathwatch Veterans",
+      "type": "unit",
+      "profiles": [
+        {
+          "name": "Death to the Alien",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Each time a model in this unit makes an attack, re-roll a Hit roll of 1. If the target of that attack does not have the IMPERIUM or CHAOS keywords, you can re-roll the Hit roll instead."
+            }
+          ]
+        },
+        {
+          "name": "Attached Unit",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "If a CHARACTER unit from your army with the Leader ability can be attached to a STERNGUARD VETERAN SQUAD, it can be attached to this unit instead."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "100"
+        }
+      ]
+    },
+    {
+      "id": "c679-f252-32b1-ebcc",
+      "name": "Talonstrike Kill Team",
+      "type": "unit",
+      "entries": [
+        {
+          "id": "68d2-9aaa-f6cb-f4dc",
+          "name": "Kill Team Sergeant w/ Jump Pack",
+          "type": "model",
+          "profiles": [
+            {
+              "name": "Kill Team Sergeant w/ Jump Pack",
+              "type": "Unit",
+              "lines": [
+                {
+                  "name": "M",
+                  "value": "12\""
+                },
+                {
+                  "name": "T",
+                  "value": "4"
+                },
+                {
+                  "name": "SV",
+                  "value": "3+"
+                },
+                {
+                  "name": "W",
+                  "value": "2"
+                },
+                {
+                  "name": "LD",
+                  "value": "6+"
+                },
+                {
+                  "name": "OC",
+                  "value": "1"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Talonstrike Doctrines",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Each time this unit is set up on the battlefield, until the end of the turn:\n- Improve the Armour Penetration characteristic of weapons equipped by models in this unit by 1. \n- Melee weapons equipped by models in this unit have the [LANCE] ability."
+            }
+          ]
+        },
+        {
+          "name": "Attached Unit",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "If a CHARACTER unit from your army with the Leader ability can be attached to an ASSAULT INTERCESSORS WITH JUMP PACKS unit, it can be attached to this unit instead."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "290"
+        },
+        {
+          "name": "Crusade Points",
+          "typeid": "b03b-c239-15a5-da55",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeid": "75bb-ded1-c86d-bdf0",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeid": "a623-fe74-1d33-cddf",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeid": "716d-91b7-d55a-1022",
+          "value": "0"
+        }
+      ]
+    }
+  ]
+}

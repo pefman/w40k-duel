@@ -1,0 +1,566 @@
+{
+  "factionname": "Imperium - Adeptus Astartes - Iron Hands",
+  "units": [
+    {
+      "id": "6c9d-4ec3-69dd-90b2",
+      "name": "Iron Father Feirros",
+      "type": "model",
+      "entries": [
+        {
+          "id": "aca-2239-5f93-85ab",
+          "name": "Gorgon's Wrath",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Gorgon's Wrath",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "36\""
+                },
+                {
+                  "name": "A",
+                  "value": "3"
+                },
+                {
+                  "name": "BS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "5"
+                },
+                {
+                  "name": "AP",
+                  "value": "-1"
+                },
+                {
+                  "name": "D",
+                  "value": "2"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Sustained Hits 2"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "9953-a38d-1b9e-7ab2",
+          "name": "Harrowhand",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Harrowhand",
+              "type": "Melee Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "Melee"
+                },
+                {
+                  "name": "A",
+                  "value": "6"
+                },
+                {
+                  "name": "WS",
+                  "value": "3+"
+                },
+                {
+                  "name": "S",
+                  "value": "7"
+                },
+                {
+                  "name": "AP",
+                  "value": "-2"
+                },
+                {
+                  "name": "D",
+                  "value": "2"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "-"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "bc62-41a7-d344-e4c8",
+          "name": "Medusan Manipuli",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Medusan Manipuli",
+              "type": "Melee Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "Melee"
+                },
+                {
+                  "name": "A",
+                  "value": "2"
+                },
+                {
+                  "name": "WS",
+                  "value": "3+"
+                },
+                {
+                  "name": "S",
+                  "value": "8"
+                },
+                {
+                  "name": "AP",
+                  "value": "-2"
+                },
+                {
+                  "name": "D",
+                  "value": "3"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Extra Attacks"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Iron Father Ferrios",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "5\""
+            },
+            {
+              "name": "T",
+              "value": "6"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "6"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "name": "Rites of Tempering",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this model is leading a unit, models in that unit have the Feel No Pain 5+ ability"
+            }
+          ]
+        },
+        {
+          "name": "Iron Father",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this model is within 3\" of one or more friendly Adeptus Astartes Vehicle units, it has the Lone Operative ability."
+            }
+          ]
+        },
+        {
+          "name": "Master of the Forge",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "In your Command phase, select one friendly Adeptus Astartes Vehicle model within 3\" of this model. That model regains up to 3 lost wounds and, until the start of your next Command phase, each time that Vehicle model makes an attack, add 1 to the Hit roll. You cannot select a unit for this ability that has already been selected for the Blessing of the Omnissiah ability this phase, and vice versa."
+            }
+          ]
+        },
+        {
+          "name": "Leader",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model can be attached to the following units:\n\n■ Aggressor Squad\n■ Eradicator Squad\n■ Heavy Intercessor Squad"
+            }
+          ]
+        },
+        {
+          "name": "Inspiring Commander",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "If you include this model in your army, until the end of the battle, non-Character models in Heavy\nIntercessor Squad units from your army have an Objective Control characteristic of 3 while they are\nnot Battle-shocked."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "95"
+        }
+      ]
+    },
+    {
+      "id": "aca-2239-5f93-85ab",
+      "name": "Gorgon's Wrath",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Gorgon's Wrath",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "36\""
+            },
+            {
+              "name": "A",
+              "value": "3"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Sustained Hits 2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "9953-a38d-1b9e-7ab2",
+      "name": "Harrowhand",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Harrowhand",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "6"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "7"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bc62-41a7-d344-e4c8",
+      "name": "Medusan Manipuli",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Medusan Manipuli",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "8"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "3"
+            },
+            {
+              "name": "Keywords",
+              "value": "Extra Attacks"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "6c9d-4ec3-69dd-90b2",
+      "name": "Iron Father Feirros",
+      "type": "model",
+      "entries": [
+        {
+          "id": "aca-2239-5f93-85ab",
+          "name": "Gorgon's Wrath",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Gorgon's Wrath",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "36\""
+                },
+                {
+                  "name": "A",
+                  "value": "3"
+                },
+                {
+                  "name": "BS",
+                  "value": "2+"
+                },
+                {
+                  "name": "S",
+                  "value": "5"
+                },
+                {
+                  "name": "AP",
+                  "value": "-1"
+                },
+                {
+                  "name": "D",
+                  "value": "2"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Sustained Hits 2"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "9953-a38d-1b9e-7ab2",
+          "name": "Harrowhand",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Harrowhand",
+              "type": "Melee Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "Melee"
+                },
+                {
+                  "name": "A",
+                  "value": "6"
+                },
+                {
+                  "name": "WS",
+                  "value": "3+"
+                },
+                {
+                  "name": "S",
+                  "value": "7"
+                },
+                {
+                  "name": "AP",
+                  "value": "-2"
+                },
+                {
+                  "name": "D",
+                  "value": "2"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "-"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "bc62-41a7-d344-e4c8",
+          "name": "Medusan Manipuli",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Medusan Manipuli",
+              "type": "Melee Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "Melee"
+                },
+                {
+                  "name": "A",
+                  "value": "2"
+                },
+                {
+                  "name": "WS",
+                  "value": "3+"
+                },
+                {
+                  "name": "S",
+                  "value": "8"
+                },
+                {
+                  "name": "AP",
+                  "value": "-2"
+                },
+                {
+                  "name": "D",
+                  "value": "3"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Extra Attacks"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Iron Father Ferrios",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "5\""
+            },
+            {
+              "name": "T",
+              "value": "6"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "6"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "name": "Rites of Tempering",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this model is leading a unit, models in that unit have the Feel No Pain 5+ ability"
+            }
+          ]
+        },
+        {
+          "name": "Iron Father",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this model is within 3\" of one or more friendly Adeptus Astartes Vehicle units, it has the Lone Operative ability."
+            }
+          ]
+        },
+        {
+          "name": "Master of the Forge",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "In your Command phase, select one friendly Adeptus Astartes Vehicle model within 3\" of this model. That model regains up to 3 lost wounds and, until the start of your next Command phase, each time that Vehicle model makes an attack, add 1 to the Hit roll. You cannot select a unit for this ability that has already been selected for the Blessing of the Omnissiah ability this phase, and vice versa."
+            }
+          ]
+        },
+        {
+          "name": "Leader",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model can be attached to the following units:\n\n■ Aggressor Squad\n■ Eradicator Squad\n■ Heavy Intercessor Squad"
+            }
+          ]
+        },
+        {
+          "name": "Inspiring Commander",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "If you include this model in your army, until the end of the battle, non-Character models in Heavy\nIntercessor Squad units from your army have an Objective Control characteristic of 3 while they are\nnot Battle-shocked."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "95"
+        }
+      ]
+    }
+  ]
+}

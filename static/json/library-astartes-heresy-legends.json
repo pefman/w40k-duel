@@ -1,0 +1,3158 @@
+{
+  "factionname": "Library - Astartes Heresy Legends",
+  "units": [
+    {
+      "id": "78aa-3f99-5fb7-7f83",
+      "name": "Kratos [Legends]",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Kratos",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "10\""
+            },
+            {
+              "name": "T",
+              "value": "12"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "18"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "6"
+            }
+          ]
+        },
+        {
+          "name": "Line-breaker",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "When making ranged attacks, this model can target enemy units within Engagement Range of it with Blast weapons (provided no other friendly units are also within Engagement Range of that enemy unit). In addition, when making ranged attacks, this model does not suffer the penalty to its Hit rolls for being within Engagement Range of one or more enemy units."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "265"
+        }
+      ]
+    },
+    {
+      "id": "3013-a16f-26c5-21fa",
+      "name": "Armoured tracks",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Armoured tracks",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "6"
+            },
+            {
+              "name": "WS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "8"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "308-b972-2863-2a32",
+      "name": "Hunter-killer missile",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Hunter-killer missile",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "48\""
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "14"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "D6"
+            },
+            {
+              "name": "Keywords",
+              "value": "One Shot"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "d243-77eb-2a1-ff34",
+      "name": "Heavy bolter",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Heavy bolter",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "36\""
+            },
+            {
+              "name": "A",
+              "value": "3"
+            },
+            {
+              "name": "BS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Sustained Hits 1"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "8676-2808-bf8f-a6af",
+      "name": "Lascannon",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Lascannon",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "48\""
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "BS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "12"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "D6+1"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "8882-6dc0-3a7b-5266",
+      "name": "Combi-weapon",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Combi-weapon",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "24\""
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "BS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-INFANTRY 3+, Devastating Wounds, Rapid Fire 1"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "bcef-39ba-a990-5490",
+      "name": "Heavy flamer",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Heavy flamer",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "12\""
+            },
+            {
+              "name": "A",
+              "value": "D6"
+            },
+            {
+              "name": "BS",
+              "value": "N/A"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Ignores Cover, Torrent"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "91c8-b628-4d47-d01e",
+      "name": "Multi-melta",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Multi-melta",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "18\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "9"
+            },
+            {
+              "name": "AP",
+              "value": "-4"
+            },
+            {
+              "name": "D",
+              "value": "D6"
+            },
+            {
+              "name": "Keywords",
+              "value": "Melta 2"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "9f56-5d6e-54a6-9b94",
+      "name": "Twin autocannon",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Twin autocannon",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "48\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "9"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "3"
+            },
+            {
+              "name": "Keywords",
+              "value": "Twin-linked"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "f1a6-b394-5bc5-a3cb",
+      "name": "Twin heavy bolter",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Twin heavy bolter",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "36\""
+            },
+            {
+              "name": "A",
+              "value": "3"
+            },
+            {
+              "name": "BS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Sustained Hits 1, Twin-linked"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "28c2-3ff0-43c1-380d",
+      "name": "Twin heavy flamer",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Twin heavy flamer",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "12\""
+            },
+            {
+              "name": "A",
+              "value": "D6"
+            },
+            {
+              "name": "BS",
+              "value": "N/A"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Ignores Cover, Torrent, Twin-linked"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "c36c-6247-f673-fe00",
+      "name": "Twin lascannon",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Twin lascannon",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "48\""
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "BS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "12"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "D6+1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Twin-linked"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "d38d-c3a2-f753-efea",
+      "name": "Deredeo Dreadnought [Legends]",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Deredeo Dreadnought",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "6\""
+            },
+            {
+              "name": "T",
+              "value": "9"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "12"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "3"
+            }
+          ]
+        },
+        {
+          "name": "Deredeo Strike",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Each time this model makes a ranged attack that targets a unit that is not Below Half-strength, you can re-roll the Hit roll."
+            }
+          ]
+        },
+        {
+          "name": "Invunerable Save",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model has a 5+ invulnerable save."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "170"
+        }
+      ]
+    },
+    {
+      "id": "d961-1269-6476-6f8c",
+      "name": "Armoured feet",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Armoured feet",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "6"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "783a-1c02-b377-b169",
+      "name": "Relic Contemptor Dreadnought [Legends]",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Relic Contemptor Dreadnought",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "6\""
+            },
+            {
+              "name": "T",
+              "value": "9"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "10"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "3"
+            }
+          ]
+        },
+        {
+          "name": "Even In Death I Serve",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "The first time this model is destroyed, remove it from play without resolving its Deadly Demise ability. Then, at the end of the phase, roll one D6: on a 2+, set this model back up on the battlefield as close as possible to where it was destroyed and not within Engagement Range of any enemy units, with D6 wounds remaining."
+            }
+          ]
+        },
+        {
+          "name": "Invulnerable Save",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model has a 5+ invulnerable save."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "180"
+        }
+      ]
+    },
+    {
+      "id": "14d4-8062-f090-6719",
+      "name": "Leviathan Dreadnought [Legends]",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Leviathan Dreadnought",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "8\""
+            },
+            {
+              "name": "T",
+              "value": "10"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "12"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "4"
+            }
+          ]
+        },
+        {
+          "name": "Invulnerable Save",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model has a 5+ invulnerable save."
+            }
+          ]
+        },
+        {
+          "name": "Duty Eternal",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Each time an attack is allocated to this model, subtract 1 from the Damage characteristic of that attack."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "215"
+        }
+      ]
+    },
+    {
+      "id": "95d-2d06-b256-2db",
+      "name": "Meltagun",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Meltagun",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "12\""
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "BS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "9"
+            },
+            {
+              "name": "AP",
+              "value": "-4"
+            },
+            {
+              "name": "D",
+              "value": "D6"
+            },
+            {
+              "name": "Keywords",
+              "value": "Melta 2"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "1f26-fce8-bb2d-2c44",
+      "name": "Javelin Attack Speeder [Legends]",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Javelin Attack Speeder",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "14\""
+            },
+            {
+              "name": "T",
+              "value": "8"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "9"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "3"
+            }
+          ]
+        },
+        {
+          "name": "Fire and Redeploy",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "In your Shooting phase, each time this model has shot, if it is not within Engagement Range of any enemy units, it can make a Normal move of up to D6\". If it does, until the end of the turn, this model is not eligible to declare a charge."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "110"
+        }
+      ]
+    },
+    {
+      "id": "68be-7090-1fbc-9021",
+      "name": "Deathstorm Drop Pod [Legends]",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Deathstorm Drop Pod",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "-"
+            },
+            {
+              "name": "T",
+              "value": "7"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "8"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "2"
+            }
+          ]
+        },
+        {
+          "name": "Deathstorm Assault",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model must start the battle in Reserves, but it is not counted towards any limits placed on the maximum number of Reserves units you can start the battle with. This model can be set up in the Reinforcements step of your first, second or third Movement phase, regardless of any mission rules."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "95"
+        }
+      ]
+    },
+    {
+      "id": "34c8-1025-33f7-baaf",
+      "name": "Land Raider Proteus [Legends]",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Land Raider Proteus",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "12\""
+            },
+            {
+              "name": "T",
+              "value": "12"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "16"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "5"
+            }
+          ]
+        },
+        {
+          "name": "Land Raider Proteus",
+          "type": "Transport",
+          "lines": [
+            {
+              "name": "Capacity",
+              "value": "This model has a transport capacity of 12 \u003cFACTION\u003e INFANTRY models. Each JUMP PACK, WULFEN, GRAVIS, POSSESSED or TERMINATOR model takes up the space of 2 models and each CENTURION or OBLITERATOR model takes up the space of 3 models."
+            }
+          ]
+        },
+        {
+          "name": "Land Raider Proteus (Explorator augury web)",
+          "type": "Transport",
+          "lines": [
+            {
+              "name": "Capacity",
+              "value": "This model has a transport capacity of 6 \u003cFACTION\u003e INFANTRY models. Each JUMP PACK, WULFEN, GRAVIS, POSSESSED or TERMINATOR model takes up the space of 2 models and each CENTURION or OBLITERATOR model takes up the space of 3 models."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "250"
+        }
+      ]
+    },
+    {
+      "id": "3006-ffe-2b0c-6b1b",
+      "name": "Land Raider Achilles [Legends]",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Land Raider Achilles",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "10\""
+            },
+            {
+              "name": "T",
+              "value": "12"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "16"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "5"
+            }
+          ]
+        },
+        {
+          "name": "Invulnerable Save",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model has a 4+ invulnerable save."
+            }
+          ]
+        },
+        {
+          "name": "Land Raider Achilles",
+          "type": "Transport",
+          "lines": [
+            {
+              "name": "Capacity",
+              "value": "This model has a transport capacity of 12 \u003cFACTION\u003e INFANTRY models. Each JUMP PACK, WULFEN, GRAVIS, POSSESSED or TERMINATOR model takes up the space of 2 models and each CENTURION or OBLITERATOR model takes up the space of 3 models."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "285"
+        }
+      ]
+    },
+    {
+      "id": "7eb4-c21c-d0a2-39df",
+      "name": "Storm bolter",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Storm bolter",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "24\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Rapid Fire 2"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "5030-c511-fac-674f",
+      "name": "Twin volkite culverin",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Twin volkite culverin",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "36\""
+            },
+            {
+              "name": "A",
+              "value": "4"
+            },
+            {
+              "name": "BS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Devastating Wounds, Twin-linked"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "b2f1-197b-fb3b-687f",
+      "name": "Sicaran Battle Tank [Legends]",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Sicaran Battle Tank",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "10\""
+            },
+            {
+              "name": "T",
+              "value": "11"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "14"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "4"
+            }
+          ]
+        },
+        {
+          "name": "Armoured Spearhead",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Each time this model makes an attack that targets an enemy unit, re-roll a Hit roll of 1 and, if that unit is within range of an objective marker you do not control, you can re-roll the Hit roll instead."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "220"
+        }
+      ]
+    },
+    {
+      "id": "ca2a-69ca-dd3c-47",
+      "name": "Sicaran Arcus [Legends]",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Sicaran Arcus",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "10\""
+            },
+            {
+              "name": "T",
+              "value": "11"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "14"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "4"
+            }
+          ]
+        },
+        {
+          "name": "Specialised Weapon System",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Each time this model makes an attack that targets the enemy unit you selected for the Oath of Moment ability, that attack has the [IGNORES COVER] ability and can ignore the penalty to their Hit rolls when making attacks with Indirect Fire weapons against targets that are not visible to them."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "200"
+        }
+      ]
+    },
+    {
+      "id": "e63e-2aa6-f840-b54e",
+      "name": "Sicaran Venator [Legends]",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Sicaran Venator",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "10\""
+            },
+            {
+              "name": "T",
+              "value": "11"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "14"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "4"
+            }
+          ]
+        },
+        {
+          "name": "Ferocious Assault",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Each time this model makes a ranged attack that targets the closest eligible MONSTER or VEHICLE unit, add 1 to the Hit roll."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "220"
+        }
+      ]
+    },
+    {
+      "id": "68aa-28bf-bd73-3355",
+      "name": "Sicaran Punisher [Legends]",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Sicaran Punisher",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "10\""
+            },
+            {
+              "name": "T",
+              "value": "11"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "14"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "4"
+            }
+          ]
+        },
+        {
+          "name": "Rotating Death",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model’s Punisher rotary cannon has the [SUSTAINED HITS 1] ability when targeting INFANTRY units."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "220"
+        }
+      ]
+    },
+    {
+      "id": "8b64-6aba-150d-27e4",
+      "name": "Sicaran Omega [Legends]",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Sicaran Omega",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "10\""
+            },
+            {
+              "name": "T",
+              "value": "11"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "14"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "4"
+            }
+          ]
+        },
+        {
+          "name": "Overwhelming Short-range Firepower",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Each time this model makes an attack that targets the closest eligible enemy unit, re-roll a Hit roll of 1 and re-roll a Wound roll of 1."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "235"
+        }
+      ]
+    },
+    {
+      "id": "2aee-e03c-836e-4c6e",
+      "name": "Rapier Carrier [Legends]",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Rapier Carrier",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "3\""
+            },
+            {
+              "name": "T",
+              "value": "6"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "6"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "2"
+            }
+          ]
+        },
+        {
+          "name": "Powerful Volley",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Each time this model shoots in your Shooting phase, provided it Remained Stationary this turn, all [HEAVY] weapons equipped by models in this unit have the [LETHAL HITS] ability."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "100"
+        }
+      ]
+    },
+    {
+      "id": "97dc-f0c8-1354-88fb",
+      "name": "Whirlwind Scorpius [Legends]",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Whirlwind Scorpius",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "10\""
+            },
+            {
+              "name": "T",
+              "value": "10"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "11"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "3"
+            }
+          ]
+        },
+        {
+          "name": "Pinning Bombardment",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "In your Shooting phase, after this model has shot, if one or more of those attacks made with its Scorpius multi-launcher scored a hit against an enemy INFANTRY unit, that unit must take a Battle-shock test."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "115"
+        }
+      ]
+    },
+    {
+      "id": "1151-47cb-d17e-b332",
+      "name": "Armoured tracks",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Armoured tracks",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "3"
+            },
+            {
+              "name": "WS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "128d-5011-8e6-45a6",
+      "name": "Vindicator Laser Destroyer [Legends]",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Vindicator Laser Destroyer",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "9\""
+            },
+            {
+              "name": "T",
+              "value": "11"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "11"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "3"
+            }
+          ]
+        },
+        {
+          "name": "Annihilator",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Each time this model makes a ranged attack that targets a MONSTER or VEHICLE unit, re-roll a Damage roll of 1."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "175"
+        }
+      ]
+    },
+    {
+      "id": "7fd0-d95d-d076-3472",
+      "name": "Dreadnought Drop Pod [Legends]",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Dreadnought Drop Pod",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "-"
+            },
+            {
+              "name": "T",
+              "value": "7"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "8"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "2"
+            }
+          ]
+        },
+        {
+          "name": "Drop Pod Assault",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model must start the battle in Reserves, but neither it nor any units embarked within it are counted towards any limits placed on the maximum number of Reserves units you can start the battle with. This model can be set up in the Reinforcements step of your first, second or third Movement phase, regardless of any mission rules. Any units embarked within this model must immediately disembark after it has been set up on the battlefield, and they must be set up more than 9\" away from all enemy models. After this model has been set up on the battlefield, no units can embark within it."
+            }
+          ]
+        },
+        {
+          "name": "Dreadnought Drop Pod",
+          "type": "Transport",
+          "lines": [
+            {
+              "name": "Capacity",
+              "value": "This model has a transport capacity of 1 Dreadnought model."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "75"
+        }
+      ]
+    },
+    {
+      "id": "3d36-e9d7-54c5-deb7",
+      "name": "Terrax-pattern Termite [Legends]",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Terrax-pattern Termite",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "8\""
+            },
+            {
+              "name": "T",
+              "value": "10"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "14"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "2"
+            }
+          ]
+        },
+        {
+          "name": "Termite Assault",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model must start the battle in Reserves, but neither it nor any units embarked within it are counted towards any limits placed on the maximum number of Reserves units you can start the battle with. This model can be set up in the Reinforcements step of your first, second or third Movement phase, regardless of any mission rules. Any units embarked within this model can disembark after it has been set up on the battlefield, and if they do they must be set up more than 9\" away from all enemy models."
+            }
+          ]
+        },
+        {
+          "name": "Terrax-pattern Termite",
+          "type": "Transport",
+          "lines": [
+            {
+              "name": "Capacity",
+              "value": "This model has a transport capacity of 12 \u003cFACTION\u003e INFANTRY models. It cannot transport JUMP PACK, WULFEN, PHOBOS, GRAVIS, CENTURION, TERMINATOR, OBLITERATOR, POSSESSED or TACTICUS models (excluding TACTICUS CHARACTER models that began the battle attached to a non-TACTICUS unit)."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "200"
+        }
+      ]
+    },
+    {
+      "id": "1aa5-d081-2442-4c37",
+      "name": "Xiphon Interceptor [Legends]",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Xiphon Interceptor",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "20+"
+            },
+            {
+              "name": "T",
+              "value": "9"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "12"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "name": "Interceptor",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Each time this model makes a ranged attack that targets a unit that can FLY, add 1 to the Hit roll."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "115"
+        }
+      ]
+    },
+    {
+      "id": "3b7d-b14e-603-e1ad",
+      "name": "Storm Eagle Gunship [Legends]",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Storm Eagle Gunship",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "20+\""
+            },
+            {
+              "name": "T",
+              "value": "10"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "18"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "name": "Armoured Resilience",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Each time an attack is allocated to this model, subtract 1 from the Damage characteristic of that attack."
+            }
+          ]
+        },
+        {
+          "name": "Storm Eagle Gunship",
+          "type": "Transport",
+          "lines": [
+            {
+              "name": "Capacity",
+              "value": "This model has a transport capacity of 22 \u003cFACTION\u003e INFANTRY models and 1 DREADNOUGHT model. Each JUMP PACK, WULFEN, GRAVIS, TERMINATOR or POSSESSED model takes up the space of 2 models and each CENTURION or OBLITERATOR model takes up the space of 3 models."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "255"
+        }
+      ]
+    },
+    {
+      "id": "3fc0-1753-fefb-89b5",
+      "name": "Armoured hull",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Armoured hull",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "6"
+            },
+            {
+              "name": "WS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "8"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "1fc7-7880-e4d4-acbf",
+      "name": "Fire Raptor Gunship [Legends]",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Fire Raptor Gunship",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "20+\""
+            },
+            {
+              "name": "T",
+              "value": "10"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "18"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "name": "Strafing Run",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Each time this model makes a ranged attack that targets a unit that cannot FLY, add 1 to the Hit roll."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "290"
+        }
+      ]
+    },
+    {
+      "id": "f60c-1b93-9ee8-59d2",
+      "name": "Typhon [Legends]",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Typhon",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "10\""
+            },
+            {
+              "name": "T",
+              "value": "12"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "18"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "6"
+            }
+          ]
+        },
+        {
+          "name": "Sunderer of Fortresses",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Each time this model makes an attack that targets a VEHICLE, improve the Strength and Damage characteristic of that attack by 1 (if that attack targets a FORTIFICATION unit, improve the Strength and Damage characteristics of that attack by 2 instead)."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "385"
+        }
+      ]
+    },
+    {
+      "id": "4044-b458-fb4d-d05b",
+      "name": "Cerberus [Legends]",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Cerberus",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "10\""
+            },
+            {
+              "name": "T",
+              "value": "12"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "18"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "6"
+            }
+          ]
+        },
+        {
+          "name": "Atomantic Arc-reactor",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Each time this unit shoots its Cerberus neutron pulse array in your Shooting phase, provided it Remained Stationary this turn, that weapon has the [LETHAL HITS] ability."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "285"
+        }
+      ]
+    },
+    {
+      "id": "7b3a-9a63-6200-ec7",
+      "name": "Spartan [Legends]",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Spartan",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "10\""
+            },
+            {
+              "name": "T",
+              "value": "12"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "18"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "6"
+            }
+          ]
+        },
+        {
+          "name": "Spartan",
+          "type": "Transport",
+          "lines": [
+            {
+              "name": "Capacity",
+              "value": "This model has a transport capacity of 28 \u003cFACTION\u003e INFANTRY models. Each JUMP PACK, WULFEN, GRAVIS, TERMINATOR or POSSESSED model takes up the space of 2 models and each CENTURION or OBLITERATOR model takes up the space of 3 models."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "315"
+        }
+      ]
+    },
+    {
+      "id": "585d-722b-4304-2f63",
+      "name": "Fellblade [Legends]",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Fellblade",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "9\""
+            },
+            {
+              "name": "T",
+              "value": "13"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "24"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "8"
+            }
+          ]
+        },
+        {
+          "name": "Rolling Fortress",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Each time a ranged attack is allocated to a model from your army, if that model is not fully visible to every model in the attacking unit because of this Fellblade model, that model has the Benefit of Cover against that attack."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "535"
+        }
+      ]
+    },
+    {
+      "id": "625b-29e4-7be7-db5a",
+      "name": "Falchion [Legends]",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Falchion",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "9\""
+            },
+            {
+              "name": "T",
+              "value": "13"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "24"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "8"
+            }
+          ]
+        },
+        {
+          "name": "Titan-killer",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Each time this model makes a ranged attack with its twin Falchion volcano cannon that targets a MONSTER or VEHICLE unit, that attack has the [DEVASTATING WOUNDS] ability."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "515"
+        }
+      ]
+    },
+    {
+      "id": "e337-7f05-f1b3-d64e",
+      "name": "Mastodon [Legends]",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Damaged: 1-10 wounds remaining",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this model has 1-10 wounds remaining, subtract 6 from this model’s Objective Control characteristic and each time this model makes an attack, subtract 1 from the Hit roll."
+            }
+          ]
+        },
+        {
+          "name": "Mastodon",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "9\""
+            },
+            {
+              "name": "T",
+              "value": "14"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "30"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "12"
+            }
+          ]
+        },
+        {
+          "name": "Inviolable Transport",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Once per battle round, when an attack is allocated to this model, you can change the Damage characteristic of that attack to 0."
+            }
+          ]
+        },
+        {
+          "name": "Mastodon",
+          "type": "Transport",
+          "lines": [
+            {
+              "name": "Capacity",
+              "value": "This model has a transport capacity of 45 \u003cFACTION\u003e INFANTRY models. Each JUMP PACK, WULFEN, GRAVIS, POSSESSED or TERMINATOR model takes up the space of 2 models and each CENTURION or OBLITERATOR model takes up the space of 3 models. This model can also transport up to 2 DREADNOUGHT or HELBRUTE models (these models take up the space of a number of models equal to their Wounds characteristic e.g. A DREADNOUGHT with a Wounds characteristic of 8 would take up the space of 8  models)."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "610"
+        }
+      ]
+    },
+    {
+      "id": "a80f-8343-85f3-716a",
+      "name": "Sokar-pattern Stormbird [Legends]",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Damaged: 1-13 wounds remaining",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this model has 1-13 wounds remaining, each time this model makes an attack, subtract 1 from the Hit roll."
+            }
+          ]
+        },
+        {
+          "name": "Sokar-pattern Stormbird",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "20\"+"
+            },
+            {
+              "name": "T",
+              "value": "13"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "40"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "name": "Invulnerable Save",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model has a 5+ invulnerable save against ranged attacks"
+            }
+          ]
+        },
+        {
+          "name": "Aerial Assault",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Each time a unit with the Deep Strike ability disembarks from this model after it has made a Normal move, that unit is still eligible to declare a charge this turn."
+            }
+          ]
+        },
+        {
+          "name": "Sokar-pattern Stormbird",
+          "type": "Transport",
+          "lines": [
+            {
+              "name": "Capacity",
+              "value": "This model has a transport capacity of 55 \u003cFACTION\u003e Infantry or \u003cFACTION\u003e MOUNTED models. Each JUMP PACK, WULFEN, GRAVIS, POSSESSED or TERMINATOR model takes up the space of 2 models and each MOUNTED, CENTURION or OBLITERATOR model takes up the space of 3 models. This model can also transport up to 1 RHINO model (this model – and any models embarked within it – take up the space of 25 models)."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "1100"
+        }
+      ]
+    },
+    {
+      "id": "d298-eb55-5779-f90e",
+      "name": "Tarantula Sentry Battery [Legends]",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Tarantula Sentry Battery",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "-"
+            },
+            {
+              "name": "T",
+              "value": "6"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "4"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "name": "Sentinel Protocols",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Each time you select this unit for the Fire Overwatch Stratagem, hits are scored on unmodified Hit rolls of 4+ when resolving that Stratagem."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "45"
+        }
+      ]
+    },
+    {
+      "id": "7e7a-96f6-cad0-50ec",
+      "name": "Decimator [Legends]",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Decimator",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "10\""
+            },
+            {
+              "name": "T",
+              "value": "10"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "12"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "4"
+            }
+          ]
+        },
+        {
+          "name": "Invulnerable Save",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model has a 5+ invulnerable save."
+            }
+          ]
+        },
+        {
+          "name": "Infernal Regeneration",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "The first time this model is destroyed, remove it from play without resolving its Deadly Demise ability. Then, at the end of the phase, roll one D6: on a 2+, set this model back up on the battlefield as close as possible to where it was destroyed and not within Engagement Range of any enemy units, with D6 wounds remaining."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "170"
+        }
+      ]
+    },
+    {
+      "id": "412c-3499-8275-2637",
+      "name": "Greater Blight Drone [Legends]",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Greater Blight Drone",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "10\""
+            },
+            {
+              "name": "T",
+              "value": "9"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "10"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "3"
+            }
+          ]
+        },
+        {
+          "name": "Invulnerable Save",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model has a 5+ invulnerable save."
+            }
+          ]
+        },
+        {
+          "name": "Hovering Death",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model is eligible to shoot and declare a charge in a turn in which it Fell Back."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "150"
+        }
+      ]
+    },
+    {
+      "id": "9401-616b-6e9e-10e5",
+      "name": "Dreadclaw Drop Pod [Legends]",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Dreadclaw Drop Pod",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "12\""
+            },
+            {
+              "name": "T",
+              "value": "7"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "9"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "2"
+            }
+          ]
+        },
+        {
+          "name": "Dreadclaw Drop Pod",
+          "type": "Transport",
+          "lines": [
+            {
+              "name": "Capacity",
+              "value": "This model has a transport capacity of 12 HERETIC ASTARTES INFANTRY models. Each JUMP PACK, POSSESSED and TERMINATOR model takes up the space of 2 models. Each OBLITERATOR model takes up the space of 3 models. This model can instead transport 1 HELBRUTE or DREADNOUGHT model."
+            }
+          ]
+        },
+        {
+          "name": "Dreadclaw Assault",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model must start the battle in Reserves, but neither it nor any units embarked within it are counted towards any limits placed on the maximum number of Reserves units you can start the battle with. This model can be set up in the Reinforcements step of your first, second or third Movement phase, regardless of any mission rules. Any units embarked within this model can disembark after it has been set up on the battlefield, and if they do they must be set up more than 9\" away from all enemy models."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "115"
+        }
+      ]
+    },
+    {
+      "id": "fdad-1104-a934-3812",
+      "name": "Blood Slaughterer [Legends]",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Blood Slaughterer",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "12\""
+            },
+            {
+              "name": "T",
+              "value": "9"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "10"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "3"
+            }
+          ]
+        },
+        {
+          "name": "Invulnerable Save",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model has a 5+ invulnerable save."
+            }
+          ]
+        },
+        {
+          "name": "Scuttling Gait",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Each time this unit Advances, do not make an Advance roll for it. Instead, until the end of the phase, add 6\" to the Move characteristic of models in this unit."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "160"
+        }
+      ]
+    },
+    {
+      "id": "f564-7bc-21a6-7796",
+      "name": "Greater Brass Scorpion [Legends]",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Runes of the Blood God",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model has the Feel No Pain 4+ ability against mortal wounds and Psychic Attacks."
+            }
+          ]
+        },
+        {
+          "name": "Damaged: 1-9 wounds remaining",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this model has 1-9 wounds remaining, subtract 5 from this model’s Objective Control characteristic and each time this model makes an attack, subtract 1 from the Hit roll."
+            }
+          ]
+        },
+        {
+          "name": "Greater Brass Scorpion",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "12\""
+            },
+            {
+              "name": "T",
+              "value": "12"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "26"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "10"
+            }
+          ]
+        },
+        {
+          "name": "Invulnerable Save",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model has a 5+ invulnerable save."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "560"
+        }
+      ]
+    },
+    {
+      "id": "6c76-b4e-4437-27e2",
+      "name": "Kytan Ravager [Legends]",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Damaged: 1-8 wounds remaining",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this model has 1-8 wounds remaining, subtract 5 from this model’s Objective Control characteristic and each time this model makes an attack, subtract 1 from the Hit roll."
+            }
+          ]
+        },
+        {
+          "name": "Bloodlust",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Each time this model makes a Charge move, until the end of the turn, its melee weapons have the [SUSTAINED HITS 1] ability. In addition, once per battle, this model is eligible to declare a charge in a turn in which it Advanced."
+            }
+          ]
+        },
+        {
+          "name": "Kytan Ravager",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "10\""
+            },
+            {
+              "name": "T",
+              "value": "12"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "24"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "10"
+            }
+          ]
+        },
+        {
+          "name": "Invulnerable Save",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model has a 5+ invulnerable save."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "425"
+        }
+      ]
+    },
+    {
+      "id": "5bb7-ac8-4448-a4d8",
+      "name": "Kharybdis Assault Claw [Legends]",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Kharybdis Assault",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model must start the battle in Reserves, but neither it nor any units embarked within it are counted towards any limits placed on the maximum number of Reserves units you can start the battle with. This model can be set up in the Reinforcements step of your first, second or third Movement phase, regardless of any mission rules. Any units embarked within this model can disembark after it has been set up on the battlefield, and if they do they must be set up more than 9\" away from all enemy models."
+            }
+          ]
+        },
+        {
+          "name": "Kharybdis Assault Claw",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "12\""
+            },
+            {
+              "name": "T",
+              "value": "11"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "20"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "4"
+            }
+          ]
+        },
+        {
+          "name": "Damaged: 1-7 wounds remaining",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this model has 1-7 wounds remaining, each time this model makes an attack, subtract 1 from the Hit roll."
+            }
+          ]
+        },
+        {
+          "name": "Kharybdis Assault Claw",
+          "type": "Transport",
+          "lines": [
+            {
+              "name": "Capacity",
+              "value": "This model has a transport capacity of 22 HERETIC ASTARTES INFANTRY models. Each JUMP PACK, POSSESSED and TERMINATOR model takes up the space of 2 models. Each OBLITERATOR model takes up the space of 3 models. This model can instead transport 1 HELBRUTE or DREADNOUGHT model."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "325"
+        }
+      ]
+    },
+    {
+      "id": "6844-986c-b0ea-6dd5",
+      "name": "Chaos Thunderhawk [Legends]",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Chaos Thunderhawk",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "20\"+"
+            },
+            {
+              "name": "T",
+              "value": "12"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "30"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "name": "Damaged: 1-10 wounds remaining",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this model has 1-10 wounds remaining, each time this model makes an attack, subtract 1 from the Hit roll."
+            }
+          ]
+        },
+        {
+          "name": "Aerial Assault",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Each time a unit with the Deep Strike ability disembarks from this model after it has made a Normal move, that unit is still eligible to declare a charge this turn."
+            }
+          ]
+        },
+        {
+          "name": "Chaos Thunderhawk",
+          "type": "Transport",
+          "lines": [
+            {
+              "name": "Capacity",
+              "value": "This model has a transport capacity of 30 \u003cFACTION\u003e INFANTRY or \u003cFACTION\u003e MOUNTED models. Each JUMP PACK, POSSESSED and TERMINATOR model takes up the space of 2 models. Each OBLITERATOR model takes up the space of 3 models. Each MOUNTED model takes up the space of 4 models."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "840"
+        }
+      ]
+    },
+    {
+      "id": "ed2f-5baf-1eec-40c5",
+      "name": "Autocannon",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Autocannon",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "48\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "9"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "3"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "22d5-4f9d-ae18-7734",
+      "name": "Volkite culverin",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Volkite culverin",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "36\""
+            },
+            {
+              "name": "A",
+              "value": "4"
+            },
+            {
+              "name": "BS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Devastating Wounds"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

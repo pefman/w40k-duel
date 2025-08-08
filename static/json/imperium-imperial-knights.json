@@ -1,0 +1,566 @@
+{
+  "factionname": "Imperium - Imperial Knights",
+  "units": [
+    {
+      "id": "5a84-ea91-b707-1656",
+      "name": "Detachment",
+      "type": "upgrade"
+    },
+    {
+      "name": "Show/Hide Options",
+      "type": "selectionEntry"
+    },
+    {
+      "id": "2d9b-610a-dc4d-15ae",
+      "name": "Tech-Priest Manipulus",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Tech-Priest Manipulus",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "6\""
+            },
+            {
+              "name": "T",
+              "value": "4"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "4"
+            },
+            {
+              "name": "LD",
+              "value": "7+"
+            },
+            {
+              "name": "OC",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "name": "Invulnerable Save",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model has a 5+ invulnerable save."
+            }
+          ]
+        },
+        {
+          "name": "Leader",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model can be attached to the following units:\n■ Corpuscarii Electro-Priests\n■ Fulgurite Electro-Priests\n■ Kataphron Breachers\n■ Kataphron Destroyers\n■ Skitarii Rangers\n■ Skitarii Vanguard"
+            }
+          ]
+        },
+        {
+          "name": "Galvanic Field",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this model is leading a unit, weapons equipped by models in that unit have the [Lethal Hits] ability."
+            }
+          ]
+        },
+        {
+          "name": "Defend the Divine Work",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Once per battle, at the start of any phase, this model can use this ability. If it does, until the  end of the phase, all models in this model’s unit have a 4+ invulnerable save."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "60"
+        },
+        {
+          "name": "Crusade Points",
+          "typeid": "b03b-c239-15a5-da55",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeid": "75bb-ded1-c86d-bdf0",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeid": "a623-fe74-1d33-cddf",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeid": "716d-91b7-d55a-1022",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "b897-e4c6-fcb6-6538",
+      "name": "Skitarii Marshal",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Skitarii Marshal",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "6\""
+            },
+            {
+              "name": "T",
+              "value": "3"
+            },
+            {
+              "name": "SV",
+              "value": "4+"
+            },
+            {
+              "name": "W",
+              "value": "3"
+            },
+            {
+              "name": "LD",
+              "value": "6"
+            },
+            {
+              "name": "OC",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "name": "Leader",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model can be attached to the following units:\n■ Skitarii Rangers\n■ Skitarii Vanguard"
+            }
+          ]
+        },
+        {
+          "name": "Control Edict",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this model is leading a unit, each time a model in that unit makes an attack, you can re-roll the Hit roll."
+            }
+          ]
+        },
+        {
+          "name": "Servo-skull Uplink",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Once per battle, at the start of any phase, you can select one friendly SKITARII unit that is Battle-shocked and within 6\" of this model. That unit is no longer Battle-shocked."
+            }
+          ]
+        },
+        {
+          "name": "Invulnerable Save",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model has a 5+ invulnerable save."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "35"
+        }
+      ]
+    },
+    {
+      "id": "de59-f65c-181a-8509",
+      "name": "Skitarii Rangers",
+      "type": "unit",
+      "entries": [
+        {
+          "id": "e4b2-478b-a217-f999",
+          "name": "Skitarii Ranger Alpha",
+          "type": "model",
+          "entries": [
+            {
+              "id": "5e8b-2f7f-6ef5-42e3",
+              "name": "Alpha combat weapon",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Alpha combat weapon",
+                  "type": "Melee Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "Melee"
+                    },
+                    {
+                      "name": "A",
+                      "value": "2"
+                    },
+                    {
+                      "name": "WS",
+                      "value": "4+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "5"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-1"
+                    },
+                    {
+                      "name": "D",
+                      "value": "1"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "-"
+                    }
+                  ]
+                }
+              ],
+              "costs": [
+                {
+                  "name": "pts",
+                  "typeid": "51b2-306e-1021-d207",
+                  "value": "0"
+                }
+              ]
+            }
+          ],
+          "costs": [
+            {
+              "name": "pts",
+              "typeid": "51b2-306e-1021-d207",
+              "value": "0"
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Skitarii Rangers",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "6\""
+            },
+            {
+              "name": "T",
+              "value": "3"
+            },
+            {
+              "name": "SV",
+              "value": "4+"
+            },
+            {
+              "name": "W",
+              "value": "1"
+            },
+            {
+              "name": "LD",
+              "value": "7+"
+            },
+            {
+              "name": "OC",
+              "value": "2"
+            }
+          ]
+        },
+        {
+          "name": "Objective Scouted",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "At the end of your Command phase, if this unit is within range of an objective marker you control, that objective marker remains under your control, even if you have no models within range of it, until your opponent controls it at the start or end of any turn."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "85"
+        }
+      ]
+    },
+    {
+      "id": "ba33-c21-bddc-ab0",
+      "name": "Skitarii Vanguard",
+      "type": "unit",
+      "entries": [
+        {
+          "id": "757f-d62f-7983-08e3",
+          "name": "Skitarii Vanguard Alpha",
+          "type": "model",
+          "entries": [
+            {
+              "id": "835b-874f-522a-ae8c",
+              "name": "Alpha combat weapon",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Alpha combat weapon",
+                  "type": "Melee Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "Melee"
+                    },
+                    {
+                      "name": "A",
+                      "value": "2"
+                    },
+                    {
+                      "name": "WS",
+                      "value": "4+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "5"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-1"
+                    },
+                    {
+                      "name": "D",
+                      "value": "1"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "-"
+                    }
+                  ]
+                }
+              ],
+              "costs": [
+                {
+                  "name": "pts",
+                  "typeid": "51b2-306e-1021-d207",
+                  "value": "0"
+                }
+              ]
+            }
+          ],
+          "costs": [
+            {
+              "name": "pts",
+              "typeid": "51b2-306e-1021-d207",
+              "value": "0"
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Skitarii Vanguard",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "6\""
+            },
+            {
+              "name": "T",
+              "value": "3"
+            },
+            {
+              "name": "SV",
+              "value": "4+"
+            },
+            {
+              "name": "W",
+              "value": "1"
+            },
+            {
+              "name": "LD",
+              "value": "7+"
+            },
+            {
+              "name": "OC",
+              "value": "2"
+            }
+          ]
+        },
+        {
+          "name": "Rad-saturation (Aura)",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While an enemy unit (excluding Vehicle units) is within 3\" of this unit, subtract 1 from the Objective Control characteristic of models in that unit."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "95"
+        },
+        {
+          "name": "Crusade Points",
+          "typeid": "b03b-c239-15a5-da55",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeid": "75bb-ded1-c86d-bdf0",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeid": "a623-fe74-1d33-cddf",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeid": "716d-91b7-d55a-1022",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "id": "6424-ed86-9e15-3e14",
+      "name": "Tech-Priest Dominus",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Tech-Priest Dominus",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "6\""
+            },
+            {
+              "name": "T",
+              "value": "4"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "4"
+            },
+            {
+              "name": "LD",
+              "value": "7+"
+            },
+            {
+              "name": "OC",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "name": "Leader",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model can be attached to the following units:\n■ Corpuscarii Electro-Priests\n■ Fulgurite Electro-Priests\n■ Kataphron Breachers\n■ Kataphron Destroyers\n■ Skitarii Rangers\n■ Skitarii Vanguard"
+            }
+          ]
+        },
+        {
+          "name": "Invulnerable Save",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model has a 5+ invulnerable save."
+            }
+          ]
+        },
+        {
+          "name": "Lord of the Machine Cult",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this model is leading a unit, models in that unit have the Feel No Pain 5+ ability. If that unit has the Electro-Priests keyword, models in that unit have the Feel No Pain 4+ ability instead"
+            }
+          ]
+        },
+        {
+          "name": "Data-spike",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "At the start of the Fight phase, you can select one enemy Vehicle unit within Engagement Range of this model’s unit and roll one D6: on a 4+, that enemy unit suffers D6 mortal wounds and, until the end of the phase, the Weapon Skill characteristic of melee weapons equipped by that enemy unit is worsened by 1."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "65"
+        },
+        {
+          "name": "Crusade Points",
+          "typeid": "b03b-c239-15a5-da55",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Battle Honours",
+          "typeid": "75bb-ded1-c86d-bdf0",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Experience",
+          "typeid": "a623-fe74-1d33-cddf",
+          "value": "0"
+        },
+        {
+          "name": "Crusade: Weapon Modifications",
+          "typeid": "716d-91b7-d55a-1022",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "name": "Order of Battle",
+      "type": "selectionEntry"
+    }
+  ]
+}

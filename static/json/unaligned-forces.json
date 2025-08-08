@@ -1,0 +1,4081 @@
+{
+  "factionname": "Unaligned Forces",
+  "units": [
+    {
+      "id": "e85b-17c7-1ad9-8375",
+      "name": "Ambull [Legends]",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Ambull",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "6\""
+            },
+            {
+              "name": "T",
+              "value": "8"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "8"
+            },
+            {
+              "name": "LD",
+              "value": "8+"
+            },
+            {
+              "name": "OC",
+              "value": "3"
+            }
+          ]
+        },
+        {
+          "name": "Frenzy",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Each time an enemy unit is selected to shoot or fight, after it has finished making its attacks, if one or more of those attacks targeted this model and this model is not destroyed, this model can fight as if it were the Fight phase"
+            }
+          ]
+        },
+        {
+          "name": "Borewyrm Infestation",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Twice per battle, at the end of your opponent’s turn, if this model is not within Engagement Range of one or more enemy units, you can remove this model from the battlefield. In the Reinforcements step of your next Movement phase, set it up anywhere on the battlefield that\nis more than 9\" horizontally away from all enemy models. If the battle ends and this unit is not on the battlefield, it is destroyed. \n\nDesigner’s Note: Place two Borewyrm Infestation tokens next to this model, removing one each time this ability has been used."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "85"
+        }
+      ]
+    },
+    {
+      "id": "5b1d-134a-9996-b634",
+      "name": "Aegis Defence Line with Weapon Emplacement [Legends]",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Aegis Defence Line with Weapon Emplacement",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "-"
+            },
+            {
+              "name": "T",
+              "value": "12"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "10"
+            },
+            {
+              "name": "LD",
+              "value": "7+"
+            },
+            {
+              "name": "OC",
+              "value": "0"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "145"
+        }
+      ]
+    },
+    {
+      "id": "5134-5fe9-e489-43c4",
+      "name": "Bastion [Legends]",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Bastion",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "-"
+            },
+            {
+              "name": "T",
+              "value": "13"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "18"
+            },
+            {
+              "name": "LD",
+              "value": "7+"
+            },
+            {
+              "name": "OC",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "name": "Bastion",
+          "type": "Transport",
+          "lines": [
+            {
+              "name": "Capacity",
+              "value": "This FORTIFICATION has a transport capacity of 15 INFANTRY models. Each model with a Wounds characteristic of 3 or more takes up the space of 2 models. It cannot transport non-CHARACTER models with a Wounds characteristic of 4 or more."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "275"
+        }
+      ]
+    },
+    {
+      "id": "71b0-77b9-522c-17d6",
+      "name": "Firestorm Redoubt [Legends]",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Firestorm Redoubt",
+          "type": "Transport",
+          "lines": [
+            {
+              "name": "Capacity",
+              "value": "This Fortification has a transport capacity of 15 Infantry models. Each model with a Wounds characteristic of 3 or more takes up the space of 2 models. It cannot transport non-Character models with a Wounds characteristic of 4 or more"
+            }
+          ]
+        },
+        {
+          "name": "Firestorm Redoubt",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "-"
+            },
+            {
+              "name": "T",
+              "value": "13"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "18"
+            },
+            {
+              "name": "LD",
+              "value": "7+"
+            },
+            {
+              "name": "OC",
+              "value": "0"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "260"
+        }
+      ]
+    },
+    {
+      "id": "c4d1-c85a-a20e-6c94",
+      "name": "Fortress of Redemption [Legends]",
+      "type": "model",
+      "entries": [
+        {
+          "id": "db95-3509-494e-5358",
+          "name": "Redemptor lascannons",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Redemptor lascannons",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "48\""
+                },
+                {
+                  "name": "A",
+                  "value": "2"
+                },
+                {
+                  "name": "BS",
+                  "value": "4+"
+                },
+                {
+                  "name": "S",
+                  "value": "14"
+                },
+                {
+                  "name": "AP",
+                  "value": "-3"
+                },
+                {
+                  "name": "D",
+                  "value": "D6+1"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Anti-Fly 2+"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "988-2a33-6cbd-4020",
+          "name": "Redemptor missile silo",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "➤ Redemptor missile silo - superfrag",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "48\""
+                },
+                {
+                  "name": "A",
+                  "value": "2D6+2"
+                },
+                {
+                  "name": "BS",
+                  "value": "4+"
+                },
+                {
+                  "name": "S",
+                  "value": "5"
+                },
+                {
+                  "name": "AP",
+                  "value": "0"
+                },
+                {
+                  "name": "D",
+                  "value": "1"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Blast"
+                }
+              ]
+            },
+            {
+              "name": "➤ Redemptor missile silo - superkrak",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "48\""
+                },
+                {
+                  "name": "A",
+                  "value": "2"
+                },
+                {
+                  "name": "BS",
+                  "value": "4+"
+                },
+                {
+                  "name": "S",
+                  "value": "10"
+                },
+                {
+                  "name": "AP",
+                  "value": "-2"
+                },
+                {
+                  "name": "D",
+                  "value": "D6+1"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "-"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Fortress of Redemption",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "-"
+            },
+            {
+              "name": "T",
+              "value": "13"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "30"
+            },
+            {
+              "name": "LD",
+              "value": "7+"
+            },
+            {
+              "name": "OC",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "name": "Fortress of Redemption",
+          "type": "Transport",
+          "lines": [
+            {
+              "name": "Capacity",
+              "value": "This FORTIFICATION has a transport capacity of 20 INFANTRY models. Each model with a Wounds characteristic of 3 or more takes up the space of 2 models. It cannot transport non-CHARACTER models with a Wounds characteristic of 4 or more."
+            }
+          ]
+        },
+        {
+          "name": "Vantage Point",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While a model is on top of the tower roof of this FORTIFICATION, improve the Armour Penetration characteristic of ranged weapons equipped by that model by 1."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "480"
+        }
+      ]
+    },
+    {
+      "id": "db95-3509-494e-5358",
+      "name": "Redemptor lascannons",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Redemptor lascannons",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "48\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "14"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "D6+1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Fly 2+"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "988-2a33-6cbd-4020",
+      "name": "Redemptor missile silo",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "➤ Redemptor missile silo - superfrag",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "48\""
+            },
+            {
+              "name": "A",
+              "value": "2D6+2"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Blast"
+            }
+          ]
+        },
+        {
+          "name": "➤ Redemptor missile silo - superkrak",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "48\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "10"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "D6+1"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "e3ba-7f87-c32-229",
+      "name": "Guardian Drone [Legends]",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Drone Commander (Aura)",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While a friendly SPINDLE DRONES unit is within 6 of this model, each time a model in that unit makes an attack, add 1 to the Hit roll."
+            }
+          ]
+        },
+        {
+          "name": "Guardian Drone",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "5\""
+            },
+            {
+              "name": "T",
+              "value": "7"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "7"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "2"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "45"
+        }
+      ]
+    },
+    {
+      "id": "3b75-e314-ecd5-cd63",
+      "name": "Macro-cannon Aquila Strongpoint [Legends]",
+      "type": "model",
+      "entries": [
+        {
+          "id": "dc0f-e233-7c7c-18e7",
+          "name": "Aquila macro-cannon",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Aquila macro-cannon",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "72\""
+                },
+                {
+                  "name": "A",
+                  "value": "D6+6"
+                },
+                {
+                  "name": "BS",
+                  "value": "5+"
+                },
+                {
+                  "name": "S",
+                  "value": "16"
+                },
+                {
+                  "name": "AP",
+                  "value": "-4"
+                },
+                {
+                  "name": "D",
+                  "value": "4"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "-"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Tremor Quake",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "In your Shooting phase, just after selecting a target for this model’s Aquila macro-cannon, the target unit and every other enemy INFANTRY unit within 3\" of that unit must take a Battle-shock test."
+            }
+          ]
+        },
+        {
+          "name": "Macro-cannon Aquila Strongpoint",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "-"
+            },
+            {
+              "name": "T",
+              "value": "13"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "30"
+            },
+            {
+              "name": "LD",
+              "value": "7+"
+            },
+            {
+              "name": "OC",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "name": "Macro-cannon Aquila Strongpoint",
+          "type": "Transport",
+          "lines": [
+            {
+              "name": "Capacity",
+              "value": "This FORTIFICATION has a transport capacity of 30 INFANTRY models. Each model with a Wounds characteristic of 3 or more takes up the space of 2 models. It cannot transport non-CHARACTER models with a Wounds characteristic of 4 or more."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "550"
+        }
+      ]
+    },
+    {
+      "id": "dc0f-e233-7c7c-18e7",
+      "name": "Aquila macro-cannon",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Aquila macro-cannon",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "72\""
+            },
+            {
+              "name": "A",
+              "value": "D6+6"
+            },
+            {
+              "name": "BS",
+              "value": "5+"
+            },
+            {
+              "name": "S",
+              "value": "16"
+            },
+            {
+              "name": "AP",
+              "value": "-4"
+            },
+            {
+              "name": "D",
+              "value": "4"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cabe-2c66-c8b6-de6c",
+      "name": "Plasma Obliterator [Legends]",
+      "type": "model",
+      "entries": [
+        {
+          "id": "a72b-27ca-d431-cf98",
+          "name": "Plasma obliterator",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "➤ Plasma obliterator - standard",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "48\""
+                },
+                {
+                  "name": "A",
+                  "value": "D6+3"
+                },
+                {
+                  "name": "BS",
+                  "value": "5+"
+                },
+                {
+                  "name": "S",
+                  "value": "9"
+                },
+                {
+                  "name": "AP",
+                  "value": "-3"
+                },
+                {
+                  "name": "D",
+                  "value": "3"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Blast"
+                }
+              ]
+            },
+            {
+              "name": "➤ Plasma obliterator - supercharge",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "48\""
+                },
+                {
+                  "name": "A",
+                  "value": "D6+3"
+                },
+                {
+                  "name": "BS",
+                  "value": "5+"
+                },
+                {
+                  "name": "S",
+                  "value": "10"
+                },
+                {
+                  "name": "AP",
+                  "value": "-4"
+                },
+                {
+                  "name": "D",
+                  "value": "4"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Blast, Hazardous"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Plasma Obliterator",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "-"
+            },
+            {
+              "name": "T",
+              "value": "13"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "18"
+            },
+            {
+              "name": "LD",
+              "value": "7+"
+            },
+            {
+              "name": "OC",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "name": "Emergency Plasma Vents",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Each time this FORTIFICATION suffers a mortal wound as the result of a failed Hazardous test, roll one D6: on a 4+, that wound is not lost."
+            }
+          ]
+        },
+        {
+          "name": "Plasma Obliterator",
+          "type": "Transport",
+          "lines": [
+            {
+              "name": "Capacity",
+              "value": "This FORTIFICATION has a transport capacity of 20 INFANTRY models. Each model with a Wounds characteristic of 3 or more takes up the space of 2 models. It cannot transport non-CHARACTER models with a Wounds characteristic of 4 or more."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "225"
+        }
+      ]
+    },
+    {
+      "id": "a72b-27ca-d431-cf98",
+      "name": "Plasma obliterator",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "➤ Plasma obliterator - standard",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "48\""
+            },
+            {
+              "name": "A",
+              "value": "D6+3"
+            },
+            {
+              "name": "BS",
+              "value": "5+"
+            },
+            {
+              "name": "S",
+              "value": "9"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "3"
+            },
+            {
+              "name": "Keywords",
+              "value": "Blast"
+            }
+          ]
+        },
+        {
+          "name": "➤ Plasma obliterator - supercharge",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "48\""
+            },
+            {
+              "name": "A",
+              "value": "D6+3"
+            },
+            {
+              "name": "BS",
+              "value": "5+"
+            },
+            {
+              "name": "S",
+              "value": "10"
+            },
+            {
+              "name": "AP",
+              "value": "-4"
+            },
+            {
+              "name": "D",
+              "value": "4"
+            },
+            {
+              "name": "Keywords",
+              "value": "Blast, Hazardous"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f39-fc54-f95a-8395",
+      "name": "Primaris Redoubt [Legends]",
+      "type": "model",
+      "entries": [
+        {
+          "id": "b6ab-e70d-f8f3-731a",
+          "name": "Primaris Redoubt turbo-laser destructor",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Primaris Redoubt turbo-laser destructor",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "96\""
+                },
+                {
+                  "name": "A",
+                  "value": "D3+1"
+                },
+                {
+                  "name": "BS",
+                  "value": "4+"
+                },
+                {
+                  "name": "S",
+                  "value": "16"
+                },
+                {
+                  "name": "AP",
+                  "value": "-3"
+                },
+                {
+                  "name": "D",
+                  "value": "D6+3"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Blast"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Primaris Redoubt",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "-"
+            },
+            {
+              "name": "T",
+              "value": "12"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "18"
+            },
+            {
+              "name": "LD",
+              "value": "7+"
+            },
+            {
+              "name": "OC",
+              "value": "0"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "220"
+        }
+      ]
+    },
+    {
+      "id": "b6ab-e70d-f8f3-731a",
+      "name": "Primaris Redoubt turbo-laser destructor",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Primaris Redoubt turbo-laser destructor",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "96\""
+            },
+            {
+              "name": "A",
+              "value": "D3+1"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "16"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "D6+3"
+            },
+            {
+              "name": "Keywords",
+              "value": "Blast"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "54c-8b9f-b1d8-93c3",
+      "name": "Skyshield Landing Pad [Legends]",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Skyshield Landing Pad",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "-"
+            },
+            {
+              "name": "T",
+              "value": "12"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "16"
+            },
+            {
+              "name": "LD",
+              "value": "7+"
+            },
+            {
+              "name": "OC",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "name": "Skyshield",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Friendly Infantry models and friendly units that can Fly can be set up or end any type of move on top of the platform section of this Fortification. While such a model is on the platform section of this Fortification, that model has a 5+ invulnerable save against ranged attacks"
+            }
+          ]
+        },
+        {
+          "name": "Repair Aircraft",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "At the end of your Movement phase, if there is a friendly Aircraft model on top of this Fortification, that Aircraft regains up to D3 lost wounds"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "125"
+        }
+      ]
+    },
+    {
+      "id": "da76-e18f-523e-d45a",
+      "name": "Spindle Drones [Legends]",
+      "type": "unit",
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "35"
+        }
+      ]
+    },
+    {
+      "id": "11b2-8348-ae67-fa98",
+      "name": "The Archivist [Legends]",
+      "type": "model",
+      "entries": [
+        {
+          "id": "368e-12b2-f6f7-b37b",
+          "name": "Atomic disassembler",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Atomic disassembler",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "18\""
+                },
+                {
+                  "name": "A",
+                  "value": "1"
+                },
+                {
+                  "name": "BS",
+                  "value": "3+"
+                },
+                {
+                  "name": "S",
+                  "value": "8"
+                },
+                {
+                  "name": "AP",
+                  "value": "-2"
+                },
+                {
+                  "name": "D",
+                  "value": "2"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Ignores Cover, Pistol"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "29a1-6633-a564-40e2",
+          "name": "Eradicator glove",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Eradicator glove",
+              "type": "Melee Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "Melee"
+                },
+                {
+                  "name": "A",
+                  "value": "4"
+                },
+                {
+                  "name": "WS",
+                  "value": "4+"
+                },
+                {
+                  "name": "S",
+                  "value": "8"
+                },
+                {
+                  "name": "AP",
+                  "value": "-2"
+                },
+                {
+                  "name": "D",
+                  "value": "2"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "-"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "The Archivist",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "5\""
+            },
+            {
+              "name": "T",
+              "value": "6"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "6"
+            },
+            {
+              "name": "LD",
+              "value": "7+"
+            },
+            {
+              "name": "OC",
+              "value": "2"
+            }
+          ]
+        },
+        {
+          "name": "Fearsome Assault",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "At the start of the Fight phase, each enemy unit within Engagement Range of one or more units with this ability must take a Battle-shock test."
+            }
+          ]
+        },
+        {
+          "name": "Disruptive Influence (Aura)",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While an enemy unit is within 6\" of this model, each time that unit takes a Battle-shock or Leadership test, subtract 1 from that test."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "70"
+        }
+      ]
+    },
+    {
+      "id": "368e-12b2-f6f7-b37b",
+      "name": "Atomic disassembler",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Atomic disassembler",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "18\""
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "BS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "8"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Ignores Cover, Pistol"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "29a1-6633-a564-40e2",
+      "name": "Eradicator glove",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Eradicator glove",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "4"
+            },
+            {
+              "name": "WS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "8"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "14fe-18ed-9c25-189c",
+      "name": "Vengeance Weapon Battery [Legends]",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Vengeance Weapon Battery",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "-"
+            },
+            {
+              "name": "T",
+              "value": "13"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "10"
+            },
+            {
+              "name": "LD",
+              "value": "7+"
+            },
+            {
+              "name": "OC",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "name": "Automated Defences",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Each time this model makes a ranged attack that targets the closest enemy unit:\n- If that attack is made with a Punisher gatling cannon and the target is not a MONSTER or VEHICLE, add 1 to the Hit roll.\n- If that attack is made with a battle cannon and the target is a MONSTER or VEHICLE, add 1 to the Hit roll.\n- If that attack is made with a quad-lascannon and the target can FLY, add 1 to the Hit roll."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "140"
+        }
+      ]
+    },
+    {
+      "id": "4501-646d-e705-9dca",
+      "name": "Void Shield Generator [Legends]",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Invulnerable Save (4+)",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model has a 4+ invulnerable save"
+            }
+          ]
+        },
+        {
+          "name": "Projected Void Shields (Aura)",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While a friendly model is wholly within 6\" of this FORTIFICATION, that model has a 4+ invulnerable save against ranged attacks."
+            }
+          ]
+        },
+        {
+          "name": "Void Shield Generator",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "-"
+            },
+            {
+              "name": "T",
+              "value": "12"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "16"
+            },
+            {
+              "name": "LD",
+              "value": "7+"
+            },
+            {
+              "name": "OC",
+              "value": "0"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "155"
+        }
+      ]
+    },
+    {
+      "id": "5c81-92c5-e20b-edf1",
+      "name": "Vortex Missile Strongpoint [Legends]",
+      "type": "model",
+      "entries": [
+        {
+          "id": "8190-92a3-5cd1-26e8",
+          "name": "Vortex missile battery",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Vortex missile battery",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "72\""
+                },
+                {
+                  "name": "A",
+                  "value": "D6+3"
+                },
+                {
+                  "name": "BS",
+                  "value": "5+"
+                },
+                {
+                  "name": "S",
+                  "value": "16"
+                },
+                {
+                  "name": "AP",
+                  "value": "-4"
+                },
+                {
+                  "name": "D",
+                  "value": "D6"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Blast, Devastating Wounds, Hazardous, Indirect Fire"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Vortex Missile Strongpoint",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "-"
+            },
+            {
+              "name": "T",
+              "value": "13"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "30"
+            },
+            {
+              "name": "LD",
+              "value": "7+"
+            },
+            {
+              "name": "OC",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "name": "Vortex Missile Strongpoint",
+          "type": "Transport",
+          "lines": [
+            {
+              "name": "Capacity",
+              "value": "This FORTIFICATION has a transport capacity of 30 INFANTRY models. Each model with a Wounds characteristic of 3 or more takes up the space of 2 models. It cannot transport non-CHARACTER models with a Wounds characteristic of 4 or more."
+            }
+          ]
+        },
+        {
+          "name": "Vortex",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "In your Shooting phase, each time you select a target for this model’s vortex missile battery, roll one D6 for the target unit and one D6 for every other enemy unit within 3\" of the target unit. On a 4+, the unit being rolled for is struck by the vortex; after resolving all of this model’s attacks against the target unit, each unit struck by the vortex suffers D3 mortal wounds."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "525"
+        }
+      ]
+    },
+    {
+      "id": "8190-92a3-5cd1-26e8",
+      "name": "Vortex missile battery",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Vortex missile battery",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "72\""
+            },
+            {
+              "name": "A",
+              "value": "D6+3"
+            },
+            {
+              "name": "BS",
+              "value": "5+"
+            },
+            {
+              "name": "S",
+              "value": "16"
+            },
+            {
+              "name": "AP",
+              "value": "-4"
+            },
+            {
+              "name": "D",
+              "value": "D6"
+            },
+            {
+              "name": "Keywords",
+              "value": "Blast, Devastating Wounds, Hazardous, Indirect Fire"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "9698-2e0-15ac-1193",
+      "name": "Wall of Martyrs Bunker [Legends]",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Wall of Martyrs Bunker",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "-"
+            },
+            {
+              "name": "T",
+              "value": "13"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "10"
+            },
+            {
+              "name": "LD",
+              "value": "7+"
+            },
+            {
+              "name": "OC",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "name": "Inviolable Bastion",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Each time an attack is allocated to this Fortification, subtract 1 from the Damage characteristic of that attack."
+            }
+          ]
+        },
+        {
+          "name": "Wall of Martyrs Bunker",
+          "type": "Transport",
+          "lines": [
+            {
+              "name": "Capacity",
+              "value": "This Fortification has a transport capacity of 11 Infantry models. Each model with a Wounds characteristic of 3 or more takes up the space of 2 models. It cannot transport non-Character models with a Wounds characteristic of 4 or more"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "180"
+        }
+      ]
+    },
+    {
+      "id": "8419-8133-33f3-e0a4",
+      "name": "Wall of Martyrs Defence Emplacement [Legends]",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Wall of Martyrs Defence Emplacement",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "-"
+            },
+            {
+              "name": "T",
+              "value": "12"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "10"
+            },
+            {
+              "name": "LD",
+              "value": "7+"
+            },
+            {
+              "name": "OC",
+              "value": "0"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "140"
+        }
+      ]
+    },
+    {
+      "id": "64b7-a2df-416a-9963",
+      "name": "Wall of Martyrs Defence Line [Legends]",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Wall of Martyrs Defence Line",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "-"
+            },
+            {
+              "name": "T",
+              "value": "12"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "10"
+            },
+            {
+              "name": "LD",
+              "value": "7+"
+            },
+            {
+              "name": "OC",
+              "value": "0"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "140"
+        }
+      ]
+    },
+    {
+      "id": "4985-9124-1e83-10f0",
+      "name": "Comms antenna",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Comms Antenna",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "In your Command phase, if one or more Character models are embarked within this Fortification, roll one D6: on a 5+, you gain 1CP"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "72e7-16-6f4c-ecbd",
+      "name": "Icarus lascannon",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Icarus Lascannon",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "48\""
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "BS",
+              "value": "5+"
+            },
+            {
+              "name": "S",
+              "value": "12"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "D6+1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Fly 2+"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "aece-7cae-ceb6-4079",
+      "name": "Quad-gun",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Quad-gun",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "48\""
+            },
+            {
+              "name": "A",
+              "value": "4"
+            },
+            {
+              "name": "BS",
+              "value": "5+"
+            },
+            {
+              "name": "S",
+              "value": "9"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "3"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Fly 3+, Twin-linked"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "9772-d936-9e34-8549",
+      "name": "Heavy bolter",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Heavy bolter",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "36\""
+            },
+            {
+              "name": "A",
+              "value": "3"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Sustained Hits 1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "e55-db9a-8f67-b41f",
+      "name": "Quad lascannon",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Quad lascannon",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "48\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "12"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "D6+1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Twin-linked, Anti-Fly 2+"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "708f-a01b-953d-d59e",
+      "name": "Punisher gatling cannon",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Punisher gatling cannon",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "24\""
+            },
+            {
+              "name": "A",
+              "value": "20"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "837d-5927-b2f1-d4b8",
+      "name": "Battle cannon",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Battle cannon",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "48\""
+            },
+            {
+              "name": "A",
+              "value": "D6+3"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "9"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "3"
+            },
+            {
+              "name": "Keywords",
+              "value": "Blast"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "9caf-4cf9-3a99-5e84",
+      "name": "Multi-melta",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Multi-melta",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "18\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "9"
+            },
+            {
+              "name": "AP",
+              "value": "-4"
+            },
+            {
+              "name": "D",
+              "value": "D6"
+            },
+            {
+              "name": "Keywords",
+              "value": "Melta 2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "9c32-9f63-8d26-8ec9",
+      "name": "Twin heavy bolter",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Twin heavy bolter",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "36\""
+            },
+            {
+              "name": "A",
+              "value": "3"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Sustained Hits 1, Twin-linked"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ad83-5e8f-6f3f-37b2",
+      "name": "Twin heavy flamer",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Twin heavy flamer",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "12\""
+            },
+            {
+              "name": "A",
+              "value": "D6"
+            },
+            {
+              "name": "BS",
+              "value": "N/A"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Ignores Cover, Torrent, Twin-linked"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "475-eb92-56f5-9f9f",
+      "name": "Twin lascannon",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Twin lascannon",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "48\""
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "12"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "D6+1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Twin-linked"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f6f8-8759-3282-2ab",
+      "name": "Imperial Fortress Walls [Legends]",
+      "type": "model",
+      "entries": [
+        {
+          "id": "412e-da68-5020-dd05",
+          "name": "Twin long-barrelled autocannon",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Twin long-barrelled autocannon",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "60\""
+                },
+                {
+                  "name": "A",
+                  "value": "2"
+                },
+                {
+                  "name": "BS",
+                  "value": "4+"
+                },
+                {
+                  "name": "S",
+                  "value": "9"
+                },
+                {
+                  "name": "AP",
+                  "value": "-1"
+                },
+                {
+                  "name": "D",
+                  "value": "3"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Twin-linked"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Imperial Fortress Walls",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "-"
+            },
+            {
+              "name": "T",
+              "value": "14"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "80"
+            },
+            {
+              "name": "LD",
+              "value": "7+"
+            },
+            {
+              "name": "OC",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "name": "Damaged: 1-30 Wounds Remaining",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this model has 1-30 wounds remaining, each time this model makes an attack, subtract 1 from the Hit roll."
+            }
+          ]
+        },
+        {
+          "name": "Fortress",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "When this FORTIFICATION is set up, all parts of it must be set up in contact with another part."
+            }
+          ]
+        },
+        {
+          "name": "Imperial Fortress Walls",
+          "type": "Transport",
+          "lines": [
+            {
+              "name": "Capacity",
+              "value": "This FORTIFICATION has a transport capacity of 65 INFANTRY models. Each model with a Wounds characteristic of 3 or more takes up the space of 2 models. It cannot transport non-CHARACTER models with a Wounds characteristic of 4 or more."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "412e-da68-5020-dd05",
+      "name": "Twin long-barrelled autocannon",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Twin long-barrelled autocannon",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "60\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "9"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "3"
+            },
+            {
+              "name": "Keywords",
+              "value": "Twin-linked"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "20c8-d2-586d-623",
+      "name": "Castellum Stronghold [Legends]",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Castellum Stronghold",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "-"
+            },
+            {
+              "name": "T",
+              "value": "13"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "50"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "name": "Stronghold",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Friendly INFANTRY models can be set up or end any type of move on top of the roof section of this FORTIFICATION. Any friendly model can be set up or end any type of move on the ramp or platform section of this FORTIFICATION."
+            }
+          ]
+        },
+        {
+          "name": "Damaged: 1-15 Wounds Remaining",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this model has 1-15 wounds remaining, each time this model makes an attack, subtract 1 from the Hit roll."
+            }
+          ]
+        },
+        {
+          "name": "Castellum Stronghold",
+          "type": "Transport",
+          "lines": [
+            {
+              "name": "Capacity",
+              "value": "This FORTIFICATION has a transport capacity of 60 INFANTRY models. Each model with a Wounds characteristic of 3 or more takes up the space of 2 models. It cannot transport non-CHARACTER models with a Wounds characteristic of 4 or more."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "454f-4f6a-1859-dbbf",
+      "name": "Castellum air defence missiles",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Castellum air defence missiles",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "48\""
+            },
+            {
+              "name": "A",
+              "value": "D6"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "9"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "D6"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Fly 2+"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f0ef-58b5-5e72-228d",
+      "name": "Twin assault cannon",
+      "type": "upgrade",
+      "profiles": [
+        {
+          "name": "Twin assault cannon",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "24\""
+            },
+            {
+              "name": "A",
+              "value": "6"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "2"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Devastating Wounds, Twin-linked"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "5b1d-134a-9996-b634",
+      "name": "Aegis Defence Line with Weapon Emplacement [Legends]",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Aegis Defence Line with Weapon Emplacement",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "-"
+            },
+            {
+              "name": "T",
+              "value": "12"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "10"
+            },
+            {
+              "name": "LD",
+              "value": "7+"
+            },
+            {
+              "name": "OC",
+              "value": "0"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "145"
+        }
+      ]
+    },
+    {
+      "id": "e85b-17c7-1ad9-8375",
+      "name": "Ambull [Legends]",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Ambull",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "6\""
+            },
+            {
+              "name": "T",
+              "value": "8"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "8"
+            },
+            {
+              "name": "LD",
+              "value": "8+"
+            },
+            {
+              "name": "OC",
+              "value": "3"
+            }
+          ]
+        },
+        {
+          "name": "Frenzy",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Each time an enemy unit is selected to shoot or fight, after it has finished making its attacks, if one or more of those attacks targeted this model and this model is not destroyed, this model can fight as if it were the Fight phase"
+            }
+          ]
+        },
+        {
+          "name": "Borewyrm Infestation",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Twice per battle, at the end of your opponent’s turn, if this model is not within Engagement Range of one or more enemy units, you can remove this model from the battlefield. In the Reinforcements step of your next Movement phase, set it up anywhere on the battlefield that\nis more than 9\" horizontally away from all enemy models. If the battle ends and this unit is not on the battlefield, it is destroyed. \n\nDesigner’s Note: Place two Borewyrm Infestation tokens next to this model, removing one each time this ability has been used."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "85"
+        }
+      ]
+    },
+    {
+      "id": "5134-5fe9-e489-43c4",
+      "name": "Bastion [Legends]",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Bastion",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "-"
+            },
+            {
+              "name": "T",
+              "value": "13"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "18"
+            },
+            {
+              "name": "LD",
+              "value": "7+"
+            },
+            {
+              "name": "OC",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "name": "Bastion",
+          "type": "Transport",
+          "lines": [
+            {
+              "name": "Capacity",
+              "value": "This FORTIFICATION has a transport capacity of 15 INFANTRY models. Each model with a Wounds characteristic of 3 or more takes up the space of 2 models. It cannot transport non-CHARACTER models with a Wounds characteristic of 4 or more."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "275"
+        }
+      ]
+    },
+    {
+      "id": "71b0-77b9-522c-17d6",
+      "name": "Firestorm Redoubt [Legends]",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Firestorm Redoubt",
+          "type": "Transport",
+          "lines": [
+            {
+              "name": "Capacity",
+              "value": "This Fortification has a transport capacity of 15 Infantry models. Each model with a Wounds characteristic of 3 or more takes up the space of 2 models. It cannot transport non-Character models with a Wounds characteristic of 4 or more"
+            }
+          ]
+        },
+        {
+          "name": "Firestorm Redoubt",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "-"
+            },
+            {
+              "name": "T",
+              "value": "13"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "18"
+            },
+            {
+              "name": "LD",
+              "value": "7+"
+            },
+            {
+              "name": "OC",
+              "value": "0"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "260"
+        }
+      ]
+    },
+    {
+      "id": "c4d1-c85a-a20e-6c94",
+      "name": "Fortress of Redemption [Legends]",
+      "type": "model",
+      "entries": [
+        {
+          "id": "db95-3509-494e-5358",
+          "name": "Redemptor lascannons",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Redemptor lascannons",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "48\""
+                },
+                {
+                  "name": "A",
+                  "value": "2"
+                },
+                {
+                  "name": "BS",
+                  "value": "4+"
+                },
+                {
+                  "name": "S",
+                  "value": "14"
+                },
+                {
+                  "name": "AP",
+                  "value": "-3"
+                },
+                {
+                  "name": "D",
+                  "value": "D6+1"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Anti-Fly 2+"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "988-2a33-6cbd-4020",
+          "name": "Redemptor missile silo",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "➤ Redemptor missile silo - superfrag",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "48\""
+                },
+                {
+                  "name": "A",
+                  "value": "2D6+2"
+                },
+                {
+                  "name": "BS",
+                  "value": "4+"
+                },
+                {
+                  "name": "S",
+                  "value": "5"
+                },
+                {
+                  "name": "AP",
+                  "value": "0"
+                },
+                {
+                  "name": "D",
+                  "value": "1"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Blast"
+                }
+              ]
+            },
+            {
+              "name": "➤ Redemptor missile silo - superkrak",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "48\""
+                },
+                {
+                  "name": "A",
+                  "value": "2"
+                },
+                {
+                  "name": "BS",
+                  "value": "4+"
+                },
+                {
+                  "name": "S",
+                  "value": "10"
+                },
+                {
+                  "name": "AP",
+                  "value": "-2"
+                },
+                {
+                  "name": "D",
+                  "value": "D6+1"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "-"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Fortress of Redemption",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "-"
+            },
+            {
+              "name": "T",
+              "value": "13"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "30"
+            },
+            {
+              "name": "LD",
+              "value": "7+"
+            },
+            {
+              "name": "OC",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "name": "Fortress of Redemption",
+          "type": "Transport",
+          "lines": [
+            {
+              "name": "Capacity",
+              "value": "This FORTIFICATION has a transport capacity of 20 INFANTRY models. Each model with a Wounds characteristic of 3 or more takes up the space of 2 models. It cannot transport non-CHARACTER models with a Wounds characteristic of 4 or more."
+            }
+          ]
+        },
+        {
+          "name": "Vantage Point",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While a model is on top of the tower roof of this FORTIFICATION, improve the Armour Penetration characteristic of ranged weapons equipped by that model by 1."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "480"
+        }
+      ]
+    },
+    {
+      "id": "e3ba-7f87-c32-229",
+      "name": "Guardian Drone [Legends]",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Drone Commander (Aura)",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While a friendly SPINDLE DRONES unit is within 6 of this model, each time a model in that unit makes an attack, add 1 to the Hit roll."
+            }
+          ]
+        },
+        {
+          "name": "Guardian Drone",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "5\""
+            },
+            {
+              "name": "T",
+              "value": "7"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "7"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "2"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "45"
+        }
+      ]
+    },
+    {
+      "id": "3b75-e314-ecd5-cd63",
+      "name": "Macro-cannon Aquila Strongpoint [Legends]",
+      "type": "model",
+      "entries": [
+        {
+          "id": "dc0f-e233-7c7c-18e7",
+          "name": "Aquila macro-cannon",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Aquila macro-cannon",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "72\""
+                },
+                {
+                  "name": "A",
+                  "value": "D6+6"
+                },
+                {
+                  "name": "BS",
+                  "value": "5+"
+                },
+                {
+                  "name": "S",
+                  "value": "16"
+                },
+                {
+                  "name": "AP",
+                  "value": "-4"
+                },
+                {
+                  "name": "D",
+                  "value": "4"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "-"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Tremor Quake",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "In your Shooting phase, just after selecting a target for this model’s Aquila macro-cannon, the target unit and every other enemy INFANTRY unit within 3\" of that unit must take a Battle-shock test."
+            }
+          ]
+        },
+        {
+          "name": "Macro-cannon Aquila Strongpoint",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "-"
+            },
+            {
+              "name": "T",
+              "value": "13"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "30"
+            },
+            {
+              "name": "LD",
+              "value": "7+"
+            },
+            {
+              "name": "OC",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "name": "Macro-cannon Aquila Strongpoint",
+          "type": "Transport",
+          "lines": [
+            {
+              "name": "Capacity",
+              "value": "This FORTIFICATION has a transport capacity of 30 INFANTRY models. Each model with a Wounds characteristic of 3 or more takes up the space of 2 models. It cannot transport non-CHARACTER models with a Wounds characteristic of 4 or more."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "550"
+        }
+      ]
+    },
+    {
+      "id": "cabe-2c66-c8b6-de6c",
+      "name": "Plasma Obliterator [Legends]",
+      "type": "model",
+      "entries": [
+        {
+          "id": "a72b-27ca-d431-cf98",
+          "name": "Plasma obliterator",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "➤ Plasma obliterator - standard",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "48\""
+                },
+                {
+                  "name": "A",
+                  "value": "D6+3"
+                },
+                {
+                  "name": "BS",
+                  "value": "5+"
+                },
+                {
+                  "name": "S",
+                  "value": "9"
+                },
+                {
+                  "name": "AP",
+                  "value": "-3"
+                },
+                {
+                  "name": "D",
+                  "value": "3"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Blast"
+                }
+              ]
+            },
+            {
+              "name": "➤ Plasma obliterator - supercharge",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "48\""
+                },
+                {
+                  "name": "A",
+                  "value": "D6+3"
+                },
+                {
+                  "name": "BS",
+                  "value": "5+"
+                },
+                {
+                  "name": "S",
+                  "value": "10"
+                },
+                {
+                  "name": "AP",
+                  "value": "-4"
+                },
+                {
+                  "name": "D",
+                  "value": "4"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Blast, Hazardous"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Plasma Obliterator",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "-"
+            },
+            {
+              "name": "T",
+              "value": "13"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "18"
+            },
+            {
+              "name": "LD",
+              "value": "7+"
+            },
+            {
+              "name": "OC",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "name": "Emergency Plasma Vents",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Each time this FORTIFICATION suffers a mortal wound as the result of a failed Hazardous test, roll one D6: on a 4+, that wound is not lost."
+            }
+          ]
+        },
+        {
+          "name": "Plasma Obliterator",
+          "type": "Transport",
+          "lines": [
+            {
+              "name": "Capacity",
+              "value": "This FORTIFICATION has a transport capacity of 20 INFANTRY models. Each model with a Wounds characteristic of 3 or more takes up the space of 2 models. It cannot transport non-CHARACTER models with a Wounds characteristic of 4 or more."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "225"
+        }
+      ]
+    },
+    {
+      "id": "f39-fc54-f95a-8395",
+      "name": "Primaris Redoubt [Legends]",
+      "type": "model",
+      "entries": [
+        {
+          "id": "b6ab-e70d-f8f3-731a",
+          "name": "Primaris Redoubt turbo-laser destructor",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Primaris Redoubt turbo-laser destructor",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "96\""
+                },
+                {
+                  "name": "A",
+                  "value": "D3+1"
+                },
+                {
+                  "name": "BS",
+                  "value": "4+"
+                },
+                {
+                  "name": "S",
+                  "value": "16"
+                },
+                {
+                  "name": "AP",
+                  "value": "-3"
+                },
+                {
+                  "name": "D",
+                  "value": "D6+3"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Blast"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Primaris Redoubt",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "-"
+            },
+            {
+              "name": "T",
+              "value": "12"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "18"
+            },
+            {
+              "name": "LD",
+              "value": "7+"
+            },
+            {
+              "name": "OC",
+              "value": "0"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "220"
+        }
+      ]
+    },
+    {
+      "id": "54c-8b9f-b1d8-93c3",
+      "name": "Skyshield Landing Pad [Legends]",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Skyshield Landing Pad",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "-"
+            },
+            {
+              "name": "T",
+              "value": "12"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "16"
+            },
+            {
+              "name": "LD",
+              "value": "7+"
+            },
+            {
+              "name": "OC",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "name": "Skyshield",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Friendly Infantry models and friendly units that can Fly can be set up or end any type of move on top of the platform section of this Fortification. While such a model is on the platform section of this Fortification, that model has a 5+ invulnerable save against ranged attacks"
+            }
+          ]
+        },
+        {
+          "name": "Repair Aircraft",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "At the end of your Movement phase, if there is a friendly Aircraft model on top of this Fortification, that Aircraft regains up to D3 lost wounds"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "125"
+        }
+      ]
+    },
+    {
+      "id": "da76-e18f-523e-d45a",
+      "name": "Spindle Drones [Legends]",
+      "type": "unit",
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "35"
+        }
+      ]
+    },
+    {
+      "id": "11b2-8348-ae67-fa98",
+      "name": "The Archivist [Legends]",
+      "type": "model",
+      "entries": [
+        {
+          "id": "368e-12b2-f6f7-b37b",
+          "name": "Atomic disassembler",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Atomic disassembler",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "18\""
+                },
+                {
+                  "name": "A",
+                  "value": "1"
+                },
+                {
+                  "name": "BS",
+                  "value": "3+"
+                },
+                {
+                  "name": "S",
+                  "value": "8"
+                },
+                {
+                  "name": "AP",
+                  "value": "-2"
+                },
+                {
+                  "name": "D",
+                  "value": "2"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Ignores Cover, Pistol"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "29a1-6633-a564-40e2",
+          "name": "Eradicator glove",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Eradicator glove",
+              "type": "Melee Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "Melee"
+                },
+                {
+                  "name": "A",
+                  "value": "4"
+                },
+                {
+                  "name": "WS",
+                  "value": "4+"
+                },
+                {
+                  "name": "S",
+                  "value": "8"
+                },
+                {
+                  "name": "AP",
+                  "value": "-2"
+                },
+                {
+                  "name": "D",
+                  "value": "2"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "-"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "The Archivist",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "5\""
+            },
+            {
+              "name": "T",
+              "value": "6"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "6"
+            },
+            {
+              "name": "LD",
+              "value": "7+"
+            },
+            {
+              "name": "OC",
+              "value": "2"
+            }
+          ]
+        },
+        {
+          "name": "Fearsome Assault",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "At the start of the Fight phase, each enemy unit within Engagement Range of one or more units with this ability must take a Battle-shock test."
+            }
+          ]
+        },
+        {
+          "name": "Disruptive Influence (Aura)",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While an enemy unit is within 6\" of this model, each time that unit takes a Battle-shock or Leadership test, subtract 1 from that test."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "70"
+        }
+      ]
+    },
+    {
+      "id": "14fe-18ed-9c25-189c",
+      "name": "Vengeance Weapon Battery [Legends]",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Vengeance Weapon Battery",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "-"
+            },
+            {
+              "name": "T",
+              "value": "13"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "10"
+            },
+            {
+              "name": "LD",
+              "value": "7+"
+            },
+            {
+              "name": "OC",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "name": "Automated Defences",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Each time this model makes a ranged attack that targets the closest enemy unit:\n- If that attack is made with a Punisher gatling cannon and the target is not a MONSTER or VEHICLE, add 1 to the Hit roll.\n- If that attack is made with a battle cannon and the target is a MONSTER or VEHICLE, add 1 to the Hit roll.\n- If that attack is made with a quad-lascannon and the target can FLY, add 1 to the Hit roll."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "140"
+        }
+      ]
+    },
+    {
+      "id": "4501-646d-e705-9dca",
+      "name": "Void Shield Generator [Legends]",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Invulnerable Save (4+)",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "This model has a 4+ invulnerable save"
+            }
+          ]
+        },
+        {
+          "name": "Projected Void Shields (Aura)",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While a friendly model is wholly within 6\" of this FORTIFICATION, that model has a 4+ invulnerable save against ranged attacks."
+            }
+          ]
+        },
+        {
+          "name": "Void Shield Generator",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "-"
+            },
+            {
+              "name": "T",
+              "value": "12"
+            },
+            {
+              "name": "SV",
+              "value": "3+"
+            },
+            {
+              "name": "W",
+              "value": "16"
+            },
+            {
+              "name": "LD",
+              "value": "7+"
+            },
+            {
+              "name": "OC",
+              "value": "0"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "155"
+        }
+      ]
+    },
+    {
+      "id": "5c81-92c5-e20b-edf1",
+      "name": "Vortex Missile Strongpoint [Legends]",
+      "type": "model",
+      "entries": [
+        {
+          "id": "8190-92a3-5cd1-26e8",
+          "name": "Vortex missile battery",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Vortex missile battery",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "72\""
+                },
+                {
+                  "name": "A",
+                  "value": "D6+3"
+                },
+                {
+                  "name": "BS",
+                  "value": "5+"
+                },
+                {
+                  "name": "S",
+                  "value": "16"
+                },
+                {
+                  "name": "AP",
+                  "value": "-4"
+                },
+                {
+                  "name": "D",
+                  "value": "D6"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Blast, Devastating Wounds, Hazardous, Indirect Fire"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Vortex Missile Strongpoint",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "-"
+            },
+            {
+              "name": "T",
+              "value": "13"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "30"
+            },
+            {
+              "name": "LD",
+              "value": "7+"
+            },
+            {
+              "name": "OC",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "name": "Vortex Missile Strongpoint",
+          "type": "Transport",
+          "lines": [
+            {
+              "name": "Capacity",
+              "value": "This FORTIFICATION has a transport capacity of 30 INFANTRY models. Each model with a Wounds characteristic of 3 or more takes up the space of 2 models. It cannot transport non-CHARACTER models with a Wounds characteristic of 4 or more."
+            }
+          ]
+        },
+        {
+          "name": "Vortex",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "In your Shooting phase, each time you select a target for this model’s vortex missile battery, roll one D6 for the target unit and one D6 for every other enemy unit within 3\" of the target unit. On a 4+, the unit being rolled for is struck by the vortex; after resolving all of this model’s attacks against the target unit, each unit struck by the vortex suffers D3 mortal wounds."
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "525"
+        }
+      ]
+    },
+    {
+      "id": "9698-2e0-15ac-1193",
+      "name": "Wall of Martyrs Bunker [Legends]",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Wall of Martyrs Bunker",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "-"
+            },
+            {
+              "name": "T",
+              "value": "13"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "10"
+            },
+            {
+              "name": "LD",
+              "value": "7+"
+            },
+            {
+              "name": "OC",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "name": "Inviolable Bastion",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Each time an attack is allocated to this Fortification, subtract 1 from the Damage characteristic of that attack."
+            }
+          ]
+        },
+        {
+          "name": "Wall of Martyrs Bunker",
+          "type": "Transport",
+          "lines": [
+            {
+              "name": "Capacity",
+              "value": "This Fortification has a transport capacity of 11 Infantry models. Each model with a Wounds characteristic of 3 or more takes up the space of 2 models. It cannot transport non-Character models with a Wounds characteristic of 4 or more"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "180"
+        }
+      ]
+    },
+    {
+      "id": "8419-8133-33f3-e0a4",
+      "name": "Wall of Martyrs Defence Emplacement [Legends]",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Wall of Martyrs Defence Emplacement",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "-"
+            },
+            {
+              "name": "T",
+              "value": "12"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "10"
+            },
+            {
+              "name": "LD",
+              "value": "7+"
+            },
+            {
+              "name": "OC",
+              "value": "0"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "140"
+        }
+      ]
+    },
+    {
+      "id": "64b7-a2df-416a-9963",
+      "name": "Wall of Martyrs Defence Line [Legends]",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Wall of Martyrs Defence Line",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "-"
+            },
+            {
+              "name": "T",
+              "value": "12"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "10"
+            },
+            {
+              "name": "LD",
+              "value": "7+"
+            },
+            {
+              "name": "OC",
+              "value": "0"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        {
+          "name": "pts",
+          "typeid": "51b2-306e-1021-d207",
+          "value": "140"
+        }
+      ]
+    },
+    {
+      "id": "f6f8-8759-3282-2ab",
+      "name": "Imperial Fortress Walls [Legends]",
+      "type": "model",
+      "entries": [
+        {
+          "id": "412e-da68-5020-dd05",
+          "name": "Twin long-barrelled autocannon",
+          "type": "upgrade",
+          "profiles": [
+            {
+              "name": "Twin long-barrelled autocannon",
+              "type": "Ranged Weapons",
+              "lines": [
+                {
+                  "name": "Range",
+                  "value": "60\""
+                },
+                {
+                  "name": "A",
+                  "value": "2"
+                },
+                {
+                  "name": "BS",
+                  "value": "4+"
+                },
+                {
+                  "name": "S",
+                  "value": "9"
+                },
+                {
+                  "name": "AP",
+                  "value": "-1"
+                },
+                {
+                  "name": "D",
+                  "value": "3"
+                },
+                {
+                  "name": "Keywords",
+                  "value": "Twin-linked"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Imperial Fortress Walls",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "-"
+            },
+            {
+              "name": "T",
+              "value": "14"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "80"
+            },
+            {
+              "name": "LD",
+              "value": "7+"
+            },
+            {
+              "name": "OC",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "name": "Damaged: 1-30 Wounds Remaining",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this model has 1-30 wounds remaining, each time this model makes an attack, subtract 1 from the Hit roll."
+            }
+          ]
+        },
+        {
+          "name": "Fortress",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "When this FORTIFICATION is set up, all parts of it must be set up in contact with another part."
+            }
+          ]
+        },
+        {
+          "name": "Imperial Fortress Walls",
+          "type": "Transport",
+          "lines": [
+            {
+              "name": "Capacity",
+              "value": "This FORTIFICATION has a transport capacity of 65 INFANTRY models. Each model with a Wounds characteristic of 3 or more takes up the space of 2 models. It cannot transport non-CHARACTER models with a Wounds characteristic of 4 or more."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "20c8-d2-586d-623",
+      "name": "Castellum Stronghold [Legends]",
+      "type": "model",
+      "profiles": [
+        {
+          "name": "Castellum Stronghold",
+          "type": "Unit",
+          "lines": [
+            {
+              "name": "M",
+              "value": "-"
+            },
+            {
+              "name": "T",
+              "value": "13"
+            },
+            {
+              "name": "SV",
+              "value": "2+"
+            },
+            {
+              "name": "W",
+              "value": "50"
+            },
+            {
+              "name": "LD",
+              "value": "6+"
+            },
+            {
+              "name": "OC",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "name": "Stronghold",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "Friendly INFANTRY models can be set up or end any type of move on top of the roof section of this FORTIFICATION. Any friendly model can be set up or end any type of move on the ramp or platform section of this FORTIFICATION."
+            }
+          ]
+        },
+        {
+          "name": "Damaged: 1-15 Wounds Remaining",
+          "type": "Abilities",
+          "lines": [
+            {
+              "name": "Description",
+              "value": "While this model has 1-15 wounds remaining, each time this model makes an attack, subtract 1 from the Hit roll."
+            }
+          ]
+        },
+        {
+          "name": "Castellum Stronghold",
+          "type": "Transport",
+          "lines": [
+            {
+              "name": "Capacity",
+              "value": "This FORTIFICATION has a transport capacity of 60 INFANTRY models. Each model with a Wounds characteristic of 3 or more takes up the space of 2 models. It cannot transport non-CHARACTER models with a Wounds characteristic of 4 or more."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

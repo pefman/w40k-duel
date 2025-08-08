@@ -204,6 +204,14 @@ func fetchFactionUnitsFromLocal(faction string) ([]Unit, error) {
 				Name  string `json:"name"`
 				Value string `json:"value"`
 			} `json:"costs"`
+			Weapons []struct {
+				Name  string `json:"name"`
+				Type  string `json:"type"`
+				Lines []struct {
+					Name  string `json:"name"`
+					Value string `json:"value"`
+				} `json:"lines"`
+			} `json:"weapons"`
 		} `json:"units"`
 	}
 
@@ -244,7 +252,7 @@ func fetchFactionUnitsFromLocal(faction string) ([]Unit, error) {
 			Attacks:   "1",
 			Strength:  "4",
 			Toughness: "4",
-			Weapons:   getFactionWeaponsForUnit(factionWeapons, localUnit.Name), // Filter unique weapons for unit
+			Weapons:   convertWeaponProfilesToWeapons(localUnit.Weapons), // Use unit's stored weapons
 		}
 
 		// Extract unit stats from profiles
@@ -944,4 +952,46 @@ func getUnitWeaponTypes(unit Unit) []string {
 		types = append(types, weaponType)
 	}
 	return types
+}
+
+// convertWeaponProfilesToWeapons converts weapon profiles from JSON to Weapon structs
+func convertWeaponProfilesToWeapons(weaponProfiles []struct {
+	Name  string `json:"name"`
+	Type  string `json:"type"`
+	Lines []struct {
+		Name  string `json:"name"`
+		Value string `json:"value"`
+	} `json:"lines"`
+}) []Weapon {
+	weapons := make([]Weapon, 0, len(weaponProfiles))
+
+	for _, profile := range weaponProfiles {
+		weapon := Weapon{
+			Name: profile.Name,
+			Type: getWeaponType(profile.Type),
+		}
+
+		for _, line := range profile.Lines {
+			switch line.Name {
+			case "A", "Attacks":
+				weapon.Attacks = line.Value
+			case "BS", "WS":
+				weapon.Skill = line.Value
+			case "S", "Strength":
+				weapon.Strength = line.Value
+			case "AP":
+				weapon.AP = line.Value
+			case "D", "Damage":
+				weapon.Damage = line.Value
+			case "Range":
+				weapon.Range = line.Value
+			}
+		}
+
+		if weapon.Name != "" {
+			weapons = append(weapons, weapon)
+		}
+	}
+
+	return weapons
 }

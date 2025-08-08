@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"encoding/xml"
 	"fmt"
+	"log"
 	"os"
 	"path/filepath"
 	"regexp"
@@ -19,12 +20,20 @@ type Catalogue struct {
 }
 
 type Entry struct {
-	ID       string    `xml:"id,attr" json:"id,omitempty"`
-	Name     string    `xml:"name,attr" json:"name"`
-	Type     string    `xml:"type,attr" json:"type"`
-	Entries  []Entry   `xml:"selectionEntries>selectionEntry" json:"entries,omitempty"`
-	Profiles []Profile `xml:"profiles>profile" json:"profiles,omitempty"`
-	Costs    []Cost    `xml:"costs>cost" json:"costs,omitempty"`
+	ID                   string                `xml:"id,attr" json:"id,omitempty"`
+	Name                 string                `xml:"name,attr" json:"name"`
+	Type                 string                `xml:"type,attr" json:"type"`
+	Entries              []Entry               `xml:"selectionEntries>selectionEntry" json:"entries,omitempty"`
+	Profiles             []Profile             `xml:"profiles>profile" json:"profiles,omitempty"`
+	Costs                []Cost                `xml:"costs>cost" json:"costs,omitempty"`
+	SelectionEntryGroups []SelectionEntryGroup `xml:"selectionEntryGroups>selectionEntryGroup" json:"selectionEntryGroups,omitempty"`
+	Weapons              []Profile             `json:"weapons,omitempty"` // Extracted weapon profiles
+}
+
+type SelectionEntryGroup struct {
+	ID      string  `xml:"id,attr" json:"id,omitempty"`
+	Name    string  `xml:"name,attr" json:"name"`
+	Entries []Entry `xml:"selectionEntries>selectionEntry" json:"entries,omitempty"`
 }
 
 type EntryLink struct {
@@ -66,15 +75,112 @@ func sanitizeName(name string) string {
 	return sanitized
 }
 
+// mergeCharacterWeapons handles character units that have separate model and Unit entries
+// It finds weapons from model entries and copies them to the Unit entry
+func mergeCharacterWeapons(entry *Entry) {
+	var modelWeapons []Profile
+	var unitEntry *Entry
+
+	// Look for model entries with weapons and Unit entries
+	for i := range entry.Entries {
+		subEntry := &entry.Entries[i]
+		if subEntry.Type == "model" && len(subEntry.Weapons) > 0 {
+			modelWeapons = append(modelWeapons, subEntry.Weapons...)
+		} else if subEntry.Type == "Unit" {
+			unitEntry = subEntry
+		}
+	}
+
+	// If we found both model weapons and a Unit entry, merge them
+	if len(modelWeapons) > 0 && unitEntry != nil {
+		if len(unitEntry.Weapons) == 0 {
+			unitEntry.Weapons = modelWeapons
+			log.Printf("Merged %d weapons from model to Unit entry: %s", len(modelWeapons), unitEntry.Name)
+		}
+	}
+}
+
 func collectEntries(entries []Entry) []Entry {
 	var result []Entry
 	for _, entry := range entries {
+		// Extract weapons from nested structures and store them separately
+		weaponProfiles := extractWeaponsFromEntry(entry)
+		if len(weaponProfiles) > 0 {
+			entry.Weapons = weaponProfiles
+		}
+
+		// Handle character units: merge weapons from model entries to Unit entries
+		if len(entry.Entries) > 0 {
+			mergeCharacterWeapons(&entry)
+		}
+
 		result = append(result, entry)
 		if len(entry.Entries) > 0 {
 			result = append(result, collectEntries(entry.Entries)...)
 		}
 	}
 	return result
+}
+
+func extractWeaponsFromEntry(entry Entry) []Profile {
+	var weapons []Profile
+
+	// Check direct weapon profiles in this entry
+	for _, profile := range entry.Profiles {
+		if isWeaponProfile(profile) {
+			weapons = append(weapons, profile)
+		}
+	}
+
+	// Recursively search through direct entries for weapons
+	for _, subEntry := range entry.Entries {
+		// Check for weapon profiles in direct sub-entries
+		for _, profile := range subEntry.Profiles {
+			if isWeaponProfile(profile) {
+				weapons = append(weapons, profile)
+			}
+		}
+		// Recursively search nested entries
+		weapons = append(weapons, extractWeaponsFromEntry(subEntry)...)
+	}
+
+	// Recursively search through selectionEntryGroups for weapons
+	for _, group := range entry.SelectionEntryGroups {
+		weapons = append(weapons, extractWeaponsFromGroup(group)...)
+	}
+
+	return weapons
+}
+
+func extractWeaponsFromGroup(group SelectionEntryGroup) []Profile {
+	var weapons []Profile
+
+	// Look for weapon profiles in this group's entries
+	for _, entry := range group.Entries {
+		// Check if this entry has weapon profiles
+		for _, profile := range entry.Profiles {
+			if isWeaponProfile(profile) {
+				weapons = append(weapons, profile)
+			}
+		}
+
+		// Recursively search nested groups
+		for _, nestedGroup := range entry.SelectionEntryGroups {
+			weapons = append(weapons, extractWeaponsFromGroup(nestedGroup)...)
+		}
+	}
+
+	return weapons
+}
+
+func isWeaponProfile(profile Profile) bool {
+	weaponTypes := []string{"Ranged Weapons", "Melee Weapons", "Weapons"}
+	for _, weaponType := range weaponTypes {
+		if profile.Type == weaponType {
+			return true
+		}
+	}
+	return false
 }
 
 func convertEntryLinks(links []EntryLink) []Entry {
@@ -102,6 +208,11 @@ func collectUnitsFromFile(path string) error {
 
 	for _, entry := range allEntries {
 		if entry.ID != "" {
+			// Extract weapons for this unit before storing
+			weaponProfiles := extractWeaponsFromEntry(entry)
+			if len(weaponProfiles) > 0 {
+				entry.Weapons = weaponProfiles
+			}
 			globalUnits[entry.ID] = entry
 		}
 	}
@@ -176,6 +287,17 @@ func parseCatFile(path string) error {
 
 	allEntries := append(collectEntries(cat.Entries), collectEntries(cat.Shared)...)
 	allEntries = append(allEntries, convertEntryLinks(cat.EntryLinks)...)
+
+	// Final pass: ensure all units have their weapons extracted
+	for i := range allEntries {
+		weaponProfiles := extractWeaponsFromEntry(allEntries[i])
+		if len(weaponProfiles) > 0 {
+			// Store weapons in the dedicated weapons field
+			allEntries[i].Weapons = weaponProfiles
+
+			log.Printf("Total unique weapons found for %s: %d", allEntries[i].Name, len(weaponProfiles))
+		}
+	}
 
 	out := FactionOutput{
 		FactionName: cat.Name,

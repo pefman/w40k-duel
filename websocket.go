@@ -83,6 +83,19 @@ func (gs *GameServer) handleMessage(player *Player, msg map[string]interface{}) 
 		gs.rollDice(player, int(dice))
 	case "ready_to_fight":
 		gs.readyToFight(player)
+	case "select_attacking_unit":
+		unitName, _ := msg["unit_name"].(string)
+		weaponName, _ := msg["weapon_name"].(string)
+		gs.selectAttackingUnit(player, unitName, weaponName)
+	case "submit_hit_rolls":
+		rolls, _ := msg["rolls"].([]interface{})
+		gs.submitHitRolls(player, rolls)
+	case "submit_wound_rolls":
+		rolls, _ := msg["rolls"].([]interface{})
+		gs.submitWoundRolls(player, rolls)
+	case "submit_save_rolls":
+		rolls, _ := msg["rolls"].([]interface{})
+		gs.submitSaveRolls(player, rolls)
 	}
 }
 
@@ -115,4 +128,207 @@ func (gs *GameServer) broadcastOnlinePlayersList() {
 			})
 		}
 	}
+}
+
+func (gs *GameServer) selectAttackingUnit(player *Player, unitName, weaponName string) {
+	gs.mutex.Lock()
+	defer gs.mutex.Unlock()
+
+	// Find the player's match
+	var match *Match
+	for _, m := range gs.matches {
+		if m.Player1 == player || m.Player2 == player {
+			match = m
+			break
+		}
+	}
+
+	if match == nil || match.State != "fighting" {
+		return
+	}
+
+	// Find the unit and weapon from the player's army
+	var attackingUnit UnitSelection
+	var weapon Weapon
+	found := false
+
+	for _, unit := range player.Army {
+		if unit.UnitName == unitName {
+			attackingUnit = unit
+			// Find the weapon in this unit
+			unitData := findUnitOptimized(player.Faction, unitName)
+			if unitData != nil {
+				for _, w := range unitData.Weapons {
+					if w.Name == weaponName {
+						weapon = w
+						found = true
+						break
+					}
+				}
+			}
+			break
+		}
+	}
+
+	if !found {
+		return
+	}
+
+	// Determine defender
+	var defender *Player
+	if match.Player1 == player {
+		defender = match.Player2
+	} else {
+		defender = match.Player1
+	}
+
+	// Start attack sequence using the battle.go method
+	gs.startAttackSequence(match, player, defender, attackingUnit, weapon)
+
+	// Notify both players of the combat state
+	gs.sendToPlayer(match.Player1, map[string]interface{}{
+		"type":   "combat_state",
+		"combat": match.CurrentCombat,
+	})
+	gs.sendToPlayer(match.Player2, map[string]interface{}{
+		"type":   "combat_state",
+		"combat": match.CurrentCombat,
+	})
+}
+
+func (gs *GameServer) submitHitRolls(player *Player, rollsInterface []interface{}) {
+	gs.mutex.Lock()
+	defer gs.mutex.Unlock()
+
+	// Convert interface{} slice to int slice
+	rolls := make([]int, len(rollsInterface))
+	for i, r := range rollsInterface {
+		if val, ok := r.(float64); ok {
+			rolls[i] = int(val)
+		}
+	}
+
+	// Find the player's match
+	var match *Match
+	for _, m := range gs.matches {
+		if m.Player1 == player || m.Player2 == player {
+			match = m
+			break
+		}
+	}
+
+	if match == nil || match.CurrentCombat == nil || match.CurrentCombat.Phase != "hit_rolls" {
+		return
+	}
+
+	// Process hit rolls
+	gs.processHitRolls(match, player, rolls)
+
+	// Notify both players of updated combat state
+	gs.sendToPlayer(match.Player1, map[string]interface{}{
+		"type":   "combat_state",
+		"combat": match.CurrentCombat,
+	})
+	gs.sendToPlayer(match.Player2, map[string]interface{}{
+		"type":   "combat_state",
+		"combat": match.CurrentCombat,
+	})
+}
+
+func (gs *GameServer) submitWoundRolls(player *Player, rollsInterface []interface{}) {
+	gs.mutex.Lock()
+	defer gs.mutex.Unlock()
+
+	// Convert interface{} slice to int slice
+	rolls := make([]int, len(rollsInterface))
+	for i, r := range rollsInterface {
+		if val, ok := r.(float64); ok {
+			rolls[i] = int(val)
+		}
+	}
+
+	// Find the player's match
+	var match *Match
+	for _, m := range gs.matches {
+		if m.Player1 == player || m.Player2 == player {
+			match = m
+			break
+		}
+	}
+
+	if match == nil || match.CurrentCombat == nil || match.CurrentCombat.Phase != "wound_rolls" {
+		return
+	}
+
+	// Process wound rolls
+	gs.processWoundRolls(match, player, rolls)
+
+	// Notify both players of updated combat state
+	gs.sendToPlayer(match.Player1, map[string]interface{}{
+		"type":   "combat_state",
+		"combat": match.CurrentCombat,
+	})
+	gs.sendToPlayer(match.Player2, map[string]interface{}{
+		"type":   "combat_state",
+		"combat": match.CurrentCombat,
+	})
+}
+
+func (gs *GameServer) submitSaveRolls(player *Player, rollsInterface []interface{}) {
+	gs.mutex.Lock()
+	defer gs.mutex.Unlock()
+
+	// Convert interface{} slice to int slice
+	rolls := make([]int, len(rollsInterface))
+	for i, r := range rollsInterface {
+		if val, ok := r.(float64); ok {
+			rolls[i] = int(val)
+		}
+	}
+
+	// Find the player's match
+	var match *Match
+	for _, m := range gs.matches {
+		if m.Player1 == player || m.Player2 == player {
+			match = m
+			break
+		}
+	}
+
+	if match == nil || match.CurrentCombat == nil || match.CurrentCombat.Phase != "save_rolls" {
+		return
+	}
+
+	// Process save rolls and complete the attack sequence
+	gs.processSaveRolls(match, player, rolls)
+
+	// Check if the match is over (one army destroyed)
+	if match.State == "finished" {
+		gs.sendToPlayer(match.Player1, map[string]interface{}{
+			"type":   "match_finished",
+			"winner": match.Winner,
+		})
+		gs.sendToPlayer(match.Player2, map[string]interface{}{
+			"type":   "match_finished",
+			"winner": match.Winner,
+		})
+		return
+	}
+
+	// End the attack sequence and switch turns
+	woundsInflicted := 0
+	if match.CurrentCombat != nil {
+		woundsInflicted = match.CurrentCombat.WoundsInflicted
+	}
+	gs.endAttackSequence(match, player, woundsInflicted)
+
+	// Notify both players of updated combat state
+	gs.sendToPlayer(match.Player1, map[string]interface{}{
+		"type":   "combat_state",
+		"combat": match.CurrentCombat,
+	})
+	gs.sendToPlayer(match.Player2, map[string]interface{}{
+		"type":   "combat_state",
+		"combat": match.CurrentCombat,
+	})
 }

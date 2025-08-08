@@ -754,6 +754,57 @@ func (gs *GameServer) handleIndex(w http.ResponseWriter, r *http.Request) {
                 min-width: 80px;
             }
         }
+
+        /* Combat System Styles */
+        .unit-selection, .weapon-selection {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .unit-card, .weapon-card {
+            background: linear-gradient(135deg, #2d2d2d 0%, #3d3d3d 100%);
+            border: 2px solid #d4af37;
+            border-radius: 10px;
+            padding: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 200px;
+            text-align: center;
+        }
+
+        .unit-card:hover, .weapon-card:hover {
+            background: linear-gradient(135deg, #3d3d3d 0%, #4d4d4d 100%);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+        }
+
+        .dice-rolling {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .dice-btn {
+            background: linear-gradient(135deg, #d4af37 0%, #b8860b 100%);
+            color: #0a0a0a;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .dice-btn:hover {
+            background: linear-gradient(135deg, #ffd700 0%, #d4af37 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+        }
         </style>
     </head>
 <body>
@@ -821,7 +872,7 @@ func (gs *GameServer) handleIndex(w http.ResponseWriter, r *http.Request) {
             <h2>Battle Arena</h2>
             <div id="battleInfo"></div>
             
-            <div class="dice-roller">
+            <div class="dice-roller" id="diceRoller" style="display: none;">
                 <h3>Dice Roller</h3>
                 <button class="dice-btn" onclick="rollDice(6)">D6</button>
                 <button class="dice-btn" onclick="rollDice(3)">D3</button>
@@ -1016,6 +1067,34 @@ func (gs *GameServer) handleIndex(w http.ResponseWriter, r *http.Request) {
 
                 case 'players_online':
                     updateOnlinePlayersList(message.players);
+                    break;
+
+                case 'combat_phase_start':
+                    showCombatPhase(message);
+                    break;
+
+                case 'hit_phase':
+                    showHitRollPhase(message);
+                    break;
+
+                case 'wound_phase':
+                    showWoundRollPhase(message);
+                    break;
+
+                case 'save_phase':
+                    showSaveRollPhase(message);
+                    break;
+
+                case 'combat_state':
+                    updateCombatState(message);
+                    break;
+
+                case 'combat_waiting':
+                    showCombatWaiting(message);
+                    break;
+
+                case 'match_finished':
+                    finishMatch(message);
                     break;
             }
         }
@@ -1447,6 +1526,8 @@ func (gs *GameServer) handleIndex(w http.ResponseWriter, r *http.Request) {
         }
 
         function startBattle(message) {
+            hideDiceRoller(); // Hide general dice roller
+            
             if (message.phase === 'initiative') {
                 document.getElementById('battleInfo').innerHTML = 
                     '<h3>Battle vs ' + message.opponent + '</h3>' +
@@ -1467,6 +1548,8 @@ func (gs *GameServer) handleIndex(w http.ResponseWriter, r *http.Request) {
         }
 
         function showInitiativeTie(message) {
+            hideDiceRoller(); // Hide general dice roller
+            
             addLogEntry('Tie: ' + message.message);
             document.getElementById('battleInfo').innerHTML = 
                 '<h3>Initiative Roll</h3>' +
@@ -1477,6 +1560,8 @@ func (gs *GameServer) handleIndex(w http.ResponseWriter, r *http.Request) {
         }
 
         function showInitiativeResolved(message) {
+            hideDiceRoller(); // Hide general dice roller
+            
             addLogEntry('Initiative: ' + message.message);
             const turnIndicator = message.your_turn ? 
                 '<p style="color: #00ff00; font-weight: bold; font-size: 18px;">YOUR TURN - Attack!</p>' :
@@ -1497,8 +1582,173 @@ func (gs *GameServer) handleIndex(w http.ResponseWriter, r *http.Request) {
         }
 
         function finishBattle(message) {
+            showDiceRoller(); // Show dice roller again after battle ends
+            
             addLogEntry('Battle finished! Winner: ' + message.winner);
             document.getElementById('battleInfo').innerHTML += '<h3>Winner: ' + message.winner + '</h3>';
+        }
+
+        // New turn-based combat system functions
+        function showCombatPhase(message) {
+            hideDiceRoller(); // Hide general dice roller during combat
+            
+            if (message.your_turn) {
+                let armyHTML = '<h3>Select Unit & Weapon to Attack</h3>';
+                armyHTML += '<div class="unit-selection">';
+                
+                message.army.forEach(unit => {
+                    armyHTML += '<div class="unit-card" onclick="selectAttackingUnit(\'' + unit.unit_name + '\')">';
+                    armyHTML += '<h4>' + unit.unit_name + ' (x' + unit.quantity + ')</h4>';
+                    armyHTML += '</div>';
+                });
+                
+                armyHTML += '</div>';
+                document.getElementById('battleInfo').innerHTML = armyHTML;
+            } else {
+                document.getElementById('battleInfo').innerHTML = 
+                    '<h3>Opponent\'s Turn</h3>' +
+                    '<p>' + message.message + '</p>' +
+                    '<p>Enemy wounds remaining: ' + message.your_wounds + '</p>';
+            }
+            addLogEntry(message.message);
+        }
+
+        function selectAttackingUnit(unitName) {
+            // Find the unit's weapons from the playerData
+            let unitData = null;
+            if (availableUnits) {
+                unitData = availableUnits.find(u => u.name === unitName);
+            }
+            
+            if (!unitData || !unitData.weapons || unitData.weapons.length === 0) {
+                alert('No weapons available for this unit');
+                return;
+            }
+
+            // Show weapon selection
+            let weaponHTML = '<h3>Select Weapon for ' + unitName + '</h3>';
+            weaponHTML += '<div class="weapon-selection">';
+            
+            unitData.weapons.forEach(weapon => {
+                weaponHTML += '<div class="weapon-card" onclick="confirmAttack(\'' + unitName + '\', \'' + weapon.name + '\')">';
+                weaponHTML += '<h4>' + weapon.name + '</h4>';
+                weaponHTML += '<p>Attacks: ' + weapon.attacks + ', Skill: ' + weapon.skill + '+</p>';
+                weaponHTML += '<p>S' + weapon.strength + ' AP' + weapon.ap + ' D' + weapon.damage + '</p>';
+                weaponHTML += '</div>';
+            });
+            
+            weaponHTML += '</div>';
+            document.getElementById('battleInfo').innerHTML = weaponHTML;
+        }
+
+        function confirmAttack(unitName, weaponName) {
+            sendMessage({
+                type: 'select_attacking_unit',
+                unit_name: unitName,
+                weapon_name: weaponName
+            });
+        }
+
+        function showHitRollPhase(message) {
+            document.getElementById('battleInfo').innerHTML = 
+                '<h3>Hit Roll Phase</h3>' +
+                '<p>' + message.message + '</p>' +
+                '<p>Need ' + message.hit_on + '+ to hit</p>' +
+                '<div class="dice-rolling">' +
+                '<p>Roll ' + message.attacks + ' dice:</p>' +
+                '<button class="dice-btn" onclick="rollHitDice(' + message.attacks + ')">Roll to Hit</button>' +
+                '</div>';
+            addLogEntry(message.message);
+        }
+
+        function showWoundRollPhase(message) {
+            document.getElementById('battleInfo').innerHTML = 
+                '<h3>Wound Roll Phase</h3>' +
+                '<p>' + message.message + '</p>' +
+                '<p>Need ' + message.wound_on + '+ to wound</p>' +
+                '<div class="dice-rolling">' +
+                '<p>Roll ' + message.hits + ' dice:</p>' +
+                '<button class="dice-btn" onclick="rollWoundDice(' + message.hits + ')">Roll to Wound</button>' +
+                '</div>';
+            addLogEntry(message.message);
+        }
+
+        function showSaveRollPhase(message) {
+            document.getElementById('battleInfo').innerHTML = 
+                '<h3>Save Roll Phase</h3>' +
+                '<p>' + message.message + '</p>' +
+                '<p>Need ' + message.save_on + '+ to save</p>' +
+                '<div class="dice-rolling">' +
+                '<p>Roll ' + message.wounds + ' dice:</p>' +
+                '<button class="dice-btn" onclick="rollSaveDice(' + message.wounds + ')">Roll Saves</button>' +
+                '</div>';
+            addLogEntry(message.message);
+        }
+
+        function rollHitDice(count) {
+            const rolls = [];
+            for (let i = 0; i < count; i++) {
+                rolls.push(Math.floor(Math.random() * 6) + 1);
+            }
+            
+            document.getElementById('battleInfo').innerHTML += 
+                '<p>Your rolls: ' + rolls.join(', ') + '</p>';
+            
+            sendMessage({
+                type: 'submit_hit_rolls',
+                rolls: rolls
+            });
+        }
+
+        function rollWoundDice(count) {
+            const rolls = [];
+            for (let i = 0; i < count; i++) {
+                rolls.push(Math.floor(Math.random() * 6) + 1);
+            }
+            
+            document.getElementById('battleInfo').innerHTML += 
+                '<p>Your rolls: ' + rolls.join(', ') + '</p>';
+            
+            sendMessage({
+                type: 'submit_wound_rolls',
+                rolls: rolls
+            });
+        }
+
+        function rollSaveDice(count) {
+            const rolls = [];
+            for (let i = 0; i < count; i++) {
+                rolls.push(Math.floor(Math.random() * 6) + 1);
+            }
+            
+            document.getElementById('battleInfo').innerHTML += 
+                '<p>Your rolls: ' + rolls.join(', ') + '</p>';
+            
+            sendMessage({
+                type: 'submit_save_rolls',
+                rolls: rolls
+            });
+        }
+
+        function showCombatWaiting(message) {
+            document.getElementById('battleInfo').innerHTML = 
+                '<h3>Waiting</h3>' +
+                '<p>' + message.message + '</p>';
+            addLogEntry(message.message);
+        }
+
+        function updateCombatState(message) {
+            if (message.combat) {
+                addLogEntry('Combat update: Phase ' + message.combat.phase);
+            }
+        }
+
+        function finishMatch(message) {
+            document.getElementById('battleInfo').innerHTML = 
+                '<h3>Match Finished!</h3>' +
+                '<p>Winner: ' + message.winner + '</p>' +
+                '<button onclick="location.reload()">Play Again</button>';
+            addLogEntry('Match finished! Winner: ' + message.winner);
         }
 
         function addLogEntry(text) {
@@ -1514,6 +1764,14 @@ func (gs *GameServer) handleIndex(w http.ResponseWriter, r *http.Request) {
                 type: 'roll_dice',
                 dice: sides
             });
+        }
+
+        function showDiceRoller() {
+            document.getElementById('diceRoller').style.display = 'block';
+        }
+
+        function hideDiceRoller() {
+            document.getElementById('diceRoller').style.display = 'none';
         }
 
         function showDiceResult(dice, result) {

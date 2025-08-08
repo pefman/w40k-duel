@@ -8,14 +8,16 @@ import (
 
 // Game structures
 type Player struct {
-	ID      string          `json:"id"`
-	Name    string          `json:"name"`
-	Conn    *websocket.Conn `json:"-"`
-	Status  string          `json:"status"` // "waiting", "matched", "selecting", "ready", "fighting"
-	Faction string          `json:"faction"`
-	Army    []UnitSelection `json:"army"`
-	MatchID string          `json:"match_id"`
-	IsAI    bool            `json:"is_ai"`
+	ID              string          `json:"id"`
+	Name            string          `json:"name"`
+	Conn            *websocket.Conn `json:"-"`
+	Status          string          `json:"status"` // "waiting", "matched", "selecting", "ready", "fighting"
+	Faction         string          `json:"faction"`
+	Army            []UnitSelection `json:"army"`
+	MatchID         string          `json:"match_id"`
+	IsAI            bool            `json:"is_ai"`
+	RemainingWounds int             `json:"remaining_wounds"` // Track army health
+	InitiativeRoll  int             `json:"initiative_roll"`  // Store initiative roll
 }
 
 type AIPlayer struct {
@@ -62,23 +64,37 @@ type Faction struct {
 }
 
 type Match struct {
-	ID                   string    `json:"id"`
-	Player1              *Player   `json:"player1"`
-	Player2              *Player   `json:"player2"`
-	State                string    `json:"state"` // "selecting", "initiative", "fighting", "finished"
-	Turn                 int       `json:"turn"`
-	Log                  []string  `json:"log"`
-	Winner               string    `json:"winner"`
-	Created              time.Time `json:"created"`
-	Player1Initiative    int       `json:"player1_initiative"`
-	Player2Initiative    int       `json:"player2_initiative"`
-	Player1InitiativeSet bool      `json:"player1_initiative_set"`
-	Player2InitiativeSet bool      `json:"player2_initiative_set"`
-	CurrentPlayer        *Player   `json:"current_player"`
+	ID                   string        `json:"id"`
+	Player1              *Player       `json:"player1"`
+	Player2              *Player       `json:"player2"`
+	State                string        `json:"state"` // "selecting", "initiative", "fighting", "finished"
+	Turn                 int           `json:"turn"`
+	Log                  []string      `json:"log"`
+	Winner               string        `json:"winner"`
+	Created              time.Time     `json:"created"`
+	Player1Initiative    int           `json:"player1_initiative"`
+	Player2Initiative    int           `json:"player2_initiative"`
+	Player1InitiativeSet bool          `json:"player1_initiative_set"`
+	Player2InitiativeSet bool          `json:"player2_initiative_set"`
+	CurrentPlayer        *Player       `json:"current_player"`
+	CurrentCombat        *CombatAttack `json:"current_combat,omitempty"`
 }
 
 type DiceRoll struct {
 	PlayerID string `json:"player_id"`
 	Dice     int    `json:"dice"`
 	Result   int    `json:"result"`
+}
+
+// Combat sequence structures for turn-based combat
+type CombatAttack struct {
+	AttackerUnit    UnitSelection `json:"attacker_unit"`
+	AttackerWeapon  Weapon        `json:"attacker_weapon"`
+	DefenderUnit    *Unit         `json:"defender_unit"`
+	Attacks         int           `json:"attacks"`
+	Phase           string        `json:"phase"` // "hit_rolls", "wound_rolls", "save_rolls", "complete"
+	HitRolls        []int         `json:"hit_rolls"`
+	WoundRolls      []int         `json:"wound_rolls"`
+	SaveRolls       []int         `json:"save_rolls"`
+	WoundsInflicted int           `json:"wounds_inflicted"`
 }

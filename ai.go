@@ -216,7 +216,11 @@ func (gs *GameServer) handleAIInitiative(aiPlayer *Player) {
 	// AI automatically rolls for initiative
 	time.Sleep(time.Duration(rand.Intn(2000)+1000) * time.Millisecond) // 1-3 seconds delay
 	result := rand.Intn(6) + 1
-	gs.rollDice(aiPlayer, result)
+
+	// Directly handle the initiative roll instead of calling rollDice
+	if match, exists := gs.matches[aiPlayer.MatchID]; exists && match.State == "initiative" {
+		gs.handleInitiativeRoll(aiPlayer, result, match)
+	}
 }
 
 func (gs *GameServer) getAvailableFactions() []string {

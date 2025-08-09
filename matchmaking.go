@@ -37,14 +37,16 @@ func (gs *GameServer) joinMatchmaking(player *Player) {
 
 func (gs *GameServer) createMatch(player1, player2 *Player) {
 	matchID := generateMatchID()
+	battleID := generateBattleID()
 	match := &Match{
-		ID:      matchID,
-		Player1: player1,
-		Player2: player2,
-		State:   "selecting",
-		Turn:    1,
-		Log:     make([]string, 0),
-		Created: time.Now(),
+		ID:       matchID,
+		BattleID: battleID,
+		Player1:  player1,
+		Player2:  player2,
+		State:    "selecting",
+		Turn:     1,
+		Log:      make([]string, 0),
+		Created:  time.Now(),
 	}
 
 	gs.matches[matchID] = match
@@ -53,7 +55,7 @@ func (gs *GameServer) createMatch(player1, player2 *Player) {
 	player1.Status = "matched"
 	player2.Status = "matched"
 
-	log.Printf("Match created: %s vs %s (Match ID: %s)", player1.Name, player2.Name, matchID)
+	log.Printf("Match created: %s vs %s (Match ID: %s, Battle ID: %s)", player1.Name, player2.Name, matchID, battleID)
 
 	// Notify both players
 	gs.sendToPlayer(player1, map[string]interface{}{

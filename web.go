@@ -239,8 +239,8 @@ func (gs *GameServer) handleIndex(w http.ResponseWriter, r *http.Request) {
         .unit-card {
             background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
             border: 2px solid #3d3d3d;
-            border-radius: 10px;
-            padding: 20px;
+            border-radius: 8px;
+            padding: 12px;
             transition: all 0.3s ease;
             position: relative;
         }
@@ -600,50 +600,6 @@ func (gs *GameServer) handleIndex(w http.ResponseWriter, r *http.Request) {
             box-shadow: 0 6px 25px rgba(220, 20, 60, 0.4);
         }
         
-        .difficulty-buttons {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 15px;
-        }
-        
-        .difficulty-btn {
-            background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%);
-            color: #e5e5e5;
-            border: 2px solid #555;
-            padding: 10px 25px;
-            border-radius: 6px;
-            font-size: 1em;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-transform: capitalize;
-            font-family: 'Rajdhani', sans-serif;
-        }
-        
-        .difficulty-btn:hover, .difficulty-btn.selected {
-            background: linear-gradient(135deg, #d4af37 0%, #b8860b 100%);
-            color: #000;
-            border-color: #ffd700;
-            transform: translateY(-1px);
-        }
-        
-        #aiDifficultySection {
-            margin-top: 20px;
-            padding: 20px;
-            background: rgba(139, 0, 0, 0.1);
-            border: 1px solid rgba(220, 20, 60, 0.3);
-            border-radius: 8px;
-        }
-        
-        #aiDifficultySection h3 {
-            color: #dc143c;
-            margin-bottom: 15px;
-            text-align: center;
-            font-weight: 600;
-        }
-        
         .army-summary {
             background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
             border: 2px solid #3d3d3d;
@@ -932,151 +888,736 @@ func (gs *GameServer) handleIndex(w http.ResponseWriter, r *http.Request) {
             }
         }
 
-        /* Combat System Styles */
-        .unit-selection, .weapon-selection {
+        /* Enhanced Combat System Styles */
+        .battle-arena {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+            border: 3px solid #d4af37;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 20px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .battle-arena::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60"><circle cx="30" cy="30" r="2" fill="%23d4af37" opacity="0.1"/></svg>') repeat;
+            pointer-events: none;
+        }
+
+        .battle-status {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+            align-items: center;
+        }
+
+        .army-status {
+            background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+            border: 2px solid #3d3d3d;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .army-status.player {
+            border-color: #00ff88;
+            box-shadow: 0 0 20px rgba(0, 255, 136, 0.2);
+        }
+
+        .army-status.enemy {
+            border-color: #ff4444;
+            box-shadow: 0 0 20px rgba(255, 68, 68, 0.2);
+        }
+
+        .army-name {
+            font-family: 'Cinzel', serif;
+            font-size: 1.4em;
+            font-weight: 600;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .army-status.player .army-name {
+            color: #00ff88;
+        }
+
+        .army-status.enemy .army-name {
+            color: #ff4444;
+        }
+
+        .units-status {
             display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            justify-content: center;
-            margin: 20px 0;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 15px;
         }
 
-        .unit-card, .weapon-card {
-            background: linear-gradient(135deg, #2d2d2d 0%, #3d3d3d 100%);
+        .unit-status-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .unit-status-name {
+            font-size: 0.9em;
+            color: #e5e5e5;
+            flex: 1;
+            text-align: left;
+            font-weight: 500;
+        }
+
+        .unit-status-wounds {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex: 1;
+            justify-content: flex-end;
+        }
+
+        .health-bar.small {
+            width: 60px;
+            height: 8px;
+            background: #2a2a2a;
+            border: 1px solid #3d3d3d;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .health-bar.small .health-fill {
+            height: 100%;
+            transition: width 0.3s ease;
+            border-radius: 3px;
+        }
+
+        .wound-text {
+            font-size: 0.8em;
+            color: #d4af37;
+            font-weight: bold;
+            min-width: 35px;
+            text-align: right;
+        }
+
+        .health-bar {
+            background: #2a2a2a;
+            border: 2px solid #3d3d3d;
+            border-radius: 20px;
+            height: 24px;
+            margin: 10px 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .health-fill {
+            height: 100%;
+            border-radius: 18px;
+            transition: width 0.8s ease;
+            position: relative;
+        }
+
+        .health-fill.player {
+            background: linear-gradient(90deg, #00ff88 0%, #00cc66 100%);
+            box-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+        }
+
+        .health-fill.enemy {
+            background: linear-gradient(90deg, #ff4444 0%, #cc3333 100%);
+            box-shadow: 0 0 10px rgba(255, 68, 68, 0.5);
+        }
+
+        .health-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-weight: bold;
+            font-size: 0.9em;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+            z-index: 2;
+        }
+
+        .vs-indicator {
+            font-family: 'Cinzel', serif;
+            font-size: 3em;
+            font-weight: 700;
+            background: linear-gradient(135deg, #d4af37 0%, #ffd700 50%, #d4af37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+            animation: pulseDramatic 3s ease-in-out infinite;
+        }
+
+        @keyframes pulseDramatic {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); filter: brightness(1.2); }
+        }
+
+        .combat-phase-indicator {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
             border: 2px solid #d4af37;
-            border-radius: 10px;
-            padding: 15px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            min-width: 200px;
-            text-align: center;
-        }
-
-        .unit-card:hover, .weapon-card:hover {
-            background: linear-gradient(135deg, #3d3d3d 0%, #4d4d4d 100%);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
-        }
-
-        .dice-rolling {
-            text-align: center;
-            margin: 20px 0;
-        }
-
-        /* Enhanced styling for opponent defense phase */
-        .dice-rolling.opponent-rolling {
-            background: rgba(139, 0, 0, 0.1);
-            border: 2px solid #8b0000;
             border-radius: 12px;
             padding: 20px;
             margin: 20px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .phase-title {
+            font-family: 'Cinzel', serif;
+            font-size: 2em;
+            font-weight: 600;
+            color: #d4af37;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .phase-description {
+            font-size: 1.2em;
+            color: #e5e5e5;
+            margin-bottom: 15px;
+        }
+
+        .turn-indicator {
+            font-size: 1.5em;
+            font-weight: 700;
+            margin: 15px 0;
+            padding: 15px;
+            border-radius: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .turn-indicator.your-turn {
+            background: linear-gradient(135deg, #00ff88 0%, #00cc66 100%);
+            color: #0a0a0a;
+            box-shadow: 0 0 25px rgba(0, 255, 136, 0.4);
+            animation: turnPulse 2s ease-in-out infinite;
+        }
+
+        .turn-indicator.enemy-turn {
+            background: linear-gradient(135deg, #ff4444 0%, #cc3333 100%);
+            color: white;
+            box-shadow: 0 0 25px rgba(255, 68, 68, 0.4);
+        }
+
+        @keyframes turnPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+
+        .unit-selection, .weapon-selection {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .unit-card, .weapon-card {
+            background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+            border: 2px solid #3d3d3d;
+            border-radius: 12px;
+            padding: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .unit-card::before, .weapon-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .unit-card:hover, .weapon-card:hover {
+            border-color: #d4af37;
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.3);
+        }
+
+        .unit-card:hover::before, .weapon-card:hover::before {
+            left: 100%;
+        }
+
+        .unit-icon, .weapon-icon {
+            font-size: 3em;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .unit-name-card, .weapon-name-card {
+            font-family: 'Cinzel', serif;
+            font-size: 1.4em;
+            font-weight: 600;
+            color: #d4af37;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .unit-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .stat-card {
+            background: rgba(212, 175, 55, 0.1);
+            padding: 8px;
+            border-radius: 6px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .dice-rolling {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            border: 2px solid #d4af37;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            margin: 25px 0;
+            position: relative;
+        }
+
+        .dice-rolling.opponent-rolling {
+            border-color: #ff4444;
+            background: linear-gradient(135deg, #2a1a1a 0%, #3d2d2d 100%);
+            box-shadow: 0 0 30px rgba(255, 68, 68, 0.2);
         }
 
         .rolling-animation {
             display: flex;
             justify-content: center;
-            gap: 15px;
-            margin: 15px 0;
+            gap: 20px;
+            margin: 20px 0;
         }
 
         .dice-icon {
-            font-size: 2em;
-            animation: rollDice 1.5s infinite ease-in-out;
+            font-size: 3em;
+            filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.5));
+            display: inline-block;
         }
 
-        .dice-icon:nth-child(2) {
-            animation-delay: 0.3s;
+        .dice-icon.animate {
+            animation: diceRoll 1.5s infinite ease-in-out;
         }
 
-        .dice-icon:nth-child(3) {
-            animation-delay: 0.6s;
-        }
+        .dice-icon:nth-child(2) { animation-delay: 0.3s; }
+        .dice-icon:nth-child(3) { animation-delay: 0.6s; }
 
         @keyframes rollDice {
             0%, 100% { transform: translateY(0) rotate(0deg); }
-            25% { transform: translateY(-10px) rotate(90deg); }
+            25% { transform: translateY(-15px) rotate(90deg); }
             50% { transform: translateY(0) rotate(180deg); }
-            75% { transform: translateY(-5px) rotate(270deg); }
+            75% { transform: translateY(-8px) rotate(270deg); }
         }
 
         .dice-btn {
             background: linear-gradient(135deg, #d4af37 0%, #b8860b 100%);
             color: #0a0a0a;
             border: none;
-            padding: 15px 30px;
-            font-size: 1.2em;
-            font-weight: 600;
-            border-radius: 8px;
+            padding: 20px 40px;
+            font-size: 1.3em;
+            font-weight: 700;
+            border-radius: 12px;
             cursor: pointer;
             transition: all 0.3s ease;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
         }
 
         .dice-btn:hover {
             background: linear-gradient(135deg, #ffd700 0%, #d4af37 100%);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.5);
         }
 
-        /* Dice roll result styling */
+        .dice-btn:active {
+            transform: translateY(-1px);
+        }
+
         .dice-results {
-            background: rgba(0, 0, 0, 0.3);
-            border: 1px solid #d4af37;
-            border-radius: 8px;
-            padding: 15px;
-            margin: 10px 0;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            border: 2px solid #d4af37;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .dice-results-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .dice-results-icon {
+            font-size: 2em;
+        }
+
+        .dice-results-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.8em;
+            font-weight: 600;
+            color: #d4af37;
         }
 
         .dice-display {
             display: flex;
-            gap: 8px;
+            gap: 12px;
             justify-content: center;
-            margin: 10px 0;
+            margin: 20px 0;
             flex-wrap: wrap;
         }
 
         .dice-result {
-            display: inline-block;
-            width: 35px;
-            height: 35px;
-            line-height: 35px;
-            text-align: center;
-            border: 2px solid;
-            border-radius: 6px;
-            font-weight: bold;
-            font-size: 1.2em;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border: 3px solid;
+            border-radius: 12px;
+            font-weight: 900;
+            font-size: 1.4em;
+            position: relative;
+            transition: all 0.3s ease;
         }
 
         .dice-result.success {
-            background: rgba(0, 255, 0, 0.2);
-            border-color: #00ff00;
-            color: #00ff00;
+            background: linear-gradient(135deg, #00ff88 0%, #00cc66 100%);
+            border-color: #00ff88;
+            color: #0a0a0a;
+            box-shadow: 0 0 15px rgba(0, 255, 136, 0.4);
+            animation: successPulse 1s ease-in-out;
         }
 
         .dice-result.fail {
-            background: rgba(255, 0, 0, 0.2);
-            border-color: #ff0000;
-            color: #ff0000;
+            background: linear-gradient(135deg, #ff4444 0%, #cc3333 100%);
+            border-color: #ff4444;
+            color: white;
+            box-shadow: 0 0 15px rgba(255, 68, 68, 0.4);
+        }
+
+        @keyframes successPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        @keyframes diceAppear {
+            from {
+                transform: scale(0) rotate(180deg);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1) rotate(0deg);
+                opacity: 1;
+            }
+        }
+
+        @keyframes diceRoll {
+            0%, 100% { transform: rotate(0deg) scale(1); }
+            25% { transform: rotate(90deg) scale(1.1); }
+            50% { transform: rotate(180deg) scale(1.2); }
+            75% { transform: rotate(270deg) scale(1.1); }
+        }
+
+        /* Victory Screen Styling */
+        .victory-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 0.5s ease;
+        }
+
+        .victory-overlay.show {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .victory-overlay.hide {
+            opacity: 0;
+            transform: scale(0.8);
+        }
+
+        .victory-content {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            border: 3px solid #d4af37;
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            max-width: 600px;
+            width: 90%;
+            box-shadow: 0 0 50px rgba(212, 175, 55, 0.5);
+            animation: victoryPulse 2s infinite ease-in-out;
+        }
+
+        @keyframes victoryPulse {
+            0%, 100% { box-shadow: 0 0 50px rgba(212, 175, 55, 0.5); }
+            50% { box-shadow: 0 0 80px rgba(212, 175, 55, 0.8); }
+        }
+
+        .victory-header {
+            margin-bottom: 30px;
+        }
+
+        .victory-icon {
+            font-size: 4em;
+            margin-bottom: 20px;
+            animation: iconBounce 1s ease-out;
+        }
+
+        @keyframes iconBounce {
+            0% { transform: scale(0) rotate(-180deg); }
+            50% { transform: scale(1.2) rotate(0deg); }
+            100% { transform: scale(1) rotate(0deg); }
+        }
+
+        .victory-title {
+            font-size: 3em;
+            font-weight: bold;
+            margin: 0 0 10px 0;
+            text-shadow: 0 0 20px currentColor;
+            animation: titleGlow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes titleGlow {
+            from { text-shadow: 0 0 20px currentColor; }
+            to { text-shadow: 0 0 30px currentColor, 0 0 40px currentColor; }
+        }
+
+        .victory-subtitle {
+            font-size: 1.2em;
+            color: #d4af37;
+            font-weight: bold;
+        }
+
+        .victory-details {
+            margin: 30px 0;
+        }
+
+        .winner-card {
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+            border: 2px solid #fff;
+            animation: cardSlide 0.8s ease-out;
+        }
+
+        @keyframes cardSlide {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .winner-name {
+            font-size: 2em;
+            font-weight: bold;
+            color: #000;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .winner-status {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #000;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .battle-stats {
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .stat-row {
+            display: flex;
+            justify-content: space-between;
+            margin: 10px 0;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .stat-row:last-child {
+            border-bottom: none;
+        }
+
+        .stat-label {
+            color: #999;
+            font-weight: bold;
+        }
+
+        .stat-value {
+            color: #d4af37;
+            font-weight: bold;
+        }
+
+        .victory-actions {
+            margin-top: 30px;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .victory-btn {
+            padding: 15px 30px;
+            border-radius: 25px;
+            border: none;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 160px;
+        }
+
+        .victory-btn.primary {
+            background: linear-gradient(135deg, #d4af37 0%, #b8860b 100%);
+            color: #000;
+        }
+
+        .victory-btn.primary:hover {
+            background: linear-gradient(135deg, #ffd700 0%, #d4af37 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+        }
+
+        .victory-btn.secondary {
+            background: linear-gradient(135deg, #666 0%, #333 100%);
+            color: #fff;
+            border: 2px solid #d4af37;
+        }
+
+        .victory-btn.secondary:hover {
+            background: linear-gradient(135deg, #d4af37 0%, #b8860b 100%);
+            color: #000;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+        }
+
+        /* Confetti Animation */
+        .confetti-particle {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 10001;
+            animation: confettiFall 3s linear infinite;
+        }
+
+        @keyframes confettiFall {
+            0% {
+                transform: translateY(-100vh) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
         }
 
         .result-summary {
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 8px;
+            padding: 15px;
             font-weight: bold;
             text-align: center;
             color: #d4af37;
-            margin-top: 10px;
+            font-size: 1.2em;
+            margin-top: 20px;
         }
 
         .weapon-attack, .attack-summary, .combat-results, .no-weapons {
-            background: rgba(0, 0, 0, 0.2);
-            border-left: 4px solid #d4af37;
-            padding: 10px 15px;
-            margin: 10px 0;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            border-left: 6px solid #d4af37;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+            position: relative;
         }
 
         .weapon-attack h4 {
             color: #d4af37;
-            margin-bottom: 5px;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        .combat-sequence {
+            display: flex;
+            justify-content: space-around;
+            margin: 25px 0;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .sequence-step {
+            background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+            border: 2px solid #3d3d3d;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            min-width: 120px;
+            transition: all 0.3s ease;
+        }
+
+        .sequence-step.active {
+            border-color: #d4af37;
+            background: linear-gradient(135deg, #d4af37 0%, #b8860b 100%);
+            color: #0a0a0a;
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+        }
+
+        .sequence-number {
+            background: #d4af37;
+            color: #0a0a0a;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin: 0 auto 10px;
+        }
+
+        .sequence-step.active .sequence-number {
+            background: #0a0a0a;
+            color: #d4af37;
         }
 
         </style>
@@ -1110,14 +1651,6 @@ func (gs *GameServer) handleIndex(w http.ResponseWriter, r *http.Request) {
                 <button id="joinMatchmaking" class="primary-btn">Find Human Opponent</button>
                 <button id="playVsAI" class="primary-btn ai-btn">Play vs AI</button>
             </div>
-            <div id="aiDifficultySection" class="hidden">
-                <h3>Select AI Difficulty</h3>
-                <div class="difficulty-buttons">
-                    <button class="difficulty-btn" data-difficulty="easy">Easy</button>
-                    <button class="difficulty-btn" data-difficulty="medium">Medium</button>
-                    <button class="difficulty-btn" data-difficulty="hard">Hard</button>
-                </div>
-            </div>
             <div id="matchmakingStatus"></div>
         </div>
 
@@ -1144,14 +1677,67 @@ func (gs *GameServer) handleIndex(w http.ResponseWriter, r *http.Request) {
 
         <div id="battleSection" class="section hidden">
             <h2>Battle Arena</h2>
+            
+            <!-- Enhanced Battle Status Display -->
+            <div id="battleArena" class="battle-arena">
+                <div id="battleStatus" class="battle-status">
+                    <div id="playerStatus" class="army-status player">
+                        <div class="army-name">Select Faction</div>
+                        <div class="health-bar">
+                            <div id="playerHealthFill" class="health-fill player" style="width: 100%"></div>
+                            <div id="playerHealthText" class="health-text">100 / 100</div>
+                        </div>
+                    </div>
+                    
+                    <div class="vs-indicator">VS</div>
+                    
+                    <div id="enemyStatus" class="army-status enemy">
+                        <div class="army-name">Awaiting Opponent</div>
+                        <div class="health-bar">
+                            <div id="enemyHealthFill" class="health-fill enemy" style="width: 100%"></div>
+                            <div id="enemyHealthText" class="health-text">100 / 100</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Combat Phase Indicator -->
+                <div id="combatPhase" class="combat-phase-indicator">
+                    <div class="phase-title">Preparing for Battle</div>
+                    <div class="phase-description">Choose your tactics wisely, Commander.</div>
+                    <div id="turnIndicator" class="turn-indicator" style="display: none;">
+                        Your Turn
+                    </div>
+                </div>
+                
+                <!-- Combat Sequence Display -->
+                <div id="combatSequence" class="combat-sequence" style="display: none;">
+                    <div class="sequence-step" id="step1">
+                        <div class="sequence-number">1</div>
+                        <div>Choose Unit</div>
+                    </div>
+                    <div class="sequence-step" id="step2">
+                        <div class="sequence-number">2</div>
+                        <div>Roll to Hit</div>
+                    </div>
+                    <div class="sequence-step" id="step3">
+                        <div class="sequence-number">3</div>
+                        <div>Roll to Wound</div>
+                    </div>
+                    <div class="sequence-step" id="step4">
+                        <div class="sequence-number">4</div>
+                        <div>Enemy Saves</div>
+                    </div>
+                </div>
+            </div>
+            
             <div id="battleInfo"></div>
             
-            <div class="dice-roller" id="diceRoller" style="display: none;">
-                <h3>Dice Roller</h3>
-                <button class="dice-btn" onclick="rollDice(6)">D6</button>
-                <button class="dice-btn" onclick="rollDice(3)">D3</button>
-                <button class="dice-btn" onclick="rollDice(20)">D20</button>
-                <div id="diceResults"></div>
+            <!-- Dice History Display -->
+            <div id="diceHistory" class="dice-history" style="margin: 15px 0; padding: 10px; background: #2a2a2a; border-radius: 8px; border: 1px solid #444;">
+                <h4 style="margin: 0 0 10px 0; color: #d4af37;">Dice Roll History</h4>
+                <div id="diceHistoryContent" style="min-height: 60px; max-height: 150px; overflow-y: auto;">
+                    <div style="color: #888; font-style: italic;">No rolls yet...</div>
+                </div>
             </div>
 
             <div id="battleLog" class="battle-log">
@@ -1171,15 +1757,22 @@ func (gs *GameServer) handleIndex(w http.ResponseWriter, r *http.Request) {
         let gameState = 'disconnected';
         let playerData = {};
         let selectedFaction = '';
+        let selectedFactionName = ''; // Store the display name of selected faction
+        let enemyFactionName = ''; // Store the display name of enemy faction
+        let currentPlayerWounds = 100; // Track current wound counts
+        let currentEnemyWounds = 100;
         let selectedUnits = {}; // {unitName: quantity}
         let selectedWeapons = {}; // {unitName: {weaponType: 'Ranged'|'Melee', weapons: []}}
         let availableUnits = [];
         let availableWeapons = {};
         let savedPlayerName = '';
+        let currentPlayerName = ''; // Track current player's name for battle results
         let matchmakingTimer = null;
         let matchmakingSeconds = 0;
         let currentStep = 1;
         let currentArmy = []; // Store the current army for combat
+        let enemyArmy = []; // Store enemy army information
+        let currentPlayerArmy = []; // Track player's army with wounds
 
         // Step management
         function updateStepIndicator(step) {
@@ -1249,6 +1842,7 @@ func (gs *GameServer) handleIndex(w http.ResponseWriter, r *http.Request) {
             switch(message.type) {
                 case 'player_info':
                     playerData = message;
+                    currentPlayerName = message.name; // Store current player name for battle results
                     document.getElementById('playerName').textContent = message.name;
                     document.getElementById('playerId').textContent = message.player_id;
                     document.getElementById('playerInfo').classList.remove('hidden');
@@ -1408,6 +2002,10 @@ func (gs *GameServer) handleIndex(w http.ResponseWriter, r *http.Request) {
                     showSaveResults(message);
                     break;
 
+                case 'individual_save_results':
+                    showIndividualSaveResults(message);
+                    break;
+
                 case 'match_finished':
                     finishMatch(message);
                     break;
@@ -1442,26 +2040,22 @@ func (gs *GameServer) handleIndex(w http.ResponseWriter, r *http.Request) {
         
         function playVsAI() {
             console.log('Play vs AI clicked');
-            const difficultySection = document.getElementById('aiDifficultySection');
-            difficultySection.classList.remove('hidden');
             
-            // Hide the game mode buttons
-            document.querySelector('.game-mode-buttons').style.display = 'none';
-        }
-        
-        function selectAIDifficulty(difficulty) {
-            console.log('AI difficulty selected:', difficulty);
+            // Send message to start AI match with default difficulty
             sendMessage({
                 type: 'play_vs_ai',
-                difficulty: difficulty
+                difficulty: 'medium'  // Default to medium difficulty
             });
             
             // Update UI to show AI match starting
             document.getElementById('matchmakingStatus').innerHTML = 
-                '<p>Starting AI match on <strong>' + difficulty + '</strong> difficulty...</p>';
+                '<p>Starting AI match...</p>';
             
-            // Hide difficulty selection
-            document.getElementById('aiDifficultySection').classList.add('hidden');
+            // Hide the game mode buttons
+            document.querySelector('.game-mode-buttons').style.display = 'none';
+            
+            // Show faction selection directly
+            document.getElementById('factionSelection').classList.remove('hidden');
         }
 
         function resetMatchmaking() {
@@ -1476,13 +2070,8 @@ func (gs *GameServer) handleIndex(w http.ResponseWriter, r *http.Request) {
             
             // Reset AI UI
             document.querySelector('.game-mode-buttons').style.display = 'flex';
-            document.getElementById('aiDifficultySection').classList.add('hidden');
+            document.getElementById('factionSelection').classList.add('hidden');
             document.getElementById('matchmakingStatus').innerHTML = '';
-            
-            // Reset difficulty button selection
-            document.querySelectorAll('.difficulty-btn').forEach(btn => {
-                btn.classList.remove('selected');
-            });
         }
 
         function populateFactions(factions) {
@@ -1527,6 +2116,10 @@ func (gs *GameServer) handleIndex(w http.ResponseWriter, r *http.Request) {
             // Select new faction
             event.target.classList.add('selected');
             selectedFaction = faction;
+            selectedFactionName = faction.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+            
+            // Update battle status to show selected faction with current wound data
+            updateBattleStatus(currentPlayerWounds, currentEnemyWounds);
             
             // Automatically send faction selection
             sendMessage({
@@ -1843,24 +2436,172 @@ func (gs *GameServer) handleIndex(w http.ResponseWriter, r *http.Request) {
 
         function startBattle(message) {
             hideDiceRoller(); // Hide general dice roller
+            clearDiceHistory(); // Clear previous battle's dice history
+            
+            // Capture enemy faction name if provided
+            if (message.opponent_faction) {
+                enemyFactionName = message.opponent_faction.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+            }
+            
+            // Store wound data if available
+            if (message.your_wounds !== undefined && message.enemy_wounds !== undefined) {
+                currentPlayerWounds = message.your_wounds;
+                currentEnemyWounds = message.enemy_wounds;
+            }
+            
+            // Initialize battle status display with actual wound data
+            updateBattleStatus(currentPlayerWounds, currentEnemyWounds);
             
             if (message.phase === 'initiative') {
+                updateCombatPhase('Initiative Roll', 'Roll for initiative to determine who attacks first!');
+                var battleIdDisplay = message.battle_id ? '<div style="font-size: 12px; color: #888; margin-bottom: 10px;">Battle ID: ' + message.battle_id + '</div>' : '';
                 document.getElementById('battleInfo').innerHTML = 
-                    '<h3>Battle vs ' + message.opponent + '</h3>' +
+                    '<div class="dice-rolling">' +
+                    battleIdDisplay +
+                    '<h3>🎯 Initiative Phase</h3>' +
                     '<p style="color: #d4af37; font-weight: bold; font-size: 18px;">' + message.message + '</p>' +
-                    '<div style="text-align: center; margin: 20px 0;">' +
-                    '<button class="dice-btn" onclick="rollDice(6)" style="background: #d4af37; font-size: 16px; padding: 10px 20px;">Roll D6 for Initiative</button>' +
+                    '<div class="rolling-animation" style="margin: 20px 0;">' +
+                    '<span style="font-size: 2em;">⚔️</span>' +
+                    '<span style="font-size: 2em;">🎲</span>' +
+                    '<span style="font-size: 2em;">⚔️</span>' +
+                    '</div>' +
+                    '<button class="dice-btn" onclick="rollDice(6)">🎲 Roll D6 for Initiative</button>' +
                     '</div>';
-                addLogEntry('Battle begins: ' + message.message);
+                addLogEntry('Battle begins: ' + message.message + (message.battle_id ? ' (Battle ID: ' + message.battle_id + ')' : ''));
                 updateStepIndicator(4);
             } else {
+                updateCombatPhase('Battle Commences', 'The armies clash in deadly combat!');
                 document.getElementById('battleInfo').innerHTML = '<h3>Battle vs ' + message.opponent + '</h3><p>Battle has begun!</p>';
                 addLogEntry('Battle started!');
             }
         }
 
+        function updateBattleStatus(playerWounds, enemyWounds, playerName = '', enemyName = '') {
+            // Update the army status display with unit information
+            const playerStatus = document.getElementById('playerStatus');
+            const enemyStatus = document.getElementById('enemyStatus');
+            
+            if (playerStatus) {
+                // Use faction name instead of generic "Your Army"
+                const displayPlayerName = selectedFactionName || playerName || currentPlayerName || 'Your Army';
+                let playerHTML = '<div class="army-name">' + displayPlayerName + '</div>';
+                
+                if (currentPlayerArmy && currentPlayerArmy.length > 0) {
+                    // Show units with their wounds
+                    playerHTML += '<div class="units-status">';
+                    currentPlayerArmy.forEach(unit => {
+                        const currentWounds = unit.current_wounds || unit.wounds || 1;
+                        const maxWounds = unit.wounds || 1;
+                        const woundPercent = Math.max(0, (currentWounds / maxWounds) * 100);
+                        
+                        playerHTML += '<div class="unit-status-row">';
+                        playerHTML += '<div class="unit-status-name">' + unit.unit_name + '</div>';
+                        playerHTML += '<div class="unit-status-wounds">';
+                        playerHTML += '<div class="health-bar small">';
+                        playerHTML += '<div class="health-fill player" style="width: ' + woundPercent + '%"></div>';
+                        playerHTML += '</div>';
+                        playerHTML += '<span class="wound-text">' + currentWounds + '/' + maxWounds + '</span>';
+                        playerHTML += '</div>';
+                        playerHTML += '</div>';
+                    });
+                    playerHTML += '</div>';
+                } else {
+                    // Fallback to generic display
+                    playerHTML += '<div class="health-bar">';
+                    playerHTML += '<div class="health-fill player" style="width: ' + Math.max(0, playerWounds) + '%"></div>';
+                    playerHTML += '<div class="health-text">' + (playerWounds || 'Ready') + '</div>';
+                    playerHTML += '</div>';
+                }
+                
+                playerStatus.innerHTML = playerHTML;
+            }
+            
+            if (enemyStatus) {
+                // Use enemy faction name or opponent name instead of generic "Enemy Army"  
+                const displayEnemyName = enemyFactionName || enemyName || 'Enemy Army';
+                let enemyHTML = '<div class="army-name">' + displayEnemyName + '</div>';
+                
+                if (enemyArmy && enemyArmy.length > 0) {
+                    // Show enemy units with their wounds
+                    enemyHTML += '<div class="units-status">';
+                    enemyArmy.forEach(unit => {
+                        const currentWounds = unit.current_wounds || unit.wounds || 1;
+                        const maxWounds = unit.wounds || 1;
+                        const woundPercent = Math.max(0, (currentWounds / maxWounds) * 100);
+                        
+                        enemyHTML += '<div class="unit-status-row">';
+                        enemyHTML += '<div class="unit-status-name">' + unit.unit_name + '</div>';
+                        enemyHTML += '<div class="unit-status-wounds">';
+                        enemyHTML += '<div class="health-bar small">';
+                        enemyHTML += '<div class="health-fill enemy" style="width: ' + woundPercent + '%"></div>';
+                        enemyHTML += '</div>';
+                        enemyHTML += '<span class="wound-text">' + currentWounds + '/' + maxWounds + '</span>';
+                        enemyHTML += '</div>';
+                        enemyHTML += '</div>';
+                    });
+                    enemyHTML += '</div>';
+                } else {
+                    // Fallback to generic display
+                    enemyHTML += '<div class="health-bar">';
+                    enemyHTML += '<div class="health-fill enemy" style="width: ' + Math.max(0, enemyWounds) + '%"></div>';
+                    enemyHTML += '<div class="health-text">' + (enemyWounds || 'Ready') + '</div>';
+                    enemyHTML += '</div>';
+                }
+                
+                enemyStatus.innerHTML = enemyHTML;
+            }
+        }
+
+        function updateCombatPhase(title, description, showTurnIndicator = false, isYourTurn = false) {
+            const phaseTitle = document.querySelector('.phase-title');
+            const phaseDescription = document.querySelector('.phase-description');
+            const turnIndicator = document.getElementById('turnIndicator');
+            
+            if (phaseTitle) phaseTitle.textContent = title;
+            if (phaseDescription) phaseDescription.textContent = description;
+            
+            if (showTurnIndicator && turnIndicator) {
+                turnIndicator.style.display = 'block';
+                turnIndicator.className = 'turn-indicator ' + (isYourTurn ? 'your-turn' : 'enemy-turn');
+                turnIndicator.textContent = isYourTurn ? '⚔️ YOUR TURN - ATTACK! ⚔️' : '🛡️ ENEMY TURN - DEFEND! 🛡️';
+            } else if (turnIndicator) {
+                turnIndicator.style.display = 'none';
+            }
+        }
+
+        function showCombatSequence(activeStep = 0) {
+            const sequence = document.getElementById('combatSequence');
+            if (sequence) {
+                sequence.style.display = 'flex';
+                
+                // Reset all steps
+                for (let i = 1; i <= 4; i++) {
+                    const step = document.getElementById('step' + i);
+                    if (step) {
+                        step.className = 'sequence-step';
+                    }
+                }
+                
+                // Highlight active step
+                if (activeStep > 0 && activeStep <= 4) {
+                    const activeStepElement = document.getElementById('step' + activeStep);
+                    if (activeStepElement) {
+                        activeStepElement.className = 'sequence-step active';
+                    }
+                }
+            }
+        }
+
+        function hideCombatSequence() {
+            const sequence = document.getElementById('combatSequence');
+            if (sequence) {
+                sequence.style.display = 'none';
+            }
+        }
+
         function showInitiativeRoll(message) {
             addLogEntry('Initiative: ' + message.player_name + ' rolled ' + message.result + ' for initiative');
+            addDiceRollToHistory(message.player_name, 6, message.result, 'initiative');
         }
 
         function showInitiativeTie(message) {
@@ -1898,10 +2639,139 @@ func (gs *GameServer) handleIndex(w http.ResponseWriter, r *http.Request) {
         }
 
         function finishBattle(message) {
-            showDiceRoller(); // Show dice roller again after battle ends
+            // Create dramatic victory screen overlay
+            const victoryOverlay = document.createElement('div');
+            victoryOverlay.className = 'victory-overlay';
+            victoryOverlay.innerHTML = createVictoryScreen(message);
             
+            document.body.appendChild(victoryOverlay);
+            
+            // Trigger victory animations
+            setTimeout(() => {
+                victoryOverlay.classList.add('show');
+            }, 100);
+            
+            // Add confetti effect for winner
+            if (message.winner === currentPlayerName) {
+                startConfetti();
+            }
+            
+            // Log the result
             addLogEntry('Battle finished! Winner: ' + message.winner);
-            document.getElementById('battleInfo').innerHTML += '<h3>Winner: ' + message.winner + '</h3>';
+            
+            // Show dice roller again after delay
+            setTimeout(() => {
+                showDiceRoller();
+            }, 5000);
+        }
+
+        function createVictoryScreen(message) {
+            const isWinner = message.winner === currentPlayerName;
+            const winnerIcon = isWinner ? '👑' : '💀';
+            const winnerTitle = isWinner ? 'GLORIOUS VICTORY!' : 'CRUSHING DEFEAT!';
+            const winnerColor = isWinner ? '#FFD700' : '#FF4444';
+            const bgGradient = isWinner ? 
+                'linear-gradient(135deg, #FFD700 0%, #FFA500 25%, #FF6347 50%, #FFD700 75%, #FFA500 100%)' :
+                'linear-gradient(135deg, #8B0000 0%, #DC143C 25%, #B22222 50%, #8B0000 75%, #DC143C 100%)';
+            
+            return '<div class="victory-content">' +
+                '<div class="victory-header">' +
+                '<div class="victory-icon">' + winnerIcon + '</div>' +
+                '<h1 class="victory-title" style="color: ' + winnerColor + ';">' + winnerTitle + '</h1>' +
+                '<div class="victory-subtitle">Battle Report</div>' +
+                '</div>' +
+                
+                '<div class="victory-details">' +
+                '<div class="winner-card" style="background: ' + bgGradient + ';">' +
+                '<div class="winner-name">' + message.winner + '</div>' +
+                '<div class="winner-status">' + (isWinner ? 'VICTOR' : 'VANQUISHED') + '</div>' +
+                '</div>' +
+                
+                '<div class="battle-stats">' +
+                '<div class="stat-row">' +
+                '<span class="stat-label">Final Status:</span>' +
+                '<span class="stat-value">' + (isWinner ? 'Enemy Eliminated' : 'Forces Destroyed') + '</span>' +
+                '</div>' +
+                '<div class="stat-row">' +
+                '<span class="stat-label">Battle Duration:</span>' +
+                '<span class="stat-value">Epic Engagement</span>' +
+                '</div>' +
+                '<div class="stat-row">' +
+                '<span class="stat-label">Honor Points:</span>' +
+                '<span class="stat-value">' + (isWinner ? '+1000' : '+250') + '</span>' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                
+                '<div class="victory-actions">' +
+                '<button class="victory-btn primary" onclick="closeVictoryScreen()">' +
+                '⚔️ Return to Battle' +
+                '</button>' +
+                '<button class="victory-btn secondary" onclick="startNewBattle()">' +
+                '🔄 New Challenge' +
+                '</button>' +
+                '</div>' +
+                '</div>';
+        }
+
+        function startConfetti() {
+            // Create confetti particles
+            for (let i = 0; i < 50; i++) {
+                setTimeout(() => {
+                    createConfettiParticle();
+                }, i * 100);
+            }
+        }
+
+        function createConfettiParticle() {
+            const confetti = document.createElement('div');
+            confetti.className = 'confetti-particle';
+            confetti.style.left = Math.random() * 100 + '%';
+            confetti.style.backgroundColor = ['#FFD700', '#FF6347', '#FF4500', '#FFA500', '#32CD32'][Math.floor(Math.random() * 5)];
+            confetti.style.animationDelay = Math.random() * 2 + 's';
+            
+            document.body.appendChild(confetti);
+            
+            // Remove particle after animation
+            setTimeout(() => {
+                if (confetti.parentNode) {
+                    confetti.parentNode.removeChild(confetti);
+                }
+            }, 3000);
+        }
+
+        function closeVictoryScreen() {
+            const overlay = document.querySelector('.victory-overlay');
+            if (overlay) {
+                overlay.classList.add('hide');
+                setTimeout(() => {
+                    overlay.remove();
+                }, 500);
+            }
+        }
+
+        function startNewBattle() {
+            closeVictoryScreen();
+            // Reset battle state and return to main menu
+            resetBattleState();
+        }
+
+        function resetBattleState() {
+            // Clear battle info
+            document.getElementById('battleInfo').innerHTML = '';
+            document.getElementById('battleLog').innerHTML = '';
+            
+            // Reset combat sequence
+            showCombatSequence(0);
+            
+            // Clear battle status
+            const battleArena = document.querySelector('.battle-arena');
+            if (battleArena) {
+                battleArena.style.display = 'none';
+            }
+            
+            // Show dice roller
+            showDiceRoller();
         }
 
         // New turn-based combat system functions
@@ -1910,38 +2780,46 @@ func (gs *GameServer) handleIndex(w http.ResponseWriter, r *http.Request) {
             
             addLogEntry(message.message);
             
+            // Update battle status with current wounds
+            if (message.your_wounds !== undefined && message.enemy_wounds !== undefined) {
+                currentPlayerWounds = message.your_wounds;
+                currentEnemyWounds = message.enemy_wounds;
+                updateBattleStatus(currentPlayerWounds, currentEnemyWounds);
+            }
+            
             if (message.phase === 'attacking') {
-                // Show attack interface - let player select unit and weapon type
+                updateCombatPhase('Combat Phase', 'Select your unit and weapon to attack!', true, true);
+                showCombatSequence(1); // Show sequence, highlight step 1
+                
+                // Show enhanced attack interface
                 document.getElementById('battleInfo').innerHTML = 
-                    '<h3>Fight Phase</h3>' +
-                    '<p style="color: #00ff00; font-weight: bold; font-size: 18px;">YOUR TURN - Attack!</p>' +
-                    '<div style="text-align: center; margin: 20px 0;">' +
-                    '<p><strong>Combat Sequence:</strong></p>' +
-                    '<p>' + (message.combat_info ? message.combat_info.sequence[0] : '1. Choose attacks → 2. Roll to hit → 3. Roll to wound → 4. Opponent rolls saves') + '</p>' +
+                    '<div class="dice-rolling">' +
+                    '<h3>⚔️ Attack Phase</h3>' +
+                    '<p style="color: #00ff88; font-weight: bold; font-size: 18px;">Choose your weapons and strike!</p>' +
+                    '<div class="rolling-animation" style="margin: 20px 0;">' +
+                    '<span style="font-size: 3em;">⚔️</span>' +
+                    '<span style="font-size: 3em;">💥</span>' +
+                    '<span style="font-size: 3em;">⚔️</span>' +
                     '</div>' +
-                    '<div style="text-align: center; margin: 20px 0;">' +
-                    '<button class="dice-btn" onclick="startAttack()" style="background: #ff4444; font-size: 16px; padding: 10px 20px;">Begin Attack!</button>' +
+                    '<button class="dice-btn" onclick="startAttack()" style="background: linear-gradient(135deg, #ff4444 0%, #cc3333 100%);">🔥 Begin Attack!</button>' +
                     '</div>';
             } else {
+                updateCombatPhase('Defense Phase', 'Prepare your defenses against enemy attack!', true, false);
+                showCombatSequence(4); // Show sequence, highlight step 4 (saves)
+                
                 // Defending player
                 document.getElementById('battleInfo').innerHTML = 
-                    '<h3>Fight Phase</h3>' +
-                    '<p style="color: #ff6b6b; font-weight: bold; font-size: 18px;">Opponent\'s Turn - Defend!</p>' +
-                    '<div style="text-align: center; margin: 20px 0;">' +
-                    '<p><strong>Combat Sequence:</strong></p>' +
-                    '<p>' + (message.combat_info ? message.combat_info.sequence[0] : '1. Choose attacks → 2. Roll to hit → 3. Roll to wound → 4. Opponent rolls saves') + '</p>' +
+                    '<div class="dice-rolling opponent-rolling">' +
+                    '<h3>🛡️ Defense Phase</h3>' +
+                    '<p style="color: #ff4444; font-weight: bold; font-size: 18px;">Enemy forces advance! Prepare defenses!</p>' +
+                    '<div class="rolling-animation">' +
+                    '<span class="dice-icon">🛡️</span>' +
+                    '<span class="dice-icon">⚔️</span>' +
+                    '<span class="dice-icon">🛡️</span>' +
                     '</div>' +
-                    '<p>Waiting for opponent to attack...</p>';
+                    '<p style="font-size: 1.2em;">Waiting for enemy attack...</p>' +
+                    '</div>';
             }
-        }
-
-        function startAttack() {
-            console.log('startAttack function called');
-            // Send message to start the combat sequence
-            sendMessage({
-                type: 'start_attack'
-            });
-            console.log('start_attack message sent');
         }
 
         function showCombatPhase(message) {
@@ -1950,48 +2828,78 @@ func (gs *GameServer) handleIndex(w http.ResponseWriter, r *http.Request) {
             if (message.your_turn) {
                 // Store the army data for weapon selection
                 currentArmy = message.army;
+                showCombatSequence(1); // Unit selection step
                 
-                let armyHTML = '<h3>Select Unit & Weapon to Attack</h3>';
+                let armyHTML = '<div class="dice-rolling">';
+                armyHTML += '<h3>🎯 Select Your Unit</h3>';
+                armyHTML += '<p style="color: #d4af37; margin-bottom: 20px;">Choose which unit will lead the assault:</p>';
+                armyHTML += '</div>';
+                
                 armyHTML += '<div class="unit-selection">';
                 
                 message.army.forEach(unit => {
-                    // Escape single quotes in unit names for JavaScript
                     const escapedUnitName = unit.unit_name.replace(/'/g, "\\'");
+                    const unitIcon = getUnitIcon(unit.unit_name);
+                    
                     armyHTML += '<div class="unit-card" onclick="selectAttackingUnit(\'' + escapedUnitName + '\')">';
-                    armyHTML += '<h4>' + unit.unit_name + ' (x' + unit.quantity + ')</h4>';
+                    armyHTML += '<div class="unit-icon">' + unitIcon + '</div>';
+                    armyHTML += '<div class="unit-name-card">' + unit.unit_name + '</div>';
+                    armyHTML += '<div style="color: #b8860b; margin-bottom: 10px;">Quantity: ' + unit.quantity + '</div>';
+                    
+                    if (unit.weapons && unit.weapons.length > 0) {
+                        armyHTML += '<div class="unit-stats-grid">';
+                        armyHTML += '<div class="stat-card"><div class="stat-label">Weapons</div><div class="stat-value">' + unit.weapons.length + '</div></div>';
+                        armyHTML += '<div class="stat-card"><div class="stat-label">Ready</div><div class="stat-value">✓</div></div>';
+                        armyHTML += '</div>';
+                    }
+                    
                     armyHTML += '</div>';
                 });
                 
                 armyHTML += '</div>';
                 document.getElementById('battleInfo').innerHTML = armyHTML;
             } else {
+                updateCombatPhase('Enemy Turn', 'Enemy forces are mobilizing...', true, false);
+                hideCombatSequence();
+                
                 document.getElementById('battleInfo').innerHTML = 
-                    '<h3>Opponent\'s Turn</h3>' +
+                    '<div class="dice-rolling opponent-rolling">' +
+                    '<h3>🚨 Enemy Turn</h3>' +
                     '<p>' + message.message + '</p>' +
-                    '<p>Enemy wounds remaining: ' + message.your_wounds + '</p>';
+                    '<p style="color: #ff4444; font-size: 1.2em;">Enemy wounds remaining: ' + message.your_wounds + '</p>' +
+                    '<div class="rolling-animation">' +
+                    '<span class="dice-icon">💀</span>' +
+                    '<span class="dice-icon">⚔️</span>' +
+                    '<span class="dice-icon">💀</span>' +
+                    '</div>' +
+                    '</div>';
             }
             addLogEntry(message.message);
         }
 
+        function getUnitIcon(unitName) {
+            // Return appropriate icons based on unit type
+            if (unitName.toLowerCase().includes('marine') || unitName.toLowerCase().includes('tactical')) return '🪖';
+            if (unitName.toLowerCase().includes('terminator')) return '🤖';
+            if (unitName.toLowerCase().includes('dreadnought')) return '🦾';
+            if (unitName.toLowerCase().includes('tank') || unitName.toLowerCase().includes('vehicle')) return '🚗';
+            if (unitName.toLowerCase().includes('bike')) return '🏍️';
+            if (unitName.toLowerCase().includes('assault') || unitName.toLowerCase().includes('raptor')) return '🪂';
+            if (unitName.toLowerCase().includes('heavy') || unitName.toLowerCase().includes('weapon')) return '💥';
+            if (unitName.toLowerCase().includes('psyker') || unitName.toLowerCase().includes('sorcerer')) return '🔮';
+            if (unitName.toLowerCase().includes('lord') || unitName.toLowerCase().includes('captain')) return '👑';
+            if (unitName.toLowerCase().includes('daemon') || unitName.toLowerCase().includes('chaos')) return '👹';
+            if (unitName.toLowerCase().includes('cultist') || unitName.toLowerCase().includes('guardsman')) return '🪖';
+            return '⚔️'; // Default icon
+        }
+
         function selectAttackingUnit(unitName) {
             console.log('selectAttackingUnit called with:', unitName);
-            console.log('currentArmy:', currentArmy);
-            console.log('currentArmy length:', currentArmy ? currentArmy.length : 'null');
             
             // Find the unit's weapons from the current army data
             let unitData = null;
             if (currentArmy) {
-                unitData = currentArmy.find(u => {
-                    console.log('Checking unit:', u.unit_name, 'against:', unitName);
-                    console.log('Unit weapons:', u.weapons);
-                    return u.unit_name === unitName;
-                });
-            }
-            
-            console.log('Found unitData:', unitData);
-            if (unitData && unitData.weapons) {
-                console.log('Unit weapons array:', unitData.weapons);
-                console.log('Weapons length:', unitData.weapons.length);
+                unitData = currentArmy.find(u => u.unit_name === unitName);
             }
             
             if (!unitData || !unitData.weapons || unitData.weapons.length === 0) {
@@ -1999,15 +2907,32 @@ func (gs *GameServer) handleIndex(w http.ResponseWriter, r *http.Request) {
                 return;
             }
 
-            // Show weapon selection
-            let weaponHTML = '<h3>Select Weapon for ' + unitName + '</h3>';
+            showCombatSequence(1); // Still on unit selection, but now showing weapons
+            
+            // Show enhanced weapon selection
+            let weaponHTML = '<div class="dice-rolling">';
+            weaponHTML += '<h3>🗡️ Select Weapon for ' + unitName + '</h3>';
+            weaponHTML += '<p style="color: #d4af37; margin-bottom: 20px;">Choose your weapon of war:</p>';
+            weaponHTML += '</div>';
+            
             weaponHTML += '<div class="weapon-selection">';
             
             unitData.weapons.forEach(weapon => {
-                weaponHTML += '<div class="weapon-card" onclick="confirmAttack(\'' + unitName + '\', \'' + weapon.name + '\')">';
-                weaponHTML += '<h4>' + weapon.name + '</h4>';
-                weaponHTML += '<p>Attacks: ' + weapon.attacks + ', Skill: ' + weapon.skill + '+</p>';
-                weaponHTML += '<p>S' + weapon.strength + ' AP' + weapon.ap + ' D' + weapon.damage + '</p>';
+                const weaponIcon = getWeaponIcon(weapon.name, weapon.type);
+                const escapedWeaponName = weapon.name.replace(/'/g, "\\'");
+                
+                weaponHTML += '<div class="weapon-card" onclick="confirmAttack(\'' + unitName + '\', \'' + escapedWeaponName + '\')">';
+                weaponHTML += '<div class="weapon-icon">' + weaponIcon + '</div>';
+                weaponHTML += '<div class="weapon-name-card">' + weapon.name + '</div>';
+                weaponHTML += '<div style="color: #b8860b; margin: 10px 0;">Type: ' + (weapon.type || 'Unknown') + '</div>';
+                
+                weaponHTML += '<div class="unit-stats-grid">';
+                weaponHTML += '<div class="stat-card"><div class="stat-label">Attacks</div><div class="stat-value">' + weapon.attacks + '</div></div>';
+                weaponHTML += '<div class="stat-card"><div class="stat-label">Skill</div><div class="stat-value">' + weapon.skill + '+</div></div>';
+                weaponHTML += '<div class="stat-card"><div class="stat-label">Strength</div><div class="stat-value">' + weapon.strength + '</div></div>';
+                weaponHTML += '<div class="stat-card"><div class="stat-label">AP</div><div class="stat-value">' + weapon.ap + '</div></div>';
+                weaponHTML += '</div>';
+                
                 weaponHTML += '</div>';
             });
             
@@ -2015,7 +2940,37 @@ func (gs *GameServer) handleIndex(w http.ResponseWriter, r *http.Request) {
             document.getElementById('battleInfo').innerHTML = weaponHTML;
         }
 
+        function getWeaponIcon(weaponName, weaponType) {
+            const name = weaponName.toLowerCase();
+            const type = (weaponType || '').toLowerCase();
+            
+            // Melee weapons
+            if (type.includes('melee') || name.includes('sword') || name.includes('blade') || name.includes('claw')) return '⚔️';
+            if (name.includes('hammer') || name.includes('mace')) return '🔨';
+            if (name.includes('axe')) return '🪓';
+            if (name.includes('fist') || name.includes('gauntlet')) return '👊';
+            if (name.includes('whip') || name.includes('lash')) return '🪢';
+            
+            // Ranged weapons
+            if (name.includes('pistol')) return '🔫';
+            if (name.includes('rifle') || name.includes('bolter')) return '🔫';
+            if (name.includes('cannon') || name.includes('las')) return '💥';
+            if (name.includes('flamer') || name.includes('melta')) return '🔥';
+            if (name.includes('plasma')) return '⚡';
+            if (name.includes('missile') || name.includes('launcher')) return '🚀';
+            if (name.includes('heavy') || name.includes('machine')) return '🔫';
+            
+            // Special weapons
+            if (name.includes('psychic') || name.includes('warp')) return '🔮';
+            if (name.includes('energy') || name.includes('beam')) return '⚡';
+            
+            return type.includes('ranged') ? '🔫' : '⚔️';
+        }
+
         function confirmAttack(unitName, weaponName) {
+            showCombatSequence(2); // Move to hit roll phase
+            updateCombatPhase('Attack Confirmed', 'Launching assault with ' + weaponName + '!');
+            
             sendMessage({
                 type: 'select_attacking_unit',
                 unit_name: unitName,
@@ -2024,84 +2979,160 @@ func (gs *GameServer) handleIndex(w http.ResponseWriter, r *http.Request) {
         }
 
         function showHitRollPhase(message) {
+            showCombatSequence(2); // Hit roll phase
+            updateCombatPhase('Hit Roll Phase', 'Roll to see if your attacks connect!');
+            
             document.getElementById('battleInfo').innerHTML = 
-                '<h3>Hit Roll Phase</h3>' +
-                '<p>' + message.message + '</p>' +
-                '<p>Need ' + message.hit_on + '+ to hit</p>' +
                 '<div class="dice-rolling">' +
-                '<p>Roll ' + message.attacks + ' dice:</p>' +
-                '<button class="dice-btn" onclick="rollHitDice(' + message.attacks + ')">Roll to Hit</button>' +
+                '<div class="dice-results-header">' +
+                '<div class="dice-results-icon">🎯</div>' +
+                '<div class="dice-results-title">Hit Roll Phase</div>' +
+                '</div>' +
+                '<p style="color: #d4af37; font-size: 1.2em; margin: 15px 0;">' + message.message + '</p>' +
+                '<div style="background: rgba(212, 175, 55, 0.1); border-radius: 8px; padding: 15px; margin: 20px 0;">' +
+                '<p style="color: #ffd700; font-weight: bold;">🎲 Need ' + message.hit_on + '+ to hit</p>' +
+                '<p style="color: #e5e5e5;">Rolling ' + message.attacks + ' dice...</p>' +
+                '</div>' +
+                '<div class="rolling-animation" style="margin: 20px 0;">' +
+                '<span class="dice-icon">🎲</span>' +
+                '<span class="dice-icon">🎯</span>' +
+                '<span class="dice-icon">🎲</span>' +
+                '</div>' +
+                '<button class="dice-btn" onclick="rollHitDice(' + message.attacks + ')">🎲 Roll to Hit</button>' +
                 '</div>';
             addLogEntry(message.message);
         }
 
         function showWoundRollPhase(message) {
+            showCombatSequence(3); // Wound roll phase
+            updateCombatPhase('Wound Roll Phase', 'Roll to penetrate enemy defenses!');
+            
             document.getElementById('battleInfo').innerHTML = 
-                '<h3>Wound Roll Phase</h3>' +
-                '<p>' + message.message + '</p>' +
-                '<p>Need ' + message.wound_on + '+ to wound</p>' +
                 '<div class="dice-rolling">' +
-                '<p>Roll ' + message.hits + ' dice:</p>' +
-                '<button class="dice-btn" onclick="rollWoundDice(' + message.hits + ')">Roll to Wound</button>' +
+                '<div class="dice-results-header">' +
+                '<div class="dice-results-icon">💀</div>' +
+                '<div class="dice-results-title">Wound Roll Phase</div>' +
+                '</div>' +
+                '<p style="color: #d4af37; font-size: 1.2em; margin: 15px 0;">' + message.message + '</p>' +
+                '<div style="background: rgba(212, 175, 55, 0.1); border-radius: 8px; padding: 15px; margin: 20px 0;">' +
+                '<p style="color: #ffd700; font-weight: bold;">🎲 Need ' + message.wound_on + '+ to wound</p>' +
+                '<p style="color: #e5e5e5;">Rolling ' + message.hits + ' dice...</p>' +
+                '</div>' +
+                '<div class="rolling-animation" style="margin: 20px 0;">' +
+                '<span class="dice-icon">🎲</span>' +
+                '<span class="dice-icon">💀</span>' +
+                '<span class="dice-icon">🎲</span>' +
+                '</div>' +
+                '<button class="dice-btn" onclick="rollWoundDice(' + message.hits + ')">🎲 Roll to Wound</button>' +
                 '</div>';
             addLogEntry(message.message);
         }
 
         function showSaveRollPhase(message) {
+            showCombatSequence(4); // Save roll phase
+            updateCombatPhase('Save Roll Phase', 'Make your armor saves!');
+            
             document.getElementById('battleInfo').innerHTML = 
-                '<h3>Save Roll Phase</h3>' +
-                '<p>' + message.message + '</p>' +
-                '<p>Need ' + message.save_on + '+ to save</p>' +
                 '<div class="dice-rolling">' +
-                '<p>Roll ' + message.wounds + ' dice:</p>' +
-                '<button class="dice-btn" onclick="rollSaveDice(' + message.wounds + ')">Roll Saves</button>' +
+                '<div class="dice-results-header">' +
+                '<div class="dice-results-icon">🛡️</div>' +
+                '<div class="dice-results-title">Armor Save Phase</div>' +
+                '</div>' +
+                '<p style="color: #d4af37; font-size: 1.2em; margin: 15px 0;">' + message.message + '</p>' +
+                '<div style="background: rgba(212, 175, 55, 0.1); border-radius: 8px; padding: 15px; margin: 20px 0;">' +
+                '<p style="color: #ffd700; font-weight: bold;">🎲 Need ' + message.save_on + '+ to save</p>' +
+                '<p style="color: #e5e5e5;">Rolling ' + message.wounds + ' dice...</p>' +
+                '</div>' +
+                '<div class="rolling-animation" style="margin: 20px 0;">' +
+                '<span class="dice-icon">🎲</span>' +
+                '<span class="dice-icon">🛡️</span>' +
+                '<span class="dice-icon">🎲</span>' +
+                '</div>' +
+                '<button class="dice-btn" onclick="rollSaveDice(' + message.wounds + ')">🛡️ Roll Saves</button>' +
                 '</div>';
             addLogEntry(message.message);
         }
 
-        function rollHitDice(count) {
-            const rolls = [];
-            for (let i = 0; i < count; i++) {
-                rolls.push(Math.floor(Math.random() * 6) + 1);
-            }
+        function startAttack() {
+            console.log('startAttack function called');
+            showCombatSequence(1); // Show unit selection
+            updateCombatPhase('Begin Assault', 'Choose your unit to lead the attack!');
             
-            document.getElementById('battleInfo').innerHTML += 
-                '<p>Your rolls: ' + rolls.join(', ') + '</p>';
-            
+            // Send message to start the combat sequence
             sendMessage({
-                type: 'submit_hit_rolls',
-                rolls: rolls
+                type: 'start_attack'
             });
+            console.log('start_attack message sent');
+        }
+
+        function rollHitDice(count) {
+            // Show rolling animation
+            showRollingAnimation('🎯', 'Rolling to hit...');
+            
+            setTimeout(() => {
+                const rolls = [];
+                for (let i = 0; i < count; i++) {
+                    rolls.push(Math.floor(Math.random() * 6) + 1);
+                }
+                
+                sendMessage({
+                    type: 'submit_hit_rolls',
+                    rolls: rolls
+                });
+            }, 1500);
         }
 
         function rollWoundDice(count) {
-            const rolls = [];
-            for (let i = 0; i < count; i++) {
-                rolls.push(Math.floor(Math.random() * 6) + 1);
-            }
+            // Show rolling animation
+            showRollingAnimation('💀', 'Rolling to wound...');
             
-            document.getElementById('battleInfo').innerHTML += 
-                '<p>Your rolls: ' + rolls.join(', ') + '</p>';
-            
-            sendMessage({
-                type: 'submit_wound_rolls',
-                rolls: rolls
-            });
+            setTimeout(() => {
+                const rolls = [];
+                for (let i = 0; i < count; i++) {
+                    rolls.push(Math.floor(Math.random() * 6) + 1);
+                }
+                
+                sendMessage({
+                    type: 'submit_wound_rolls',
+                    rolls: rolls
+                });
+            }, 1500);
         }
 
         function rollSaveDice(count) {
-            const rolls = [];
-            for (let i = 0; i < count; i++) {
-                rolls.push(Math.floor(Math.random() * 6) + 1);
-            }
+            // Show rolling animation
+            showRollingAnimation('🛡️', 'Rolling saves...');
             
-            document.getElementById('battleInfo').innerHTML += 
-                '<p>Your rolls: ' + rolls.join(', ') + '</p>';
-            
-            sendMessage({
-                type: 'submit_save_rolls',
-                rolls: rolls
-            });
+            setTimeout(() => {
+                const rolls = [];
+                for (let i = 0; i < count; i++) {
+                    rolls.push(Math.floor(Math.random() * 6) + 1);
+                }
+                
+                sendMessage({
+                    type: 'submit_save_rolls',
+                    rolls: rolls
+                });
+            }, 1500);
+        }
+
+        function showRollingAnimation(phaseIcon, message) {
+            const battleInfo = document.getElementById('battleInfo');
+            battleInfo.innerHTML = 
+                '<div class="dice-rolling">' +
+                '<div class="dice-results-header">' +
+                '<div class="dice-results-icon">' + phaseIcon + '</div>' +
+                '<div class="dice-results-title">' + message + '</div>' +
+                '</div>' +
+                '<div class="rolling-animation" style="text-align: center; margin: 30px 0;">' +
+                '<div class="rolling-dice">' +
+                '<span class="dice-icon animate">🎲</span>' +
+                '<span class="dice-icon animate">🎲</span>' +
+                '<span class="dice-icon animate">🎲</span>' +
+                '</div>' +
+                '<p style="color: #d4af37; margin-top: 20px;">Rolling dice...</p>' +
+                '</div>' +
+                '</div>';
         }
 
         function showCombatWaiting(message) {
@@ -2246,6 +3277,17 @@ func (gs *GameServer) handleIndex(w http.ResponseWriter, r *http.Request) {
                 type: 'roll_save'
             });
         }
+        
+        function rollSavesForWeapon(weaponIndex, woundCount, weaponName) {
+            showRollingAnimation('🛡️', 'Rolling saves for ' + weaponName + '...');
+            
+            sendMessage({
+                type: 'roll_save_weapon',
+                weapon_index: weaponIndex,
+                wound_count: woundCount,
+                weapon_name: weaponName
+            });
+        }
 
         function showHitResults(message) {
             let html = '<div class="hit-results">' +
@@ -2294,27 +3336,29 @@ func (gs *GameServer) handleIndex(w http.ResponseWriter, r *http.Request) {
             // Show attack history
             if (message.attack_history && message.attack_history.length > 0) {
                 html += '<div class="attack-history">';
-                message.attack_history.forEach(entry => {
+                message.attack_history.forEach((entry, index) => {
                     if (entry.phase === 'wound') {
                         const rollsDisplay = entry.rolls.map(roll => 
                             '<span class="dice-result ' + (roll >= entry.target ? 'success' : 'fail') + '">' + roll + '</span>'
                         ).join(' ');
                         
-                        html += '<div class="dice-results">' +
+                        html += '<div class="dice-results weapon-attack-box" style="border: 2px solid #666; margin: 10px 0; padding: 15px; border-radius: 8px; background: #2a2a2a;">' +
                             '<h4>' + entry.weapon_name + ' (' + entry.unit_name + ')</h4>' +
                             '<p>Need ' + entry.target + '+: ' + rollsDisplay + '</p>' +
-                            '<p class="result-summary">' + entry.successes + ' wounds!</p>' +
-                            '</div>';
+                            '<p class="result-summary">' + entry.successes + ' wounds!</p>';
+                        
+                        // Add individual save button if this weapon caused wounds and player can roll saves
+                        if (entry.successes > 0 && message.show_save_button) {
+                            const weaponIndex = entry.weapon_index !== undefined ? entry.weapon_index : index;
+                            html += '<div class="save-action" style="margin-top: 10px;">' +
+                                '<button onclick="rollSavesForWeapon(' + weaponIndex + ', ' + entry.successes + ', \'' + entry.weapon_name + '\')" class="action-btn primary" style="background: #d4af37; color: #000; padding: 8px 16px; border: none; border-radius: 5px; font-weight: bold; cursor: pointer;">🛡️ Roll ' + entry.successes + ' Save' + (entry.successes > 1 ? 's' : '') + '</button>' +
+                                '</div>';
+                        }
+                        
+                        html += '</div>';
                     }
                 });
                 html += '</div>';
-            }
-            
-            // Add action buttons if this player can act
-            if (message.show_save_button) {
-                html += '<div class="combat-actions" style="margin-top: 20px;">' +
-                    '<button onclick="rollSaves()" class="action-btn primary" style="background: #d4af37; color: #000; padding: 12px 24px; border: none; border-radius: 5px; font-weight: bold; cursor: pointer;">🛡️ Roll Saves</button>' +
-                    '</div>';
             }
             
             html += '</div>';
@@ -2324,6 +3368,17 @@ func (gs *GameServer) handleIndex(w http.ResponseWriter, r *http.Request) {
         }
 
         function showSaveResults(message) {
+            // Update wound counts if provided
+            if (message.your_wounds !== undefined) {
+                currentPlayerWounds = message.your_wounds;
+            }
+            if (message.enemy_wounds !== undefined) {
+                currentEnemyWounds = message.enemy_wounds;
+            }
+            
+            // Update battle status display with new wound counts
+            updateBattleStatus(currentPlayerWounds, currentEnemyWounds);
+            
             let html = '<div class="save-results">' +
                 '<h3>🛡️ Save Results</h3>';
             
@@ -2352,6 +3407,32 @@ func (gs *GameServer) handleIndex(w http.ResponseWriter, r *http.Request) {
             addLogEntry(message.message);
         }
 
+        function showIndividualSaveResults(message) {
+            // Update wound counts if provided
+            if (message.your_wounds !== undefined) {
+                currentPlayerWounds = message.your_wounds;
+            }
+            if (message.enemy_wounds !== undefined) {
+                currentEnemyWounds = message.enemy_wounds;
+            }
+            
+            // Update battle status display with new wound counts
+            updateBattleStatus(currentPlayerWounds, currentEnemyWounds);
+            
+            // Re-display the wound results with updated save states
+            showWoundResults({
+                attack_history: message.attack_history,
+                current_weapon: message.current_weapon,
+                total_weapons: message.total_weapons,
+                your_wounds: message.your_wounds,
+                enemy_wounds: message.enemy_wounds,
+                show_save_button: false, // Individual saves are complete, don't show save buttons
+                message: message.message
+            });
+            
+            addLogEntry(message.message);
+        }
+
         function nextWeapon() {
             sendMessage({
                 type: 'next_weapon'
@@ -2359,6 +3440,17 @@ func (gs *GameServer) handleIndex(w http.ResponseWriter, r *http.Request) {
         }
 
         function showCombatResults(message) {
+            // Update wound counts if provided
+            if (message.your_wounds !== undefined) {
+                currentPlayerWounds = message.your_wounds;
+            }
+            if (message.enemy_wounds !== undefined) {
+                currentEnemyWounds = message.enemy_wounds;
+            }
+            
+            // Update battle status display with new wound counts
+            updateBattleStatus(currentPlayerWounds, currentEnemyWounds);
+            
             document.getElementById('battleInfo').innerHTML += 
                 '<div class="combat-results">' +
                 '<h3>⚡ Combat Results</h3>' +
@@ -2400,19 +3492,196 @@ func (gs *GameServer) handleIndex(w http.ResponseWriter, r *http.Request) {
         }
 
         function showDiceRoller() {
-            document.getElementById('diceRoller').style.display = 'block';
+            const diceRoller = document.getElementById('diceRoller');
+            if (diceRoller) {
+                diceRoller.style.display = 'block';
+            }
         }
 
         function hideDiceRoller() {
-            document.getElementById('diceRoller').style.display = 'none';
+            const diceRoller = document.getElementById('diceRoller');
+            if (diceRoller) {
+                diceRoller.style.display = 'none';
+            }
+        }
+
+        function showDiceResults(results, hit_on = null, wound_on = null, save_on = null) {
+            console.log('showDiceResults called with:', results);
+            
+            let phaseIcon = '🎲';
+            let phaseTitle = 'Dice Results';
+            let threshold = null;
+            
+            // Determine phase and threshold
+            if (hit_on !== null) {
+                phaseIcon = '🎯';
+                phaseTitle = 'Hit Results';
+                threshold = hit_on;
+            } else if (wound_on !== null) {
+                phaseIcon = '💀';
+                phaseTitle = 'Wound Results';
+                threshold = wound_on;
+            } else if (save_on !== null) {
+                phaseIcon = '🛡️';
+                phaseTitle = 'Save Results';
+                threshold = save_on;
+            }
+            
+            let resultHTML = '<div class="dice-rolling">';
+            resultHTML += '<div class="dice-results-header">';
+            resultHTML += '<div class="dice-results-icon">' + phaseIcon + '</div>';
+            resultHTML += '<div class="dice-results-title">' + phaseTitle + '</div>';
+            resultHTML += '</div>';
+            
+            if (threshold !== null) {
+                resultHTML += '<div style="background: rgba(212, 175, 55, 0.1); border-radius: 8px; padding: 10px; margin: 15px 0;">';
+                resultHTML += '<p style="color: #ffd700; margin: 0;">Need ' + threshold + '+ to succeed</p>';
+                resultHTML += '</div>';
+            }
+            
+            resultHTML += '<div class="dice-container">';
+            
+            let successCount = 0;
+            let failCount = 0;
+            
+            results.forEach(roll => {
+                const isSuccess = threshold ? roll >= threshold : true;
+                if (isSuccess) successCount++;
+                else failCount++;
+                
+                const diceClass = isSuccess ? 'dice-success' : 'dice-fail';
+                resultHTML += '<span class="dice-result ' + diceClass + '">' + roll + '</span>';
+            });
+            
+            resultHTML += '</div>';
+            
+            // Summary
+            if (threshold !== null) {
+                resultHTML += '<div class="dice-summary">';
+                resultHTML += '<div style="color: #4CAF50; font-weight: bold;">✓ Successes: ' + successCount + '</div>';
+                if (failCount > 0) {
+                    resultHTML += '<div style="color: #f44336; font-weight: bold;">✗ Failures: ' + failCount + '</div>';
+                }
+                resultHTML += '</div>';
+            }
+            
+            resultHTML += '</div>';
+            
+            document.getElementById('battleInfo').innerHTML = resultHTML;
+            
+            // Add to dice history
+            addDiceToHistory(results, phaseIcon + ' ' + phaseTitle, threshold, successCount, failCount);
+        }
+
+        function addDiceToHistory(results, phaseInfo, threshold, successCount, failCount) {
+            const historyContainer = document.getElementById('diceHistory');
+            if (!historyContainer) return;
+            
+            const historyEntry = document.createElement('div');
+            historyEntry.className = 'dice-history-entry';
+            
+            let entryHTML = '<div class="history-phase">' + phaseInfo + '</div>';
+            entryHTML += '<div class="history-dice">';
+            
+            results.forEach(roll => {
+                const isSuccess = threshold ? roll >= threshold : true;
+                const diceClass = isSuccess ? 'dice-success' : 'dice-fail';
+                entryHTML += '<span class="dice-result small ' + diceClass + '">' + roll + '</span>';
+            });
+            
+            entryHTML += '</div>';
+            
+            if (threshold !== null) {
+                entryHTML += '<div class="history-summary">';
+                entryHTML += successCount + ' successes';
+                if (failCount > 0) entryHTML += ', ' + failCount + ' failures';
+                entryHTML += '</div>';
+            }
+            
+            historyEntry.innerHTML = entryHTML;
+            historyContainer.insertBefore(historyEntry, historyContainer.firstChild);
+            
+            // Keep only last 10 entries
+            while (historyContainer.children.length > 10) {
+                historyContainer.removeChild(historyContainer.lastChild);
+            }
         }
 
         function showDiceResult(dice, result) {
             document.getElementById('diceResults').innerHTML = 'Last roll: D' + dice + ' = ' + result;
+            addDiceRollToHistory('You', dice, result, 'combat');
         }
 
         function showOpponentDiceRoll(message) {
             addLogEntry(message.player_name + ' rolled D' + message.dice + ': ' + message.result);
+            addDiceRollToHistory(message.player_name, message.dice, message.result, 'combat');
+        }
+
+        function addDiceRollToHistory(playerName, dice, result, rollType) {
+            const historyContent = document.getElementById('diceHistoryContent');
+            
+            // Clear the "No rolls yet..." message if it exists
+            if (historyContent.innerHTML.includes('No rolls yet...')) {
+                historyContent.innerHTML = '';
+            }
+            
+            // Determine colors based on roll type and result
+            let diceColor = '#d4af37'; // Default gold
+            let resultColor = '#fff'; // Default white
+            let bgColor = 'rgba(52, 152, 219, 0.1)'; // Default blue tint
+            
+            if (rollType === 'initiative') {
+                if (result >= 4) {
+                    resultColor = '#2ecc71'; // Green for good initiative rolls
+                    bgColor = 'rgba(46, 204, 113, 0.1)';
+                } else {
+                    resultColor = '#e74c3c'; // Red for poor initiative rolls
+                    bgColor = 'rgba(231, 76, 60, 0.1)';
+                }
+            } else if (rollType === 'combat') {
+                if (result >= Math.ceil(dice * 0.66)) { // Top 33% of possible rolls
+                    resultColor = '#2ecc71'; // Green for good rolls
+                    bgColor = 'rgba(46, 204, 113, 0.1)';
+                } else if (result <= Math.ceil(dice * 0.33)) { // Bottom 33% of possible rolls
+                    resultColor = '#e74c3c'; // Red for poor rolls
+                    bgColor = 'rgba(231, 76, 60, 0.1)';
+                }
+            }
+            
+            // Create the roll entry with timestamp
+            const timestamp = new Date().toLocaleTimeString();
+            const rollEntry = document.createElement('div');
+            rollEntry.style.display = 'flex';
+            rollEntry.style.justifyContent = 'space-between';
+            rollEntry.style.alignItems = 'center';
+            rollEntry.style.padding = '5px 8px';
+            rollEntry.style.margin = '2px 0';
+            rollEntry.style.borderRadius = '4px';
+            rollEntry.style.background = bgColor;
+            rollEntry.style.borderLeft = '3px solid ' + resultColor;
+            rollEntry.style.fontSize = '14px';
+            
+            rollEntry.innerHTML = 
+                '<span><strong style="color: ' + diceColor + ';">' + playerName + '</strong> rolled D' + dice + '</span>' +
+                '<span style="display: flex; align-items: center; gap: 8px;">' +
+                '<strong style="color: ' + resultColor + '; font-size: 16px;">' + result + '</strong>' +
+                '<small style="color: #888;">' + timestamp + '</small></span>';
+            
+            // Add to top of history (most recent first)
+            historyContent.insertBefore(rollEntry, historyContent.firstChild);
+            
+            // Limit history to last 10 rolls to prevent overflow
+            while (historyContent.children.length > 10) {
+                historyContent.removeChild(historyContent.lastChild);
+            }
+            
+            // Scroll to top to show newest roll
+            historyContent.scrollTop = 0;
+        }
+
+        function clearDiceHistory() {
+            const historyContent = document.getElementById('diceHistoryContent');
+            historyContent.innerHTML = '<div style="color: #888; font-style: italic;">No rolls yet...</div>';
         }
 
         // Event listeners
@@ -2422,17 +3691,6 @@ func (gs *GameServer) handleIndex(w http.ResponseWriter, r *http.Request) {
         document.getElementById('confirmArmy').onclick = confirmArmy;
         
         // Add difficulty button listeners
-        document.querySelectorAll('.difficulty-btn').forEach(btn => {
-            btn.onclick = function() {
-                // Remove selection from other buttons
-                document.querySelectorAll('.difficulty-btn').forEach(b => b.classList.remove('selected'));
-                // Add selection to clicked button
-                this.classList.add('selected');
-                // Select difficulty
-                selectAIDifficulty(this.getAttribute('data-difficulty'));
-            };
-        });
-
         // Start the application
         loadSavedName();
         connect();

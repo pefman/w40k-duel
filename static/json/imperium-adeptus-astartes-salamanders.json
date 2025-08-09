@@ -157,6 +157,144 @@
           "typeid": "51b2-306e-1021-d207",
           "value": "85"
         }
+      ],
+      "weapons": [
+        {
+          "name": "Drakkis",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "12\""
+            },
+            {
+              "name": "A",
+              "value": "D6+3"
+            },
+            {
+              "name": "BS",
+              "value": "N/A"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Ignores Cover, Pistol, Torrent"
+            }
+          ]
+        },
+        {
+          "name": "Drakkis",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "12\""
+            },
+            {
+              "name": "A",
+              "value": "D6+3"
+            },
+            {
+              "name": "BS",
+              "value": "N/A"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Ignores Cover, Pistol, Torrent"
+            }
+          ]
+        },
+        {
+          "name": "Malleus Noctum",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "5"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "10"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "3"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "Malleus Noctum",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "5"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "10"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "3"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
       ]
     },
     {
@@ -198,6 +336,42 @@
             }
           ]
         }
+      ],
+      "weapons": [
+        {
+          "name": "Drakkis",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "12\""
+            },
+            {
+              "name": "A",
+              "value": "D6+3"
+            },
+            {
+              "name": "BS",
+              "value": "N/A"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Ignores Cover, Pistol, Torrent"
+            }
+          ]
+        }
       ]
     },
     {
@@ -205,6 +379,42 @@
       "name": "Malleus Noctum",
       "type": "upgrade",
       "profiles": [
+        {
+          "name": "Malleus Noctum",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "5"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "10"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "3"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
+      ],
+      "weapons": [
         {
           "name": "Malleus Noctum",
           "type": "Melee Weapons",
@@ -407,6 +617,144 @@
           "typeid": "51b2-306e-1021-d207",
           "value": "100"
         }
+      ],
+      "weapons": [
+        {
+          "name": "Gauntlet of the Forge",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "12\""
+            },
+            {
+              "name": "A",
+              "value": "D6+3"
+            },
+            {
+              "name": "BS",
+              "value": "N/A"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Ignores Cover, Torrent"
+            }
+          ]
+        },
+        {
+          "name": "Gauntlet of the Forge",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "12\""
+            },
+            {
+              "name": "A",
+              "value": "D6+3"
+            },
+            {
+              "name": "BS",
+              "value": "N/A"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Ignores Cover, Torrent"
+            }
+          ]
+        },
+        {
+          "name": "Spear of Vulkan",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "6"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "Spear of Vulkan",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "6"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
       ]
     },
     {
@@ -448,6 +796,42 @@
             }
           ]
         }
+      ],
+      "weapons": [
+        {
+          "name": "Gauntlet of the Forge",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "12\""
+            },
+            {
+              "name": "A",
+              "value": "D6+3"
+            },
+            {
+              "name": "BS",
+              "value": "N/A"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Ignores Cover, Torrent"
+            }
+          ]
+        }
       ]
     },
     {
@@ -455,6 +839,42 @@
       "name": "Spear of Vulkan",
       "type": "upgrade",
       "profiles": [
+        {
+          "name": "Spear of Vulkan",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "6"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
+      ],
+      "weapons": [
         {
           "name": "Spear of Vulkan",
           "type": "Melee Weapons",
@@ -647,6 +1067,144 @@
           "typeid": "51b2-306e-1021-d207",
           "value": "85"
         }
+      ],
+      "weapons": [
+        {
+          "name": "Drakkis",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "12\""
+            },
+            {
+              "name": "A",
+              "value": "D6+3"
+            },
+            {
+              "name": "BS",
+              "value": "N/A"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Ignores Cover, Pistol, Torrent"
+            }
+          ]
+        },
+        {
+          "name": "Drakkis",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "12\""
+            },
+            {
+              "name": "A",
+              "value": "D6+3"
+            },
+            {
+              "name": "BS",
+              "value": "N/A"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Ignores Cover, Pistol, Torrent"
+            }
+          ]
+        },
+        {
+          "name": "Malleus Noctum",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "5"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "10"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "3"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "Malleus Noctum",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "5"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "10"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "3"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
       ]
     },
     {
@@ -814,6 +1372,144 @@
           "name": "pts",
           "typeid": "51b2-306e-1021-d207",
           "value": "100"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "Gauntlet of the Forge",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "12\""
+            },
+            {
+              "name": "A",
+              "value": "D6+3"
+            },
+            {
+              "name": "BS",
+              "value": "N/A"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Ignores Cover, Torrent"
+            }
+          ]
+        },
+        {
+          "name": "Gauntlet of the Forge",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "12\""
+            },
+            {
+              "name": "A",
+              "value": "D6+3"
+            },
+            {
+              "name": "BS",
+              "value": "N/A"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Ignores Cover, Torrent"
+            }
+          ]
+        },
+        {
+          "name": "Spear of Vulkan",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "6"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "Spear of Vulkan",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "6"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
         }
       ]
     }

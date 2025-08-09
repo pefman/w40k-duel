@@ -89,18 +89,43 @@ func (gs *GameServer) handleMessage(player *Player, msg map[string]interface{}) 
 		gs.selectAttackingUnit(player, unitName, weaponName)
 	case "submit_hit_rolls":
 		rolls, _ := msg["rolls"].([]interface{})
+		log.Printf("DEBUG: Received hit rolls from %s: %v", player.Name, rolls)
 		gs.submitHitRolls(player, rolls)
 	case "submit_wound_rolls":
 		rolls, _ := msg["rolls"].([]interface{})
+		log.Printf("DEBUG: Received wound rolls from %s: %v", player.Name, rolls)
 		gs.submitWoundRolls(player, rolls)
 	case "submit_save_rolls":
 		rolls, _ := msg["rolls"].([]interface{})
+		log.Printf("DEBUG: Received save rolls from %s: %v", player.Name, rolls)
 		gs.submitSaveRolls(player, rolls)
 	case "start_attack":
-		log.Printf("Received start_attack message from player %s", player.Name)
+		log.Printf("DEBUG: Received start_attack message from player %s", player.Name)
 		gs.startAttack(player)
 	case "roll_hit", "roll_wound", "roll_save":
+		log.Printf("DEBUG: Received manual dice roll request: %s from %s", msgType, player.Name)
 		gs.handleManualDiceRoll(player, msgType)
+	case "roll_save_weapon":
+		log.Printf("DEBUG: Received individual weapon save roll request from %s", player.Name)
+		var weaponIndex int
+		var woundCount int
+		var weaponName string
+		if val, ok := msg["weapon_index"]; ok {
+			if f, ok := val.(float64); ok {
+				weaponIndex = int(f)
+			}
+		}
+		if val, ok := msg["wound_count"]; ok {
+			if f, ok := val.(float64); ok {
+				woundCount = int(f)
+			}
+		}
+		if val, ok := msg["weapon_name"]; ok {
+			if s, ok := val.(string); ok {
+				weaponName = s
+			}
+		}
+		gs.handleWeaponSaveRoll(player, weaponIndex, woundCount, weaponName)
 	}
 }
 

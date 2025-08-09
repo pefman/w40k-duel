@@ -167,6 +167,144 @@
           "typeid": "51b2-306e-1021-d207",
           "value": "100"
         }
+      ],
+      "weapons": [
+        {
+          "name": "Blackout",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "18\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Pistol, Precision"
+            }
+          ]
+        },
+        {
+          "name": "Blackout",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "18\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Pistol, Precision"
+            }
+          ]
+        },
+        {
+          "name": "The Raven's Talons",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "7"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Precision, Twin-linked"
+            }
+          ]
+        },
+        {
+          "name": "The Raven's Talons",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "7"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Precision, Twin-linked"
+            }
+          ]
+        }
       ]
     },
     {
@@ -208,6 +346,42 @@
             }
           ]
         }
+      ],
+      "weapons": [
+        {
+          "name": "Blackout",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "18\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Pistol, Precision"
+            }
+          ]
+        }
       ]
     },
     {
@@ -215,6 +389,42 @@
       "name": "The Raven's Talons",
       "type": "upgrade",
       "profiles": [
+        {
+          "name": "The Raven's Talons",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "7"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Precision, Twin-linked"
+            }
+          ]
+        }
+      ],
+      "weapons": [
         {
           "name": "The Raven's Talons",
           "type": "Melee Weapons",
@@ -416,6 +626,144 @@
           "name": "pts",
           "typeid": "51b2-306e-1021-d207",
           "value": "100"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "Blackout",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "18\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Pistol, Precision"
+            }
+          ]
+        },
+        {
+          "name": "Blackout",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "18\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Pistol, Precision"
+            }
+          ]
+        },
+        {
+          "name": "The Raven's Talons",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "7"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Precision, Twin-linked"
+            }
+          ]
+        },
+        {
+          "name": "The Raven's Talons",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "7"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Precision, Twin-linked"
+            }
+          ]
         }
       ]
     }

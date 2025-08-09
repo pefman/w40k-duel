@@ -12,20 +12,32 @@ func (gs *GameServer) startBattle(match *Match) {
 	match.Player1.Status = "rolling_initiative"
 	match.Player2.Status = "rolling_initiative"
 
-	log.Printf("Battle started: %s vs %s - Rolling for initiative", match.Player1.Name, match.Player2.Name)
+	log.Printf("Battle started: %s vs %s - Rolling for initiative (Battle ID: %s)", match.Player1.Name, match.Player2.Name, match.BattleID)
+
+	// Initialize army health tracking
+	match.Player1.RemainingWounds = gs.calculateTotalWounds(match.Player1.Army, match.Player1.Faction)
+	match.Player2.RemainingWounds = gs.calculateTotalWounds(match.Player2.Army, match.Player2.Faction)
 
 	// Both players need to roll D6 for initiative
 	gs.sendToPlayer(match.Player1, map[string]interface{}{
-		"type":     "battle_started",
-		"opponent": match.Player2.Name,
-		"phase":    "initiative",
-		"message":  "Battle begins! Roll D6 for initiative - highest goes first!",
+		"type":             "battle_started",
+		"battle_id":        match.BattleID,
+		"opponent":         match.Player2.Name,
+		"opponent_faction": match.Player2.Faction,
+		"phase":            "initiative",
+		"message":          "Battle begins! Roll D6 for initiative - highest goes first!",
+		"your_wounds":      match.Player1.RemainingWounds,
+		"enemy_wounds":     match.Player2.RemainingWounds,
 	})
 	gs.sendToPlayer(match.Player2, map[string]interface{}{
-		"type":     "battle_started",
-		"opponent": match.Player1.Name,
-		"phase":    "initiative",
-		"message":  "Battle begins! Roll D6 for initiative - highest goes first!",
+		"type":             "battle_started",
+		"battle_id":        match.BattleID,
+		"opponent":         match.Player1.Name,
+		"opponent_faction": match.Player1.Faction,
+		"phase":            "initiative",
+		"message":          "Battle begins! Roll D6 for initiative - highest goes first!",
+		"your_wounds":      match.Player2.RemainingWounds,
+		"enemy_wounds":     match.Player1.RemainingWounds,
 	})
 
 	// If either player is AI, handle their initiative roll automatically
@@ -38,10 +50,6 @@ func (gs *GameServer) startBattle(match *Match) {
 }
 
 func (gs *GameServer) simulateCombat(match *Match) {
-	// Initialize army health tracking
-	match.Player1.RemainingWounds = gs.calculateTotalWounds(match.Player1.Army, match.Player1.Faction)
-	match.Player2.RemainingWounds = gs.calculateTotalWounds(match.Player2.Army, match.Player2.Faction)
-
 	round := 1
 
 	// Turn-based combat loop
@@ -75,7 +83,7 @@ func (gs *GameServer) rollDice(player *Player, dice int) {
 	result := rand.Intn(dice) + 1
 
 	// Check if we're in initiative phase
-	if match, exists := gs.matches[player.MatchID]; exists && match.State == "initiative" && dice == 6 {
+	if match, exists := gs.matches[player.MatchID]; exists && match.State == "initiative" {
 		gs.handleInitiativeRoll(player, result, match)
 		return
 	}
@@ -115,7 +123,7 @@ func (gs *GameServer) handleInitiativeRoll(player *Player, result int, match *Ma
 		match.Player2InitiativeSet = true
 	}
 
-	// Send roll result to both players
+	// Send roll result to both players immediately
 	gs.sendToPlayer(match.Player1, map[string]interface{}{
 		"type":        "initiative_roll",
 		"player_name": player.Name,
@@ -129,7 +137,11 @@ func (gs *GameServer) handleInitiativeRoll(player *Player, result int, match *Ma
 
 	// Check if both players have rolled
 	if match.Player1InitiativeSet && match.Player2InitiativeSet {
-		gs.resolveInitiative(match)
+		// Add a delay before resolving initiative to let players see both rolls
+		go func() {
+			time.Sleep(2 * time.Second)
+			gs.resolveInitiative(match)
+		}()
 	}
 }
 
@@ -210,6 +222,16 @@ func (gs *GameServer) resolveInitiative(match *Match) {
 
 	log.Printf("Initiative resolved: %s goes first", winner.Name)
 
+	// Initialize army wound tracking before combat starts
+	if match.Player1.RemainingWounds == 0 {
+		match.Player1.RemainingWounds = gs.calculateTotalWounds(match.Player1.Army, match.Player1.Faction)
+		log.Printf("WOUND INIT: %s army has %d total wounds", match.Player1.Name, match.Player1.RemainingWounds)
+	}
+	if match.Player2.RemainingWounds == 0 {
+		match.Player2.RemainingWounds = gs.calculateTotalWounds(match.Player2.Army, match.Player2.Faction)
+		log.Printf("WOUND INIT: %s army has %d total wounds", match.Player2.Name, match.Player2.RemainingWounds)
+	}
+
 	// Start the combat phase after a short delay
 	go func() {
 		time.Sleep(2 * time.Second) // Give players time to read the initiative result
@@ -235,11 +257,11 @@ func (gs *GameServer) calculateTotalWounds(army []UnitSelection, faction string)
 func (gs *GameServer) startCombatPhase(match *Match, attacker *Player, defender *Player) {
 	match.State = "combat_phase"
 	match.CurrentPlayer = attacker
-	
-	log.Printf("COMBAT PHASE START: %s attacking %s (Attacker: %d wounds, Defender: %d wounds)", 
-		attacker.Name, defender.Name, attacker.RemainingWounds, defender.RemainingWounds)
-	
-	match.Log = append(match.Log, fmt.Sprintf("⚔️ %s's turn to attack! (%d wounds vs %d wounds)", 
+
+	log.Printf("COMBAT PHASE START: %s attacking %s (Attacker: %d wounds, Defender: %d wounds) - Battle ID: %s",
+		attacker.Name, defender.Name, attacker.RemainingWounds, defender.RemainingWounds, match.BattleID)
+
+	match.Log = append(match.Log, fmt.Sprintf("⚔️ %s's turn to attack! (%d wounds vs %d wounds)",
 		attacker.Name, attacker.RemainingWounds, defender.RemainingWounds))
 
 	// Check if attacker has weapons
@@ -277,9 +299,11 @@ func (gs *GameServer) startCombatPhase(match *Match, attacker *Player, defender 
 // sendCombatStartMessage sends the initial combat start message without auto-executing
 func (gs *GameServer) sendCombatStartMessage(match *Match, attacker *Player, defender *Player) {
 	gs.sendToPlayer(attacker, map[string]interface{}{
-		"type":    "combat_start",
-		"phase":   "attacking",
-		"message": "YOUR TURN - Attack!",
+		"type":         "combat_start",
+		"phase":        "attacking",
+		"message":      fmt.Sprintf("YOUR TURN - Attack! (You: %d wounds, Enemy: %d wounds)", attacker.RemainingWounds, defender.RemainingWounds),
+		"your_wounds":  attacker.RemainingWounds,
+		"enemy_wounds": defender.RemainingWounds,
 		"combat_info": map[string]interface{}{
 			"sequence": []string{
 				"1. Choose attacks → 2. Roll to hit → 3. Roll to wound → 4. Opponent rolls saves",
@@ -288,9 +312,11 @@ func (gs *GameServer) sendCombatStartMessage(match *Match, attacker *Player, def
 	})
 
 	gs.sendToPlayer(defender, map[string]interface{}{
-		"type":    "combat_start",
-		"phase":   "defending",
-		"message": fmt.Sprintf("%s is attacking! Prepare to roll saves.", attacker.Name),
+		"type":         "combat_start",
+		"phase":        "defending",
+		"message":      fmt.Sprintf("%s is attacking! Prepare to roll saves. (You: %d wounds, Enemy: %d wounds)", attacker.Name, defender.RemainingWounds, attacker.RemainingWounds),
+		"your_wounds":  defender.RemainingWounds,
+		"enemy_wounds": attacker.RemainingWounds,
 		"combat_info": map[string]interface{}{
 			"sequence": []string{
 				"1. Choose attacks → 2. Roll to hit → 3. Roll to wound → 4. Opponent rolls saves",
@@ -473,8 +499,17 @@ func (gs *GameServer) executeAttackPhase(match *Match, attacker *Player, defende
 
 			totalWeapons++
 
-			// Get defender toughness (simplified)
+			// Get defender toughness and armor save from first defending unit (simplified)
 			defenderToughness := 4
+			defenderArmorSave := 4
+			if len(defender.Army) > 0 {
+				defenderUnitData := findUnitOptimized(defender.Faction, defender.Army[0].UnitName)
+				if defenderUnitData != nil {
+					defenderToughness = parseStatValue(defenderUnitData.Toughness)
+					defenderArmorSave = parseStatValue(defenderUnitData.Save)
+				}
+			}
+
 			strengthValue := parseStatValue(weapon.Strength)
 			if strengthValue == 0 {
 				strengthValue = parseStatValue(unitData.Strength)
@@ -490,9 +525,9 @@ func (gs *GameServer) executeAttackPhase(match *Match, attacker *Player, defende
 				"ap":           parseStatValue(weapon.AP),
 				"damage":       parseStatValue(weapon.Damage),
 				"toughness":    defenderToughness,
-				"armor_save":   4, // Default, should get from defender
+				"armor_save":   defenderArmorSave,
 				"wound_target": gs.calculateWoundThreshold(strengthValue, defenderToughness),
-				"save_target":  4 + parseStatValue(weapon.AP), // armor + AP
+				"save_target":  max(1, defenderArmorSave-parseStatValue(weapon.AP)), // armor_save - AP, minimum 1+ (auto-fail on 1)
 				"completed":    false,
 				"hit_rolls":    []int{},
 				"wound_rolls":  []int{},
@@ -639,9 +674,9 @@ func (gs *GameServer) nextTurn(match *Match) {
 		match.CurrentPlayer = match.Player1
 	}
 
-	log.Printf("TURN CHANGE: %s → %s (P1: %d wounds, P2: %d wounds)", 
+	log.Printf("TURN CHANGE: %s → %s (P1: %d wounds, P2: %d wounds)",
 		oldPlayer, match.CurrentPlayer.Name, match.Player1.RemainingWounds, match.Player2.RemainingWounds)
-	
+
 	// Add turn change to battle log
 	match.Log = append(match.Log, fmt.Sprintf("🔄 Turn switches to %s", match.CurrentPlayer.Name))
 
@@ -652,7 +687,7 @@ func (gs *GameServer) nextTurn(match *Match) {
 	}
 
 	log.Printf("STARTING TURN: %s (attacker) vs %s (defender)", match.CurrentPlayer.Name, defender.Name)
-	
+
 	gs.startCombatPhase(match, match.CurrentPlayer, defender)
 }
 
@@ -1018,11 +1053,11 @@ func (gs *GameServer) processHitPhase(match *Match, weapon map[string]interface{
 	}
 	match.AttackHistory = append(match.AttackHistory, historyEntry)
 
-	log.Printf("COMBAT HIT: %s's %s rolled %v (need %d+) → %d hits", 
+	log.Printf("COMBAT HIT: %s's %s rolled %v (need %d+) → %d hits",
 		match.CurrentPlayer.Name, weapon["weapon_name"], hitRolls, hitOn, hits)
-	
+
 	// Add to battle log
-	match.Log = append(match.Log, fmt.Sprintf("🎯 %s's %s: %d hits from %d attacks", 
+	match.Log = append(match.Log, fmt.Sprintf("🎯 %s's %s: %d hits from %d attacks",
 		match.CurrentPlayer.Name, weapon["weapon_name"], hits, len(hitRolls)))
 
 	// Send results to both players
@@ -1084,25 +1119,26 @@ func (gs *GameServer) processWoundPhase(match *Match, weapon map[string]interfac
 
 	// Add to attack history
 	historyEntry := map[string]interface{}{
-		"weapon_name": weapon["weapon_name"],
-		"unit_name":   weapon["unit_name"],
-		"phase":       "wound",
-		"rolls":       woundRolls,
-		"target":      woundOn,
-		"successes":   wounds,
-		"message":     fmt.Sprintf("Wound rolls (S%d vs T%d, need %d+): %v → %d wounds", weapon["strength"], weapon["toughness"], woundOn, woundRolls, wounds),
+		"weapon_name":  weapon["weapon_name"],
+		"unit_name":    weapon["unit_name"],
+		"phase":        "wound",
+		"rolls":        woundRolls,
+		"target":       woundOn,
+		"successes":    wounds,
+		"weapon_index": match.CurrentWeaponIndex,
+		"message":      fmt.Sprintf("Wound rolls (S%d vs T%d, need %d+): %v → %d wounds", weapon["strength"], weapon["toughness"], woundOn, woundRolls, wounds),
 	}
 	match.AttackHistory = append(match.AttackHistory, historyEntry)
 
-	log.Printf("COMBAT WOUND: %s's %s rolled %v (need %d+) → %d wounds", 
+	log.Printf("COMBAT WOUND: %s's %s rolled %v (need %d+) → %d wounds",
 		match.CurrentPlayer.Name, weapon["weapon_name"], woundRolls, woundOn, wounds)
-	
+
 	// Add to battle log
 	if wounds > 0 {
-		match.Log = append(match.Log, fmt.Sprintf("💥 %s's %s: %d wounds caused", 
+		match.Log = append(match.Log, fmt.Sprintf("💥 %s's %s: %d wounds caused",
 			match.CurrentPlayer.Name, weapon["weapon_name"], wounds))
 	} else {
-		match.Log = append(match.Log, fmt.Sprintf("🛡️ %s's %s: No wounds caused", 
+		match.Log = append(match.Log, fmt.Sprintf("🛡️ %s's %s: No wounds caused",
 			match.CurrentPlayer.Name, weapon["weapon_name"]))
 	}
 
@@ -1202,15 +1238,49 @@ func (gs *GameServer) processSavePhase(match *Match, weapon map[string]interface
 	if match.Player1 != match.CurrentPlayer {
 		defender = match.Player1
 	}
-	
-	log.Printf("COMBAT: %s's %s dealing %d damage to %s (was %d wounds, will be %d wounds)", 
-		match.CurrentPlayer.Name, weapon["weapon_name"], totalDamage, defender.Name, 
+
+	log.Printf("COMBAT: %s's %s dealing %d damage to %s (was %d wounds, will be %d wounds)",
+		match.CurrentPlayer.Name, weapon["weapon_name"], totalDamage, defender.Name,
 		defender.RemainingWounds, max(0, defender.RemainingWounds-totalDamage))
-	
-	match.Log = append(match.Log, fmt.Sprintf("🎯 %s's %s: %d unsaved wounds → %d damage dealt", 
+
+	match.Log = append(match.Log, fmt.Sprintf("🎯 %s's %s: %d unsaved wounds → %d damage dealt",
 		match.CurrentPlayer.Name, weapon["weapon_name"], unsavedWounds, totalDamage))
 
-	// Send results to both players
+	// Apply damage immediately for real-time updates
+	if totalDamage > 0 {
+		oldWounds := defender.RemainingWounds
+		defender.RemainingWounds = max(0, defender.RemainingWounds-totalDamage)
+		log.Printf("IMMEDIATE DAMAGE: %s lost %d wounds (%d → %d) from %s",
+			defender.Name, totalDamage, oldWounds, defender.RemainingWounds, weapon["weapon_name"])
+
+		// Check if defender is destroyed
+		if defender.RemainingWounds <= 0 {
+			attacker := match.CurrentPlayer
+			log.Printf("BATTLE END: %s destroyed by %s's %s! %s wins",
+				defender.Name, attacker.Name, weapon["weapon_name"], attacker.Name)
+			match.State = "finished"
+			match.Winner = attacker.Name
+			match.Log = append(match.Log, fmt.Sprintf("🏆 %s wins! %s's army has been destroyed by %s!",
+				attacker.Name, defender.Name, weapon["weapon_name"]))
+
+			// Send battle finished messages
+			gs.sendToPlayer(attacker, map[string]interface{}{
+				"type":    "battle_finished",
+				"winner":  attacker.Name,
+				"message": fmt.Sprintf("🏆 Victory! Your %s destroyed %s's army!", weapon["weapon_name"], defender.Name),
+				"log":     match.Log,
+			})
+			gs.sendToPlayer(defender, map[string]interface{}{
+				"type":    "battle_finished",
+				"winner":  attacker.Name,
+				"message": fmt.Sprintf("💀 Defeat! Your army was destroyed by %s's %s!", attacker.Name, weapon["weapon_name"]),
+				"log":     match.Log,
+			})
+			return
+		}
+	}
+
+	// Send results to both players with immediate wound updates
 	attacker := match.CurrentPlayer
 	if match.Player1 == attacker {
 		defender = match.Player2
@@ -1224,6 +1294,7 @@ func (gs *GameServer) processSavePhase(match *Match, weapon map[string]interface
 		"attack_history":   match.AttackHistory,
 		"current_weapon":   match.CurrentWeaponIndex,
 		"total_weapons":    len(match.AttackSequence),
+		"enemy_wounds":     defender.RemainingWounds,
 		"message":          fmt.Sprintf("Opponent %s", historyEntry["message"]),
 		"show_next_weapon": true,
 	})
@@ -1234,12 +1305,13 @@ func (gs *GameServer) processSavePhase(match *Match, weapon map[string]interface
 		"attack_history": match.AttackHistory,
 		"current_weapon": match.CurrentWeaponIndex,
 		"total_weapons":  len(match.AttackSequence),
+		"your_wounds":    defender.RemainingWounds,
 		"message":        historyEntry["message"],
 	})
 
 	// Always move to next weapon after saves
 	gs.nextWeapon(match)
-	
+
 	// Check if current player is AI and continue their attack sequence
 	if match.CurrentPlayer.IsAI && match.State == "manual_dice_rolling" {
 		log.Printf("DEBUG: Resuming AI attack sequence after save phase")
@@ -1311,21 +1383,16 @@ func (gs *GameServer) finishManualAttackPhase(match *Match) {
 	}
 
 	// Apply damage to defender's wounds
-	log.Printf("DAMAGE APPLICATION: %s applying %d total damage to %s (current wounds: %d)", 
+	log.Printf("TURN SUMMARY: %s's attack phase complete with %d total damage to %s (current wounds: %d)",
 		attacker.Name, totalDamage, defender.Name, defender.RemainingWounds)
-	
-	// Apply the damage
-	oldWounds := defender.RemainingWounds
-	defender.RemainingWounds = max(0, defender.RemainingWounds-totalDamage)
-	
-	// Log the wound change
-	woundsLost := oldWounds - defender.RemainingWounds
-	log.Printf("WOUNDS UPDATE: %s lost %d wounds (%d → %d)", defender.Name, woundsLost, oldWounds, defender.RemainingWounds)
-	
+
+	// Note: Damage has already been applied per weapon in processSavePhase
+	// So we don't apply it again here to avoid double damage
+
 	// Add comprehensive battle log entry
 	match.Log = append(match.Log, fmt.Sprintf("💥 %s's assault complete: %d total damage dealt", attacker.Name, totalDamage))
-	if woundsLost > 0 {
-		match.Log = append(match.Log, fmt.Sprintf("🩸 %s suffers %d wounds (%d remaining)", defender.Name, woundsLost, defender.RemainingWounds))
+	if totalDamage > 0 {
+		match.Log = append(match.Log, fmt.Sprintf("🩸 %s suffers %d total damage (%d wounds remaining)", defender.Name, totalDamage, defender.RemainingWounds))
 	} else {
 		match.Log = append(match.Log, fmt.Sprintf("🛡️ %s takes no damage (%d wounds remaining)", defender.Name, defender.RemainingWounds))
 	}
@@ -1380,4 +1447,218 @@ func (gs *GameServer) finishManualAttackPhase(match *Match) {
 	match.State = "battle"
 
 	gs.nextTurn(match)
+}
+
+// handleWeaponSaveRoll handles save rolls for a specific weapon
+func (gs *GameServer) handleWeaponSaveRoll(player *Player, weaponIndex int, woundCount int, weaponName string) {
+	log.Printf("DEBUG: handleWeaponSaveRoll called for player %s, weapon index %d, %d wounds, weapon: %s",
+		player.Name, weaponIndex, woundCount, weaponName)
+
+	// Find the match for this player
+	var match *Match
+	for _, m := range gs.matches {
+		if (m.Player1 == player || m.Player2 == player) && m.State == "manual_dice_rolling" {
+			match = m
+			break
+		}
+	}
+
+	if match == nil {
+		log.Printf("No match found for weapon save rolling for player %s", player.ID)
+		return
+	}
+
+	// Verify this is the defending player
+	var defender *Player
+	if match.CurrentPlayer == match.Player1 {
+		defender = match.Player2
+	} else {
+		defender = match.Player1
+	}
+
+	if defender != player {
+		log.Printf("Player %s tried to roll saves but they are not the defender", player.ID)
+		return
+	}
+
+	// Find the weapon in the attack history that matches this weapon index
+	weaponFound := false
+	var currentWeapon map[string]interface{}
+
+	// First, try to find by weapon index in AttackSequence
+	if weaponIndex >= 0 && weaponIndex < len(match.AttackSequence) {
+		currentWeapon = match.AttackSequence[weaponIndex]
+
+		// Verify this weapon actually caused wounds by checking attack history
+		for _, entry := range match.AttackHistory {
+			if entry["phase"] == "wound" &&
+				entry["weapon_name"] == currentWeapon["weapon_name"] &&
+				entry["successes"].(int) > 0 {
+				weaponFound = true
+				break
+			}
+		}
+	}
+
+	// If not found by index, try to find by weapon name
+	if !weaponFound {
+		log.Printf("Weapon index %d not found, trying to match by name: %s", weaponIndex, weaponName)
+		for _, weapon := range match.AttackSequence {
+			if weapon["weapon_name"] == weaponName {
+				// Verify this weapon actually caused wounds
+				for _, entry := range match.AttackHistory {
+					if entry["phase"] == "wound" &&
+						entry["weapon_name"] == weaponName &&
+						entry["successes"].(int) > 0 {
+						currentWeapon = weapon
+						weaponFound = true
+						break
+					}
+				}
+				if weaponFound {
+					break
+				}
+			}
+		}
+	}
+
+	if !weaponFound || currentWeapon == nil {
+		log.Printf("Could not find weapon for index %d, name %s", weaponIndex, weaponName)
+		return
+	}
+
+	// Process the save for this specific weapon
+	gs.processIndividualWeaponSave(match, currentWeapon, woundCount, weaponIndex, weaponName)
+}
+
+// processIndividualWeaponSave processes save rolls for a single weapon
+func (gs *GameServer) processIndividualWeaponSave(match *Match, weapon map[string]interface{}, wounds int, weaponIndex int, weaponName string) {
+	saveOn := weapon["save_target"].(int)
+
+	// Roll save dice for this weapon only
+	saveRolls := make([]int, wounds)
+	saves := 0
+	for i := 0; i < wounds; i++ {
+		roll := rand.Intn(6) + 1
+		saveRolls[i] = roll
+		if roll >= saveOn {
+			saves++
+		}
+	}
+
+	unsavedWounds := wounds - saves
+	damage := weapon["damage"].(int)
+	totalDamage := unsavedWounds * damage
+
+	// Update weapon data to mark as processed
+	weapon["save_rolls"] = saveRolls
+	weapon["saves"] = saves
+	weapon["damage_dealt"] = totalDamage
+	weapon["save_completed"] = true
+
+	// Add to attack history
+	historyEntry := map[string]interface{}{
+		"weapon_name":    weaponName,
+		"unit_name":      weapon["unit_name"],
+		"phase":          "save",
+		"rolls":          saveRolls,
+		"target":         saveOn,
+		"successes":      saves,
+		"unsaved_wounds": unsavedWounds,
+		"damage":         totalDamage,
+		"weapon_index":   weaponIndex,
+		"message":        fmt.Sprintf("Armor saves for %s (need %d+, AP-%d): %v → %d saves, %d unsaved wounds, %d damage", weaponName, saveOn, weapon["ap"], saveRolls, saves, unsavedWounds, totalDamage),
+	}
+	match.AttackHistory = append(match.AttackHistory, historyEntry)
+
+	// Apply damage immediately for this weapon
+	defender := match.Player2
+	if match.Player1 != match.CurrentPlayer {
+		defender = match.Player1
+	}
+
+	if totalDamage > 0 {
+		oldWounds := defender.RemainingWounds
+		defender.RemainingWounds = max(0, defender.RemainingWounds-totalDamage)
+		log.Printf("IMMEDIATE DAMAGE: %s lost %d wounds (%d → %d) from %s (Battle ID: %s)",
+			defender.Name, totalDamage, oldWounds, defender.RemainingWounds, weaponName, match.BattleID)
+	}
+
+	// Send individual save results first (before checking for battle end)
+	attacker := match.CurrentPlayer
+	gs.sendToPlayer(attacker, map[string]interface{}{
+		"type":           "individual_save_results",
+		"weapon":         weapon,
+		"weapon_index":   weaponIndex,
+		"attack_history": match.AttackHistory,
+		"current_weapon": match.CurrentWeaponIndex,
+		"total_weapons":  len(match.AttackSequence),
+		"enemy_wounds":   defender.RemainingWounds,
+		"message":        fmt.Sprintf("Opponent %s", historyEntry["message"]),
+	})
+
+	gs.sendToPlayer(defender, map[string]interface{}{
+		"type":           "individual_save_results",
+		"weapon":         weapon,
+		"weapon_index":   weaponIndex,
+		"attack_history": match.AttackHistory,
+		"current_weapon": match.CurrentWeaponIndex,
+		"total_weapons":  len(match.AttackSequence),
+		"your_wounds":    defender.RemainingWounds,
+		"message":        historyEntry["message"],
+	})
+
+	// Now check if defender is destroyed (after sending save results)
+	if defender.RemainingWounds <= 0 {
+		log.Printf("BATTLE END: %s destroyed by %s's %s! %s wins (Battle ID: %s)",
+			defender.Name, attacker.Name, weaponName, attacker.Name, match.BattleID)
+		match.State = "finished"
+		match.Winner = attacker.Name
+		match.Log = append(match.Log, fmt.Sprintf("🏆 %s wins! %s's army has been destroyed by %s!",
+			attacker.Name, defender.Name, weaponName))
+
+		// Send battle finished messages
+		gs.sendToPlayer(attacker, map[string]interface{}{
+			"type":    "battle_finished",
+			"winner":  attacker.Name,
+			"message": fmt.Sprintf("🏆 Victory! Your %s destroyed %s's army!", weaponName, defender.Name),
+			"log":     match.Log,
+		})
+		gs.sendToPlayer(defender, map[string]interface{}{
+			"type":    "battle_finished",
+			"winner":  attacker.Name,
+			"message": fmt.Sprintf("💀 Defeat! Your army was destroyed by %s's %s!", attacker.Name, weaponName),
+			"log":     match.Log,
+		})
+		return
+	}
+
+	// Check if all weapons have had their saves completed
+	allWeaponsComplete := true
+	for _, w := range match.AttackSequence {
+		weaponName := w["weapon_name"].(string)
+
+		// Check if this weapon caused wounds that need saves
+		needsSaves := false
+		for _, entry := range match.AttackHistory {
+			if entry["phase"] == "wound" && entry["weapon_name"] == weaponName && entry["successes"].(int) > 0 {
+				needsSaves = true
+				break
+			}
+		}
+
+		// If this weapon needs saves but doesn't have save_completed flag, then not all weapons are complete
+		if needsSaves {
+			if saveCompleted, exists := w["save_completed"]; !exists || !saveCompleted.(bool) {
+				allWeaponsComplete = false
+				log.Printf("Weapon %s still needs saves to be completed", weaponName)
+				break
+			}
+		}
+	}
+
+	if allWeaponsComplete {
+		log.Printf("All weapon saves completed, finishing attack phase")
+		gs.finishManualAttackPhase(match)
+	}
 }

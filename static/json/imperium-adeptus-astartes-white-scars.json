@@ -126,6 +126,76 @@
           "typeid": "51b2-306e-1021-d207",
           "value": "70"
         }
+      ],
+      "weapons": [
+        {
+          "name": "Moonfang",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "6"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Devastating Wounds, Precision"
+            }
+          ]
+        },
+        {
+          "name": "Moonfang",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "6"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Devastating Wounds, Precision"
+            }
+          ]
+        }
       ]
     },
     {
@@ -133,6 +203,42 @@
       "name": "Moonfang",
       "type": "upgrade",
       "profiles": [
+        {
+          "name": "Moonfang",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "6"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Devastating Wounds, Precision"
+            }
+          ]
+        }
+      ],
+      "weapons": [
         {
           "name": "Moonfang",
           "type": "Melee Weapons",
@@ -293,6 +399,76 @@
           "name": "pts",
           "typeid": "51b2-306e-1021-d207",
           "value": "70"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "Moonfang",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "6"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Devastating Wounds, Precision"
+            }
+          ]
+        },
+        {
+          "name": "Moonfang",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "6"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Devastating Wounds, Precision"
+            }
+          ]
         }
       ]
     }

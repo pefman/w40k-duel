@@ -88,6 +88,234 @@
           "typeid": "51b2-306e-1021-d207",
           "value": "2200"
         }
+      ],
+      "selectionEntryGroups": [
+        {
+          "id": "9bab-d72b-c7bd-96c0",
+          "name": "Wargear",
+          "entries": [
+            {
+              "id": "775-8e7f-a4eb-e4e",
+              "name": "Reaver feet",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Reaver feet",
+                  "type": "Melee Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "Melee"
+                    },
+                    {
+                      "name": "A",
+                      "value": "8"
+                    },
+                    {
+                      "name": "WS",
+                      "value": "4+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "12"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-2"
+                    },
+                    {
+                      "name": "D",
+                      "value": "4"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "-"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "8abb-ddaf-f190-e721",
+              "name": "Reaver apocalypse launcher",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Reaver apocalypse launcher",
+                  "type": "Ranged Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "200\""
+                    },
+                    {
+                      "name": "A",
+                      "value": "3D6"
+                    },
+                    {
+                      "name": "BS",
+                      "value": "3+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "7"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-1"
+                    },
+                    {
+                      "name": "D",
+                      "value": "2"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "Blast, Indirect Fire"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "weapons": [
+        {
+          "name": "Reaver feet",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "8"
+            },
+            {
+              "name": "WS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "12"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "4"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "Reaver feet",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "8"
+            },
+            {
+              "name": "WS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "12"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "4"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "Reaver apocalypse launcher",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "200\""
+            },
+            {
+              "name": "A",
+              "value": "3D6"
+            },
+            {
+              "name": "BS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "7"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Blast, Indirect Fire"
+            }
+          ]
+        },
+        {
+          "name": "Reaver apocalypse launcher",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "200\""
+            },
+            {
+              "name": "A",
+              "value": "3D6"
+            },
+            {
+              "name": "BS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "7"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Blast, Indirect Fire"
+            }
+          ]
+        }
       ]
     },
     {
@@ -182,6 +410,343 @@
           "typeid": "51b2-306e-1021-d207",
           "value": "2600"
         }
+      ],
+      "selectionEntryGroups": [
+        {
+          "id": "30eb-02c8-78f2-8361",
+          "name": "Wargear",
+          "entries": [
+            {
+              "id": "53a4-e5ee-1fcd-b185",
+              "name": "Anvillus defence battery",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Anvillus defence battery",
+                  "type": "Ranged Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "72\""
+                    },
+                    {
+                      "name": "A",
+                      "value": "8"
+                    },
+                    {
+                      "name": "BS",
+                      "value": "3+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "8"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-1"
+                    },
+                    {
+                      "name": "D",
+                      "value": "2"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "Anti-FLY 4+"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "a867-ddd1-9352-ffe5",
+              "name": "Ardex-defensor mauler",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Ardex-defensor mauler",
+                  "type": "Ranged Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "36\""
+                    },
+                    {
+                      "name": "A",
+                      "value": "6"
+                    },
+                    {
+                      "name": "BS",
+                      "value": "3+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "6"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-2"
+                    },
+                    {
+                      "name": "D",
+                      "value": "2"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "-"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "d768-cb23-5cf0-b58",
+              "name": "Nemesis feet",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Nemesis feet",
+                  "type": "Melee Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "Melee"
+                    },
+                    {
+                      "name": "A",
+                      "value": "6"
+                    },
+                    {
+                      "name": "WS",
+                      "value": "4+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "12"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-2"
+                    },
+                    {
+                      "name": "D",
+                      "value": "4"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "-"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "weapons": [
+        {
+          "name": "Anvillus defence battery",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "72\""
+            },
+            {
+              "name": "A",
+              "value": "8"
+            },
+            {
+              "name": "BS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "8"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-FLY 4+"
+            }
+          ]
+        },
+        {
+          "name": "Anvillus defence battery",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "72\""
+            },
+            {
+              "name": "A",
+              "value": "8"
+            },
+            {
+              "name": "BS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "8"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-FLY 4+"
+            }
+          ]
+        },
+        {
+          "name": "Ardex-defensor mauler",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "36\""
+            },
+            {
+              "name": "A",
+              "value": "6"
+            },
+            {
+              "name": "BS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "Ardex-defensor mauler",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "36\""
+            },
+            {
+              "name": "A",
+              "value": "6"
+            },
+            {
+              "name": "BS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "Nemesis feet",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "6"
+            },
+            {
+              "name": "WS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "12"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "4"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "Nemesis feet",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "6"
+            },
+            {
+              "name": "WS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "12"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "4"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
       ]
     },
     {
@@ -266,6 +831,125 @@
           "typeid": "51b2-306e-1021-d207",
           "value": "1100"
         }
+      ],
+      "selectionEntryGroups": [
+        {
+          "id": "073f-b834-4bb7-983c",
+          "name": "Wargear",
+          "entries": [
+            {
+              "id": "f263-a026-6b8a-9ccb",
+              "name": "Warhound feet",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Warhound feet",
+                  "type": "Melee Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "Melee"
+                    },
+                    {
+                      "name": "A",
+                      "value": "8"
+                    },
+                    {
+                      "name": "WS",
+                      "value": "4+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "10"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-1"
+                    },
+                    {
+                      "name": "D",
+                      "value": "2"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "-"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "weapons": [
+        {
+          "name": "Warhound feet",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "8"
+            },
+            {
+              "name": "WS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "10"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "Warhound feet",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "8"
+            },
+            {
+              "name": "WS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "10"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
       ]
     },
     {
@@ -349,6 +1033,343 @@
           "name": "pts",
           "typeid": "51b2-306e-1021-d207",
           "value": "3500"
+        }
+      ],
+      "selectionEntryGroups": [
+        {
+          "id": "b4b1-10b8-0941-97d0",
+          "name": "Wargear",
+          "entries": [
+            {
+              "id": "a9c2-75a5-2fa0-3931",
+              "name": "Ardex-defensor lascannon",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Ardex-defensor lascannon",
+                  "type": "Ranged Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "48\""
+                    },
+                    {
+                      "name": "A",
+                      "value": "1"
+                    },
+                    {
+                      "name": "BS",
+                      "value": "3+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "12"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-3"
+                    },
+                    {
+                      "name": "D",
+                      "value": "D6+1"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "-"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "b401-e028-679b-7db3",
+              "name": "Ardex-defensor mauler",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Ardex-defensor mauler",
+                  "type": "Ranged Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "36\""
+                    },
+                    {
+                      "name": "A",
+                      "value": "6"
+                    },
+                    {
+                      "name": "BS",
+                      "value": "3+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "6"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-2"
+                    },
+                    {
+                      "name": "D",
+                      "value": "2"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "-"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "24ac-fd65-ee84-8e72",
+              "name": "Warlord feet",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Warlord feet",
+                  "type": "Melee Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "Melee"
+                    },
+                    {
+                      "name": "A",
+                      "value": "6"
+                    },
+                    {
+                      "name": "WS",
+                      "value": "4+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "12"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-2"
+                    },
+                    {
+                      "name": "D",
+                      "value": "4"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "-"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "weapons": [
+        {
+          "name": "Ardex-defensor lascannon",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "48\""
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "BS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "12"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "D6+1"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "Ardex-defensor lascannon",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "48\""
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "BS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "12"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "D6+1"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "Ardex-defensor mauler",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "36\""
+            },
+            {
+              "name": "A",
+              "value": "6"
+            },
+            {
+              "name": "BS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "Ardex-defensor mauler",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "36\""
+            },
+            {
+              "name": "A",
+              "value": "6"
+            },
+            {
+              "name": "BS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "Warlord feet",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "6"
+            },
+            {
+              "name": "WS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "12"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "4"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "Warlord feet",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "6"
+            },
+            {
+              "name": "WS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "12"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "4"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
         }
       ]
     },

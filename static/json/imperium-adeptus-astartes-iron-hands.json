@@ -218,6 +218,212 @@
           "typeid": "51b2-306e-1021-d207",
           "value": "95"
         }
+      ],
+      "weapons": [
+        {
+          "name": "Gorgon's Wrath",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "36\""
+            },
+            {
+              "name": "A",
+              "value": "3"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Sustained Hits 2"
+            }
+          ]
+        },
+        {
+          "name": "Gorgon's Wrath",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "36\""
+            },
+            {
+              "name": "A",
+              "value": "3"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Sustained Hits 2"
+            }
+          ]
+        },
+        {
+          "name": "Harrowhand",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "6"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "7"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "Harrowhand",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "6"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "7"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "Medusan Manipuli",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "8"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "3"
+            },
+            {
+              "name": "Keywords",
+              "value": "Extra Attacks"
+            }
+          ]
+        },
+        {
+          "name": "Medusan Manipuli",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "8"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "3"
+            },
+            {
+              "name": "Keywords",
+              "value": "Extra Attacks"
+            }
+          ]
+        }
       ]
     },
     {
@@ -225,6 +431,42 @@
       "name": "Gorgon's Wrath",
       "type": "upgrade",
       "profiles": [
+        {
+          "name": "Gorgon's Wrath",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "36\""
+            },
+            {
+              "name": "A",
+              "value": "3"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Sustained Hits 2"
+            }
+          ]
+        }
+      ],
+      "weapons": [
         {
           "name": "Gorgon's Wrath",
           "type": "Ranged Weapons",
@@ -300,6 +542,42 @@
             }
           ]
         }
+      ],
+      "weapons": [
+        {
+          "name": "Harrowhand",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "6"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "7"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
       ]
     },
     {
@@ -307,6 +585,42 @@
       "name": "Medusan Manipuli",
       "type": "upgrade",
       "profiles": [
+        {
+          "name": "Medusan Manipuli",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "8"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "3"
+            },
+            {
+              "name": "Keywords",
+              "value": "Extra Attacks"
+            }
+          ]
+        }
+      ],
+      "weapons": [
         {
           "name": "Medusan Manipuli",
           "type": "Melee Weapons",
@@ -559,6 +873,212 @@
           "name": "pts",
           "typeid": "51b2-306e-1021-d207",
           "value": "95"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "Gorgon's Wrath",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "36\""
+            },
+            {
+              "name": "A",
+              "value": "3"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Sustained Hits 2"
+            }
+          ]
+        },
+        {
+          "name": "Gorgon's Wrath",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "36\""
+            },
+            {
+              "name": "A",
+              "value": "3"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Sustained Hits 2"
+            }
+          ]
+        },
+        {
+          "name": "Harrowhand",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "6"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "7"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "Harrowhand",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "6"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "7"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "Medusan Manipuli",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "8"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "3"
+            },
+            {
+              "name": "Keywords",
+              "value": "Extra Attacks"
+            }
+          ]
+        },
+        {
+          "name": "Medusan Manipuli",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "8"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "3"
+            },
+            {
+              "name": "Keywords",
+              "value": "Extra Attacks"
+            }
+          ]
         }
       ]
     }

@@ -112,6 +112,125 @@
           "typeid": "716d-91b7-d55a-1022",
           "value": "0"
         }
+      ],
+      "selectionEntryGroups": [
+        {
+          "id": "62f3-00b6-6909-72f0",
+          "name": "Wargear",
+          "entries": [
+            {
+              "id": "ed2c-31b2-8f67-9f05",
+              "name": "Omnissian staff",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Omnissian staff",
+                  "type": "Melee Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "Melee"
+                    },
+                    {
+                      "name": "A",
+                      "value": "4"
+                    },
+                    {
+                      "name": "WS",
+                      "value": "3+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "6"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-1"
+                    },
+                    {
+                      "name": "D",
+                      "value": "2"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "-"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "weapons": [
+        {
+          "name": "Omnissian staff",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "4"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "Omnissian staff",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "4"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
       ]
     },
     {
@@ -196,6 +315,125 @@
           "typeid": "51b2-306e-1021-d207",
           "value": "35"
         }
+      ],
+      "selectionEntryGroups": [
+        {
+          "id": "fa65-a242-757c-1118",
+          "name": "Wargear",
+          "entries": [
+            {
+              "id": "4b2c-60bc-169c-ab71",
+              "name": "Control stave",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Control stave",
+                  "type": "Melee Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "Melee"
+                    },
+                    {
+                      "name": "A",
+                      "value": "4"
+                    },
+                    {
+                      "name": "WS",
+                      "value": "3+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "6"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-1"
+                    },
+                    {
+                      "name": "D",
+                      "value": "1"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "-"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "weapons": [
+        {
+          "name": "Control stave",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "4"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "Control stave",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "4"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
       ]
     },
     {
@@ -263,6 +501,62 @@
               "typeid": "51b2-306e-1021-d207",
               "value": "0"
             }
+          ],
+          "selectionEntryGroups": [
+            {
+              "id": "c6a2-e9ac-9e52-a8b2",
+              "name": "Ranged weapon",
+              "entries": [
+                {
+                  "id": "90fb-6049-048b-b4d2",
+                  "name": "Galvanic rifle",
+                  "type": "upgrade",
+                  "profiles": [
+                    {
+                      "name": "Galvanic rifle",
+                      "type": "Ranged Weapons",
+                      "lines": [
+                        {
+                          "name": "Range",
+                          "value": "30\""
+                        },
+                        {
+                          "name": "A",
+                          "value": "2"
+                        },
+                        {
+                          "name": "BS",
+                          "value": "4+"
+                        },
+                        {
+                          "name": "S",
+                          "value": "4"
+                        },
+                        {
+                          "name": "AP",
+                          "value": "0"
+                        },
+                        {
+                          "name": "D",
+                          "value": "1"
+                        },
+                        {
+                          "name": "Keywords",
+                          "value": "-"
+                        }
+                      ]
+                    }
+                  ],
+                  "costs": [
+                    {
+                      "name": "pts",
+                      "typeid": "51b2-306e-1021-d207",
+                      "value": "0"
+                    }
+                  ]
+                }
+              ]
+            }
           ]
         }
       ],
@@ -313,6 +607,1061 @@
           "name": "pts",
           "typeid": "51b2-306e-1021-d207",
           "value": "85"
+        }
+      ],
+      "selectionEntryGroups": [
+        {
+          "id": "24a0-5541-79b2-b1ff",
+          "name": "9 Skitarii Rangers",
+          "entries": [
+            {
+              "id": "22b3-9c84-0982-8627",
+              "name": "Skitarii Ranger w/ transuranic arquebus",
+              "type": "model",
+              "entries": [
+                {
+                  "id": "882-910a-c7c4-13b2",
+                  "name": "Transuranic arquebus",
+                  "type": "upgrade",
+                  "profiles": [
+                    {
+                      "name": "Transuranic arquebus",
+                      "type": "Ranged Weapons",
+                      "lines": [
+                        {
+                          "name": "Range",
+                          "value": "36\""
+                        },
+                        {
+                          "name": "A",
+                          "value": "1"
+                        },
+                        {
+                          "name": "BS",
+                          "value": "4+"
+                        },
+                        {
+                          "name": "S",
+                          "value": "7"
+                        },
+                        {
+                          "name": "AP",
+                          "value": "-2"
+                        },
+                        {
+                          "name": "D",
+                          "value": "D3"
+                        },
+                        {
+                          "name": "Keywords",
+                          "value": "Heavy, Precision"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "costs": [
+                {
+                  "name": "pts",
+                  "typeid": "51b2-306e-1021-d207",
+                  "value": "0"
+                }
+              ]
+            },
+            {
+              "id": "b93c-a0a7-1c46-66c4",
+              "name": "Skitarii Ranger w/ arc rifle",
+              "type": "model",
+              "entries": [
+                {
+                  "id": "a3ca-8ea1-d6de-8df2",
+                  "name": "Arc rifle",
+                  "type": "upgrade",
+                  "profiles": [
+                    {
+                      "name": "Arc rifle",
+                      "type": "Ranged Weapons",
+                      "lines": [
+                        {
+                          "name": "Range",
+                          "value": "30\""
+                        },
+                        {
+                          "name": "A",
+                          "value": "1"
+                        },
+                        {
+                          "name": "BS",
+                          "value": "4+"
+                        },
+                        {
+                          "name": "S",
+                          "value": "8"
+                        },
+                        {
+                          "name": "AP",
+                          "value": "-1"
+                        },
+                        {
+                          "name": "D",
+                          "value": "D3"
+                        },
+                        {
+                          "name": "Keywords",
+                          "value": "Anti-Vehicle 4+, Devastating Wounds, Rapid Fire 1"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "costs": [
+                {
+                  "name": "pts",
+                  "typeid": "51b2-306e-1021-d207",
+                  "value": "0"
+                }
+              ]
+            },
+            {
+              "id": "b472-94bc-9482-44b6",
+              "name": "Skitarii Ranger w/ plasma caliver",
+              "type": "model",
+              "entries": [
+                {
+                  "id": "ab93-64bd-1c95-c6a7",
+                  "name": "Plasma caliver",
+                  "type": "upgrade",
+                  "profiles": [
+                    {
+                      "name": "➤ Plasma caliver -  supercharge",
+                      "type": "Ranged Weapons",
+                      "lines": [
+                        {
+                          "name": "Range",
+                          "value": "30\""
+                        },
+                        {
+                          "name": "A",
+                          "value": "2"
+                        },
+                        {
+                          "name": "BS",
+                          "value": "4+"
+                        },
+                        {
+                          "name": "S",
+                          "value": "8"
+                        },
+                        {
+                          "name": "AP",
+                          "value": "-3"
+                        },
+                        {
+                          "name": "D",
+                          "value": "2"
+                        },
+                        {
+                          "name": "Keywords",
+                          "value": "Hazardous"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "➤ Plasma caliver - standard",
+                      "type": "Ranged Weapons",
+                      "lines": [
+                        {
+                          "name": "Range",
+                          "value": "30\""
+                        },
+                        {
+                          "name": "A",
+                          "value": "2"
+                        },
+                        {
+                          "name": "BS",
+                          "value": "4+"
+                        },
+                        {
+                          "name": "S",
+                          "value": "7"
+                        },
+                        {
+                          "name": "AP",
+                          "value": "-2"
+                        },
+                        {
+                          "name": "D",
+                          "value": "1"
+                        },
+                        {
+                          "name": "Keywords",
+                          "value": "-"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "costs": [
+                {
+                  "name": "pts",
+                  "typeid": "51b2-306e-1021-d207",
+                  "value": "0"
+                }
+              ]
+            },
+            {
+              "id": "b27c-7f37-083e-9234",
+              "name": "Skitarii Ranger w/ galvanic rifle",
+              "type": "model",
+              "entries": [
+                {
+                  "id": "6483-eb5-46a4-ff63",
+                  "name": "Galvanic rifle",
+                  "type": "upgrade",
+                  "profiles": [
+                    {
+                      "name": "Galvanic rifle",
+                      "type": "Ranged Weapons",
+                      "lines": [
+                        {
+                          "name": "Range",
+                          "value": "30\""
+                        },
+                        {
+                          "name": "A",
+                          "value": "2"
+                        },
+                        {
+                          "name": "BS",
+                          "value": "4+"
+                        },
+                        {
+                          "name": "S",
+                          "value": "4"
+                        },
+                        {
+                          "name": "AP",
+                          "value": "0"
+                        },
+                        {
+                          "name": "D",
+                          "value": "1"
+                        },
+                        {
+                          "name": "Keywords",
+                          "value": "-"
+                        }
+                      ]
+                    }
+                  ],
+                  "costs": [
+                    {
+                      "name": "pts",
+                      "typeid": "51b2-306e-1021-d207",
+                      "value": "0"
+                    }
+                  ]
+                }
+              ],
+              "costs": [
+                {
+                  "name": "pts",
+                  "typeid": "51b2-306e-1021-d207",
+                  "value": "0"
+                }
+              ]
+            },
+            {
+              "id": "f525-f4d5-1ea1-ecaf",
+              "name": "Skitarii Ranger w/ data-tether",
+              "type": "model",
+              "entries": [
+                {
+                  "id": "5e3b-1117-fcdd-b4d5",
+                  "name": "Galvanic rifle",
+                  "type": "upgrade",
+                  "profiles": [
+                    {
+                      "name": "Galvanic rifle",
+                      "type": "Ranged Weapons",
+                      "lines": [
+                        {
+                          "name": "Range",
+                          "value": "30\""
+                        },
+                        {
+                          "name": "A",
+                          "value": "2"
+                        },
+                        {
+                          "name": "BS",
+                          "value": "4+"
+                        },
+                        {
+                          "name": "S",
+                          "value": "4"
+                        },
+                        {
+                          "name": "AP",
+                          "value": "0"
+                        },
+                        {
+                          "name": "D",
+                          "value": "1"
+                        },
+                        {
+                          "name": "Keywords",
+                          "value": "-"
+                        }
+                      ]
+                    }
+                  ],
+                  "costs": [
+                    {
+                      "name": "pts",
+                      "typeid": "51b2-306e-1021-d207",
+                      "value": "0"
+                    }
+                  ]
+                },
+                {
+                  "id": "709c-78a0-c807-bf70",
+                  "name": "Enhanced data-tether",
+                  "type": "upgrade",
+                  "profiles": [
+                    {
+                      "name": "Enhanced data-tether",
+                      "type": "Abilities",
+                      "lines": [
+                        {
+                          "name": "Description",
+                          "value": "Each time you select the bearer’s unit\nas the target of a Stratagem, roll one D6: on a 5+, you gain 1CP."
+                        }
+                      ]
+                    }
+                  ],
+                  "costs": [
+                    {
+                      "name": "pts",
+                      "typeid": "51b2-306e-1021-d207",
+                      "value": "0"
+                    }
+                  ]
+                }
+              ],
+              "costs": [
+                {
+                  "name": "pts",
+                  "typeid": "51b2-306e-1021-d207",
+                  "value": "0"
+                }
+              ]
+            },
+            {
+              "id": "626e-72e0-7869-82c1",
+              "name": "Skitarii Ranger w/ omnispex",
+              "type": "model",
+              "entries": [
+                {
+                  "id": "3d89-dec1-eaa9-47f3",
+                  "name": "Galvanic rifle",
+                  "type": "upgrade",
+                  "profiles": [
+                    {
+                      "name": "Galvanic rifle",
+                      "type": "Ranged Weapons",
+                      "lines": [
+                        {
+                          "name": "Range",
+                          "value": "30\""
+                        },
+                        {
+                          "name": "A",
+                          "value": "2"
+                        },
+                        {
+                          "name": "BS",
+                          "value": "4+"
+                        },
+                        {
+                          "name": "S",
+                          "value": "4"
+                        },
+                        {
+                          "name": "AP",
+                          "value": "0"
+                        },
+                        {
+                          "name": "D",
+                          "value": "1"
+                        },
+                        {
+                          "name": "Keywords",
+                          "value": "-"
+                        }
+                      ]
+                    }
+                  ],
+                  "costs": [
+                    {
+                      "name": "pts",
+                      "typeid": "51b2-306e-1021-d207",
+                      "value": "0"
+                    }
+                  ]
+                },
+                {
+                  "id": "2422-d56e-c8ee-7fa1",
+                  "name": "Omnispex",
+                  "type": "upgrade",
+                  "profiles": [
+                    {
+                      "name": "Omnispex",
+                      "type": "Abilities",
+                      "lines": [
+                        {
+                          "name": "Description",
+                          "value": "Ranged weapons equipped by models in the bearer’s unit have the IGNORES COVER ability."
+                        }
+                      ]
+                    }
+                  ],
+                  "costs": [
+                    {
+                      "name": "pts",
+                      "typeid": "51b2-306e-1021-d207",
+                      "value": "0"
+                    }
+                  ]
+                }
+              ],
+              "costs": [
+                {
+                  "name": "pts",
+                  "typeid": "51b2-306e-1021-d207",
+                  "value": "0"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "weapons": [
+        {
+          "name": "Alpha combat weapon",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "WS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "Alpha combat weapon",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "WS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "Galvanic rifle",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "30\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "Galvanic rifle",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "30\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "Transuranic arquebus",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "36\""
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "7"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "D3"
+            },
+            {
+              "name": "Keywords",
+              "value": "Heavy, Precision"
+            }
+          ]
+        },
+        {
+          "name": "Transuranic arquebus",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "36\""
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "7"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "D3"
+            },
+            {
+              "name": "Keywords",
+              "value": "Heavy, Precision"
+            }
+          ]
+        },
+        {
+          "name": "Arc rifle",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "30\""
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "8"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "D3"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Vehicle 4+, Devastating Wounds, Rapid Fire 1"
+            }
+          ]
+        },
+        {
+          "name": "Arc rifle",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "30\""
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "8"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "D3"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Vehicle 4+, Devastating Wounds, Rapid Fire 1"
+            }
+          ]
+        },
+        {
+          "name": "➤ Plasma caliver -  supercharge",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "30\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "8"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Hazardous"
+            }
+          ]
+        },
+        {
+          "name": "➤ Plasma caliver - standard",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "30\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "7"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "➤ Plasma caliver -  supercharge",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "30\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "8"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Hazardous"
+            }
+          ]
+        },
+        {
+          "name": "➤ Plasma caliver - standard",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "30\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "7"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "Galvanic rifle",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "30\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "Galvanic rifle",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "30\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "Galvanic rifle",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "30\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "Galvanic rifle",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "30\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "Galvanic rifle",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "30\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "Galvanic rifle",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "30\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
         }
       ]
     },
@@ -380,6 +1729,62 @@
               "name": "pts",
               "typeid": "51b2-306e-1021-d207",
               "value": "0"
+            }
+          ],
+          "selectionEntryGroups": [
+            {
+              "id": "8947-7baa-be7b-08a3",
+              "name": "Ranged weapon",
+              "entries": [
+                {
+                  "id": "f5c3-756b-f5d1-6e82",
+                  "name": "Radium carbine",
+                  "type": "upgrade",
+                  "profiles": [
+                    {
+                      "name": "Radium carbine",
+                      "type": "Ranged Weapons",
+                      "lines": [
+                        {
+                          "name": "Range",
+                          "value": "18\""
+                        },
+                        {
+                          "name": "A",
+                          "value": "3"
+                        },
+                        {
+                          "name": "BS",
+                          "value": "4+"
+                        },
+                        {
+                          "name": "S",
+                          "value": "3"
+                        },
+                        {
+                          "name": "AP",
+                          "value": "0"
+                        },
+                        {
+                          "name": "D",
+                          "value": "1"
+                        },
+                        {
+                          "name": "Keywords",
+                          "value": "Anti-Infantry 4+"
+                        }
+                      ]
+                    }
+                  ],
+                  "costs": [
+                    {
+                      "name": "pts",
+                      "typeid": "51b2-306e-1021-d207",
+                      "value": "0"
+                    }
+                  ]
+                }
+              ]
             }
           ]
         }
@@ -451,6 +1856,1061 @@
           "name": "Crusade: Weapon Modifications",
           "typeid": "716d-91b7-d55a-1022",
           "value": "0"
+        }
+      ],
+      "selectionEntryGroups": [
+        {
+          "id": "c00c-540d-818e-9f44",
+          "name": "Skitarii Vanguard",
+          "entries": [
+            {
+              "id": "54ca-f341-b75a-6c29",
+              "name": "Skitarii Vanguard w/ transuranic arquebus",
+              "type": "model",
+              "entries": [
+                {
+                  "id": "bf9e-7924-6763-2015",
+                  "name": "Transuranic arquebus",
+                  "type": "upgrade",
+                  "profiles": [
+                    {
+                      "name": "Transuranic arquebus",
+                      "type": "Ranged Weapons",
+                      "lines": [
+                        {
+                          "name": "Range",
+                          "value": "36\""
+                        },
+                        {
+                          "name": "A",
+                          "value": "1"
+                        },
+                        {
+                          "name": "BS",
+                          "value": "4+"
+                        },
+                        {
+                          "name": "S",
+                          "value": "7"
+                        },
+                        {
+                          "name": "AP",
+                          "value": "-2"
+                        },
+                        {
+                          "name": "D",
+                          "value": "D3"
+                        },
+                        {
+                          "name": "Keywords",
+                          "value": "Heavy, Precision"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "costs": [
+                {
+                  "name": "pts",
+                  "typeid": "51b2-306e-1021-d207",
+                  "value": "0"
+                }
+              ]
+            },
+            {
+              "id": "3e45-6c2d-267f-b7cf",
+              "name": "Skitarii Vanguard w/ arc rifle",
+              "type": "model",
+              "entries": [
+                {
+                  "id": "9a-5b5-a14a-9136",
+                  "name": "Arc rifle",
+                  "type": "upgrade",
+                  "profiles": [
+                    {
+                      "name": "Arc rifle",
+                      "type": "Ranged Weapons",
+                      "lines": [
+                        {
+                          "name": "Range",
+                          "value": "30\""
+                        },
+                        {
+                          "name": "A",
+                          "value": "1"
+                        },
+                        {
+                          "name": "BS",
+                          "value": "4+"
+                        },
+                        {
+                          "name": "S",
+                          "value": "8"
+                        },
+                        {
+                          "name": "AP",
+                          "value": "-1"
+                        },
+                        {
+                          "name": "D",
+                          "value": "D3"
+                        },
+                        {
+                          "name": "Keywords",
+                          "value": "Anti-Vehicle 4+, Devastating Wounds, Rapid Fire 1"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "costs": [
+                {
+                  "name": "pts",
+                  "typeid": "51b2-306e-1021-d207",
+                  "value": "0"
+                }
+              ]
+            },
+            {
+              "id": "9fdb-aa2f-a6d5-1f13",
+              "name": "Skitarii Vanguard w/ plasma caliver",
+              "type": "model",
+              "entries": [
+                {
+                  "id": "f660-9cd2-99b9-a1a5",
+                  "name": "Plasma caliver",
+                  "type": "upgrade",
+                  "profiles": [
+                    {
+                      "name": "➤ Plasma caliver -  supercharge",
+                      "type": "Ranged Weapons",
+                      "lines": [
+                        {
+                          "name": "Range",
+                          "value": "30\""
+                        },
+                        {
+                          "name": "A",
+                          "value": "2"
+                        },
+                        {
+                          "name": "BS",
+                          "value": "4+"
+                        },
+                        {
+                          "name": "S",
+                          "value": "8"
+                        },
+                        {
+                          "name": "AP",
+                          "value": "-3"
+                        },
+                        {
+                          "name": "D",
+                          "value": "2"
+                        },
+                        {
+                          "name": "Keywords",
+                          "value": "Hazardous"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "➤ Plasma caliver - standard",
+                      "type": "Ranged Weapons",
+                      "lines": [
+                        {
+                          "name": "Range",
+                          "value": "30\""
+                        },
+                        {
+                          "name": "A",
+                          "value": "2"
+                        },
+                        {
+                          "name": "BS",
+                          "value": "4+"
+                        },
+                        {
+                          "name": "S",
+                          "value": "7"
+                        },
+                        {
+                          "name": "AP",
+                          "value": "-2"
+                        },
+                        {
+                          "name": "D",
+                          "value": "1"
+                        },
+                        {
+                          "name": "Keywords",
+                          "value": "-"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "costs": [
+                {
+                  "name": "pts",
+                  "typeid": "51b2-306e-1021-d207",
+                  "value": "0"
+                }
+              ]
+            },
+            {
+              "id": "e643-b59e-8ca3-2f8c",
+              "name": "Skitarii Vanguard w/ radium carbine",
+              "type": "model",
+              "entries": [
+                {
+                  "id": "23df-6574-ca00-efc8",
+                  "name": "Radium carbine",
+                  "type": "upgrade",
+                  "profiles": [
+                    {
+                      "name": "Radium carbine",
+                      "type": "Ranged Weapons",
+                      "lines": [
+                        {
+                          "name": "Range",
+                          "value": "18\""
+                        },
+                        {
+                          "name": "A",
+                          "value": "3"
+                        },
+                        {
+                          "name": "BS",
+                          "value": "4+"
+                        },
+                        {
+                          "name": "S",
+                          "value": "3"
+                        },
+                        {
+                          "name": "AP",
+                          "value": "0"
+                        },
+                        {
+                          "name": "D",
+                          "value": "1"
+                        },
+                        {
+                          "name": "Keywords",
+                          "value": "Anti-Infantry 4+"
+                        }
+                      ]
+                    }
+                  ],
+                  "costs": [
+                    {
+                      "name": "pts",
+                      "typeid": "51b2-306e-1021-d207",
+                      "value": "0"
+                    }
+                  ]
+                }
+              ],
+              "costs": [
+                {
+                  "name": "pts",
+                  "typeid": "51b2-306e-1021-d207",
+                  "value": "0"
+                }
+              ]
+            },
+            {
+              "id": "ef06-ef9-2ff7-f92d",
+              "name": "Skitarii Vanguard w/ data-tether",
+              "type": "model",
+              "entries": [
+                {
+                  "id": "502d-7261-2f99-a3ac",
+                  "name": "Radium carbine",
+                  "type": "upgrade",
+                  "profiles": [
+                    {
+                      "name": "Radium carbine",
+                      "type": "Ranged Weapons",
+                      "lines": [
+                        {
+                          "name": "Range",
+                          "value": "18\""
+                        },
+                        {
+                          "name": "A",
+                          "value": "3"
+                        },
+                        {
+                          "name": "BS",
+                          "value": "4+"
+                        },
+                        {
+                          "name": "S",
+                          "value": "3"
+                        },
+                        {
+                          "name": "AP",
+                          "value": "0"
+                        },
+                        {
+                          "name": "D",
+                          "value": "1"
+                        },
+                        {
+                          "name": "Keywords",
+                          "value": "Anti-Infantry 4+"
+                        }
+                      ]
+                    }
+                  ],
+                  "costs": [
+                    {
+                      "name": "pts",
+                      "typeid": "51b2-306e-1021-d207",
+                      "value": "0"
+                    }
+                  ]
+                },
+                {
+                  "id": "d2c9-5e7c-286e-56da",
+                  "name": "Enhanced data-tether",
+                  "type": "upgrade",
+                  "profiles": [
+                    {
+                      "name": "Enhanced data-tether",
+                      "type": "Abilities",
+                      "lines": [
+                        {
+                          "name": "Description",
+                          "value": "Each time you select the bearer’s unit as the target of a Stratagem, roll one D6: on a 5+, you gain 1CP."
+                        }
+                      ]
+                    }
+                  ],
+                  "costs": [
+                    {
+                      "name": "pts",
+                      "typeid": "51b2-306e-1021-d207",
+                      "value": "0"
+                    }
+                  ]
+                }
+              ],
+              "costs": [
+                {
+                  "name": "pts",
+                  "typeid": "51b2-306e-1021-d207",
+                  "value": "0"
+                }
+              ]
+            },
+            {
+              "id": "d3d5-8552-186c-8436",
+              "name": "Skitarii Vanguard w/ omnispex",
+              "type": "model",
+              "entries": [
+                {
+                  "id": "fda9-2b2d-93a0-9363",
+                  "name": "Radium carbine",
+                  "type": "upgrade",
+                  "profiles": [
+                    {
+                      "name": "Radium carbine",
+                      "type": "Ranged Weapons",
+                      "lines": [
+                        {
+                          "name": "Range",
+                          "value": "18\""
+                        },
+                        {
+                          "name": "A",
+                          "value": "3"
+                        },
+                        {
+                          "name": "BS",
+                          "value": "4+"
+                        },
+                        {
+                          "name": "S",
+                          "value": "3"
+                        },
+                        {
+                          "name": "AP",
+                          "value": "0"
+                        },
+                        {
+                          "name": "D",
+                          "value": "1"
+                        },
+                        {
+                          "name": "Keywords",
+                          "value": "Anti-Infantry 4+"
+                        }
+                      ]
+                    }
+                  ],
+                  "costs": [
+                    {
+                      "name": "pts",
+                      "typeid": "51b2-306e-1021-d207",
+                      "value": "0"
+                    }
+                  ]
+                },
+                {
+                  "id": "a5fb-4054-24b5-d29c",
+                  "name": "Omnispex",
+                  "type": "upgrade",
+                  "profiles": [
+                    {
+                      "name": "Omnispex",
+                      "type": "Abilities",
+                      "lines": [
+                        {
+                          "name": "Description",
+                          "value": "Ranged weapons equipped by models in the bearer’s unit have the IGNORES COVER ability."
+                        }
+                      ]
+                    }
+                  ],
+                  "costs": [
+                    {
+                      "name": "pts",
+                      "typeid": "51b2-306e-1021-d207",
+                      "value": "0"
+                    }
+                  ]
+                }
+              ],
+              "costs": [
+                {
+                  "name": "pts",
+                  "typeid": "51b2-306e-1021-d207",
+                  "value": "0"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "weapons": [
+        {
+          "name": "Alpha combat weapon",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "WS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "Alpha combat weapon",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "WS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "Radium carbine",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "18\""
+            },
+            {
+              "name": "A",
+              "value": "3"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "3"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Infantry 4+"
+            }
+          ]
+        },
+        {
+          "name": "Radium carbine",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "18\""
+            },
+            {
+              "name": "A",
+              "value": "3"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "3"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Infantry 4+"
+            }
+          ]
+        },
+        {
+          "name": "Transuranic arquebus",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "36\""
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "7"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "D3"
+            },
+            {
+              "name": "Keywords",
+              "value": "Heavy, Precision"
+            }
+          ]
+        },
+        {
+          "name": "Transuranic arquebus",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "36\""
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "7"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "D3"
+            },
+            {
+              "name": "Keywords",
+              "value": "Heavy, Precision"
+            }
+          ]
+        },
+        {
+          "name": "Arc rifle",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "30\""
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "8"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "D3"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Vehicle 4+, Devastating Wounds, Rapid Fire 1"
+            }
+          ]
+        },
+        {
+          "name": "Arc rifle",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "30\""
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "8"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "D3"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Vehicle 4+, Devastating Wounds, Rapid Fire 1"
+            }
+          ]
+        },
+        {
+          "name": "➤ Plasma caliver -  supercharge",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "30\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "8"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Hazardous"
+            }
+          ]
+        },
+        {
+          "name": "➤ Plasma caliver - standard",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "30\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "7"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "➤ Plasma caliver -  supercharge",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "30\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "8"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Hazardous"
+            }
+          ]
+        },
+        {
+          "name": "➤ Plasma caliver - standard",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "30\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "7"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "Radium carbine",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "18\""
+            },
+            {
+              "name": "A",
+              "value": "3"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "3"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Infantry 4+"
+            }
+          ]
+        },
+        {
+          "name": "Radium carbine",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "18\""
+            },
+            {
+              "name": "A",
+              "value": "3"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "3"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Infantry 4+"
+            }
+          ]
+        },
+        {
+          "name": "Radium carbine",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "18\""
+            },
+            {
+              "name": "A",
+              "value": "3"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "3"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Infantry 4+"
+            }
+          ]
+        },
+        {
+          "name": "Radium carbine",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "18\""
+            },
+            {
+              "name": "A",
+              "value": "3"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "3"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Infantry 4+"
+            }
+          ]
+        },
+        {
+          "name": "Radium carbine",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "18\""
+            },
+            {
+              "name": "A",
+              "value": "3"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "3"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Infantry 4+"
+            }
+          ]
+        },
+        {
+          "name": "Radium carbine",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "18\""
+            },
+            {
+              "name": "A",
+              "value": "3"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "3"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Infantry 4+"
+            }
+          ]
         }
       ]
     },
@@ -555,6 +3015,125 @@
           "name": "Crusade: Weapon Modifications",
           "typeid": "716d-91b7-d55a-1022",
           "value": "0"
+        }
+      ],
+      "selectionEntryGroups": [
+        {
+          "id": "03a6-f1ef-5a60-b2c3",
+          "name": "Wargear",
+          "entries": [
+            {
+              "id": "4587-20b2-c305-10c6",
+              "name": "Omnissian axe",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Omnissian axe",
+                  "type": "Melee Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "Melee"
+                    },
+                    {
+                      "name": "A",
+                      "value": "4"
+                    },
+                    {
+                      "name": "WS",
+                      "value": "3+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "6"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-2"
+                    },
+                    {
+                      "name": "D",
+                      "value": "2"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "-"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "weapons": [
+        {
+          "name": "Omnissian axe",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "4"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "Omnissian axe",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "4"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
         }
       ]
     },

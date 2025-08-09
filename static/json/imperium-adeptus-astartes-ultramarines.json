@@ -157,6 +157,144 @@
           "typeid": "51b2-306e-1021-d207",
           "value": "85"
         }
+      ],
+      "weapons": [
+        {
+          "name": "Artisan Plasma Pistol",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "12\""
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "8"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Pistol"
+            }
+          ]
+        },
+        {
+          "name": "Artisan Plasma Pistol",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "12\""
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "8"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Pistol"
+            }
+          ]
+        },
+        {
+          "name": "Talassarian Tempest Blade",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "6"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Lethal Hits"
+            }
+          ]
+        },
+        {
+          "name": "Talassarian Tempest Blade",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "6"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Lethal Hits"
+            }
+          ]
+        }
       ]
     },
     {
@@ -198,6 +336,42 @@
             }
           ]
         }
+      ],
+      "weapons": [
+        {
+          "name": "Artisan Plasma Pistol",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "12\""
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "8"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Pistol"
+            }
+          ]
+        }
       ]
     },
     {
@@ -205,6 +379,42 @@
       "name": "Talassarian Tempest Blade",
       "type": "upgrade",
       "profiles": [
+        {
+          "name": "Talassarian Tempest Blade",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "6"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Lethal Hits"
+            }
+          ]
+        }
+      ],
+      "weapons": [
         {
           "name": "Talassarian Tempest Blade",
           "type": "Melee Weapons",
@@ -397,6 +607,144 @@
           "typeid": "51b2-306e-1021-d207",
           "value": "80"
         }
+      ],
+      "weapons": [
+        {
+          "name": "Infernus",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "12\""
+            },
+            {
+              "name": "A",
+              "value": "D6"
+            },
+            {
+              "name": "BS",
+              "value": "N/A"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Infantry 4+, Devastating Wounds, Ignores Cover, Torrent"
+            }
+          ]
+        },
+        {
+          "name": "Infernus",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "12\""
+            },
+            {
+              "name": "A",
+              "value": "D6"
+            },
+            {
+              "name": "BS",
+              "value": "N/A"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Infantry 4+, Devastating Wounds, Ignores Cover, Torrent"
+            }
+          ]
+        },
+        {
+          "name": "Artificer Crozius",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "5"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "Artificer Crozius",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "5"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
       ]
     },
     {
@@ -438,6 +786,42 @@
             }
           ]
         }
+      ],
+      "weapons": [
+        {
+          "name": "Infernus",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "12\""
+            },
+            {
+              "name": "A",
+              "value": "D6"
+            },
+            {
+              "name": "BS",
+              "value": "N/A"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Infantry 4+, Devastating Wounds, Ignores Cover, Torrent"
+            }
+          ]
+        }
       ]
     },
     {
@@ -445,6 +829,42 @@
       "name": "Artificer Crozius",
       "type": "upgrade",
       "profiles": [
+        {
+          "name": "Artificer Crozius",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "5"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
+      ],
+      "weapons": [
         {
           "name": "Artificer Crozius",
           "type": "Melee Weapons",
@@ -671,6 +1091,212 @@
           "typeid": "51b2-306e-1021-d207",
           "value": "75"
         }
+      ],
+      "weapons": [
+        {
+          "name": "➤ Storm of the Emperor’s Wrath - Witchfire",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "18\""
+            },
+            {
+              "name": "A",
+              "value": "D6"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Blast, Psychic"
+            }
+          ]
+        },
+        {
+          "name": "➤ Storm of the Emperor’s Wrath - Focused Witchfire",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "18\""
+            },
+            {
+              "name": "A",
+              "value": "2D6"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Blast, Hazardous, Psychic"
+            }
+          ]
+        },
+        {
+          "name": "➤ Storm of the Emperor’s Wrath - Witchfire",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "18\""
+            },
+            {
+              "name": "A",
+              "value": "D6"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Blast, Psychic"
+            }
+          ]
+        },
+        {
+          "name": "➤ Storm of the Emperor’s Wrath - Focused Witchfire",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "18\""
+            },
+            {
+              "name": "A",
+              "value": "2D6"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Blast, Hazardous, Psychic"
+            }
+          ]
+        },
+        {
+          "name": "Rod of Tigurius",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "5"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "7"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "D3"
+            },
+            {
+              "name": "Keywords",
+              "value": "Psychic"
+            }
+          ]
+        },
+        {
+          "name": "Rod of Tigurius",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "5"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "7"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "D3"
+            },
+            {
+              "name": "Keywords",
+              "value": "Psychic"
+            }
+          ]
+        }
       ]
     },
     {
@@ -746,6 +1372,76 @@
             }
           ]
         }
+      ],
+      "weapons": [
+        {
+          "name": "➤ Storm of the Emperor’s Wrath - Witchfire",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "18\""
+            },
+            {
+              "name": "A",
+              "value": "D6"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Blast, Psychic"
+            }
+          ]
+        },
+        {
+          "name": "➤ Storm of the Emperor’s Wrath - Focused Witchfire",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "18\""
+            },
+            {
+              "name": "A",
+              "value": "2D6"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Blast, Hazardous, Psychic"
+            }
+          ]
+        }
       ]
     },
     {
@@ -753,6 +1449,42 @@
       "name": "Rod of Tigurius",
       "type": "upgrade",
       "profiles": [
+        {
+          "name": "Rod of Tigurius",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "5"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "7"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "D3"
+            },
+            {
+              "name": "Keywords",
+              "value": "Psychic"
+            }
+          ]
+        }
+      ],
+      "weapons": [
         {
           "name": "Rod of Tigurius",
           "type": "Melee Weapons",
@@ -1058,6 +1790,212 @@
           "typeid": "8135-9a2f-6627-09e2",
           "value": "0"
         }
+      ],
+      "weapons": [
+        {
+          "name": "Gauntlets of Ultramar",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "18\""
+            },
+            {
+              "name": "A",
+              "value": "4"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Pistol, Twin-linked"
+            }
+          ]
+        },
+        {
+          "name": "Gauntlets of Ultramar",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "6"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "8"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "3"
+            },
+            {
+              "name": "Keywords",
+              "value": "Twin-linked"
+            }
+          ]
+        },
+        {
+          "name": "Gauntlets of Ultramar",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "18\""
+            },
+            {
+              "name": "A",
+              "value": "4"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Pistol, Twin-linked"
+            }
+          ]
+        },
+        {
+          "name": "Gauntlets of Ultramar",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "6"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "8"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "3"
+            },
+            {
+              "name": "Keywords",
+              "value": "Twin-linked"
+            }
+          ]
+        },
+        {
+          "name": "Victrix Power Sword",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "5"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "Victrix Power Sword",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "5"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
       ]
     },
     {
@@ -1140,6 +2078,144 @@
             }
           ]
         }
+      ],
+      "weapons": [
+        {
+          "name": "Gauntlets of Ultramar",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "18\""
+            },
+            {
+              "name": "A",
+              "value": "4"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Pistol, Twin-linked"
+            }
+          ]
+        },
+        {
+          "name": "Gauntlets of Ultramar",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "6"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "8"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "3"
+            },
+            {
+              "name": "Keywords",
+              "value": "Twin-linked"
+            }
+          ]
+        },
+        {
+          "name": "Gauntlets of Ultramar",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "18\""
+            },
+            {
+              "name": "A",
+              "value": "4"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Pistol, Twin-linked"
+            }
+          ]
+        },
+        {
+          "name": "Gauntlets of Ultramar",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "6"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "8"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "3"
+            },
+            {
+              "name": "Keywords",
+              "value": "Twin-linked"
+            }
+          ]
+        }
       ]
     },
     {
@@ -1147,6 +2223,76 @@
       "name": "Gauntlets of Ultramar",
       "type": "upgrade",
       "profiles": [
+        {
+          "name": "Gauntlets of Ultramar",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "18\""
+            },
+            {
+              "name": "A",
+              "value": "4"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Pistol, Twin-linked"
+            }
+          ]
+        },
+        {
+          "name": "Gauntlets of Ultramar",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "6"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "8"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "3"
+            },
+            {
+              "name": "Keywords",
+              "value": "Twin-linked"
+            }
+          ]
+        }
+      ],
+      "weapons": [
         {
           "name": "Gauntlets of Ultramar",
           "type": "Ranged Weapons",
@@ -1263,6 +2409,76 @@
             }
           ]
         }
+      ],
+      "weapons": [
+        {
+          "name": "Victrix Power Sword",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "5"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "Victrix Power Sword",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "5"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
       ]
     },
     {
@@ -1270,6 +2486,42 @@
       "name": "Victrix Power Sword",
       "type": "upgrade",
       "profiles": [
+        {
+          "name": "Victrix Power Sword",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "5"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
+      ],
+      "weapons": [
         {
           "name": "Victrix Power Sword",
           "type": "Melee Weapons",
@@ -1531,6 +2783,212 @@
           "typeid": "8135-9a2f-6627-09e2",
           "value": "0"
         }
+      ],
+      "weapons": [
+        {
+          "name": "Hand of Dominion",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "30\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Rapid Fire 2"
+            }
+          ]
+        },
+        {
+          "name": "Hand of Dominion",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "7"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "14"
+            },
+            {
+              "name": "AP",
+              "value": "-4"
+            },
+            {
+              "name": "D",
+              "value": "4"
+            },
+            {
+              "name": "Keywords",
+              "value": "Lethal Hits"
+            }
+          ]
+        },
+        {
+          "name": "Hand of Dominion",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "30\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Rapid Fire 2"
+            }
+          ]
+        },
+        {
+          "name": "Hand of Dominion",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "7"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "14"
+            },
+            {
+              "name": "AP",
+              "value": "-4"
+            },
+            {
+              "name": "D",
+              "value": "4"
+            },
+            {
+              "name": "Keywords",
+              "value": "Lethal Hits"
+            }
+          ]
+        },
+        {
+          "name": "The Emperor's Sword",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "14"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "8"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Devastating Wounds"
+            }
+          ]
+        },
+        {
+          "name": "The Emperor's Sword",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "14"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "8"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Devastating Wounds"
+            }
+          ]
+        }
       ]
     },
     {
@@ -1606,6 +3064,76 @@
             }
           ]
         }
+      ],
+      "weapons": [
+        {
+          "name": "Hand of Dominion",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "30\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Rapid Fire 2"
+            }
+          ]
+        },
+        {
+          "name": "Hand of Dominion",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "7"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "14"
+            },
+            {
+              "name": "AP",
+              "value": "-4"
+            },
+            {
+              "name": "D",
+              "value": "4"
+            },
+            {
+              "name": "Keywords",
+              "value": "Lethal Hits"
+            }
+          ]
+        }
       ]
     },
     {
@@ -1613,6 +3141,42 @@
       "name": "The Emperor's Sword",
       "type": "upgrade",
       "profiles": [
+        {
+          "name": "The Emperor's Sword",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "14"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "8"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Devastating Wounds"
+            }
+          ]
+        }
+      ],
+      "weapons": [
         {
           "name": "The Emperor's Sword",
           "type": "Melee Weapons",
@@ -1754,6 +3318,76 @@
           "typeid": "51b2-306e-1021-d207",
           "value": "75"
         }
+      ],
+      "weapons": [
+        {
+          "name": "Chronus' Servo-Arm",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "3"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "8"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "3"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "Chronus' Servo-Arm",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "3"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "8"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "3"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
       ]
     },
     {
@@ -1761,6 +3395,42 @@
       "name": "Chronus' Servo-Arm",
       "type": "upgrade",
       "profiles": [
+        {
+          "name": "Chronus' Servo-Arm",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "3"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "8"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "3"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
+      ],
+      "weapons": [
         {
           "name": "Chronus' Servo-Arm",
           "type": "Melee Weapons",
@@ -1953,6 +3623,144 @@
           "typeid": "51b2-306e-1021-d207",
           "value": "70"
         }
+      ],
+      "weapons": [
+        {
+          "name": "Combat Knife",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "4"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "Combat Knife",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "4"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "Quietus",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "36\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "3"
+            },
+            {
+              "name": "Keywords",
+              "value": "Precision"
+            }
+          ]
+        },
+        {
+          "name": "Quietus",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "36\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "3"
+            },
+            {
+              "name": "Keywords",
+              "value": "Precision"
+            }
+          ]
+        }
       ]
     },
     {
@@ -1960,6 +3768,42 @@
       "name": "Combat Knife",
       "type": "upgrade",
       "profiles": [
+        {
+          "name": "Combat Knife",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "4"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
+      ],
+      "weapons": [
         {
           "name": "Combat Knife",
           "type": "Melee Weapons",
@@ -2035,6 +3879,42 @@
             }
           ]
         }
+      ],
+      "weapons": [
+        {
+          "name": "Quietus",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "36\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "3"
+            },
+            {
+              "name": "Keywords",
+              "value": "Precision"
+            }
+          ]
+        }
       ]
     },
     {
@@ -2058,6 +3938,748 @@
           "name": "pts",
           "typeid": "51b2-306e-1021-d207",
           "value": "85"
+        }
+      ],
+      "selectionEntryGroups": [
+        {
+          "id": "e2ae-fabb-40ec-dc8c",
+          "name": "Tyrannic War Veterans",
+          "entries": [
+            {
+              "id": "3c2c-14d4-2669-7f63",
+              "name": "Tyrannic War Veteran",
+              "type": "model",
+              "entries": [
+                {
+                  "id": "447a-517f-e0ff-2716",
+                  "name": "Bolt Pistol",
+                  "type": "upgrade",
+                  "profiles": [
+                    {
+                      "name": "Bolt Pistol",
+                      "type": "Ranged Weapons",
+                      "lines": [
+                        {
+                          "name": "Range",
+                          "value": "12\""
+                        },
+                        {
+                          "name": "A",
+                          "value": "1"
+                        },
+                        {
+                          "name": "BS",
+                          "value": "3+"
+                        },
+                        {
+                          "name": "S",
+                          "value": "4"
+                        },
+                        {
+                          "name": "AP",
+                          "value": "0"
+                        },
+                        {
+                          "name": "D",
+                          "value": "1"
+                        },
+                        {
+                          "name": "Keywords",
+                          "value": "Anti-Tyranids 4+, Pistol"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "b433-5c4c-3958-e044",
+                  "name": "Boltgun",
+                  "type": "upgrade",
+                  "profiles": [
+                    {
+                      "name": "Boltgun",
+                      "type": "Ranged Weapons",
+                      "lines": [
+                        {
+                          "name": "Range",
+                          "value": "24\""
+                        },
+                        {
+                          "name": "A",
+                          "value": "2"
+                        },
+                        {
+                          "name": "BS",
+                          "value": "3+"
+                        },
+                        {
+                          "name": "S",
+                          "value": "4"
+                        },
+                        {
+                          "name": "AP",
+                          "value": "0"
+                        },
+                        {
+                          "name": "D",
+                          "value": "1"
+                        },
+                        {
+                          "name": "Keywords",
+                          "value": "Anti-Tyranids 4+"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "bece-acd9-8433-c368",
+                  "name": "Close Combat Weapon",
+                  "type": "upgrade",
+                  "profiles": [
+                    {
+                      "name": "Close Combat Weapon",
+                      "type": "Melee Weapons",
+                      "lines": [
+                        {
+                          "name": "Range",
+                          "value": "Melee"
+                        },
+                        {
+                          "name": "A",
+                          "value": "3"
+                        },
+                        {
+                          "name": "WS",
+                          "value": "3+"
+                        },
+                        {
+                          "name": "S",
+                          "value": "4"
+                        },
+                        {
+                          "name": "AP",
+                          "value": "0"
+                        },
+                        {
+                          "name": "D",
+                          "value": "1"
+                        },
+                        {
+                          "name": "Keywords",
+                          "value": "Anti-Tyranids 4+"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "profiles": [
+                {
+                  "name": "Tyrannic War Veterans",
+                  "type": "Unit",
+                  "lines": [
+                    {
+                      "name": "M",
+                      "value": "6\""
+                    },
+                    {
+                      "name": "T",
+                      "value": "4"
+                    },
+                    {
+                      "name": "SV",
+                      "value": "3+"
+                    },
+                    {
+                      "name": "W",
+                      "value": "2"
+                    },
+                    {
+                      "name": "LD",
+                      "value": "6+"
+                    },
+                    {
+                      "name": "OC",
+                      "value": "1"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "d290-6bc6-b898-287a",
+              "name": "Veteran Sergeant",
+              "type": "model",
+              "entries": [
+                {
+                  "id": "ed1b-558c-4344-bea2",
+                  "name": "Close Combat Weapon",
+                  "type": "upgrade",
+                  "profiles": [
+                    {
+                      "name": "Close Combat Weapon",
+                      "type": "Melee Weapons",
+                      "lines": [
+                        {
+                          "name": "Range",
+                          "value": "Melee"
+                        },
+                        {
+                          "name": "A",
+                          "value": "3"
+                        },
+                        {
+                          "name": "WS",
+                          "value": "3+"
+                        },
+                        {
+                          "name": "S",
+                          "value": "4"
+                        },
+                        {
+                          "name": "AP",
+                          "value": "0"
+                        },
+                        {
+                          "name": "D",
+                          "value": "1"
+                        },
+                        {
+                          "name": "Keywords",
+                          "value": "Anti-Tyranids 4+"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "9e0f-eaf0-86af-8c20",
+                  "name": "Boltgun",
+                  "type": "upgrade",
+                  "profiles": [
+                    {
+                      "name": "Boltgun",
+                      "type": "Ranged Weapons",
+                      "lines": [
+                        {
+                          "name": "Range",
+                          "value": "24\""
+                        },
+                        {
+                          "name": "A",
+                          "value": "2"
+                        },
+                        {
+                          "name": "BS",
+                          "value": "3+"
+                        },
+                        {
+                          "name": "S",
+                          "value": "4"
+                        },
+                        {
+                          "name": "AP",
+                          "value": "0"
+                        },
+                        {
+                          "name": "D",
+                          "value": "1"
+                        },
+                        {
+                          "name": "Keywords",
+                          "value": "Anti-Tyranids 4+"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "dd45-56f6-dbc4-d501",
+                  "name": "Bolt Pistol",
+                  "type": "upgrade",
+                  "profiles": [
+                    {
+                      "name": "Bolt Pistol",
+                      "type": "Ranged Weapons",
+                      "lines": [
+                        {
+                          "name": "Range",
+                          "value": "12\""
+                        },
+                        {
+                          "name": "A",
+                          "value": "1"
+                        },
+                        {
+                          "name": "BS",
+                          "value": "3+"
+                        },
+                        {
+                          "name": "S",
+                          "value": "4"
+                        },
+                        {
+                          "name": "AP",
+                          "value": "0"
+                        },
+                        {
+                          "name": "D",
+                          "value": "1"
+                        },
+                        {
+                          "name": "Keywords",
+                          "value": "Anti-Tyranids 4+, Pistol"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "profiles": [
+                {
+                  "name": "Veteran Sergeant",
+                  "type": "Unit",
+                  "lines": [
+                    {
+                      "name": "M",
+                      "value": "6\""
+                    },
+                    {
+                      "name": "T",
+                      "value": "4"
+                    },
+                    {
+                      "name": "SV",
+                      "value": "3+"
+                    },
+                    {
+                      "name": "W",
+                      "value": "2"
+                    },
+                    {
+                      "name": "LD",
+                      "value": "6+"
+                    },
+                    {
+                      "name": "OC",
+                      "value": "1"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "weapons": [
+        {
+          "name": "Bolt Pistol",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "12\""
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "BS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Tyranids 4+, Pistol"
+            }
+          ]
+        },
+        {
+          "name": "Bolt Pistol",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "12\""
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "BS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Tyranids 4+, Pistol"
+            }
+          ]
+        },
+        {
+          "name": "Boltgun",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "24\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Tyranids 4+"
+            }
+          ]
+        },
+        {
+          "name": "Boltgun",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "24\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Tyranids 4+"
+            }
+          ]
+        },
+        {
+          "name": "Close Combat Weapon",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "3"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Tyranids 4+"
+            }
+          ]
+        },
+        {
+          "name": "Close Combat Weapon",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "3"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Tyranids 4+"
+            }
+          ]
+        },
+        {
+          "name": "Close Combat Weapon",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "3"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Tyranids 4+"
+            }
+          ]
+        },
+        {
+          "name": "Close Combat Weapon",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "3"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Tyranids 4+"
+            }
+          ]
+        },
+        {
+          "name": "Boltgun",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "24\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Tyranids 4+"
+            }
+          ]
+        },
+        {
+          "name": "Boltgun",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "24\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Tyranids 4+"
+            }
+          ]
+        },
+        {
+          "name": "Bolt Pistol",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "12\""
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "BS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Tyranids 4+, Pistol"
+            }
+          ]
+        },
+        {
+          "name": "Bolt Pistol",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "12\""
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "BS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Tyranids 4+, Pistol"
+            }
+          ]
         }
       ]
     },
@@ -2237,6 +4859,144 @@
           "typeid": "716d-91b7-d55a-1022",
           "value": "0"
         }
+      ],
+      "weapons": [
+        {
+          "name": "Invictus",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "24\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "Invictus",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "24\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "Sword of Idaeus",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "6"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Sustained Hits 1"
+            }
+          ]
+        },
+        {
+          "name": "Sword of Idaeus",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "6"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Sustained Hits 1"
+            }
+          ]
+        }
       ]
     },
     {
@@ -2278,6 +5038,42 @@
             }
           ]
         }
+      ],
+      "weapons": [
+        {
+          "name": "Invictus",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "24\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
       ]
     },
     {
@@ -2285,6 +5081,42 @@
       "name": "Sword of Idaeus",
       "type": "upgrade",
       "profiles": [
+        {
+          "name": "Sword of Idaeus",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "6"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Sustained Hits 1"
+            }
+          ]
+        }
+      ],
+      "weapons": [
         {
           "name": "Sword of Idaeus",
           "type": "Melee Weapons",
@@ -2615,6 +5447,212 @@
           "typeid": "51b2-306e-1021-d207",
           "value": "155"
         }
+      ],
+      "weapons": [
+        {
+          "name": "Power Weapon",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "3"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "Power Weapon",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "3"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "Power Weapon",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "3"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "Power Weapon",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "3"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "Power Weapon",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "3"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "Power Weapon",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "3"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
       ]
     },
     {
@@ -2705,6 +5743,76 @@
             }
           ]
         }
+      ],
+      "weapons": [
+        {
+          "name": "Power Weapon",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "3"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "Power Weapon",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "3"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
       ]
     },
     {
@@ -2712,6 +5820,42 @@
       "name": "Power Weapon",
       "type": "upgrade",
       "profiles": [
+        {
+          "name": "Power Weapon",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "3"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
+      ],
+      "weapons": [
         {
           "name": "Power Weapon",
           "type": "Melee Weapons",
@@ -2836,6 +5980,76 @@
             }
           ]
         }
+      ],
+      "weapons": [
+        {
+          "name": "Power Weapon",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "3"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "Power Weapon",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "3"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
       ]
     },
     {
@@ -2843,6 +6057,42 @@
       "name": "Power Weapon",
       "type": "upgrade",
       "profiles": [
+        {
+          "name": "Power Weapon",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "3"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
+      ],
+      "weapons": [
         {
           "name": "Power Weapon",
           "type": "Melee Weapons",
@@ -2957,6 +6207,76 @@
             }
           ]
         }
+      ],
+      "weapons": [
+        {
+          "name": "Power Weapon",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "3"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "Power Weapon",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "3"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
       ]
     },
     {
@@ -2964,6 +6284,42 @@
       "name": "Power Weapon",
       "type": "upgrade",
       "profiles": [
+        {
+          "name": "Power Weapon",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "3"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
+      ],
+      "weapons": [
         {
           "name": "Power Weapon",
           "type": "Melee Weapons",
@@ -3176,6 +6532,144 @@
           "typeid": "716d-91b7-d55a-1022",
           "value": "0"
         }
+      ],
+      "weapons": [
+        {
+          "name": "Heavy Bolt Pistol",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "18\""
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Pistol"
+            }
+          ]
+        },
+        {
+          "name": "Heavy Bolt Pistol",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "18\""
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Pistol"
+            }
+          ]
+        },
+        {
+          "name": "Astartes Chainsword",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "8"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Infantry 2+"
+            }
+          ]
+        },
+        {
+          "name": "Astartes Chainsword",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "8"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Infantry 2+"
+            }
+          ]
+        }
       ]
     },
     {
@@ -3217,6 +6711,42 @@
             }
           ]
         }
+      ],
+      "weapons": [
+        {
+          "name": "Heavy Bolt Pistol",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "18\""
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Pistol"
+            }
+          ]
+        }
       ]
     },
     {
@@ -3224,6 +6754,42 @@
       "name": "Astartes Chainsword",
       "type": "upgrade",
       "profiles": [
+        {
+          "name": "Astartes Chainsword",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "8"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Infantry 2+"
+            }
+          ]
+        }
+      ],
+      "weapons": [
         {
           "name": "Astartes Chainsword",
           "type": "Melee Weapons",
@@ -3416,6 +6982,144 @@
           "typeid": "51b2-306e-1021-d207",
           "value": "85"
         }
+      ],
+      "weapons": [
+        {
+          "name": "Artisan Plasma Pistol",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "12\""
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "8"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Pistol"
+            }
+          ]
+        },
+        {
+          "name": "Artisan Plasma Pistol",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "12\""
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "8"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Pistol"
+            }
+          ]
+        },
+        {
+          "name": "Talassarian Tempest Blade",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "6"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Lethal Hits"
+            }
+          ]
+        },
+        {
+          "name": "Talassarian Tempest Blade",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "6"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Lethal Hits"
+            }
+          ]
+        }
       ]
     },
     {
@@ -3573,6 +7277,144 @@
           "name": "pts",
           "typeid": "51b2-306e-1021-d207",
           "value": "80"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "Infernus",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "12\""
+            },
+            {
+              "name": "A",
+              "value": "D6"
+            },
+            {
+              "name": "BS",
+              "value": "N/A"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Infantry 4+, Devastating Wounds, Ignores Cover, Torrent"
+            }
+          ]
+        },
+        {
+          "name": "Infernus",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "12\""
+            },
+            {
+              "name": "A",
+              "value": "D6"
+            },
+            {
+              "name": "BS",
+              "value": "N/A"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Infantry 4+, Devastating Wounds, Ignores Cover, Torrent"
+            }
+          ]
+        },
+        {
+          "name": "Artificer Crozius",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "5"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "Artificer Crozius",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "5"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
         }
       ]
     },
@@ -3765,6 +7607,212 @@
           "name": "pts",
           "typeid": "51b2-306e-1021-d207",
           "value": "75"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "➤ Storm of the Emperor’s Wrath - Witchfire",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "18\""
+            },
+            {
+              "name": "A",
+              "value": "D6"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Blast, Psychic"
+            }
+          ]
+        },
+        {
+          "name": "➤ Storm of the Emperor’s Wrath - Focused Witchfire",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "18\""
+            },
+            {
+              "name": "A",
+              "value": "2D6"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Blast, Hazardous, Psychic"
+            }
+          ]
+        },
+        {
+          "name": "➤ Storm of the Emperor’s Wrath - Witchfire",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "18\""
+            },
+            {
+              "name": "A",
+              "value": "D6"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Blast, Psychic"
+            }
+          ]
+        },
+        {
+          "name": "➤ Storm of the Emperor’s Wrath - Focused Witchfire",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "18\""
+            },
+            {
+              "name": "A",
+              "value": "2D6"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Blast, Hazardous, Psychic"
+            }
+          ]
+        },
+        {
+          "name": "Rod of Tigurius",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "5"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "7"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "D3"
+            },
+            {
+              "name": "Keywords",
+              "value": "Psychic"
+            }
+          ]
+        },
+        {
+          "name": "Rod of Tigurius",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "5"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "7"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "D3"
+            },
+            {
+              "name": "Keywords",
+              "value": "Psychic"
+            }
+          ]
         }
       ]
     },
@@ -4037,6 +8085,212 @@
           "typeid": "8135-9a2f-6627-09e2",
           "value": "0"
         }
+      ],
+      "weapons": [
+        {
+          "name": "Gauntlets of Ultramar",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "18\""
+            },
+            {
+              "name": "A",
+              "value": "4"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Pistol, Twin-linked"
+            }
+          ]
+        },
+        {
+          "name": "Gauntlets of Ultramar",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "6"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "8"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "3"
+            },
+            {
+              "name": "Keywords",
+              "value": "Twin-linked"
+            }
+          ]
+        },
+        {
+          "name": "Gauntlets of Ultramar",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "18\""
+            },
+            {
+              "name": "A",
+              "value": "4"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Pistol, Twin-linked"
+            }
+          ]
+        },
+        {
+          "name": "Gauntlets of Ultramar",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "6"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "8"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "3"
+            },
+            {
+              "name": "Keywords",
+              "value": "Twin-linked"
+            }
+          ]
+        },
+        {
+          "name": "Victrix Power Sword",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "5"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "Victrix Power Sword",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "5"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
       ]
     },
     {
@@ -4264,6 +8518,212 @@
           "typeid": "8135-9a2f-6627-09e2",
           "value": "0"
         }
+      ],
+      "weapons": [
+        {
+          "name": "Hand of Dominion",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "30\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Rapid Fire 2"
+            }
+          ]
+        },
+        {
+          "name": "Hand of Dominion",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "7"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "14"
+            },
+            {
+              "name": "AP",
+              "value": "-4"
+            },
+            {
+              "name": "D",
+              "value": "4"
+            },
+            {
+              "name": "Keywords",
+              "value": "Lethal Hits"
+            }
+          ]
+        },
+        {
+          "name": "Hand of Dominion",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "30\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Rapid Fire 2"
+            }
+          ]
+        },
+        {
+          "name": "Hand of Dominion",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "7"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "14"
+            },
+            {
+              "name": "AP",
+              "value": "-4"
+            },
+            {
+              "name": "D",
+              "value": "4"
+            },
+            {
+              "name": "Keywords",
+              "value": "Lethal Hits"
+            }
+          ]
+        },
+        {
+          "name": "The Emperor's Sword",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "14"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "8"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Devastating Wounds"
+            }
+          ]
+        },
+        {
+          "name": "The Emperor's Sword",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "14"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "8"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Devastating Wounds"
+            }
+          ]
+        }
       ]
     },
     {
@@ -4370,6 +8830,76 @@
           "name": "pts",
           "typeid": "51b2-306e-1021-d207",
           "value": "75"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "Chronus' Servo-Arm",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "3"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "8"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "3"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "Chronus' Servo-Arm",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "3"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "8"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "3"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
         }
       ]
     },
@@ -4529,6 +9059,144 @@
           "typeid": "51b2-306e-1021-d207",
           "value": "70"
         }
+      ],
+      "weapons": [
+        {
+          "name": "Combat Knife",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "4"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "Combat Knife",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "4"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "Quietus",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "36\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "3"
+            },
+            {
+              "name": "Keywords",
+              "value": "Precision"
+            }
+          ]
+        },
+        {
+          "name": "Quietus",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "36\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "3"
+            },
+            {
+              "name": "Keywords",
+              "value": "Precision"
+            }
+          ]
+        }
       ]
     },
     {
@@ -4552,6 +9220,748 @@
           "name": "pts",
           "typeid": "51b2-306e-1021-d207",
           "value": "85"
+        }
+      ],
+      "selectionEntryGroups": [
+        {
+          "id": "e2ae-fabb-40ec-dc8c",
+          "name": "Tyrannic War Veterans",
+          "entries": [
+            {
+              "id": "3c2c-14d4-2669-7f63",
+              "name": "Tyrannic War Veteran",
+              "type": "model",
+              "entries": [
+                {
+                  "id": "447a-517f-e0ff-2716",
+                  "name": "Bolt Pistol",
+                  "type": "upgrade",
+                  "profiles": [
+                    {
+                      "name": "Bolt Pistol",
+                      "type": "Ranged Weapons",
+                      "lines": [
+                        {
+                          "name": "Range",
+                          "value": "12\""
+                        },
+                        {
+                          "name": "A",
+                          "value": "1"
+                        },
+                        {
+                          "name": "BS",
+                          "value": "3+"
+                        },
+                        {
+                          "name": "S",
+                          "value": "4"
+                        },
+                        {
+                          "name": "AP",
+                          "value": "0"
+                        },
+                        {
+                          "name": "D",
+                          "value": "1"
+                        },
+                        {
+                          "name": "Keywords",
+                          "value": "Anti-Tyranids 4+, Pistol"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "b433-5c4c-3958-e044",
+                  "name": "Boltgun",
+                  "type": "upgrade",
+                  "profiles": [
+                    {
+                      "name": "Boltgun",
+                      "type": "Ranged Weapons",
+                      "lines": [
+                        {
+                          "name": "Range",
+                          "value": "24\""
+                        },
+                        {
+                          "name": "A",
+                          "value": "2"
+                        },
+                        {
+                          "name": "BS",
+                          "value": "3+"
+                        },
+                        {
+                          "name": "S",
+                          "value": "4"
+                        },
+                        {
+                          "name": "AP",
+                          "value": "0"
+                        },
+                        {
+                          "name": "D",
+                          "value": "1"
+                        },
+                        {
+                          "name": "Keywords",
+                          "value": "Anti-Tyranids 4+"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "bece-acd9-8433-c368",
+                  "name": "Close Combat Weapon",
+                  "type": "upgrade",
+                  "profiles": [
+                    {
+                      "name": "Close Combat Weapon",
+                      "type": "Melee Weapons",
+                      "lines": [
+                        {
+                          "name": "Range",
+                          "value": "Melee"
+                        },
+                        {
+                          "name": "A",
+                          "value": "3"
+                        },
+                        {
+                          "name": "WS",
+                          "value": "3+"
+                        },
+                        {
+                          "name": "S",
+                          "value": "4"
+                        },
+                        {
+                          "name": "AP",
+                          "value": "0"
+                        },
+                        {
+                          "name": "D",
+                          "value": "1"
+                        },
+                        {
+                          "name": "Keywords",
+                          "value": "Anti-Tyranids 4+"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "profiles": [
+                {
+                  "name": "Tyrannic War Veterans",
+                  "type": "Unit",
+                  "lines": [
+                    {
+                      "name": "M",
+                      "value": "6\""
+                    },
+                    {
+                      "name": "T",
+                      "value": "4"
+                    },
+                    {
+                      "name": "SV",
+                      "value": "3+"
+                    },
+                    {
+                      "name": "W",
+                      "value": "2"
+                    },
+                    {
+                      "name": "LD",
+                      "value": "6+"
+                    },
+                    {
+                      "name": "OC",
+                      "value": "1"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "d290-6bc6-b898-287a",
+              "name": "Veteran Sergeant",
+              "type": "model",
+              "entries": [
+                {
+                  "id": "ed1b-558c-4344-bea2",
+                  "name": "Close Combat Weapon",
+                  "type": "upgrade",
+                  "profiles": [
+                    {
+                      "name": "Close Combat Weapon",
+                      "type": "Melee Weapons",
+                      "lines": [
+                        {
+                          "name": "Range",
+                          "value": "Melee"
+                        },
+                        {
+                          "name": "A",
+                          "value": "3"
+                        },
+                        {
+                          "name": "WS",
+                          "value": "3+"
+                        },
+                        {
+                          "name": "S",
+                          "value": "4"
+                        },
+                        {
+                          "name": "AP",
+                          "value": "0"
+                        },
+                        {
+                          "name": "D",
+                          "value": "1"
+                        },
+                        {
+                          "name": "Keywords",
+                          "value": "Anti-Tyranids 4+"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "9e0f-eaf0-86af-8c20",
+                  "name": "Boltgun",
+                  "type": "upgrade",
+                  "profiles": [
+                    {
+                      "name": "Boltgun",
+                      "type": "Ranged Weapons",
+                      "lines": [
+                        {
+                          "name": "Range",
+                          "value": "24\""
+                        },
+                        {
+                          "name": "A",
+                          "value": "2"
+                        },
+                        {
+                          "name": "BS",
+                          "value": "3+"
+                        },
+                        {
+                          "name": "S",
+                          "value": "4"
+                        },
+                        {
+                          "name": "AP",
+                          "value": "0"
+                        },
+                        {
+                          "name": "D",
+                          "value": "1"
+                        },
+                        {
+                          "name": "Keywords",
+                          "value": "Anti-Tyranids 4+"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "dd45-56f6-dbc4-d501",
+                  "name": "Bolt Pistol",
+                  "type": "upgrade",
+                  "profiles": [
+                    {
+                      "name": "Bolt Pistol",
+                      "type": "Ranged Weapons",
+                      "lines": [
+                        {
+                          "name": "Range",
+                          "value": "12\""
+                        },
+                        {
+                          "name": "A",
+                          "value": "1"
+                        },
+                        {
+                          "name": "BS",
+                          "value": "3+"
+                        },
+                        {
+                          "name": "S",
+                          "value": "4"
+                        },
+                        {
+                          "name": "AP",
+                          "value": "0"
+                        },
+                        {
+                          "name": "D",
+                          "value": "1"
+                        },
+                        {
+                          "name": "Keywords",
+                          "value": "Anti-Tyranids 4+, Pistol"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "profiles": [
+                {
+                  "name": "Veteran Sergeant",
+                  "type": "Unit",
+                  "lines": [
+                    {
+                      "name": "M",
+                      "value": "6\""
+                    },
+                    {
+                      "name": "T",
+                      "value": "4"
+                    },
+                    {
+                      "name": "SV",
+                      "value": "3+"
+                    },
+                    {
+                      "name": "W",
+                      "value": "2"
+                    },
+                    {
+                      "name": "LD",
+                      "value": "6+"
+                    },
+                    {
+                      "name": "OC",
+                      "value": "1"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "weapons": [
+        {
+          "name": "Bolt Pistol",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "12\""
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "BS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Tyranids 4+, Pistol"
+            }
+          ]
+        },
+        {
+          "name": "Bolt Pistol",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "12\""
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "BS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Tyranids 4+, Pistol"
+            }
+          ]
+        },
+        {
+          "name": "Boltgun",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "24\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Tyranids 4+"
+            }
+          ]
+        },
+        {
+          "name": "Boltgun",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "24\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Tyranids 4+"
+            }
+          ]
+        },
+        {
+          "name": "Close Combat Weapon",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "3"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Tyranids 4+"
+            }
+          ]
+        },
+        {
+          "name": "Close Combat Weapon",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "3"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Tyranids 4+"
+            }
+          ]
+        },
+        {
+          "name": "Close Combat Weapon",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "3"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Tyranids 4+"
+            }
+          ]
+        },
+        {
+          "name": "Close Combat Weapon",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "3"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Tyranids 4+"
+            }
+          ]
+        },
+        {
+          "name": "Boltgun",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "24\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Tyranids 4+"
+            }
+          ]
+        },
+        {
+          "name": "Boltgun",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "24\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Tyranids 4+"
+            }
+          ]
+        },
+        {
+          "name": "Bolt Pistol",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "12\""
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "BS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Tyranids 4+, Pistol"
+            }
+          ]
+        },
+        {
+          "name": "Bolt Pistol",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "12\""
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "BS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Tyranids 4+, Pistol"
+            }
+          ]
         }
       ]
     },
@@ -4730,6 +10140,144 @@
           "name": "Crusade: Weapon Modifications",
           "typeid": "716d-91b7-d55a-1022",
           "value": "0"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "Invictus",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "24\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "Invictus",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "24\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "Sword of Idaeus",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "6"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Sustained Hits 1"
+            }
+          ]
+        },
+        {
+          "name": "Sword of Idaeus",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "6"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Sustained Hits 1"
+            }
+          ]
         }
       ]
     },
@@ -5027,6 +10575,212 @@
           "typeid": "51b2-306e-1021-d207",
           "value": "155"
         }
+      ],
+      "weapons": [
+        {
+          "name": "Power Weapon",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "3"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "Power Weapon",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "3"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "Power Weapon",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "3"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "Power Weapon",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "3"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "Power Weapon",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "3"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "Power Weapon",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "3"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
       ]
     },
     {
@@ -5204,6 +10958,144 @@
           "name": "Crusade: Weapon Modifications",
           "typeid": "716d-91b7-d55a-1022",
           "value": "0"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "Heavy Bolt Pistol",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "18\""
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Pistol"
+            }
+          ]
+        },
+        {
+          "name": "Heavy Bolt Pistol",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "18\""
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Pistol"
+            }
+          ]
+        },
+        {
+          "name": "Astartes Chainsword",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "8"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Infantry 2+"
+            }
+          ]
+        },
+        {
+          "name": "Astartes Chainsword",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "8"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Infantry 2+"
+            }
+          ]
         }
       ]
     }

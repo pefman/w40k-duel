@@ -63,6 +63,125 @@
           "typeid": "51b2-306e-1021-d207",
           "value": "85"
         }
+      ],
+      "selectionEntryGroups": [
+        {
+          "id": "9946-824b-f220-11be",
+          "name": "Wargear",
+          "entries": [
+            {
+              "id": "e5b0-1627-ba3b-841e",
+              "name": "Enormous claws",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Enormous claws",
+                  "type": "Melee Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "Melee"
+                    },
+                    {
+                      "name": "A",
+                      "value": "4"
+                    },
+                    {
+                      "name": "WS",
+                      "value": "3+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "6"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-2"
+                    },
+                    {
+                      "name": "D",
+                      "value": "D3"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "-"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "weapons": [
+        {
+          "name": "Enormous claws",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "4"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "D3"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "Enormous claws",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "4"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "D3"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
       ]
     },
     {
@@ -106,6 +225,12 @@
           "name": "pts",
           "typeid": "51b2-306e-1021-d207",
           "value": "145"
+        }
+      ],
+      "selectionEntryGroups": [
+        {
+          "id": "8b0c-3772-861a-a7cd",
+          "name": "Quad-gun"
         }
       ]
     },
@@ -161,6 +286,12 @@
           "typeid": "51b2-306e-1021-d207",
           "value": "275"
         }
+      ],
+      "selectionEntryGroups": [
+        {
+          "id": "14be-d879-c755-3d93",
+          "name": "Weapons Array"
+        }
       ]
     },
     {
@@ -214,6 +345,16 @@
           "name": "pts",
           "typeid": "51b2-306e-1021-d207",
           "value": "260"
+        }
+      ],
+      "selectionEntryGroups": [
+        {
+          "id": "b2f0-fef3-2b51-8edc",
+          "name": "Weapons Array"
+        },
+        {
+          "id": "9df9-6944-3f63-2226",
+          "name": "Turrets"
         }
       ]
     },
@@ -397,6 +538,218 @@
           "typeid": "51b2-306e-1021-d207",
           "value": "480"
         }
+      ],
+      "selectionEntryGroups": [
+        {
+          "id": "5938-6c95-7f7c-b06b",
+          "name": "Heavy Bolters"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "Redemptor lascannons",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "48\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "14"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "D6+1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Fly 2+"
+            }
+          ]
+        },
+        {
+          "name": "Redemptor lascannons",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "48\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "14"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "D6+1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Fly 2+"
+            }
+          ]
+        },
+        {
+          "name": "➤ Redemptor missile silo - superfrag",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "48\""
+            },
+            {
+              "name": "A",
+              "value": "2D6+2"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Blast"
+            }
+          ]
+        },
+        {
+          "name": "➤ Redemptor missile silo - superkrak",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "48\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "10"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "D6+1"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "➤ Redemptor missile silo - superfrag",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "48\""
+            },
+            {
+              "name": "A",
+              "value": "2D6+2"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Blast"
+            }
+          ]
+        },
+        {
+          "name": "➤ Redemptor missile silo - superkrak",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "48\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "10"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "D6+1"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
       ]
     },
     {
@@ -438,6 +791,42 @@
             }
           ]
         }
+      ],
+      "weapons": [
+        {
+          "name": "Redemptor lascannons",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "48\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "14"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "D6+1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Fly 2+"
+            }
+          ]
+        }
       ]
     },
     {
@@ -445,6 +834,76 @@
       "name": "Redemptor missile silo",
       "type": "upgrade",
       "profiles": [
+        {
+          "name": "➤ Redemptor missile silo - superfrag",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "48\""
+            },
+            {
+              "name": "A",
+              "value": "2D6+2"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Blast"
+            }
+          ]
+        },
+        {
+          "name": "➤ Redemptor missile silo - superkrak",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "48\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "10"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "D6+1"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
+      ],
+      "weapons": [
         {
           "name": "➤ Redemptor missile silo - superfrag",
           "type": "Ranged Weapons",
@@ -567,6 +1026,343 @@
           "typeid": "51b2-306e-1021-d207",
           "value": "45"
         }
+      ],
+      "selectionEntryGroups": [
+        {
+          "id": "58fa-ec3e-e1a3-4ba8",
+          "name": "Wargear",
+          "entries": [
+            {
+              "id": "1ab6-25ac-947b-bf5f",
+              "name": "Destroyer pulse",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Destroyer pulse",
+                  "type": "Ranged Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "18\""
+                    },
+                    {
+                      "name": "A",
+                      "value": "1"
+                    },
+                    {
+                      "name": "BS",
+                      "value": "4+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "8"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-2"
+                    },
+                    {
+                      "name": "D",
+                      "value": "2"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "Pistol"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "3200-448d-b069-ce9b",
+              "name": "Guardian salvo launchers",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Guardian salvo launchers",
+                  "type": "Ranged Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "24\""
+                    },
+                    {
+                      "name": "A",
+                      "value": "D6"
+                    },
+                    {
+                      "name": "BS",
+                      "value": "4+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "5"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-1"
+                    },
+                    {
+                      "name": "D",
+                      "value": "1"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "Blast"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "7291-ec92-1fd4-75ad",
+              "name": "Manipulator limbs",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Manipulator limbs",
+                  "type": "Melee Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "Melee"
+                    },
+                    {
+                      "name": "A",
+                      "value": "4"
+                    },
+                    {
+                      "name": "WS",
+                      "value": "4+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "5"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "0"
+                    },
+                    {
+                      "name": "D",
+                      "value": "1"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "-"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "weapons": [
+        {
+          "name": "Destroyer pulse",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "18\""
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "8"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Pistol"
+            }
+          ]
+        },
+        {
+          "name": "Destroyer pulse",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "18\""
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "8"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Pistol"
+            }
+          ]
+        },
+        {
+          "name": "Guardian salvo launchers",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "24\""
+            },
+            {
+              "name": "A",
+              "value": "D6"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Blast"
+            }
+          ]
+        },
+        {
+          "name": "Guardian salvo launchers",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "24\""
+            },
+            {
+              "name": "A",
+              "value": "D6"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Blast"
+            }
+          ]
+        },
+        {
+          "name": "Manipulator limbs",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "4"
+            },
+            {
+              "name": "WS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "Manipulator limbs",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "4"
+            },
+            {
+              "name": "WS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
       ]
     },
     {
@@ -674,6 +1470,82 @@
           "typeid": "51b2-306e-1021-d207",
           "value": "550"
         }
+      ],
+      "selectionEntryGroups": [
+        {
+          "id": "98fc-7c38-f820-e866",
+          "name": "Heavy Bolters"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "Aquila macro-cannon",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "72\""
+            },
+            {
+              "name": "A",
+              "value": "D6+6"
+            },
+            {
+              "name": "BS",
+              "value": "5+"
+            },
+            {
+              "name": "S",
+              "value": "16"
+            },
+            {
+              "name": "AP",
+              "value": "-4"
+            },
+            {
+              "name": "D",
+              "value": "4"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "Aquila macro-cannon",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "72\""
+            },
+            {
+              "name": "A",
+              "value": "D6+6"
+            },
+            {
+              "name": "BS",
+              "value": "5+"
+            },
+            {
+              "name": "S",
+              "value": "16"
+            },
+            {
+              "name": "AP",
+              "value": "-4"
+            },
+            {
+              "name": "D",
+              "value": "4"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
       ]
     },
     {
@@ -681,6 +1553,42 @@
       "name": "Aquila macro-cannon",
       "type": "upgrade",
       "profiles": [
+        {
+          "name": "Aquila macro-cannon",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "72\""
+            },
+            {
+              "name": "A",
+              "value": "D6+6"
+            },
+            {
+              "name": "BS",
+              "value": "5+"
+            },
+            {
+              "name": "S",
+              "value": "16"
+            },
+            {
+              "name": "AP",
+              "value": "-4"
+            },
+            {
+              "name": "D",
+              "value": "4"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
+      ],
+      "weapons": [
         {
           "name": "Aquila macro-cannon",
           "type": "Ranged Weapons",
@@ -856,6 +1764,144 @@
           "typeid": "51b2-306e-1021-d207",
           "value": "225"
         }
+      ],
+      "weapons": [
+        {
+          "name": "➤ Plasma obliterator - standard",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "48\""
+            },
+            {
+              "name": "A",
+              "value": "D6+3"
+            },
+            {
+              "name": "BS",
+              "value": "5+"
+            },
+            {
+              "name": "S",
+              "value": "9"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "3"
+            },
+            {
+              "name": "Keywords",
+              "value": "Blast"
+            }
+          ]
+        },
+        {
+          "name": "➤ Plasma obliterator - supercharge",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "48\""
+            },
+            {
+              "name": "A",
+              "value": "D6+3"
+            },
+            {
+              "name": "BS",
+              "value": "5+"
+            },
+            {
+              "name": "S",
+              "value": "10"
+            },
+            {
+              "name": "AP",
+              "value": "-4"
+            },
+            {
+              "name": "D",
+              "value": "4"
+            },
+            {
+              "name": "Keywords",
+              "value": "Blast, Hazardous"
+            }
+          ]
+        },
+        {
+          "name": "➤ Plasma obliterator - standard",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "48\""
+            },
+            {
+              "name": "A",
+              "value": "D6+3"
+            },
+            {
+              "name": "BS",
+              "value": "5+"
+            },
+            {
+              "name": "S",
+              "value": "9"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "3"
+            },
+            {
+              "name": "Keywords",
+              "value": "Blast"
+            }
+          ]
+        },
+        {
+          "name": "➤ Plasma obliterator - supercharge",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "48\""
+            },
+            {
+              "name": "A",
+              "value": "D6+3"
+            },
+            {
+              "name": "BS",
+              "value": "5+"
+            },
+            {
+              "name": "S",
+              "value": "10"
+            },
+            {
+              "name": "AP",
+              "value": "-4"
+            },
+            {
+              "name": "D",
+              "value": "4"
+            },
+            {
+              "name": "Keywords",
+              "value": "Blast, Hazardous"
+            }
+          ]
+        }
       ]
     },
     {
@@ -863,6 +1909,76 @@
       "name": "Plasma obliterator",
       "type": "upgrade",
       "profiles": [
+        {
+          "name": "➤ Plasma obliterator - standard",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "48\""
+            },
+            {
+              "name": "A",
+              "value": "D6+3"
+            },
+            {
+              "name": "BS",
+              "value": "5+"
+            },
+            {
+              "name": "S",
+              "value": "9"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "3"
+            },
+            {
+              "name": "Keywords",
+              "value": "Blast"
+            }
+          ]
+        },
+        {
+          "name": "➤ Plasma obliterator - supercharge",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "48\""
+            },
+            {
+              "name": "A",
+              "value": "D6+3"
+            },
+            {
+              "name": "BS",
+              "value": "5+"
+            },
+            {
+              "name": "S",
+              "value": "10"
+            },
+            {
+              "name": "AP",
+              "value": "-4"
+            },
+            {
+              "name": "D",
+              "value": "4"
+            },
+            {
+              "name": "Keywords",
+              "value": "Blast, Hazardous"
+            }
+          ]
+        }
+      ],
+      "weapons": [
         {
           "name": "➤ Plasma obliterator - standard",
           "type": "Ranged Weapons",
@@ -1018,6 +2134,738 @@
           "typeid": "51b2-306e-1021-d207",
           "value": "220"
         }
+      ],
+      "selectionEntryGroups": [
+        {
+          "id": "bca0-9eff-5e78-5f16",
+          "name": "Seconday Weapon",
+          "entries": [
+            {
+              "id": "2b2d-2d80-c99a-50bc",
+              "name": "Primaris air defence missiles",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Primaris air defence missiles",
+                  "type": "Ranged Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "48\""
+                    },
+                    {
+                      "name": "A",
+                      "value": "D6"
+                    },
+                    {
+                      "name": "BS",
+                      "value": "4+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "6"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-2"
+                    },
+                    {
+                      "name": "D",
+                      "value": "2"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "Anti-Fly 2+"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "82f9-177b-779e-7780",
+              "name": "Primaris Icarus lascannon",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Primaris Icarus lascannon",
+                  "type": "Ranged Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "48\""
+                    },
+                    {
+                      "name": "A",
+                      "value": "1"
+                    },
+                    {
+                      "name": "BS",
+                      "value": "4+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "12"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-3"
+                    },
+                    {
+                      "name": "D",
+                      "value": "D6+1"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "Anti-Fly 2+"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "663c-1233-84a9-8909",
+              "name": "Primaris Icarus quad lascannon",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Primaris Icarus quad lascannon",
+                  "type": "Ranged Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "48\""
+                    },
+                    {
+                      "name": "A",
+                      "value": "2"
+                    },
+                    {
+                      "name": "BS",
+                      "value": "4+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "12"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-3"
+                    },
+                    {
+                      "name": "D",
+                      "value": "D6+1"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "Anti-Fly 2+, Twin-linked"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "6f21-792e-17c6-c9dc",
+              "name": "Primaris quad-gun",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Primaris quad-gun",
+                  "type": "Ranged Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "48\""
+                    },
+                    {
+                      "name": "A",
+                      "value": "4"
+                    },
+                    {
+                      "name": "BS",
+                      "value": "4+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "8"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-1"
+                    },
+                    {
+                      "name": "D",
+                      "value": "2"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "-"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "2cde-a0ef-d7e0-53b3",
+              "name": "Primaris castellan launcher",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Primaris castellan launcher",
+                  "type": "Ranged Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "72\""
+                    },
+                    {
+                      "name": "A",
+                      "value": "D6+1"
+                    },
+                    {
+                      "name": "BS",
+                      "value": "4+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "6"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "0"
+                    },
+                    {
+                      "name": "D",
+                      "value": "1"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "Blast, Indirect Fire"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "e500-1c20-8d3d-e4c5",
+              "name": "Primaris vengeance launcher",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Primaris vengeance launcher",
+                  "type": "Ranged Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "72\""
+                    },
+                    {
+                      "name": "A",
+                      "value": "D3+1"
+                    },
+                    {
+                      "name": "BS",
+                      "value": "4+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "7"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-1"
+                    },
+                    {
+                      "name": "D",
+                      "value": "2"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "Blast, Indirect Fire"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "weapons": [
+        {
+          "name": "Primaris Redoubt turbo-laser destructor",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "96\""
+            },
+            {
+              "name": "A",
+              "value": "D3+1"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "16"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "D6+3"
+            },
+            {
+              "name": "Keywords",
+              "value": "Blast"
+            }
+          ]
+        },
+        {
+          "name": "Primaris Redoubt turbo-laser destructor",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "96\""
+            },
+            {
+              "name": "A",
+              "value": "D3+1"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "16"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "D6+3"
+            },
+            {
+              "name": "Keywords",
+              "value": "Blast"
+            }
+          ]
+        },
+        {
+          "name": "Primaris air defence missiles",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "48\""
+            },
+            {
+              "name": "A",
+              "value": "D6"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Fly 2+"
+            }
+          ]
+        },
+        {
+          "name": "Primaris air defence missiles",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "48\""
+            },
+            {
+              "name": "A",
+              "value": "D6"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Fly 2+"
+            }
+          ]
+        },
+        {
+          "name": "Primaris Icarus lascannon",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "48\""
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "12"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "D6+1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Fly 2+"
+            }
+          ]
+        },
+        {
+          "name": "Primaris Icarus lascannon",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "48\""
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "12"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "D6+1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Fly 2+"
+            }
+          ]
+        },
+        {
+          "name": "Primaris Icarus quad lascannon",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "48\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "12"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "D6+1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Fly 2+, Twin-linked"
+            }
+          ]
+        },
+        {
+          "name": "Primaris Icarus quad lascannon",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "48\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "12"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "D6+1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Fly 2+, Twin-linked"
+            }
+          ]
+        },
+        {
+          "name": "Primaris quad-gun",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "48\""
+            },
+            {
+              "name": "A",
+              "value": "4"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "8"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "Primaris quad-gun",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "48\""
+            },
+            {
+              "name": "A",
+              "value": "4"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "8"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "Primaris castellan launcher",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "72\""
+            },
+            {
+              "name": "A",
+              "value": "D6+1"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Blast, Indirect Fire"
+            }
+          ]
+        },
+        {
+          "name": "Primaris castellan launcher",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "72\""
+            },
+            {
+              "name": "A",
+              "value": "D6+1"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Blast, Indirect Fire"
+            }
+          ]
+        },
+        {
+          "name": "Primaris vengeance launcher",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "72\""
+            },
+            {
+              "name": "A",
+              "value": "D3+1"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "7"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Blast, Indirect Fire"
+            }
+          ]
+        },
+        {
+          "name": "Primaris vengeance launcher",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "72\""
+            },
+            {
+              "name": "A",
+              "value": "D3+1"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "7"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Blast, Indirect Fire"
+            }
+          ]
+        }
       ]
     },
     {
@@ -1025,6 +2873,42 @@
       "name": "Primaris Redoubt turbo-laser destructor",
       "type": "upgrade",
       "profiles": [
+        {
+          "name": "Primaris Redoubt turbo-laser destructor",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "96\""
+            },
+            {
+              "name": "A",
+              "value": "D3+1"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "16"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "D6+3"
+            },
+            {
+              "name": "Keywords",
+              "value": "Blast"
+            }
+          ]
+        }
+      ],
+      "weapons": [
         {
           "name": "Primaris Redoubt turbo-laser destructor",
           "type": "Ranged Weapons",
@@ -1134,6 +3018,283 @@
           "name": "pts",
           "typeid": "51b2-306e-1021-d207",
           "value": "35"
+        }
+      ],
+      "selectionEntryGroups": [
+        {
+          "id": "a050-08fd-451c-4f2a",
+          "name": "Spindle Drones",
+          "entries": [
+            {
+              "id": "e32d-ae0a-732f-5864",
+              "name": "Spindle Drone",
+              "type": "model",
+              "entries": [
+                {
+                  "id": "8e88-801b-56-a3d4",
+                  "name": "Drone pulse",
+                  "type": "upgrade",
+                  "profiles": [
+                    {
+                      "name": "Drone pulse",
+                      "type": "Ranged Weapons",
+                      "lines": [
+                        {
+                          "name": "Range",
+                          "value": "18\""
+                        },
+                        {
+                          "name": "A",
+                          "value": "1"
+                        },
+                        {
+                          "name": "BS",
+                          "value": "4+"
+                        },
+                        {
+                          "name": "S",
+                          "value": "4"
+                        },
+                        {
+                          "name": "AP",
+                          "value": "0"
+                        },
+                        {
+                          "name": "D",
+                          "value": "1"
+                        },
+                        {
+                          "name": "Keywords",
+                          "value": "Pistol"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "9370-323f-758e-f4b4",
+                  "name": "Close combat weapon",
+                  "type": "upgrade",
+                  "profiles": [
+                    {
+                      "name": "Close combat weapon",
+                      "type": "Melee Weapons",
+                      "lines": [
+                        {
+                          "name": "Range",
+                          "value": "Melee"
+                        },
+                        {
+                          "name": "A",
+                          "value": "1"
+                        },
+                        {
+                          "name": "WS",
+                          "value": "4+"
+                        },
+                        {
+                          "name": "S",
+                          "value": "3"
+                        },
+                        {
+                          "name": "AP",
+                          "value": "0"
+                        },
+                        {
+                          "name": "D",
+                          "value": "1"
+                        },
+                        {
+                          "name": "Keywords",
+                          "value": "-"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "profiles": [
+                {
+                  "name": "Spindle Drone",
+                  "type": "Unit",
+                  "lines": [
+                    {
+                      "name": "M",
+                      "value": "6\""
+                    },
+                    {
+                      "name": "T",
+                      "value": "4"
+                    },
+                    {
+                      "name": "SV",
+                      "value": "4+"
+                    },
+                    {
+                      "name": "W",
+                      "value": "2"
+                    },
+                    {
+                      "name": "LD",
+                      "value": "6+"
+                    },
+                    {
+                      "name": "OC",
+                      "value": "1"
+                    }
+                  ]
+                },
+                {
+                  "name": "Threat Level Rising",
+                  "type": "Abilities",
+                  "lines": [
+                    {
+                      "name": "Description",
+                      "value": "Each time a model in this unit makes an attack, add 1 to the Hit roll if this unit is below its Starting Strength, and add 1 to the Wound roll as well if this unit is Below Half-strength"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "weapons": [
+        {
+          "name": "Drone pulse",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "18\""
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Pistol"
+            }
+          ]
+        },
+        {
+          "name": "Drone pulse",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "18\""
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Pistol"
+            }
+          ]
+        },
+        {
+          "name": "Close combat weapon",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "WS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "3"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "Close combat weapon",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "WS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "3"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
         }
       ]
     },
@@ -1283,6 +3444,144 @@
           "typeid": "51b2-306e-1021-d207",
           "value": "70"
         }
+      ],
+      "weapons": [
+        {
+          "name": "Atomic disassembler",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "18\""
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "BS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "8"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Ignores Cover, Pistol"
+            }
+          ]
+        },
+        {
+          "name": "Atomic disassembler",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "18\""
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "BS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "8"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Ignores Cover, Pistol"
+            }
+          ]
+        },
+        {
+          "name": "Eradicator glove",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "4"
+            },
+            {
+              "name": "WS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "8"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "Eradicator glove",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "4"
+            },
+            {
+              "name": "WS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "8"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
       ]
     },
     {
@@ -1324,6 +3623,42 @@
             }
           ]
         }
+      ],
+      "weapons": [
+        {
+          "name": "Atomic disassembler",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "18\""
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "BS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "8"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Ignores Cover, Pistol"
+            }
+          ]
+        }
       ]
     },
     {
@@ -1331,6 +3666,42 @@
       "name": "Eradicator glove",
       "type": "upgrade",
       "profiles": [
+        {
+          "name": "Eradicator glove",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "4"
+            },
+            {
+              "name": "WS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "8"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
+      ],
+      "weapons": [
         {
           "name": "Eradicator glove",
           "type": "Melee Weapons",
@@ -1418,6 +3789,12 @@
           "name": "pts",
           "typeid": "51b2-306e-1021-d207",
           "value": "140"
+        }
+      ],
+      "selectionEntryGroups": [
+        {
+          "id": "e0ba-5bb3-c836-c3aa",
+          "name": "Turret"
         }
       ]
     },
@@ -1590,6 +3967,82 @@
           "typeid": "51b2-306e-1021-d207",
           "value": "525"
         }
+      ],
+      "selectionEntryGroups": [
+        {
+          "id": "a0e2-81d6-964c-e834",
+          "name": "Heavy Bolters"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "Vortex missile battery",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "72\""
+            },
+            {
+              "name": "A",
+              "value": "D6+3"
+            },
+            {
+              "name": "BS",
+              "value": "5+"
+            },
+            {
+              "name": "S",
+              "value": "16"
+            },
+            {
+              "name": "AP",
+              "value": "-4"
+            },
+            {
+              "name": "D",
+              "value": "D6"
+            },
+            {
+              "name": "Keywords",
+              "value": "Blast, Devastating Wounds, Hazardous, Indirect Fire"
+            }
+          ]
+        },
+        {
+          "name": "Vortex missile battery",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "72\""
+            },
+            {
+              "name": "A",
+              "value": "D6+3"
+            },
+            {
+              "name": "BS",
+              "value": "5+"
+            },
+            {
+              "name": "S",
+              "value": "16"
+            },
+            {
+              "name": "AP",
+              "value": "-4"
+            },
+            {
+              "name": "D",
+              "value": "D6"
+            },
+            {
+              "name": "Keywords",
+              "value": "Blast, Devastating Wounds, Hazardous, Indirect Fire"
+            }
+          ]
+        }
       ]
     },
     {
@@ -1597,6 +4050,42 @@
       "name": "Vortex missile battery",
       "type": "upgrade",
       "profiles": [
+        {
+          "name": "Vortex missile battery",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "72\""
+            },
+            {
+              "name": "A",
+              "value": "D6+3"
+            },
+            {
+              "name": "BS",
+              "value": "5+"
+            },
+            {
+              "name": "S",
+              "value": "16"
+            },
+            {
+              "name": "AP",
+              "value": "-4"
+            },
+            {
+              "name": "D",
+              "value": "D6"
+            },
+            {
+              "name": "Keywords",
+              "value": "Blast, Devastating Wounds, Hazardous, Indirect Fire"
+            }
+          ]
+        }
+      ],
+      "weapons": [
         {
           "name": "Vortex missile battery",
           "type": "Ranged Weapons",
@@ -1694,6 +4183,12 @@
           "name": "pts",
           "typeid": "51b2-306e-1021-d207",
           "value": "180"
+        }
+      ],
+      "selectionEntryGroups": [
+        {
+          "id": "44b8-6fae-e8ac-c347",
+          "name": "Weapons Array"
         }
       ]
     },
@@ -1841,6 +4336,42 @@
             }
           ]
         }
+      ],
+      "weapons": [
+        {
+          "name": "Icarus Lascannon",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "48\""
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "BS",
+              "value": "5+"
+            },
+            {
+              "name": "S",
+              "value": "12"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "D6+1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Fly 2+"
+            }
+          ]
+        }
       ]
     },
     {
@@ -1848,6 +4379,42 @@
       "name": "Quad-gun",
       "type": "upgrade",
       "profiles": [
+        {
+          "name": "Quad-gun",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "48\""
+            },
+            {
+              "name": "A",
+              "value": "4"
+            },
+            {
+              "name": "BS",
+              "value": "5+"
+            },
+            {
+              "name": "S",
+              "value": "9"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "3"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Fly 3+, Twin-linked"
+            }
+          ]
+        }
+      ],
+      "weapons": [
         {
           "name": "Quad-gun",
           "type": "Ranged Weapons",
@@ -1923,6 +4490,42 @@
             }
           ]
         }
+      ],
+      "weapons": [
+        {
+          "name": "Heavy bolter",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "36\""
+            },
+            {
+              "name": "A",
+              "value": "3"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Sustained Hits 1"
+            }
+          ]
+        }
       ]
     },
     {
@@ -1930,6 +4533,42 @@
       "name": "Quad lascannon",
       "type": "upgrade",
       "profiles": [
+        {
+          "name": "Quad lascannon",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "48\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "12"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "D6+1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Twin-linked, Anti-Fly 2+"
+            }
+          ]
+        }
+      ],
+      "weapons": [
         {
           "name": "Quad lascannon",
           "type": "Ranged Weapons",
@@ -2005,6 +4644,42 @@
             }
           ]
         }
+      ],
+      "weapons": [
+        {
+          "name": "Punisher gatling cannon",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "24\""
+            },
+            {
+              "name": "A",
+              "value": "20"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
       ]
     },
     {
@@ -2012,6 +4687,42 @@
       "name": "Battle cannon",
       "type": "upgrade",
       "profiles": [
+        {
+          "name": "Battle cannon",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "48\""
+            },
+            {
+              "name": "A",
+              "value": "D6+3"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "9"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "3"
+            },
+            {
+              "name": "Keywords",
+              "value": "Blast"
+            }
+          ]
+        }
+      ],
+      "weapons": [
         {
           "name": "Battle cannon",
           "type": "Ranged Weapons",
@@ -2087,6 +4798,42 @@
             }
           ]
         }
+      ],
+      "weapons": [
+        {
+          "name": "Multi-melta",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "18\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "9"
+            },
+            {
+              "name": "AP",
+              "value": "-4"
+            },
+            {
+              "name": "D",
+              "value": "D6"
+            },
+            {
+              "name": "Keywords",
+              "value": "Melta 2"
+            }
+          ]
+        }
       ]
     },
     {
@@ -2094,6 +4841,42 @@
       "name": "Twin heavy bolter",
       "type": "upgrade",
       "profiles": [
+        {
+          "name": "Twin heavy bolter",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "36\""
+            },
+            {
+              "name": "A",
+              "value": "3"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Sustained Hits 1, Twin-linked"
+            }
+          ]
+        }
+      ],
+      "weapons": [
         {
           "name": "Twin heavy bolter",
           "type": "Ranged Weapons",
@@ -2169,6 +4952,42 @@
             }
           ]
         }
+      ],
+      "weapons": [
+        {
+          "name": "Twin heavy flamer",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "12\""
+            },
+            {
+              "name": "A",
+              "value": "D6"
+            },
+            {
+              "name": "BS",
+              "value": "N/A"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Ignores Cover, Torrent, Twin-linked"
+            }
+          ]
+        }
       ]
     },
     {
@@ -2176,6 +4995,42 @@
       "name": "Twin lascannon",
       "type": "upgrade",
       "profiles": [
+        {
+          "name": "Twin lascannon",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "48\""
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "12"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "D6+1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Twin-linked"
+            }
+          ]
+        }
+      ],
+      "weapons": [
         {
           "name": "Twin lascannon",
           "type": "Ranged Weapons",
@@ -2320,6 +5175,86 @@
             }
           ]
         }
+      ],
+      "selectionEntryGroups": [
+        {
+          "id": "65b8-ef30-87fb-c746",
+          "name": "Twin Heavy Bolters"
+        },
+        {
+          "id": "8ad5-d201-b2aa-cdc6",
+          "name": "Tower Sections"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "Twin long-barrelled autocannon",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "60\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "9"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "3"
+            },
+            {
+              "name": "Keywords",
+              "value": "Twin-linked"
+            }
+          ]
+        },
+        {
+          "name": "Twin long-barrelled autocannon",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "60\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "9"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "3"
+            },
+            {
+              "name": "Keywords",
+              "value": "Twin-linked"
+            }
+          ]
+        }
       ]
     },
     {
@@ -2327,6 +5262,42 @@
       "name": "Twin long-barrelled autocannon",
       "type": "upgrade",
       "profiles": [
+        {
+          "name": "Twin long-barrelled autocannon",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "60\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "9"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "3"
+            },
+            {
+              "name": "Keywords",
+              "value": "Twin-linked"
+            }
+          ]
+        }
+      ],
+      "weapons": [
         {
           "name": "Twin long-barrelled autocannon",
           "type": "Ranged Weapons",
@@ -2428,6 +5399,347 @@
             }
           ]
         }
+      ],
+      "selectionEntryGroups": [
+        {
+          "id": "63b4-a4b0-6cb-8f4d",
+          "name": "Main Turrets",
+          "entries": [
+            {
+              "id": "9c9d-e47b-7f4-92cf",
+              "name": "Castellum battle cannon",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Castellum battle cannon",
+                  "type": "Ranged Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "48\""
+                    },
+                    {
+                      "name": "A",
+                      "value": "D6+3"
+                    },
+                    {
+                      "name": "BS",
+                      "value": "4+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "10"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-1"
+                    },
+                    {
+                      "name": "D",
+                      "value": "3"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "Blast"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "74fa-24db-eb7d-f115",
+              "name": "Whirlwind castellan launcher",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Whirlwind castellan launcher",
+                  "type": "Ranged Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "72\""
+                    },
+                    {
+                      "name": "A",
+                      "value": "D6+3"
+                    },
+                    {
+                      "name": "BS",
+                      "value": "4+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "8"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-2"
+                    },
+                    {
+                      "name": "D",
+                      "value": "2"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "Blast, Indirect Fire"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "e26a-8cf8-9d1d-7917",
+              "name": "Castellum Icarus quad lascannon",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Castellum Icarus quad lascannon",
+                  "type": "Ranged Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "48\""
+                    },
+                    {
+                      "name": "A",
+                      "value": "2"
+                    },
+                    {
+                      "name": "BS",
+                      "value": "4+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "12"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-3"
+                    },
+                    {
+                      "name": "D",
+                      "value": "D6+1"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "Anti-Fly 2+, Twin-linked"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "b2a1-cd28-8aaf-f0c",
+          "name": "Secondary Turrets"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "Castellum battle cannon",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "48\""
+            },
+            {
+              "name": "A",
+              "value": "D6+3"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "10"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "3"
+            },
+            {
+              "name": "Keywords",
+              "value": "Blast"
+            }
+          ]
+        },
+        {
+          "name": "Castellum battle cannon",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "48\""
+            },
+            {
+              "name": "A",
+              "value": "D6+3"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "10"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "3"
+            },
+            {
+              "name": "Keywords",
+              "value": "Blast"
+            }
+          ]
+        },
+        {
+          "name": "Whirlwind castellan launcher",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "72\""
+            },
+            {
+              "name": "A",
+              "value": "D6+3"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "8"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Blast, Indirect Fire"
+            }
+          ]
+        },
+        {
+          "name": "Whirlwind castellan launcher",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "72\""
+            },
+            {
+              "name": "A",
+              "value": "D6+3"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "8"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Blast, Indirect Fire"
+            }
+          ]
+        },
+        {
+          "name": "Castellum Icarus quad lascannon",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "48\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "12"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "D6+1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Fly 2+, Twin-linked"
+            }
+          ]
+        },
+        {
+          "name": "Castellum Icarus quad lascannon",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "48\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "12"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "D6+1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Fly 2+, Twin-linked"
+            }
+          ]
+        }
       ]
     },
     {
@@ -2469,6 +5781,42 @@
             }
           ]
         }
+      ],
+      "weapons": [
+        {
+          "name": "Castellum air defence missiles",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "48\""
+            },
+            {
+              "name": "A",
+              "value": "D6"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "9"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "D6"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Fly 2+"
+            }
+          ]
+        }
       ]
     },
     {
@@ -2476,6 +5824,42 @@
       "name": "Twin assault cannon",
       "type": "upgrade",
       "profiles": [
+        {
+          "name": "Twin assault cannon",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "24\""
+            },
+            {
+              "name": "A",
+              "value": "6"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "2"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Devastating Wounds, Twin-linked"
+            }
+          ]
+        }
+      ],
+      "weapons": [
         {
           "name": "Twin assault cannon",
           "type": "Ranged Weapons",
@@ -2554,6 +5938,12 @@
           "typeid": "51b2-306e-1021-d207",
           "value": "145"
         }
+      ],
+      "selectionEntryGroups": [
+        {
+          "id": "8b0c-3772-861a-a7cd",
+          "name": "Quad-gun"
+        }
       ]
     },
     {
@@ -2618,6 +6008,125 @@
           "typeid": "51b2-306e-1021-d207",
           "value": "85"
         }
+      ],
+      "selectionEntryGroups": [
+        {
+          "id": "9946-824b-f220-11be",
+          "name": "Wargear",
+          "entries": [
+            {
+              "id": "e5b0-1627-ba3b-841e",
+              "name": "Enormous claws",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Enormous claws",
+                  "type": "Melee Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "Melee"
+                    },
+                    {
+                      "name": "A",
+                      "value": "4"
+                    },
+                    {
+                      "name": "WS",
+                      "value": "3+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "6"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-2"
+                    },
+                    {
+                      "name": "D",
+                      "value": "D3"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "-"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "weapons": [
+        {
+          "name": "Enormous claws",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "4"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "D3"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "Enormous claws",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "4"
+            },
+            {
+              "name": "WS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "D3"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
       ]
     },
     {
@@ -2672,6 +6181,12 @@
           "typeid": "51b2-306e-1021-d207",
           "value": "275"
         }
+      ],
+      "selectionEntryGroups": [
+        {
+          "id": "14be-d879-c755-3d93",
+          "name": "Weapons Array"
+        }
       ]
     },
     {
@@ -2725,6 +6240,16 @@
           "name": "pts",
           "typeid": "51b2-306e-1021-d207",
           "value": "260"
+        }
+      ],
+      "selectionEntryGroups": [
+        {
+          "id": "b2f0-fef3-2b51-8edc",
+          "name": "Weapons Array"
+        },
+        {
+          "id": "9df9-6944-3f63-2226",
+          "name": "Turrets"
         }
       ]
     },
@@ -2908,6 +6433,218 @@
           "typeid": "51b2-306e-1021-d207",
           "value": "480"
         }
+      ],
+      "selectionEntryGroups": [
+        {
+          "id": "5938-6c95-7f7c-b06b",
+          "name": "Heavy Bolters"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "Redemptor lascannons",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "48\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "14"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "D6+1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Fly 2+"
+            }
+          ]
+        },
+        {
+          "name": "Redemptor lascannons",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "48\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "14"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "D6+1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Fly 2+"
+            }
+          ]
+        },
+        {
+          "name": "➤ Redemptor missile silo - superfrag",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "48\""
+            },
+            {
+              "name": "A",
+              "value": "2D6+2"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Blast"
+            }
+          ]
+        },
+        {
+          "name": "➤ Redemptor missile silo - superkrak",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "48\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "10"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "D6+1"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "➤ Redemptor missile silo - superfrag",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "48\""
+            },
+            {
+              "name": "A",
+              "value": "2D6+2"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Blast"
+            }
+          ]
+        },
+        {
+          "name": "➤ Redemptor missile silo - superkrak",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "48\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "10"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "D6+1"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
       ]
     },
     {
@@ -2961,6 +6698,343 @@
           "name": "pts",
           "typeid": "51b2-306e-1021-d207",
           "value": "45"
+        }
+      ],
+      "selectionEntryGroups": [
+        {
+          "id": "58fa-ec3e-e1a3-4ba8",
+          "name": "Wargear",
+          "entries": [
+            {
+              "id": "1ab6-25ac-947b-bf5f",
+              "name": "Destroyer pulse",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Destroyer pulse",
+                  "type": "Ranged Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "18\""
+                    },
+                    {
+                      "name": "A",
+                      "value": "1"
+                    },
+                    {
+                      "name": "BS",
+                      "value": "4+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "8"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-2"
+                    },
+                    {
+                      "name": "D",
+                      "value": "2"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "Pistol"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "3200-448d-b069-ce9b",
+              "name": "Guardian salvo launchers",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Guardian salvo launchers",
+                  "type": "Ranged Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "24\""
+                    },
+                    {
+                      "name": "A",
+                      "value": "D6"
+                    },
+                    {
+                      "name": "BS",
+                      "value": "4+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "5"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-1"
+                    },
+                    {
+                      "name": "D",
+                      "value": "1"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "Blast"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "7291-ec92-1fd4-75ad",
+              "name": "Manipulator limbs",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Manipulator limbs",
+                  "type": "Melee Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "Melee"
+                    },
+                    {
+                      "name": "A",
+                      "value": "4"
+                    },
+                    {
+                      "name": "WS",
+                      "value": "4+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "5"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "0"
+                    },
+                    {
+                      "name": "D",
+                      "value": "1"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "-"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "weapons": [
+        {
+          "name": "Destroyer pulse",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "18\""
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "8"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Pistol"
+            }
+          ]
+        },
+        {
+          "name": "Destroyer pulse",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "18\""
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "8"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Pistol"
+            }
+          ]
+        },
+        {
+          "name": "Guardian salvo launchers",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "24\""
+            },
+            {
+              "name": "A",
+              "value": "D6"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Blast"
+            }
+          ]
+        },
+        {
+          "name": "Guardian salvo launchers",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "24\""
+            },
+            {
+              "name": "A",
+              "value": "D6"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Blast"
+            }
+          ]
+        },
+        {
+          "name": "Manipulator limbs",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "4"
+            },
+            {
+              "name": "WS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "Manipulator limbs",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "4"
+            },
+            {
+              "name": "WS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
         }
       ]
     },
@@ -3068,6 +7142,82 @@
           "name": "pts",
           "typeid": "51b2-306e-1021-d207",
           "value": "550"
+        }
+      ],
+      "selectionEntryGroups": [
+        {
+          "id": "98fc-7c38-f820-e866",
+          "name": "Heavy Bolters"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "Aquila macro-cannon",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "72\""
+            },
+            {
+              "name": "A",
+              "value": "D6+6"
+            },
+            {
+              "name": "BS",
+              "value": "5+"
+            },
+            {
+              "name": "S",
+              "value": "16"
+            },
+            {
+              "name": "AP",
+              "value": "-4"
+            },
+            {
+              "name": "D",
+              "value": "4"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "Aquila macro-cannon",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "72\""
+            },
+            {
+              "name": "A",
+              "value": "D6+6"
+            },
+            {
+              "name": "BS",
+              "value": "5+"
+            },
+            {
+              "name": "S",
+              "value": "16"
+            },
+            {
+              "name": "AP",
+              "value": "-4"
+            },
+            {
+              "name": "D",
+              "value": "4"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
         }
       ]
     },
@@ -3210,6 +7360,144 @@
           "typeid": "51b2-306e-1021-d207",
           "value": "225"
         }
+      ],
+      "weapons": [
+        {
+          "name": "➤ Plasma obliterator - standard",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "48\""
+            },
+            {
+              "name": "A",
+              "value": "D6+3"
+            },
+            {
+              "name": "BS",
+              "value": "5+"
+            },
+            {
+              "name": "S",
+              "value": "9"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "3"
+            },
+            {
+              "name": "Keywords",
+              "value": "Blast"
+            }
+          ]
+        },
+        {
+          "name": "➤ Plasma obliterator - supercharge",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "48\""
+            },
+            {
+              "name": "A",
+              "value": "D6+3"
+            },
+            {
+              "name": "BS",
+              "value": "5+"
+            },
+            {
+              "name": "S",
+              "value": "10"
+            },
+            {
+              "name": "AP",
+              "value": "-4"
+            },
+            {
+              "name": "D",
+              "value": "4"
+            },
+            {
+              "name": "Keywords",
+              "value": "Blast, Hazardous"
+            }
+          ]
+        },
+        {
+          "name": "➤ Plasma obliterator - standard",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "48\""
+            },
+            {
+              "name": "A",
+              "value": "D6+3"
+            },
+            {
+              "name": "BS",
+              "value": "5+"
+            },
+            {
+              "name": "S",
+              "value": "9"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "3"
+            },
+            {
+              "name": "Keywords",
+              "value": "Blast"
+            }
+          ]
+        },
+        {
+          "name": "➤ Plasma obliterator - supercharge",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "48\""
+            },
+            {
+              "name": "A",
+              "value": "D6+3"
+            },
+            {
+              "name": "BS",
+              "value": "5+"
+            },
+            {
+              "name": "S",
+              "value": "10"
+            },
+            {
+              "name": "AP",
+              "value": "-4"
+            },
+            {
+              "name": "D",
+              "value": "4"
+            },
+            {
+              "name": "Keywords",
+              "value": "Blast, Hazardous"
+            }
+          ]
+        }
       ]
     },
     {
@@ -3297,6 +7585,738 @@
           "typeid": "51b2-306e-1021-d207",
           "value": "220"
         }
+      ],
+      "selectionEntryGroups": [
+        {
+          "id": "bca0-9eff-5e78-5f16",
+          "name": "Seconday Weapon",
+          "entries": [
+            {
+              "id": "2b2d-2d80-c99a-50bc",
+              "name": "Primaris air defence missiles",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Primaris air defence missiles",
+                  "type": "Ranged Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "48\""
+                    },
+                    {
+                      "name": "A",
+                      "value": "D6"
+                    },
+                    {
+                      "name": "BS",
+                      "value": "4+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "6"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-2"
+                    },
+                    {
+                      "name": "D",
+                      "value": "2"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "Anti-Fly 2+"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "82f9-177b-779e-7780",
+              "name": "Primaris Icarus lascannon",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Primaris Icarus lascannon",
+                  "type": "Ranged Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "48\""
+                    },
+                    {
+                      "name": "A",
+                      "value": "1"
+                    },
+                    {
+                      "name": "BS",
+                      "value": "4+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "12"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-3"
+                    },
+                    {
+                      "name": "D",
+                      "value": "D6+1"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "Anti-Fly 2+"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "663c-1233-84a9-8909",
+              "name": "Primaris Icarus quad lascannon",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Primaris Icarus quad lascannon",
+                  "type": "Ranged Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "48\""
+                    },
+                    {
+                      "name": "A",
+                      "value": "2"
+                    },
+                    {
+                      "name": "BS",
+                      "value": "4+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "12"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-3"
+                    },
+                    {
+                      "name": "D",
+                      "value": "D6+1"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "Anti-Fly 2+, Twin-linked"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "6f21-792e-17c6-c9dc",
+              "name": "Primaris quad-gun",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Primaris quad-gun",
+                  "type": "Ranged Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "48\""
+                    },
+                    {
+                      "name": "A",
+                      "value": "4"
+                    },
+                    {
+                      "name": "BS",
+                      "value": "4+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "8"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-1"
+                    },
+                    {
+                      "name": "D",
+                      "value": "2"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "-"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "2cde-a0ef-d7e0-53b3",
+              "name": "Primaris castellan launcher",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Primaris castellan launcher",
+                  "type": "Ranged Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "72\""
+                    },
+                    {
+                      "name": "A",
+                      "value": "D6+1"
+                    },
+                    {
+                      "name": "BS",
+                      "value": "4+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "6"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "0"
+                    },
+                    {
+                      "name": "D",
+                      "value": "1"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "Blast, Indirect Fire"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "e500-1c20-8d3d-e4c5",
+              "name": "Primaris vengeance launcher",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Primaris vengeance launcher",
+                  "type": "Ranged Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "72\""
+                    },
+                    {
+                      "name": "A",
+                      "value": "D3+1"
+                    },
+                    {
+                      "name": "BS",
+                      "value": "4+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "7"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-1"
+                    },
+                    {
+                      "name": "D",
+                      "value": "2"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "Blast, Indirect Fire"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "weapons": [
+        {
+          "name": "Primaris Redoubt turbo-laser destructor",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "96\""
+            },
+            {
+              "name": "A",
+              "value": "D3+1"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "16"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "D6+3"
+            },
+            {
+              "name": "Keywords",
+              "value": "Blast"
+            }
+          ]
+        },
+        {
+          "name": "Primaris Redoubt turbo-laser destructor",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "96\""
+            },
+            {
+              "name": "A",
+              "value": "D3+1"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "16"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "D6+3"
+            },
+            {
+              "name": "Keywords",
+              "value": "Blast"
+            }
+          ]
+        },
+        {
+          "name": "Primaris air defence missiles",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "48\""
+            },
+            {
+              "name": "A",
+              "value": "D6"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Fly 2+"
+            }
+          ]
+        },
+        {
+          "name": "Primaris air defence missiles",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "48\""
+            },
+            {
+              "name": "A",
+              "value": "D6"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Fly 2+"
+            }
+          ]
+        },
+        {
+          "name": "Primaris Icarus lascannon",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "48\""
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "12"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "D6+1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Fly 2+"
+            }
+          ]
+        },
+        {
+          "name": "Primaris Icarus lascannon",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "48\""
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "12"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "D6+1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Fly 2+"
+            }
+          ]
+        },
+        {
+          "name": "Primaris Icarus quad lascannon",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "48\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "12"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "D6+1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Fly 2+, Twin-linked"
+            }
+          ]
+        },
+        {
+          "name": "Primaris Icarus quad lascannon",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "48\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "12"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "D6+1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Fly 2+, Twin-linked"
+            }
+          ]
+        },
+        {
+          "name": "Primaris quad-gun",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "48\""
+            },
+            {
+              "name": "A",
+              "value": "4"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "8"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "Primaris quad-gun",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "48\""
+            },
+            {
+              "name": "A",
+              "value": "4"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "8"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "Primaris castellan launcher",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "72\""
+            },
+            {
+              "name": "A",
+              "value": "D6+1"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Blast, Indirect Fire"
+            }
+          ]
+        },
+        {
+          "name": "Primaris castellan launcher",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "72\""
+            },
+            {
+              "name": "A",
+              "value": "D6+1"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "6"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Blast, Indirect Fire"
+            }
+          ]
+        },
+        {
+          "name": "Primaris vengeance launcher",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "72\""
+            },
+            {
+              "name": "A",
+              "value": "D3+1"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "7"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Blast, Indirect Fire"
+            }
+          ]
+        },
+        {
+          "name": "Primaris vengeance launcher",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "72\""
+            },
+            {
+              "name": "A",
+              "value": "D3+1"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "7"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Blast, Indirect Fire"
+            }
+          ]
+        }
       ]
     },
     {
@@ -3372,6 +8392,283 @@
           "name": "pts",
           "typeid": "51b2-306e-1021-d207",
           "value": "35"
+        }
+      ],
+      "selectionEntryGroups": [
+        {
+          "id": "a050-08fd-451c-4f2a",
+          "name": "Spindle Drones",
+          "entries": [
+            {
+              "id": "e32d-ae0a-732f-5864",
+              "name": "Spindle Drone",
+              "type": "model",
+              "entries": [
+                {
+                  "id": "8e88-801b-56-a3d4",
+                  "name": "Drone pulse",
+                  "type": "upgrade",
+                  "profiles": [
+                    {
+                      "name": "Drone pulse",
+                      "type": "Ranged Weapons",
+                      "lines": [
+                        {
+                          "name": "Range",
+                          "value": "18\""
+                        },
+                        {
+                          "name": "A",
+                          "value": "1"
+                        },
+                        {
+                          "name": "BS",
+                          "value": "4+"
+                        },
+                        {
+                          "name": "S",
+                          "value": "4"
+                        },
+                        {
+                          "name": "AP",
+                          "value": "0"
+                        },
+                        {
+                          "name": "D",
+                          "value": "1"
+                        },
+                        {
+                          "name": "Keywords",
+                          "value": "Pistol"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "9370-323f-758e-f4b4",
+                  "name": "Close combat weapon",
+                  "type": "upgrade",
+                  "profiles": [
+                    {
+                      "name": "Close combat weapon",
+                      "type": "Melee Weapons",
+                      "lines": [
+                        {
+                          "name": "Range",
+                          "value": "Melee"
+                        },
+                        {
+                          "name": "A",
+                          "value": "1"
+                        },
+                        {
+                          "name": "WS",
+                          "value": "4+"
+                        },
+                        {
+                          "name": "S",
+                          "value": "3"
+                        },
+                        {
+                          "name": "AP",
+                          "value": "0"
+                        },
+                        {
+                          "name": "D",
+                          "value": "1"
+                        },
+                        {
+                          "name": "Keywords",
+                          "value": "-"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "profiles": [
+                {
+                  "name": "Spindle Drone",
+                  "type": "Unit",
+                  "lines": [
+                    {
+                      "name": "M",
+                      "value": "6\""
+                    },
+                    {
+                      "name": "T",
+                      "value": "4"
+                    },
+                    {
+                      "name": "SV",
+                      "value": "4+"
+                    },
+                    {
+                      "name": "W",
+                      "value": "2"
+                    },
+                    {
+                      "name": "LD",
+                      "value": "6+"
+                    },
+                    {
+                      "name": "OC",
+                      "value": "1"
+                    }
+                  ]
+                },
+                {
+                  "name": "Threat Level Rising",
+                  "type": "Abilities",
+                  "lines": [
+                    {
+                      "name": "Description",
+                      "value": "Each time a model in this unit makes an attack, add 1 to the Hit roll if this unit is below its Starting Strength, and add 1 to the Wound roll as well if this unit is Below Half-strength"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "weapons": [
+        {
+          "name": "Drone pulse",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "18\""
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Pistol"
+            }
+          ]
+        },
+        {
+          "name": "Drone pulse",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "18\""
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "4"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Pistol"
+            }
+          ]
+        },
+        {
+          "name": "Close combat weapon",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "WS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "3"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "Close combat weapon",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "WS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "3"
+            },
+            {
+              "name": "AP",
+              "value": "0"
+            },
+            {
+              "name": "D",
+              "value": "1"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
         }
       ]
     },
@@ -3521,6 +8818,144 @@
           "typeid": "51b2-306e-1021-d207",
           "value": "70"
         }
+      ],
+      "weapons": [
+        {
+          "name": "Atomic disassembler",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "18\""
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "BS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "8"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Ignores Cover, Pistol"
+            }
+          ]
+        },
+        {
+          "name": "Atomic disassembler",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "18\""
+            },
+            {
+              "name": "A",
+              "value": "1"
+            },
+            {
+              "name": "BS",
+              "value": "3+"
+            },
+            {
+              "name": "S",
+              "value": "8"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Ignores Cover, Pistol"
+            }
+          ]
+        },
+        {
+          "name": "Eradicator glove",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "4"
+            },
+            {
+              "name": "WS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "8"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "Eradicator glove",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "4"
+            },
+            {
+              "name": "WS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "8"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
       ]
     },
     {
@@ -3574,6 +9009,12 @@
           "name": "pts",
           "typeid": "51b2-306e-1021-d207",
           "value": "140"
+        }
+      ],
+      "selectionEntryGroups": [
+        {
+          "id": "e0ba-5bb3-c836-c3aa",
+          "name": "Turret"
         }
       ]
     },
@@ -3746,6 +9187,82 @@
           "typeid": "51b2-306e-1021-d207",
           "value": "525"
         }
+      ],
+      "selectionEntryGroups": [
+        {
+          "id": "a0e2-81d6-964c-e834",
+          "name": "Heavy Bolters"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "Vortex missile battery",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "72\""
+            },
+            {
+              "name": "A",
+              "value": "D6+3"
+            },
+            {
+              "name": "BS",
+              "value": "5+"
+            },
+            {
+              "name": "S",
+              "value": "16"
+            },
+            {
+              "name": "AP",
+              "value": "-4"
+            },
+            {
+              "name": "D",
+              "value": "D6"
+            },
+            {
+              "name": "Keywords",
+              "value": "Blast, Devastating Wounds, Hazardous, Indirect Fire"
+            }
+          ]
+        },
+        {
+          "name": "Vortex missile battery",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "72\""
+            },
+            {
+              "name": "A",
+              "value": "D6+3"
+            },
+            {
+              "name": "BS",
+              "value": "5+"
+            },
+            {
+              "name": "S",
+              "value": "16"
+            },
+            {
+              "name": "AP",
+              "value": "-4"
+            },
+            {
+              "name": "D",
+              "value": "D6"
+            },
+            {
+              "name": "Keywords",
+              "value": "Blast, Devastating Wounds, Hazardous, Indirect Fire"
+            }
+          ]
+        }
       ]
     },
     {
@@ -3809,6 +9326,12 @@
           "name": "pts",
           "typeid": "51b2-306e-1021-d207",
           "value": "180"
+        }
+      ],
+      "selectionEntryGroups": [
+        {
+          "id": "44b8-6fae-e8ac-c347",
+          "name": "Weapons Array"
         }
       ]
     },
@@ -4008,6 +9531,86 @@
             }
           ]
         }
+      ],
+      "selectionEntryGroups": [
+        {
+          "id": "65b8-ef30-87fb-c746",
+          "name": "Twin Heavy Bolters"
+        },
+        {
+          "id": "8ad5-d201-b2aa-cdc6",
+          "name": "Tower Sections"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "Twin long-barrelled autocannon",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "60\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "9"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "3"
+            },
+            {
+              "name": "Keywords",
+              "value": "Twin-linked"
+            }
+          ]
+        },
+        {
+          "name": "Twin long-barrelled autocannon",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "60\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "9"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "3"
+            },
+            {
+              "name": "Keywords",
+              "value": "Twin-linked"
+            }
+          ]
+        }
       ]
     },
     {
@@ -4072,6 +9675,347 @@
             {
               "name": "Capacity",
               "value": "This FORTIFICATION has a transport capacity of 60 INFANTRY models. Each model with a Wounds characteristic of 3 or more takes up the space of 2 models. It cannot transport non-CHARACTER models with a Wounds characteristic of 4 or more."
+            }
+          ]
+        }
+      ],
+      "selectionEntryGroups": [
+        {
+          "id": "63b4-a4b0-6cb-8f4d",
+          "name": "Main Turrets",
+          "entries": [
+            {
+              "id": "9c9d-e47b-7f4-92cf",
+              "name": "Castellum battle cannon",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Castellum battle cannon",
+                  "type": "Ranged Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "48\""
+                    },
+                    {
+                      "name": "A",
+                      "value": "D6+3"
+                    },
+                    {
+                      "name": "BS",
+                      "value": "4+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "10"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-1"
+                    },
+                    {
+                      "name": "D",
+                      "value": "3"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "Blast"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "74fa-24db-eb7d-f115",
+              "name": "Whirlwind castellan launcher",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Whirlwind castellan launcher",
+                  "type": "Ranged Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "72\""
+                    },
+                    {
+                      "name": "A",
+                      "value": "D6+3"
+                    },
+                    {
+                      "name": "BS",
+                      "value": "4+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "8"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-2"
+                    },
+                    {
+                      "name": "D",
+                      "value": "2"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "Blast, Indirect Fire"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "e26a-8cf8-9d1d-7917",
+              "name": "Castellum Icarus quad lascannon",
+              "type": "upgrade",
+              "profiles": [
+                {
+                  "name": "Castellum Icarus quad lascannon",
+                  "type": "Ranged Weapons",
+                  "lines": [
+                    {
+                      "name": "Range",
+                      "value": "48\""
+                    },
+                    {
+                      "name": "A",
+                      "value": "2"
+                    },
+                    {
+                      "name": "BS",
+                      "value": "4+"
+                    },
+                    {
+                      "name": "S",
+                      "value": "12"
+                    },
+                    {
+                      "name": "AP",
+                      "value": "-3"
+                    },
+                    {
+                      "name": "D",
+                      "value": "D6+1"
+                    },
+                    {
+                      "name": "Keywords",
+                      "value": "Anti-Fly 2+, Twin-linked"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "b2a1-cd28-8aaf-f0c",
+          "name": "Secondary Turrets"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "Castellum battle cannon",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "48\""
+            },
+            {
+              "name": "A",
+              "value": "D6+3"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "10"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "3"
+            },
+            {
+              "name": "Keywords",
+              "value": "Blast"
+            }
+          ]
+        },
+        {
+          "name": "Castellum battle cannon",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "48\""
+            },
+            {
+              "name": "A",
+              "value": "D6+3"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "10"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "3"
+            },
+            {
+              "name": "Keywords",
+              "value": "Blast"
+            }
+          ]
+        },
+        {
+          "name": "Whirlwind castellan launcher",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "72\""
+            },
+            {
+              "name": "A",
+              "value": "D6+3"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "8"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Blast, Indirect Fire"
+            }
+          ]
+        },
+        {
+          "name": "Whirlwind castellan launcher",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "72\""
+            },
+            {
+              "name": "A",
+              "value": "D6+3"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "8"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Blast, Indirect Fire"
+            }
+          ]
+        },
+        {
+          "name": "Castellum Icarus quad lascannon",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "48\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "12"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "D6+1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Fly 2+, Twin-linked"
+            }
+          ]
+        },
+        {
+          "name": "Castellum Icarus quad lascannon",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "48\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "4+"
+            },
+            {
+              "name": "S",
+              "value": "12"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "D6+1"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-Fly 2+, Twin-linked"
             }
           ]
         }

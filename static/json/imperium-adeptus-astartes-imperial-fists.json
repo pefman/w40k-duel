@@ -126,6 +126,76 @@
           "typeid": "51b2-306e-1021-d207",
           "value": "100"
         }
+      ],
+      "weapons": [
+        {
+          "name": "Fist of Dorn",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "5"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "10"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "3"
+            },
+            {
+              "name": "Keywords",
+              "value": "Devastating Wounds"
+            }
+          ]
+        },
+        {
+          "name": "Fist of Dorn",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "5"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "10"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "3"
+            },
+            {
+              "name": "Keywords",
+              "value": "Devastating Wounds"
+            }
+          ]
+        }
       ]
     },
     {
@@ -133,6 +203,42 @@
       "name": "Fist of Dorn",
       "type": "upgrade",
       "profiles": [
+        {
+          "name": "Fist of Dorn",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "5"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "10"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "3"
+            },
+            {
+              "name": "Keywords",
+              "value": "Devastating Wounds"
+            }
+          ]
+        }
+      ],
+      "weapons": [
         {
           "name": "Fist of Dorn",
           "type": "Melee Weapons",
@@ -325,6 +431,144 @@
           "typeid": "51b2-306e-1021-d207",
           "value": "90"
         }
+      ],
+      "weapons": [
+        {
+          "name": "Aritficer Grav Gun",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "18\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-vehicle 2+"
+            }
+          ]
+        },
+        {
+          "name": "Aritficer Grav Gun",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "18\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-vehicle 2+"
+            }
+          ]
+        },
+        {
+          "name": "Hand of Defiance",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "5"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "12"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "Hand of Defiance",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "5"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "12"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
       ]
     },
     {
@@ -366,6 +610,42 @@
             }
           ]
         }
+      ],
+      "weapons": [
+        {
+          "name": "Aritficer Grav Gun",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "18\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-vehicle 2+"
+            }
+          ]
+        }
       ]
     },
     {
@@ -373,6 +653,42 @@
       "name": "Hand of Defiance",
       "type": "upgrade",
       "profiles": [
+        {
+          "name": "Hand of Defiance",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "5"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "12"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
+      ],
+      "weapons": [
         {
           "name": "Hand of Defiance",
           "type": "Melee Weapons",
@@ -575,6 +891,144 @@
           "typeid": "51b2-306e-1021-d207",
           "value": "90"
         }
+      ],
+      "weapons": [
+        {
+          "name": "Dorn's Arrow",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "24\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Rapid Fire 2, Sustained Hits 1"
+            }
+          ]
+        },
+        {
+          "name": "Dorn's Arrow",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "24\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Rapid Fire 2, Sustained Hits 1"
+            }
+          ]
+        },
+        {
+          "name": "Fist of Retribution",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "5"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "8"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "3"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "Fist of Retribution",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "5"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "8"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "3"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
       ]
     },
     {
@@ -616,6 +1070,42 @@
             }
           ]
         }
+      ],
+      "weapons": [
+        {
+          "name": "Dorn's Arrow",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "24\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Rapid Fire 2, Sustained Hits 1"
+            }
+          ]
+        }
       ]
     },
     {
@@ -623,6 +1113,42 @@
       "name": "Fist of Retribution",
       "type": "upgrade",
       "profiles": [
+        {
+          "name": "Fist of Retribution",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "5"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "8"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "3"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        }
+      ],
+      "weapons": [
         {
           "name": "Fist of Retribution",
           "type": "Melee Weapons",
@@ -784,6 +1310,76 @@
           "typeid": "51b2-306e-1021-d207",
           "value": "100"
         }
+      ],
+      "weapons": [
+        {
+          "name": "Fist of Dorn",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "5"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "10"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "3"
+            },
+            {
+              "name": "Keywords",
+              "value": "Devastating Wounds"
+            }
+          ]
+        },
+        {
+          "name": "Fist of Dorn",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "5"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "10"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "3"
+            },
+            {
+              "name": "Keywords",
+              "value": "Devastating Wounds"
+            }
+          ]
+        }
       ]
     },
     {
@@ -941,6 +1537,144 @@
           "name": "pts",
           "typeid": "51b2-306e-1021-d207",
           "value": "90"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "Aritficer Grav Gun",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "18\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-vehicle 2+"
+            }
+          ]
+        },
+        {
+          "name": "Aritficer Grav Gun",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "18\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Anti-vehicle 2+"
+            }
+          ]
+        },
+        {
+          "name": "Hand of Defiance",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "5"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "12"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "Hand of Defiance",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "5"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "12"
+            },
+            {
+              "name": "AP",
+              "value": "-2"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
         }
       ]
     },
@@ -1109,6 +1843,144 @@
           "name": "pts",
           "typeid": "51b2-306e-1021-d207",
           "value": "90"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "Dorn's Arrow",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "24\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Rapid Fire 2, Sustained Hits 1"
+            }
+          ]
+        },
+        {
+          "name": "Dorn's Arrow",
+          "type": "Ranged Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "24\""
+            },
+            {
+              "name": "A",
+              "value": "2"
+            },
+            {
+              "name": "BS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "5"
+            },
+            {
+              "name": "AP",
+              "value": "-1"
+            },
+            {
+              "name": "D",
+              "value": "2"
+            },
+            {
+              "name": "Keywords",
+              "value": "Rapid Fire 2, Sustained Hits 1"
+            }
+          ]
+        },
+        {
+          "name": "Fist of Retribution",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "5"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "8"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "3"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
+        },
+        {
+          "name": "Fist of Retribution",
+          "type": "Melee Weapons",
+          "lines": [
+            {
+              "name": "Range",
+              "value": "Melee"
+            },
+            {
+              "name": "A",
+              "value": "5"
+            },
+            {
+              "name": "WS",
+              "value": "2+"
+            },
+            {
+              "name": "S",
+              "value": "8"
+            },
+            {
+              "name": "AP",
+              "value": "-3"
+            },
+            {
+              "name": "D",
+              "value": "3"
+            },
+            {
+              "name": "Keywords",
+              "value": "-"
+            }
+          ]
         }
       ]
     }

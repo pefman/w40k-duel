@@ -16,6 +16,10 @@ func generateMatchID() string {
 	return fmt.Sprintf("match_%d_%d", time.Now().Unix(), rand.Intn(1000))
 }
 
+func generateBattleID() string {
+	return fmt.Sprintf("battle_%d_%d", time.Now().Unix(), rand.Intn(1000))
+}
+
 func generatePlayerName() string {
 	adjectives := []string{
 		"Fabulous", "Screaming", "Naked", "Drunk", "Horny", "Smelly", "Farting", "Burping",

@@ -65,6 +65,7 @@ type Faction struct {
 
 type Match struct {
 	ID                   string        `json:"id"`
+	BattleID             string        `json:"battle_id"` // Unique battle identifier for tracking
 	Player1              *Player       `json:"player1"`
 	Player2              *Player       `json:"player2"`
 	State                string        `json:"state"` // "selecting", "initiative", "fighting", "finished", "manual_dice_rolling"

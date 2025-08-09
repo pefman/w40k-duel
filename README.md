@@ -2,7 +2,7 @@
 
 A **real-time multiplayer** Warhammer 40K combat game with **AI opponents** built with Go and WebSockets. Features **local BattleScribe data integration**, **mobile-friendly interface**, and **cloud deployment**.
 
-🌐 **Live Demo**: [w40k-duel-85079828466.europe-west1.run.app](https://w40k-duel-85079828466.europe-west1.run.app)
+🌐 **Live Demo**: [w40k-duel-2otx55rc6a-ew.a.run.app](https://w40k-duel-2otx55rc6a-ew.a.run.app)
 
 ## 🚀 Features
 
@@ -61,7 +61,7 @@ BattleScribe Archive → Download → Extract → Parse → JSON → Cache → G
 ## 🚀 Quick Start
 
 ### **🌐 Play Online (Recommended)**
-Visit: [w40k-duel-85079828466.europe-west1.run.app](https://w40k-duel-85079828466.europe-west1.run.app)
+Visit: [w40k-duel-2otx55rc6a-ew.a.run.app](https://w40k-duel-2otx55rc6a-ew.a.run.app)
 
 ### **🏠 Local Development**
 

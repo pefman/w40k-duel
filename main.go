@@ -39,5 +39,9 @@ func main() {
 	}
 
 	log.Printf("Starting Warhammer 40K Duel server on :%s", port)
-	log.Fatal(http.ListenAndServe(":"+port, r))
+	if port == "8080" {
+		log.Fatal(http.ListenAndServe(":8080", r))
+	} else {
+		log.Fatal(http.ListenAndServe(":"+port, r))
+	}
 }

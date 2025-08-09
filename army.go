@@ -34,17 +34,17 @@ func (gs *GameServer) selectFaction(player *Player, faction string) {
 
 	log.Printf("Fetched %d units for faction %s", len(units), faction)
 
-	// Prepare unit data with weapon type information
+	// Prepare unit data with categorized weapon information
 	unitData := make([]map[string]interface{}, 0)
 	for _, unit := range units {
-		weaponTypes := getUnitWeaponTypes(unit)
+		weaponCategories := getUnitWeaponsCategorized(unit)
 		unitInfo := map[string]interface{}{
-			"name":         unit.Name,
-			"wounds":       unit.Wounds,
-			"attacks":      unit.Attacks,
-			"strength":     unit.Strength,
-			"toughness":    unit.Toughness,
-			"weapon_types": weaponTypes,
+			"name":              unit.Name,
+			"wounds":            unit.Wounds,
+			"attacks":           unit.Attacks,
+			"strength":          unit.Strength,
+			"toughness":         unit.Toughness,
+			"weapon_categories": weaponCategories, // Categorized weapons by melee/ranged
 		}
 		unitData = append(unitData, unitInfo)
 	}
@@ -68,8 +68,26 @@ func (gs *GameServer) selectArmy(player *Player, armyData []interface{}) {
 		}
 
 		unitName, _ := unitMap["unit_name"].(string)
-		quantity, _ := unitMap["quantity"].(float64)
-		weaponType, _ := unitMap["weapon_type"].(string)
+
+		// Debug the quantity conversion more thoroughly
+		rawQuantity := unitMap["quantity"]
+		log.Printf("DEBUG: selectArmy - Unit %s: raw quantity type %T, value %v", unitName, rawQuantity, rawQuantity)
+
+		quantity, quantityOk := unitMap["quantity"].(float64)
+		if !quantityOk {
+			// Try int conversion
+			if intQuantity, intOk := unitMap["quantity"].(int); intOk {
+				quantity = float64(intQuantity)
+				log.Printf("DEBUG: selectArmy - Unit %s: converted int %d to float64 %f", unitName, intQuantity, quantity)
+			} else {
+				log.Printf("DEBUG: selectArmy - Unit %s: quantity conversion failed, defaulting to 0", unitName)
+				quantity = 0
+			}
+		}
+
+		selectedWeaponsData, _ := unitMap["selected_weapons"].([]interface{})
+
+		log.Printf("DEBUG: selectArmy - Unit %s: final quantity %f, int quantity %d", unitName, quantity, int(quantity))
 
 		unit := UnitSelection{
 			UnitName: unitName,
@@ -77,15 +95,47 @@ func (gs *GameServer) selectArmy(player *Player, armyData []interface{}) {
 			Weapons:  make([]Weapon, 0),
 		}
 
-		// Get units for this faction to find the selected unit
-		units, err := fetchFactionUnitsCached(player.Faction)
-		if err == nil {
-			for _, unitInfo := range units {
-				if unitInfo.Name == unitName {
-					// Get weapons of the selected type
-					unit.Weapons = getUnitWeaponsByType(unitInfo, weaponType)
-					break
+		// Convert selected weapons from interface{} to []Weapon
+		for _, weaponData := range selectedWeaponsData {
+			weaponMap, ok := weaponData.(map[string]interface{})
+			if !ok {
+				continue
+			}
+
+			weapon := Weapon{
+				Name:     getString(weaponMap, "name"),
+				Type:     getString(weaponMap, "type"),
+				Range:    getString(weaponMap, "range"),
+				Attacks:  getString(weaponMap, "attacks"),
+				Skill:    getString(weaponMap, "skill"),
+				Strength: getString(weaponMap, "strength"),
+				AP:       getString(weaponMap, "ap"),
+				Damage:   getString(weaponMap, "damage"),
+				Keywords: getString(weaponMap, "keywords"),
+			}
+			unit.Weapons = append(unit.Weapons, weapon)
+		}
+
+		// If no weapons were selected, fall back to all weapons (for AI or backwards compatibility)
+		if len(unit.Weapons) == 0 {
+			log.Printf("DEBUG: Unit %s has no weapons, searching for fallback weapons", unitName)
+			// Get units for this faction to find the selected unit
+			units, err := fetchFactionUnitsCached(player.Faction)
+			if err == nil {
+				for _, unitInfo := range units {
+					if unitInfo.Name == unitName {
+						// Get ALL weapons for the unit (both ranged and melee)
+						unit.Weapons = unitInfo.Weapons
+						log.Printf("DEBUG: Found %d weapons for unit %s from faction data", len(unit.Weapons), unitName)
+						break
+					}
 				}
+			} else {
+				log.Printf("DEBUG: Error fetching faction units: %v", err)
+			}
+
+			if len(unit.Weapons) == 0 {
+				log.Printf("DEBUG: Still no weapons found for unit %s", unitName)
 			}
 		}
 

@@ -67,7 +67,7 @@ type Match struct {
 	ID                   string        `json:"id"`
 	Player1              *Player       `json:"player1"`
 	Player2              *Player       `json:"player2"`
-	State                string        `json:"state"` // "selecting", "initiative", "fighting", "finished"
+	State                string        `json:"state"` // "selecting", "initiative", "fighting", "finished", "manual_dice_rolling"
 	Turn                 int           `json:"turn"`
 	Log                  []string      `json:"log"`
 	Winner               string        `json:"winner"`
@@ -78,6 +78,11 @@ type Match struct {
 	Player2InitiativeSet bool          `json:"player2_initiative_set"`
 	CurrentPlayer        *Player       `json:"current_player"`
 	CurrentCombat        *CombatAttack `json:"current_combat,omitempty"`
+	// Manual dice rolling fields
+	AttackSequence     []map[string]interface{} `json:"attack_sequence,omitempty"`
+	CurrentWeaponIndex int                      `json:"current_weapon_index"`
+	CurrentPhase       string                   `json:"current_phase"` // "hit", "wound", "save"
+	AttackHistory      []map[string]interface{} `json:"attack_history,omitempty"`
 }
 
 type DiceRoll struct {

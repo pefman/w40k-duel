@@ -340,6 +340,20 @@ func (gs *GameServer) handleIndex(w http.ResponseWriter, r *http.Request) {
             padding: 15px;
             cursor: pointer;
             transition: all 0.3s ease;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .weapon-name {
+            font-weight: 500;
+            color: #e5e5e5;
+        }
+        
+        .weapon-status {
+            font-size: 0.9em;
+            color: #d4af37;
+            font-weight: 600;
         }
         
         .weapon-item:hover {
@@ -350,6 +364,169 @@ func (gs *GameServer) handleIndex(w http.ResponseWriter, r *http.Request) {
         .weapon-item.selected {
             background: linear-gradient(135deg, rgba(212, 175, 55, 0.2) 0%, rgba(212, 175, 55, 0.1) 100%);
             border-color: #d4af37;
+        }
+        
+        .weapon-item.selected .weapon-status {
+            color: #4CAF50;
+        }
+        
+        .weapon-category {
+            margin-bottom: 20px;
+        }
+        
+        .weapon-category h5 {
+            color: #d4af37;
+            margin: 0 0 10px 0;
+            padding: 8px 12px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+            border-radius: 6px;
+            border: 1px solid #3d3d3d;
+            font-size: 1em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .weapon-individual-choice {
+            margin: 10px 0;
+        }
+        
+        .weapon-checkbox-container {
+            background: #2a2a2a;
+            border: 1px solid #555;
+            border-radius: 5px;
+            margin: 5px 0;
+            padding: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .weapon-checkbox-container:hover {
+            background: #333;
+            border-color: #777;
+        }
+        
+        .weapon-checkbox-label {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .weapon-checkbox {
+            margin-right: 10px;
+            transform: scale(1.2);
+        }
+        
+        .weapon-name {
+            flex-grow: 1;
+            color: #fff;
+        }
+        
+        .weapon-type-badge {
+            background: #555;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 12px;
+            margin-left: 10px;
+        }
+        
+        .weapon-stats-small {
+            font-size: 12px;
+            color: #ccc;
+            margin-left: 30px;
+        }
+
+        .weapon-type-options {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .weapon-type-option {
+            flex: 1;
+            background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+            border: 2px solid #3d3d3d;
+            border-radius: 8px;
+            padding: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            position: relative;
+        }
+        
+        .weapon-type-option:hover {
+            border-color: #d4af37;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        .weapon-type-option.selected {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.3) 0%, rgba(212, 175, 55, 0.1) 100%);
+            border-color: #d4af37;
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
+        }
+        
+        .weapon-type-option h4 {
+            color: #d4af37;
+            margin: 0 0 10px 0;
+            font-size: 1.2em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .weapon-type-option.selected h4 {
+            color: #ffd700;
+        }
+        
+        .weapon-type-option p {
+            color: #b0b0b0;
+            margin: 0;
+            font-size: 0.9em;
+            line-height: 1.4;
+        }
+        
+        .weapon-type-option.selected p {
+            color: #e5e5e5;
+        }
+        
+        .weapon-list-preview {
+            text-align: left;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(212, 175, 55, 0.3);
+        }
+        
+        .weapon-stat-line {
+            margin-bottom: 12px;
+            padding: 8px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 4px;
+            border-left: 3px solid #d4af37;
+        }
+        
+        .weapon-stat-line:last-child {
+            margin-bottom: 0;
+        }
+        
+        .weapon-stat-line strong {
+            color: #d4af37;
+            font-size: 1em;
+        }
+        
+        .weapon-stats {
+            color: #b0b0b0;
+            font-size: 0.85em;
+            font-family: 'Courier New', monospace;
+            line-height: 1.3;
+        }
+        
+        .weapon-stats span {
+            white-space: nowrap;
+        }
+        
+        .weapon-stats {
+            display: block;
+            margin-top: 4px;
         }
         
         .weapon-stats {
@@ -786,6 +963,42 @@ func (gs *GameServer) handleIndex(w http.ResponseWriter, r *http.Request) {
             margin: 20px 0;
         }
 
+        /* Enhanced styling for opponent defense phase */
+        .dice-rolling.opponent-rolling {
+            background: rgba(139, 0, 0, 0.1);
+            border: 2px solid #8b0000;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .rolling-animation {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 15px 0;
+        }
+
+        .dice-icon {
+            font-size: 2em;
+            animation: rollDice 1.5s infinite ease-in-out;
+        }
+
+        .dice-icon:nth-child(2) {
+            animation-delay: 0.3s;
+        }
+
+        .dice-icon:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        @keyframes rollDice {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            25% { transform: translateY(-10px) rotate(90deg); }
+            50% { transform: translateY(0) rotate(180deg); }
+            75% { transform: translateY(-5px) rotate(270deg); }
+        }
+
         .dice-btn {
             background: linear-gradient(135deg, #d4af37 0%, #b8860b 100%);
             color: #0a0a0a;
@@ -805,6 +1018,67 @@ func (gs *GameServer) handleIndex(w http.ResponseWriter, r *http.Request) {
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
         }
+
+        /* Dice roll result styling */
+        .dice-results {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid #d4af37;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px 0;
+        }
+
+        .dice-display {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            margin: 10px 0;
+            flex-wrap: wrap;
+        }
+
+        .dice-result {
+            display: inline-block;
+            width: 35px;
+            height: 35px;
+            line-height: 35px;
+            text-align: center;
+            border: 2px solid;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .dice-result.success {
+            background: rgba(0, 255, 0, 0.2);
+            border-color: #00ff00;
+            color: #00ff00;
+        }
+
+        .dice-result.fail {
+            background: rgba(255, 0, 0, 0.2);
+            border-color: #ff0000;
+            color: #ff0000;
+        }
+
+        .result-summary {
+            font-weight: bold;
+            text-align: center;
+            color: #d4af37;
+            margin-top: 10px;
+        }
+
+        .weapon-attack, .attack-summary, .combat-results, .no-weapons {
+            background: rgba(0, 0, 0, 0.2);
+            border-left: 4px solid #d4af37;
+            padding: 10px 15px;
+            margin: 10px 0;
+        }
+
+        .weapon-attack h4 {
+            color: #d4af37;
+            margin-bottom: 5px;
+        }
+
         </style>
     </head>
 <body>
@@ -905,6 +1179,7 @@ func (gs *GameServer) handleIndex(w http.ResponseWriter, r *http.Request) {
         let matchmakingTimer = null;
         let matchmakingSeconds = 0;
         let currentStep = 1;
+        let currentArmy = []; // Store the current army for combat
 
         // Step management
         function updateStepIndicator(step) {
@@ -1016,10 +1291,6 @@ func (gs *GameServer) handleIndex(w http.ResponseWriter, r *http.Request) {
                     updateStepIndicator(2);
                     break;
 
-                case 'unit_weapons':
-                    displayUnitWeapons(message);
-                    break;
-
                 case 'army_selected':
                     document.getElementById('weaponSelection').classList.add('hidden');
                     document.getElementById('battleSection').classList.remove('hidden');
@@ -1073,6 +1344,10 @@ func (gs *GameServer) handleIndex(w http.ResponseWriter, r *http.Request) {
                     showCombatPhase(message);
                     break;
 
+                case 'combat_start':
+                    showCombatStart(message);
+                    break;
+
                 case 'hit_phase':
                     showHitRollPhase(message);
                     break;
@@ -1085,12 +1360,52 @@ func (gs *GameServer) handleIndex(w http.ResponseWriter, r *http.Request) {
                     showSaveRollPhase(message);
                     break;
 
+                case 'hit_rolls':
+                    showHitRollResults(message);
+                    break;
+
+                case 'wound_rolls':
+                    showWoundRollResults(message);
+                    break;
+
+                case 'save_rolls':
+                    showSaveRollResults(message);
+                    break;
+
+                case 'weapon_attack':
+                    showWeaponAttack(message);
+                    break;
+
+                case 'attack_summary':
+                    showAttackSummary(message);
+                    break;
+
+                case 'combat_results':
+                    showCombatResults(message);
+                    break;
+
+                case 'no_weapons_selected':
+                    showNoWeapons(message);
+                    break;
+
                 case 'combat_state':
                     updateCombatState(message);
                     break;
 
                 case 'combat_waiting':
                     showCombatWaiting(message);
+                    break;
+
+                case 'hit_results':
+                    showHitResults(message);
+                    break;
+
+                case 'wound_results':
+                    showWoundResults(message);
+                    break;
+
+                case 'save_results':
+                    showSaveResults(message);
                     break;
 
                 case 'match_finished':
@@ -1242,9 +1557,9 @@ func (gs *GameServer) handleIndex(w http.ResponseWriter, r *http.Request) {
                         '<div class="stat"><div class="stat-label">Toughness</div><div class="stat-value">' + unit.toughness + '</div></div>' +
                     '</div>' +
                     '<div class="quantity-controls">' +
-                        '<button class="quantity-btn" onclick="adjustQuantity(\'' + unit.name + '\', -1)">-</button>' +
+                        '<button class="quantity-btn" onclick="adjustQuantity(\'' + unit.name.replace(/'/g, "\\'") + '\', -1)">-</button>' +
                         '<div class="quantity-display" id="qty-' + unit.name.replace(/\s+/g, '-') + '">0</div>' +
-                        '<button class="quantity-btn" onclick="adjustQuantity(\'' + unit.name + '\', 1)">+</button>' +
+                        '<button class="quantity-btn" onclick="adjustQuantity(\'' + unit.name.replace(/'/g, "\\'") + '\', 1)">+</button>' +
                     '</div>';
                 
                 grid.appendChild(card);
@@ -1275,12 +1590,18 @@ func (gs *GameServer) handleIndex(w http.ResponseWriter, r *http.Request) {
         function proceedToWeapons() {
             // Store available weapons for selected units
             availableWeapons = {};
+            console.log('proceedToWeapons - selectedUnits:', selectedUnits);
+            console.log('proceedToWeapons - availableUnits:', availableUnits);
+            
             availableUnits.forEach(unit => {
+                console.log('Processing unit:', unit.name, 'selected:', !!selectedUnits[unit.name], 'weapon_categories:', unit.weapon_categories);
                 if (selectedUnits[unit.name]) {
-                    availableWeapons[unit.name] = unit.weapon_types || [];
+                    availableWeapons[unit.name] = unit.weapon_categories || {melee: [], ranged: []};
+                    console.log('Added weapons for', unit.name, ':', availableWeapons[unit.name]);
                 }
             });
             
+            console.log('Final availableWeapons:', availableWeapons);
             populateWeaponSelection();
             document.getElementById('unitSelection').classList.add('hidden');
             document.getElementById('weaponSelection').classList.remove('hidden');
@@ -1291,122 +1612,133 @@ func (gs *GameServer) handleIndex(w http.ResponseWriter, r *http.Request) {
             const configurator = document.getElementById('weaponConfigurator');
             configurator.innerHTML = '';
 
+            console.log('populateWeaponSelection - availableWeapons:', availableWeapons);
+            console.log('populateWeaponSelection - selectedUnits:', selectedUnits);
+
             Object.keys(selectedUnits).forEach(unitName => {
                 const quantity = selectedUnits[unitName];
-                const weaponTypes = availableWeapons[unitName] || [];
+                const weaponCategories = availableWeapons[unitName] || {melee: [], ranged: []};
                 
-                if (weaponTypes.length === 0) {
+                console.log('Unit: ' + unitName + ', Quantity: ' + quantity + ', WeaponCategories:', weaponCategories);
+                
+                if ((weaponCategories.melee || []).length === 0 && (weaponCategories.ranged || []).length === 0) {
+                    console.log('Skipping ' + unitName + ' - no weapons available');
                     return; // Skip units with no weapons
                 }
 
                 const unitDiv = document.createElement('div');
                 unitDiv.className = 'unit-card';
                 
-                // Determine available weapon categories
-                const hasRanged = weaponTypes.includes('Ranged');
-                const hasMelee = weaponTypes.includes('Melee');
+                // Initialize weapon selection for this unit
+                if (!selectedWeapons[unitName]) {
+                    selectedWeapons[unitName] = {
+                        selectedType: null, // 'melee' or 'ranged'
+                        weapons: []
+                    };
+                }
                 
-                let weaponTypeButtons = '';
-                if (hasRanged) {
-                    weaponTypeButtons += '<button class="weapon-type-btn" onclick="selectWeaponType(\'' + unitName + '\', \'Ranged\')">Ranged Weapons</button>';
+                let weaponChoiceHtml = '<div class="weapon-individual-choice">';
+                
+                // Create individual weapon selection checkboxes
+                let allWeapons = [...(weaponCategories.melee || []), ...(weaponCategories.ranged || [])];
+                
+                // Deduplicate weapons by name
+                const weaponMap = new Map();
+                allWeapons.forEach(weapon => {
+                    weaponMap.set(weapon.name, weapon);
+                });
+                allWeapons = Array.from(weaponMap.values());
+                
+                if (allWeapons.length > 0) {
+                    weaponChoiceHtml += '<h5>Select Weapons for Combat:</h5>';
+                    
+                    allWeapons.forEach(weapon => {
+                        const weaponId = unitName + '_' + weapon.name.replace(/\s+/g, '_');
+                        const isSelected = selectedWeapons[unitName] && 
+                                         selectedWeapons[unitName].weapons.some(w => w.name === weapon.name);
+                        
+                        weaponChoiceHtml += '<div class="weapon-checkbox-container">';
+                        weaponChoiceHtml += '<label class="weapon-checkbox-label">';
+                        weaponChoiceHtml += '<input type="checkbox" class="weapon-checkbox" ';
+                        weaponChoiceHtml += 'data-unit="' + unitName + '" ';
+                        weaponChoiceHtml += 'data-weapon-name="' + weapon.name + '" ';
+                        weaponChoiceHtml += (isSelected ? 'checked' : '') + '>';
+                        weaponChoiceHtml += '<span class="weapon-name">' + weapon.name + '</span>';
+                        weaponChoiceHtml += '<span class="weapon-type-badge">' + (weapon.type === 'Melee' ? '⚔️' : '🏹') + '</span>';
+                        weaponChoiceHtml += '</label>';
+                        weaponChoiceHtml += '<div class="weapon-stats-small">';
+                        weaponChoiceHtml += 'A:' + weapon.attacks + ' | ';
+                        weaponChoiceHtml += (weapon.type === 'Melee' ? 'WS:' : 'BS:') + weapon.skill + ' | ';
+                        weaponChoiceHtml += 'S:' + weapon.strength + ' | ';
+                        weaponChoiceHtml += 'AP:' + weapon.ap + ' | ';
+                        weaponChoiceHtml += 'D:' + weapon.damage;
+                        weaponChoiceHtml += '</div>';
+                        weaponChoiceHtml += '</div>';
+                    });
+                } else {
+                    weaponChoiceHtml += '<p>No weapons available for this unit.</p>';
                 }
-                if (hasMelee) {
-                    weaponTypeButtons += '<button class="weapon-type-btn" onclick="selectWeaponType(\'' + unitName + '\', \'Melee\')">Melee Weapons</button>';
-                }
+                
+                weaponChoiceHtml += '</div>';
                 
                 unitDiv.innerHTML =
                     '<div class="unit-header">' +
                         '<div class="unit-name">' + unitName + ' ×' + quantity + '</div>' +
                     '</div>' +
                     '<div class="weapon-selection">' +
-                        '<h4>Choose Weapon Type:</h4>' +
-                        '<div class="weapon-type-selector">' + weaponTypeButtons + '</div>' +
-                        '<div class="weapon-list" id="weapons-' + unitName.replace(/\s+/g, '-') + '"></div>' +
+                        '<h4>Choose Combat Style:</h4>' +
+                        weaponChoiceHtml +
                     '</div>';
                 
                 configurator.appendChild(unitDiv);
             });
             
-            updateArmySummary();
-        }
-
-        function selectWeaponType(unitName, weaponType) {
-            // Update button selection
-            const buttons = document.querySelectorAll('.weapon-type-btn');
-            buttons.forEach(btn => btn.classList.remove('selected'));
-            event.target.classList.add('selected');
-            
-            // Initialize weapon selection for this unit
-            if (!selectedWeapons[unitName]) {
-                selectedWeapons[unitName] = {};
-            }
-            selectedWeapons[unitName].weaponType = weaponType;
-            selectedWeapons[unitName].weapons = [];
-            
-            // Show available weapons of this type
-            showWeaponsForType(unitName, weaponType);
-            updateArmySummary();
-        }
-
-        function showWeaponsForType(unitName, weaponType) {
-            // Request weapon data from server
-            if (ws && ws.readyState === WebSocket.OPEN) {
-                ws.send(JSON.stringify({
-                    type: 'get_unit_weapons',
-                    unit_name: unitName
-                }));
-                
-                // Store the requested weapon type to filter results
-                window.pendingWeaponType = weaponType;
-                window.pendingUnitName = unitName;
-            }
-        }
-
-        function displayUnitWeapons(message) {
-            // Check if this response matches our pending request
-            if (window.pendingUnitName !== message.unit_name) {
-                return;
-            }
-            
-            const weaponType = window.pendingWeaponType;
-            const unitName = message.unit_name;
-            const weaponsByType = message.weapons_by_type;
-            
-            const weaponList = document.getElementById('weapons-' + unitName.replace(/\s+/g, '-'));
-            if (!weaponList) {
-                return;
-            }
-            
-            // Get weapons for the selected type
-            const weapons = weaponsByType[weaponType] || [];
-            
-            weaponList.innerHTML = '';
-            if (weapons.length === 0) {
-                weaponList.innerHTML = '<div class="no-weapons">No ' + weaponType.toLowerCase() + ' weapons available for this unit</div>';
-                return;
-            }
-            
-            weapons.forEach(weapon => {
-                const weaponDiv = document.createElement('div');
-                weaponDiv.className = 'weapon-item';
-                weaponDiv.onclick = () => selectWeapon(unitName, weapon);
-                
-                weaponDiv.innerHTML =
-                    '<div><strong>' + sanitizeText(weapon.name) + '</strong></div>' +
-                    '<div class="weapon-stats">' +
-                        '<span>Range: ' + sanitizeText(weapon.range || 'N/A') + '</span>' +
-                        '<span>A: ' + sanitizeText(weapon.attacks || 'N/A') + '</span>' +
-                        '<span>S: ' + sanitizeText(weapon.strength || 'N/A') + '</span>' +
-                        '<span>AP: ' + sanitizeText(weapon.ap || 'N/A') + '</span>' +
-                        '<span>D: ' + sanitizeText(weapon.damage || 'N/A') + '</span>' +
-                    '</div>';
-                
-                weaponList.appendChild(weaponDiv);
+            // Add event listeners for weapon checkboxes
+            document.querySelectorAll('.weapon-checkbox').forEach(checkbox => {
+                checkbox.addEventListener('change', function() {
+                    const unitName = this.getAttribute('data-unit');
+                    const weaponName = this.getAttribute('data-weapon-name');
+                    toggleWeaponSelection(unitName, weaponName, this.checked);
+                });
             });
             
-            // Clear pending request
-            window.pendingWeaponType = null;
-            window.pendingUnitName = null;
+            updateArmySummary();
+        }
+
+        function toggleWeaponSelection(unitName, weaponName, isSelected) {
+            console.log('toggleWeaponSelection called with:', unitName, weaponName, isSelected);
+            
+            // Initialize weapon selection for this unit if needed
+            if (!selectedWeapons[unitName]) {
+                selectedWeapons[unitName] = {
+                    weapons: []
+                };
+            }
+            
+            // Find all weapons for this unit from available weapons
+            const weaponCategories = availableWeapons[unitName] || {melee: [], ranged: []};
+            const allWeapons = [...(weaponCategories.melee || []), ...(weaponCategories.ranged || [])];
+            
+            // Find the specific weapon
+            const weaponData = allWeapons.find(w => w.name === weaponName);
+            if (!weaponData) {
+                console.error('Weapon not found:', weaponName);
+                return;
+            }
+            
+            if (isSelected) {
+                // Add weapon if not already present
+                const alreadySelected = selectedWeapons[unitName].weapons.some(w => w.name === weaponName);
+                if (!alreadySelected) {
+                    selectedWeapons[unitName].weapons.push(weaponData);
+                }
+            } else {
+                // Remove weapon
+                selectedWeapons[unitName].weapons = selectedWeapons[unitName].weapons.filter(w => w.name !== weaponName);
+            }
+            
+            console.log('Updated selectedWeapons for', unitName, ':', selectedWeapons[unitName]);
+            updateArmySummary();
         }
 
         function sanitizeText(text) {
@@ -1442,24 +1774,6 @@ func (gs *GameServer) handleIndex(w http.ResponseWriter, r *http.Request) {
             list.appendChild(playerListDiv);
         }
 
-        function selectWeapon(unitName, weapon) {
-            // Toggle weapon selection
-            if (!selectedWeapons[unitName].weapons) {
-                selectedWeapons[unitName].weapons = [];
-            }
-            
-            const index = selectedWeapons[unitName].weapons.findIndex(w => w.name === weapon.name);
-            if (index >= 0) {
-                selectedWeapons[unitName].weapons.splice(index, 1);
-                event.target.classList.remove('selected');
-            } else {
-                selectedWeapons[unitName].weapons.push(weapon);
-                event.target.classList.add('selected');
-            }
-            
-            updateArmySummary();
-        }
-
         function updateArmySummary() {
             const summary = document.getElementById('armySummary');
             summary.innerHTML = '';
@@ -1476,10 +1790,12 @@ func (gs *GameServer) handleIndex(w http.ResponseWriter, r *http.Request) {
                 let weaponInfo = 'No weapons selected';
                 let unitValid = false;
                 
-                if (weapons && weapons.weaponType && weapons.weapons.length > 0) {
-                    weaponInfo = weapons.weaponType + ': ' + weapons.weapons.map(w => sanitizeText(w.name || w.Name)).join(', ');
+                if (weapons && weapons.weapons && weapons.weapons.length > 0) {
+                    weaponInfo = 'Weapons: ' + weapons.weapons.join(', ');
                     unitValid = true;
-                } else if (availableWeapons[unitName] && availableWeapons[unitName].length === 0) {
+                } else if (availableWeapons[unitName] && 
+                          ((availableWeapons[unitName].melee && availableWeapons[unitName].melee.length === 0) &&
+                           (availableWeapons[unitName].ranged && availableWeapons[unitName].ranged.length === 0))) {
                     weaponInfo = 'No weapons available';
                     unitValid = true; // Units without weapons are valid
                 }
@@ -1511,7 +1827,7 @@ func (gs *GameServer) handleIndex(w http.ResponseWriter, r *http.Request) {
                 army.push({
                     unit_name: unitName,
                     quantity: quantity,
-                    weapon_type: weapons ? weapons.weaponType : ''
+                    selected_weapons: weapons ? weapons.weapons : []
                 });
             });
             
@@ -1589,15 +1905,59 @@ func (gs *GameServer) handleIndex(w http.ResponseWriter, r *http.Request) {
         }
 
         // New turn-based combat system functions
+        function showCombatStart(message) {
+            hideDiceRoller(); // Hide general dice roller during combat
+            
+            addLogEntry(message.message);
+            
+            if (message.phase === 'attacking') {
+                // Show attack interface - let player select unit and weapon type
+                document.getElementById('battleInfo').innerHTML = 
+                    '<h3>Fight Phase</h3>' +
+                    '<p style="color: #00ff00; font-weight: bold; font-size: 18px;">YOUR TURN - Attack!</p>' +
+                    '<div style="text-align: center; margin: 20px 0;">' +
+                    '<p><strong>Combat Sequence:</strong></p>' +
+                    '<p>' + (message.combat_info ? message.combat_info.sequence[0] : '1. Choose attacks → 2. Roll to hit → 3. Roll to wound → 4. Opponent rolls saves') + '</p>' +
+                    '</div>' +
+                    '<div style="text-align: center; margin: 20px 0;">' +
+                    '<button class="dice-btn" onclick="startAttack()" style="background: #ff4444; font-size: 16px; padding: 10px 20px;">Begin Attack!</button>' +
+                    '</div>';
+            } else {
+                // Defending player
+                document.getElementById('battleInfo').innerHTML = 
+                    '<h3>Fight Phase</h3>' +
+                    '<p style="color: #ff6b6b; font-weight: bold; font-size: 18px;">Opponent\'s Turn - Defend!</p>' +
+                    '<div style="text-align: center; margin: 20px 0;">' +
+                    '<p><strong>Combat Sequence:</strong></p>' +
+                    '<p>' + (message.combat_info ? message.combat_info.sequence[0] : '1. Choose attacks → 2. Roll to hit → 3. Roll to wound → 4. Opponent rolls saves') + '</p>' +
+                    '</div>' +
+                    '<p>Waiting for opponent to attack...</p>';
+            }
+        }
+
+        function startAttack() {
+            console.log('startAttack function called');
+            // Send message to start the combat sequence
+            sendMessage({
+                type: 'start_attack'
+            });
+            console.log('start_attack message sent');
+        }
+
         function showCombatPhase(message) {
             hideDiceRoller(); // Hide general dice roller during combat
             
             if (message.your_turn) {
+                // Store the army data for weapon selection
+                currentArmy = message.army;
+                
                 let armyHTML = '<h3>Select Unit & Weapon to Attack</h3>';
                 armyHTML += '<div class="unit-selection">';
                 
                 message.army.forEach(unit => {
-                    armyHTML += '<div class="unit-card" onclick="selectAttackingUnit(\'' + unit.unit_name + '\')">';
+                    // Escape single quotes in unit names for JavaScript
+                    const escapedUnitName = unit.unit_name.replace(/'/g, "\\'");
+                    armyHTML += '<div class="unit-card" onclick="selectAttackingUnit(\'' + escapedUnitName + '\')">';
                     armyHTML += '<h4>' + unit.unit_name + ' (x' + unit.quantity + ')</h4>';
                     armyHTML += '</div>';
                 });
@@ -1614,10 +1974,24 @@ func (gs *GameServer) handleIndex(w http.ResponseWriter, r *http.Request) {
         }
 
         function selectAttackingUnit(unitName) {
-            // Find the unit's weapons from the playerData
+            console.log('selectAttackingUnit called with:', unitName);
+            console.log('currentArmy:', currentArmy);
+            console.log('currentArmy length:', currentArmy ? currentArmy.length : 'null');
+            
+            // Find the unit's weapons from the current army data
             let unitData = null;
-            if (availableUnits) {
-                unitData = availableUnits.find(u => u.name === unitName);
+            if (currentArmy) {
+                unitData = currentArmy.find(u => {
+                    console.log('Checking unit:', u.unit_name, 'against:', unitName);
+                    console.log('Unit weapons:', u.weapons);
+                    return u.unit_name === unitName;
+                });
+            }
+            
+            console.log('Found unitData:', unitData);
+            if (unitData && unitData.weapons) {
+                console.log('Unit weapons array:', unitData.weapons);
+                console.log('Weapons length:', unitData.weapons.length);
             }
             
             if (!unitData || !unitData.weapons || unitData.weapons.length === 0) {
@@ -1731,9 +2105,25 @@ func (gs *GameServer) handleIndex(w http.ResponseWriter, r *http.Request) {
         }
 
         function showCombatWaiting(message) {
-            document.getElementById('battleInfo').innerHTML = 
-                '<h3>Waiting</h3>' +
-                '<p>' + message.message + '</p>';
+            // Enhanced visual feedback for opponent defense phase
+            if (message.phase === 'enemy_saving') {
+                document.getElementById('battleInfo').innerHTML = 
+                    '<h3>Opponent Defense Phase</h3>' +
+                    '<p>' + message.message + '</p>' +
+                    '<div class="dice-rolling opponent-rolling">' +
+                    '<p>Opponent is rolling armor saves...</p>' +
+                    '<div class="rolling-animation">' +
+                    '<span class="dice-icon">🎲</span>' +
+                    '<span class="dice-icon">🎲</span>' +
+                    '<span class="dice-icon">🎲</span>' +
+                    '</div>' +
+                    '</div>';
+            } else {
+                // Default waiting display for other phases
+                document.getElementById('battleInfo').innerHTML = 
+                    '<h3>Waiting</h3>' +
+                    '<p>' + message.message + '</p>';
+            }
             addLogEntry(message.message);
         }
 
@@ -1741,6 +2131,249 @@ func (gs *GameServer) handleIndex(w http.ResponseWriter, r *http.Request) {
             if (message.combat) {
                 addLogEntry('Combat update: Phase ' + message.combat.phase);
             }
+        }
+
+        // New functions to display dice roll results from backend
+        function showHitRollResults(message) {
+            const rollsDisplay = message.rolls.map(roll => 
+                '<span class="dice-result ' + (roll >= message.hit_on ? 'success' : 'fail') + '">' + roll + '</span>'
+            ).join(' ');
+            
+            document.getElementById('battleInfo').innerHTML += 
+                '<div class="dice-results">' +
+                '<h4>🎯 Hit Rolls</h4>' +
+                '<p><strong>' + message.weapon + '</strong> (need ' + message.hit_on + '+)</p>' +
+                '<div class="dice-display">' + rollsDisplay + '</div>' +
+                '<p class="result-summary">' + message.hits + ' out of ' + message.rolls.length + ' hits!</p>' +
+                '</div>';
+            addLogEntry(message.message);
+        }
+
+        function showWoundRollResults(message) {
+            const rollsDisplay = message.rolls.map(roll => 
+                '<span class="dice-result ' + (roll >= message.wound_on ? 'success' : 'fail') + '">' + roll + '</span>'
+            ).join(' ');
+            
+            document.getElementById('battleInfo').innerHTML += 
+                '<div class="dice-results">' +
+                '<h4>💀 Wound Rolls</h4>' +
+                '<p><strong>' + message.weapon + '</strong> (S' + message.strength + ' vs T' + message.toughness + ', need ' + message.wound_on + '+)</p>' +
+                '<div class="dice-display">' + rollsDisplay + '</div>' +
+                '<p class="result-summary">' + message.wounds + ' out of ' + message.rolls.length + ' wounds!</p>' +
+                '</div>';
+            addLogEntry(message.message);
+        }
+
+        function showSaveRollResults(message) {
+            const rollsDisplay = message.rolls.map(roll => 
+                '<span class="dice-result ' + (roll >= message.save_on ? 'success' : 'fail') + '">' + roll + '</span>'
+            ).join(' ');
+            
+            document.getElementById('battleInfo').innerHTML += 
+                '<div class="dice-results">' +
+                '<h4>🛡️ Armor Save Rolls</h4>' +
+                '<p><strong>' + message.weapon + '</strong> (need ' + message.save_on + '+, AP-' + message.ap + ')</p>' +
+                '<div class="dice-display">' + rollsDisplay + '</div>' +
+                '<p class="result-summary">' + message.saves + ' saves, ' + message.unsaved_wounds + ' unsaved wounds, ' + message.damage + ' damage!</p>' +
+                '</div>';
+            addLogEntry(message.message);
+        }
+
+        function showWeaponAttack(message) {
+            document.getElementById('battleInfo').innerHTML += 
+                '<div class="weapon-attack">' +
+                '<h4>⚔️ ' + message.weapon + '</h4>' +
+                '<p>' + message.unit + ' attacks with ' + message.attacks + ' attacks</p>' +
+                '</div>';
+            addLogEntry(message.message);
+        }
+
+        function showAttackSummary(message) {
+            let html = '<div class="attack-summary">' +
+                '<h3>' + message.message + '</h3>';
+            
+            // Show weapon details
+            if (message.weapons && message.weapons.length > 0) {
+                html += '<div class="weapons-list">';
+                message.weapons.forEach((weapon, index) => {
+                    html += '<div class="weapon-summary">' +
+                        '<strong>' + weapon.weapon_name + '</strong> (' + weapon.unit_name + ')' +
+                        ' - ' + weapon.attacks + ' attacks' +
+                        '</div>';
+                });
+                html += '</div>';
+            }
+            
+            // Add action buttons if this player can act
+            if (message.show_hit_button && message.show_action_buttons) {
+                let buttonText = '🎯 Roll Hits';
+                let rollFunction = 'rollHits()';
+                
+                // Update button based on current phase
+                if (message.current_phase === 'wound') {
+                    buttonText = '⚔️ Roll Wounds';
+                    rollFunction = 'rollWounds()';
+                } else if (message.current_phase === 'save') {
+                    buttonText = '🛡️ Roll Saves';
+                    rollFunction = 'rollSaves()';
+                }
+                
+                html += '<div class="combat-actions" style="margin-top: 20px;">' +
+                    '<button onclick="' + rollFunction + '" class="action-btn primary" style="background: #d4af37; color: #000; padding: 12px 24px; border: none; border-radius: 5px; font-weight: bold; cursor: pointer;">' + buttonText + '</button>' +
+                    '</div>';
+            }
+            
+            html += '</div>';
+            
+            document.getElementById('battleInfo').innerHTML = html;
+            addLogEntry(message.message);
+        }
+
+        function rollHits() {
+            sendMessage({
+                type: 'roll_hit'
+            });
+        }
+
+        function rollWounds() {
+            sendMessage({
+                type: 'roll_wound'
+            });
+        }
+
+        function rollSaves() {
+            sendMessage({
+                type: 'roll_save'
+            });
+        }
+
+        function showHitResults(message) {
+            let html = '<div class="hit-results">' +
+                '<h3>🎯 Hit Results</h3>';
+            
+            // Show attack history
+            if (message.attack_history && message.attack_history.length > 0) {
+                html += '<div class="attack-history">';
+                message.attack_history.forEach(entry => {
+                    if (entry.phase === 'hit') {
+                        const rollsDisplay = entry.rolls.map(roll => 
+                            '<span class="dice-result ' + (roll >= entry.target ? 'success' : 'fail') + '">' + roll + '</span>'
+                        ).join(' ');
+                        
+                        html += '<div class="dice-results">' +
+                            '<h4>' + entry.weapon_name + ' (' + entry.unit_name + ')</h4>' +
+                            '<p>Need ' + entry.target + '+: ' + rollsDisplay + '</p>' +
+                            '<p class="result-summary">' + entry.successes + ' hits!</p>' +
+                            '</div>';
+                    }
+                });
+                html += '</div>';
+            }
+            
+            // Add action buttons if this player can act
+            if (message.show_wound_button) {
+                html += '<div class="combat-actions" style="margin-top: 20px;">' +
+                    '<button onclick="rollWounds()" class="action-btn primary" style="background: #d4af37; color: #000; padding: 12px 24px; border: none; border-radius: 5px; font-weight: bold; cursor: pointer;">⚔️ Roll Wounds</button>' +
+                    '</div>';
+            } else if (message.show_next_weapon) {
+                html += '<div class="combat-actions" style="margin-top: 20px;">' +
+                    '<button onclick="nextWeapon()" class="action-btn secondary" style="background: #666; color: #fff; padding: 12px 24px; border: none; border-radius: 5px; font-weight: bold; cursor: pointer;">Next Weapon</button>' +
+                    '</div>';
+            }
+            
+            html += '</div>';
+            
+            document.getElementById('battleInfo').innerHTML = html;
+            addLogEntry(message.message);
+        }
+
+        function showWoundResults(message) {
+            let html = '<div class="wound-results">' +
+                '<h3>⚔️ Wound Results</h3>';
+            
+            // Show attack history
+            if (message.attack_history && message.attack_history.length > 0) {
+                html += '<div class="attack-history">';
+                message.attack_history.forEach(entry => {
+                    if (entry.phase === 'wound') {
+                        const rollsDisplay = entry.rolls.map(roll => 
+                            '<span class="dice-result ' + (roll >= entry.target ? 'success' : 'fail') + '">' + roll + '</span>'
+                        ).join(' ');
+                        
+                        html += '<div class="dice-results">' +
+                            '<h4>' + entry.weapon_name + ' (' + entry.unit_name + ')</h4>' +
+                            '<p>Need ' + entry.target + '+: ' + rollsDisplay + '</p>' +
+                            '<p class="result-summary">' + entry.successes + ' wounds!</p>' +
+                            '</div>';
+                    }
+                });
+                html += '</div>';
+            }
+            
+            // Add action buttons if this player can act
+            if (message.show_save_button) {
+                html += '<div class="combat-actions" style="margin-top: 20px;">' +
+                    '<button onclick="rollSaves()" class="action-btn primary" style="background: #d4af37; color: #000; padding: 12px 24px; border: none; border-radius: 5px; font-weight: bold; cursor: pointer;">🛡️ Roll Saves</button>' +
+                    '</div>';
+            }
+            
+            html += '</div>';
+            
+            document.getElementById('battleInfo').innerHTML = html;
+            addLogEntry(message.message);
+        }
+
+        function showSaveResults(message) {
+            let html = '<div class="save-results">' +
+                '<h3>🛡️ Save Results</h3>';
+            
+            // Show attack history
+            if (message.attack_history && message.attack_history.length > 0) {
+                html += '<div class="attack-history">';
+                message.attack_history.forEach(entry => {
+                    if (entry.phase === 'save') {
+                        const rollsDisplay = entry.rolls.map(roll => 
+                            '<span class="dice-result ' + (roll >= entry.target ? 'success' : 'fail') + '">' + roll + '</span>'
+                        ).join(' ');
+                        
+                        html += '<div class="dice-results">' +
+                            '<h4>Saves against ' + entry.weapon_name + '</h4>' +
+                            '<p>Need ' + entry.target + '+: ' + rollsDisplay + '</p>' +
+                            '<p class="result-summary">' + entry.successes + ' saves, ' + (entry.rolls.length - entry.successes) + ' failed!</p>' +
+                            '</div>';
+                    }
+                });
+                html += '</div>';
+            }
+            
+            html += '</div>';
+            
+            document.getElementById('battleInfo').innerHTML = html;
+            addLogEntry(message.message);
+        }
+
+        function nextWeapon() {
+            sendMessage({
+                type: 'next_weapon'
+            });
+        }
+
+        function showCombatResults(message) {
+            document.getElementById('battleInfo').innerHTML += 
+                '<div class="combat-results">' +
+                '<h3>⚡ Combat Results</h3>' +
+                '<p>' + message.message + '</p>' +
+                '</div>';
+            addLogEntry(message.message);
+        }
+
+        function showNoWeapons(message) {
+            document.getElementById('battleInfo').innerHTML += 
+                '<div class="no-weapons">' +
+                '<h4>⚠️ No Weapons</h4>' +
+                '<p>' + message.message + '</p>' +
+                '</div>';
+            addLogEntry(message.message);
         }
 
         function finishMatch(message) {

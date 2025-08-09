@@ -10,6 +10,7 @@ A **real-time multiplayer** Warhammer 40K combat game with **AI opponents** buil
 - **🤖 AI Opponents** - Play against computer with 3 difficulty levels (Easy/Medium/Hard)
 - **👥 Multiplayer** - Real-time WebSocket combat between players
 - **📱 Mobile Friendly** - Optimized touch interface and responsive design
+- **📊 Enhanced Combat Logging** - Detailed battle logs with live wound tracking
 
 ### **Content & Data**
 - **45+ Factions** with complete unit rosters from BattleScribe
@@ -238,12 +239,23 @@ w40k-duel/
 ## 🎮 Game Features
 
 ### **Combat System**
-- **Real-time Combat**: WebSocket-based multiplayer battles
-- **AI Integration**: Seamless human vs AI gameplay
+- **Real-time Combat**: WebSocket-based multiplayer battles with detailed logging
+- **Enhanced Combat Logging**: Comprehensive battle logs with phase-by-phase tracking
+- **Wound Tracking**: Live wound counts for both armies throughout combat
+- **AI Integration**: Seamless human vs AI gameplay with automatic phase handling
 - **Faction Selection**: Choose from 45+ official factions
 - **Unit Statistics**: Authentic W40K stats and weapons with deduplication
-- **Combat Resolution**: Accurate dice rolling and damage calculation
+- **Combat Resolution**: Accurate dice rolling and damage calculation with detailed feedback
 - **Mobile Support**: Touch-optimized interface
+
+### **New Combat Logging Features** ✨
+- **🎯 Hit Phase Logs**: `Player's Weapon: X hits from Y attacks`
+- **💥 Wound Phase Logs**: `Player's Weapon: X wounds caused` or `🛡️ No wounds caused`
+- **🎯 Save Phase Logs**: `Player's Weapon: X unsaved wounds → Y damage dealt`
+- **🩸 Damage Tracking**: `Player suffers X wounds (Y remaining)` with live updates
+- **⚔️ Turn Management**: `Turn switches to Player` with wound status
+- **🏆 Victory Detection**: Automatic battle end when army is destroyed
+- **📊 Combat Statistics**: Real-time wound tracking and damage application
 
 ### **AI Opponent Features**
 - **Difficulty Scaling**: Easy, Medium, Hard with different behaviors

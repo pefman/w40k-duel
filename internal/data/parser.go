@@ -164,6 +164,9 @@ func extractWeaponsFromGroup(group SelectionEntryGroup) []Profile {
 			}
 		}
 
+		// Recursively search nested entries for weapons (important for complex units)
+		weapons = append(weapons, extractWeaponsFromEntry(entry)...)
+
 		// Recursively search nested groups
 		for _, nestedGroup := range entry.SelectionEntryGroups {
 			weapons = append(weapons, extractWeaponsFromGroup(nestedGroup)...)

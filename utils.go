@@ -69,3 +69,13 @@ func parseStatValue(stat string) int {
 	}
 	return val
 }
+
+// Helper function to safely get string values from map[string]interface{}
+func getString(m map[string]interface{}, key string) string {
+	if val, ok := m[key]; ok {
+		if str, ok := val.(string); ok {
+			return str
+		}
+	}
+	return ""
+}

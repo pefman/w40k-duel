@@ -96,6 +96,11 @@ func (gs *GameServer) handleMessage(player *Player, msg map[string]interface{}) 
 	case "submit_save_rolls":
 		rolls, _ := msg["rolls"].([]interface{})
 		gs.submitSaveRolls(player, rolls)
+	case "start_attack":
+		log.Printf("Received start_attack message from player %s", player.Name)
+		gs.startAttack(player)
+	case "roll_hit", "roll_wound", "roll_save":
+		gs.handleManualDiceRoll(player, msgType)
 	}
 }
 

@@ -954,6 +954,51 @@ func getUnitWeaponTypes(unit Unit) []string {
 	return types
 }
 
+func getUnitWeaponNames(unit Unit) []string {
+	nameMap := make(map[string]bool)
+	for _, weapon := range unit.Weapons {
+		if weapon.Name != "" {
+			nameMap[weapon.Name] = true
+		}
+	}
+
+	names := make([]string, 0, len(nameMap))
+	for weaponName := range nameMap {
+		names = append(names, weaponName)
+	}
+	return names
+}
+
+func getUnitWeaponsCategorized(unit Unit) map[string][]Weapon {
+	meleeWeapons := make(map[string]Weapon)
+	rangedWeapons := make(map[string]Weapon)
+
+	for _, weapon := range unit.Weapons {
+		if weapon.Name != "" {
+			if weapon.Type == "Melee" {
+				meleeWeapons[weapon.Name] = weapon
+			} else if weapon.Type == "Ranged" {
+				rangedWeapons[weapon.Name] = weapon
+			}
+		}
+	}
+
+	melee := make([]Weapon, 0, len(meleeWeapons))
+	for _, weapon := range meleeWeapons {
+		melee = append(melee, weapon)
+	}
+
+	ranged := make([]Weapon, 0, len(rangedWeapons))
+	for _, weapon := range rangedWeapons {
+		ranged = append(ranged, weapon)
+	}
+
+	return map[string][]Weapon{
+		"melee":  melee,
+		"ranged": ranged,
+	}
+}
+
 // convertWeaponProfilesToWeapons converts weapon profiles from JSON to Weapon structs
 func convertWeaponProfilesToWeapons(weaponProfiles []struct {
 	Name  string `json:"name"`

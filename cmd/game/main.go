@@ -1495,8 +1495,41 @@ const indexHTML = `<!doctype html>
   <script>
     const $ = (id)=>document.getElementById(id);
 		let ws; let state={}; let me=null; let chosenWeapons=[]; let weaponType=null; // 'melee' or 'ranged'
-		async function loadFactions(){ const res=await fetch('/api/factions'); const data=await res.json(); const fac=$('faction'); fac.innerHTML=''; data.forEach(f=>{ const o=document.createElement('option'); o.value=f.name||f.factionname; o.textContent=o.value; fac.appendChild(o); }); await loadUnits(); }
-	async function loadUnits(){ const f=$('faction').value; if(!f) return; const res=await fetch('/api/units?faction='+encodeURIComponent(f)); const units=await res.json(); const uSel=$('unit'); uSel.innerHTML=''; const unitStats=$('unitStats'); unitStats.textContent=''; units.forEach(u=>{ const o=document.createElement('option'); o.value=u.Name||u.name; const pts=(u.Points||u.points||0); const label=(u.Name||u.name)+ (u.W? (' — W:'+u.W+' T:'+u.T) : '') + (pts? (' — '+pts+'pts') : ''); o.textContent=label; uSel.appendChild(o); }); const first=units[0]; if(first){ unitStats.textContent='W: '+(first.W||first.wounds||'?')+'  T: '+(first.T||'?') + (first.InvSv? ('  Inv: '+first.InvSv+'+') : '') + (first.FNP? ('  FNP: '+first.FNP+'+') : '') + (first.Points? ('  •  '+first.Points+' pts') : ''); } loadWeaponsList(first); uSel.onchange=()=>{ const picked=units.find(x=>(x.Name||x.name)=== (uSel.value.split(' — ')[0]) ); unitStats.textContent='W: '+(picked.W||picked.wounds||'?')+'  T: '+(picked.T||'?') + (picked.InvSv? ('  Inv: '+picked.InvSv+'+') : '') + (picked.FNP? ('  FNP: '+picked.FNP+'+') : '') + (picked.Points? ('  •  '+picked.Points+' pts') : ''); loadWeaponsList(picked); }; }
+		async function loadFactions(){
+			try{
+				setStatus('Loading factions…');
+				const res=await fetch('/api/factions');
+				if(!res.ok) throw new Error('HTTP '+res.status);
+				const data=await res.json();
+				const fac=$('faction'); fac.innerHTML='';
+				(data||[]).forEach(f=>{ const o=document.createElement('option'); o.value=f.name||f.factionname; o.textContent=o.value; fac.appendChild(o); });
+				await loadUnits();
+				setStatus('Ready');
+			}catch(err){
+				setStatus('Failed to load factions');
+				logLine('Error loading factions: '+(err&&err.message?err.message:err));
+			}
+		}
+	async function loadUnits(){
+		const readyBtn=$('btn-ready'); if(readyBtn) readyBtn.disabled=true;
+		try{
+			const f=$('faction').value; if(!f){ setStatus('Pick a faction'); return; }
+			setStatus('Loading units…');
+			const res=await fetch('/api/units?faction='+encodeURIComponent(f));
+			if(!res.ok) throw new Error('HTTP '+res.status);
+			const units=await res.json();
+			const uSel=$('unit'); uSel.innerHTML=''; const unitStats=$('unitStats'); unitStats.textContent='';
+			(units||[]).forEach(u=>{ const o=document.createElement('option'); o.value=u.Name||u.name; const pts=(u.Points||u.points||0); const label=(u.Name||u.name)+ (u.W? (' — W:'+u.W+' T:'+u.T) : '') + (pts? (' — '+pts+'pts') : ''); o.textContent=label; uSel.appendChild(o); });
+			const first=(units&&units.length?units[0]:null);
+			if(first){ unitStats.textContent='W: '+(first.W||first.wounds||'?')+'  T: '+(first.T||'?') + (first.InvSv? ('  Inv: '+first.InvSv+'+') : '') + (first.FNP? ('  FNP: '+first.FNP+'+') : '') + (first.Points? ('  •  '+first.Points+' pts') : ''); }
+			if(first){ loadWeaponsList(first); } else { $('weaponList').innerHTML=''; }
+			uSel.onchange=()=>{ const picked=(units||[]).find(x=>(x.Name||x.name)=== (uSel.value.split(' — ')[0]) ); if(!picked) return; unitStats.textContent='W: '+(picked.W||picked.wounds||'?')+'  T: '+(picked.T||'?') + (picked.InvSv? ('  Inv: '+picked.InvSv+'+') : '') + (picked.FNP? ('  FNP: '+picked.FNP+'+') : '') + (picked.Points? ('  •  '+picked.Points+' pts') : ''); loadWeaponsList(picked); };
+			if(readyBtn) readyBtn.disabled=false; setStatus('Ready');
+		}catch(err){
+			setStatus('Failed to load units');
+			logLine('Error loading units for faction: '+$('faction').value+' — '+(err&&err.message?err.message:err));
+		}
+	}
 			function loadWeaponsList(unit){
 				const box=$('weaponList'); box.innerHTML=''; chosenWeapons=[]; weaponType=null; const optHint=$('optionsHint');
 				const list=(unit.Weapons||unit.weapons||[]);

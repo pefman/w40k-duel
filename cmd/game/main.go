@@ -55,6 +55,15 @@ type Weapon struct {
 	S       int    `json:"s"`
 	AP      int    `json:"ap"`
 	D       int    `json:"d"`
+	// Derived rules/keywords
+	LethalHits        bool     `json:"lethal_hits,omitempty"`
+	TwinLinked        bool     `json:"twin_linked,omitempty"`
+	Torrent           bool     `json:"torrent,omitempty"`
+	DevastatingWounds bool     `json:"devastating_wounds,omitempty"`
+	SustainedHits     int      `json:"sustained_hits,omitempty"`
+	AntiTag           string   `json:"anti_tag,omitempty"`
+	AntiValue         int      `json:"anti_value,omitempty"`
+	Tags              []string `json:"tags,omitempty"`
 }
 
 type Unit struct {
@@ -67,6 +76,12 @@ type Unit struct {
 	DefaultW string   `json:"default_weapon,omitempty"`
 	Options  []string `json:"Options,omitempty"`
 	Points   int      `json:"Points,omitempty"`
+	// Extras
+	InvSv      int      `json:"InvSv,omitempty"`
+	InvSvDescr string   `json:"InvSvDescr,omitempty"`
+	Keywords   []string `json:"Keywords,omitempty"`
+	FNP        int      `json:"FNP,omitempty"` // 0 if none, else threshold (e.g., 5 means 5+)
+	DamageRed  int      `json:"DR,omitempty"`  // per-attack damage reduction
 }
 
 type Loadout struct {
@@ -109,6 +124,8 @@ type apiUnit struct {
 type apiWeapon struct {
 	Name     string `json:"name"`
 	Range    string `json:"range"`
+	Type     string `json:"type"`
+	Desc     string `json:"description"`
 	Attacks  string `json:"attacks"`
 	BSOrWS   string `json:"bs_ws"`
 	Strength string `json:"strength"`
@@ -120,7 +137,20 @@ type apiModel struct {
 	Name string `json:"name"`
 	T    string `json:"T"`
 	Sv   string `json:"Sv"`
+	Inv  string `json:"inv_sv"`
+	InvD string `json:"inv_sv_descr"`
 	W    string `json:"W"`
+}
+
+type apiKeyword struct {
+	Keyword string `json:"keyword"`
+	Model   string `json:"model"`
+}
+
+type apiAbility struct {
+	Name        string `json:"name"`
+	Description string `json:"description"`
+	Type        string `json:"type"`
 }
 
 func FetchFactions() ([]apiFaction, error) {
@@ -160,15 +190,23 @@ func FetchUnits(factionName string) ([]Unit, error) {
 		}
 		// Pick first model for simplicity
 		W, T, Sv := 10, 4, 4
+		inv, invDescr := 0, ""
 		if len(models) > 0 {
 			W = mustAtoi(models[0].W, 10)
 			T = mustAtoi(models[0].T, 4)
 			Sv = parseSave(models[0].Sv)
+			inv = parseSave(models[0].Inv)
+			invDescr = strings.TrimSpace(models[0].InvD)
 		}
 		var apiW []apiWeapon
 		if err := apiGet("/api/"+slug+"/"+u.ID+"/weapons", &apiW); err != nil {
 			apiW = nil
 		}
+		// keywords and abilities
+		var apiK []apiKeyword
+		_ = apiGet("/api/"+slug+"/"+u.ID+"/keywords", &apiK)
+		var apiA []apiAbility
+		_ = apiGet("/api/"+slug+"/"+u.ID+"/abilities", &apiA)
 		// Options (valid wargear text lines)
 		var apiOpts []struct {
 			Line        int    `json:"line"`
@@ -197,23 +235,24 @@ func FetchUnits(factionName string) ([]Unit, error) {
 				}
 			}
 		}
+		// derive unit keywords list (non-empty)
+		keywords := make([]string, 0, len(apiK))
+		for _, k := range apiK {
+			s := strings.TrimSpace(k.Keyword)
+			if s != "" {
+				keywords = append(keywords, s)
+			}
+		}
+		fnp, dr := parseFNPAndDR(apiA)
 		weps := make([]Weapon, 0, len(apiW))
 		for _, w := range apiW {
-			weps = append(weps, Weapon{
-				Name:    w.Name,
-				Range:   w.Range,
-				Attacks: parseAttacks(w.Attacks),
-				BS:      parseSave(w.BSOrWS),
-				S:       mustAtoi(w.Strength, 4),
-				AP:      parseAP(w.AP),
-				D:       mustAtoi(w.Damage, 1),
-			})
+			weps = append(weps, deriveWeaponRules(w))
 		}
 		// If no weapons found, add a generic one
 		if len(weps) == 0 {
 			weps = []Weapon{{Name: "Generic", Range: "24", Attacks: 2, BS: 4, S: T, AP: 0, D: 1}}
 		}
-		out = append(out, Unit{Faction: factionName, Name: u.Name, W: W, T: T, Sv: Sv, Weapons: weps, DefaultW: weps[0].Name, Options: opts, Points: pts})
+		out = append(out, Unit{Faction: factionName, Name: u.Name, W: W, T: T, Sv: Sv, InvSv: inv, InvSvDescr: invDescr, Keywords: keywords, FNP: fnp, DamageRed: dr, Weapons: weps, DefaultW: weps[0].Name, Options: opts, Points: pts})
 	}
 	// Stable order by name
 	sort.Slice(out, func(i, j int) bool { return strings.ToLower(out[i].Name) < strings.ToLower(out[j].Name) })
@@ -277,6 +316,134 @@ func parseAttacks(s string) int {
 	}
 	return mustAtoi(s, 2)
 }
+
+// ---------- Parsing helpers for rules ----------
+
+func deriveWeaponRules(w apiWeapon) Weapon {
+	base := Weapon{
+		Name:    w.Name,
+		Range:   w.Range,
+		Attacks: parseAttacks(w.Attacks),
+		BS:      parseSave(w.BSOrWS),
+		S:       mustAtoi(w.Strength, 4),
+		AP:      parseAP(w.AP),
+		D:       mustAtoi(w.Damage, 1),
+	}
+	blob := strings.ToLower(w.Type + " " + w.Desc)
+	tags := []string{}
+	if strings.Contains(blob, "lethal hits") {
+		base.LethalHits = true
+		tags = append(tags, "Lethal Hits")
+	}
+	if strings.Contains(blob, "twin-linked") {
+		base.TwinLinked = true
+		tags = append(tags, "Twin-linked")
+	}
+	if strings.Contains(blob, "torrent") {
+		base.Torrent = true
+		tags = append(tags, "Torrent")
+	}
+	if strings.Contains(blob, "devastating wounds") {
+		base.DevastatingWounds = true
+		tags = append(tags, "Devastating Wounds")
+	}
+	// Sustained Hits X
+	if idx := strings.Index(blob, "sustained hits"); idx >= 0 {
+		sub := strings.TrimSpace(blob[idx+len("sustained hits"):])
+		n := mustAtoi(sub, 0)
+		if n <= 0 { // try format like "sustained hits 1"
+			// look ahead for first digit
+			for _, r := range sub {
+				if r >= '0' && r <= '9' {
+					n = int(r - '0')
+					break
+				}
+			}
+		}
+		if n > 0 {
+			base.SustainedHits = n
+			tags = append(tags, fmt.Sprintf("Sustained Hits %d", n))
+		}
+	}
+	// Anti-[X] (n+)
+	if idx := strings.Index(blob, "anti-"); idx >= 0 {
+		sub := blob[idx+len("anti-"):]
+		// capture tag until space or '(' or end
+		tag := strings.TrimSpace(sub)
+		// trim at '('
+		if p := strings.IndexAny(tag, " (\n\t,"); p >= 0 {
+			tag = strings.TrimSpace(tag[:p])
+		}
+		// find threshold like (4+) or 4+
+		n := 0
+		if p := strings.Index(sub, "("); p >= 0 {
+			inside := sub[p+1:]
+			n = mustAtoi(inside, 0)
+		} else {
+			n = mustAtoi(sub, 0)
+		}
+		if tag != "" && n >= 2 && n <= 6 {
+			base.AntiTag = strings.ToLower(tag)
+			base.AntiValue = n
+			tags = append(tags, fmt.Sprintf("Anti-%s (%d+)", tag, n))
+		}
+	}
+	base.Tags = tags
+	return base
+}
+
+func parseFNPAndDR(abs []apiAbility) (fnp int, dr int) {
+	fnp, dr = 0, 0
+	for _, a := range abs {
+		text := strings.ToLower(a.Description + " " + a.Name)
+		// FNP
+		if strings.Contains(text, "feel no pain") || strings.Contains(text, "fnp") {
+			// find number before '+'
+			n := 0
+			// scan runes
+			for i := 0; i < len(text); i++ {
+				if text[i] >= '2' && text[i] <= '6' {
+					// lookahead for '+'
+					if i+1 < len(text) && text[i+1] == '+' {
+						n = int(text[i] - '0')
+						break
+					}
+				}
+			}
+			if n >= 2 && n <= 6 {
+				if fnp == 0 || n < fnp {
+					fnp = n
+				}
+			}
+		}
+		// Damage Reduction patterns
+		if strings.Contains(text, "reduce damage by") || strings.Contains(text, "damage reduction") || strings.Contains(text, "-1 damage") {
+			// try to parse a number near
+			n := 1
+			if idx := strings.Index(text, "reduce damage by"); idx >= 0 {
+				sub := text[idx+len("reduce damage by"):]
+				n = mustAtoi(sub, 1)
+			} else if idx := strings.Index(text, "damage reduction"); idx >= 0 {
+				sub := text[idx+len("damage reduction"):]
+				n = mustAtoi(sub, 1)
+			} else if strings.Contains(text, "-1 damage") {
+				n = 1
+			}
+			if n < 0 {
+				n = -n
+			}
+			if n > dr {
+				dr = n
+			}
+		}
+	}
+	if dr < 0 {
+		dr = 0
+	}
+	return
+}
+
+// (reserved) helper for future keyword checks
 
 // ========================= Matchmaking & Rooms =========================
 
@@ -524,6 +691,8 @@ func roomLoop(r *Room) {
 	r.Turn = first.ID
 	broadcast(wsMsg{Type: "log", Data: fmt.Sprintf("Roll-off: %s vs %s → %s first", r.P1.Name, r.P2.Name, first.Name)})
 	broadcastGameState(r)
+	// If AI goes first, schedule its opening attack automatically
+	scheduleAIAttack(r, 1500)
 }
 
 func d6() int { return rand.Intn(6) + 1 }
@@ -735,7 +904,19 @@ func wsReader(p *Player) {
 				}
 				logLines = append(logLines, fmt.Sprintf("Save %d: rolled %d → %s", i+1, rv, res))
 			}
-			totalDmg := unsaved * dmgPer
+			totalDmg := unsaved * max(1, dmgPer-defender.Unit.DamageRed)
+			if defender.Unit.FNP >= 2 && totalDmg > 0 {
+				ignored := 0
+				for i := 0; i < totalDmg; i++ {
+					if d6() >= defender.Unit.FNP {
+						ignored++
+					}
+				}
+				if ignored > 0 {
+					logLines = append(logLines, fmt.Sprintf("Feel No Pain %d+: ignored %d damage", defender.Unit.FNP, ignored))
+					totalDmg = max(0, totalDmg-ignored)
+				}
+			}
 			before := defender.Wounds
 			defender.Wounds = max(0, defender.Wounds-totalDmg)
 			logLines = append(logLines, fmt.Sprintf("%d unsaved → %d damage. %s Wounds: %d → %d", unsaved, totalDmg, defender.Name, before, defender.Wounds))
@@ -788,6 +969,13 @@ func roomStartAttackSequence(r *Room, attacker *Player) {
 		r.Mu.Unlock()
 		return
 	}
+	// Prevent starting a new sequence while saves are pending or an existing sequence is mid-flight
+	if r.Phase == "save" || (r.AttackQueue != nil && r.AttackIndex < len(r.AttackQueue)) {
+		log.Printf("room %s: attack ignored — phase=%s, hasQueue=%v idx=%d len=%d", r.ID, r.Phase, r.AttackQueue != nil, r.AttackIndex, len(r.AttackQueue))
+		r.Mu.Unlock()
+		sendTo(attacker, wsMsg{Type: "log", Data: "Attack already in progress — wait for saves to resolve."})
+		return
+	}
 	r.Phase = "attack"
 	// Build queue from selected weapons; fallback to single active weapon
 	queue := attacker.Loadout.Weapons
@@ -799,11 +987,16 @@ func roomStartAttackSequence(r *Room, attacker *Player) {
 		sendTo(attacker, wsMsg{Type: "log", Data: "No weapons selected."})
 		return
 	}
+	// Diagnostic: log full planned sequence
+	log.Printf("room %s: start sequence by %s — %d weapon(s): %v", r.ID, attacker.Name, len(queue), queue)
 	r.AttackQueue = append([]string(nil), queue...)
 	r.AttackIndex = 0
 	r.CurrentWeapon = r.AttackQueue[0]
 	cur := r.CurrentWeapon
 	r.Mu.Unlock()
+	// Inform players about the sequence length (brief)
+	sendTo(r.P1, wsMsg{Type: "log", Data: fmt.Sprintf("%s begins attack sequence (%d weapons)", attacker.Name, len(queue))})
+	sendTo(r.P2, wsMsg{Type: "log", Data: fmt.Sprintf("%s begins attack sequence (%d weapons)", attacker.Name, len(queue))})
 	resolveWeaponStep(attacker, r, cur)
 }
 
@@ -826,44 +1019,85 @@ func resolveWeaponStep(attacker *Player, r *Room, weaponName string) {
 		r.Mu.Unlock()
 		return
 	}
+	stepInfo := fmt.Sprintf("(step %d/%d)", r.AttackIndex+1, max(1, len(r.AttackQueue)))
+	log.Printf("room %s: %s %s using %q", r.ID, attacker.Name, stepInfo, wep.Name)
 	logLines := []string{fmt.Sprintf("%s attacks with %s", attacker.Name, wep.Name)}
-	// Hits: gather rolls first, then animate to clients, then log
+	// Hits: apply Torrent auto-hits and Sustained Hits
 	hitNeed := clamp(2, 6, wep.BS)
 	attacks := max(1, wep.Attacks)
 	hitRolls := make([]int, 0, attacks)
 	hits := 0
-	for i := 0; i < attacks; i++ {
-		roll := d6()
-		hitRolls = append(hitRolls, roll)
-		if roll >= hitNeed {
-			hits++
+	if wep.Torrent {
+		hits = attacks
+		// fabricate 6s for animation to look good
+		for i := 0; i < attacks; i++ {
+			hitRolls = append(hitRolls, 6)
+		}
+	} else {
+		for i := 0; i < attacks; i++ {
+			roll := d6()
+			hitRolls = append(hitRolls, roll)
+			if roll >= hitNeed {
+				hits++
+				// Sustained Hits X: crits (6s) generate extra hits
+				if wep.SustainedHits > 0 && roll == 6 {
+					hits += wep.SustainedHits
+				}
+			}
 		}
 	}
 	r.Mu.Unlock()
 	// animate hits
 	sendTo(r.P1, wsMsg{Type: "rolls", Data: map[string]any{"phase": "hit", "need": hitNeed, "rolls": hitRolls, "weapon": wep.Name, "attacker": attacker.Name}})
 	sendTo(r.P2, wsMsg{Type: "rolls", Data: map[string]any{"phase": "hit", "need": hitNeed, "rolls": hitRolls, "weapon": wep.Name, "attacker": attacker.Name}})
-	time.Sleep(600 * time.Millisecond)
+	time.Sleep(1800 * time.Millisecond)
 	r.Mu.Lock()
 	for i, roll := range hitRolls {
 		logLines = append(logLines, fmt.Sprintf("Hit %d: rolled %d vs %d+ → %s", i+1, roll, hitNeed, tern(roll >= hitNeed, "HIT", "MISS")))
 	}
-	// Wounds
+	// Wounds: Lethal Hits (crits to auto-wound), Anti-[X] n+, Twin-linked (re-roll failed wounds)
 	woundTarget := woundNeeded(wep.S, defender.Unit.T)
+	// apply Anti threshold if any (we don't check tag matching yet; treat as generic anti for simplicity)
+	if wep.AntiValue >= 2 {
+		woundTarget = min(woundTarget, wep.AntiValue)
+	}
 	woundRolls := make([]int, 0, hits)
 	wounds := 0
+	autoWounds := 0
+	mortals := 0
+	mortalTriggers := 0
 	for i := 0; i < hits; i++ {
 		roll := d6()
+		if wep.LethalHits && roll == 6 {
+			autoWounds++
+			woundRolls = append(woundRolls, roll)
+			continue
+		}
+		// attempt wound roll, with twin-linked re-roll if failed
+		pass := roll >= woundTarget
+		if !pass && wep.TwinLinked {
+			roll2 := d6()
+			// record both? keep the final for animation clarity
+			roll = roll2
+			pass = roll2 >= woundTarget
+		}
 		woundRolls = append(woundRolls, roll)
-		if roll >= woundTarget {
-			wounds++
+		if pass {
+			if wep.DevastatingWounds && roll == 6 {
+				// convert to mortal damage equal to D; bypass saves
+				mortals += max(1, wep.D)
+				mortalTriggers++
+			} else {
+				wounds++
+			}
 		}
 	}
+	wounds += autoWounds
 	r.Mu.Unlock()
 	// animate wounds
 	sendTo(r.P1, wsMsg{Type: "rolls", Data: map[string]any{"phase": "wound", "need": woundTarget, "rolls": woundRolls, "weapon": wep.Name, "attacker": attacker.Name}})
 	sendTo(r.P2, wsMsg{Type: "rolls", Data: map[string]any{"phase": "wound", "need": woundTarget, "rolls": woundRolls, "weapon": wep.Name, "attacker": attacker.Name}})
-	time.Sleep(600 * time.Millisecond)
+	time.Sleep(1800 * time.Millisecond)
 	r.Mu.Lock()
 	for i, roll := range woundRolls {
 		logLines = append(logLines, fmt.Sprintf("Wound %d: need %d+, rolled %d → %s", i+1, woundTarget, roll, tern(roll >= woundTarget, "WOUND", "FAIL")))
@@ -888,20 +1122,52 @@ func resolveWeaponStep(attacker *Player, r *Room, weaponName string) {
 		}
 		r.Mu.Unlock()
 		if nextWeapon != "" {
+			log.Printf("room %s: continue sequence → next weapon %q (idx=%d/%d)", r.ID, nextWeapon, r.AttackIndex+1, len(r.AttackQueue))
 			resolveWeaponStep(attacker, r, nextWeapon)
 		} else {
 			broadcastGameState(r)
+			// If next turn is AI, schedule its attack
+			scheduleAIAttack(r, 1500)
 		}
 		return
 	}
-	// Saves become manual: set pending
-	saveNeed := clamp(2, 6, defender.Unit.Sv+wep.AP)
+	// Saves: choose best of armour vs invuln; AP increases armour save number only
+	armourNeed := clamp(2, 6, defender.Unit.Sv+wep.AP)
+	saveNeed := armourNeed
+	if defender.Unit.InvSv > 0 {
+		saveNeed = min(saveNeed, defender.Unit.InvSv)
+	}
+	// Apply mortal damage immediately (bypass saves); Feel No Pain may apply
+	if mortals > 0 {
+		before := defender.Wounds
+		dmg := mortals
+		// optional: do not apply Damage Reduction to mortals; only FNP
+		if defender.Unit.FNP >= 2 {
+			ignored := 0
+			for i := 0; i < dmg; i++ {
+				if d6() >= defender.Unit.FNP {
+					ignored++
+				}
+			}
+			if ignored > 0 {
+				logLines = append(logLines, fmt.Sprintf("Feel No Pain %d+: ignored %d mortal damage", defender.Unit.FNP, ignored))
+				dmg = max(0, dmg-ignored)
+			}
+		}
+		defender.Wounds = max(0, defender.Wounds-dmg)
+		logLines = append(logLines, fmt.Sprintf("Devastating Wounds: %d mortal damage inflicted (no saves). %s Wounds: %d → %d", mortals, defender.Name, before, defender.Wounds))
+		if defender.Wounds <= 0 {
+			r.Finished = true
+			r.Winner = attacker.ID
+		}
+	}
 	r.Phase = "save"
 	r.PendingSaves = wounds
 	r.PendingNeed = saveNeed
 	r.PendingDmg = max(1, wep.D)
 	r.PendingBy = attacker.ID
 	r.Mu.Unlock()
+	// Inform about pending saves
 	logLines = append(logLines, fmt.Sprintf("%d potential wounds → defender to roll %d saves (need %d+)", wounds, wounds, saveNeed))
 	sendTo(r.P1, wsMsg{Type: "log_multi", Data: logLines})
 	sendTo(r.P2, wsMsg{Type: "log_multi", Data: logLines})
@@ -909,7 +1175,7 @@ func resolveWeaponStep(attacker *Player, r *Room, weaponName string) {
 	// If defender is AI, roll saves automatically after a short delay with animation
 	if defender.IsAI && wounds > 0 {
 		go func() {
-			time.Sleep(400 * time.Millisecond)
+			time.Sleep(1200 * time.Millisecond)
 			r.Mu.Lock()
 			need := r.PendingNeed
 			count := r.PendingSaves
@@ -921,11 +1187,92 @@ func resolveWeaponStep(attacker *Player, r *Room, weaponName string) {
 			// animate save rolls
 			sendTo(r.P1, wsMsg{Type: "rolls", Data: map[string]any{"phase": "save", "need": need, "rolls": rolls}})
 			sendTo(r.P2, wsMsg{Type: "rolls", Data: map[string]any{"phase": "save", "need": need, "rolls": rolls}})
-			time.Sleep(600 * time.Millisecond)
+			time.Sleep(1800 * time.Millisecond)
 			b, _ := json.Marshal(map[string]any{"rolls": rolls})
 			wsReaderHandleSave(defender, b)
 		}()
 	}
+}
+
+// helper to process save rolls path for AI without duplicating logic
+// wsReaderHandleSave removed; saves are handled via the regular ws 'save_rolls' path only.
+
+func weaponByName(u Unit, name string) *Weapon {
+	for i := range u.Weapons {
+		if strings.EqualFold(u.Weapons[i].Name, name) {
+			return &u.Weapons[i]
+		}
+	}
+	return nil
+}
+
+func woundNeeded(S, T int) int {
+	if S >= 2*T {
+		return 2
+	}
+	if S > T {
+		return 3
+	}
+	if S == T {
+		return 4
+	}
+	if S*2 <= T {
+		return 6
+	}
+	return 5
+}
+func tern[T any](cond bool, a, b T) T {
+	if cond {
+		return a
+	}
+	return b
+}
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
+func min(a, b int) int {
+	if a < b {
+		return a
+	}
+	return b
+}
+func clamp(lo, hi, v int) int {
+	if v < lo {
+		return lo
+	}
+	if v > hi {
+		return hi
+	}
+	return v
+}
+
+// ========================= AI Helpers =========================
+
+// scheduleAIAttack triggers an AI attack after delayMS if it's the AI's turn and not in save phase.
+func scheduleAIAttack(r *Room, delayMS int) {
+	go func() {
+		time.Sleep(time.Duration(delayMS) * time.Millisecond)
+		r.Mu.Lock()
+		if r == nil || r.Finished || r.Phase == "save" || r.Turn == "" {
+			r.Mu.Unlock()
+			return
+		}
+		var attacker *Player
+		if r.P1 != nil && r.P1.ID == r.Turn {
+			attacker = r.P1
+		} else if r.P2 != nil && r.P2.ID == r.Turn {
+			attacker = r.P2
+		}
+		if attacker == nil || !attacker.IsAI {
+			r.Mu.Unlock()
+			return
+		}
+		r.Mu.Unlock()
+		roomStartAttackSequence(r, attacker)
+	}()
 }
 
 // helper to process save rolls path for AI without duplicating logic
@@ -973,7 +1320,20 @@ func wsReaderHandleSave(p *Player, data []byte) {
 		}
 		logLines = append(logLines, fmt.Sprintf("Save %d: rolled %d → %s", i+1, rv, res))
 	}
-	totalDmg := unsaved * dmgPer
+	totalDmg := unsaved * max(1, dmgPer-defender.Unit.DamageRed)
+	// Feel No Pain step: roll once per damage suffered; each success ignores 1
+	if defender.Unit.FNP >= 2 && totalDmg > 0 {
+		ignored := 0
+		for i := 0; i < totalDmg; i++ {
+			if d6() >= defender.Unit.FNP {
+				ignored++
+			}
+		}
+		if ignored > 0 {
+			logLines = append(logLines, fmt.Sprintf("Feel No Pain %d+: ignored %d damage", defender.Unit.FNP, ignored))
+			totalDmg = max(0, totalDmg-ignored)
+		}
+	}
 	before := defender.Wounds
 	defender.Wounds = max(0, defender.Wounds-totalDmg)
 	logLines = append(logLines, fmt.Sprintf("%d unsaved → %d damage. %s Wounds: %d → %d", unsaved, totalDmg, defender.Name, before, defender.Wounds))
@@ -984,63 +1344,36 @@ func wsReaderHandleSave(p *Player, data []byte) {
 	}
 	r.PendingSaves, r.PendingNeed, r.PendingDmg, r.PendingBy = 0, 0, 0, ""
 	r.Phase = ""
-	if !r.Finished {
+	// Continue next weapon if sequence remains
+	attacker := r.P1
+	if attacker.ID != r.Turn {
+		attacker = r.P2
+	}
+	var nextWeapon string
+	if !r.Finished && r.AttackQueue != nil && r.AttackIndex+1 < len(r.AttackQueue) {
+		r.AttackIndex++
+		nextWeapon = r.AttackQueue[r.AttackIndex]
+		r.CurrentWeapon = nextWeapon
+	} else if !r.Finished {
+		// end of sequence → flip turn
 		if r.Turn == r.P1.ID {
 			r.Turn = r.P2.ID
 		} else {
 			r.Turn = r.P1.ID
 		}
+		r.AttackQueue, r.AttackIndex, r.CurrentWeapon = nil, 0, ""
 	}
 	r.Mu.Unlock()
 	sendTo(r.P1, wsMsg{Type: "log_multi", Data: logLines})
 	sendTo(r.P2, wsMsg{Type: "log_multi", Data: logLines})
-	broadcastGameState(r)
-}
-
-func weaponByName(u Unit, name string) *Weapon {
-	for i := range u.Weapons {
-		if strings.EqualFold(u.Weapons[i].Name, name) {
-			return &u.Weapons[i]
-		}
+	if nextWeapon != "" {
+		log.Printf("room %s: continue sequence → next weapon %q (idx=%d/%d)", r.ID, nextWeapon, r.AttackIndex+1, len(r.AttackQueue))
+		resolveWeaponStep(attacker, r, nextWeapon)
+	} else {
+		broadcastGameState(r)
+		// Schedule AI attack if it's now their turn
+		scheduleAIAttack(r, 1500)
 	}
-	return nil
-}
-
-func woundNeeded(S, T int) int {
-	if S >= 2*T {
-		return 2
-	}
-	if S > T {
-		return 3
-	}
-	if S == T {
-		return 4
-	}
-	if S*2 <= T {
-		return 6
-	}
-	return 5
-}
-func tern[T any](cond bool, a, b T) T {
-	if cond {
-		return a
-	}
-	return b
-}
-func max(a, b int) int {
-	if a > b {
-		return a
-	}
-	return b
-}
-func clamp(lo, hi, v int) int {
-	if v < lo {
-		return lo
-	}
-	if v > hi {
-		return hi
-	}
-	return v
 }
 
 // ========================= Frontend (embedded) =========================
@@ -1163,21 +1496,25 @@ const indexHTML = `<!doctype html>
     const $ = (id)=>document.getElementById(id);
 		let ws; let state={}; let me=null; let chosenWeapons=[]; let weaponType=null; // 'melee' or 'ranged'
 		async function loadFactions(){ const res=await fetch('/api/factions'); const data=await res.json(); const fac=$('faction'); fac.innerHTML=''; data.forEach(f=>{ const o=document.createElement('option'); o.value=f.name||f.factionname; o.textContent=o.value; fac.appendChild(o); }); await loadUnits(); }
-	async function loadUnits(){ const f=$('faction').value; if(!f) return; const res=await fetch('/api/units?faction='+encodeURIComponent(f)); const units=await res.json(); const uSel=$('unit'); uSel.innerHTML=''; const unitStats=$('unitStats'); unitStats.textContent=''; units.forEach(u=>{ const o=document.createElement('option'); o.value=u.Name||u.name; const pts=(u.Points||u.points||0); const label=(u.Name||u.name)+ (u.W? (' — W:'+u.W+' T:'+u.T) : '') + (pts? (' — '+pts+'pts') : ''); o.textContent=label; uSel.appendChild(o); }); const first=units[0]; if(first){ unitStats.textContent='W: '+(first.W||first.wounds||'?')+'  T: '+(first.T||'?') + (first.Points? ('  •  '+first.Points+' pts') : ''); } loadWeaponsList(first); uSel.onchange=()=>{ const picked=units.find(x=>(x.Name||x.name)=== (uSel.value.split(' — ')[0]) ); unitStats.textContent='W: '+(picked.W||picked.wounds||'?')+'  T: '+(picked.T||'?') + (picked.Points? ('  •  '+picked.Points+' pts') : ''); loadWeaponsList(picked); }; }
+	async function loadUnits(){ const f=$('faction').value; if(!f) return; const res=await fetch('/api/units?faction='+encodeURIComponent(f)); const units=await res.json(); const uSel=$('unit'); uSel.innerHTML=''; const unitStats=$('unitStats'); unitStats.textContent=''; units.forEach(u=>{ const o=document.createElement('option'); o.value=u.Name||u.name; const pts=(u.Points||u.points||0); const label=(u.Name||u.name)+ (u.W? (' — W:'+u.W+' T:'+u.T) : '') + (pts? (' — '+pts+'pts') : ''); o.textContent=label; uSel.appendChild(o); }); const first=units[0]; if(first){ unitStats.textContent='W: '+(first.W||first.wounds||'?')+'  T: '+(first.T||'?') + (first.InvSv? ('  Inv: '+first.InvSv+'+') : '') + (first.FNP? ('  FNP: '+first.FNP+'+') : '') + (first.Points? ('  •  '+first.Points+' pts') : ''); } loadWeaponsList(first); uSel.onchange=()=>{ const picked=units.find(x=>(x.Name||x.name)=== (uSel.value.split(' — ')[0]) ); unitStats.textContent='W: '+(picked.W||picked.wounds||'?')+'  T: '+(picked.T||'?') + (picked.InvSv? ('  Inv: '+picked.InvSv+'+') : '') + (picked.FNP? ('  FNP: '+picked.FNP+'+') : '') + (picked.Points? ('  •  '+picked.Points+' pts') : ''); loadWeaponsList(picked); }; }
 			function loadWeaponsList(unit){
 				const box=$('weaponList'); box.innerHTML=''; chosenWeapons=[]; weaponType=null; const optHint=$('optionsHint');
 				const list=(unit.Weapons||unit.weapons||[]);
-				// Build a set of allowed weapon names from unit.Options text lines (simple heuristic: match by inclusion of weapon name case-insensitive)
+				// Build a set of allowed weapon names from unit.Options, but only enforce disabling when options clearly constrain choices
 				const allowed=new Set();
 				const opts=(unit.Options||unit.options||[]);
+				const norm=(s)=> (s||'').toString().toLowerCase().replace(/[^a-z0-9]/g,' ').replace(/\s+/g,' ').trim();
+				const baseOf=(ns)=>{ const i=ns.search(/\s[-–—:]/); if(i>0) return ns.slice(0,i).trim(); return ns; };
 				const names=list.map(w=> (w.name||w.Name) );
-				opts.forEach(line=>{ const s=line.toLowerCase(); names.forEach(n=>{ if(n && s.includes(n.toLowerCase())) allowed.add(n); }); });
+				const nameNorms=new Map(); names.forEach(n=>{ if(n){ nameNorms.set(n, norm(n)); } });
+				let hasRestrictive=false; const restrRe=/(^|\b)(replace|swap|either|or|choose|select|may take|may equip|can be equipped)(\b|\s)/i;
+				opts.forEach(line=>{ const sN=norm(line); if(restrRe.test(line)) hasRestrictive=true; nameNorms.forEach((nn, orig)=>{ const b=baseOf(nn); if((nn && sN.includes(nn)) || (b && sN.includes(b))) allowed.add(orig); }); });
+				const restrictive = false; // do not disable; options are informative only to avoid hiding valid defaults
 				optHint.textContent = opts && opts.length? ('Options: '+opts.slice(0,3).join(' | ')+(opts.length>3?' …':'')) : '';
 				list.forEach(w=>{
 					const name=w.name||w.Name;
 					const line=document.createElement('label'); line.style.display='block';
 					const cb=document.createElement('input'); cb.type='checkbox'; cb.value=name; cb.onchange=()=>{ onWeaponToggle(w, cb.checked); highlightActiveWeapon(); send('set_weapon', {weapon: chosenWeapons[0]||''}); };
-					if(allowed.size>0 && !allowed.has(name)) { cb.disabled=true; line.style.opacity=.6; }
 					const S = (w.s ?? w.S ?? '?');
 					const AP = (w.ap ?? w.AP ?? 0);
 					const A = (w.attacks ?? w.Attacks ?? '?');
@@ -1185,7 +1522,11 @@ const indexHTML = `<!doctype html>
 					const D = (w.d ?? w.D ?? '?');
 					const details = ' (S:'+S+' AP:'+AP+' A:'+A+' BS/WS:'+BSWS+' D:'+D+')';
 					line.appendChild(cb);
-					const txt=document.createElement('span'); txt.textContent = name + details; line.appendChild(txt);
+					const wrap=document.createElement('div'); wrap.style.display='inline-block'; wrap.style.marginLeft='6px';
+					const txt=document.createElement('div'); txt.textContent = name + details; wrap.appendChild(txt);
+					const tags=(w.tags||w.Tags||[]);
+					if(tags && tags.length){ const tagRow=document.createElement('div'); tagRow.style.marginTop='2px'; tags.forEach(t=>{ const chip=document.createElement('span'); chip.className='pill'; chip.style.fontSize='10px'; chip.style.padding='2px 6px'; chip.textContent=t; tagRow.appendChild(chip); }); wrap.appendChild(tagRow); }
+					line.appendChild(wrap);
 					box.appendChild(line);
 				});
 				$('btn-ready').disabled=false;
@@ -1204,9 +1545,12 @@ const indexHTML = `<!doctype html>
     function ready(){ send('ready', {}); }
 	function attack(){ send('attack', {}); }
 	function onState(s){ state=s; updateUI(); }
-	function onRolls(ev){ const {phase, need, rolls, weapon, attacker} = ev; const tray=$('rollsTray'), hdr=$('rollsHeader'), dice=$('rollsDice'); tray.style.display='block'; const title = (phase==='hit'?'Hit rolls':phase==='wound'?'Wound rolls':'Save rolls'); hdr.textContent = (weapon? (title+' for '+weapon) : title) + (need? (' — need '+need+'+') : ''); dice.innerHTML=''; (rolls||[]).forEach(v=>{ const d=document.createElement('div'); d.className='dice'; d.textContent=v; if(need) d.classList.add(v>=need?'good':'bad'); dice.appendChild(d); }); setTimeout(()=>{ tray.style.display='none'; dice.innerHTML=''; }, 1400); }
-		function updateUI(){ if(!state.p1||!state.p2) return; const p1=state.p1, p2=state.p2; $('p1name').textContent=p1.name||'—'; $('p2name').textContent=p2.name||'—'; $('p1ai').textContent=p1.ai?'AI':'Player'; $('p2ai').textContent=p2.ai?'AI':'Player'; $('p1unit').textContent=p1.unit.faction+' — '+p1.unit.name; $('p2unit').textContent=p2.unit.faction+' — '+p2.unit.name; $('p1cfg').textContent=(p1.loadout.weapons&&p1.loadout.weapons.length?p1.loadout.weapons.join(', '):(p1.loadout.weapon||'—')); $('p2cfg').textContent=(p2.loadout.weapons&&p2.loadout.weapons.length?p2.loadout.weapons.join(', '):(p2.loadout.weapon||'—')); const p1pct=p1.unit.W?Math.max(0,Math.round(100*p1.wounds/p1.unit.W)):0; const p2pct=p2.unit.W?Math.max(0,Math.round(100*p2.wounds/p2.unit.W)):0; $('p1hp').style.width=p1pct+'%'; $('p2hp').style.width=p2pct+'%'; $('p1wounds').textContent = (p1.wounds||0)+' / '+(p1.unit.W||0); $('p2wounds').textContent = (p2.wounds||0)+' / '+(p2.unit.W||0); $('turn').textContent = state.turn===p1.id? p1.name : (state.turn===p2.id? p2.name : '—'); $('winner').textContent = state.winner? ((state.winner===p1.id? p1.name : p2.name) + ' 🎉') : '—'; const inGame=!!state.turn && !state.winner; $('btn-attack').disabled = !inGame; // Set dynamic label
-	    const myTurn = state.turn===me; const phase = state.phase||'attack'; $('btn-attack').textContent = phase==='save' && !myTurn ? 'Save' : 'Attack';
+	function onRolls(ev){ const {phase, need, rolls, weapon, attacker} = ev; const tray=$('rollsTray'), hdr=$('rollsHeader'), dice=$('rollsDice'); tray.style.display='block'; const title = (phase==='hit'?'Hit rolls':phase==='wound'?'Wound rolls':'Save rolls'); hdr.textContent = (weapon? (title+' for '+weapon) : title) + (need? (' — need '+need+'+') : ''); dice.innerHTML=''; (rolls||[]).forEach(v=>{ const d=document.createElement('div'); d.className='dice'; d.textContent=v; if(need) d.classList.add(v>=need?'good':'bad'); dice.appendChild(d); }); setTimeout(()=>{ tray.style.display='none'; dice.innerHTML=''; }, 3000); }
+		function hasActiveSequence(){ return !!state.currentWeapon; }
+	    const myTurn = state.turn===me; const phase = state.phase||'attack';
+		const canAttack = inGame && myTurn && phase!=='save' && !hasActiveSequence();
+		$('btn-attack').disabled = !canAttack;
+		$('btn-attack').textContent = (phase==='save' && !myTurn)? 'Save' : 'Attack';
 	    // Manual save UI
 	    const pending = state.pendingSaves; const isDefender = (state.turn!==me);
 	    if(phase==='save' && pending && isDefender){ $('saveUI').style.display='block'; const need=pending.need||0; const cnt=pending.count||0; $('saveNeed').textContent = cnt+' × '+need+'+'; renderDice(cnt, need); } else { $('saveUI').style.display='none'; $('diceTray').innerHTML=''; }
@@ -1216,7 +1560,7 @@ const indexHTML = `<!doctype html>
 			setStatus(state.winner? 'Game over' : (inGame? 'In game' : 'Ready'));
 		}
     function renderDice(n, need){ const tray=$('diceTray'); tray.innerHTML=''; for(let i=0;i<n;i++){ const d=document.createElement('div'); d.className='dice'; d.dataset.need=need; d.textContent='?'; tray.appendChild(d);} }
-	$('btn-roll-saves').onclick=()=>{ const btn=$('btn-roll-saves'); if(btn.disabled) return; const ds=[...document.querySelectorAll('#diceTray .dice')]; ds.forEach(d=>{ const v=1+Math.floor(Math.random()*6); d.textContent=v; const need=+d.dataset.need; d.classList.remove('good','bad'); d.classList.add(v>=need?'good':'bad'); }); const vals=ds.map(d=>parseInt(d.textContent,10)||d.dataset.need); send('save_rolls', {rolls: vals}); btn.disabled=true; $('saveUI').style.display='none'; };
+	$('btn-roll-saves').onclick=()=>{ const btn=$('btn-roll-saves'); if(btn.disabled) return; const ds=[...document.querySelectorAll('#diceTray .dice')]; ds.forEach(d=>{ const v=1+Math.floor(Math.random()*6); d.textContent=v; const need=+d.dataset.need; d.classList.remove('good','bad'); d.classList.add(v>=need?'good':'bad'); }); const vals=ds.map(d=>parseInt(d.textContent,10)||d.dataset.need); send('save_rolls', {rolls: vals}); btn.disabled=true; setTimeout(()=>{ $('saveUI').style.display='none'; }, 2200); };
     function logLine(t){ const el=$('log'); const atBottom=el.scrollTop+el.clientHeight>=el.scrollHeight-4; const ts=new Date().toLocaleTimeString(); el.textContent += '['+ts+'] '+t+'\n'; if(atBottom) el.scrollTop=el.scrollHeight; }
     function setStatus(t){ $('status').textContent=t; }
 		$('btn-ai').onclick=()=>{ connect(true); }; $('btn-pvp').onclick=()=>{ connect(false); }; $('faction').onchange=loadUnits; $('btn-ready').onclick=()=>{ choose(); ready(); }; $('btn-attack').onclick=attack; $('btn-rematch').onclick=()=>{ location.reload(); }; $('btn-back').onclick=()=>{ location.reload(); }; loadFactions();

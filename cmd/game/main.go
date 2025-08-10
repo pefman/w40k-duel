@@ -1592,15 +1592,19 @@ const indexHTML = `<!doctype html>
     function ready(){ send('ready', {}); }
 	function attack(){ send('attack', {}); }
 	function onState(s){ state=s; updateUI(); }
-	function onRolls(ev){ const {phase, need, rolls, weapon, attacker} = ev; const tray=$('rollsTray'), hdr=$('rollsHeader'), dice=$('rollsDice'); tray.style.display='block'; const title = (phase==='hit'?'Hit rolls':phase==='wound'?'Wound rolls':'Save rolls'); hdr.textContent = (weapon? (title+' for '+weapon) : title) + (need? (' — need '+need+'+') : ''); dice.innerHTML=''; (rolls||[]).forEach(v=>{ const d=document.createElement('div'); d.className='dice'; d.textContent=v; if(need) d.classList.add(v>=need?'good':'bad'); dice.appendChild(d); }); setTimeout(()=>{ tray.style.display='none'; dice.innerHTML=''; }, 3000); }
-		function hasActiveSequence(){ return !!state.currentWeapon; }
-	    const myTurn = state.turn===me; const phase = state.phase||'attack';
-		const canAttack = inGame && myTurn && phase!=='save' && !hasActiveSequence();
-		$('btn-attack').disabled = !canAttack;
-		$('btn-attack').textContent = (phase==='save' && !myTurn)? 'Save' : 'Attack';
-	    // Manual save UI
-	    const pending = state.pendingSaves; const isDefender = (state.turn!==me);
-	    if(phase==='save' && pending && isDefender){ $('saveUI').style.display='block'; const need=pending.need||0; const cnt=pending.count||0; $('saveNeed').textContent = cnt+' × '+need+'+'; renderDice(cnt, need); } else { $('saveUI').style.display='none'; $('diceTray').innerHTML=''; }
+		function onRolls(ev){ const {phase, need, rolls, weapon, attacker} = ev; const tray=$('rollsTray'), hdr=$('rollsHeader'), dice=$('rollsDice'); tray.style.display='block'; const title = (phase==='hit'?'Hit rolls':phase==='wound'?'Wound rolls':'Save rolls'); hdr.textContent = (weapon? (title+' for '+weapon) : title) + (need? (' — need '+need+'+') : ''); dice.innerHTML=''; (rolls||[]).forEach(v=>{ const d=document.createElement('div'); d.className='dice'; d.textContent=v; if(need) d.classList.add(v>=need?'good':'bad'); dice.appendChild(d); }); setTimeout(()=>{ tray.style.display='none'; dice.innerHTML=''; }, 3000); }
+
+		// Reintroduce UI updater to avoid syntax/runtime errors in live build
+		function updateUI(){
+			const hasActiveSequence = ()=> !!state.currentWeapon;
+			const inGame = !!(state && state.turn);
+			const myTurn = state.turn===me; const phase = state.phase||'attack';
+			const canAttack = inGame && myTurn && phase!=='save' && !hasActiveSequence();
+			$('btn-attack').disabled = !canAttack;
+			$('btn-attack').textContent = (phase==='save' && !myTurn)? 'Save' : 'Attack';
+			// Manual save UI
+			const pending = state.pendingSaves; const isDefender = (state.turn!==me);
+			if(phase==='save' && pending && isDefender){ $('saveUI').style.display='block'; const need=pending.need||0; const cnt=pending.count||0; $('saveNeed').textContent = cnt+' × '+need+'+'; renderDice(cnt, need); } else { $('saveUI').style.display='none'; $('diceTray').innerHTML=''; }
 			// Hide setup during game; show postgame actions
 			$('setup').style.display = inGame? 'none' : 'block';
 			$('postgame').style.display = state.winner? 'grid' : 'none';

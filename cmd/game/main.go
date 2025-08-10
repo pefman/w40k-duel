@@ -105,6 +105,14 @@ type Loadout struct {
 
 var httpClient = &http.Client{Timeout: 8 * time.Second}
 
+// Simple cache for faction list to reduce redundant API calls
+var (
+	factionCache      []apiFaction
+	factionCacheTime  time.Time
+	factionCacheTTL   = 5 * time.Minute
+	factionCacheMutex sync.RWMutex
+)
+
 func apiGet[T any](path string, out *T) error {
 	base := strings.TrimRight(dataAPIBase, "/")
 	url := base + path
@@ -164,10 +172,29 @@ type apiAbility struct {
 }
 
 func FetchFactions() ([]apiFaction, error) {
+	// Check cache first
+	factionCacheMutex.RLock()
+	if time.Since(factionCacheTime) < factionCacheTTL && len(factionCache) > 0 {
+		result := make([]apiFaction, len(factionCache))
+		copy(result, factionCache)
+		factionCacheMutex.RUnlock()
+		return result, nil
+	}
+	factionCacheMutex.RUnlock()
+
+	// Fetch from API
 	var res []apiFaction
 	if err := apiGet("/api/factions", &res); err != nil {
 		return nil, err
 	}
+
+	// Update cache
+	factionCacheMutex.Lock()
+	factionCache = make([]apiFaction, len(res))
+	copy(factionCache, res)
+	factionCacheTime = time.Now()
+	factionCacheMutex.Unlock()
+
 	return res, nil
 }
 
@@ -932,8 +959,20 @@ func matchmaker() {
 		case <-time.After(1200 * time.Millisecond):
 			log.Printf("matchmaker: timeout waiting for p2 (p1.wantsAI=%v)", p1.WantsAI)
 			if p1.WantsAI {
-				log.Printf("matchmaker: p1 requested AI opponent — creating AI")
-				createRoom(p1, makeAIPlayer())
+				// Try to match AI unit points to player's selected unit for fairness
+				target := p1.Unit.Points
+				if target == 0 {
+					// Fallback to loadout lookup or a reasonable default
+					u := findUnit(p1.Loadout.Faction, p1.Loadout.Unit)
+					target = u.Points
+					if target == 0 {
+						target = 100
+					}
+				}
+				// Determine player's preferred weapon category (melee or ranged) based on chosen weapons
+				cat := playerPreferredCategory(p1)
+				log.Printf("matchmaker: p1 requested AI opponent — creating AI matched to ~%dpts with category=%q", target, cat)
+				createRoom(p1, makeAIPlayerWithTargetAndCategory(target, cat))
 			} else {
 				log.Printf("matchmaker: waiting for second player to join for p1=%s", p1.ID)
 				p2 := <-matchQueue
@@ -998,6 +1037,161 @@ func makeAIPlayer() *Player {
 	ai.Unit = u
 	ai.Wounds = u.W
 	ai.Ready = true
+	return ai
+}
+
+// Create an AI opponent that tries to match the player's points budget across all factions
+// Determine if a weapon is melee based on its range field.
+func weaponIsMelee(w Weapon) bool {
+	r := strings.TrimSpace(strings.ToLower(w.Range))
+	return r == "melee" || r == "" || r == "0" || r == "0\"" || r == "0”"
+}
+
+// Check if a unit has at least one weapon in the desired category.
+func unitHasCategory(u Unit, melee bool) bool {
+	for _, w := range u.Weapons {
+		if weaponIsMelee(w) == melee {
+			return true
+		}
+	}
+	return false
+}
+
+// Compute player's preferred category: "melee", "ranged", or "" if unknown.
+func playerPreferredCategory(p *Player) string {
+	// Ensure unit is populated
+	if p.Unit.Name == "" {
+		p.Unit = findUnit(p.Loadout.Faction, p.Loadout.Unit)
+	}
+	// From explicitly selected weapons
+	if len(p.Loadout.Weapons) > 0 {
+		for _, name := range p.Loadout.Weapons {
+			for _, w := range p.Unit.Weapons {
+				if strings.EqualFold(w.Name, name) {
+					if weaponIsMelee(w) {
+						return "melee"
+					} else {
+						return "ranged"
+					}
+				}
+			}
+		}
+	}
+	if p.Loadout.Weapon != "" {
+		for _, w := range p.Unit.Weapons {
+			if strings.EqualFold(w.Name, p.Loadout.Weapon) {
+				if weaponIsMelee(w) {
+					return "melee"
+				} else {
+					return "ranged"
+				}
+			}
+		}
+	}
+	// Unknown
+	return ""
+}
+
+// Create an AI opponent near the target points, preferring units that can fight in the requested category.
+func makeAIPlayerWithTargetAndCategory(targetPts int, category string) *Player {
+	ai := &Player{ID: fmt.Sprintf("ai_%d", time.Now().UnixNano()), Name: "AI Opponent", IsAI: true}
+	best := Unit{Name: "Generic Squad", W: 10, T: 4, Sv: 4, Weapons: []Weapon{{Name: "Bolter", Range: "24", Attacks: 2, BS: 4, S: 4, AP: 0, D: 1}}}
+	bestDiff := 1 << 30
+	facs, _ := FetchFactions()
+	// First pass: collect candidates within ±5% of target (at least 1 pt window)
+	window := max(1, (targetPts*5)/100)
+	var withinTol []Unit
+	var withinTolCat []Unit
+	var bestCat Unit
+	bestCatDiff := 1 << 30
+	wantMelee := strings.EqualFold(category, "melee")
+	haveCategory := category != ""
+	for _, f := range facs {
+		us, err := FetchUnits(f.Name)
+		if err != nil || len(us) == 0 {
+			continue
+		}
+		for _, u := range us {
+			if u.Points <= 0 {
+				continue
+			}
+			d := abs(u.Points - targetPts)
+			hasCat := haveCategory && unitHasCategory(u, wantMelee)
+			if d <= window {
+				withinTol = append(withinTol, u)
+				if hasCat {
+					withinTolCat = append(withinTolCat, u)
+				}
+			}
+			if d < bestDiff {
+				best = u
+				bestDiff = d
+			}
+			if hasCat && d < bestCatDiff {
+				bestCat, bestCatDiff = u, d
+			}
+		}
+	}
+	// Prefer a candidate within tolerance, choose the closest among them
+	if len(withinTolCat) > 0 {
+		cand := withinTolCat[0]
+		cd := abs(cand.Points - targetPts)
+		for _, u := range withinTolCat[1:] {
+			if d := abs(u.Points - targetPts); d < cd {
+				cand, cd = u, d
+			}
+		}
+		best, bestDiff = cand, cd
+	} else if len(withinTol) > 0 {
+		cand := withinTol[0]
+		cd := abs(cand.Points - targetPts)
+		for _, u := range withinTol[1:] {
+			if d := abs(u.Points - targetPts); d < cd {
+				cand, cd = u, d
+			}
+		}
+		best, bestDiff = cand, cd
+	} else if bestCat.Name != "" {
+		best, bestDiff = bestCat, bestCatDiff
+	}
+	// If we never found any with points, pick a random faction/unit
+	if best.Name == "Generic Squad" {
+		return makeAIPlayer()
+	}
+	// Build the weapon list: all weapons in the requested category
+	names := []string{}
+	if category != "" {
+		for _, w := range best.Weapons {
+			if weaponIsMelee(w) == wantMelee {
+				names = append(names, w.Name)
+			}
+		}
+	}
+	// Fallback: if no category match (rare), include all weapons
+	if len(names) == 0 {
+		for _, w := range best.Weapons {
+			names = append(names, w.Name)
+		}
+	}
+	w := ""
+	if len(names) > 0 {
+		w = names[0]
+	} else if best.DefaultW != "" {
+		w = best.DefaultW
+	} else if len(best.Weapons) > 0 {
+		w = best.Weapons[0].Name
+	}
+	ai.Loadout = Loadout{Faction: best.Faction, Unit: best.Name, Weapons: names, Weapon: w}
+	ai.Unit = best
+	ai.Wounds = best.W
+	ai.Ready = true
+	// Log whether within 5% tolerance
+	low, high := targetPts-window, targetPts+window
+	if abs(best.Points-targetPts) <= window {
+		log.Printf("ai: selected %s / %s (%d pts) for target %d (diff=%d, within 5%% window [%d-%d], cat=%q, weapons=%d)", best.Faction, best.Name, best.Points, targetPts, bestDiff, low, high, category, len(names))
+	} else {
+		log.Printf("ai: selected %s / %s (%d pts) for target %d (diff=%d, outside 5%% window [%d-%d] — fallback to nearest, cat=%q, weapons=%d)", best.Faction, best.Name, best.Points, targetPts, bestDiff, low, high, category, len(names))
+	}
 	return ai
 }
 
@@ -1096,8 +1290,10 @@ func broadcastGameState(r *Room) {
 	if r.Phase == "save" && r.PendingSaves > 0 {
 		state["pendingSaves"] = map[string]int{"count": r.PendingSaves, "need": r.PendingNeed, "dmg": r.PendingDmg}
 	}
-	sendTo(r.P1, wsMsg{Type: "state", Data: state})
-	sendTo(r.P2, wsMsg{Type: "state", Data: state})
+	// Send to both players with single message creation
+	msg := wsMsg{Type: "state", Data: state}
+	sendTo(r.P1, msg)
+	sendTo(r.P2, msg)
 }
 
 func summarizePlayer(p *Player) map[string]any {
@@ -1187,8 +1383,8 @@ func handleWS(w http.ResponseWriter, r *http.Request) {
 	}
 	player := &Player{ID: fmt.Sprintf("p_%d", time.Now().UnixNano()), Conn: conn, Name: name, IsAI: false, WantsAI: wantAI}
 	log.Printf("ws: connect id=%s name=%q ai=%v from=%s", player.ID, name, wantAI, r.RemoteAddr)
-	// Tell the client its own player ID
-	_ = player.Conn.WriteJSON(wsMsg{Type: "you", Data: map[string]string{"id": player.ID}})
+	// Tell the client its own player ID and name
+	_ = player.Conn.WriteJSON(wsMsg{Type: "you", Data: map[string]string{"id": player.ID, "name": player.Name}})
 	// Seed an initial lobby entry
 	lobbySet(player, false)
 	go wsReader(player)
@@ -1967,11 +2163,16 @@ const indexHTML = `<!doctype html>
 	select, input[type=text]{width:100%; padding:12px 12px; border-radius:10px; border:1px solid #243042; background:#0a0f16; color:var(--text); outline:none; pointer-events:auto}
 	select:focus, input[type=text]:focus{border-color:var(--gold); box-shadow:0 0 0 2px rgba(201,167,83,.25)}
 	.grid{display:grid; grid-template-columns:1fr 1fr; gap:10px} .row{display:flex; align-items:center; justify-content:space-between; padding:6px 8px; color:#cbd5e1}
+	.cta{ display:flex; justify-content:center; }
     button{cursor:pointer; padding:11px 16px; border-radius:12px; border:1px solid rgba(201,167,83,.45); background:linear-gradient(180deg,#1a2330,#0e141e); color:#f3f4f6; font-weight:700; letter-spacing:.04em; box-shadow: inset 0 1px 0 rgba(255,255,255,.08), 0 6px 16px rgba(0,0,0,.35); transition: transform .05s ease, box-shadow .15s ease, filter .15s ease;} button:hover{filter:brightness(1.05)} button:active{transform:translateY(1px)} button[disabled]{opacity:.5; cursor:not-allowed}
+	/* Make primary CTAs centered when displayed in a grid with two buttons */
+	#setup .grid button{ justify-self: center; }
 	#btn-attack{background:linear-gradient(180deg, #c9a753, #9b7e37); color:#0a0c10; border-color:#e8d6a6; text-transform:uppercase}
 	/* Make Attack/Save buttons prominent and centered */
 	#btn-attack, #btn-roll-saves{ display:block; margin:16px auto; padding:16px 22px; font-size:18px; min-width:260px; width:min(520px, 80%); }
 	#btn-roll-saves{ background:linear-gradient(180deg, #c9a753, #9b7e37); color:#0a0c10; border-color:#e8d6a6; text-transform:uppercase }
+	/* Center the Roll Saves button within its grid container */
+	#saveUI .grid{ grid-template-columns: 1fr; justify-items: center; }
 	/* Weapon selection layout + highlight */
 	#weaponList label{ display:flex; align-items:center; gap:8px; transition: background .15s ease, border-color .15s ease; padding:8px 10px; border:1px solid #243042; border-radius:10px; margin-bottom:8px; }
 	#weaponList label.active{ background: rgba(201,167,83,.08); border-color: var(--gold) }
@@ -1982,7 +2183,9 @@ const indexHTML = `<!doctype html>
 	.dice.bad{ border-color:#ef4444; box-shadow:0 0 0 2px rgba(239,68,68,.2) inset; color:#ef4444 }
 	@keyframes roll { 0%{ transform: rotate(0) scale(.9) } 50%{ transform: rotate(20deg) scale(1.05) } 100%{ transform: rotate(0) scale(1) } }
 	.hpbar{height:14px; background:#131922; border-radius:10px; overflow:hidden; border:1px solid #2a3546} .hpfill{height:100%; background:linear-gradient(90deg,#c9a753,#7ed3ee)}
-    .log{height:380px; overflow:auto; white-space:pre-wrap; background:#0a0f16; border-radius:12px; padding:12px; border:1px solid #232c3a; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size:13px}
+	.log{height:520px; overflow:auto; white-space:pre-wrap; background:#0a0f16; border-radius:12px; padding:12px; border:1px solid #232c3a; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size:13px}
+	/* Cap the side player panels so the log can have more room */
+	#p1Panel, #p2Panel{ max-height: 560px; overflow:auto }
     #p1,#p2{background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(0,0,0,.18)); border:1px solid #263145; border-radius:12px}
 	.winner{color:#22c55e; font-weight:800}
 	/* Rolls tray */
@@ -2033,8 +2236,8 @@ const indexHTML = `<!doctype html>
 <body>
 	<header class="site-header">
 		<div class="brand"><span class="eagle">⚔️</span><span class="wordmark">GO40K DUEL</span></div>
-    <nav class="nav"><a href="#">Battle</a><a href="#">Armoury</a><a href="#">Lore</a></nav>
-		<div class="tray"><span id="status" class="pill">Ready</span><span class="pill" title="Build version">v{{BUILD_VERSION}}</span></div>
+	<nav class="nav"><a href="#">Battle</a><a href="#">Armoury</a><a href="#">Lore</a></nav>
+		<div class="tray"><span id="nick" class="pill" title="Your name">—</span><span id="status" class="pill">Ready</span><span class="pill" title="Build version">v{{BUILD_VERSION}}</span></div>
   </header>
   <main>
 		<!-- Sentinel: head script to confirm HTML up to here is parsed -->
@@ -2074,7 +2277,7 @@ const indexHTML = `<!doctype html>
 	<h2>Battlefield</h2>
 	<div class="row"><span>Turn:</span> <span id="turn">—</span></div>
 	<div id="currentWeaponPanel" style="display:none; margin:8px 0;">
-		<div class="row"><strong id="cwTitle">—</strong><span class="pill" id="cwPhase">—</span></div>
+		<div class="row"><strong id="cwTitle">—</strong></div>
 		<div class="row"><span id="cwStats">—</span><span class="pill tiny" id="cwSaveStatus" style="display:none"></span></div>
 		<div id="cwDir">⇦ ⇦ ⇦</div>
 		<div id="cwTags" style="display:flex; gap:6px; flex-wrap:wrap; margin-top:4px"></div>
@@ -2099,7 +2302,7 @@ const indexHTML = `<!doctype html>
 		<div id="diceTray" style="margin:8px 0"></div>
 		<div class="grid"><button id="btn-roll-saves">Roll Saves</button></div>
 	</div>
-	<div id="postgame" style="display:none; margin-top:12px" class="grid"><button id="btn-rematch">Rematch</button><button id="btn-back">Back to Setup</button></div>
+	<div id="postgame" style="display:none; margin-top:12px" class="grid"><button id="btn-rematch" style="justify-self:center">Rematch</button><button id="btn-back" style="justify-self:center">Back to Setup</button></div>
 	<div class="row" style="justify-content:flex-end; margin:6px 0"><button id="btn-clear-log" class="tiny">Clear Log</button></div>
       <div class="log" id="log"></div>
     </section>
@@ -2113,7 +2316,7 @@ const indexHTML = `<!doctype html>
 			<div class="row"><span>Wounds Left:</span><span id="p2wounds">0</span></div>
 			<div class="row" style="font-size:11px; color:#9aa4b2"><span>Active Weapon:</span><span id="p2weapon">—</span></div>
 		</div>
-		<div class="row" style="margin-top:10px"><span>Winner:</span> <span id="winner" class="winner">—</span></div>
+	<!-- Winner row removed per request -->
 	</section>
   </main>
 	<!-- Bottom info panels (always visible) -->
@@ -2308,8 +2511,20 @@ const indexHTML = `<!doctype html>
 				// Now that the socket is open, send the queue request reliably
 				if(pendingQueueAI!==null){ send('queue', {ai: !!pendingQueueAI}); setStatus('Looking for match...'); }
 			};
-			ws.onmessage=(ev)=>{ const msg=JSON.parse(ev.data); if(msg.type==='you'){ me=msg.data.id; } if(msg.type==='state') onState(msg.data); if(msg.type==='rolls') onRolls(msg.data); if(msg.type==='status') logLine(msg.data.message); if(msg.type==='log') logLine(msg.data); if(msg.type==='log_multi') msg.data.forEach(line=>logLine(line)); };
+			ws.onmessage=(ev)=>{ const msg=JSON.parse(ev.data); if(msg.type==='you'){ me=msg.data.id; const nm=(msg.data&&msg.data.name)||''; const nickEl=$('nick'); if(nm && nickEl){ nickEl.textContent=nm; } } if(msg.type==='state') onState(msg.data); if(msg.type==='rolls') onRolls(msg.data); if(msg.type==='status') logLine(msg.data.message); if(msg.type==='log') logLine(msg.data); if(msg.type==='log_multi') msg.data.forEach(line=>logLine(line)); };
 			ws.onclose=()=>{ setStatus('Disconnected'); me=null; };
+		}
+		// Establish a presence-only WebSocket on first visit so we get our name immediately, without queueing
+		function connectPresence(){
+			try{
+				if(ws && (ws.readyState===0 || ws.readyState===1)) return; // already connecting/open
+				const proto=(location.protocol==='https:'?'wss':'ws');
+				pendingQueueAI = null; // do not auto-queue on this connection
+				ws=new WebSocket(proto+'://'+location.host+'/ws?ai=0');
+				ws.onopen=()=>{ setStatus('Connected'); startLobby(); startLeaderboard(); };
+				ws.onmessage=(ev)=>{ const msg=JSON.parse(ev.data); if(msg.type==='you'){ me=msg.data.id; const nm=(msg.data&&msg.data.name)||''; const nickEl=$('nick'); if(nm && nickEl){ nickEl.textContent=nm; } } if(msg.type==='state') onState(msg.data); if(msg.type==='rolls') onRolls(msg.data); if(msg.type==='status') logLine(msg.data.message); if(msg.type==='log') logLine(msg.data); if(msg.type==='log_multi') msg.data.forEach(line=>logLine(line)); };
+				ws.onclose=()=>{ setStatus('Disconnected'); me=null; };
+			}catch(_){ /* ignore */ }
 		}
 		function send(type, data){ ws && ws.readyState===1 && ws.send(JSON.stringify({type, data})); }
 			function choose(){ const payload={ faction:$('faction').value, unit:($('unit').value||'').split(' — ')[0], weapons:chosenWeapons, weapon:chosenWeapons[0]||'' }; return payload; }
@@ -2430,21 +2645,29 @@ const indexHTML = `<!doctype html>
 													const saveBtn=$('btn-roll-saves'); if(saveBtn) saveBtn.disabled=false;
 													const need=pending.need||0; const cnt=pending.count||0;
 													$('saveNeed').textContent = cnt+' × '+need+'+';
-													// Ensure the persistent dice row is visible with the correct count (should already match wound successes)
-													const cont=$('dicePersistent'); if(cont){ cont.style.display='flex'; }
+													// Ensure the persistent dice row is visible with the correct count — rebuild if mismatch
+													const cont=$('dicePersistent');
+													if(cont){
+														cont.style.display='flex';
+														try{
+															const aliveCount = (persistentDice||[]).reduce((n, d)=> n + (d && d.alive ? 1 : 0), 0);
+															if(aliveCount !== cnt){
+																resetPersistentDice(); ensurePersistentDice(cnt);
+																persistentDice.forEach(d=>{ d.alive=true; d.el.textContent='?'; d.el.classList.remove('bad','good','removed','fade'); });
+															}
+														}catch(_){ /* noop */ }
+													}
 									// Fully disable overlay during defender saves to allow clicking
 									const fo=$('fightOverlay'); if(fo){ fo.style.display='none'; }
 									document.body.classList.remove('fight-active');
-											// Hide the phase pill that says 'SAVE' to avoid duplicate controls; bottom 'ROLL SAVES' is the single action
-											const phaseChipEl=$('cwPhase'); if(phaseChipEl){ phaseChipEl.style.display='none'; }
+											// phase chip removed from UI
 								} else {
 									$('saveUI').style.display='none'; $('diceTray').innerHTML='';
 									// Restore Attack button visibility outside defender save UI
 									const atkBtn=$('btn-attack'); if(atkBtn){ atkBtn.style.display='inline-block'; }
 									const fo=$('fightOverlay'); if(fo){ fo.style.display = inGame? 'block':'none'; }
 									document.body.classList.toggle('fight-active', !!inGame);
-										// Ensure the phase pill is visible when not in defender save UI
-										const phaseChipEl=$('cwPhase'); if(phaseChipEl){ phaseChipEl.style.display='inline-block'; }
+										// phase chip removed from UI
 								}
 				// Player/opponent cards (existing)
 				function fillCard(prefix, name, unitName, wounds, maxW, isAI){
@@ -2461,7 +2684,7 @@ const indexHTML = `<!doctype html>
 				const meP = amP1? p1 : p2;
 				const opP = amP1? p2 : p1;
 				// Update side panel (existing IDs)
-				function formatFactionUnit(p){ const f=(p&&p.unit&&p.unit.faction)||(p&&p.loadout&&p.loadout.faction)||''; const u=(p&&p.unit&&p.unit.name)||''; return (f?f:'?')+' / '+(u?u:'—'); }
+				function formatFactionUnit(p){ const f=(p&&p.unit&&p.unit.faction)||(p&&p.loadout&&p.loadout.faction)||''; const u=(p&&p.unit&&p.unit.name)||''; const pts=(p&&p.unit&&p.unit.Points)||0; return (f?f:'?')+' / '+(u?u:'—')+(pts?(' ('+pts+')'):''); }
 				if($("p1name")){ $("p1name").textContent = p1.name||'—'; $("p1ai").textContent = p1.ai? 'AI':'Player'; $("p1unit").textContent = formatFactionUnit(p1); const hp1=Math.max(0,Math.min(100, Math.round((p1.wounds||0)/(p1.maxW||1)*100))); $("p1hp").style.width = hp1+'%'; $("p1wounds").textContent = p1.wounds||0; $("p1weapon").textContent = (state.turn===p1.id && state.currentWeapon) ? state.currentWeapon : '—'; }
 				if($("p2name")){ $("p2name").textContent = p2.name||'—'; $("p2ai").textContent = p2.ai? 'AI':'Player'; $("p2unit").textContent = formatFactionUnit(p2); const hp2=Math.max(0,Math.min(100, Math.round((p2.wounds||0)/(p2.maxW||1)*100))); $("p2hp").style.width = hp2+'%'; $("p2wounds").textContent = p2.wounds||0; $("p2weapon").textContent = (state.turn===p2.id && state.currentWeapon) ? state.currentWeapon : '—'; }
 				// Update fight overlay cards
@@ -2491,7 +2714,6 @@ const indexHTML = `<!doctype html>
 										tagsInline.forEach(t=>{ const chip=document.createElement('span'); chip.className='pill'; chip.style.marginLeft='8px'; chip.style.fontSize='10px'; chip.style.padding='2px 6px'; chip.textContent=t; weapTitle.appendChild(chip); });
 									}
 								}
-								const phaseChip = $('cwPhase'); if(phaseChip) phaseChip.textContent = (state.phase||'attack').toUpperCase();
 								const weapStats = $('cwStats');
 								const weapTags = $('cwTags');
 									const weapDir = $('cwDir');
@@ -2553,15 +2775,15 @@ const indexHTML = `<!doctype html>
 			if(atBottom) el.scrollTop=el.scrollHeight;
 		}
     function setStatus(t){ $('status').textContent=t; }
-	$('btn-ai').onclick=()=>{ dbg('btn-ai clicked'); connect(true); };
-	$('btn-pvp').onclick=()=>{ dbg('btn-pvp clicked'); connect(false); };
+	$('btn-ai').onclick=()=>{ dbg('btn-ai clicked'); if(ws && ws.readyState===1){ if(lockedLoadout){ send('choose', lockedLoadout); send('ready', {}); } send('queue', {ai:true}); setStatus('Looking for match...'); } else { connect(true); } };
+	$('btn-pvp').onclick=()=>{ dbg('btn-pvp clicked'); if(ws && ws.readyState===1){ if(lockedLoadout){ send('choose', lockedLoadout); send('ready', {}); } send('queue', {ai:false}); setStatus('Looking for match...'); } else { connect(false); } };
 		$('faction').addEventListener('click', ()=>{ const fac=$('faction'); dbg('faction: click value='+JSON.stringify(fac.value)+' options='+(fac.children?fac.children.length:0)); });
 		$('faction').onchange=()=>{ const fac=$('faction'); dbg('faction: change to '+JSON.stringify(fac.value)); locked=false; lockedLoadout=null; $('btn-ready').disabled=true; loadUnits(); };
 		$('btn-ready').onclick=()=>{ dbg('btn-ready lock-in'); lockIn(); };
 		$('btn-attack').onclick=attack;
 		$('btn-rematch').onclick=()=>{ location.reload(); };
 		$('btn-back').onclick=()=>{ location.reload(); };
-		loadFactions(); startLobby(); startLeaderboard(); startDaily();
+		connectPresence(); loadFactions(); startLobby(); startLeaderboard(); startDaily();
 
 				async function fetchLobby(){
 					try{

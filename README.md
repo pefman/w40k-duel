@@ -1,53 +1,257 @@
-# go40k duel
+# Warhammer 40K Duel Simulator
 
-A lightweight Warhammer 40K duel simulator:
-- API service: serves factions, units, weapons, options, and points from CSVs.
-- Game service: WebSocket-based duel with multi-weapon sequencing, manual saves, and animated rolls.
+A real-time multiplayer dueling game based on Warhammer 40K 10th Edition rules. Features WebSocket-based combat, multi-weapon sequences, manual save rolls, and AI opponents.
 
-## Repo layout
-- cmd/api: CSV-backed API server
-- cmd/game: Game server + embedded UI
-- scripts/: helper scripts (build/run/restart/logs for api and game)
-- src/: CSV data exported from 10th edition datasheets
+## 🎮 Features
 
-## Local dev
-Use the scripts to build and run:
+### Core Gameplay
+- **Real-time multiplayer combat** via WebSockets
+- **Multi-weapon attack sequences** with animated dice rolls
+- **Manual save mechanics** with persistent dice visualization
+- **AI opponents** with smart unit/points matching
+- **Phase-based combat**: Attacks → Hit → Wound → Save → Damage
+- **Weapon abilities**: Lethal Hits, Devastating Wounds, Twin-Linked, etc.
 
-```bash
-# Start API on :8080
-scripts/api.sh restart
-# Start Game on :8081 (reads DATA_API_BASE)
-DATA_API_BASE=http://localhost:8080 scripts/game.sh restart
-# Open game UI
-xdg-open http://localhost:8081
+### Data & Units
+- **10th Edition datasheet integration** from CSV exports
+- **Full faction/unit/weapon loadouts** with points costs
+- **Smart weapon categorization** (melee vs ranged)
+- **Invulnerable saves, Feel No Pain, damage reduction**
+- **Keywords and special abilities** support
+
+### User Experience
+- **Lobby system** showing online players and their loadouts
+- **Daily leaderboards** tracking top damage and worst saves
+- **Responsive design** for desktop and mobile
+- **Auto-generated player names** with Warhammer flavor
+- **Real-time status updates** and match notifications
+
+### Technical Features
+- **Embedded single-binary deployment** (no external files)
+- **Docker and Cloud Run ready** with environment configuration
+- **CORS-enabled API** for external integrations
+- **Graceful WebSocket handling** with reconnection support
+- **Development scripts** for local testing
+
+## 🏗️ Architecture
+
+### Services
+1. **API Service** (`cmd/api/`): CSV-backed REST API serving faction/unit data
+2. **Game Service** (`cmd/game/`): WebSocket game server with embedded web UI
+
+### Data Flow
+```
+CSV Data → API Service → Game Service → WebSocket → Browser Client
 ```
 
-Alternatively, during development you can use the multiprocess dev script:
+### Key Components
+- **Matchmaker**: Pairs players or matches with AI
+- **Room System**: Isolated game instances with state management  
+- **Combat Engine**: Handles dice rolling, damage calculation, special rules
+- **Lobby Manager**: Tracks online players and game status
 
+## 🚀 Quick Start
+
+### Prerequisites
+- Go 1.21+
+- Docker (optional, for containerized deployment)
+
+### Local Development
 ```bash
-scripts/dev.sh restart   # rebuild + restart api and game
-scripts/dev.sh logs      # tail logs
+# Clone the repository
+git clone <repository-url>
+cd w40k-duel
+
+# Start both services with dev script
+scripts/dev.sh restart
+
+# Or start individually:
+scripts/api.sh restart     # API on :8080
+scripts/game.sh restart    # Game on :8081
+
+# View logs
+scripts/dev.sh logs
+
+# Open game in browser
+open http://localhost:8081
 ```
 
-## Deploy
-See `README_DEPLOY.md` for Cloud Run steps. Both services include Dockerfiles and honor `PORT`.
+### Game Usage
+1. **Select faction and unit** from dropdowns
+2. **Choose weapons** (must be same type: all melee or all ranged)
+3. **Lock in** your selection
+4. **Choose opponent**: "Play vs AI" or "Play vs Player"
+5. **Battle**: Take turns attacking, opponent rolls saves
+6. **Win condition**: Reduce opponent to 0 wounds
 
-## Configuration
-- API: API_PORT (default 8080) or PORT
-- Game: GAME_PORT (default 8081) or PORT; DATA_API_BASE (default http://localhost:8080)
+## 📁 Repository Structure
 
-## Features
-- CSV ingestion with stable ordering and CORS
-- Units list shows W/T, invuln/FNP, and points
-- Options-aware weapon selection (heuristic), melee/ranged quick-pick
-- Multi-weapon per-turn attack sequencing with an Attacks pre-phase (supports expressions like 4D6, D6+3)
-- Manual save rolls with consolidated “Roll Saves” action; persistent dice strip shows hits→wounds→saves with failures marked
-- Weapon ability tags (e.g., Lethal Hits) rendered inline with weapon names
-- Clear phase progress chips (Attacks → Hit → Wound → Save → Damage)
-- Matchmaking: explicit “Play vs AI” or “Play vs Player”; queued players show as “Looking for match...”
-- Lobby/Leaderboard and Daily Records are always visible at the bottom of the page
-- Daily Records: track today’s highest single attack damage and worst single save roll
-- Fun random player names; no manual callsign
+```
+├── cmd/
+│   ├── api/           # CSV-backed API server
+│   └── game/          # Game server + embedded UI
+├── scripts/           # Development helper scripts
+│   ├── api.sh         # API service management
+│   ├── game.sh        # Game service management
+│   └── dev.sh         # Combined development workflow
+├── src/               # CSV data files (10th edition exports)
+│   ├── Datasheets.csv
+│   ├── Datasheets_weapons.csv
+│   └── ...
+├── Dockerfile.api     # API container
+├── Dockerfile.game    # Game container
+└── README*.md         # Documentation
+```
 
-## License
-For personal/experimental use. CSV content belongs to their respective owners; do not redistribute.
+## ⚙️ Configuration
+
+### Environment Variables
+
+#### API Service
+- `API_PORT` or `PORT`: Listen port (default: 8080)
+- `DATA_DIR`: CSV data directory (default: ./src)
+
+#### Game Service  
+- `GAME_PORT` or `PORT`: Listen port (default: 8081)
+- `DATA_API_BASE`: API service URL (default: http://localhost:8080)
+
+### Build-time Variables
+```bash
+# Inject version and build time
+go build -ldflags "-X main.buildVersion=v1.0.0 -X main.buildTime=$(date -u +%Y%m%d-%H%M%S)"
+```
+
+## 🐳 Deployment
+
+### Local Docker
+```bash
+# Build images
+docker build -f Dockerfile.api -t w40k-api .
+docker build -f Dockerfile.game -t w40k-game .
+
+# Run with docker-compose
+docker-compose up
+```
+
+### Cloud Run (Google Cloud)
+```bash
+# Deploy API
+gcloud run deploy w40k-api \
+  --source . \
+  --dockerfile Dockerfile.api \
+  --port 8080
+
+# Deploy Game (update DATA_API_BASE)
+gcloud run deploy w40k-game \
+  --source . \
+  --dockerfile Dockerfile.game \
+  --port 8081 \
+  --set-env-vars DATA_API_BASE=https://w40k-api-xxx.run.app
+```
+
+See `README_DEPLOY.md` for detailed Cloud Run instructions.
+
+## 🎯 Game Rules Implementation
+
+### Combat Sequence
+1. **Attacks Phase**: Roll attack dice (supports expressions like "4D6", "D3+3")
+2. **Hit Phase**: Roll to hit based on BS/WS, apply Lethal Hits
+3. **Wound Phase**: Roll to wound based on S vs T, apply Devastating Wounds  
+4. **Save Phase**: Defender rolls saves (armor or invuln), apply damage reduction
+5. **Damage Phase**: Apply final damage, check for victory
+
+### Special Rules Supported
+- **Lethal Hits**: Critical hits automatically wound
+- **Devastating Wounds**: Critical wounds bypass saves as mortal damage
+- **Twin-Linked**: Re-roll failed wound rolls
+- **Sustained Hits**: Generate additional hits on critical hit rolls
+- **Anti-X**: Enhanced hit chances against specific keywords
+- **Feel No Pain**: Ignore damage on successful rolls
+- **Damage Reduction**: Reduce damage per attack
+
+### AI Behavior
+- **Points Matching**: AI selects units within ±5% of player's unit cost
+- **Weapon Category Mirroring**: AI uses same weapon type (melee/ranged) as player
+- **Smart Timing**: AI attacks after brief delays for realistic feel
+
+## 📊 API Endpoints
+
+### Faction Data
+- `GET /api/factions` - List all factions
+- `GET /api/{faction-slug}/units` - Units for faction
+- `GET /api/{faction-slug}/{unit-id}/weapons` - Unit weapons
+- `GET /api/{faction-slug}/{unit-id}/models` - Unit models/stats
+- `GET /api/{faction-slug}/{unit-id}/keywords` - Unit keywords  
+- `GET /api/{faction-slug}/{unit-id}/abilities` - Unit abilities
+- `GET /api/{faction-slug}/{unit-id}/options` - Weapon options
+- `GET /api/{faction-slug}/{unit-id}/costs` - Points costs
+
+### Game Data
+- `GET /lobby` - Online players and status
+- `GET /leaderboard` - Overall player rankings  
+- `GET /leaderboard/daily` - Daily records (damage/saves)
+- `GET /debug` - Development endpoints
+- `WebSocket /ws` - Real-time game connection
+
+## 🛠️ Development
+
+### Code Organization
+- **Domain models**: Clean separation of data structures
+- **API client**: Centralized external API communication
+- **Game engine**: Isolated combat logic and state management
+- **WebSocket layer**: Real-time communication handling
+- **Embedded UI**: Single-binary deployment with embedded assets
+
+### Key Optimizations
+- **Faction caching**: Reduces redundant API calls
+- **Efficient state broadcasting**: Minimizes WebSocket traffic
+- **Connection pooling**: Reuses HTTP connections to data API
+- **Graceful error handling**: Continues operation despite individual failures
+
+### Testing Locally
+```bash
+# Start services
+scripts/dev.sh restart
+
+# Test API directly
+curl http://localhost:8080/api/factions
+
+# Test game WebSocket (requires wscat)
+wscat -c ws://localhost:8081/ws
+
+# View logs
+scripts/dev.sh logs
+tail -f logs/api.log logs/game.log
+```
+
+## 📝 Data Sources
+
+CSV files in `src/` contain exported 10th Edition datasheet data:
+- `Datasheets.csv` - Unit basic stats and info
+- `Datasheets_weapons.csv` - Weapon profiles and abilities  
+- `Datasheets_abilities.csv` - Special rules and keywords
+- `Factions.csv` - Faction metadata
+- `*.csv` - Additional reference data
+
+**Note**: Warhammer 40,000 content belongs to Games Workshop. This project is for educational/personal use only.
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make changes with appropriate tests
+4. Submit a pull request
+
+### Code Style
+- Follow Go standard formatting (`gofmt`)
+- Use meaningful variable names
+- Add comments for complex game logic
+- Keep functions focused and testable
+
+## 📄 License
+
+For personal/experimental use only. CSV content and game rules belong to their respective owners. Do not redistribute commercially.
+
+---
+
+**Built with Go, WebSockets, and ⚔️ for the Emperor!**

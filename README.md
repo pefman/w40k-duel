@@ -22,6 +22,13 @@ DATA_API_BASE=http://localhost:8080 scripts/game.sh restart
 xdg-open http://localhost:8081
 ```
 
+Alternatively, during development you can use the multiprocess dev script:
+
+```bash
+scripts/dev.sh restart   # rebuild + restart api and game
+scripts/dev.sh logs      # tail logs
+```
+
 ## Deploy
 See `README_DEPLOY.md` for Cloud Run steps. Both services include Dockerfiles and honor `PORT`.
 
@@ -31,11 +38,15 @@ See `README_DEPLOY.md` for Cloud Run steps. Both services include Dockerfiles an
 
 ## Features
 - CSV ingestion with stable ordering and CORS
-- Units list shows W/T and points
-- Options-aware weapon selection (heuristic)
-- Manual save rolls with one-click submission
-- Multi-weapon per-turn attack sequencing
-- Dice roll animations with short pacing pauses
+- Units list shows W/T, invuln/FNP, and points
+- Options-aware weapon selection (heuristic), melee/ranged quick-pick
+- Multi-weapon per-turn attack sequencing with an Attacks pre-phase (supports expressions like 4D6, D6+3)
+- Manual save rolls with consolidated “Roll Saves” action; persistent dice strip shows hits→wounds→saves with failures marked
+- Weapon ability tags (e.g., Lethal Hits) rendered inline with weapon names
+- Clear phase progress chips (Attacks → Hit → Wound → Save → Damage)
+- Matchmaking: explicit “Play vs AI” or “Play vs Player”; queued players show as “Looking for match...”
+- Lobby/Leaderboard and Daily Records are always visible at the bottom of the page
+- Daily Records: track today’s highest single attack damage and worst single save roll
 - Fun random player names; no manual callsign
 
 ## License

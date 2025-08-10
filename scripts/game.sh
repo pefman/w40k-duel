@@ -55,7 +55,7 @@ cmd_stop() {
   echo "Game stopped"
 }
 
-cmd_restart() { cmd_stop || true; cmd_start; }
+cmd_restart() { cmd_stop || true; cmd_build; cmd_start; }
 
 cmd_logs() { : "${FOLLOW:=1}"; [[ -f "$LOG_DIR/game.log" ]] || { echo "No logs"; exit 0; }; if [[ "$FOLLOW" == "0" ]]; then cat "$LOG_DIR/game.log"; else tail -n 200 -f "$LOG_DIR/game.log"; fi }
 cmd_health() { curl -fsS "http://localhost:$PORT/" >/dev/null && echo "OK" || { echo "FAIL"; exit 1; } }

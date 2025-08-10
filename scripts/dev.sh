@@ -20,10 +20,20 @@ ensure_scripts() {
   [[ -x "$GAME_SH" ]] || { echo "game.sh missing or not executable: $GAME_SH"; exit 1; }
 }
 
+wait_for_api(){
+  local url="http://localhost:$API_PORT/api/healthz" tries=40
+  echo -n "Waiting for API health at $url"
+  for i in $(seq 1 $tries); do
+    if curl -fsS "$url" >/dev/null 2>&1; then echo " - OK"; return 0; fi
+    echo -n "."; sleep 0.15
+  done
+  echo " - TIMEOUT"; return 1
+}
+
 cmd_build(){ ensure_scripts; "$API_SH" build; "$GAME_SH" build; }
-cmd_start(){ ensure_scripts; "$API_SH" start; "$GAME_SH" start; }
+cmd_start(){ ensure_scripts; "$API_SH" start; wait_for_api || true; "$GAME_SH" start; }
 cmd_stop(){ ensure_scripts; "$API_SH" stop || true; "$GAME_SH" stop || true; }
-cmd_restart(){ ensure_scripts; cmd_stop; cmd_start; }
+cmd_restart(){ ensure_scripts; "$API_SH" restart; wait_for_api || true; "$GAME_SH" restart; }
 cmd_status(){ ensure_scripts; echo "API:"; "$API_SH" status || true; echo "Game:"; "$GAME_SH" status || true; }
 cmd_health(){ ensure_scripts; echo -n "API: "; "$API_SH" health || true; echo -n "Game: "; "$GAME_SH" health || true; }
 cmd_logs(){ ensure_scripts; case "${1:-}" in api) shift; "$API_SH" logs "$@" ;; game) shift; "$GAME_SH" logs "$@" ;; *) echo "Specify logs api|game"; exit 1 ;; esac }

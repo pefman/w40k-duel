@@ -104,6 +104,7 @@ cmd_stop() {
 
 cmd_restart() {
   cmd_stop || true
+  cmd_build
   cmd_start
 }
 

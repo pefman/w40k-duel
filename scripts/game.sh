@@ -17,7 +17,11 @@ mkdir -p "$BIN_DIR" "$LOG_DIR" "$TMP_DIR"
 
 cmd_build() {
   echo "Building game binary -> $BIN_GAME"
-  (cd "$ROOT_DIR" && go build -o "$BIN_GAME" ./cmd/game)
+  local ver time ld
+  ver=$(git -C "$ROOT_DIR" rev-parse --short HEAD 2>/dev/null || echo dev)
+  time=$(date -u +%Y-%m-%dT%H:%M:%SZ)
+  ld="-s -w -X main.buildVersion=$ver -X main.buildTime=$time"
+  (cd "$ROOT_DIR" && go build -ldflags "$ld" -o "$BIN_GAME" ./cmd/game)
 }
 
 is_running_pid() { local pid="${1:-}"; [[ -n "$pid" && -d "/proc/$pid" ]]; }

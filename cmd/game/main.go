@@ -28,6 +28,12 @@ var (
 	dataAPIBase    string
 )
 
+// Build metadata injected via -ldflags at build time
+var (
+	buildVersion = "dev"
+	buildTime    = ""
+)
+
 func getenv(k, def string) string {
 	if v := os.Getenv(k); v != "" {
 		return v
@@ -494,6 +500,13 @@ func main() {
 	http.HandleFunc("/ws", handleWS)
 	http.HandleFunc("/api/factions", handleFactions)
 	http.HandleFunc("/api/units", handleUnits)
+	http.HandleFunc("/version", func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Content-Type", "application/json")
+		_ = json.NewEncoder(w).Encode(map[string]string{
+			"version": buildVersion,
+			"time":    buildTime,
+		})
+	})
 	http.HandleFunc("/debug/rooms", handleDebugRooms)
 
 	go matchmaker()
@@ -504,7 +517,8 @@ func main() {
 
 func serveIndex(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")
-	fmt.Fprint(w, indexHTML)
+	html := strings.ReplaceAll(indexHTML, "{{BUILD_VERSION}}", buildVersion)
+	fmt.Fprint(w, html)
 }
 
 func handleFactions(w http.ResponseWriter, r *http.Request) {
@@ -1439,10 +1453,10 @@ const indexHTML = `<!doctype html>
   </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="brand"><span class="eagle">⚔️</span><span class="wordmark">GO40K DUEL</span></div>
+	<header class="site-header">
+		<div class="brand"><span class="eagle">⚔️</span><span class="wordmark">GO40K DUEL</span></div>
     <nav class="nav"><a href="#">Battle</a><a href="#">Armoury</a><a href="#">Lore</a></nav>
-    <div class="tray"><span id="status" class="pill">Ready</span></div>
+		<div class="tray"><span id="status" class="pill">Ready</span><span class="pill" title="Build version">v{{BUILD_VERSION}}</span></div>
   </header>
   <main>
 			<section id="setup" class="card">

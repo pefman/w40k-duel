@@ -1,4 +1,15 @@
-﻿datasheet_id|line|line_in_wargear|dice|name|description|range|type|A|BS_WS|S|AP|D|
+﻿000004040|1|1||Bolt pistol|pistol|12|Ranged|1|2|4|0|1|
+000004040|2|1||Combi-bolter|rapid fire 2|24|Ranged|2|2|4|0|1|
+000004040|3|1||Combi-weapon|anti-infantry 4+, devastating wounds, rapid fire 1|24|Ranged|1|4|4|0|1|
+000004040|4|1||Plasma pistol – standard|pistol|12|Ranged|1|2|7|-2|1|
+000004040|5|1||Plasma pistol – supercharge|hazardous, pistol|12|Ranged|1|2|8|-3|2|
+000004040|6|1||Accursed weapon||Melee|Melee|6|2|5|-2|1|
+000004040|7|1||Astartes chainsword||Melee|Melee|7|2|4|-1|1|
+000004040|8|1||Bladed horn|extra attacks, lance|Melee|Melee|4|4|6|-1|1|
+000004040|9|1||Close combat weapon||Melee|Melee|6|2|4|0|1|
+000004040|10|1||Paired accursed weapons|twin-linked|Melee|Melee|7|2|4|-1|1|
+000004040|11|1||Power fist||Melee|Melee|5|2|8|-2|2|
+datasheet_id|line|line_in_wargear|dice|name|description|range|type|A|BS_WS|S|AP|D|
 000000001|1|1||Kombi-weapon|<a href="/wh40k10ed/the-rules/core-rules/#Anti">anti-infantry 4+</a>, <a href="/wh40k10ed/the-rules/core-rules/#Devastating-Wounds">devastating wounds</a>, <a href="/wh40k10ed/the-rules/core-rules/#Rapid-Fire">rapid fire 1</a>|24|Ranged|1|5|4|0|1|
 000000001|2|1||Twin slugga|<a href="/wh40k10ed/the-rules/core-rules/#Pistol">pistol</a>, <a href="/wh40k10ed/the-rules/core-rules/#Twin-linked">twin-linked</a>|12|Ranged|2|5|4|0|1|
 000000001|3|1||Attack squig|<a href="/wh40k10ed/the-rules/core-rules/#Extra-Attacks">extra attacks</a>|Melee|Melee|2|4|4|0|1|

@@ -21,15 +21,27 @@ cmd_build() {
 
 is_running_pid() {
   local pid="$1"
-  if [[ -n "$pid" && -d "/proc/$pid" ]]; then
+  [[ -n "$pid" ]] || return 1
+  if kill -0 "$pid" 2>/dev/null; then
     return 0
   fi
   return 1
 }
 
 pid_from_port() {
-  # Try to find a process listening on $PORT (Linux)
-  ss -ltnp 2>/dev/null | awk -v p=":$PORT" '$4 ~ p {print $NF}' | sed -n 's/.*pid=\([0-9]*\).*/\1/p' | head -n1 || true
+  # Try to find a process listening on $PORT (cross-platform)
+  # macOS: lsof; Linux: ss/lsof; generic: netstat
+  local pid=""
+  if command -v lsof >/dev/null 2>&1; then
+    pid=$(lsof -nP -iTCP:"$PORT" -sTCP:LISTEN 2>/dev/null | awk 'NR>1 {print $2; exit}')
+  fi
+  if [[ -z "$pid" ]] && command -v ss >/dev/null 2>&1; then
+    pid=$(ss -ltnp 2>/dev/null | awk -v p=":$PORT" '$4 ~ p {print $NF}' | sed -n 's/.*pid=\([0-9]*\).*/\1/p' | head -n1)
+  fi
+  if [[ -z "$pid" ]] && command -v netstat >/dev/null 2>&1; then
+    pid=$(netstat -anv -p tcp 2>/dev/null | awk -v p=".$PORT" '$4 ~ p && $6 ~ /LISTEN/ {print $0; exit}' | sed -n 's/.*\.\([0-9][0-9]*\)[^0-9].*/\1/p')
+  fi
+  echo "$pid"
 }
 
 cmd_status() {

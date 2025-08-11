@@ -11,6 +11,10 @@ import (
 	"sort"
 	"strconv"
 	"strings"
+	"sync"
+	"time"
+
+	game "github.com/pefman/w40k-duel/internal/game"
 )
 
 type Faction struct {
@@ -28,6 +32,10 @@ type Unit struct {
 	FactionID string `json:"faction_id"`
 	Role      string `json:"role,omitempty"`
 	Link      string `json:"link,omitempty"`
+	// Basic stats (populated from first model row when available)
+	T         string `json:"T,omitempty"`
+	W         string `json:"W,omitempty"`
+	Points    string `json:"points,omitempty"`
 }
 
 type Weapon struct {
@@ -504,7 +512,7 @@ func getenv(k, def string) string {
 func withCORS(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Access-Control-Allow-Origin", "*")
-		w.Header().Set("Access-Control-Allow-Methods", "GET, OPTIONS")
+		w.Header().Set("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
 		w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
 		if r.Method == http.MethodOptions {
 			w.WriteHeader(http.StatusNoContent)
@@ -514,17 +522,261 @@ func withCORS(next http.Handler) http.Handler {
 	})
 }
 
+// ================= Lobby (in-memory) =================
+type LobbyEntry struct {
+	Name    string `json:"name"`
+	Phase   string `json:"phase"`
+	Since   int64  `json:"since"`
+	Updated int64  `json:"updated"`
+}
+
+type Lobby struct {
+	mu     sync.Mutex
+	byName map[string]*LobbyEntry // key: lowercased name
+}
+
+func newLobby() *Lobby { return &Lobby{byName: map[string]*LobbyEntry{}} }
+
+func (l *Lobby) upsert(name, phase string) *LobbyEntry {
+	if name == "" { return nil }
+	now := time.Now().Unix()
+	key := strings.ToLower(strings.TrimSpace(name))
+	if key == "" { return nil }
+	l.mu.Lock()
+	defer l.mu.Unlock()
+	if e, ok := l.byName[key]; ok {
+		e.Phase = phase
+		e.Updated = now
+		return e
+	}
+	e := &LobbyEntry{Name: name, Phase: phase, Since: now, Updated: now}
+	l.byName[key] = e
+	return e
+}
+
+func (l *Lobby) setPhase(name, phase string) bool {
+	key := strings.ToLower(strings.TrimSpace(name))
+	if key == "" { return false }
+	l.mu.Lock()
+	defer l.mu.Unlock()
+	if e, ok := l.byName[key]; ok {
+		e.Phase = phase
+	e.Updated = time.Now().Unix()
+		return true
+	}
+	return false
+}
+
+func (l *Lobby) list() []LobbyEntry {
+	l.mu.Lock()
+	defer l.mu.Unlock()
+	out := make([]LobbyEntry, 0, len(l.byName))
+	for _, e := range l.byName {
+		out = append(out, *e)
+	}
+	sort.Slice(out, func(i, j int) bool {
+		if out[i].Since == out[j].Since {
+			return strings.ToLower(out[i].Name) < strings.ToLower(out[j].Name)
+		}
+		return out[i].Since < out[j].Since
+	})
+	return out
+}
+
+// end lobby types
+
+// ================= Match log (in-memory) =================
+type MatchEntry struct {
+	Time     int64            `json:"time"`
+	Actor    string           `json:"actor"`
+	Round    int              `json:"round"`
+	Step     int              `json:"step"`
+	Attacker game.UnitSnapshot `json:"attacker"`
+	Defender game.UnitSnapshot `json:"defender"`
+	Weapon   game.WeaponSnapshot `json:"weapon"`
+	Result   game.ShootingResult `json:"result"`
+}
+
+type MatchRecord struct {
+	ID      string       `json:"id"`
+	Created int64        `json:"created"`
+	Updated int64        `json:"updated"`
+	Entries []MatchEntry `json:"entries"`
+}
+
+type MatchLog struct {
+	mu   sync.Mutex
+	recs map[string]*MatchRecord
+}
+
+func newMatchLog() *MatchLog { return &MatchLog{recs: map[string]*MatchRecord{}} }
+
+func (m *MatchLog) append(id string, e MatchEntry) {
+	if id == "" { return }
+	now := time.Now().Unix()
+	m.mu.Lock()
+	defer m.mu.Unlock()
+	rec, ok := m.recs[id]
+	if !ok {
+		rec = &MatchRecord{ID: id, Created: now, Updated: now}
+		m.recs[id] = rec
+	}
+	rec.Entries = append(rec.Entries, e)
+	rec.Updated = now
+}
+
+func (m *MatchLog) get(id string) *MatchRecord {
+	m.mu.Lock()
+	defer m.mu.Unlock()
+	if rec, ok := m.recs[id]; ok {
+		return rec
+	}
+	return nil
+}
+// end match log types
+
 func main() {
 	root := "."
 	store, err := newStore(root)
 	if err != nil {
 		log.Fatalf("load store: %v", err)
 	}
+	lobby := newLobby()
+	matches := newMatchLog()
 
-	mux := http.NewServeMux()
+		mux := http.NewServeMux()
+		// Serve static mockup from ./public at root
+		mux.Handle("/", http.FileServer(http.Dir("public")))
 
 	// Health
 	mux.HandleFunc("/api/healthz", func(w http.ResponseWriter, r *http.Request) {
+		writeJSON(w, map[string]string{"status": "ok"})
+	})
+
+	// Lobby endpoints
+	// GET /api/lobby -> list of users with phases
+	mux.HandleFunc("/api/lobby", func(w http.ResponseWriter, r *http.Request) {
+		if r.Method != http.MethodGet {
+			writeError(w, http.StatusMethodNotAllowed, "GET only")
+			return
+		}
+		writeJSON(w, lobby.list())
+	})
+
+	// Simulation endpoints (shooting-only duel head-up)
+	mux.HandleFunc("/api/sim/shoot", func(w http.ResponseWriter, r *http.Request) {
+		if r.Method != http.MethodPost {
+			writeError(w, http.StatusMethodNotAllowed, "POST only")
+			return
+		}
+		var req struct {
+			Attacker struct {
+				ID    string `json:"id"`
+				Name  string `json:"name"`
+				T     int    `json:"T"`
+				W     int    `json:"W"`
+				Sv    int    `json:"Sv"`
+				InvSv int    `json:"InvSv"`
+			} `json:"attacker"`
+			Defender struct {
+				ID    string `json:"id"`
+				Name  string `json:"name"`
+				T     int    `json:"T"`
+				W     int    `json:"W"`
+				Sv    int    `json:"Sv"`
+				InvSv int    `json:"InvSv"`
+			} `json:"defender"`
+			Weapon struct {
+				Name     string `json:"name"`
+				Type     string `json:"type"`
+				Attacks  string `json:"attacks"`
+				Skill    int    `json:"skill"`
+				Strength int    `json:"strength"`
+				AP       int    `json:"ap"`
+				Damage   string `json:"damage"`
+			} `json:"weapon"`
+			MatchID string `json:"match_id,omitempty"`
+			Meta    struct {
+				Actor string `json:"actor,omitempty"`
+				Round int    `json:"round,omitempty"`
+				Step  int    `json:"step,omitempty"`
+			} `json:"meta,omitempty"`
+		}
+		if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
+			writeError(w, http.StatusBadRequest, "invalid JSON")
+			return
+		}
+		att := game.UnitSnapshot{ID: req.Attacker.ID, Name: req.Attacker.Name, T: req.Attacker.T, W: req.Attacker.W, Sv: req.Attacker.Sv, InvSv: req.Attacker.InvSv}
+		def := game.UnitSnapshot{ID: req.Defender.ID, Name: req.Defender.Name, T: req.Defender.T, W: req.Defender.W, Sv: req.Defender.Sv, InvSv: req.Defender.InvSv}
+		wep := game.WeaponSnapshot{Name: req.Weapon.Name, Type: req.Weapon.Type, Attacks: req.Weapon.Attacks, Skill: req.Weapon.Skill, Strength: req.Weapon.Strength, AP: req.Weapon.AP, Damage: req.Weapon.Damage}
+		res := game.ResolveShooting(att, def, wep)
+		// Append to match log if provided
+		if strings.TrimSpace(req.MatchID) != "" {
+			entry := MatchEntry{
+				Time:     time.Now().Unix(),
+				Actor:    strings.TrimSpace(req.Meta.Actor),
+				Round:    req.Meta.Round,
+				Step:     req.Meta.Step,
+				Attacker: att,
+				Defender: def,
+				Weapon:   wep,
+				Result:   res,
+			}
+			matches.append(strings.TrimSpace(req.MatchID), entry)
+		}
+		writeJSON(w, res)
+	})
+
+	// GET /api/match/{id} -> full match log
+	mux.HandleFunc("/api/match/", func(w http.ResponseWriter, r *http.Request) {
+		if r.Method != http.MethodGet {
+			writeError(w, http.StatusMethodNotAllowed, "GET only")
+			return
+		}
+		id := strings.TrimSpace(strings.TrimPrefix(r.URL.Path, "/api/match/"))
+		if id == "" {
+			writeError(w, http.StatusBadRequest, "missing match id")
+			return
+		}
+		if rec := matches.get(id); rec != nil {
+			writeJSON(w, rec)
+			return
+		}
+		writeError(w, http.StatusNotFound, "match not found")
+	})
+	// POST /api/lobby/join {name}
+	mux.HandleFunc("/api/lobby/join", func(w http.ResponseWriter, r *http.Request) {
+		if r.Method != http.MethodPost {
+			writeError(w, http.StatusMethodNotAllowed, "POST only")
+			return
+		}
+		var body struct{ Name string `json:"name"` }
+		if err := json.NewDecoder(r.Body).Decode(&body); err != nil || strings.TrimSpace(body.Name) == "" {
+			writeError(w, http.StatusBadRequest, "invalid name")
+			return
+		}
+		e := lobby.upsert(strings.TrimSpace(body.Name), "idle")
+		if e == nil {
+			writeError(w, http.StatusBadRequest, "invalid name")
+			return
+		}
+		writeJSON(w, e)
+	})
+	// POST /api/lobby/phase {name, phase}
+	mux.HandleFunc("/api/lobby/phase", func(w http.ResponseWriter, r *http.Request) {
+		if r.Method != http.MethodPost {
+			writeError(w, http.StatusMethodNotAllowed, "POST only")
+			return
+		}
+		var body struct{ Name, Phase string }
+		if err := json.NewDecoder(r.Body).Decode(&body); err != nil || strings.TrimSpace(body.Name) == "" {
+			writeError(w, http.StatusBadRequest, "invalid payload")
+			return
+		}
+		if ok := lobby.setPhase(strings.TrimSpace(body.Name), strings.TrimSpace(body.Phase)); !ok {
+			writeError(w, http.StatusNotFound, "user not in lobby")
+			return
+		}
 		writeJSON(w, map[string]string{"status": "ok"})
 	})
 
@@ -596,6 +848,33 @@ func main() {
 			default:
 				sort.Slice(units, func(i, j int) bool { return strings.ToLower(units[i].Name) < strings.ToLower(units[j].Name) })
 			}
+			// Enrich with basic T and W from first model row if present
+			enriched := make([]Unit, len(units))
+			for i, u := range units {
+				eu := u
+				if models, ok := store.ModelsByDS[u.ID]; ok && len(models) > 0 {
+					eu.T = strings.TrimSpace(models[0].T)
+					eu.W = strings.TrimSpace(models[0].W)
+				}
+				// add points: choose the minimum cost entry if multiple
+				if costs, ok := store.CostsByDS[u.ID]; ok && len(costs) > 0 {
+					min := -1
+					for _, c := range costs {
+						n, err := strconv.Atoi(strings.TrimSpace(c.Cost))
+						if err != nil { continue }
+						if n <= 0 { continue }
+						if min < 0 || n < min {
+							min = n
+						}
+					}
+					if min > 0 {
+						eu.Points = strconv.Itoa(min)
+					}
+				}
+				enriched[i] = eu
+			}
+			units = enriched
+
 			// pagination: limit, offset
 			limit, _ := strconv.Atoi(q.Get("limit"))
 			offset, _ := strconv.Atoi(q.Get("offset"))
@@ -621,7 +900,23 @@ func main() {
 				if len(parts) == 2 {
 					// unit data by id
 					if u, ok := store.UnitsByID[unitID]; ok {
-						writeJSON(w, u)
+						// enrich same as in list
+						eu := u
+						if models, ok := store.ModelsByDS[u.ID]; ok && len(models) > 0 {
+							eu.T = strings.TrimSpace(models[0].T)
+							eu.W = strings.TrimSpace(models[0].W)
+						}
+						if costs, ok := store.CostsByDS[u.ID]; ok && len(costs) > 0 {
+							min := -1
+							for _, c := range costs {
+								n, err := strconv.Atoi(strings.TrimSpace(c.Cost))
+								if err != nil { continue }
+								if n <= 0 { continue }
+								if min < 0 || n < min { min = n }
+							}
+							if min > 0 { eu.Points = strconv.Itoa(min) }
+						}
+						writeJSON(w, eu)
 						return
 					}
 					writeError(w, http.StatusNotFound, "unit not found: "+unitID)

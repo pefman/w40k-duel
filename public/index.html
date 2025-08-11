@@ -1,0 +1,713 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>W40K Duel – Mockup</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Web fonts (display + UI) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Theme stylesheet (Warhammer-inspired) -->
+  <link href="/styles.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Top Banner -->
+  <header class="banner py-3 mb-3">
+    <div class="container d-flex align-items-center justify-content-between">
+      <h1 class="h4 m-0">W40K Duel</h1>
+    <div class="d-flex align-items-center gap-3 flex-wrap justify-content-end w-100" style="max-width: 750px;">
+  <div class="user-name-BOX_un_ d-none" id="userNameBox">Username: <span id="userName">Anonymous</span></div>
+        <div class="username-input-BOX_ui_ input-group input-group-sm" style="max-width: 280px;">
+          <input id="usernameInput" type="text" class="form-control bg-dark text-light border-secondary" placeholder="Enter username" aria-label="username">
+          <button id="usernameSaveBtn" class="btn btn-warning" type="button">OK</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container">
+    <!-- Selection controls -->
+    <div class="row mb-3 selection-BOX_sel_">
+      <div class="col-12 col-md-4 mb-2 mb-md-0">
+        <label for="factionSelect" class="form-label">Faction</label>
+        <select id="factionSelect" class="form-select"></select>
+      </div>
+      <div class="col-12 col-md-4 mb-2 mb-md-0">
+        <label for="unitSelect" class="form-label">Unit</label>
+        <select id="unitSelect" class="form-select" disabled></select>
+      </div>
+      <div class="col-12 col-md-4">
+        <label class="form-label d-block">Weapon Type</label>
+        <div class="d-flex align-items-center justify-content-between gap-2 flex-wrap">
+          <div class="weapon-type-BOX_wt_ btn-group" role="group" aria-label="Weapon type">
+            <input type="radio" class="btn-check" name="weaponType" id="wtRanged" autocomplete="off" checked>
+            <label class="btn btn-outline-warning" for="wtRanged">Ranged</label>
+            <input type="radio" class="btn-check" name="weaponType" id="wtMelee" autocomplete="off">
+            <label class="btn btn-outline-warning" for="wtMelee">Melee</label>
+          </div>
+          <div class="action-buttons-BOX_ab_ btn-group" role="group" aria-label="Actions">
+            <button id="btnFightAI" class="btn btn-outline-warning">Fight AI</button>
+            <button id="btnMatchmake" class="btn btn-outline-warning">Matchmake Player</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-12">
+        <div class="game-window-BOX_gw_ game-surface p-2" id="gameWindow">
+          <canvas id="gameCanvas" class="w-100" style="display:block; width: 100%; height: auto; aspect-ratio: 16/9; background:#0a0c10;"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- Copyable Fight Log Panel -->
+    <div class="row mb-3" id="logRow" style="display:none;">
+      <div class="col-12">
+        <div class="stats-box p-3">
+          <div class="d-flex align-items-center justify-content-between mb-2">
+            <h2 class="h6 text-warning m-0">Fight Log <small class="text-secondary">(Match <code id="matchIdLabel">—</code>)</small></h2>
+            <div class="btn-group btn-group-sm" role="group" aria-label="log actions">
+              <button id="btnCopyLog" class="btn btn-outline-secondary" type="button">Copy</button>
+              <button id="btnDownloadLog" class="btn btn-outline-secondary" type="button">Download .txt</button>
+              <button id="btnDownloadJSON" class="btn btn-outline-secondary" type="button">Download JSON</button>
+              <button id="btnStopFight" class="btn btn-outline-danger" type="button" title="Stop the current fight">Stop</button>
+            </div>
+          </div>
+          <pre id="textLog" class="mt-2 bg-dark text-light p-2 border border-secondary rounded" style="max-height: 240px; overflow-y: auto; white-space: pre-wrap;">(no log yet)</pre>
+        </div>
+      </div>
+    </div>
+
+  <!-- Bottom Stats -->
+  <div class="row">
+      <div class="col-12">
+        <div class="stats-BOX_sb_ stats-box p-3" id="statsBox">
+          <h2 class="h6 text-warning mb-3">Statistics</h2>
+          <div class="row g-3">
+            <div class="col-12 col-md-6">
+              <div class="card bg-dark border-secondary high-dmg-BOX_hd_">
+                <div class="card-body py-3">
+                  <div class="text-secondary small">Highest Damage Attack</div>
+                  <div id="statTopDamage" class="fw-bold fs-5">—</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6">
+              <div class="card bg-dark border-secondary saves-BOX_sv_">
+                <div class="card-body py-3">
+                  <div class="text-secondary small">Best & Worst Save</div>
+                  <div class="d-flex gap-4">
+                    <div>Best: <span id="statBestSave" class="fw-bold">—</span></div>
+                    <div>Worst: <span id="statWorstSave" class="fw-bold">—</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lobby Panel -->
+    <div class="row mt-3">
+      <div class="col-12">
+        <div class="stats-box p-3" id="lobbyBox">
+          <div class="d-flex align-items-center justify-content-between mb-2">
+            <h2 class="h6 text-warning m-0">Lobby</h2>
+            <small class="text-secondary">Players online with phase</small>
+          </div>
+          <div id="lobbyList" class="row g-2"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+  // Demo: set names via query params ?user=... (player removed)
+  const params = new URLSearchParams(location.search);
+
+  const usernameDisplay = document.getElementById('userName');
+  const usernameInput = document.getElementById('usernameInput');
+  const usernameSaveBtn = document.getElementById('usernameSaveBtn');
+  const userNameBoxEl = document.getElementById('userNameBox');
+  const usernameInputGroup = document.querySelector('.username-input-BOX_ui_');
+
+    async function setUsername(name){
+      const clean = (name || '').trim() || 'Anonymous';
+      sessionStorage.setItem('username', clean);
+      usernameDisplay.textContent = clean;
+      usernameInput.value = clean;
+      userNameBoxEl.classList.remove('d-none');
+  // Hide the input group once chosen
+  if (usernameInputGroup) usernameInputGroup.classList.add('d-none');
+      // Join lobby
+      try {
+        await fetch('/api/lobby/join', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({name: clean})});
+      } catch {}
+    }
+
+    // Initialize username: show only if previously chosen in this session
+    const stored = sessionStorage.getItem('username');
+    if (stored && stored.trim()) {
+      setUsername(stored.trim());
+    } else {
+      const qpUser = params.get('user');
+      if (qpUser && qpUser.trim()) {
+        // Pre-fill input only; do not consider as chosen until saved
+        usernameInput.value = qpUser.trim();
+      }
+    }
+
+    // Save on click or Enter
+    usernameSaveBtn.addEventListener('click', ()=> setUsername(usernameInput.value));
+    usernameInput.addEventListener('keydown', (e)=>{
+      if (e.key === 'Enter') setUsername(usernameInput.value);
+    });
+
+    // Populate factions and units from API
+    const factionSelect = document.getElementById('factionSelect');
+    const unitSelect = document.getElementById('unitSelect');
+    let factions = [];
+
+    async function loadFactions(){
+      try {
+        const resp = await fetch('/api/factions');
+        factions = await resp.json();
+        factionSelect.innerHTML = '<option value="">Select Faction</option>' +
+          factions.map(f => `<option value="${f.id}">${f.name}</option>`).join('');
+      } catch(e){
+        factionSelect.innerHTML = '<option value="">(failed to load factions)</option>';
+      }
+    }
+
+    async function loadUnitsForFaction(fid){
+      unitSelect.disabled = true;
+      unitSelect.innerHTML = '<option value="">Loading units…</option>';
+      if(!fid){ unitSelect.innerHTML = '<option value="">Select unit</option>'; return; }
+      try {
+    const resp = await fetch(`/api/${encodeURIComponent(fid)}/units`);
+        const units = await resp.json();
+        unitSelect.innerHTML = '<option value="">Select Unit</option>' +
+          units.map(u => {
+            const id = u.ID || u.id || u.Name || u.name;
+            const name = u.Name || u.name || 'Unit';
+            const t = (u.T ?? u.t ?? '–');
+            const w = (u.W ?? u.w ?? '–');
+      const pts = (u.points || u.Points || '').toString();
+      const ptsTxt = pts ? ` — ${pts}pts` : '';
+      return `<option value="${id}" data-points="${pts}">${name} (T ${t} / W ${w})${ptsTxt}</option>`;
+          }).join('');
+        unitSelect.disabled = false;
+      } catch(e){
+        unitSelect.innerHTML = '<option value="">(failed to load units)</option>';
+      }
+    }
+
+    factionSelect.addEventListener('change', (e)=>{
+      const fid = e.target.value;
+      loadUnitsForFaction(fid);
+    });
+
+    // Read selected weapon type
+    function getWeaponType(){
+      return document.getElementById('wtMelee').checked ? 'melee' : 'ranged';
+    }
+
+    // Expose current selection (for future game integration)
+  window.currentSelection = () => ({
+      user: sessionStorage.getItem('username') || 'Anonymous',
+      factionId: factionSelect.value,
+      unitId: unitSelect.value,
+      weaponType: getWeaponType()
+    });
+
+    // Init
+    loadFactions();
+    // Canvas helpers
+    const canvas = document.getElementById('gameCanvas');
+    const ctx = canvas.getContext('2d');
+  const sleep = (ms)=> new Promise(r=> setTimeout(r, ms));
+    // Text log helpers
+    const logRow = document.getElementById('logRow');
+    const textLogEl = document.getElementById('textLog');
+    const matchIdLabel = document.getElementById('matchIdLabel');
+    function showLogRow(){ if (logRow) logRow.style.display = ''; }
+    const TEXT_LOG_LIMIT = 600; // keep last N lines for responsiveness
+    function setTextLog(lines){
+      if (!textLogEl) return;
+      let arr = Array.isArray(lines) ? lines.slice(-TEXT_LOG_LIMIT) : String(lines||'').split('\n');
+      const txt = arr.join('\n');
+      textLogEl.textContent = txt;
+      // autoscroll to bottom
+      textLogEl.scrollTop = textLogEl.scrollHeight;
+    }
+    function clearTextLog(){ setTextLog(''); }
+    async function copyTextLog(){
+      try { await navigator.clipboard.writeText(textLogEl?.textContent || ''); } catch {}
+    }
+    function download(filename, content, mime='text/plain'){
+      const blob = new Blob([content], {type: mime});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = filename;
+      document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(()=> URL.revokeObjectURL(url), 500);
+    }
+    async function downloadJSONLog(matchId){
+      if (!matchId) return;
+      try {
+        const resp = await fetch(`/api/match/${encodeURIComponent(matchId)}`);
+        if (!resp.ok) throw new Error('not found');
+        const data = await resp.json();
+        download(`match_${matchId}.json`, JSON.stringify(data, null, 2), 'application/json');
+      } catch {}
+    }
+    function resizeCanvas(){
+      // match displayed size
+      const rect = canvas.getBoundingClientRect();
+      const dpr = window.devicePixelRatio || 1;
+      const width = Math.max(320, Math.floor(rect.width));
+      const height = Math.max(180, Math.floor(rect.width * 9/16));
+      canvas.width = Math.floor(width * dpr);
+      canvas.height = Math.floor(height * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      drawSplash();
+    }
+    function drawSplash(){
+      const w = canvas.width / (window.devicePixelRatio||1);
+      const h = canvas.height / (window.devicePixelRatio||1);
+      ctx.fillStyle = '#0b1016';
+      ctx.fillRect(0,0,w,h);
+      ctx.fillStyle = '#c9a753';
+      ctx.font = '16px system-ui, sans-serif';
+      ctx.fillText('Shooting Duel — ready', 12, 24);
+      ctx.fillStyle = '#8aa0b8';
+      ctx.font = '12px system-ui, sans-serif';
+      ctx.fillText('Pick a faction/unit and press Fight AI', 12, 44);
+    }
+    window.addEventListener('resize', resizeCanvas);
+    setTimeout(resizeCanvas, 0);
+
+    // Data helpers
+    const numFrom = (s)=>{
+      if (!s) return 0; const m = String(s).match(/\d+/); return m? parseInt(m[0],10):0;
+    };
+    async function getUnitStats(fid, uid){
+      const resp = await fetch(`/api/${encodeURIComponent(fid)}/${encodeURIComponent(uid)}/models`);
+      const models = await resp.json();
+      const m = models && models[0] ? models[0] : {};
+      const T = numFrom(m.T) || 4;
+      const W = numFrom(m.W) || 5;
+      const Sv = numFrom(m.Sv) || 7;
+      const InvSv = numFrom(m.inv_sv) || numFrom(m.InvSv) || 0;
+      return { T, W, Sv, InvSv };
+    }
+
+    async function getUnitDetail(fid, uid){
+      // unit basic
+      let name = 'Unit';
+      try {
+        const u = await fetch(`/api/${encodeURIComponent(fid)}/${encodeURIComponent(uid)}`).then(r=>r.json());
+        name = u.name || u.Name || name;
+      } catch {}
+      if (name === 'Unit') {
+        const opt = Array.from(unitSelect.options).find(o=> o.value==uid);
+        if (opt) name = opt.textContent.replace(/\s*\(T .*?\)\s*$/, '').trim() || name;
+      }
+      // stats
+      const stats = await getUnitStats(fid, uid);
+      // abilities
+      let abilities = [];
+      try {
+        const list = await fetch(`/api/${encodeURIComponent(fid)}/${encodeURIComponent(uid)}/abilities`).then(r=>r.json());
+        abilities = (list||[]).map(a=> a.name || a.Name).filter(Boolean);
+      } catch {}
+      // weapons: include stats for display as text
+      let melee = [], ranged = [];
+      try {
+        const list = await fetch(`/api/${encodeURIComponent(fid)}/${encodeURIComponent(uid)}/weapons`).then(r=>r.json());
+        (list||[]).forEach(w=>{
+          const item = {
+            name: w.name || w.Name,
+            desc: (w.description || w.Description || '').toString(),
+            attacks: (w.attacks || w.Attacks || '').toString(),
+            skill: (w.bs_ws || w.BSOrWS || '').toString(),
+            strength: (w.strength || w.Strength || '').toString(),
+            ap: (w.ap || w.AP || '').toString(),
+            damage: (w.damage || w.Damage || '').toString(),
+          };
+          if (String(w.range).toLowerCase()==='melee') melee.push(item); else ranged.push(item);
+        });
+      } catch {}
+      return { name, stats, abilities, weapons: { melee, ranged } };
+    }
+    async function pickWeapons(fid, uid, type){
+      const resp = await fetch(`/api/${encodeURIComponent(fid)}/${encodeURIComponent(uid)}/weapons`);
+      const weapons = await resp.json();
+      const isMelee = type === 'melee';
+      // Range=='Melee' denotes melee; others are ranged
+      const filtered = weapons.filter(w => isMelee ? String(w.range).toLowerCase()==='melee' : String(w.range).toLowerCase()!=='melee');
+      if (!filtered.length) throw new Error('No weapons of selected type');
+      return filtered.map(w => {
+        const skill = numFrom(w.bs_ws || w.BSOrWS) || 4;
+        const S = numFrom(w.strength || w.Strength) || 4;
+        const AP = parseInt(String(w.ap || w.AP || '0'),10) || 0;
+        const attacks = String(w.attacks || w.Attacks || '1');
+        const damage = String(w.damage || w.Damage || '1');
+        return { name: w.name || w.Name, type: isMelee ? 'melee' : 'ranged', attacks, skill, strength: S, ap: AP, damage };
+      });
+    }
+
+    async function pickAnyWeapons(fid, uid){
+      const resp = await fetch(`/api/${encodeURIComponent(fid)}/${encodeURIComponent(uid)}/weapons`);
+      const weapons = await resp.json();
+      return weapons.map(w => {
+        const isMelee = String(w.range).toLowerCase()==='melee';
+        const skill = numFrom(w.bs_ws || w.BSOrWS) || 4;
+        const S = numFrom(w.strength || w.Strength) || 4;
+        const AP = parseInt(String(w.ap || w.AP || '0'),10) || 0;
+        const attacks = String(w.attacks || w.Attacks || '1');
+        const damage = String(w.damage || w.Damage || '1');
+        return { name: w.name || w.Name, type: isMelee ? 'melee' : 'ranged', attacks, skill, strength: S, ap: AP, damage };
+      });
+    }
+
+    async function pickWeaponsSafe(fid, uid, preferredType){
+      try {
+        return await pickWeapons(fid, uid, preferredType);
+      } catch {
+        try {
+          const opposite = preferredType === 'melee' ? 'ranged' : 'melee';
+          return await pickWeapons(fid, uid, opposite);
+        } catch {
+          return await pickAnyWeapons(fid, uid);
+        }
+      }
+    }
+
+  function drawFightPhase(leftDetail, rightDetail, leftW, leftWMax, rightW, rightWMax, res, title='Fight Phase — Rolls', winnerText=null){
+      resizeCanvas();
+      const w = canvas.width / (window.devicePixelRatio||1);
+      const h = canvas.height / (window.devicePixelRatio||1);
+      ctx.fillStyle = '#0b1016';
+      ctx.fillRect(0,0,w,h);
+      // Title
+      ctx.fillStyle = '#c9a753'; ctx.font='16px system-ui,sans-serif';
+      ctx.fillText(title, 12, 22);
+      const pad = 12;
+      // Columns: left 30%, middle 40%, right 30%
+      const colW = [Math.floor((w - pad*4)*0.3), Math.floor((w - pad*4)*0.4), Math.floor((w - pad*4)*0.3)];
+      const x0 = pad, x1 = x0 + colW[0] + pad, x2 = x1 + colW[1] + pad;
+      const top = 40, boxH = h - top - pad;
+      // Panels
+      ctx.fillStyle = '#11161f';
+      ctx.fillRect(x0, top, colW[0], boxH);
+      ctx.fillRect(x1, top, colW[1], boxH);
+      ctx.fillRect(x2, top, colW[2], boxH);
+      // Left unit
+      ctx.fillStyle = '#e5e7eb'; ctx.font='14px system-ui,sans-serif';
+      const leftName = leftDetail?.name || 'Player';
+      const rightName = rightDetail?.name || 'Opponent';
+      ctx.fillText(`Player: ${leftName}`, x0+8, top+22);
+      // Left wounds bar
+      let barX = x0+8, barY = top+34, barW = colW[0]-16, barH = 14;
+      ctx.fillStyle = '#243042'; ctx.fillRect(barX, barY, barW, barH);
+      let frac = Math.max(0, Math.min(1, (leftW||0)/(leftWMax||1)));
+      ctx.fillStyle = frac>0.5? '#2ecc71' : frac>0.25? '#f1c40f' : '#e74c3c';
+      ctx.fillRect(barX, barY, Math.floor(barW*frac), barH);
+      ctx.fillStyle = '#8aa0b8'; ctx.font='12px system-ui,sans-serif';
+      ctx.fillText(`Wounds: ${leftW}/${leftWMax}`, x0+8, barY+barH+14);
+      // Left stats and lists
+      const ls = leftDetail?.stats || {}; const lwa = leftDetail?.abilities || []; const lwr = leftDetail?.weapons?.ranged || []; const lwm = leftDetail?.weapons?.melee || [];
+  let y = barY+barH+34;
+      ctx.fillStyle = '#c9a753'; ctx.font='12px system-ui,sans-serif';
+  ctx.fillText(`Stats: T ${ls.T||'-'}  Sv ${ls.Sv? ls.Sv+'+':'-'}  Inv ${ls.InvSv? ls.InvSv+'+':'-'}`, x0+8, y); y+=18;
+  ctx.fillStyle = '#c9a753'; ctx.fillText('Abilities:', x0+8, y); y+=16; ctx.fillStyle = '#8aa0b8';
+  lwa.slice(0,4).forEach(a=>{ ctx.fillText(`• ${a}`, x0+12, y); y+=16; });
+  ctx.fillStyle = '#c9a753'; ctx.fillText('Weapons:', x0+8, y); y+=16; ctx.fillStyle = '#8aa0b8';
+      const lwlist = [...lwr, ...lwm].slice(0,4);
+      lwlist.forEach(wi=>{
+        const nm = (wi.name||'Weapon');
+        const statsTxt = `A ${wi.attacks||'?'} | Skill ${wi.skill||'?'} | S ${wi.strength||'?'} | AP ${wi.ap||'?'} | D ${wi.damage||'?'}`;
+        const desc = (wi.desc||'').replace(/\s+/g,' ').slice(0,40);
+  ctx.fillText(`• ${nm} — ${statsTxt}`, x0+12, y); y+=16;
+  if (desc) { ctx.fillText(`  ${desc}`, x0+20, y); y+=16; }
+      });
+      // Right unit
+      ctx.fillStyle = '#e5e7eb'; ctx.font='14px system-ui,sans-serif';
+      ctx.fillText(`Opponent: ${rightName}`, x2+8, top+22);
+      barX = x2+8; barY = top+34; barW = colW[2]-16; barH = 14;
+      ctx.fillStyle = '#243042'; ctx.fillRect(barX, barY, barW, barH);
+      frac = Math.max(0, Math.min(1, (rightW||0)/(rightWMax||1)));
+      ctx.fillStyle = frac>0.5? '#2ecc71' : frac>0.25? '#f1c40f' : '#e74c3c';
+      ctx.fillRect(barX, barY, Math.floor(barW*frac), barH);
+      ctx.fillStyle = '#8aa0b8'; ctx.font='12px system-ui,sans-serif';
+      ctx.fillText(`Wounds: ${rightW}/${rightWMax}`, x2+8, barY+barH+14);
+      const rs = rightDetail?.stats || {}; const rwa = rightDetail?.abilities || []; const rwr = rightDetail?.weapons?.ranged || []; const rwm = rightDetail?.weapons?.melee || [];
+  y = barY+barH+34;
+      ctx.fillStyle = '#c9a753'; ctx.font='12px system-ui,sans-serif';
+  ctx.fillText(`Stats: T ${rs.T||'-'}  Sv ${rs.Sv? rs.Sv+'+':'-'}  Inv ${rs.InvSv? rs.InvSv+'+':'-'}`, x2+8, y); y+=18;
+  ctx.fillStyle = '#c9a753'; ctx.fillText('Abilities:', x2+8, y); y+=16; ctx.fillStyle = '#8aa0b8';
+  rwa.slice(0,4).forEach(a=>{ ctx.fillText(`• ${a}`, x2+12, y); y+=16; });
+  ctx.fillStyle = '#c9a753'; ctx.fillText('Weapons:', x2+8, y); y+=16; ctx.fillStyle = '#8aa0b8';
+      const rwlist = [...rwr, ...rwm].slice(0,4);
+      rwlist.forEach(wi=>{
+        const nm = (wi.name||'Weapon');
+        const statsTxt = `A ${wi.attacks||'?'} | Skill ${wi.skill||'?'} | S ${wi.strength||'?'} | AP ${wi.ap||'?'} | D ${wi.damage||'?'}`;
+        const desc = (wi.desc||'').replace(/\s+/g,' ').slice(0,40);
+  ctx.fillText(`• ${nm} — ${statsTxt}`, x2+12, y); y+=16;
+  if (desc) { ctx.fillText(`  ${desc}`, x2+20, y); y+=16; }
+      });
+  // Middle: rolls/logs summary
+      const resObj = res || {};
+      const stats = [
+        `Attacks: ${resObj.attacks||resObj.Attacks||0}`,
+        `Hits: ${resObj.hits||resObj.Hits||0}`,
+        `Wounds: ${resObj.wounds||resObj.Wounds||0}`,
+        `Saved: ${resObj.saved||resObj.Saved||0}`,
+        `Unsaved: ${resObj.unsaved||resObj.Unsaved||0}`,
+        `Damage: ${resObj.damage_total||resObj.DamageTotal||0}`,
+      ];
+      ctx.fillStyle = '#c9a753'; ctx.font='14px system-ui,sans-serif';
+      ctx.fillText('Rolls & Logs', x1+8, top+22);
+      ctx.fillStyle = '#8aa0b8'; ctx.font='13px system-ui,sans-serif';
+      stats.forEach((t,i)=> ctx.fillText(t, x1+8, top+44 + i*18));
+  const logs = resObj.logs || resObj.Logs || [];
+      ctx.fillStyle = '#8aa0b8'; ctx.font='12px system-ui,sans-serif';
+  const startY = top+44 + stats.length*18 + 8;
+  const lineH = 14;
+  const maxLines = Math.floor((boxH - (startY-top))/lineH) - 1;
+  logs.slice(0, Math.max(0, maxLines)).forEach((l,i)=> ctx.fillText(`• ${l}`, x1+8, startY + i*lineH));
+      // Winner overlay
+      if (winnerText) {
+        ctx.save();
+        ctx.fillStyle = 'rgba(0,0,0,0.6)';
+        ctx.fillRect(0,0,w,h);
+        ctx.fillStyle = '#c9a753';
+        ctx.font = 'bold 22px system-ui,sans-serif';
+        ctx.textAlign = 'center';
+        ctx.fillText(winnerText, Math.floor(w/2), Math.floor(h/2));
+        ctx.restore();
+      }
+    }
+    // Lobby polling
+    async function refreshLobby(){
+      try {
+        const resp = await fetch('/api/lobby');
+        const list = await resp.json();
+        const wrap = document.getElementById('lobbyList');
+        wrap.innerHTML = list.map(e => `
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card bg-dark border-secondary">
+              <div class="card-body py-2 d-flex justify-content-between">
+                <span class="fw-semibold">${e.name}</span>
+                <span class="badge text-bg-secondary">${e.phase || 'idle'}</span>
+              </div>
+            </div>
+          </div>`).join('');
+      } catch {}
+    }
+    refreshLobby();
+    setInterval(refreshLobby, 3000);
+
+    // Action buttons handlers (placeholder wiring)
+    function ensureSelection(){
+      const sel = window.currentSelection();
+      if (!sel.user || sel.user === 'Anonymous') {
+        alert('Please choose a username first.');
+        return null;
+      }
+      if (!sel.factionId) { alert('Please select a faction.'); return null; }
+      if (!sel.unitId) { alert('Please select a unit.'); return null; }
+      return sel;
+    }
+    const selectionRow = document.querySelector('.selection-BOX_sel_');
+    const statsBox = document.getElementById('statsBox');
+    function hidePreMatchUI(){
+      if (selectionRow) selectionRow.classList.add('d-none');
+      if (statsBox) statsBox.classList.add('d-none');
+    }
+  document.getElementById('btnFightAI').addEventListener('click', async ()=>{
+      const sel = ensureSelection();
+      if (!sel) return;
+      console.log('Fight AI with selection:', sel);
+      hidePreMatchUI();
+      fetch('/api/lobby/phase', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({name: sel.user, phase: 'vs-ai'})}).catch(()=>{});
+  try {
+  const [detail, weps] = await Promise.all([
+          getUnitDetail(sel.factionId, sel.unitId),
+          pickWeapons(sel.factionId, sel.unitId, sel.weaponType)
+        ]);
+  // Make sure detail.name remains the unit name; we’ll use sel.user separately
+        // Pick AI opponent from a random faction within ±20% points (with widening fallback)
+        const myPts = (()=>{
+          const opt = Array.from(unitSelect.options).find(o=> o.value===sel.unitId);
+          const v = opt?.getAttribute('data-points') || '';
+          const n = parseInt(v,10); return isNaN(n)? null : n;
+        })();
+        // Choose random faction (fallback to player's if list empty)
+        const pickRandom = (arr)=> arr[Math.floor(Math.random()*arr.length)];
+        let oppFaction = (Array.isArray(factions) && factions.length) ? pickRandom(factions) : {id: sel.factionId};
+        let oppFactionId = oppFaction.id || oppFaction.ID || sel.factionId;
+        let oppUnit = null;
+        try {
+          const oppUnits = await fetch(`/api/${encodeURIComponent(oppFactionId)}/units`).then(r=>r.json());
+          if (myPts && myPts>0) {
+            const bands = [0.20, 0.35, 0.50];
+            for (const b of bands) {
+              const lo = Math.floor(myPts*(1-b)), hi = Math.ceil(myPts*(1+b));
+              const candidates = oppUnits.filter(u=>{
+                const p = parseInt((u.points||u.Points||'').toString(),10);
+                return !isNaN(p) && p>=lo && p<=hi;
+              });
+              if (candidates.length) { oppUnit = pickRandom(candidates); break; }
+            }
+          }
+          if (!oppUnit && Array.isArray(oppUnits) && oppUnits.length) {
+            oppUnit = pickRandom(oppUnits);
+          }
+        } catch {}
+        // If no unit found (or points missing), as a last resort use player's faction
+        if (!oppUnit) {
+          try {
+            const fallbackUnits = await fetch(`/api/${encodeURIComponent(sel.factionId)}/units`).then(r=>r.json());
+            if (Array.isArray(fallbackUnits) && fallbackUnits.length) {
+              oppFactionId = sel.factionId;
+              oppUnit = pickRandom(fallbackUnits);
+            }
+          } catch {}
+        }
+        const oppUnitId = oppUnit ? (oppUnit.id||oppUnit.ID) : sel.unitId;
+        const oppDetail = await getUnitDetail(oppFactionId, oppUnitId);
+        // Pre-pick opponent weapons safely (prefer same type, fallback to opposite/any)
+        const oppWeps = await pickWeaponsSafe(oppFactionId, oppUnitId, sel.weaponType);
+  // Fight loop until winner (safety cap rounds=20)
+    const matchId = `m_${Date.now().toString(36)}_${Math.random().toString(36).slice(2,7)}`;
+        // Show and reset text log panel
+        showLogRow();
+        if (matchIdLabel) matchIdLabel.textContent = matchId;
+        clearTextLog();
+    let myHP = detail.stats.W;
+        let aiHP = oppDetail.stats.W;
+        const aggregate = {Attacks:0, Hits:0, Wounds:0, Saved:0, Unsaved:0, DamageTotal:0, Logs:[]};
+    let round = 1;
+    const titleBase = `Fight Phase — Rolls (Match ${matchId})`;
+    let stopRequested = false;
+    let noDamageRounds = 0;
+    document.getElementById('btnStopFight')?.addEventListener('click', ()=>{ stopRequested = true; }, { once: true });
+  while (!stopRequested && myHP > 0 && aiHP > 0 && round <= 20) {
+          let dmgBeforeRound = aggregate.DamageTotal;
+          aggregate.Logs.push(`— Round ${round} —`);
+          setTextLog(aggregate.Logs);
+          // Player volley
+          for (const wpn of weps) {
+            const payload = {
+              attacker: { id: sel.unitId, name: sel.user || 'You', T: detail.stats.T, W: myHP, Sv: detail.stats.Sv, InvSv: detail.stats.InvSv },
+              defender: { id: 'AI', name: 'AI', T: oppDetail.stats.T, W: aiHP, Sv: oppDetail.stats.Sv, InvSv: oppDetail.stats.InvSv },
+      weapon: wpn,
+      match_id: matchId,
+      meta: { actor: sel.user || 'You', round, step: 1 },
+            };
+            const resp = await fetch('/api/sim/shoot', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(payload)});
+            const res = await resp.json();
+            const dmgBeforeAI = aggregate.DamageTotal;
+            aggregate.Attacks += (res.attacks||res.Attacks||0);
+            aggregate.Hits    += (res.hits||res.Hits||0);
+            aggregate.Wounds  += (res.wounds||res.Wounds||0);
+            aggregate.Saved   += (res.saved||res.Saved||0);
+            aggregate.Unsaved += (res.unsaved||res.Unsaved||0);
+            aggregate.DamageTotal += (res.damage_total||res.DamageTotal||0);
+            aiHP = Math.max(0, (res.defender_wounds ?? res.DefenderWounds ?? aiHP));
+            const pfx = `${sel.user || 'You'} ${detail.name} ${wpn.name}`;
+            (res.logs||res.Logs||[]).forEach(l=> aggregate.Logs.push(`${pfx}: ${l}`));
+            if (aiHP <= 0) {
+              aggregate.Logs.push('== You win ==');
+              drawFightPhase(detail, oppDetail, myHP, detail.stats.W, aiHP, oppDetail.stats.W, aggregate, titleBase, 'You win');
+              setTextLog(aggregate.Logs);
+              stopRequested = true;
+              break;
+            }
+            // Redraw after each weapon volley (player)
+            drawFightPhase(detail, oppDetail, myHP, detail.stats.W, aiHP, oppDetail.stats.W, aggregate, titleBase);
+            setTextLog(aggregate.Logs);
+            await sleep(120);
+            if (stopRequested) break;
+          }
+          if (stopRequested || aiHP <= 0) break;
+          // AI volley: use chosen opponent weapons
+          for (const wpn of oppWeps) {
+            const payload = {
+              attacker: { id: oppUnitId, name: oppDetail.name || 'AI', T: oppDetail.stats.T, W: aiHP, Sv: oppDetail.stats.Sv, InvSv: oppDetail.stats.InvSv },
+              defender: { id: sel.unitId, name: sel.user || 'You', T: detail.stats.T, W: myHP, Sv: detail.stats.Sv, InvSv: detail.stats.InvSv },
+              weapon: wpn,
+              match_id: matchId,
+              meta: { actor: 'AI', round, step: 2 },
+            };
+            const resp = await fetch('/api/sim/shoot', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(payload)});
+            const res = await resp.json();
+            myHP = Math.max(0, (res.defender_wounds ?? res.DefenderWounds ?? myHP));
+            const pfx = `AI ${oppDetail.name||'Unit'} ${wpn.name}`;
+            (res.logs||res.Logs||[]).forEach(l=> aggregate.Logs.push(`${pfx}: ${l}`));
+            if (myHP <= 0) {
+              aggregate.Logs.push(`== ${oppDetail.name||'AI'} wins ==`);
+              drawFightPhase(detail, oppDetail, myHP, detail.stats.W, aiHP, oppDetail.stats.W, aggregate, titleBase, `${oppDetail.name||'AI'} wins`);
+              setTextLog(aggregate.Logs);
+              stopRequested = true;
+              break;
+            }
+            // Redraw after each weapon volley (AI)
+            drawFightPhase(detail, oppDetail, myHP, detail.stats.W, aiHP, oppDetail.stats.W, aggregate, titleBase);
+      setTextLog(aggregate.Logs);
+            await sleep(120);
+            if (stopRequested) break;
+          }
+          // Stalemate detection: no damage dealt this round by either side
+          const roundDidDamage = aggregate.DamageTotal > dmgBeforeRound;
+          if (!roundDidDamage) {
+            noDamageRounds++;
+          } else {
+            noDamageRounds = 0;
+          }
+          if (noDamageRounds >= 3) { // 3 consecutive rounds with no damage -> stop
+            aggregate.Logs.push('== Stalemate: no damage for 3 consecutive rounds. Ending fight. ==');
+            break;
+          }
+          round++;
+        }
+        const winner = stopRequested ? 'Stopped' : myHP <= 0 ? `${oppDetail.name||'AI'} wins` : aiHP <= 0 ? 'You win' : 'No winner (cap)';
+        aggregate.Logs.push(`== ${winner} ==`);
+        drawFightPhase(detail, oppDetail, myHP, detail.stats.W, aiHP, oppDetail.stats.W, aggregate, titleBase);
+    setTextLog(aggregate.Logs);
+      } catch (e) {
+        console.error(e);
+        drawSplash();
+        alert('Failed to simulate shooting: ' + (e && e.message || e));
+      }
+    });
+    document.getElementById('btnMatchmake').addEventListener('click', ()=>{
+      const sel = ensureSelection();
+      if (!sel) return;
+      console.log('Queue for PVP matchmaking with selection:', sel);
+      hidePreMatchUI();
+      // TODO: call backend to join matchmaking queue
+  fetch('/api/lobby/phase', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({name: sel.user, phase: 'queue'})}).catch(()=>{});
+    });
+    // Log action buttons
+    document.getElementById('btnCopyLog')?.addEventListener('click', copyTextLog);
+    document.getElementById('btnDownloadLog')?.addEventListener('click', ()=>{
+      const id = (matchIdLabel?.textContent || '').trim() || 'match';
+      const txt = textLogEl?.textContent || '';
+      download(`${id}.txt`, txt, 'text/plain');
+    });
+    document.getElementById('btnDownloadJSON')?.addEventListener('click', ()=>{
+      const id = (matchIdLabel?.textContent || '').trim();
+      if (id && id !== '—') downloadJSONLog(id);
+    });
+  </script>
+</body>
+</html>

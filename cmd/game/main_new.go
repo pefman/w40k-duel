@@ -582,164 +582,89 @@ func handleWebSocket(w http.ResponseWriter, r *http.Request) {
 }
 
 // ========================= HTML Template =========================
-const indexHTML = `<!doctype html>
-<html lang="en">
+const indexHTML = `<!DOCTYPE html>
+<html>
 <head>
-  <meta charset="utf-8" />
+  <title>W40K Duel</title>
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>W40K Duel Arena</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Montserrat:wght@400;600&display=swap');
-    :root{ --bg:#0a0c10; --panel:#0f131a; --card:#0b1016; --panel-edge:#131924; --text:#e5e7eb; --muted:#9aa4b2; --gold:#c9a753; --gold-soft:#e5d5a5; --accent:#3a5a9e; --red:#b91c1c; --shadow:0 6px 20px rgba(0,0,0,.45);}
-    *{box-sizing:border-box} html,body{height:100%}
-    body{ margin:0; color:var(--text); background: radial-gradient(1200px 600px at 10% -10%, rgba(30,41,59,.35), transparent 60%), radial-gradient(900px 400px at 110% 10%, rgba(30,41,59,.2), transparent 60%), linear-gradient(180deg,#0a0c10 0%,#07090d 100%); font-family:'Montserrat', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial; }
-    header.site-header{ display:grid; grid-template-columns:auto 1fr auto; align-items:center; gap:16px; padding:14px 20px; background:linear-gradient(180deg,#0f131a,#0b0f15); border-bottom:2px solid var(--gold); box-shadow:var(--shadow); position:sticky; top:0; z-index:10; }
-    .brand{display:flex; align-items:center; gap:10px} .brand .eagle{font-size:20px; filter:drop-shadow(0 0 6px rgba(201,167,83,.35))} .brand .wordmark{font-family:'Cinzel', serif; font-weight:700; letter-spacing:.12em; font-size:18px}
-    .nav{display:flex; gap:18px} .nav a{font-weight:600; text-decoration:none; color:var(--muted); position:relative} .nav a:hover{color:var(--gold)} .nav a::after{content:""; position:absolute; left:0; right:0; bottom:-8px; height:2px; background:linear-gradient(90deg,transparent,var(--gold),transparent); opacity:0; transition:opacity .2s} .nav a:hover::after{opacity:1}
-    .tray{display:flex; gap:8px} .pill{display:inline-block; padding:4px 10px; border-radius:999px; border:1px solid rgba(201,167,83,.5); background:rgba(201,167,83,.08); color:var(--gold);}
-    main{display:grid; grid-template-columns:360px 1fr 360px; gap:16px; padding:18px; max-width:1300px; margin:0 auto}
-    .card{background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(0,0,0,.28)); border:1px solid var(--panel-edge); border-radius:14px; padding:16px; box-shadow:var(--shadow);}
-    h2{font-family:'Cinzel', serif; font-size:18px; margin:0 0 10px; color:var(--gold-soft); letter-spacing:.06em}
-    #setup{ position: relative; z-index: 99; pointer-events: auto; }
-    select, input[type=text]{width:100%; padding:12px 12px; border-radius:10px; border:1px solid #243042; background:#0a0f16; color:var(--text); outline:none; pointer-events:auto}
-    select:focus, input[type=text]:focus{border-color:var(--gold); box-shadow:0 0 0 2px rgba(201,167,83,.25)}
-    .grid{display:grid; grid-template-columns:1fr 1fr; gap:10px} .row{display:flex; align-items:center; justify-content:space-between; padding:6px 8px; color:#cbd5e1}
-    button{cursor:pointer; padding:11px 16px; border-radius:12px; border:1px solid rgba(201,167,83,.45); background:linear-gradient(180deg,#1a2330,#0e141e); color:#f3f4f6; font-weight:700; letter-spacing:.04em; box-shadow: inset 0 1px 0 rgba(255,255,255,.08), 0 6px 16px rgba(0,0,0,.35); transition: transform .05s ease, box-shadow .15s ease, filter .15s ease;}
-    button:hover{filter:brightness(1.05)} button:active{transform:translateY(1px)} button[disabled]{opacity:.5; cursor:not-allowed}
-    #btn-attack{background:linear-gradient(180deg, #c9a753, #9b7e37); color:#0a0c10; border-color:#e8d6a6; text-transform:uppercase}
-    #btn-attack, #btn-roll-saves{ display:block; margin:16px auto; padding:16px 22px; font-size:18px; min-width:260px; width:min(520px, 80%); }
-    #btn-roll-saves{ background:linear-gradient(180deg, #c9a753, #9b7e37); color:#0a0c10; border-color:#e8d6a6; text-transform:uppercase }
-    #weaponList label{ display:flex; align-items:center; gap:8px; transition: background .15s ease, border-color .15s ease; padding:8px 10px; border:1px solid #243042; border-radius:10px; margin-bottom:8px; }
-    #weaponList label.active{ background: rgba(201,167,83,.08); border-color: var(--gold) }
-    #weaponList input[type=checkbox]{ margin-right:8px; }
-    .hpbar{height:14px; background:#131922; border-radius:10px; overflow:hidden; border:1px solid #2a3546} .hpfill{height:100%; background:linear-gradient(90deg,#c9a753,#7ed3ee)}
-    .log{height:380px; overflow:auto; white-space:pre-wrap; background:#0a0f16; border-radius:12px; padding:12px; border:1px solid #232c3a; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size:13px}
-    #p1,#p2{background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(0,0,0,.18)); border:1px solid #263145; border-radius:12px}
-    .winner{color:#22c55e; font-weight:800}
-    #currentWeaponPanel{ border:2px solid var(--gold); border-radius:12px; background:linear-gradient(135deg, rgba(201,167,83,.12), rgba(201,167,83,.04)); padding:12px; box-shadow: 0 0 16px rgba(201,167,83,.25); }
-    #currentWeaponPanel.att-left{ border-color: rgba(201,167,83,.9); box-shadow: inset 8px 0 0 0 rgba(201,167,83,.4), 0 0 20px rgba(201,167,83,.3); }
-    #currentWeaponPanel.att-right{ border-color: rgba(201,167,83,.9); box-shadow: inset -8px 0 0 0 rgba(201,167,83,.4), 0 0 20px rgba(201,167,83,.3); }
-    #cwDir{ text-align:center; font-weight:800; letter-spacing:.04em; color:var(--gold-soft); text-shadow: 0 0 8px rgba(201,167,83,.5); }
-    .pill.tiny{ font-size:10px; padding:2px 6px; border-radius:999px; }
-    #p1Panel{ order: 1; } #battlefield{ order: 2; } #p2Panel{ order: 3; }
-    
-    @media (max-width: 1100px){
-      main{ grid-template-columns: 1fr; padding: 12px; gap: 12px; }
-      header.site-header{ grid-template-columns: 1fr auto; }
-      .nav{ display: none; }
+    body { font-family: system-ui, sans-serif; background: #0a0c10; color: #f3f4f6; margin: 0; padding: 20px; }
+    .container { max-width: 1200px; margin: 0 auto; }
+    h1 { color: #c9a753; text-align: center; }
+    button { 
+      cursor: pointer; padding: 11px 16px; border-radius: 12px; 
+      border: 1px solid rgba(201,167,83,.45); 
+      background: linear-gradient(180deg,#1a2330,#0e141e); 
+      color: #f3f4f6; font-weight: 700; letter-spacing: .04em; 
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.08), 0 6px 16px rgba(0,0,0,.35); 
+      transition: transform .05s ease, box-shadow .15s ease, filter .15s ease;
     }
-    @media (max-width: 720px){
-      body{ font-size: 15px; }
-      h2{ font-size: 16px; }
-      .card{ padding: 12px; border-radius: 12px; }
-      .grid{ grid-template-columns: 1fr; }
-      .log{ height: 220px; }
-      button{ width: 100%; }
-      #btn-attack{ position: sticky; bottom: 8px; width: 100%; box-shadow: 0 8px 18px rgba(0,0,0,.35); }
-      .pill{ font-size: 12px; padding: 3px 8px; }
-      #weaponList label{ padding: 8px 10px; border: 1px solid #243042; border-radius: 10px; margin-bottom: 8px; display:flex; align-items:center; gap:8px; }
-      #weaponList input[type=checkbox]{ transform: scale(1.2); }
+    button:hover { filter: brightness(1.05); }
+    button:active { transform: translateY(1px); }
+    button[disabled] { opacity: .5; cursor: not-allowed; }
+    #btn-attack { 
+      background: linear-gradient(180deg, #c9a753, #9b7e37); 
+      color: #0a0c10; border-color: #e8d6a6; text-transform: uppercase;
     }
-    * { -webkit-tap-highlight-color: rgba(0,0,0,0); }
-    .row span{ word-break: break-word; }
-    main{ padding-bottom: env(safe-area-inset-bottom); }
+    .game-area { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 20px 0; }
+    .player-panel { 
+      background: rgba(26,35,48,.6); border-radius: 12px; padding: 20px; 
+      border: 1px solid rgba(201,167,83,.2);
+    }
+    .combat-log { 
+      background: rgba(14,20,30,.8); border-radius: 8px; padding: 15px; 
+      margin: 10px 0; max-height: 200px; overflow-y: auto;
+    }
+    .status { text-align: center; font-size: 18px; margin: 20px 0; }
+    .lobby { display: none; }
+    .postgame { display: none; }
   </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="brand"><span class="eagle">⚔️</span><span class="wordmark">W40K DUEL</span></div>
-    <nav class="nav"><a href="#">Battle</a><a href="#">Armoury</a><a href="#">Lore</a></nav>
-    <div class="tray"><span id="status" class="pill">Ready</span><span class="pill" title="Build version">dev</span></div>
-  </header>
-  <main>
-    <section id="setup" class="card" style="grid-column: 1 / -1;">
-      <h2 style="margin-top:0">1) Choose your units</h2>
-      <div class="grid">
-        <div><label for="faction">Faction</label><select id="faction"></select></div>
-        <div><label for="unit">Unit</label><select id="unit"></select></div>
-      </div>
-      <div style="margin-top:8px">
-        <fieldset style="border:none; padding:0; margin:0">
-          <legend style="font-weight:600; margin-bottom:4px; color:var(--gold-soft)">Weapons</legend>
-          <div id="weaponList"></div>
-        </fieldset>
-      </div>
-      <div style="margin-top:8px">
-        <label for="playerName">Your name</label>
-        <input type="text" id="playerName" placeholder="Enter your name" value="Player">
-      </div>
-      <button id="btn-ready" onclick="ready()" disabled>Ready for Battle</button>
-    </section>
-
-    <section id="p1Panel" class="card">
-      <h2 id="p1name">Player 1</h2>
-      <div id="p1" style="padding:12px">
-        <div id="p1unit" class="row"><span>Unit:</span><span id="p1unitname">-</span></div>
-        <div id="p1faction" class="row"><span>Faction:</span><span id="p1factionname">-</span></div>
-        <div id="p1wounds" class="row"><span>Wounds:</span><span><span id="p1w">-</span>/<span id="p1wmax">-</span></span></div>
-        <div id="p1hp" style="margin:8px 0"><div class="hpbar"><div id="p1hpfill" class="hpfill" style="width:100%"></div></div></div>
-      </div>
-    </section>
-
-    <section id="battlefield" class="card">
-      <div id="currentWeaponPanel" style="display:none">
-        <div id="cwDir">COMBAT</div>
-        <div style="text-align:center; margin:4px 0; font-size:14px">
-          <span id="cwWeapon" style="color:var(--gold)">-</span>
-        </div>
-      </div>
-      
-      <button id="btn-attack" onclick="attack()" style="display:none">Start Combat</button>
-      
-      <div class="log" id="log">Welcome to the Warhammer 40,000 Duel Arena!
-
-Choose your faction and unit, then click Ready for Battle to find an opponent.
-
-Combat is fully automated - just watch the battle unfold!</div>
-    </section>
-
-    <section id="p2Panel" class="card">
-      <h2 id="p2name">Player 2</h2>
-      <div id="p2" style="padding:12px">
-        <div id="p2unit" class="row"><span>Unit:</span><span id="p2unitname">-</span></div>
-        <div id="p2faction" class="row"><span>Faction:</span><span id="p2factionname">-</span></div>
-        <div id="p2wounds" class="row"><span>Wounds:</span><span><span id="p2w">-</span>/<span id="p2wmax">-</span></span></div>
-        <div id="p2hp" style="margin:8px 0"><div class="hpbar"><div id="p2hpfill" class="hpfill" style="width:100%"></div></div></div>
-      </div>
-    </section>
-
-    <section class="card" style="grid-column: 1 / -1;">
-      <h2>Lobby & Leaderboards</h2>
-      <div class="grid">
-        <div id="lobby-section">
-          <h3 style="margin:0 0 8px; font-size:14px; color:var(--muted)">Active Players</h3>
-          <div id="lobby" style="font-size:13px; max-height:120px; overflow:auto;"></div>
-        </div>
-        <div id="daily-section">
-          <h3 style="margin:0 0 8px; font-size:14px; color:var(--muted)">Daily Leaderboard</h3>
-          <div id="daily" style="font-size:13px; max-height:120px; overflow:auto;"></div>
-        </div>
-      </div>
-    </section>
-
-    <div id="postgame" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%,-50%); background:var(--card); border:2px solid var(--gold); border-radius:20px; padding:40px; text-align:center; box-shadow:0 20px 60px rgba(0,0,0,.8); z-index:1000">
-      <h2 style="margin-top:0; font-size:24px">Battle Complete!</h2>
-      <div id="winner" style="font-size:18px; margin:16px 0; color:var(--gold)"></div>
-      <button onclick="location.reload()">New Battle</button>
+  <div class="container">
+    <h1>Warhammer 40,000 Duel Arena</h1>
+    
+    <div class="status" id="status">Connecting...</div>
+    
+    <div class="lobby" id="lobby">
+      <h2>Join Game</h2>
+      <input type="text" id="playerName" placeholder="Your name" value="Player">
+      <select id="factionSelect"><option>Loading...</option></select>
+      <select id="unitSelect"><option>Select faction first</option></select>
+      <button onclick="joinGame()">Join Lobby</button>
     </div>
-  </main>
+    
+    <div class="game-area" id="gameArea" style="display:none;">
+      <div class="player-panel">
+        <h3 id="p1-name">Player 1</h3>
+        <div id="p1-info"></div>
+        <button id="btn-attack" onclick="startCombat()" style="display:none;">Start Combat</button>
+      </div>
+      <div class="player-panel">
+        <h3 id="p2-name">Player 2</h3>
+        <div id="p2-info"></div>
+      </div>
+      <div class="combat-log" id="combatLog"></div>
+    </div>
+    
+    <div class="postgame" id="postgame">
+      <h2>Game Over!</h2>
+      <div id="winner"></div>
+      <button onclick="location.reload()">Play Again</button>
+    </div>
+  </div>
 
   <script>
     let ws = null;
     let gameState = null;
-    let playerData = { name: '', faction: '', unit: '', weapons: [] };
 
     function connect() {
       const protocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
       ws = new WebSocket(protocol + '//' + location.host + '/ws');
       
       ws.onopen = () => {
-        setStatus('Connected');
+        document.getElementById('status').textContent = 'Connected - Loading factions...';
         loadFactions();
       };
       
@@ -751,27 +676,24 @@ Combat is fully automated - just watch the battle unfold!</div>
       };
       
       ws.onclose = () => {
-        setStatus('Disconnected');
+        document.getElementById('status').textContent = 'Disconnected';
         setTimeout(connect, 1000);
       };
-    }
-
-    function setStatus(text) {
-      document.getElementById('status').textContent = text;
     }
 
     async function loadFactions() {
       try {
         const response = await fetch('/api/factions');
         const factions = await response.json();
-        const select = document.getElementById('faction');
+        const select = document.getElementById('factionSelect');
         select.innerHTML = '<option value="">Select Faction</option>';
         factions.forEach(faction => {
           select.innerHTML += '<option value="' + faction + '">' + faction + '</option>';
         });
-        setStatus('Ready');
+        document.getElementById('lobby').style.display = 'block';
+        document.getElementById('status').textContent = 'Ready to join game';
       } catch (err) {
-        setStatus('Failed to load factions');
+        document.getElementById('status').textContent = 'Failed to load factions';
       }
     }
 
@@ -780,141 +702,81 @@ Combat is fully automated - just watch the battle unfold!</div>
       try {
         const response = await fetch('/api/units?faction=' + encodeURIComponent(faction));
         const units = await response.json();
-        const select = document.getElementById('unit');
+        const select = document.getElementById('unitSelect');
         select.innerHTML = '<option value="">Select Unit</option>';
         units.forEach(unit => {
-          select.innerHTML += '<option value="' + unit.Name + '">' + unit.Name + ' (' + unit.Points + ' pts)</option>';
+          select.innerHTML += '<option value="' + unit.Name + '">' + unit.Name + '</option>';
         });
-        updateWeaponList(units[0]?.Weapons || []);
       } catch (err) {
         console.error('Failed to load units:', err);
       }
     }
 
-    function updateWeaponList(weapons) {
-      const container = document.getElementById('weaponList');
-      container.innerHTML = '';
-      weapons.forEach((weapon, i) => {
-        const label = document.createElement('label');
-        label.innerHTML = '<input type="checkbox" value="' + weapon.name + '" ' + (i === 0 ? 'checked' : '') + '> ' + weapon.name + ' (R:' + weapon.range + ' A:' + weapon.attacks + ' S:' + weapon.s + ' AP:' + weapon.ap + ' D:' + weapon.d + ')';
-        container.appendChild(label);
-      });
-    }
-
-    function ready() {
+    function joinGame() {
       const name = document.getElementById('playerName').value || 'Player';
-      const faction = document.getElementById('faction').value;
-      const unit = document.getElementById('unit').value;
+      const faction = document.getElementById('factionSelect').value;
+      const unit = document.getElementById('unitSelect').value;
       
       if (!faction || !unit) {
         alert('Please select faction and unit');
         return;
       }
 
-      const weapons = Array.from(document.querySelectorAll('#weaponList input:checked')).map(cb => cb.value);
-      
-      playerData = { name, faction, unit, weapons };
-
       ws.send(JSON.stringify({
         type: 'join',
         data: {
           name: name,
-          loadout: { faction: faction, unit: unit, weapons: weapons }
+          loadout: { faction: faction, unit: unit }
         }
       }));
       
-      document.getElementById('setup').style.display = 'none';
-      setStatus('Waiting for opponent...');
+      document.getElementById('lobby').style.display = 'none';
+      document.getElementById('status').textContent = 'Waiting for opponent...';
     }
 
     function handleGameState(state) {
       gameState = state;
       
+      // Show game area
+      document.getElementById('gameArea').style.display = 'grid';
+      document.getElementById('lobby').style.display = 'none';
+      
       // Update player info
       if (state.p1) {
-        document.getElementById('p1name').textContent = state.p1.name;
-        document.getElementById('p1unitname').textContent = state.p1.unit;
-        document.getElementById('p1factionname').textContent = state.p1.faction;
-        document.getElementById('p1w').textContent = state.p1.wounds;
-        document.getElementById('p1wmax').textContent = state.p1.wounds; // simplified
-        const p1hp = Math.max(0, state.p1.wounds) / 10 * 100; // simplified calculation
-        document.getElementById('p1hpfill').style.width = p1hp + '%';
+        document.getElementById('p1-name').textContent = state.p1.name;
+        document.getElementById('p1-info').innerHTML = 
+          state.p1.faction + ' - ' + state.p1.unit + '<br>Wounds: ' + state.p1.wounds;
       }
       
       if (state.p2) {
-        document.getElementById('p2name').textContent = state.p2.name;
-        document.getElementById('p2unitname').textContent = state.p2.unit;
-        document.getElementById('p2factionname').textContent = state.p2.faction;
-        document.getElementById('p2w').textContent = state.p2.wounds;
-        document.getElementById('p2wmax').textContent = state.p2.wounds; // simplified
-        const p2hp = Math.max(0, state.p2.wounds) / 10 * 100; // simplified calculation
-        document.getElementById('p2hpfill').style.width = p2hp + '%';
+        document.getElementById('p2-name').textContent = state.p2.name;
+        document.getElementById('p2-info').innerHTML = 
+          state.p2.faction + ' - ' + state.p2.unit + '<br>Wounds: ' + state.p2.wounds;
       }
       
-      // Update status and controls
+      // Update status
       if (state.winner) {
-        setStatus(state.winner + ' wins!');
+        document.getElementById('status').textContent = state.winner + ' wins!';
         document.getElementById('postgame').style.display = 'block';
         document.getElementById('winner').textContent = state.winner + ' is victorious!';
-        document.getElementById('currentWeaponPanel').style.display = 'none';
-        document.getElementById('btn-attack').style.display = 'none';
       } else if (state.currentWeapon) {
-        setStatus('Combat in progress...');
-        document.getElementById('currentWeaponPanel').style.display = 'block';
-        document.getElementById('cwWeapon').textContent = state.currentWeapon;
+        document.getElementById('status').textContent = 'Combat in progress...';
         document.getElementById('btn-attack').style.display = 'none';
       } else {
-        setStatus('Turn ' + state.turn);
-        document.getElementById('currentWeaponPanel').style.display = 'none';
+        document.getElementById('status').textContent = 'Turn ' + state.turn;
         document.getElementById('btn-attack').style.display = 'block';
-      }
-
-      // Update log
-      const log = document.getElementById('log');
-      if (state.p1 && state.p2) {
-        log.textContent = 'Battle in progress!\n\n' + 
-          state.p1.name + ' (' + state.p1.faction + ' ' + state.p1.unit + ') vs\n' +
-          state.p2.name + ' (' + state.p2.faction + ' ' + state.p2.unit + ')' +
-          '\n\nTurn ' + state.turn + (state.winner ? '\n\n' + state.winner + ' wins!' : '');
       }
     }
 
-    function attack() {
-      // Combat is automatic, this just triggers it
+    function startCombat() {
+      // Combat is now automatic, this button just triggers the start
       document.getElementById('btn-attack').style.display = 'none';
     }
 
     // Event listeners
-    document.getElementById('faction').addEventListener('change', (e) => {
+    document.getElementById('factionSelect').addEventListener('change', (e) => {
       loadUnits(e.target.value);
-      document.getElementById('btn-ready').disabled = !e.target.value;
     });
-
-    document.getElementById('unit').addEventListener('change', (e) => {
-      document.getElementById('btn-ready').disabled = !e.target.value;
-    });
-
-    // Load lobby and daily stats periodically
-    setInterval(async () => {
-      try {
-        const [lobbyResp, dailyResp] = await Promise.all([
-          fetch('/api/lobby'),
-          fetch('/api/leaderboard/daily')
-        ]);
-        const lobby = await lobbyResp.json();
-        const daily = await dailyResp.json();
-        
-        document.getElementById('lobby').innerHTML = lobby.map(p => 
-          p.name + ' (' + p.faction + ' ' + p.unit + ')'
-        ).join('<br>') || 'No players waiting';
-        
-        document.getElementById('daily').innerHTML = 
-          'Top Damage: ' + (daily.top_damage?.damage || 0) + '<br>' +
-          'Worst Save: ' + (daily.worst_save?.roll || 'None');
-      } catch (err) {
-        // Silently fail
-      }
-    }, 3000);
 
     // Initialize
     connect();

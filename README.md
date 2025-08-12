@@ -122,7 +122,7 @@ go build -ldflags "-X main.buildVersion=v1.0.0 -X main.buildTime=$(date -u +%Y%m
 ### Local Docker
 ```bash
 # Build images
-docker build -f Dockerfile.api -t w40k-api .
+docker build -f Dockerfile.api -t w40k-duel .
 docker build -f Dockerfile.game -t w40k-game .
 
 # Run with docker-compose

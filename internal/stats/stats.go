@@ -1,8 +1,8 @@
 package stats
 
 import (
-    "sync"
-    "time"
+	"sync"
+	"time"
 )
 
 // UserStats stores statistics for each user (in-memory for demo)

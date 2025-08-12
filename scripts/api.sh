@@ -9,7 +9,7 @@ BIN_DIR="$ROOT_DIR/bin"
 LOG_DIR="$ROOT_DIR/logs"
 TMP_DIR="$ROOT_DIR/tmp"
 MATCH_DIR_DEFAULT="$TMP_DIR/matches"
-BIN="$BIN_DIR/w40k-api"
+BIN="$BIN_DIR/w40k-duel"
 PID_FILE="$TMP_DIR/api.pid"
 PORT="${API_PORT:-8080}"
 

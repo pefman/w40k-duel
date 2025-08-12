@@ -11,6 +11,7 @@ WORKDIR /srv
 # Copy only needed assets (src CSVs) and binary
 COPY --from=build /out/w40k-api /usr/local/bin/w40k-api
 COPY src ./src
+COPY public ./public
 ENV PORT=8080
 EXPOSE 8080
 CMD ["/usr/local/bin/w40k-api"]

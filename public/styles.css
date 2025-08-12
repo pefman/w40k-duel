@@ -99,7 +99,29 @@ h1, h2{ color: var(--wr-gold-2); }
 }
 
 /* Badges / labels */
-.badge.text-bg-secondary{ background-color: #223046 !important; color: var(--wr-muted) !important; border: 1px solid var(--wr-border); }
+.badge.text-bg-secondary{
+  background-color: #192536 !important;
+  color: var(--wr-gold-2) !important;
+  border: 1px solid var(--wr-border) !important;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .02em;
+}
+
+/* Lobby list readability */
+#lobbyList .card.bg-dark{
+  transition: border-color .15s ease, background-color .15s ease;
+}
+#lobbyList .card.bg-dark:hover{
+  border-color: var(--wr-gold-2) !important;
+  background-color: #111824 !important;
+}
+#lobbyList .card-body{
+  align-items: center;
+}
+#lobbyList .fw-semibold{
+  color: var(--wr-text);
+}
 
 /* Canvas wrapper */
 #gameWindow{ overflow: hidden; }
@@ -110,6 +132,15 @@ h1, h2{ color: var(--wr-gold-2); }
   border-color: var(--wr-border) !important;
   color: var(--wr-muted) !important;
 }
+
+/* Weapon selection styling */
+.weapon-option{ padding: .5rem .75rem; border: 1px solid var(--wr-border); border-radius: .5rem; background: #0f141b; }
+.weapon-option .wo-name{ color: var(--wr-text); font-weight: 600; }
+.weapon-option .wo-stats{ color: var(--wr-muted-2); font-size: .9rem; }
+.weapon-option .wo-abilities{ color: var(--wr-gold-2); font-size: .9rem; }
+.weapon-option .wo-desc{ color: var(--wr-muted-2); font-size: .85rem; margin-top: .15rem; }
+.weapon-option .form-check-input{ margin-top: .35rem; }
+.weapon-option:hover{ background: #101822; border-color: var(--wr-gold-2); }
 
 /* Utility spacing tweaks */
 .g-2>.col, .g-3>.col{ padding-top: .25rem; }

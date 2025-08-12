@@ -8,6 +8,7 @@ ROOT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)
 BIN_DIR="$ROOT_DIR/bin"
 LOG_DIR="$ROOT_DIR/logs"
 TMP_DIR="$ROOT_DIR/tmp"
+MATCH_DIR_DEFAULT="$TMP_DIR/matches"
 BIN="$BIN_DIR/w40k-api"
 PID_FILE="$TMP_DIR/api.pid"
 PORT="${API_PORT:-8080}"
@@ -74,7 +75,10 @@ cmd_start() {
     cmd_build
   fi
   echo "Starting API on :$PORT ..."
-  (cd "$ROOT_DIR"; nohup env API_PORT="$PORT" "$BIN" >"$LOG_DIR/api.log" 2>&1 & echo $! >"$PID_FILE")
+  # Enable local match persistence for debugging unless explicitly disabled
+  : "${MATCH_LOG_DIR:=$MATCH_DIR_DEFAULT}"
+  mkdir -p "$MATCH_LOG_DIR"
+  (cd "$ROOT_DIR"; nohup env API_PORT="$PORT" MATCH_LOG_DIR="$MATCH_LOG_DIR" "$BIN" >"$LOG_DIR/api.log" 2>&1 & echo $! >"$PID_FILE")
   sleep 0.5
   cmd_status || { echo "Failed to start. See $LOG_DIR/api.log"; exit 1; }
 }

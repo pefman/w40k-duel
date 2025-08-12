@@ -56,9 +56,22 @@
       </div>
     </div>
 
+    <!-- Weapon Selection (appears after unit selection) -->
+    <div class="row mb-3 d-none" id="weaponSelectRow">
+      <div class="col-12">
+        <div class="stats-box p-3">
+          <div class="d-flex align-items-center justify-content-between mb-2">
+            <h2 class="h6 text-warning m-0">Weapon Selection</h2>
+            <div class="text-secondary small" id="weaponSelectSummary">—</div>
+          </div>
+          <div id="weaponSelectBox" class="row g-2"></div>
+        </div>
+      </div>
+    </div>
+
     <div class="row mb-3">
       <div class="col-12">
-        <div class="game-window-BOX_gw_ game-surface p-2" id="gameWindow">
+        <div class="game-window-BOX_gw_ game-surface p-2 d-none" id="gameWindow">
           <canvas id="gameCanvas" class="w-100" style="display:block; width: 100%; height: auto; aspect-ratio: 16/9; background:#0a0c10;"></canvas>
         </div>
       </div>
@@ -82,6 +95,19 @@
       </div>
     </div>
 
+  <!-- Lobby Panel (moved above Statistics) -->
+  <div class="row mt-3 mb-4">
+      <div class="col-12">
+        <div class="stats-box p-3" id="lobbyBox">
+          <div class="d-flex align-items-center justify-content-between mb-2">
+            <h2 class="h6 text-warning m-0">Lobby</h2>
+            
+          </div>
+          <div id="lobbyList" class="row g-2"></div>
+        </div>
+      </div>
+    </div>
+
   <!-- Bottom Stats -->
   <div class="row">
       <div class="col-12">
@@ -91,8 +117,8 @@
             <div class="col-12 col-md-6">
               <div class="card bg-dark border-secondary high-dmg-BOX_hd_">
                 <div class="card-body py-3">
-                  <div class="text-secondary small">Highest Damage Attack</div>
-                  <div id="statTopDamage" class="fw-bold fs-5">—</div>
+                  <div class="text-secondary small">Highest Damage Attack (single volley)</div>
+                  <div id="statTopDamageDetails" class="small text-secondary">—</div>
                 </div>
               </div>
             </div>
@@ -111,25 +137,78 @@
         </div>
       </div>
     </div>
-
-    <!-- Lobby Panel -->
-    <div class="row mt-3">
-      <div class="col-12">
-        <div class="stats-box p-3" id="lobbyBox">
-          <div class="d-flex align-items-center justify-content-between mb-2">
-            <h2 class="h6 text-warning m-0">Lobby</h2>
-            <small class="text-secondary">Players online with phase</small>
-          </div>
-          <div id="lobbyList" class="row g-2"></div>
-        </div>
-      </div>
-    </div>
   </main>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script>
+var stats = {};
+  // Restore statistics from server (fallback to localStorage)
+  async function restoreStatistics() {
+  const statTopDamage = null; // removed big number
+    const statBestSave = document.getElementById('statBestSave');
+    const statWorstSave = document.getElementById('statWorstSave');
+    const statTopDamageDetails = document.getElementById('statTopDamageDetails');
+    const username = sessionStorage.getItem('username') || 'Anonymous';
+    let usedGlobal = false;
+  // Try to load today's global max attack first
+    try {
+      const g = await fetch('/api/stats/max-attack/today').then(r=> r.ok ? r.json() : null).catch(()=>null);
+      if (g && g.username && g.weapon) {
+    const dmg = g.damage || 0;
+    const wnd = g.wounds || 0;
+  // big number removed
+    if (statTopDamageDetails) statTopDamageDetails.textContent = `${g.username}: ${g.unit} - ${g.weapon} ${dmg} damage (${wnd} wounds)`;
+        usedGlobal = true;
+      }
+    } catch {}
+    try {
+      const s = await fetch(`/api/stats/get?username=${encodeURIComponent(username)}`).then(r=>r.json());
+      stats = s || {};
+    } catch {
+      stats = JSON.parse(localStorage.getItem('w40kduel_stats') || '{}');
+    }
+  // big number removed
+    if (statBestSave && stats.bestSave !== undefined) statBestSave.textContent = stats.bestSave;
+    if (statWorstSave && stats.worstSave !== undefined) statWorstSave.textContent = stats.worstSave;
+  if (!usedGlobal && statTopDamageDetails && stats.topDamageDetails !== undefined) statTopDamageDetails.textContent = stats.topDamageDetails;
+  // Also fetch biggest per-user attack from server and display if present
+    try {
+      if (!usedGlobal) {
+        const ma = await fetch(`/api/stats/max-attack?username=${encodeURIComponent(username)}`).then(r=>r.json());
+        if (ma && ma.username) {
+      const dmg = ma.damage || 0;
+      const wnd = ma.wounds || 0;
+      const det = `${ma.username}: ${ma.unit} - ${ma.weapon} ${dmg} damage (${wnd} wounds)`;
+      if (statTopDamageDetails) statTopDamageDetails.textContent = det;
+          // big number removed
+        }
+      }
+    } catch {}
+    let statsBoxRestore = document.getElementById('statsBox');
+    if (statsBoxRestore) statsBoxRestore.classList.remove('d-none');
+  }
+  restoreStatistics();
   // Demo: set names via query params ?user=... (player removed)
   const params = new URLSearchParams(location.search);
+
+  // Randomize top-bar app name from provided list (new each refresh)
+  (function(){
+    const names = [
+      'Grimdark Slapfight 9000 – because the galaxy needed more petty violence.',
+      'Bolter & Banter – competitive shooting and trash talking.',
+      'Chainswords at Dawn – the most civilized way to settle things in the 41st millennium.',
+      'The Emperor’s Smackdown – sanctioned by His Holy Fist™.',
+      'Pew Pew Heresy – for when you’re not quite excommunicate traitoris yet.',
+      'Spiky Pauldrons of Destiny – the real source of power in 40K.',
+      'Rogal Dorn’s Slap Chop – build it, fortify it, then chop it.',
+      'Lasgun Legends: Missing Every Shot Since M2 – accuracy optional.'
+    ];
+    const chosen = names[Math.floor(Math.random() * names.length)];
+    const headerEl = document.querySelector('header.banner h1');
+    if (headerEl) headerEl.textContent = chosen;
+    // Also set the browser tab title
+    try { document.title = chosen; } catch {}
+  })();
 
   const usernameDisplay = document.getElementById('userName');
   const usernameInput = document.getElementById('usernameInput');
@@ -213,6 +292,172 @@
       loadUnitsForFaction(fid);
     });
 
+    // Show/update weapon selection when a unit is chosen
+    const weaponSelectRow = document.getElementById('weaponSelectRow');
+    const weaponSelectBox = document.getElementById('weaponSelectBox');
+    const weaponSelectSummary = document.getElementById('weaponSelectSummary');
+  const weaponCatalog = { ranged: [], melee: [] };
+  const weaponSelection = { ranged: new Set(), melee: null };
+
+    function renderWeaponSelection(){
+      if (!weaponSelectBox) return;
+      const type = getWeaponType();
+      const items = type === 'melee' ? weaponCatalog.melee : weaponCatalog.ranged;
+      const isMelee = type === 'melee';
+      const selCount = isMelee ? (weaponSelection.melee ? 1 : 0) : weaponSelection.ranged.size;
+  const capTxt = isMelee ? 'select 1' : 'select any';
+      if (weaponSelectSummary) weaponSelectSummary.textContent = `${type.toUpperCase()} — ${selCount} selected (${capTxt})`;
+
+      // Group weapons by base name (e.g., Plasma Gun) and show modes as radio buttons
+      const groupByBase = {};
+      items.forEach((w,i)=>{
+        // Extract base name and mode
+        const m = w.name.match(/^(.*?)(?: \((.*?)\))?$/);
+        const base = m ? m[1].trim() : w.name;
+        const mode = m && m[2] ? m[2].trim() : 'Standard';
+        if (!groupByBase[base]) groupByBase[base] = [];
+        groupByBase[base].push({...w, mode, idx: i});
+      });
+      const controls = Object.entries(groupByBase).map(([base, arr])=>{
+        // If only one mode, render as before
+        if (arr.length === 1) {
+          const w = arr[0];
+          const id = `wp_${type}_${w.idx}`;
+          const ab = (Array.isArray(w.abilities) && w.abilities.length) ? `[${w.abilities.join(', ')}]` : '';
+          const rangeTxt = (w.range && w.range.toLowerCase()!=='melee') ? ` | ${w.range}` : '';
+          const descRaw = (w.desc||'').trim().replace(/\s+/g,' ');
+          const descTxt = cleanDescriptionAgainstAbilities(descRaw, w.abilities||[]);
+          const defaultLabel = w.isStandard ? '<span class="wo-default text-primary ms-2" style="font-weight:600;">(default)</span>' : '';
+          const body = `
+            <div class="weapon-option">
+              <div class="d-flex gap-2 align-items-start">
+                <input class="form-check-input mt-1" type="${isMelee?'radio':'checkbox'}" ${isMelee? 'name="meleeWpn"':''} id="${id}" data-name="${encodeURIComponent(w.name)}" ${isMelee ? (weaponSelection.melee===w.name?'checked':'') : (weaponSelection.ranged.has(w.name)?'checked':'')}>
+                <label class="form-check-label w-100" for="${id}">
+                  <div class="wo-name">${w.name} ${ab? `<span class="wo-abilities">${ab}</span>`:''} ${defaultLabel}</div>
+                  <div class="wo-stats">A ${w.attacks} | Skill ${w.skill}+ | S ${w.strength} | AP ${w.ap} | D ${w.damage}${rangeTxt}</div>
+                  ${descTxt ? `<div class="wo-desc">${descTxt}</div>`:''}
+                </label>
+              </div>
+            </div>`;
+          return `<div class="col-12 col-md-6">${body}</div>`;
+        }
+        // Multiple modes: render radio group
+        const radioName = `wpgrp_${type}_${base.replace(/\W/g,'_')}`;
+        const radios = arr.map(w=>{
+          const id = `wp_${type}_${w.idx}`;
+          const ab = (Array.isArray(w.abilities) && w.abilities.length) ? `[${w.abilities.join(', ')}]` : '';
+          const rangeTxt = (w.range && w.range.toLowerCase()!=='melee') ? ` | ${w.range}` : '';
+          const descRaw = (w.desc||'').trim().replace(/\s+/g,' ');
+          const descTxt = cleanDescriptionAgainstAbilities(descRaw, w.abilities||[]);
+          const defaultLabel = w.isStandard && w.mode==='Standard' ? '<span class="wo-default text-primary ms-2" style="font-weight:600;">(default)</span>' : '';
+          const checked = isMelee ? (weaponSelection.melee===w.name?'checked':'') : (weaponSelection.ranged.has(w.name)?'checked':'');
+          return `<div class="weapon-option">
+            <div class="d-flex gap-2 align-items-start">
+              <input class="form-check-input mt-1" type="radio" name="${radioName}" id="${id}" data-name="${encodeURIComponent(w.name)}" ${checked}>
+              <label class="form-check-label w-100" for="${id}">
+                <div class="wo-name">${base} <span class="wo-mode text-info ms-1">(${w.mode})</span> ${ab? `<span class="wo-abilities">${ab}</span>`:''} ${defaultLabel}</div>
+                <div class="wo-stats">A ${w.attacks} | Skill ${w.skill}+ | S ${w.strength} | AP ${w.ap} | D ${w.damage}${rangeTxt}</div>
+                ${descTxt ? `<div class="wo-desc">${descTxt}</div>`:''}
+              </label>
+            </div>
+          </div>`;
+        }).join('');
+        return `<div class="col-12 col-md-6"><div class="wo-group">${radios}</div></div>`;
+      }).join('');
+      weaponSelectBox.innerHTML = controls || '<div class="col-12 text-secondary">No weapons found for this type.</div>';
+
+      // Bind change handlers
+      const inputs = weaponSelectBox.querySelectorAll('input.form-check-input');
+      inputs.forEach(inp => {
+        inp.addEventListener('change', (ev)=>{
+          const nm = decodeURIComponent(ev.target.getAttribute('data-name')||'');
+          if (!nm) return;
+          // Find base name for grouping
+          const label = inp.closest('.wo-group')?.querySelector('.wo-name')?.textContent || inp.closest('.weapon-option')?.querySelector('.wo-name')?.textContent || '';
+          const baseMatch = label.match(/^(.*?)(?:\s*\(|$)/);
+          const base = baseMatch ? baseMatch[1].trim() : nm;
+          if (isMelee) {
+            weaponSelection.melee = nm;
+          } else {
+            // Remove all modes of this base from selection
+            Object.keys(groupByBase).forEach(b=>{
+              if (b===base) {
+                groupByBase[b].forEach(w=> weaponSelection.ranged.delete(w.name));
+              }
+            });
+            weaponSelection.ranged.add(nm);
+          }
+          renderWeaponSelection();
+        });
+      });
+    }
+
+    async function populateWeaponSelection(fid, uid){
+      if (!fid || !uid) { if (weaponSelectRow) weaponSelectRow.classList.add('d-none'); return; }
+      try {
+        const [all, options] = await Promise.all([
+          pickAnyWeapons(fid, uid),
+          fetch(`/api/${encodeURIComponent(fid)}/${encodeURIComponent(uid)}/options`).then(r=>r.json()).catch(()=>[])
+        ]);
+        // Compute default flags from options: keep bases default, mark replacements/add-ons non-default
+        const computeDefaultFlags = (weps, opts)=>{
+          const norm = (s)=> String(s||'').toLowerCase().replace(/[–—]/g,'-').replace(/\s+/g,' ').trim();
+          const baseNameOf = (n)=> norm(String(n||'').split(/\s[–—-]\s/)[0]);
+          const pluralize = (b)=> b.endsWith('s') ? b : `${b}s`;
+          const text = norm((Array.isArray(opts)? opts:[]).map(o=> (o.description||o.Description||'')).join(' \n '));
+          const names = weps.map(w=> w.name);
+          const bases = names.map(n=> baseNameOf(n));
+          const plurals = bases.map(b=> pluralize(b));
+          const flags = new Map(names.map(n=> [n, true]));
+          // Replacement phrases: "replace(d) ... with ..." — bases stay default, replacements become non-default
+          const replRe = /(replace(?:d)?)[\s\S]*? with [\s\S]*?(?:\.|\n|$)/g;
+          let m;
+          while ((m = replRe.exec(text))){
+            const seg = m[0];
+            const wi = seg.indexOf(' with ');
+            if (wi < 0) continue;
+            const left = seg.slice(0, wi);
+            const right = seg.slice(wi + 6);
+            for (let i=0;i<names.length;i++){
+              const b = bases[i]; const p = plurals[i];
+              if (left.includes(b) || left.includes(p)) flags.set(names[i], true);
+              if (right.includes(b) || right.includes(p)) flags.set(names[i], false);
+            }
+          }
+          // Equipment additions: mark those as non-default
+          const equipRe = /(equipped with|can be equipped with|can be equipped|can be given)[\s\S]*?(?:\.|\n|$)/g;
+          while ((m = equipRe.exec(text))){
+            const seg = m[0];
+            for (let i=0;i<names.length;i++){
+              const b = bases[i]; const p = plurals[i];
+              if (seg.includes(b) || seg.includes(p)) flags.set(names[i], false);
+            }
+          }
+          return flags;
+        };
+        const flags = computeDefaultFlags(all, options);
+        all.forEach(w => { w.isStandard = !!flags.get(w.name); });
+        weaponCatalog.ranged = all.filter(w=> w.type==='ranged');
+        weaponCatalog.melee = all.filter(w=> w.type==='melee');
+        // Pre-check standard weapons
+        weaponSelection.ranged = new Set(weaponCatalog.ranged.filter(w=>w.isStandard).map(w=>w.name));
+        weaponSelection.melee = weaponCatalog.melee.find(w=>w.isStandard)?.name || null;
+        if (weaponSelectRow) weaponSelectRow.classList.remove('d-none');
+        renderWeaponSelection();
+      } catch {
+        if (weaponSelectRow) weaponSelectRow.classList.add('d-none');
+      }
+    }
+
+    unitSelect.addEventListener('change', (e)=>{
+      const fid = factionSelect.value;
+      const uid = e.target.value;
+      populateWeaponSelection(fid, uid);
+    });
+
+    document.getElementById('wtRanged').addEventListener('change', ()=> renderWeaponSelection());
+    document.getElementById('wtMelee').addEventListener('change', ()=> renderWeaponSelection());
+
     // Read selected weapon type
     function getWeaponType(){
       return document.getElementById('wtMelee').checked ? 'melee' : 'ranged';
@@ -232,6 +477,10 @@
     const canvas = document.getElementById('gameCanvas');
     const ctx = canvas.getContext('2d');
   const sleep = (ms)=> new Promise(r=> setTimeout(r, ms));
+    const gameWindowEl = document.getElementById('gameWindow');
+    let hasFightStarted = false;
+    function showFightSurface(){ gameWindowEl?.classList.remove('d-none'); }
+    function hideFightSurface(){ if (!hasFightStarted) gameWindowEl?.classList.add('d-none'); }
     // Text log helpers
     const logRow = document.getElementById('logRow');
     const textLogEl = document.getElementById('textLog');
@@ -292,6 +541,8 @@
     }
     window.addEventListener('resize', resizeCanvas);
     setTimeout(resizeCanvas, 0);
+  // Hide canvas by default until a fight starts
+  hideFightSurface();
 
     // Data helpers
     const numFrom = (s)=>{
@@ -311,13 +562,28 @@
     async function getUnitDetail(fid, uid){
       // unit basic
       let name = 'Unit';
+      let points = null;
       try {
         const u = await fetch(`/api/${encodeURIComponent(fid)}/${encodeURIComponent(uid)}`).then(r=>r.json());
         name = u.name || u.Name || name;
+        const p = (u.points ?? u.Points);
+        if (p !== undefined && p !== null && String(p).trim() !== '') {
+          const n = parseInt(String(p), 10);
+          if (!isNaN(n)) points = n;
+        }
       } catch {}
       if (name === 'Unit') {
         const opt = Array.from(unitSelect.options).find(o=> o.value==uid);
         if (opt) name = opt.textContent.replace(/\s*\(T .*?\)\s*$/, '').trim() || name;
+      }
+      // points fallback from the selected option (works for the player's unit)
+      if (points === null) {
+        const opt = Array.from(unitSelect.options).find(o=> o.value==uid);
+        if (opt) {
+          const pv = opt.getAttribute('data-points') || '';
+          const n = parseInt(pv, 10);
+          if (!isNaN(n)) points = n;
+        }
       }
       // stats
       const stats = await getUnitStats(fid, uid);
@@ -325,13 +591,19 @@
       let abilities = [];
       try {
         const list = await fetch(`/api/${encodeURIComponent(fid)}/${encodeURIComponent(uid)}/abilities`).then(r=>r.json());
-        abilities = (list||[]).map(a=> a.name || a.Name).filter(Boolean);
+        abilities = Array.isArray(list) ? list.map(a=> a.name || a.Name).filter(Boolean) : [];
+      } catch {}
+      // keywords
+      let keywords = [];
+      try {
+        const list = await fetch(`/api/${encodeURIComponent(fid)}/${encodeURIComponent(uid)}/keywords`).then(r=>r.json());
+        keywords = Array.isArray(list) ? list.map(k=> k.keyword || k.Keyword).filter(Boolean) : [];
       } catch {}
       // weapons: include stats for display as text
       let melee = [], ranged = [];
       try {
         const list = await fetch(`/api/${encodeURIComponent(fid)}/${encodeURIComponent(uid)}/weapons`).then(r=>r.json());
-        (list||[]).forEach(w=>{
+        (Array.isArray(list) ? list : []).forEach(w=>{
           const item = {
             name: w.name || w.Name,
             desc: (w.description || w.Description || '').toString(),
@@ -344,14 +616,81 @@
           if (String(w.range).toLowerCase()==='melee') melee.push(item); else ranged.push(item);
         });
       } catch {}
-      return { name, stats, abilities, weapons: { melee, ranged } };
+  return { name, points, stats, abilities, keywords, weapons: { melee, ranged } };
     }
+    // Extract common weapon abilities from description
+    function parseWeaponAbilities(desc){
+      const d = String(desc||'').toLowerCase();
+      const out = [];
+      if (/torrent/.test(d)) out.push('Torrent');
+      // Sustained Hits N (any number)
+      const sh = d.match(/sustained\s*hits\s*(\d+)/);
+      if (sh) out.push(`Sustained Hits ${sh[1]}`);
+      if (/lethal\s*hits/.test(d)) out.push('Lethal Hits');
+      if (/twin[-\s]?linked/.test(d)) out.push('Twin-linked');
+      if (/devastating\s*wounds/.test(d)) out.push('Devastating Wounds');
+      if (/heavy/.test(d)) out.push('Heavy');
+      if (/blast/.test(d)) out.push('Blast');
+      if (/indirect\s*fire/.test(d)) out.push('Indirect Fire');
+      if (/ignores\s*cover/.test(d)) out.push('Ignores Cover');
+      if (/assault/.test(d)) out.push('Assault');
+      if (/pistol/.test(d)) out.push('Pistol');
+      const rf = d.match(/rapid\s*fire\s*(\d+)/);
+      if (rf) out.push(`Rapid Fire ${rf[1]}`); else if (/rapid\s*fire/.test(d)) out.push('Rapid Fire');
+      const mel = d.match(/melta\s*(\d+)/);
+      if (mel) out.push(`Melta ${mel[1]}`); else if (/melta/.test(d)) out.push('Melta');
+      if (/grenade/.test(d)) out.push('Grenade');
+      if (/hazardous/.test(d)) out.push('Hazardous');
+      // Anti-<Type> X+
+      const antiRe = /anti-([a-z \-]+)\s*(\d)\+/g;
+      let m;
+      while ((m = antiRe.exec(d)) !== null) {
+        const kw = (m[1]||'').trim().replace(/\s+/g,' ');
+        const tn = m[2];
+        if (kw && tn) out.push(`Anti-${kw} ${tn}+`);
+      }
+      return out;
+    }
+    // Remove description tokens that duplicate abilities already shown in brackets
+    function cleanDescriptionAgainstAbilities(desc, abilities){
+      const raw = String(desc||'');
+      if (!raw.trim()) return '';
+      const normalize = (s)=> s.toLowerCase()
+        .replace(/[+]/g,'')
+        .replace(/[^a-z0-9 \-]/g,'')
+        .replace(/\s+/g,' ')
+        .trim();
+      const abilSet = new Set((abilities||[]).map(a=>{
+        const n = normalize(a);
+        if (n.startsWith('sustained hits')) return 'sustained hits';
+        if (n.startsWith('rapid fire')) return 'rapid fire';
+        if (n.startsWith('melta')) return 'melta';
+        if (n.startsWith('anti-') || n.startsWith('anti ')) return 'anti';
+        if (n === 'twin-linked') return 'twin linked';
+        return n;
+      }));
+      const parts = raw.split(/[;,]/).map(t=> t.trim()).filter(Boolean);
+      const kept = parts.filter(t=>{
+        const n = normalize(t);
+        if (!n) return false;
+        if (abilSet.has(n)) return false;
+        if (n.startsWith('anti') && abilSet.has('anti')) return false;
+        if ((n === 'twin linked' || n === 'twin-linked') && (abilSet.has('twin linked'))) return false;
+        if (n.startsWith('sustained hits') && abilSet.has('sustained hits')) return false;
+        if (n.startsWith('rapid fire') && abilSet.has('rapid fire')) return false;
+        if (n.startsWith('melta') && abilSet.has('melta')) return false;
+        return true;
+      });
+      return kept.join(', ');
+    }
+  // (no-op placeholder removed)
     async function pickWeapons(fid, uid, type){
       const resp = await fetch(`/api/${encodeURIComponent(fid)}/${encodeURIComponent(uid)}/weapons`);
-      const weapons = await resp.json();
-      const isMelee = type === 'melee';
-      // Range=='Melee' denotes melee; others are ranged
-      const filtered = weapons.filter(w => isMelee ? String(w.range).toLowerCase()==='melee' : String(w.range).toLowerCase()!=='melee');
+  const weapons = await resp.json();
+  const arr = Array.isArray(weapons) ? weapons : [];
+  const isMelee = type === 'melee';
+  // Range=='Melee' denotes melee; others are ranged
+  const filtered = arr.filter(w => isMelee ? String(w.range).toLowerCase()==='melee' : String(w.range).toLowerCase()!=='melee');
       if (!filtered.length) throw new Error('No weapons of selected type');
       return filtered.map(w => {
         const skill = numFrom(w.bs_ws || w.BSOrWS) || 4;
@@ -359,21 +698,28 @@
         const AP = parseInt(String(w.ap || w.AP || '0'),10) || 0;
         const attacks = String(w.attacks || w.Attacks || '1');
         const damage = String(w.damage || w.Damage || '1');
-        return { name: w.name || w.Name, type: isMelee ? 'melee' : 'ranged', attacks, skill, strength: S, ap: AP, damage };
+        const desc = (w.description || w.Description || '').toString();
+        const abilities = parseWeaponAbilities(desc);
+        const range = String(w.range || w.Range || '').toString();
+        return { name: w.name || w.Name, type: isMelee ? 'melee' : 'ranged', range, attacks, skill, strength: S, ap: AP, damage, desc, abilities };
       });
     }
 
     async function pickAnyWeapons(fid, uid){
       const resp = await fetch(`/api/${encodeURIComponent(fid)}/${encodeURIComponent(uid)}/weapons`);
-      const weapons = await resp.json();
-      return weapons.map(w => {
+  const weapons = await resp.json();
+  const arr = Array.isArray(weapons) ? weapons : [];
+  return arr.map(w => {
         const isMelee = String(w.range).toLowerCase()==='melee';
         const skill = numFrom(w.bs_ws || w.BSOrWS) || 4;
         const S = numFrom(w.strength || w.Strength) || 4;
         const AP = parseInt(String(w.ap || w.AP || '0'),10) || 0;
         const attacks = String(w.attacks || w.Attacks || '1');
         const damage = String(w.damage || w.Damage || '1');
-        return { name: w.name || w.Name, type: isMelee ? 'melee' : 'ranged', attacks, skill, strength: S, ap: AP, damage };
+        const desc = (w.description || w.Description || '').toString();
+        const abilities = parseWeaponAbilities(desc);
+        const range = String(w.range || w.Range || '').toString();
+        return { name: w.name || w.Name, type: isMelee ? 'melee' : 'ranged', range, attacks, skill, strength: S, ap: AP, damage, desc, abilities };
       });
     }
 
@@ -390,7 +736,56 @@
       }
     }
 
-  function drawFightPhase(leftDetail, rightDetail, leftW, leftWMax, rightW, rightWMax, res, title='Fight Phase — Rolls', winnerText=null){
+    // Fairer AI opponent selection by points across all factions
+    async function pickFairOpponentByPoints(myPts){
+      if (!myPts || isNaN(myPts) || myPts <= 0) return null;
+      // Ensure we have a factions list
+      let facs = Array.isArray(factions) && factions.length ? factions : [];
+      if (!facs.length) {
+        try { facs = await fetch('/api/factions').then(r=>r.json()); } catch { facs = []; }
+      }
+      if (!facs.length) return null;
+      // Fetch units for all factions in parallel
+      const settled = await Promise.allSettled(facs.map(f=> {
+        const fid = f.id || f.ID;
+        return fetch(`/api/${encodeURIComponent(fid)}/units`).then(r=>r.json()).then(list=>({ fid, list }));
+      }));
+      const entries = [];
+      for (const s of settled) {
+        if (s.status === 'fulfilled' && s.value && Array.isArray(s.value.list)) {
+          const fid = s.value.fid;
+          for (const u of s.value.list) {
+            const p = parseInt(String(u.points||u.Points||''), 10);
+            if (!isNaN(p) && p > 0) entries.push({ fid, unit: u, pts: p });
+          }
+        }
+      }
+      if (!entries.length) return null;
+      // Try tightening bands and enforce min ratio to avoid heavy mismatches
+      const bands = [0.10, 0.15, 0.20, 0.25];
+      const minRatio = 0.75; // don't go below 75% of player's points
+      const pickFrom = (arr)=>{
+        // Sort by absolute distance, then pick among top 3 randomly for variety
+        const sorted = arr.slice().sort((a,b)=> Math.abs(a.pts - myPts) - Math.abs(b.pts - myPts));
+        const top = sorted.slice(0, Math.min(3, sorted.length));
+        return top[Math.floor(Math.random()*top.length)];
+      };
+      for (const b of bands) {
+        let lo = Math.floor(myPts*(1-b));
+        const hi = Math.ceil(myPts*(1+b));
+        const minLo = Math.floor(myPts*minRatio);
+        lo = Math.max(lo, minLo);
+        const cands = entries.filter(e => e.pts >= lo && e.pts <= hi);
+        if (cands.length) return pickFrom(cands);
+      }
+      // If still none, pick nearest within broader reasonable bounds
+      const broader = entries.filter(e => e.pts >= Math.floor(myPts*minRatio) && e.pts <= Math.ceil(myPts*1.35));
+      if (broader.length) return pickFrom(broader);
+      // Fallback: absolute nearest overall
+      return pickFrom(entries);
+    }
+
+  function drawFightPhase(leftDetail, rightDetail, leftW, leftWMax, rightW, rightWMax, res, title='Combat', winnerText=null, nowCtx=null){
       resizeCanvas();
       const w = canvas.width / (window.devicePixelRatio||1);
       const h = canvas.height / (window.devicePixelRatio||1);
@@ -409,62 +804,154 @@
       ctx.fillRect(x0, top, colW[0], boxH);
       ctx.fillRect(x1, top, colW[1], boxH);
       ctx.fillRect(x2, top, colW[2], boxH);
-      // Left unit
+  // Left unit
       ctx.fillStyle = '#e5e7eb'; ctx.font='14px system-ui,sans-serif';
-      const leftName = leftDetail?.name || 'Player';
-      const rightName = rightDetail?.name || 'Opponent';
-      ctx.fillText(`Player: ${leftName}`, x0+8, top+22);
-      // Left wounds bar
-      let barX = x0+8, barY = top+34, barW = colW[0]-16, barH = 14;
-      ctx.fillStyle = '#243042'; ctx.fillRect(barX, barY, barW, barH);
-      let frac = Math.max(0, Math.min(1, (leftW||0)/(leftWMax||1)));
-      ctx.fillStyle = frac>0.5? '#2ecc71' : frac>0.25? '#f1c40f' : '#e74c3c';
-      ctx.fillRect(barX, barY, Math.floor(barW*frac), barH);
-      ctx.fillStyle = '#8aa0b8'; ctx.font='12px system-ui,sans-serif';
-      ctx.fillText(`Wounds: ${leftW}/${leftWMax}`, x0+8, barY+barH+14);
-      // Left stats and lists
-      const ls = leftDetail?.stats || {}; const lwa = leftDetail?.abilities || []; const lwr = leftDetail?.weapons?.ranged || []; const lwm = leftDetail?.weapons?.melee || [];
-  let y = barY+barH+34;
-      ctx.fillStyle = '#c9a753'; ctx.font='12px system-ui,sans-serif';
+  const leftName = leftDetail?.name || 'Player';
+  const rightName = rightDetail?.name || 'Opponent';
+  const leftPts = (()=>{ const p = leftDetail?.points; return (typeof p === 'number' && p > 0) ? p : null; })();
+  const rightPts = (()=>{ const p = rightDetail?.points; return (typeof p === 'number' && p > 0) ? p : null; })();
+  const leftLabel = `Player: ${leftName}${leftPts? ` — ${leftPts}pts` : ''}`;
+  ctx.fillText(leftLabel, x0+8, top+22);
+  // Left wounds bar
+  let barX = x0+8, barY = top+34, barW = colW[0]-16, barH = 14;
+  ctx.fillStyle = '#243042'; ctx.fillRect(barX, barY, barW, barH);
+  let frac = Math.max(0, Math.min(1, (leftW||0)/(leftWMax||1)));
+  ctx.fillStyle = frac>0.5? '#2ecc71' : frac>0.25? '#f1c40f' : '#e74c3c';
+  ctx.fillRect(barX, barY, Math.floor(barW*frac), barH);
+  ctx.fillStyle = '#8aa0b8'; ctx.font='13px system-ui,sans-serif';
+  ctx.fillText(`Wounds: ${leftW}/${leftWMax}`, x0+8, barY+barH+18);
+      // Add extra space before stats
+      let y = barY+barH+38;
+      // Responsive font sizes for mobile
+      if (typeof isMobile === 'undefined') {
+        var isMobile = window.innerWidth < 600;
+      }
+      ctx.font = isMobile ? '13px system-ui,sans-serif' : '14px system-ui,sans-serif';
+  // Declare ls, lwa, lwr, lwm, usedLeft
+  const ls = leftDetail?.stats || {};
+  const lwa = leftDetail?.abilities || [];
+  const lwr = leftDetail?.weapons?.ranged || [];
+  const lwm = leftDetail?.weapons?.melee || [];
+  const usedLeft = nowCtx?.usedLeft;
+  ctx.fillStyle = '#c9a753'; ctx.font='12px system-ui,sans-serif';
   ctx.fillText(`Stats: T ${ls.T||'-'}  Sv ${ls.Sv? ls.Sv+'+':'-'}  Inv ${ls.InvSv? ls.InvSv+'+':'-'}`, x0+8, y); y+=18;
   ctx.fillStyle = '#c9a753'; ctx.fillText('Abilities:', x0+8, y); y+=16; ctx.fillStyle = '#8aa0b8';
-  lwa.slice(0,4).forEach(a=>{ ctx.fillText(`• ${a}`, x0+12, y); y+=16; });
+  const lAbTxt = (lwa && lwa.length) ? `[${lwa.slice(0,4).join(', ')}]` : '[]';
+  ctx.fillText(lAbTxt, x0+12, y); y+=16;
   ctx.fillStyle = '#c9a753'; ctx.fillText('Weapons:', x0+8, y); y+=16; ctx.fillStyle = '#8aa0b8';
-      const lwlist = [...lwr, ...lwm].slice(0,4);
+  const lwlist = (Array.isArray(usedLeft) ? usedLeft : [...lwr, ...lwm]).slice(0,4);
       lwlist.forEach(wi=>{
         const nm = (wi.name||'Weapon');
         const statsTxt = `A ${wi.attacks||'?'} | Skill ${wi.skill||'?'} | S ${wi.strength||'?'} | AP ${wi.ap||'?'} | D ${wi.damage||'?'}`;
-        const desc = (wi.desc||'').replace(/\s+/g,' ').slice(0,40);
-  ctx.fillText(`• ${nm} — ${statsTxt}`, x0+12, y); y+=16;
-  if (desc) { ctx.fillText(`  ${desc}`, x0+20, y); y+=16; }
+        const rawDesc = (wi.desc||'').replace(/\s+/g,' ');
+        const wAbilities = Array.isArray(wi.abilities) ? wi.abilities : parseWeaponAbilities(wi.desc||'');
+        const desc = cleanDescriptionAgainstAbilities(rawDesc, wAbilities).slice(0,40);
+        // Weapon name and stats
+        const base = `• ${nm} — ${statsTxt}`;
+        ctx.fillStyle = '#8aa0b8';
+        ctx.fillText(base, x0+12, y);
+        y += 16;
+        // Abilities row (gold)
+        if (wAbilities.length) {
+          ctx.fillStyle = '#c9a753';
+          ctx.fillText(`[${wAbilities.join(', ')}]`, x0+20, y);
+          y += 16;
+        }
+        // Description row (bluish)
+        if (desc) {
+          ctx.fillStyle = '#8aa0b8';
+          ctx.fillText(`  ${desc}`, x0+20, y);
+          y += 16;
+        }
       });
-      // Right unit
+  // Right unit
       ctx.fillStyle = '#e5e7eb'; ctx.font='14px system-ui,sans-serif';
-      ctx.fillText(`Opponent: ${rightName}`, x2+8, top+22);
-      barX = x2+8; barY = top+34; barW = colW[2]-16; barH = 14;
-      ctx.fillStyle = '#243042'; ctx.fillRect(barX, barY, barW, barH);
-      frac = Math.max(0, Math.min(1, (rightW||0)/(rightWMax||1)));
-      ctx.fillStyle = frac>0.5? '#2ecc71' : frac>0.25? '#f1c40f' : '#e74c3c';
-      ctx.fillRect(barX, barY, Math.floor(barW*frac), barH);
-      ctx.fillStyle = '#8aa0b8'; ctx.font='12px system-ui,sans-serif';
-      ctx.fillText(`Wounds: ${rightW}/${rightWMax}`, x2+8, barY+barH+14);
-      const rs = rightDetail?.stats || {}; const rwa = rightDetail?.abilities || []; const rwr = rightDetail?.weapons?.ranged || []; const rwm = rightDetail?.weapons?.melee || [];
-  y = barY+barH+34;
-      ctx.fillStyle = '#c9a753'; ctx.font='12px system-ui,sans-serif';
+  const rightLabel = `Opponent: ${rightName}${rightPts? ` — ${rightPts}pts` : ''}`;
+  ctx.fillText(rightLabel, x2+8, top+22);
+  barX = x2+8; barY = top+34; barW = colW[2]-16; barH = 14;
+  ctx.fillStyle = '#243042'; ctx.fillRect(barX, barY, barW, barH);
+  frac = Math.max(0, Math.min(1, (rightW||0)/(rightWMax||1)));
+  ctx.fillStyle = frac>0.5? '#2ecc71' : frac>0.25? '#f1c40f' : '#e74c3c';
+  ctx.fillRect(barX, barY, Math.floor(barW*frac), barH);
+  ctx.fillStyle = '#8aa0b8'; ctx.font='13px system-ui,sans-serif';
+  ctx.fillText(`Wounds: ${rightW}/${rightWMax}`, x2+8, barY+barH+18);
+      // Add extra space before stats
+      y = barY+barH+38;
+      // Responsive font sizes for mobile
+      if (typeof isMobile === 'undefined') {
+        var isMobile = window.innerWidth < 600;
+      }
+      ctx.font = isMobile ? '13px system-ui,sans-serif' : '14px system-ui,sans-serif';
+  // Declare rs, rwa, rwr, rwm, usedRight
+  const rs = rightDetail?.stats || {};
+  const rwa = rightDetail?.abilities || [];
+  const rwr = rightDetail?.weapons?.ranged || [];
+  const rwm = rightDetail?.weapons?.melee || [];
+  const usedRight = nowCtx?.usedRight;
+  ctx.fillStyle = '#c9a753'; ctx.font='12px system-ui,sans-serif';
   ctx.fillText(`Stats: T ${rs.T||'-'}  Sv ${rs.Sv? rs.Sv+'+':'-'}  Inv ${rs.InvSv? rs.InvSv+'+':'-'}`, x2+8, y); y+=18;
   ctx.fillStyle = '#c9a753'; ctx.fillText('Abilities:', x2+8, y); y+=16; ctx.fillStyle = '#8aa0b8';
-  rwa.slice(0,4).forEach(a=>{ ctx.fillText(`• ${a}`, x2+12, y); y+=16; });
+  const rAbTxt = (rwa && rwa.length) ? `[${rwa.slice(0,4).join(', ')}]` : '[]';
+  ctx.fillText(rAbTxt, x2+12, y); y+=16;
   ctx.fillStyle = '#c9a753'; ctx.fillText('Weapons:', x2+8, y); y+=16; ctx.fillStyle = '#8aa0b8';
-      const rwlist = [...rwr, ...rwm].slice(0,4);
+  const rwlist = (Array.isArray(usedRight) ? usedRight : [...rwr, ...rwm]).slice(0,4);
       rwlist.forEach(wi=>{
         const nm = (wi.name||'Weapon');
         const statsTxt = `A ${wi.attacks||'?'} | Skill ${wi.skill||'?'} | S ${wi.strength||'?'} | AP ${wi.ap||'?'} | D ${wi.damage||'?'}`;
-        const desc = (wi.desc||'').replace(/\s+/g,' ').slice(0,40);
-  ctx.fillText(`• ${nm} — ${statsTxt}`, x2+12, y); y+=16;
-  if (desc) { ctx.fillText(`  ${desc}`, x2+20, y); y+=16; }
+        const rawDesc = (wi.desc||'').replace(/\s+/g,' ');
+        const wAbilities = Array.isArray(wi.abilities) ? wi.abilities : parseWeaponAbilities(wi.desc||'');
+        const desc = cleanDescriptionAgainstAbilities(rawDesc, wAbilities).slice(0,40);
+        // Weapon name and stats
+        const base = `• ${nm} — ${statsTxt}`;
+        ctx.fillStyle = '#8aa0b8';
+        ctx.fillText(base, x2+12, y);
+        y += 16;
+        // Abilities row (gold)
+        if (wAbilities.length) {
+          ctx.fillStyle = '#c9a753';
+          ctx.fillText(`[${wAbilities.join(', ')}]`, x2+20, y);
+          y += 16;
+        }
+        // Description row (bluish)
+        if (desc) {
+          ctx.fillStyle = '#8aa0b8';
+          ctx.fillText(`  ${desc}`, x2+20, y);
+          y += 16;
+        }
       });
-  // Middle: rolls/logs summary
+      // Middle: combat summary (no log spam)
       const resObj = res || {};
+      const sp = resObj.subphases || resObj.Subphases || {};
+      const tnHit = (sp.hits?.target) ?? (sp.Hits?.Target) ?? null;
+      const tnWnd = (sp.wounds?.target) ?? (sp.Wounds?.Target) ?? null;
+      const tnSv  = (sp.saves?.target) ?? (sp.Saves?.Target) ?? null;
+      const nowA = nowCtx?.attacker || '';
+      const nowW = nowCtx?.weaponName || '';
+      const nowD = nowCtx?.defender || '';
+      const ab  = Array.isArray(nowCtx?.weaponAbilities) && nowCtx.weaponAbilities.length ? ` [${nowCtx.weaponAbilities.join(', ')}]` : '';
+      ctx.fillStyle = '#c9a753'; ctx.font='14px system-ui,sans-serif';
+      ctx.fillText('Combat', x1+8, top+22);
+      ctx.fillStyle = '#8aa0b8'; ctx.font='13px system-ui,sans-serif';
+      let yMid = top+44;
+      if (nowA || nowW || nowD) {
+        const pre = `Now: ${nowA || '—'} uses ${nowW || '—'}`;
+        ctx.fillStyle = '#8aa0b8';
+        ctx.fillText(pre, x1+8, yMid);
+        let xPos = x1+8 + ctx.measureText(pre).width;
+        if (ab) {
+          ctx.fillStyle = '#c9a753';
+          ctx.fillText(` ${ab}`, xPos, yMid);
+          xPos += ctx.measureText(` ${ab}`).width;
+        }
+        ctx.fillStyle = '#8aa0b8';
+        ctx.fillText(` vs ${nowD || '—'}`, xPos, yMid);
+        yMid += 20;
+      }
+      if (tnHit || tnWnd || tnSv) {
+        const svTxt = (tnSv && tnSv !== 7) ? `${tnSv}+` : (tnSv===7 ? '—' : '');
+        const tnLine = `To Hit ${tnHit? tnHit+'+':'?'}, To Wound ${tnWnd? tnWnd+'+':'?'}, Save ${svTxt||'?'}`;
+        ctx.fillText(tnLine, x1+8, yMid); yMid += 20;
+      }
       const stats = [
         `Attacks: ${resObj.attacks||resObj.Attacks||0}`,
         `Hits: ${resObj.hits||resObj.Hits||0}`,
@@ -473,16 +960,7 @@
         `Unsaved: ${resObj.unsaved||resObj.Unsaved||0}`,
         `Damage: ${resObj.damage_total||resObj.DamageTotal||0}`,
       ];
-      ctx.fillStyle = '#c9a753'; ctx.font='14px system-ui,sans-serif';
-      ctx.fillText('Rolls & Logs', x1+8, top+22);
-      ctx.fillStyle = '#8aa0b8'; ctx.font='13px system-ui,sans-serif';
-      stats.forEach((t,i)=> ctx.fillText(t, x1+8, top+44 + i*18));
-  const logs = resObj.logs || resObj.Logs || [];
-      ctx.fillStyle = '#8aa0b8'; ctx.font='12px system-ui,sans-serif';
-  const startY = top+44 + stats.length*18 + 8;
-  const lineH = 14;
-  const maxLines = Math.floor((boxH - (startY-top))/lineH) - 1;
-  logs.slice(0, Math.max(0, maxLines)).forEach((l,i)=> ctx.fillText(`• ${l}`, x1+8, startY + i*lineH));
+      stats.forEach((t,i)=> ctx.fillText(t, x1+8, yMid + i*18));
       // Winner overlay
       if (winnerText) {
         ctx.save();
@@ -532,96 +1010,181 @@
       if (selectionRow) selectionRow.classList.add('d-none');
       if (statsBox) statsBox.classList.add('d-none');
     }
+    function showPostMatchUI(){
+  if (selectionRow) selectionRow.classList.remove('d-none');
+  if (statsBox) statsBox.classList.remove('d-none');
+  // Show weapon selection after fight
+  if (weaponSelectRow) weaponSelectRow.classList.remove('d-none');
+    }
   document.getElementById('btnFightAI').addEventListener('click', async ()=>{
       const sel = ensureSelection();
       if (!sel) return;
       console.log('Fight AI with selection:', sel);
-      hidePreMatchUI();
+  hidePreMatchUI();
+  hasFightStarted = true;
+  showFightSurface();
+  // Hide weapon selection during fight
+  if (weaponSelectRow) weaponSelectRow.classList.add('d-none');
       fetch('/api/lobby/phase', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({name: sel.user, phase: 'vs-ai'})}).catch(()=>{});
   try {
-  const [detail, weps] = await Promise.all([
-          getUnitDetail(sel.factionId, sel.unitId),
-          pickWeapons(sel.factionId, sel.unitId, sel.weaponType)
+  const [detail] = await Promise.all([
+          getUnitDetail(sel.factionId, sel.unitId)
         ]);
+        // Build weapon list from selection with fallback
+        let weps = [];
+        if (sel.weaponType === 'ranged') {
+          if (weaponSelection.ranged.size > 0) {
+            // Respect selection order: map selected names -> weapon objects
+            const names = Array.from(weaponSelection.ranged);
+            const byName = new Map(weaponCatalog.ranged.map(w=> [w.name, w]));
+            weps = names.map(n=> byName.get(n)).filter(Boolean);
+          } else {
+            weps = await pickWeapons(sel.factionId, sel.unitId, sel.weaponType);
+          }
+        } else {
+          if (weaponSelection.melee) {
+            const m = weaponCatalog.melee.find(w=> w.name === weaponSelection.melee);
+            weps = m ? [m] : [];
+          }
+          if (weps.length === 0) {
+            weps = await pickWeapons(sel.factionId, sel.unitId, sel.weaponType);
+          }
+        }
   // Make sure detail.name remains the unit name; we’ll use sel.user separately
-        // Pick AI opponent from a random faction within ±20% points (with widening fallback)
+        // Pick fair AI opponent by points across all factions
         const myPts = (()=>{
           const opt = Array.from(unitSelect.options).find(o=> o.value===sel.unitId);
           const v = opt?.getAttribute('data-points') || '';
           const n = parseInt(v,10); return isNaN(n)? null : n;
         })();
-        // Choose random faction (fallback to player's if list empty)
-        const pickRandom = (arr)=> arr[Math.floor(Math.random()*arr.length)];
-        let oppFaction = (Array.isArray(factions) && factions.length) ? pickRandom(factions) : {id: sel.factionId};
-        let oppFactionId = oppFaction.id || oppFaction.ID || sel.factionId;
+        let oppFactionId = sel.factionId;
         let oppUnit = null;
-        try {
-          const oppUnits = await fetch(`/api/${encodeURIComponent(oppFactionId)}/units`).then(r=>r.json());
-          if (myPts && myPts>0) {
-            const bands = [0.20, 0.35, 0.50];
-            for (const b of bands) {
-              const lo = Math.floor(myPts*(1-b)), hi = Math.ceil(myPts*(1+b));
-              const candidates = oppUnits.filter(u=>{
-                const p = parseInt((u.points||u.Points||'').toString(),10);
-                return !isNaN(p) && p>=lo && p<=hi;
-              });
-              if (candidates.length) { oppUnit = pickRandom(candidates); break; }
-            }
-          }
-          if (!oppUnit && Array.isArray(oppUnits) && oppUnits.length) {
-            oppUnit = pickRandom(oppUnits);
-          }
-        } catch {}
-        // If no unit found (or points missing), as a last resort use player's faction
+        if (myPts && myPts > 0) {
+          const pick = await pickFairOpponentByPoints(myPts);
+          if (pick) { oppFactionId = pick.fid; oppUnit = pick.unit; }
+        }
         if (!oppUnit) {
+          // Fallback: player faction, pick a random unit
           try {
-            const fallbackUnits = await fetch(`/api/${encodeURIComponent(sel.factionId)}/units`).then(r=>r.json());
-            if (Array.isArray(fallbackUnits) && fallbackUnits.length) {
-              oppFactionId = sel.factionId;
-              oppUnit = pickRandom(fallbackUnits);
+            const oppUnits = await fetch(`/api/${encodeURIComponent(sel.factionId)}/units`).then(r=>r.json());
+            if (Array.isArray(oppUnits) && oppUnits.length) {
+              oppUnit = oppUnits[Math.floor(Math.random()*oppUnits.length)];
             }
           } catch {}
         }
         const oppUnitId = oppUnit ? (oppUnit.id||oppUnit.ID) : sel.unitId;
         const oppDetail = await getUnitDetail(oppFactionId, oppUnitId);
-        // Pre-pick opponent weapons safely (prefer same type, fallback to opposite/any)
-        const oppWeps = await pickWeaponsSafe(oppFactionId, oppUnitId, sel.weaponType);
+        // If API detail didn't include points, try to use the selected oppUnit's points
+        if (oppDetail && (oppDetail.points == null || Number.isNaN(oppDetail.points))) {
+          const rawP = (oppUnit && (oppUnit.points || oppUnit.Points)) || '';
+          const np = parseInt(String(rawP), 10);
+          if (!Number.isNaN(np)) oppDetail.points = np;
+        }
+        // Pre-pick opponent weapons: always use default wargear
+        const oppAllWeapons = await pickAnyWeapons(oppFactionId, oppUnitId);
+        const baseName = (n)=> String(n||'').split(/\s[–—-]\s/)[0].trim();
+        const uniqByBase = (arr)=>{
+          const seen = new Set(); const out = [];
+          for (const w of arr) { const b = baseName(w.name); if (!seen.has(b)) { seen.add(b); out.push(w); } }
+          return out;
+        };
+        // Mark default wargear for opponent using its replacement options (same logic as player)
+        try {
+          const oppOptions = await fetch(`/api/${encodeURIComponent(oppFactionId)}/${encodeURIComponent(oppUnitId)}/options`).then(r=>r.json()).catch(()=>[]);
+          // Reuse the same default computation for AI
+          const computeDefaultFlagsAI = (weps, opts)=>{
+            const norm = (s)=> String(s||'').toLowerCase().replace(/[–—]/g,'-').replace(/\s+/g,' ').trim();
+            const baseNameOf = (n)=> norm(String(n||'').split(/\s[–—-]\s/)[0]);
+            const pluralize = (b)=> b.endsWith('s') ? b : `${b}s`;
+            const text = norm((Array.isArray(opts)? opts:[]).map(o=> (o.description||o.Description||'')).join(' \n '));
+            const names = weps.map(w=> w.name);
+            const bases = names.map(n=> baseNameOf(n));
+            const plurals = bases.map(b=> pluralize(b));
+            const flags = new Map(names.map(n=> [n, true]));
+            const replRe = /(replace(?:d)?)[\s\S]*? with [\s\S]*?(?:\.|\n|$)/g;
+            let m;
+            while ((m = replRe.exec(text))){
+              const seg = m[0];
+              const wi = seg.indexOf(' with ');
+              if (wi < 0) continue;
+              const left = seg.slice(0, wi);
+              const right = seg.slice(wi + 6);
+              for (let i=0;i<names.length;i++){
+                const b = bases[i]; const p = plurals[i];
+                if (left.includes(b) || left.includes(p)) flags.set(names[i], true);
+                if (right.includes(b) || right.includes(p)) flags.set(names[i], false);
+              }
+            }
+            const equipRe = /(equipped with|can be equipped with|can be equipped|can be given)[\s\S]*?(?:\.|\n|$)/g;
+            while ((m = equipRe.exec(text))){
+              const seg = m[0];
+              for (let i=0;i<names.length;i++){
+                const b = bases[i]; const p = plurals[i];
+                if (seg.includes(b) || seg.includes(p)) flags.set(names[i], false);
+              }
+            }
+            return flags;
+          };
+          const flagsAI = computeDefaultFlagsAI(oppAllWeapons, oppOptions);
+          oppAllWeapons.forEach(w => { w.isStandard = !!flagsAI.get(w.name); });
+        } catch { /* ignore, falls back below */ }
+        const oppRanged = uniqByBase(oppAllWeapons.filter(w=>w.type==='ranged' && w.isStandard));
+        const oppMelee  = uniqByBase(oppAllWeapons.filter(w=>w.type==='melee' && w.isStandard));
+  let oppWeps = [];
+        if (sel.weaponType === 'ranged') {
+          // 40K: models can shoot all their ranged weapons; use all default ranged (deduped by base name)
+          oppWeps = oppRanged;
+        } else {
+          if (oppMelee.length) oppWeps = [oppMelee[0]];
+        }
+  // No fallback: AI must use default wargear only. If none for the chosen type, it will not fire this round.
   // Fight loop until winner (safety cap rounds=20)
     const matchId = `m_${Date.now().toString(36)}_${Math.random().toString(36).slice(2,7)}`;
         // Show and reset text log panel
         showLogRow();
         if (matchIdLabel) matchIdLabel.textContent = matchId;
-        clearTextLog();
+  clearTextLog();
     let myHP = detail.stats.W;
         let aiHP = oppDetail.stats.W;
         const aggregate = {Attacks:0, Hits:0, Wounds:0, Saved:0, Unsaved:0, DamageTotal:0, Logs:[]};
     let round = 1;
-    const titleBase = `Fight Phase — Rolls (Match ${matchId})`;
+  const titleBase = `Combat (Match ${matchId})`;
     let stopRequested = false;
-    let noDamageRounds = 0;
     document.getElementById('btnStopFight')?.addEventListener('click', ()=>{ stopRequested = true; }, { once: true });
-  while (!stopRequested && myHP > 0 && aiHP > 0 && round <= 20) {
-          let dmgBeforeRound = aggregate.DamageTotal;
+  while (!stopRequested && myHP > 0 && aiHP > 0) {
           aggregate.Logs.push(`— Round ${round} —`);
           setTextLog(aggregate.Logs);
           // Player volley
+          try { aggregate.Logs.push(`Player selected: ${weps.map(w=>w.name).join(', ') || '(none)'}`); setTextLog(aggregate.Logs); } catch {}
           for (const wpn of weps) {
             const payload = {
-              attacker: { id: sel.unitId, name: sel.user || 'You', T: detail.stats.T, W: myHP, Sv: detail.stats.Sv, InvSv: detail.stats.InvSv },
-              defender: { id: 'AI', name: 'AI', T: oppDetail.stats.T, W: aiHP, Sv: oppDetail.stats.Sv, InvSv: oppDetail.stats.InvSv },
+              attacker: { id: sel.unitId, name: sel.user || 'You', T: detail.stats.T, W: myHP, Sv: detail.stats.Sv, InvSv: detail.stats.InvSv, keywords: (detail.keywords||[]), abilities: (detail.abilities||[]) },
+              defender: { id: 'AI', name: 'AI', T: oppDetail.stats.T, W: aiHP, Sv: oppDetail.stats.Sv, InvSv: oppDetail.stats.InvSv, keywords: (oppDetail.keywords||[]), abilities: (oppDetail.abilities||[]) },
       weapon: wpn,
       match_id: matchId,
       meta: { actor: sel.user || 'You', round, step: 1 },
             };
             const resp = await fetch('/api/sim/shoot', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(payload)});
             const res = await resp.json();
-            const dmgBeforeAI = aggregate.DamageTotal;
+            // update aggregates
             aggregate.Attacks += (res.attacks||res.Attacks||0);
             aggregate.Hits    += (res.hits||res.Hits||0);
             aggregate.Wounds  += (res.wounds||res.Wounds||0);
             aggregate.Saved   += (res.saved||res.Saved||0);
             aggregate.Unsaved += (res.unsaved||res.Unsaved||0);
             aggregate.DamageTotal += (res.damage_total||res.DamageTotal||0);
+            // Track best single volley (by wounds, tie-break by damage)
+            {
+              const wounds = (res.unsaved||res.Unsaved||0);
+              const damage = (res.damage_total||res.DamageTotal||0);
+              if (wounds > 0) {
+                const prev = aggregate.TopAttack || null;
+                const better = !prev || (wounds > (prev.wounds||0)) || (wounds === (prev.wounds||0) && damage > (prev.damage||0));
+                if (better) {
+                  aggregate.TopAttack = { user: (sel.user||'You'), unit: (detail.name||''), weapon: wpn.name, wounds, damage };
+                }
+              }
+            }
             aiHP = Math.max(0, (res.defender_wounds ?? res.DefenderWounds ?? aiHP));
             const pfx = `${sel.user || 'You'} ${detail.name} ${wpn.name}`;
             (res.logs||res.Logs||[]).forEach(l=> aggregate.Logs.push(`${pfx}: ${l}`));
@@ -633,17 +1196,19 @@
               break;
             }
             // Redraw after each weapon volley (player)
-            drawFightPhase(detail, oppDetail, myHP, detail.stats.W, aiHP, oppDetail.stats.W, aggregate, titleBase);
+            drawFightPhase(detail, oppDetail, myHP, detail.stats.W, aiHP, oppDetail.stats.W, aggregate, titleBase, null, { attacker: sel.user || 'You', weaponName: wpn.name, defender: oppDetail.name || 'AI', weaponAbilities: wpn.abilities||[], usedLeft: weps, usedRight: oppWeps });
             setTextLog(aggregate.Logs);
             await sleep(120);
             if (stopRequested) break;
           }
           if (stopRequested || aiHP <= 0) break;
+          // Player selection debug removed to keep logs concise
           // AI volley: use chosen opponent weapons
+          try { aggregate.Logs.push(`AI selected: ${oppWeps.map(w=>w.name).join(', ') || '(none)'}`); setTextLog(aggregate.Logs); } catch {}
           for (const wpn of oppWeps) {
             const payload = {
-              attacker: { id: oppUnitId, name: oppDetail.name || 'AI', T: oppDetail.stats.T, W: aiHP, Sv: oppDetail.stats.Sv, InvSv: oppDetail.stats.InvSv },
-              defender: { id: sel.unitId, name: sel.user || 'You', T: detail.stats.T, W: myHP, Sv: detail.stats.Sv, InvSv: detail.stats.InvSv },
+              attacker: { id: oppUnitId, name: oppDetail.name || 'AI', T: oppDetail.stats.T, W: aiHP, Sv: oppDetail.stats.Sv, InvSv: oppDetail.stats.InvSv, keywords: (oppDetail.keywords||[]), abilities: (oppDetail.abilities||[]) },
+              defender: { id: sel.unitId, name: sel.user || 'You', T: detail.stats.T, W: myHP, Sv: detail.stats.Sv, InvSv: detail.stats.InvSv, keywords: (detail.keywords||[]), abilities: (detail.abilities||[]) },
               weapon: wpn,
               match_id: matchId,
               meta: { actor: 'AI', round, step: 2 },
@@ -653,6 +1218,18 @@
             myHP = Math.max(0, (res.defender_wounds ?? res.DefenderWounds ?? myHP));
             const pfx = `AI ${oppDetail.name||'Unit'} ${wpn.name}`;
             (res.logs||res.Logs||[]).forEach(l=> aggregate.Logs.push(`${pfx}: ${l}`));
+            // Track AI volley as well
+            {
+              const wounds = (res.unsaved||res.Unsaved||0);
+              const damage = (res.damage_total||res.DamageTotal||0);
+              if (wounds > 0) {
+                const prev = aggregate.TopAttack || null;
+                const better = !prev || (wounds > (prev.wounds||0)) || (wounds === (prev.wounds||0) && damage > (prev.damage||0));
+                if (better) {
+                  aggregate.TopAttack = { user: 'AI', unit: (oppDetail.name||'Unit'), weapon: wpn.name, wounds, damage };
+                }
+              }
+            }
             if (myHP <= 0) {
               aggregate.Logs.push(`== ${oppDetail.name||'AI'} wins ==`);
               drawFightPhase(detail, oppDetail, myHP, detail.stats.W, aiHP, oppDetail.stats.W, aggregate, titleBase, `${oppDetail.name||'AI'} wins`);
@@ -661,39 +1238,111 @@
               break;
             }
             // Redraw after each weapon volley (AI)
-            drawFightPhase(detail, oppDetail, myHP, detail.stats.W, aiHP, oppDetail.stats.W, aggregate, titleBase);
+            drawFightPhase(detail, oppDetail, myHP, detail.stats.W, aiHP, oppDetail.stats.W, aggregate, titleBase, null, { attacker: oppDetail.name || 'AI', weaponName: wpn.name, defender: sel.user || 'You', weaponAbilities: wpn.abilities||[], usedLeft: weps, usedRight: oppWeps });
       setTextLog(aggregate.Logs);
             await sleep(120);
             if (stopRequested) break;
           }
-          // Stalemate detection: no damage dealt this round by either side
-          const roundDidDamage = aggregate.DamageTotal > dmgBeforeRound;
-          if (!roundDidDamage) {
-            noDamageRounds++;
-          } else {
-            noDamageRounds = 0;
-          }
-          if (noDamageRounds >= 3) { // 3 consecutive rounds with no damage -> stop
-            aggregate.Logs.push('== Stalemate: no damage for 3 consecutive rounds. Ending fight. ==');
-            break;
-          }
           round++;
         }
-        const winner = stopRequested ? 'Stopped' : myHP <= 0 ? `${oppDetail.name||'AI'} wins` : aiHP <= 0 ? 'You win' : 'No winner (cap)';
+  const winner = stopRequested ? 'Stopped' : myHP <= 0 ? `${oppDetail.name||'AI'} wins` : aiHP <= 0 ? 'You win' : 'Ended';
         aggregate.Logs.push(`== ${winner} ==`);
-        drawFightPhase(detail, oppDetail, myHP, detail.stats.W, aiHP, oppDetail.stats.W, aggregate, titleBase);
-    setTextLog(aggregate.Logs);
+    drawFightPhase(detail, oppDetail, myHP, detail.stats.W, aiHP, oppDetail.stats.W, aggregate, titleBase);
+  setTextLog(aggregate.Logs);
+  // Update statistics after fight
+  updateStatistics(aggregate);
+  // Keep the canvas visible after the fight ends, including when stopped.
       } catch (e) {
         console.error(e);
-        drawSplash();
+  drawSplash();
+  hideFightSurface();
+  showPostMatchUI();
         alert('Failed to simulate shooting: ' + (e && e.message || e));
       }
     });
+
+  // Statistics update logic
+  function updateStatistics(aggregate) {
+  // Always show statistics panel after updating
+  let statsBoxUpdate = document.getElementById('statsBox');
+  if (statsBoxUpdate) statsBoxUpdate.classList.remove('d-none');
+  // Highest Damage Attack
+  const statBestSave = document.getElementById('statBestSave');
+  const statWorstSave = document.getElementById('statWorstSave');
+  let topDamage = '—';
+    const bestSave = aggregate.Saved > 0 ? aggregate.Saved : '—';
+    const worstSave = aggregate.Unsaved > 0 ? aggregate.Unsaved : '—';
+  // Find highest damage attack (unsaved only). Prefer structured TopAttack; else parse log.
+  let topAttack = aggregate.TopAttack || null;
+    let topAttackVal = topAttack ? (topAttack.damage||0) : 0;
+  if (!topAttack && Array.isArray(aggregate.Logs)) {
+      for (const l of aggregate.Logs) {
+        // Only count attacks that caused wounds (unsaved damage)
+        // Example log: "User Unit Weapon: ... 3 damage (2 wounds)"
+        const m = l.match(/(\w+) (.+?) (.+?):.*?(\d+) damage \((\d+) wounds\)/);
+        if (m) {
+          const wounds = parseInt(m[5],10);
+          if (wounds > 0) {
+            const dmg = parseInt(m[4],10);
+            if (dmg > topAttackVal) {
+              topAttackVal = dmg;
+              topAttack = { user: m[1], unit: m[2], weapon: m[3], damage: dmg, wounds };
+            }
+          }
+        }
+      }
+    }
+    const statTopDamageDetails = document.getElementById('statTopDamageDetails');
+    let topDamageDetails = '—';
+    if (topAttack) {
+      const attacker = topAttack.user || 'Anonymous';
+      topDamageDetails = `${attacker}: ${topAttack.unit} - ${topAttack.weapon} ${topAttack.damage} damage (${topAttack.wounds} wounds)`;
+    }
+  if (statTopDamageDetails) statTopDamageDetails.textContent = topDamageDetails;
+  // Set big number to damage from biggest single attack
+  topDamage = topAttack ? topAttack.damage : '—';
+    // Build a structured maxAttack object for server-side persistence
+    let maxAttack = null;
+    if (topAttack) {
+      const attacker = topAttack.user || 'Anonymous';
+      maxAttack = { username: attacker, unit: topAttack.unit, weapon: topAttack.weapon, wounds: topAttack.wounds, damage: topAttack.damage };
+    }
+    // Persist to server
+    try {
+      const username = sessionStorage.getItem('username') || 'Anonymous';
+      fetch('/api/stats/save', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username, stats: { topDamage, bestSave, worstSave, topDamageDetails, maxAttack } })
+      }).catch(()=>{});
+      if (maxAttack) {
+        fetch('/api/stats/max-attack/today', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ attack: maxAttack })
+        }).then(()=>{
+          // Refresh from global so we show today's leader (not just this fight's)
+          return fetch('/api/stats/max-attack/today');
+    }).then(r=> r && r.ok ? r.json() : null).then(g=>{
+          if (g && g.username && g.weapon) {
+            const statTopDamageDetails = document.getElementById('statTopDamageDetails');
+            const dmg = g.damage || 0;
+      const wnd = g.wounds || 0;
+      if (statTopDamageDetails) statTopDamageDetails.textContent = `${g.username}: ${g.unit} - ${g.weapon} ${dmg} damage (${wnd} wounds)`;
+          }
+        }).catch(()=>{});
+      }
+    } catch {}
+  if (statBestSave) statBestSave.textContent = bestSave;
+  if (statWorstSave) statWorstSave.textContent = worstSave;
+  const statsBox = document.getElementById('statsBox');
+  if (statsBox) statsBox.classList.remove('d-none');
+  }
     document.getElementById('btnMatchmake').addEventListener('click', ()=>{
       const sel = ensureSelection();
       if (!sel) return;
       console.log('Queue for PVP matchmaking with selection:', sel);
-      hidePreMatchUI();
+  hidePreMatchUI();
       // TODO: call backend to join matchmaking queue
   fetch('/api/lobby/phase', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({name: sel.user, phase: 'queue'})}).catch(()=>{});
     });

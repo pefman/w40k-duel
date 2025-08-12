@@ -76,6 +76,9 @@ scripts/dev.sh logs
 open http://localhost:8081
 ```
 
+Notes:
+- Local API persists match logs to JSON under `tmp/matches/` for debugging (controlled by `MATCH_LOG_DIR`, enabled by `scripts/api.sh`). Production stays memory-only.
+
 ### Game Usage
 1. **Select faction and unit** from dropdowns
 2. **Choose weapons** (must be same type: all melee or all ranged)
@@ -135,18 +138,14 @@ docker-compose up
 
 ### Cloud Run (Google Cloud)
 ```bash
-# Deploy API
-gcloud run deploy w40k-api \
-  --source . \
-  --dockerfile Dockerfile.api \
-  --port 8080
+# Build and push API image via Cloud Build (optional)
+./scripts/deploy_cloud_run_cloudbuild.sh   # uses cloudbuild_api.yaml
 
-# Deploy Game (update DATA_API_BASE)
-gcloud run deploy w40k-game \
-  --source . \
-  --dockerfile Dockerfile.game \
-  --port 8081 \
-  --set-env-vars DATA_API_BASE=https://w40k-api-xxx.run.app
+# Or build locally and deploy
+./scripts/deploy_cloud_run.sh              # builds Docker locally, pushes, deploys
+
+# Deploy using a stable service config (always same service/region/image path)
+gcloud run services replace cloudrun_api.yaml --region europe-west1
 ```
 
 See `README_DEPLOY.md` for detailed Cloud Run instructions.

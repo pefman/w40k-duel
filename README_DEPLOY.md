@@ -57,6 +57,17 @@ gcloud run deploy w40k-game \
 open $(gcloud run services describe w40k-game --region ${REGION} --format='value(status.url)')
 ```
 
+### Stable deployment using a service config
+
+To ensure Cloud Run always deploys to the same service name/region/image path for the API, use the provided `cloudrun_api.yaml`:
+
+```bash
+# Replace (create/update) the service from YAML
+gcloud run services replace cloudrun_api.yaml --region europe-west1
+```
+
+This keeps the service name `w40k-duel` consistent and pins the image path `europe-west1-docker.pkg.dev/w40k-468120/containers/w40k-duel:latest`.
+
 Notes:
 - Both services respect Cloud Run's `PORT` env var. Game also reads `DATA_API_BASE`.
 - If using a different region or repo name, adjust variables accordingly.

@@ -8,6 +8,8 @@ type UnitSnapshot struct {
     W     int // total wounds
     Sv    int // armor save (2-6; 7 means none)
     InvSv int // invulnerable save (2-6; 0 if none)
+    Keywords []string // unit keywords (e.g., Infantry, Vehicle)
+    Abilities []string // unit abilities (e.g., Feel No Pain 5+)
 }
 
 // WeaponSnapshot for a single weapon profile
@@ -19,6 +21,7 @@ type WeaponSnapshot struct {
     Strength   int
     AP         int // e.g., -1 means worsen save by 1
     Damage     string // dice expr or int
+    Abilities  []string // normalized ability tokens from weapon profile
 }
 
 // ShootingResult captures outcome and logs

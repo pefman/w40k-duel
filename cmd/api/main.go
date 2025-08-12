@@ -611,8 +611,8 @@ type MatchLog struct {
 
 func newMatchLog() *MatchLog { return &MatchLog{recs: map[string]*MatchRecord{}} }
 
-func (m *MatchLog) append(id string, e MatchEntry) {
-	if id == "" { return }
+func (m *MatchLog) append(id string, e MatchEntry) *MatchRecord {
+	if id == "" { return nil }
 	now := time.Now().Unix()
 	m.mu.Lock()
 	defer m.mu.Unlock()
@@ -623,6 +623,7 @@ func (m *MatchLog) append(id string, e MatchEntry) {
 	}
 	rec.Entries = append(rec.Entries, e)
 	rec.Updated = now
+	return rec
 }
 
 func (m *MatchLog) get(id string) *MatchRecord {
@@ -633,7 +634,71 @@ func (m *MatchLog) get(id string) *MatchRecord {
 	}
 	return nil
 }
+
+func (m *MatchLog) put(rec *MatchRecord) {
+	if rec == nil || strings.TrimSpace(rec.ID) == "" { return }
+	m.mu.Lock()
+	defer m.mu.Unlock()
+	m.recs[rec.ID] = rec
+}
 // end match log types
+
+// ============ Optional local persistence for match logs (dev/debug) ============
+// Controlled by env MATCH_LOG_DIR. When set, match records will be saved to disk
+// after each append, and GET will attempt lazy load from disk if not in memory.
+
+func getMatchPersistDir() string {
+	dir := strings.TrimSpace(os.Getenv("MATCH_LOG_DIR"))
+	if dir == "" { return "" }
+	if !filepath.IsAbs(dir) {
+		// make relative paths anchored to cwd
+		abs, err := filepath.Abs(dir)
+		if err == nil { dir = abs }
+	}
+	_ = os.MkdirAll(dir, 0o755)
+	return dir
+}
+
+func sanitizeIDForFile(id string) string {
+	// keep alnum, dash, underscore; replace others with '-'
+	b := make([]rune, 0, len(id))
+	for _, r := range id {
+		if (r >= 'a' && r <= 'z') || (r >= 'A' && r <= 'Z') || (r >= '0' && r <= '9') || r == '-' || r == '_' {
+			b = append(b, r)
+		} else {
+			b = append(b, '-')
+		}
+	}
+	out := strings.Trim(strings.ReplaceAll(string(b), "--", "-"), "-")
+	if out == "" { out = "match" }
+	return out
+}
+
+func matchFilePath(dir, id string) string {
+	return filepath.Join(dir, sanitizeIDForFile(id)+".json")
+}
+
+func saveMatchRecord(dir string, rec *MatchRecord) {
+	if dir == "" || rec == nil { return }
+	path := matchFilePath(dir, rec.ID)
+	// write atomically
+	tmp := path + ".tmp"
+	data, _ := json.MarshalIndent(rec, "", "  ")
+	_ = os.WriteFile(tmp, data, 0o644)
+	_ = os.Rename(tmp, path)
+}
+
+func loadMatchRecord(dir, id string) *MatchRecord {
+	if dir == "" || strings.TrimSpace(id) == "" { return nil }
+	path := matchFilePath(dir, id)
+	data, err := os.ReadFile(path)
+	if err != nil { return nil }
+	var rec MatchRecord
+	if err := json.Unmarshal(data, &rec); err != nil { return nil }
+	// basic sanity
+	if strings.TrimSpace(rec.ID) == "" { rec.ID = id }
+	return &rec
+}
 
 func main() {
 	root := "."
@@ -643,10 +708,27 @@ func main() {
 	}
 	lobby := newLobby()
 	matches := newMatchLog()
+	// Optional local persistence dir for dev/debug
+	matchPersistDir := getMatchPersistDir()
 
-		mux := http.NewServeMux()
-		// Serve static mockup from ./public at root
-		mux.Handle("/", http.FileServer(http.Dir("public")))
+	mux := http.NewServeMux()
+	// Serve static mockup from ./public at root
+	mux.Handle("/", http.FileServer(http.Dir("public")))
+	// Statistics endpoints
+	mux.HandleFunc("/api/stats/save", SaveStatsHandler)
+	mux.HandleFunc("/api/stats/get", GetStatsHandler)
+		mux.HandleFunc("/api/stats/max-attack", GetMaxAttackHandler)
+		mux.HandleFunc("/api/stats/max-attack/today", func(w http.ResponseWriter, r *http.Request) {
+			if r.Method == http.MethodGet {
+				GetGlobalMaxAttackToday(w, r)
+				return
+			}
+			if r.Method == http.MethodPost {
+				PostGlobalMaxAttackToday(w, r)
+				return
+			}
+			writeError(w, http.StatusMethodNotAllowed, "GET or POST only")
+		})
 
 	// Health
 	mux.HandleFunc("/api/healthz", func(w http.ResponseWriter, r *http.Request) {
@@ -677,6 +759,8 @@ func main() {
 				W     int    `json:"W"`
 				Sv    int    `json:"Sv"`
 				InvSv int    `json:"InvSv"`
+				Keywords []string `json:"keywords,omitempty"`
+				Abilities []string `json:"abilities,omitempty"`
 			} `json:"attacker"`
 			Defender struct {
 				ID    string `json:"id"`
@@ -685,6 +769,8 @@ func main() {
 				W     int    `json:"W"`
 				Sv    int    `json:"Sv"`
 				InvSv int    `json:"InvSv"`
+				Keywords []string `json:"keywords,omitempty"`
+				Abilities []string `json:"abilities,omitempty"`
 			} `json:"defender"`
 			Weapon struct {
 				Name     string `json:"name"`
@@ -694,6 +780,7 @@ func main() {
 				Strength int    `json:"strength"`
 				AP       int    `json:"ap"`
 				Damage   string `json:"damage"`
+				Abilities []string `json:"abilities,omitempty"`
 			} `json:"weapon"`
 			MatchID string `json:"match_id,omitempty"`
 			Meta    struct {
@@ -706,9 +793,9 @@ func main() {
 			writeError(w, http.StatusBadRequest, "invalid JSON")
 			return
 		}
-		att := game.UnitSnapshot{ID: req.Attacker.ID, Name: req.Attacker.Name, T: req.Attacker.T, W: req.Attacker.W, Sv: req.Attacker.Sv, InvSv: req.Attacker.InvSv}
-		def := game.UnitSnapshot{ID: req.Defender.ID, Name: req.Defender.Name, T: req.Defender.T, W: req.Defender.W, Sv: req.Defender.Sv, InvSv: req.Defender.InvSv}
-		wep := game.WeaponSnapshot{Name: req.Weapon.Name, Type: req.Weapon.Type, Attacks: req.Weapon.Attacks, Skill: req.Weapon.Skill, Strength: req.Weapon.Strength, AP: req.Weapon.AP, Damage: req.Weapon.Damage}
+		att := game.UnitSnapshot{ID: req.Attacker.ID, Name: req.Attacker.Name, T: req.Attacker.T, W: req.Attacker.W, Sv: req.Attacker.Sv, InvSv: req.Attacker.InvSv, Keywords: req.Attacker.Keywords, Abilities: req.Attacker.Abilities}
+		def := game.UnitSnapshot{ID: req.Defender.ID, Name: req.Defender.Name, T: req.Defender.T, W: req.Defender.W, Sv: req.Defender.Sv, InvSv: req.Defender.InvSv, Keywords: req.Defender.Keywords, Abilities: req.Defender.Abilities}
+		wep := game.WeaponSnapshot{Name: req.Weapon.Name, Type: req.Weapon.Type, Attacks: req.Weapon.Attacks, Skill: req.Weapon.Skill, Strength: req.Weapon.Strength, AP: req.Weapon.AP, Damage: req.Weapon.Damage, Abilities: req.Weapon.Abilities}
 		res := game.ResolveShooting(att, def, wep)
 		// Append to match log if provided
 		if strings.TrimSpace(req.MatchID) != "" {
@@ -722,7 +809,11 @@ func main() {
 				Weapon:   wep,
 				Result:   res,
 			}
-			matches.append(strings.TrimSpace(req.MatchID), entry)
+			rec := matches.append(strings.TrimSpace(req.MatchID), entry)
+			// Persist locally if enabled
+			if matchPersistDir != "" {
+				saveMatchRecord(matchPersistDir, rec)
+			}
 		}
 		writeJSON(w, res)
 	})
@@ -741,6 +832,14 @@ func main() {
 		if rec := matches.get(id); rec != nil {
 			writeJSON(w, rec)
 			return
+		}
+		// Try lazy-load from disk if enabled
+		if md := getMatchPersistDir(); md != "" {
+			if rec := loadMatchRecord(md, id); rec != nil {
+				matches.put(rec)
+				writeJSON(w, rec)
+				return
+			}
 		}
 		writeError(w, http.StatusNotFound, "match not found")
 	})
@@ -925,22 +1024,46 @@ func main() {
 				if len(parts) == 3 {
 					switch parts[2] {
 					case "weapons":
-						writeJSON(w, store.WeaponsByDS[unitID])
+						{
+							list := store.WeaponsByDS[unitID]
+							if list == nil { list = []Weapon{} }
+							writeJSON(w, list)
+						}
 						return
 					case "models":
-						writeJSON(w, store.ModelsByDS[unitID])
+						{
+							list := store.ModelsByDS[unitID]
+							if list == nil { list = []Model{} }
+							writeJSON(w, list)
+						}
 						return
 					case "keywords":
-						writeJSON(w, store.KeywordsByDS[unitID])
+						{
+							list := store.KeywordsByDS[unitID]
+							if list == nil { list = []Keyword{} }
+							writeJSON(w, list)
+						}
 						return
 					case "abilities":
-						writeJSON(w, store.AbilitiesByDS[unitID])
+						{
+							list := store.AbilitiesByDS[unitID]
+							if list == nil { list = []Ability{} }
+							writeJSON(w, list)
+						}
 						return
 					case "options":
-						writeJSON(w, store.OptionsByDS[unitID])
+						{
+							list := store.OptionsByDS[unitID]
+							if list == nil { list = []Option{} }
+							writeJSON(w, list)
+						}
 						return
 					case "costs":
-						writeJSON(w, store.CostsByDS[unitID])
+						{
+							list := store.CostsByDS[unitID]
+							if list == nil { list = []ModelCost{} }
+							writeJSON(w, list)
+						}
 						return
 					}
 				}

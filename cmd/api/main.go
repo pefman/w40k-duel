@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"log"
+	"math/rand"
 	"net/http"
 	"os"
 	"path/filepath"
@@ -33,9 +34,9 @@ type Unit struct {
 	Role      string `json:"role,omitempty"`
 	Link      string `json:"link,omitempty"`
 	// Basic stats (populated from first model row when available)
-	T         string `json:"T,omitempty"`
-	W         string `json:"W,omitempty"`
-	Points    string `json:"points,omitempty"`
+	T      string `json:"T,omitempty"`
+	W      string `json:"W,omitempty"`
+	Points string `json:"points,omitempty"`
 }
 
 type Weapon struct {
@@ -528,6 +529,7 @@ type LobbyEntry struct {
 	Phase   string `json:"phase"`
 	Since   int64  `json:"since"`
 	Updated int64  `json:"updated"`
+	Points  int    `json:"points,omitempty"`
 }
 
 type Lobby struct {
@@ -538,10 +540,14 @@ type Lobby struct {
 func newLobby() *Lobby { return &Lobby{byName: map[string]*LobbyEntry{}} }
 
 func (l *Lobby) upsert(name, phase string) *LobbyEntry {
-	if name == "" { return nil }
+	if name == "" {
+		return nil
+	}
 	now := time.Now().Unix()
 	key := strings.ToLower(strings.TrimSpace(name))
-	if key == "" { return nil }
+	if key == "" {
+		return nil
+	}
 	l.mu.Lock()
 	defer l.mu.Unlock()
 	if e, ok := l.byName[key]; ok {
@@ -556,12 +562,35 @@ func (l *Lobby) upsert(name, phase string) *LobbyEntry {
 
 func (l *Lobby) setPhase(name, phase string) bool {
 	key := strings.ToLower(strings.TrimSpace(name))
-	if key == "" { return false }
+	if key == "" {
+		return false
+	}
 	l.mu.Lock()
 	defer l.mu.Unlock()
 	if e, ok := l.byName[key]; ok {
 		e.Phase = phase
-	e.Updated = time.Now().Unix()
+		e.Updated = time.Now().Unix()
+		return true
+	}
+	return false
+}
+
+// setPhasePoints updates phase and optionally points if > 0
+func (l *Lobby) setPhasePoints(name, phase string, points int) bool {
+	key := strings.ToLower(strings.TrimSpace(name))
+	if key == "" {
+		return false
+	}
+	l.mu.Lock()
+	defer l.mu.Unlock()
+	if e, ok := l.byName[key]; ok {
+		e.Phase = phase
+		if points > 0 {
+			e.Points = points
+		} else if phase != "queue" { // clear when leaving queue
+			e.Points = 0
+		}
+		e.Updated = time.Now().Unix()
 		return true
 	}
 	return false
@@ -585,14 +614,142 @@ func (l *Lobby) list() []LobbyEntry {
 
 // end lobby types
 
+// ================= PvP Match System =================
+type PvPMatch struct {
+	ID          string        `json:"id"`
+	Player1     string        `json:"player1"`
+	Player2     string        `json:"player2"`
+	Status      string        `json:"status"` // "waiting", "active", "finished"
+	Turn        string        `json:"turn"`   // which player's turn
+	Player1Data PvPPlayerData `json:"player1_data,omitempty"`
+	Player2Data PvPPlayerData `json:"player2_data,omitempty"`
+	Created     int64         `json:"created"`
+	Updated     int64         `json:"updated"`
+}
+
+type PvPPlayerData struct {
+	FactionID string `json:"faction_id"`
+	UnitID    string `json:"unit_id"`
+	Weapons   []struct {
+		Name      string   `json:"name"`
+		Type      string   `json:"type"`
+		Attacks   string   `json:"attacks"`
+		Skill     int      `json:"skill"`
+		Strength  int      `json:"strength"`
+		AP        int      `json:"ap"`
+		Damage    string   `json:"damage"`
+		Abilities []string `json:"abilities,omitempty"`
+	} `json:"weapons"`
+	HP    int  `json:"hp"`
+	MaxHP int  `json:"max_hp"`
+	Ready bool `json:"ready"`
+}
+
+type PvPMatchmaker struct {
+	mu      sync.Mutex
+	matches map[string]*PvPMatch     // key: match ID
+	queue   map[string]PvPPlayerData // key: player name, value: player data
+}
+
+type PvPQueueEntry struct {
+	name string
+	data PvPPlayerData
+}
+
+func newPvPMatchmaker() *PvPMatchmaker {
+	return &PvPMatchmaker{
+		matches: make(map[string]*PvPMatch),
+		queue:   make(map[string]PvPPlayerData),
+	}
+}
+
+func (p *PvPMatchmaker) createMatch(player1, player2 string) *PvPMatch {
+	p.mu.Lock()
+	defer p.mu.Unlock()
+
+	id := fmt.Sprintf("pvp_%d_%s", time.Now().Unix(), generateRandomID(6))
+	match := &PvPMatch{
+		ID:      id,
+		Player1: player1,
+		Player2: player2,
+		Status:  "waiting",
+		Turn:    player1, // Player1 goes first
+		Created: time.Now().Unix(),
+		Updated: time.Now().Unix(),
+	}
+	p.matches[id] = match
+	return match
+}
+
+func (p *PvPMatchmaker) getMatch(id string) *PvPMatch {
+	p.mu.Lock()
+	defer p.mu.Unlock()
+	if match, exists := p.matches[id]; exists {
+		return match
+	}
+	return nil
+}
+
+func (p *PvPMatchmaker) updateMatch(match *PvPMatch) {
+	p.mu.Lock()
+	defer p.mu.Unlock()
+	match.Updated = time.Now().Unix()
+	p.matches[match.ID] = match
+}
+
+func (p *PvPMatchmaker) findMatchForPlayer(player string) *PvPMatch {
+	p.mu.Lock()
+	defer p.mu.Unlock()
+	for _, match := range p.matches {
+		if (match.Player1 == player || match.Player2 == player) && match.Status != "finished" {
+			return match
+		}
+	}
+	return nil
+}
+
+func (p *PvPMatchmaker) addToQueue(playerName string, data PvPPlayerData) {
+	p.mu.Lock()
+	defer p.mu.Unlock()
+	p.queue[playerName] = data
+}
+
+func (p *PvPMatchmaker) removeFromQueue(playerName string) {
+	p.mu.Lock()
+	defer p.mu.Unlock()
+	delete(p.queue, playerName)
+}
+
+func (p *PvPMatchmaker) findWaitingPlayer(excludePlayer string) *PvPQueueEntry {
+	p.mu.Lock()
+	defer p.mu.Unlock()
+	for name, data := range p.queue {
+		if name != excludePlayer {
+			return &PvPQueueEntry{name: name, data: data}
+		}
+	}
+	return nil
+}
+
+func generateRandomID(length int) string {
+	const chars = "abcdefghijklmnopqrstuvwxyz0123456789"
+	result := make([]byte, length)
+	for i := range result {
+		result[i] = chars[rand.Intn(len(chars))]
+	}
+	return string(result)
+}
+
+// end PvP types
+
 // ================= Match log (in-memory) =================
 type MatchEntry struct {
-	Time     int64            `json:"time"`
-	Actor    string           `json:"actor"`
-	Round    int              `json:"round"`
-	Step     int              `json:"step"`
-	Attacker game.UnitSnapshot `json:"attacker"`
-	Defender game.UnitSnapshot `json:"defender"`
+	Time     int64               `json:"time"`
+	Actor    string              `json:"actor"`
+	Round    int                 `json:"round"`
+	Step     int                 `json:"step"`
+	Attacker game.UnitSnapshot   `json:"attacker"`
+	Defender game.UnitSnapshot   `json:"defender"`
 	Weapon   game.WeaponSnapshot `json:"weapon"`
 	Result   game.ShootingResult `json:"result"`
 }
@@ -612,7 +769,9 @@ type MatchLog struct {
 func newMatchLog() *MatchLog { return &MatchLog{recs: map[string]*MatchRecord{}} }
 
 func (m *MatchLog) append(id string, e MatchEntry) *MatchRecord {
-	if id == "" { return nil }
+	if id == "" {
+		return nil
+	}
 	now := time.Now().Unix()
 	m.mu.Lock()
 	defer m.mu.Unlock()
@@ -636,11 +795,14 @@ func (m *MatchLog) get(id string) *MatchRecord {
 }
 
 func (m *MatchLog) put(rec *MatchRecord) {
-	if rec == nil || strings.TrimSpace(rec.ID) == "" { return }
+	if rec == nil || strings.TrimSpace(rec.ID) == "" {
+		return
+	}
 	m.mu.Lock()
 	defer m.mu.Unlock()
 	m.recs[rec.ID] = rec
 }
+
 // end match log types
 
 // ============ Optional local persistence for match logs (dev/debug) ============
@@ -649,11 +811,15 @@ func (m *MatchLog) put(rec *MatchRecord) {
 
 func getMatchPersistDir() string {
 	dir := strings.TrimSpace(os.Getenv("MATCH_LOG_DIR"))
-	if dir == "" { return "" }
+	if dir == "" {
+		return ""
+	}
 	if !filepath.IsAbs(dir) {
 		// make relative paths anchored to cwd
 		abs, err := filepath.Abs(dir)
-		if err == nil { dir = abs }
+		if err == nil {
+			dir = abs
+		}
 	}
 	_ = os.MkdirAll(dir, 0o755)
 	return dir
@@ -670,7 +836,9 @@ func sanitizeIDForFile(id string) string {
 		}
 	}
 	out := strings.Trim(strings.ReplaceAll(string(b), "--", "-"), "-")
-	if out == "" { out = "match" }
+	if out == "" {
+		out = "match"
+	}
 	return out
 }
 
@@ -679,7 +847,9 @@ func matchFilePath(dir, id string) string {
 }
 
 func saveMatchRecord(dir string, rec *MatchRecord) {
-	if dir == "" || rec == nil { return }
+	if dir == "" || rec == nil {
+		return
+	}
 	path := matchFilePath(dir, rec.ID)
 	// write atomically
 	tmp := path + ".tmp"
@@ -689,14 +859,22 @@ func saveMatchRecord(dir string, rec *MatchRecord) {
 }
 
 func loadMatchRecord(dir, id string) *MatchRecord {
-	if dir == "" || strings.TrimSpace(id) == "" { return nil }
+	if dir == "" || strings.TrimSpace(id) == "" {
+		return nil
+	}
 	path := matchFilePath(dir, id)
 	data, err := os.ReadFile(path)
-	if err != nil { return nil }
+	if err != nil {
+		return nil
+	}
 	var rec MatchRecord
-	if err := json.Unmarshal(data, &rec); err != nil { return nil }
+	if err := json.Unmarshal(data, &rec); err != nil {
+		return nil
+	}
 	// basic sanity
-	if strings.TrimSpace(rec.ID) == "" { rec.ID = id }
+	if strings.TrimSpace(rec.ID) == "" {
+		rec.ID = id
+	}
 	return &rec
 }
 
@@ -708,6 +886,7 @@ func main() {
 	}
 	lobby := newLobby()
 	matches := newMatchLog()
+	pvpMatchmaker := newPvPMatchmaker()
 	// Optional local persistence dir for dev/debug
 	matchPersistDir := getMatchPersistDir()
 
@@ -717,18 +896,18 @@ func main() {
 	// Statistics endpoints
 	mux.HandleFunc("/api/stats/save", SaveStatsHandler)
 	mux.HandleFunc("/api/stats/get", GetStatsHandler)
-		mux.HandleFunc("/api/stats/max-attack", GetMaxAttackHandler)
-		mux.HandleFunc("/api/stats/max-attack/today", func(w http.ResponseWriter, r *http.Request) {
-			if r.Method == http.MethodGet {
-				GetGlobalMaxAttackToday(w, r)
-				return
-			}
-			if r.Method == http.MethodPost {
-				PostGlobalMaxAttackToday(w, r)
-				return
-			}
-			writeError(w, http.StatusMethodNotAllowed, "GET or POST only")
-		})
+	mux.HandleFunc("/api/stats/max-attack", GetMaxAttackHandler)
+	mux.HandleFunc("/api/stats/max-attack/today", func(w http.ResponseWriter, r *http.Request) {
+		if r.Method == http.MethodGet {
+			GetGlobalMaxAttackToday(w, r)
+			return
+		}
+		if r.Method == http.MethodPost {
+			PostGlobalMaxAttackToday(w, r)
+			return
+		}
+		writeError(w, http.StatusMethodNotAllowed, "GET or POST only")
+	})
 
 	// Health
 	mux.HandleFunc("/api/healthz", func(w http.ResponseWriter, r *http.Request) {
@@ -753,33 +932,33 @@ func main() {
 		}
 		var req struct {
 			Attacker struct {
-				ID    string `json:"id"`
-				Name  string `json:"name"`
-				T     int    `json:"T"`
-				W     int    `json:"W"`
-				Sv    int    `json:"Sv"`
-				InvSv int    `json:"InvSv"`
-				Keywords []string `json:"keywords,omitempty"`
+				ID        string   `json:"id"`
+				Name      string   `json:"name"`
+				T         int      `json:"T"`
+				W         int      `json:"W"`
+				Sv        int      `json:"Sv"`
+				InvSv     int      `json:"InvSv"`
+				Keywords  []string `json:"keywords,omitempty"`
 				Abilities []string `json:"abilities,omitempty"`
 			} `json:"attacker"`
 			Defender struct {
-				ID    string `json:"id"`
-				Name  string `json:"name"`
-				T     int    `json:"T"`
-				W     int    `json:"W"`
-				Sv    int    `json:"Sv"`
-				InvSv int    `json:"InvSv"`
-				Keywords []string `json:"keywords,omitempty"`
+				ID        string   `json:"id"`
+				Name      string   `json:"name"`
+				T         int      `json:"T"`
+				W         int      `json:"W"`
+				Sv        int      `json:"Sv"`
+				InvSv     int      `json:"InvSv"`
+				Keywords  []string `json:"keywords,omitempty"`
 				Abilities []string `json:"abilities,omitempty"`
 			} `json:"defender"`
 			Weapon struct {
-				Name     string `json:"name"`
-				Type     string `json:"type"`
-				Attacks  string `json:"attacks"`
-				Skill    int    `json:"skill"`
-				Strength int    `json:"strength"`
-				AP       int    `json:"ap"`
-				Damage   string `json:"damage"`
+				Name      string   `json:"name"`
+				Type      string   `json:"type"`
+				Attacks   string   `json:"attacks"`
+				Skill     int      `json:"skill"`
+				Strength  int      `json:"strength"`
+				AP        int      `json:"ap"`
+				Damage    string   `json:"damage"`
 				Abilities []string `json:"abilities,omitempty"`
 			} `json:"weapon"`
 			MatchID string `json:"match_id,omitempty"`
@@ -849,7 +1028,9 @@ func main() {
 			writeError(w, http.StatusMethodNotAllowed, "POST only")
 			return
 		}
-		var body struct{ Name string `json:"name"` }
+		var body struct {
+			Name string `json:"name"`
+		}
 		if err := json.NewDecoder(r.Body).Decode(&body); err != nil || strings.TrimSpace(body.Name) == "" {
 			writeError(w, http.StatusBadRequest, "invalid name")
 			return
@@ -861,22 +1042,382 @@ func main() {
 		}
 		writeJSON(w, e)
 	})
-	// POST /api/lobby/phase {name, phase}
+	// POST /api/lobby/phase {name, phase, points?}
 	mux.HandleFunc("/api/lobby/phase", func(w http.ResponseWriter, r *http.Request) {
 		if r.Method != http.MethodPost {
 			writeError(w, http.StatusMethodNotAllowed, "POST only")
 			return
 		}
-		var body struct{ Name, Phase string }
+		var body struct{ Name, Phase string; Points int }
 		if err := json.NewDecoder(r.Body).Decode(&body); err != nil || strings.TrimSpace(body.Name) == "" {
 			writeError(w, http.StatusBadRequest, "invalid payload")
 			return
 		}
-		if ok := lobby.setPhase(strings.TrimSpace(body.Name), strings.TrimSpace(body.Phase)); !ok {
+		if ok := lobby.setPhasePoints(strings.TrimSpace(body.Name), strings.TrimSpace(body.Phase), body.Points); !ok {
 			writeError(w, http.StatusNotFound, "user not in lobby")
 			return
 		}
 		writeJSON(w, map[string]string{"status": "ok"})
+	})
+
+	// PvP Matchmaking endpoints
+	// POST /api/pvp/matchmake {name, faction_id, unit_id, weapons}
+	mux.HandleFunc("/api/pvp/matchmake", func(w http.ResponseWriter, r *http.Request) {
+		if r.Method != http.MethodPost {
+			writeError(w, http.StatusMethodNotAllowed, "POST only")
+			return
+		}
+		var req struct {
+			Name      string `json:"name"`
+			FactionID string `json:"faction_id"`
+			UnitID    string `json:"unit_id"`
+			Weapons   []struct {
+				Name      string   `json:"name"`
+				Type      string   `json:"type"`
+				Attacks   string   `json:"attacks"`
+				Skill     int      `json:"skill"`
+				Strength  int      `json:"strength"`
+				AP        int      `json:"ap"`
+				Damage    string   `json:"damage"`
+				Abilities []string `json:"abilities,omitempty"`
+			} `json:"weapons"`
+			HP    int `json:"hp"`
+			MaxHP int `json:"max_hp"`
+		}
+		if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
+			writeError(w, http.StatusBadRequest, "invalid JSON")
+			return
+		}
+		if strings.TrimSpace(req.Name) == "" {
+			writeError(w, http.StatusBadRequest, "name required")
+			return
+		}
+
+		playerName := strings.TrimSpace(req.Name)
+
+		// Check if player already has an active match
+		if existingMatch := pvpMatchmaker.findMatchForPlayer(playerName); existingMatch != nil {
+			// If both players are already ready but match is still waiting, activate it now
+			if existingMatch.Status == "waiting" && existingMatch.Player1Data.Ready && existingMatch.Player2Data.Ready {
+				existingMatch.Status = "active"
+				pvpMatchmaker.updateMatch(existingMatch)
+				// Update lobby phases to in-game
+				lobby.setPhase(existingMatch.Player1, "in-game")
+				lobby.setPhase(existingMatch.Player2, "in-game")
+			}
+			writeJSON(w, map[string]interface{}{
+				"status": "existing_match",
+				"match":  existingMatch,
+			})
+			return
+		}
+
+		// Look for another player in PvP queue
+		waitingPlayer := pvpMatchmaker.findWaitingPlayer(playerName)
+
+		if waitingPlayer == nil {
+			// No opponent found, add this player to PvP queue
+			pvpMatchmaker.addToQueue(playerName, PvPPlayerData{
+				FactionID: req.FactionID,
+				UnitID:    req.UnitID,
+				Weapons:   req.Weapons,
+				HP:        req.HP,
+				MaxHP:     req.MaxHP,
+				Ready:     true,
+			})
+
+			writeJSON(w, map[string]interface{}{
+				"status":  "queued",
+				"message": "Waiting for opponent...",
+			})
+			return
+		}
+
+		// Create match between this player and waiting opponent
+		match := pvpMatchmaker.createMatch(playerName, waitingPlayer.name)
+
+		// Set player data for both players
+		currentPlayerData := PvPPlayerData{
+			FactionID: req.FactionID,
+			UnitID:    req.UnitID,
+			Weapons:   req.Weapons,
+			HP:        req.HP,
+			MaxHP:     req.MaxHP,
+			Ready:     true,
+		}
+
+		if match.Player1 == playerName {
+			match.Player1Data = currentPlayerData
+			match.Player2Data = waitingPlayer.data
+		} else {
+			match.Player2Data = currentPlayerData
+			match.Player1Data = waitingPlayer.data
+		}
+
+		pvpMatchmaker.updateMatch(match)
+
+		// If both players are already ready (typical queue match), activate immediately
+		if match.Player1Data.Ready && match.Player2Data.Ready {
+			match.Status = "active"
+			pvpMatchmaker.updateMatch(match)
+			// Set lobby phases to in-game
+			lobby.setPhase(match.Player1, "in-game")
+			lobby.setPhase(match.Player2, "in-game")
+		}
+
+		// Remove opponent from queue
+		pvpMatchmaker.removeFromQueue(waitingPlayer.name)
+
+		writeJSON(w, map[string]interface{}{
+			"status": "match_created",
+			"match":  match,
+		})
+	})
+
+	// GET /api/pvp/match/{id} - Get match state
+	mux.HandleFunc("/api/pvp/match/", func(w http.ResponseWriter, r *http.Request) {
+		if r.Method != http.MethodGet {
+			writeError(w, http.StatusMethodNotAllowed, "GET only")
+			return
+		}
+		id := strings.TrimSpace(strings.TrimPrefix(r.URL.Path, "/api/pvp/match/"))
+		if id == "" {
+			writeError(w, http.StatusBadRequest, "missing match id")
+			return
+		}
+		match := pvpMatchmaker.getMatch(id)
+		if match == nil {
+			writeError(w, http.StatusNotFound, "match not found")
+			return
+		}
+		// Auto-activate if both players are ready but status hasn't updated yet
+		if match.Status == "waiting" && match.Player1Data.Ready && match.Player2Data.Ready {
+			match.Status = "active"
+			pvpMatchmaker.updateMatch(match)
+			lobby.setPhase(match.Player1, "in-game")
+			lobby.setPhase(match.Player2, "in-game")
+		}
+		writeJSON(w, match)
+	})
+
+	// POST /api/pvp/join/{id} - Join existing match with player data
+	mux.HandleFunc("/api/pvp/join/", func(w http.ResponseWriter, r *http.Request) {
+		if r.Method != http.MethodPost {
+			writeError(w, http.StatusMethodNotAllowed, "POST only")
+			return
+		}
+		id := strings.TrimSpace(strings.TrimPrefix(r.URL.Path, "/api/pvp/join/"))
+		if id == "" {
+			writeError(w, http.StatusBadRequest, "missing match id")
+			return
+		}
+
+		var req struct {
+			Name      string `json:"name"`
+			FactionID string `json:"faction_id"`
+			UnitID    string `json:"unit_id"`
+			Weapons   []struct {
+				Name      string   `json:"name"`
+				Type      string   `json:"type"`
+				Attacks   string   `json:"attacks"`
+				Skill     int      `json:"skill"`
+				Strength  int      `json:"strength"`
+				AP        int      `json:"ap"`
+				Damage    string   `json:"damage"`
+				Abilities []string `json:"abilities,omitempty"`
+			} `json:"weapons"`
+			HP    int `json:"hp"`
+			MaxHP int `json:"max_hp"`
+		}
+		if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
+			writeError(w, http.StatusBadRequest, "invalid JSON")
+			return
+		}
+
+		match := pvpMatchmaker.getMatch(id)
+		if match == nil {
+			writeError(w, http.StatusNotFound, "match not found")
+			return
+		}
+
+		playerName := strings.TrimSpace(req.Name)
+		if match.Player2 == playerName && !match.Player2Data.Ready {
+			// Player 2 joining with their data
+			match.Player2Data = PvPPlayerData{
+				FactionID: req.FactionID,
+				UnitID:    req.UnitID,
+				Weapons:   req.Weapons,
+				HP:        req.HP,
+				MaxHP:     req.MaxHP,
+				Ready:     true,
+			}
+
+			// If both players are ready, start the match
+			if match.Player1Data.Ready && match.Player2Data.Ready {
+				match.Status = "active"
+				lobby.setPhase(match.Player1, "in-game")
+				lobby.setPhase(match.Player2, "in-game")
+			}
+
+			pvpMatchmaker.updateMatch(match)
+			writeJSON(w, map[string]interface{}{
+				"status": "joined",
+				"match":  match,
+			})
+			return
+		}
+
+		writeError(w, http.StatusBadRequest, "cannot join this match")
+	})
+
+	// POST /api/pvp/action/{id} - Submit combat action (shooting)
+	mux.HandleFunc("/api/pvp/action/", func(w http.ResponseWriter, r *http.Request) {
+		if r.Method != http.MethodPost {
+			writeError(w, http.StatusMethodNotAllowed, "POST only")
+			return
+		}
+		id := strings.TrimSpace(strings.TrimPrefix(r.URL.Path, "/api/pvp/action/"))
+		if id == "" {
+			writeError(w, http.StatusBadRequest, "missing match id")
+			return
+		}
+
+		var req struct {
+			Player   string `json:"player"`
+			WeaponID int    `json:"weapon_id"` // index into player's weapons array
+		}
+		if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
+			writeError(w, http.StatusBadRequest, "invalid JSON")
+			return
+		}
+
+		match := pvpMatchmaker.getMatch(id)
+		if match == nil {
+			writeError(w, http.StatusNotFound, "match not found")
+			return
+		}
+
+		if match.Status != "active" {
+			writeError(w, http.StatusBadRequest, "match not active")
+			return
+		}
+
+		if match.Turn != req.Player {
+			writeError(w, http.StatusBadRequest, "not your turn")
+			return
+		}
+
+		// Determine attacker and defender
+		var attackerData, defenderData *PvPPlayerData
+		var defender string
+
+		if req.Player == match.Player1 {
+			attackerData = &match.Player1Data
+			defenderData = &match.Player2Data
+			defender = match.Player2
+		} else if req.Player == match.Player2 {
+			attackerData = &match.Player2Data
+			defenderData = &match.Player1Data
+			defender = match.Player1
+		} else {
+			writeError(w, http.StatusBadRequest, "invalid player")
+			return
+		}
+
+		// Validate weapon selection
+		if req.WeaponID < 0 || req.WeaponID >= len(attackerData.Weapons) {
+			writeError(w, http.StatusBadRequest, "invalid weapon")
+			return
+		}
+
+		weapon := attackerData.Weapons[req.WeaponID]
+
+		// Build unit snapshots for combat resolution
+		attacker := game.UnitSnapshot{
+			ID:        req.Player,
+			Name:      req.Player,
+			T:         4, // These would come from unit data in a full implementation
+			W:         attackerData.HP,
+			Sv:        3,
+			InvSv:     0,
+			Keywords:  []string{},
+			Abilities: []string{},
+		}
+
+		def := game.UnitSnapshot{
+			ID:        defender,
+			Name:      defender,
+			T:         4,
+			W:         defenderData.HP,
+			Sv:        3,
+			InvSv:     0,
+			Keywords:  []string{},
+			Abilities: []string{},
+		}
+
+		wep := game.WeaponSnapshot{
+			Name:      weapon.Name,
+			Type:      weapon.Type,
+			Attacks:   weapon.Attacks,
+			Skill:     weapon.Skill,
+			Strength:  weapon.Strength,
+			AP:        weapon.AP,
+			Damage:    weapon.Damage,
+			Abilities: weapon.Abilities,
+		}
+
+		// Resolve combat
+		result := game.ResolveShooting(attacker, def, wep)
+
+		// Update defender HP
+		newHP := defenderData.HP - (result.DamageTotal)
+		if newHP < 0 {
+			newHP = 0
+		}
+		defenderData.HP = newHP
+
+		// Check for victory
+		if defenderData.HP <= 0 {
+			match.Status = "finished"
+			lobby.setPhase(match.Player1, "idle")
+			lobby.setPhase(match.Player2, "idle")
+		} else {
+			// Switch turns
+			if match.Turn == match.Player1 {
+				match.Turn = match.Player2
+			} else {
+				match.Turn = match.Player1
+			}
+		}
+
+		pvpMatchmaker.updateMatch(match)
+
+		writeJSON(w, map[string]interface{}{
+			"result": result,
+			"match":  match,
+		})
+	})
+
+	// GET /api/pvp/debug - Debug endpoint to check queue state
+	mux.HandleFunc("/api/pvp/debug", func(w http.ResponseWriter, r *http.Request) {
+		if r.Method != http.MethodGet {
+			writeError(w, http.StatusMethodNotAllowed, "GET only")
+			return
+		}
+
+		pvpMatchmaker.mu.Lock()
+		queueData := make(map[string]interface{})
+		for name, data := range pvpMatchmaker.queue {
+			queueData[name] = data
+		}
+		matchCount := len(pvpMatchmaker.matches)
+		pvpMatchmaker.mu.Unlock()
+
+		writeJSON(w, map[string]interface{}{
+			"queue_size":     len(queueData),
+			"queue_players":  queueData,
+			"active_matches": matchCount,
+		})
 	})
 
 	// GET /api/factions
@@ -960,8 +1501,12 @@ func main() {
 					min := -1
 					for _, c := range costs {
 						n, err := strconv.Atoi(strings.TrimSpace(c.Cost))
-						if err != nil { continue }
-						if n <= 0 { continue }
+						if err != nil {
+							continue
+						}
+						if n <= 0 {
+							continue
+						}
 						if min < 0 || n < min {
 							min = n
 						}
@@ -1009,11 +1554,19 @@ func main() {
 							min := -1
 							for _, c := range costs {
 								n, err := strconv.Atoi(strings.TrimSpace(c.Cost))
-								if err != nil { continue }
-								if n <= 0 { continue }
-								if min < 0 || n < min { min = n }
+								if err != nil {
+									continue
+								}
+								if n <= 0 {
+									continue
+								}
+								if min < 0 || n < min {
+									min = n
+								}
 							}
-							if min > 0 { eu.Points = strconv.Itoa(min) }
+							if min > 0 {
+								eu.Points = strconv.Itoa(min)
+							}
 						}
 						writeJSON(w, eu)
 						return
@@ -1026,42 +1579,54 @@ func main() {
 					case "weapons":
 						{
 							list := store.WeaponsByDS[unitID]
-							if list == nil { list = []Weapon{} }
+							if list == nil {
+								list = []Weapon{}
+							}
 							writeJSON(w, list)
 						}
 						return
 					case "models":
 						{
 							list := store.ModelsByDS[unitID]
-							if list == nil { list = []Model{} }
+							if list == nil {
+								list = []Model{}
+							}
 							writeJSON(w, list)
 						}
 						return
 					case "keywords":
 						{
 							list := store.KeywordsByDS[unitID]
-							if list == nil { list = []Keyword{} }
+							if list == nil {
+								list = []Keyword{}
+							}
 							writeJSON(w, list)
 						}
 						return
 					case "abilities":
 						{
 							list := store.AbilitiesByDS[unitID]
-							if list == nil { list = []Ability{} }
+							if list == nil {
+								list = []Ability{}
+							}
 							writeJSON(w, list)
 						}
 						return
 					case "options":
 						{
 							list := store.OptionsByDS[unitID]
-							if list == nil { list = []Option{} }
+							if list == nil {
+								list = []Option{}
+							}
 							writeJSON(w, list)
 						}
 						return
 					case "costs":
 						{
 							list := store.CostsByDS[unitID]
-							if list == nil { list = []ModelCost{} }
+							if list == nil {
+								list = []ModelCost{}
+							}
 							writeJSON(w, list)
 						}
 						return

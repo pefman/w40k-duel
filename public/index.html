@@ -11,6 +11,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <!-- Theme stylesheet (Warhammer-inspired) -->
   <link href="/styles.css" rel="stylesheet">
+  <style>
+    /* Winner overlay */
+    .victory-overlay{position:fixed;inset:0;background:rgba(0,0,0,.8);display:flex;align-items:center;justify-content:center;z-index:1050}
+    .vo-card{background:#0b1016;border:1px solid #c9a753;border-radius:14px;padding:24px 24px 20px;max-width:560px;width:min(92vw,560px);text-align:center;box-shadow:0 0 40px rgba(0,0,0,.6)}
+    .vo-title{color:#c9a753;font-family:'Cinzel',serif;font-weight:700;font-size:1.5rem}
+    .vo-sub{color:#8aa0b8;font-size:.95rem;margin-top:.25rem}
+    .vo-meta{color:#5a6c7d;font-size:.8rem;margin-top:.5rem}
+    .vo-actions{margin-top:16px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+  </style>
 </head>
 <body>
   <!-- Top Banner -->
@@ -50,7 +59,8 @@
           </div>
           <div class="action-buttons-BOX_ab_ btn-group" role="group" aria-label="Actions">
             <button id="btnFightAI" class="btn btn-outline-warning">Fight AI</button>
-            <button id="btnMatchmake" class="btn btn-outline-warning">Matchmake Player</button>
+            <button id="btnMatchmake" class="btn btn-outline-warning">Matchmake</button>
+            <button id="btnCancelMatchmake" class="btn btn-outline-danger d-none">Cancel Search</button>
           </div>
         </div>
       </div>
@@ -64,6 +74,14 @@
             <h2 class="h6 text-warning m-0">Weapon Selection</h2>
             <div class="text-secondary small" id="weaponSelectSummary">—</div>
           </div>
+          <!-- Quick Selection Buttons -->
+          <div class="d-flex gap-2 mb-3 flex-wrap">
+            <button id="btnDefaultLayout" class="btn btn-sm btn-success" title="Select the standard/default wargear for this unit">⚔️ Default Layout</button>
+            <button id="btnSelectAllRanged" class="btn btn-sm btn-outline-info" title="Select all available ranged weapons (one per weapon type)">Select All Ranged</button>
+            <button id="btnSelectAllMelee" class="btn btn-sm btn-outline-info" title="Select the default melee weapon">Select All Melee</button>
+            <button id="btnMaxPower" class="btn btn-sm btn-warning" title="Automatically select the highest damage weapons available">⚡ Max Power!</button>
+            <button id="btnClearWeapons" class="btn btn-sm btn-outline-secondary" title="Clear all weapon selections">Clear All</button>
+          </div>
           <div id="weaponSelectBox" class="row g-2"></div>
         </div>
       </div>
@@ -73,6 +91,19 @@
       <div class="col-12">
         <div class="game-window-BOX_gw_ game-surface p-2 d-none" id="gameWindow">
           <canvas id="gameCanvas" class="w-100" style="display:block; width: 100%; height: auto; aspect-ratio: 16/9; background:#0a0c10;"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- Winner Splash Overlay -->
+    <div id="victoryOverlay" class="victory-overlay d-none" aria-live="polite" aria-modal="true" role="dialog">
+      <div class="vo-card">
+        <div class="vo-title" id="voTitle">🏆 Victory</div>
+        <div class="vo-sub" id="voSubtitle">Glory to the winner.</div>
+        <div class="vo-meta" id="voMeta">Mode: <span id="voMode">—</span> • Match: <code id="voMatch">—</code></div>
+        <div class="vo-actions">
+          <button id="voNewMatch" class="btn btn-warning">New Match</button>
+          <button id="voClose" class="btn btn-outline-secondary">Close</button>
         </div>
       </div>
     </div>
@@ -201,9 +232,31 @@ var stats = {};
       'Pew Pew Heresy – for when you’re not quite excommunicate traitoris yet.',
       'Spiky Pauldrons of Destiny – the real source of power in 40K.',
       'Rogal Dorn’s Slap Chop – build it, fortify it, then chop it.',
-      'Lasgun Legends: Missing Every Shot Since M2 – accuracy optional.'
+      'Lasgun Legends: Missing Every Shot Since M2 – accuracy optional.',
+      'Heretic Hugfest 3000 – love hurts, and so do chainaxes.',
+      'Purging for Fun & Profit – guaranteed to cleanse and earn.',
+      'ORKtagon – where only the biggest and greenest survive.',
+      'Spiritual Lieutenants of Eternal War – more titles than actual victories.',
+      'Dakka Diplomacy – negotiations conducted exclusively with bullets.',
+      'Smite Club – first rule: always manifest on an 11+.',
+      'Bayonets & Bureaucracy – Astra Militarum in a nutshell.',
+      'Chainsword Shuffle – one step forward, three limbs gone.',
+      'Warpstorm Wrestling – chaos reigns and suplexes are allowed.',
+      'The Guilliman Games – sanctioned sporting events of ultramar excellence.',
+      'Kroot Cook-Off – winner eats the loser, literally.',
+      'Ghazghkull’s Punch-Up Parade – loud, messy, and somehow festive.',
+      'Servo Skull Smackfest – flying drones, flying teeth.',
+      'Melta at Midday – quick draw, quicker vaporization.',
+      'The Lascannon Lottery – will it hit? statistically, no.',
+      'Daemonhost Dance-Off – where the music is screaming souls.',
+      'Battle-Barge Ballroom Blitz – formal attire: powered armour.',
+      'Sanguinius Says – follow the primarch’s commands… or else.',
+      'Astartes Arm Wrestling – table reinforced with adamantium.',
+      'Catachan Cage Match – the cage is made of razorwire and snakes.'
     ];
-    const chosen = names[Math.floor(Math.random() * names.length)];
+    // Deduplicate just in case future edits add overlaps
+    const unique = Array.from(new Set(names.map(s => s.trim())));
+    const chosen = unique[Math.floor(Math.random() * unique.length)];
     const headerEl = document.querySelector('header.banner h1');
     if (headerEl) headerEl.textContent = chosen;
     // Also set the browser tab title
@@ -298,6 +351,8 @@ var stats = {};
     const weaponSelectSummary = document.getElementById('weaponSelectSummary');
   const weaponCatalog = { ranged: [], melee: [] };
   const weaponSelection = { ranged: new Set(), melee: null };
+  // Controls whether the weapon selection panel may be shown
+  let allowSelectionUI = true;
 
     function renderWeaponSelection(){
       if (!weaponSelectBox) return;
@@ -390,6 +445,9 @@ var stats = {};
           renderWeaponSelection();
         });
       });
+
+      // Update button states
+      updateQuickSelectButtons();
     }
 
     async function populateWeaponSelection(fid, uid){
@@ -442,7 +500,21 @@ var stats = {};
         // Pre-check standard weapons
         weaponSelection.ranged = new Set(weaponCatalog.ranged.filter(w=>w.isStandard).map(w=>w.name));
         weaponSelection.melee = weaponCatalog.melee.find(w=>w.isStandard)?.name || null;
-        if (weaponSelectRow) weaponSelectRow.classList.remove('d-none');
+        if (weaponSelectRow) {
+          if (allowSelectionUI) weaponSelectRow.classList.remove('d-none');
+          else weaponSelectRow.classList.add('d-none');
+        }
+        
+        // Update lobby status to "choosing-weapons"
+        const sel = window.currentSelection && window.currentSelection();
+        if (sel && sel.user) {
+          fetch('/api/lobby/phase', {
+            method: 'POST', 
+            headers: {'Content-Type': 'application/json'}, 
+            body: JSON.stringify({name: sel.user, phase: 'choosing-weapons'})
+          }).catch(()=>{});
+        }
+        
         renderWeaponSelection();
       } catch {
         if (weaponSelectRow) weaponSelectRow.classList.add('d-none');
@@ -455,8 +527,172 @@ var stats = {};
       populateWeaponSelection(fid, uid);
     });
 
-    document.getElementById('wtRanged').addEventListener('change', ()=> renderWeaponSelection());
-    document.getElementById('wtMelee').addEventListener('change', ()=> renderWeaponSelection());
+    document.getElementById('wtRanged').addEventListener('change', ()=> { renderWeaponSelection(); updateQuickSelectButtons(); });
+    document.getElementById('wtMelee').addEventListener('change', ()=> { renderWeaponSelection(); updateQuickSelectButtons(); });
+
+    // Quick weapon selection functions
+    function updateQuickSelectButtons() {
+      const currentType = getWeaponType();
+      const rangedBtn = document.getElementById('btnSelectAllRanged');
+      const meleeBtn = document.getElementById('btnSelectAllMelee');
+      const maxPowerBtn = document.getElementById('btnMaxPower');
+      const defaultBtn = document.getElementById('btnDefaultLayout');
+      
+      if (rangedBtn && meleeBtn && maxPowerBtn) {
+        // Enable/disable buttons based on available weapons and current type
+        rangedBtn.disabled = weaponCatalog.ranged.length === 0;
+        meleeBtn.disabled = weaponCatalog.melee.length === 0;
+        
+        // Default button is available if any weapons exist
+        if (defaultBtn) {
+          defaultBtn.disabled = weaponCatalog.ranged.length === 0 && weaponCatalog.melee.length === 0;
+        }
+        
+        // Highlight the button that matches current weapon type
+        rangedBtn.classList.toggle('btn-info', currentType === 'ranged' && weaponCatalog.ranged.length > 0);
+        rangedBtn.classList.toggle('btn-outline-info', currentType !== 'ranged' || weaponCatalog.ranged.length === 0);
+        
+        meleeBtn.classList.toggle('btn-info', currentType === 'melee' && weaponCatalog.melee.length > 0);
+        meleeBtn.classList.toggle('btn-outline-info', currentType !== 'melee' || weaponCatalog.melee.length === 0);
+      }
+    }
+
+    function selectDefaultLayout() {
+      // Select only the standard/default wargear as it appears in the codex
+      weaponSelection.ranged.clear();
+      weaponSelection.melee = null;
+
+      // Select default ranged weapons (marked as isStandard)
+      const defaultRanged = weaponCatalog.ranged.filter(w => w.isStandard);
+      defaultRanged.forEach(w => weaponSelection.ranged.add(w.name));
+
+      // Select default melee weapon (marked as isStandard)
+      const defaultMelee = weaponCatalog.melee.find(w => w.isStandard);
+      if (defaultMelee) {
+        weaponSelection.melee = defaultMelee.name;
+      }
+
+      // Switch to the type with selections, preferring ranged
+      if (weaponSelection.ranged.size > 0) {
+        document.getElementById('wtRanged').checked = true;
+      } else if (weaponSelection.melee) {
+        document.getElementById('wtMelee').checked = true;
+      }
+
+      renderWeaponSelection();
+    }
+
+    function selectAllRanged() {
+      if (weaponCatalog.ranged.length === 0) return;
+      weaponSelection.ranged.clear();
+      // Group by base name and select one weapon per group (preferring default)
+      const baseNames = new Set();
+      weaponCatalog.ranged.forEach(w => {
+        const baseName = w.name.split(/\s[–—-]\s/)[0].trim();
+        if (!baseNames.has(baseName)) {
+          baseNames.add(baseName);
+          // Prefer default/standard weapons when available
+          const group = weaponCatalog.ranged.filter(wp => wp.name.split(/\s[–—-]\s/)[0].trim() === baseName);
+          const preferred = group.find(wp => wp.isStandard) || group[0];
+          weaponSelection.ranged.add(preferred.name);
+        }
+      });
+      // Switch to ranged view to show selection
+      document.getElementById('wtRanged').checked = true;
+      renderWeaponSelection();
+    }
+
+    function selectAllMelee() {
+      if (weaponCatalog.melee.length === 0) return;
+      // For melee, select the first/default weapon
+      const defaultWeapon = weaponCatalog.melee.find(w => w.isStandard) || weaponCatalog.melee[0];
+      weaponSelection.melee = defaultWeapon?.name || null;
+      // Switch to melee view to show selection
+      document.getElementById('wtMelee').checked = true;
+      renderWeaponSelection();
+    }
+
+    function selectMaxPower() {
+      // Visual feedback for the Max Power button
+      const maxPowerBtn = document.getElementById('btnMaxPower');
+      const originalText = maxPowerBtn?.textContent;
+      if (maxPowerBtn) {
+        maxPowerBtn.textContent = '⚡ SELECTING...';
+        maxPowerBtn.disabled = true;
+      }
+
+      // Calculate damage potential for each weapon and select highest damage weapons
+      const calculateDamagePotential = (weapon) => {
+        const attacks = parseFloat(weapon.attacks) || 1;
+        const damage = parseFloat(weapon.damage) || 1;
+        const strength = weapon.strength || 4;
+        const ap = Math.abs(weapon.ap || 0);
+        
+        // Simple scoring: attacks * damage * strength modifier * AP modifier
+        const strengthMod = strength >= 8 ? 1.5 : strength >= 6 ? 1.2 : 1.0;
+        const apMod = ap >= 3 ? 1.3 : ap >= 2 ? 1.15 : ap >= 1 ? 1.1 : 1.0;
+        
+        return attacks * damage * strengthMod * apMod;
+      };
+
+      // Clear current selection
+      weaponSelection.ranged.clear();
+      weaponSelection.melee = null;
+
+      // Select best ranged weapons (group by base name, pick highest damage in each group)
+      const rangedGroups = {};
+      weaponCatalog.ranged.forEach(w => {
+        const baseName = w.name.split(/\s[–—-]\s/)[0].trim();
+        if (!rangedGroups[baseName] || calculateDamagePotential(w) > calculateDamagePotential(rangedGroups[baseName])) {
+          rangedGroups[baseName] = w;
+        }
+      });
+      Object.values(rangedGroups).forEach(w => weaponSelection.ranged.add(w.name));
+
+      // Select best melee weapon
+      let bestMelee = null;
+      let bestMeleeDamage = 0;
+      weaponCatalog.melee.forEach(w => {
+        const damage = calculateDamagePotential(w);
+        if (damage > bestMeleeDamage) {
+          bestMeleeDamage = damage;
+          bestMelee = w;
+        }
+      });
+      weaponSelection.melee = bestMelee?.name || null;
+
+      // Switch to the type with more selections, or ranged if tied
+      const rangedCount = weaponSelection.ranged.size;
+      const meleeCount = weaponSelection.melee ? 1 : 0;
+      if (rangedCount >= meleeCount && rangedCount > 0) {
+        document.getElementById('wtRanged').checked = true;
+      } else if (meleeCount > 0) {
+        document.getElementById('wtMelee').checked = true;
+      }
+
+      renderWeaponSelection();
+
+      // Restore button after a short delay
+      setTimeout(() => {
+        if (maxPowerBtn) {
+          maxPowerBtn.textContent = originalText;
+          maxPowerBtn.disabled = false;
+        }
+      }, 500);
+    }
+
+    function clearAllWeapons() {
+      weaponSelection.ranged.clear();
+      weaponSelection.melee = null;
+      renderWeaponSelection();
+    }
+
+    // Add event listeners for quick selection buttons
+    document.getElementById('btnDefaultLayout')?.addEventListener('click', selectDefaultLayout);
+    document.getElementById('btnSelectAllRanged')?.addEventListener('click', selectAllRanged);
+    document.getElementById('btnSelectAllMelee')?.addEventListener('click', selectAllMelee);
+    document.getElementById('btnMaxPower')?.addEventListener('click', selectMaxPower);
+    document.getElementById('btnClearWeapons')?.addEventListener('click', clearAllWeapons);
 
     // Read selected weapon type
     function getWeaponType(){
@@ -532,17 +768,58 @@ var stats = {};
       const h = canvas.height / (window.devicePixelRatio||1);
       ctx.fillStyle = '#0b1016';
       ctx.fillRect(0,0,w,h);
+      
+      // Main title
       ctx.fillStyle = '#c9a753';
-      ctx.font = '16px system-ui, sans-serif';
-      ctx.fillText('Shooting Duel — ready', 12, 24);
+      ctx.font = 'bold 18px system-ui, sans-serif';
+      ctx.fillText('⚔️ W40K Combat Simulator', 12, 24);
+      
+      // Status
+      ctx.fillStyle = '#2ecc71';
+      ctx.font = '14px system-ui, sans-serif';
+      ctx.fillText('● Ready for Battle', 12, 48);
+      
+      // Instructions
       ctx.fillStyle = '#8aa0b8';
       ctx.font = '12px system-ui, sans-serif';
-      ctx.fillText('Pick a faction/unit and press Fight AI', 12, 44);
+      ctx.fillText('Select your faction, unit & weapons', 12, 72);
+      ctx.fillText('Then choose: Fight AI or Matchmake', 12, 88);
+      
+      // Footer
+      ctx.fillStyle = '#5a6c7d';
+      ctx.font = '10px system-ui, sans-serif';
+      ctx.fillText('In the grim darkness of the far future, there is only war...', 12, h - 12);
     }
     window.addEventListener('resize', resizeCanvas);
     setTimeout(resizeCanvas, 0);
   // Hide canvas by default until a fight starts
   hideFightSurface();
+
+    // Winner overlay helpers
+    function showWinnerOverlay(opts){
+      const o = opts||{};
+      const overlay = document.getElementById('victoryOverlay');
+      const title = document.getElementById('voTitle');
+      const sub = document.getElementById('voSubtitle');
+      const mode = document.getElementById('voMode');
+      const mid = document.getElementById('voMatch');
+      title.textContent = `🏆 ${o.winner ? o.winner + ' wins' : 'Victory'}`;
+      sub.textContent = o.subtitle || (o.loser ? `Defeated ${o.loser}` : 'Glory to the victor.');
+      mode.textContent = o.mode || 'Match';
+      mid.textContent = o.matchId || '—';
+      overlay.classList.remove('d-none');
+    }
+    function hideWinnerOverlay(){
+      document.getElementById('victoryOverlay')?.classList.add('d-none');
+    }
+    document.getElementById('voClose')?.addEventListener('click', ()=>{ hideWinnerOverlay(); });
+    document.getElementById('voNewMatch')?.addEventListener('click', async ()=>{
+      hideWinnerOverlay();
+      // Set lobby phase back to idle if we know username
+      try { const u = sessionStorage.getItem('username') || 'Anonymous'; await fetch('/api/lobby/phase',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:u,phase:'idle'})}); } catch {}
+      showPostMatchUI();
+      drawSplash();
+    });
 
     // Data helpers
     const numFrom = (s)=>{
@@ -979,12 +1256,12 @@ var stats = {};
         const resp = await fetch('/api/lobby');
         const list = await resp.json();
         const wrap = document.getElementById('lobbyList');
-        wrap.innerHTML = list.map(e => `
+  wrap.innerHTML = list.map(e => `
           <div class="col-12 col-md-6 col-lg-4">
             <div class="card bg-dark border-secondary">
               <div class="card-body py-2 d-flex justify-content-between">
-                <span class="fw-semibold">${e.name}</span>
-                <span class="badge text-bg-secondary">${e.phase || 'idle'}</span>
+    <span class="fw-semibold">${e.name}</span>
+    <span class="badge text-bg-secondary">${e.phase || 'idle'}${e.phase==='queue' && e.points ? ` · ${e.points}pts` : ''}</span>
               </div>
             </div>
           </div>`).join('');
@@ -994,6 +1271,12 @@ var stats = {};
     setInterval(refreshLobby, 3000);
 
     // Action buttons handlers (placeholder wiring)
+    function parseSkill(skillStr) {
+      if (!skillStr) return 4; // default to 4+
+      const match = skillStr.match(/(\d+)/);
+      return match ? parseInt(match[1]) : 4;
+    }
+
     function ensureSelection(){
       const sel = window.currentSelection();
       if (!sel.user || sel.user === 'Anonymous') {
@@ -1004,17 +1287,62 @@ var stats = {};
       if (!sel.unitId) { alert('Please select a unit.'); return null; }
       return sel;
     }
-    const selectionRow = document.querySelector('.selection-BOX_sel_');
-    const statsBox = document.getElementById('statsBox');
+  const selectionRow = document.querySelector('.selection-BOX_sel_');
+  const statsBox = document.getElementById('statsBox');
     function hidePreMatchUI(){
-      if (selectionRow) selectionRow.classList.add('d-none');
-      if (statsBox) statsBox.classList.add('d-none');
+      console.log('hidePreMatchUI called');
+      if (selectionRow) {
+        selectionRow.classList.add('d-none');
+        console.log('Hidden selection row');
+      } else {
+        console.log('Selection row not found');
+      }
+      if (statsBox) {
+        statsBox.classList.add('d-none');
+        console.log('Hidden stats box');
+      } else {
+        console.log('Stats box not found');
+      }
+      if (weaponSelectRow) {
+        weaponSelectRow.classList.add('d-none');
+        console.log('Hidden weapon selection row');
+      } else {
+        console.log('Weapon select row not found');
+      }
+      
+      // Update lobby status when hiding UI
+      const sel = window.currentSelection && window.currentSelection();
+      if (sel && sel.user) {
+        fetch('/api/lobby/phase', {
+          method: 'POST', 
+          headers: {'Content-Type': 'application/json'}, 
+          body: JSON.stringify({name: sel.user, phase: 'idle'})
+        }).catch(()=>{});
+      }
     }
     function showPostMatchUI(){
   if (selectionRow) selectionRow.classList.remove('d-none');
   if (statsBox) statsBox.classList.remove('d-none');
   // Show weapon selection after fight
-  if (weaponSelectRow) weaponSelectRow.classList.remove('d-none');
+  allowSelectionUI = true;
+  if (weaponSelectRow) weaponSelectRow.classList.toggle('d-none', !allowSelectionUI);
+  // Re-enable pre-match actions
+  try {
+    const btnAI = document.getElementById('btnFightAI');
+    const btnMM = document.getElementById('btnMatchmake');
+    if (btnAI) btnAI.disabled = false;
+    if (btnMM) btnMM.disabled = false;
+  } catch {}
+  
+  // Update lobby status back to choosing weapons
+  const sel = window.currentSelection && window.currentSelection();
+  if (sel && sel.user) {
+    fetch('/api/lobby/phase', {
+      method: 'POST', 
+      headers: {'Content-Type': 'application/json'}, 
+      body: JSON.stringify({name: sel.user, phase: 'choosing-weapons'})
+    }).catch(()=>{});
+  }
     }
   document.getElementById('btnFightAI').addEventListener('click', async ()=>{
       const sel = ensureSelection();
@@ -1192,6 +1520,7 @@ var stats = {};
               aggregate.Logs.push('== You win ==');
               drawFightPhase(detail, oppDetail, myHP, detail.stats.W, aiHP, oppDetail.stats.W, aggregate, titleBase, 'You win');
               setTextLog(aggregate.Logs);
+              try { showWinnerOverlay({ winner: (sel.user||'You'), loser: (oppDetail.name||'AI'), mode: 'AI', matchId }); } catch {}
               stopRequested = true;
               break;
             }
@@ -1234,6 +1563,7 @@ var stats = {};
               aggregate.Logs.push(`== ${oppDetail.name||'AI'} wins ==`);
               drawFightPhase(detail, oppDetail, myHP, detail.stats.W, aiHP, oppDetail.stats.W, aggregate, titleBase, `${oppDetail.name||'AI'} wins`);
               setTextLog(aggregate.Logs);
+              try { showWinnerOverlay({ winner: (oppDetail.name||'AI'), loser: (sel.user||'You'), mode: 'AI', matchId }); } catch {}
               stopRequested = true;
               break;
             }
@@ -1249,6 +1579,13 @@ var stats = {};
         aggregate.Logs.push(`== ${winner} ==`);
     drawFightPhase(detail, oppDetail, myHP, detail.stats.W, aiHP, oppDetail.stats.W, aggregate, titleBase);
   setTextLog(aggregate.Logs);
+  try {
+    if (winner && winner !== 'Ended' && winner !== 'Stopped') {
+      const w = winner.replace(' wins','');
+      const l = w === (sel.user||'You') ? (oppDetail.name||'AI') : (sel.user||'You');
+      showWinnerOverlay({ winner: w, loser: l, mode: 'AI', matchId });
+    }
+  } catch {}
   // Update statistics after fight
   updateStatistics(aggregate);
   // Keep the canvas visible after the fight ends, including when stopped.
@@ -1338,13 +1675,596 @@ var stats = {};
   const statsBox = document.getElementById('statsBox');
   if (statsBox) statsBox.classList.remove('d-none');
   }
-    document.getElementById('btnMatchmake').addEventListener('click', ()=>{
+    // Matchmaking state
+    let matchmakingActive = false;
+    let matchmakingInterval = null;
+    let currentPvPMatch = null;
+
+    // PvP Match handling
+    async function startPvPMatch(match, playerName, unitDetail, unitStats, selectedWeapons) {
+      console.log('Starting PvP match:', match);
+      // Hide pre-match UI and disable actions to prevent AI fights or changes during PvP
+  try { hidePreMatchUI(); } catch {}
+  allowSelectionUI = false;
+  if (weaponSelectRow) weaponSelectRow.classList.add('d-none');
+      try {
+        const btnAI = document.getElementById('btnFightAI');
+        const btnMM = document.getElementById('btnMatchmake');
+        if (btnAI) btnAI.disabled = true;
+        if (btnMM) btnMM.disabled = true;
+      } catch {}
+      // Reflect lobby phase
+      try {
+        const sel = window.currentSelection && window.currentSelection();
+        if (sel && sel.user) {
+          fetch('/api/lobby/phase', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ name: sel.user, phase: 'in-game' }) }).catch(() => {});
+        }
+      } catch {}
+      
+      hasFightStarted = true;
+      showFightSurface();
+      showLogRow();
+      
+      if (matchIdLabel) matchIdLabel.textContent = match.id;
+      clearTextLog();
+      
+      // Determine if we need to wait for opponent data
+      const isPlayer1 = match.player1 === playerName;
+      const opponentData = isPlayer1 ? match.player2_data : match.player1_data;
+      
+      if (!opponentData.ready) {
+        // Wait for opponent to join
+        setTextLog(['Waiting for opponent to join the match...']);
+        
+        // Poll for opponent readiness
+        const waitForOpponent = async () => {
+          try {
+            const resp = await fetch(`/api/pvp/match/${match.id}`);
+            const updatedMatch = await resp.json();
+            
+            const updatedOpponentData = isPlayer1 ? updatedMatch.player2_data : updatedMatch.player1_data;
+            
+            if (updatedOpponentData.ready) {
+              // Opponent joined! Start the game
+              currentPvPMatch = updatedMatch;
+              await runPvPCombat(updatedMatch, playerName, unitDetail, unitStats, selectedWeapons);
+            } else {
+              // Keep waiting
+              setTimeout(waitForOpponent, 2000);
+            }
+          } catch (error) {
+            console.error('Error waiting for opponent:', error);
+            alert('Error waiting for opponent. Returning to lobby.');
+            showPostMatchUI();
+          }
+        };
+        
+        waitForOpponent();
+      } else {
+        // Both players ready, start immediately
+        await runPvPCombat(match, playerName, unitDetail, unitStats, selectedWeapons);
+      }
+    }
+
+    async function runPvPCombat(match, playerName, unitDetail, unitStats, originalSelectedWeapons) {
+      const isPlayer1 = match.player1 === playerName;
+      const myData = isPlayer1 ? match.player1_data : match.player2_data;
+      const opponentData = isPlayer1 ? match.player2_data : match.player1_data;
+      const opponentName = isPlayer1 ? match.player2 : match.player1;
+      
+      // Use weapons from the match data (from the server)
+      const selectedWeapons = myData.weapons;
+      console.log('Using weapons from match data:', selectedWeapons);
+      
+      // Create opponent unit detail from match data
+      const opponentDetail = {
+        name: opponentName,
+        points: null,
+        stats: { T: 4, W: opponentData.max_hp, Sv: 3, InvSv: 0 }, // Would come from unit data in full implementation
+        abilities: [],
+        keywords: [],
+        weapons: { ranged: opponentData.weapons.filter(w => w.type === 'ranged'), melee: opponentData.weapons.filter(w => w.type === 'melee') }
+      };
+      
+      const aggregate = {Attacks:0, Hits:0, Wounds:0, Saved:0, Unsaved:0, DamageTotal:0, Logs:[]};
+      let myHP = myData.hp;
+      let opponentHP = opponentData.hp;
+      let round = 1;
+      
+      const titleBase = `PvP Combat (${match.id})`;
+      aggregate.Logs.push(`=== PvP Match: ${playerName} vs ${opponentName} ===`);
+      setTextLog(aggregate.Logs);
+      
+      // Turn-based combat loop
+  let gameActive = true;
+  let firing = false; // prevent overlapping fire requests
+      
+      const checkTurn = async () => {
+        if (!gameActive) return;
+        
+        try {
+          // Get latest match state
+          const resp = await fetch(`/api/pvp/match/${match.id}`);
+          const currentMatch = await resp.json();
+          
+          // Don't take actions until match is active (prevents 400s and error spam)
+          if (currentMatch.status !== 'active') {
+            const last = aggregate.Logs[aggregate.Logs.length - 1] || '';
+            if (!last.includes('Waiting for match to start')) {
+              aggregate.Logs.push('Waiting for match to start...');
+              setTextLog(aggregate.Logs);
+            }
+            setTimeout(checkTurn, 1000);
+            return;
+          }
+
+          // Sync HP from server snapshot every tick (reflect opponent actions)
+          try {
+            const curMine = isPlayer1 ? currentMatch.player1_data : currentMatch.player2_data;
+            const curOpp = isPlayer1 ? currentMatch.player2_data : currentMatch.player1_data;
+            myHP = curMine.hp;
+            opponentHP = curOpp.hp;
+          } catch {}
+
+          if (currentMatch.status === 'finished') {
+            // Game over
+            gameActive = false;
+            const winner = currentMatch.player1_data.hp > 0 ? currentMatch.player1 : currentMatch.player2;
+            aggregate.Logs.push(`=== ${winner} wins! ===`);
+            
+            const winnerText = winner === playerName ? 'You win!' : `${winner} wins!`;
+            drawFightPhase(unitDetail, opponentDetail, myHP, unitStats.W, opponentHP, opponentData.max_hp, aggregate, titleBase, winnerText);
+            setTextLog(aggregate.Logs);
+            
+            // Show winner splash
+            const loser = winner === currentMatch.player1 ? currentMatch.player2 : currentMatch.player1;
+            showWinnerOverlay({ winner, loser, mode: 'PvP', matchId: match.id, subtitle: `${winner} triumphs over ${loser}` });
+
+            // Update statistics
+            updateStatistics(aggregate);
+            return;
+          }
+          
+          if (currentMatch.turn === playerName) {
+            if (firing) { setTimeout(checkTurn, 500); return; }
+            // Our turn!
+            aggregate.Logs.push(`--- Round ${round} - Your turn ---`);
+            setTextLog(aggregate.Logs);
+            
+            // Fire only one weapon per turn (server enforces turn-by-turn)
+            console.log('selectedWeapons array:', selectedWeapons);
+            console.log('selectedWeapons.length:', selectedWeapons.length);
+            
+            // Choose one weapon per turn; rotate through selections deterministically
+            if (!Array.isArray(selectedWeapons) || selectedWeapons.length === 0) {
+              aggregate.Logs.push('No weapons selected for PvP. Waiting...');
+              setTextLog(aggregate.Logs);
+              setTimeout(checkTurn, 2000);
+              return;
+            }
+            const i = (round - 1) % selectedWeapons.length;
+            const weapon = selectedWeapons[i];
+              console.log(`Weapon ${i}:`, weapon);
+              
+              if (!weapon) {
+                console.error(`Weapon at index ${i} is undefined!`);
+                aggregate.Logs.push(`Error: Weapon ${i} is undefined`);
+                setTextLog(aggregate.Logs);
+                // Try again on next tick
+                setTimeout(checkTurn, 2000);
+                return;
+              }
+              
+              try {
+                firing = true;
+                const actionResp = await fetch(`/api/pvp/action/${match.id}`, {
+                  method: 'POST',
+                  headers: {'Content-Type': 'application/json'},
+                  body: JSON.stringify({
+                    player: playerName,
+                    weapon_id: i
+                  })
+                });
+                const weaponName = weapon.Name || weapon.name || 'Unknown Weapon';
+
+                if (!actionResp.ok) {
+                  let msg = '';
+                  try { const err = await actionResp.json(); msg = err.message || err.error || ''; } catch {}
+                  if (!msg) msg = `${actionResp.status} ${actionResp.statusText}`;
+                  aggregate.Logs.push(`Error firing ${weaponName}: ${msg}`);
+                  setTextLog(aggregate.Logs);
+                  // Try again on next tick
+                  firing = false;
+                  setTimeout(checkTurn, 2000);
+                  return;
+                }
+
+                const actionResult = await actionResp.json();
+                const result = actionResult.result;
+                
+                // Update aggregates
+                aggregate.Attacks += (result.attacks || result.Attacks || 0);
+                aggregate.Hits += (result.hits || result.Hits || 0);
+                aggregate.Wounds += (result.wounds || result.Wounds || 0);
+                aggregate.Saved += (result.saved || result.Saved || 0);
+                aggregate.Unsaved += (result.unsaved || result.Unsaved || 0);
+                aggregate.DamageTotal += (result.damage_total || result.DamageTotal || 0);
+                
+                // Update HP
+                const updatedMatch = actionResult.match;
+                const updatedOpponentData = isPlayer1 ? updatedMatch.player2_data : updatedMatch.player1_data;
+                opponentHP = updatedOpponentData.hp;
+                
+                // Add to log
+                const pfx = `${playerName} ${weaponName}`;
+                (result.logs || result.Logs || []).forEach(l => aggregate.Logs.push(`${pfx}: ${l}`));
+                
+                // Update display
+                drawFightPhase(unitDetail, opponentDetail, myHP, unitStats.W, opponentHP, opponentData.max_hp, aggregate, titleBase, null, { 
+                  attacker: playerName, weaponName: weaponName, defender: opponentName, weaponAbilities: weapon.Abilities || weapon.abilities || [], 
+                  usedLeft: selectedWeapons, usedRight: opponentData.weapons 
+                });
+                setTextLog(aggregate.Logs);
+                
+                await sleep(120);
+                if (updatedMatch.status === 'finished') { gameActive = false; return; }
+              } catch (error) {
+                console.error('Error firing weapon:', error);
+                const weaponName = weapon ? (weapon.Name || weapon.name || 'Unknown') : 'undefined weapon';
+                aggregate.Logs.push(`Error firing ${weaponName}`);
+                setTextLog(aggregate.Logs);
+              } finally { firing = false; }
+            
+            round++;
+            
+          } else {
+            // Opponent's turn, wait
+            aggregate.Logs.push(`--- Round ${round} - ${opponentName}'s turn ---`);
+            aggregate.Logs.push('Waiting for opponent...');
+            setTextLog(aggregate.Logs);
+            
+            drawFightPhase(unitDetail, opponentDetail, myHP, unitStats.W, opponentHP, opponentData.max_hp, aggregate, titleBase);
+          }
+          
+          // Continue checking
+          setTimeout(checkTurn, 2000);
+          
+        } catch (error) {
+          console.error('Error in turn check:', error);
+          gameActive = false;
+          alert('Connection error. Returning to lobby.');
+          showPostMatchUI();
+        }
+      };
+      
+      // Start the turn checking loop
+      checkTurn();
+    }
+
+    document.getElementById('btnMatchmake').addEventListener('click', async ()=>{
       const sel = ensureSelection();
       if (!sel) return;
-      console.log('Queue for PVP matchmaking with selection:', sel);
-  hidePreMatchUI();
-      // TODO: call backend to join matchmaking queue
-  fetch('/api/lobby/phase', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({name: sel.user, phase: 'queue'})}).catch(()=>{});
+      
+      const matchmakeBtn = document.getElementById('btnMatchmake');
+      const cancelBtn = document.getElementById('btnCancelMatchmake');
+      const originalText = matchmakeBtn.textContent;
+      
+      try {
+        console.log('Queue for PVP matchmaking with selection:', sel);
+        
+  // Update UI for matchmaking
+        matchmakeBtn.classList.add('d-none');
+        cancelBtn.classList.remove('d-none');
+        matchmakingActive = true;
+        // Disable actions while queued
+        try {
+          const btnAI = document.getElementById('btnFightAI');
+          if (btnAI) btnAI.disabled = true;
+          matchmakeBtn.disabled = true;
+        } catch {}
+        
+        hidePreMatchUI();
+  allowSelectionUI = false;
+  if (weaponSelectRow) weaponSelectRow.classList.add('d-none');
+        // Set phase to queue with points immediately
+        try {
+          const points = Number((await getUnitDetail(sel.factionId, sel.unitId))?.points) || Number((await getUnitStats(sel.factionId, sel.unitId))?.W) || 0;
+          fetch('/api/lobby/phase', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ name: sel.user, phase: 'queue', points }) }).catch(()=>{});
+        } catch {}
+        
+        // Get current unit stats and weapons for PvP
+        const [unitDetail, unitStats] = await Promise.all([
+          getUnitDetail(sel.factionId, sel.unitId),
+          getUnitStats(sel.factionId, sel.unitId)
+        ]);
+
+        // Prepare weapon data for PvP
+        const weaponType = getWeaponType();
+        let selectedWeapons = [];
+        
+        if (weaponType === 'ranged') {
+          if (weaponSelection.ranged.size > 0) {
+            const names = Array.from(weaponSelection.ranged);
+            const byName = new Map(weaponCatalog.ranged.map(w=> [w.name, w]));
+            selectedWeapons = names.map(n=> byName.get(n)).filter(Boolean);
+          } else {
+            selectedWeapons = await pickWeapons(sel.factionId, sel.unitId, weaponType);
+          }
+        } else {
+          if (weaponSelection.melee) {
+            const m = weaponCatalog.melee.find(w=> w.name === weaponSelection.melee);
+            selectedWeapons = m ? [m] : [];
+          }
+          if (selectedWeapons.length === 0) {
+            selectedWeapons = await pickWeapons(sel.factionId, sel.unitId, weaponType);
+          }
+        }
+
+        // Convert weapons to API format
+        const apiWeapons = selectedWeapons.map(weapon => {
+          console.log('Converting weapon:', weapon);
+          return {
+            Name: weapon.name,
+            Type: weaponType,
+            Attacks: weapon.A || weapon.attacks || "1",
+            Skill: parseSkill(weapon.BS || weapon.WS),
+            Strength: parseInt(weapon.S) || 4,
+            AP: parseInt(weapon.AP) || 0,
+            Damage: weapon.D || weapon.damage || "1",
+            Abilities: weapon.abilities || []
+          };
+        });
+        
+        console.log('API weapons data:', apiWeapons);
+        
+        // Submit to PvP matchmaking directly
+        const pvpData = {
+          name: sel.user,
+          faction_id: sel.factionId,
+          unit_id: sel.unitId,
+          weapons: apiWeapons,
+          hp: unitStats.W,
+          max_hp: unitStats.W
+        };
+        
+        console.log('PvP data being sent:', pvpData);
+
+        const matchResponse = await fetch('/api/pvp/matchmake', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify(pvpData)
+        });
+
+        let matchResult;
+        if (!matchResponse.ok) {
+          // Treat transient/server validation issues as queued to avoid user-facing failure
+          try {
+            const errText = await matchResponse.text();
+            console.warn('PvP API non-OK, falling back to queued:', matchResponse.status, errText);
+          } catch {}
+          matchResult = { status: 'queued' };
+        } else {
+          matchResult = await matchResponse.json();
+        }
+        console.log('Match result:', matchResult);
+        
+        if (matchResult.status === 'match_created') {
+          // Match found immediately!
+          currentPvPMatch = matchResult.match;
+          matchmakingActive = false;
+          
+          // Reset UI buttons
+          matchmakeBtn.classList.remove('d-none');
+          cancelBtn.classList.add('d-none');
+          cancelBtn.textContent = 'Cancel Search';
+          
+          // Start PvP game
+          await startPvPMatch(currentPvPMatch, sel.user, unitDetail, unitStats, selectedWeapons);
+          
+        } else if (matchResult.status === 'existing_match') {
+          // Player already has an active match - check if it's valid
+          currentPvPMatch = matchResult.match;
+          console.log('Found existing match:', currentPvPMatch);
+          
+          // Check if the opponent is still active in the lobby
+          try {
+            const lobbyResp = await fetch('/api/lobby');
+            const lobby = await lobbyResp.json();
+            const opponentName = currentPvPMatch.player1 === sel.user ? currentPvPMatch.player2 : currentPvPMatch.player1;
+            const opponent = lobby.find(p => p.name === opponentName);
+            
+            if (!opponent || opponent.phase === 'idle') {
+              // Opponent is not active, this match is abandoned
+              console.log('Opponent not active, treating as abandoned match');
+              setTextLog(['⚠️ Previous match abandoned', 'Opponent is no longer available.', '', 'Searching for new opponent...']);
+              
+              // Continue with normal matchmaking flow by falling through to queued logic
+              matchResult.status = 'queued';
+            } else {
+              // Opponent is still active, resume the match
+              matchmakingActive = false;
+              
+              // Reset UI buttons
+              matchmakeBtn.classList.remove('d-none');
+              cancelBtn.classList.add('d-none');
+              cancelBtn.textContent = 'Cancel Search';
+              
+              console.log('Resuming valid existing match:', currentPvPMatch);
+              setTextLog(['🔄 Resuming existing match', `Opponent: ${opponentName}`, '', 'Preparing for battle...']);
+              
+              // Resume existing PvP game
+              await startPvPMatch(currentPvPMatch, sel.user, unitDetail, unitStats, selectedWeapons);
+              return;
+            }
+          } catch (error) {
+            console.error('Error checking opponent status:', error);
+            // If we can't check, assume abandoned and continue with new matchmaking
+            matchResult.status = 'queued';
+          }
+        }
+        
+        if (matchResult.status === 'queued') {
+          // Wait for opponent - keep trying PvP matchmaking
+          cancelBtn.textContent = 'Cancel Search';
+          
+          // Show nice timer message in text log
+          clearTextLog();
+          setTextLog(['🔍 Searching for opponent...', 'This may take up to 60 seconds.', '', 'Emperor protects those who wait.']);
+          
+          // Update status to show player is in PvP queue
+          fetch('/api/lobby/phase', {
+            method: 'POST', 
+            headers: {'Content-Type': 'application/json'}, 
+            body: JSON.stringify({name: sel.user, phase: 'queue', points: (Number(unitStats.points)||0)})
+          }).catch(()=>{});
+          
+          let attempts = 0;
+          const maxAttempts = 30; // 60 seconds
+          
+          const checkForMatch = async () => {
+            if (!matchmakingActive) return;
+            
+            try {
+              // Try PvP matchmaking again
+              const retryResponse = await fetch('/api/pvp/matchmake', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(pvpData)
+              });
+              
+              const retryResult = await retryResponse.json();
+              
+              if (retryResult.status === 'match_created' || retryResult.status === 'existing_match') {
+                // Match found!
+                currentPvPMatch = retryResult.match;
+                matchmakingActive = false;
+                clearInterval(matchmakingInterval);
+                
+                setTextLog(['✅ Opponent found!', 'Preparing for battle...']);
+                
+                // Reset UI buttons
+                matchmakeBtn.classList.remove('d-none');
+                cancelBtn.classList.add('d-none');
+                cancelBtn.textContent = 'Cancel Search';
+                
+                // If this was an existing match from a race-condition, ensure opponent is valid like initial flow
+                if (retryResult.status === 'existing_match') {
+                  try {
+                    const lobbyResp = await fetch('/api/lobby');
+                    const lobby = await lobbyResp.json();
+                    const opponentName = currentPvPMatch.player1 === sel.user ? currentPvPMatch.player2 : currentPvPMatch.player1;
+                    const opponent = lobby.find(p => p.name === opponentName);
+                    if (!opponent || opponent.phase === 'idle') {
+                      // Opponent not active anymore; fall back to waiting state on next tick
+                      matchmakingActive = true;
+                      setTextLog(['⚠️ Previous match detected but opponent inactive', 'Continuing search...']);
+                      return;
+                    }
+                  } catch (_) {
+                    // If lobby check fails, proceed anyway
+                  }
+                }
+                await startPvPMatch(currentPvPMatch, sel.user, unitDetail, unitStats, selectedWeapons);
+                return;
+              }
+              
+              attempts++;
+              if (attempts >= maxAttempts) {
+                // Timeout
+                matchmakingActive = false;
+                clearInterval(matchmakingInterval);
+                
+                // Clean up lobby status
+                await fetch('/api/lobby/phase', {
+                  method: 'POST',
+                  headers: {'Content-Type': 'application/json'},
+                  body: JSON.stringify({name: sel.user, phase: 'idle'})
+                });
+                
+                setTextLog(['❌ Matchmaking timeout', 'No opponents found after 60 seconds.', '', 'Try again later or fight the AI!']);
+                showPostMatchUI();
+                matchmakeBtn.classList.remove('d-none');
+                cancelBtn.classList.add('d-none');
+                cancelBtn.textContent = 'Cancel Search';
+                return;
+              }
+              
+              // Update timer message
+              const remaining = maxAttempts - attempts;
+              const remainingSeconds = remaining * 2;
+              setTextLog([
+                '🔍 Searching for opponent...',
+                `⏰ ${remainingSeconds} seconds remaining`,
+                '',
+                'Emperor protects those who wait.',
+                '',
+                attempts > 10 ? '💭 Perhaps try a different faction?' : '🎯 Scanning the galaxy for worthy foes...'
+              ]);
+              
+            } catch (error) {
+              console.error('Matchmaking check error:', error);
+              matchmakingActive = false;
+              clearInterval(matchmakingInterval);
+              setTextLog(['❌ Matchmaking failed', 'Connection error occurred.', '', 'Please try again.']);
+              showPostMatchUI();
+              matchmakeBtn.classList.remove('d-none');
+              cancelBtn.classList.add('d-none');
+              cancelBtn.textContent = 'Cancel Search';
+            }
+          };
+          
+          // Check every 2 seconds
+          matchmakingInterval = setInterval(checkForMatch, 2000);
+          checkForMatch(); // Check immediately too
+          
+        } else {
+          throw new Error(matchResult.message || 'Matchmaking failed');
+        }
+        
+      } catch (error) {
+        console.error('Failed to join matchmaking:', error);
+        setTextLog(['❌ Failed to join matchmaking', 'Please try again in a moment.']);
+        matchmakingActive = false;
+        showPostMatchUI();
+        matchmakeBtn.classList.remove('d-none');
+        cancelBtn.classList.add('d-none');
+      }
+    });
+
+    // Cancel matchmaking
+    document.getElementById('btnCancelMatchmake').addEventListener('click', async ()=>{
+      const sel = window.currentSelection();
+      const matchmakeBtn = document.getElementById('btnMatchmake');
+      const cancelBtn = document.getElementById('btnCancelMatchmake');
+      
+      try {
+        matchmakingActive = false;
+        clearInterval(matchmakingInterval);
+        
+        // Leave the queue
+        await fetch('/api/lobby/phase', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({name: sel.user, phase: 'idle'})
+        });
+        
+        // Show cancellation message
+        setTextLog(['🚫 Matchmaking cancelled', 'Returning to weapon selection...', '', 'Ready when you are, warrior.']);
+        
+        // Reset UI
+        showPostMatchUI();
+        matchmakeBtn.classList.remove('d-none');
+        cancelBtn.classList.add('d-none');
+        cancelBtn.textContent = 'Cancel Search';
+        
+      } catch (error) {
+        console.error('Failed to cancel matchmaking:', error);
+        // Reset UI anyway
+        showPostMatchUI();
+        matchmakeBtn.classList.remove('d-none');
+        cancelBtn.classList.add('d-none');
+        cancelBtn.textContent = 'Cancel Search';
+      }
     });
     // Log action buttons
     document.getElementById('btnCopyLog')?.addEventListener('click', copyTextLog);

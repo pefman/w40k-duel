@@ -11,3 +11,7 @@ tmp/
 
 # Env files
 .env
+
+# Built binaries
+/api
+

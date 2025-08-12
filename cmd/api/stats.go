@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"net/http"
 
-	"github.com/pefman/w40k-duel/internal/models"
+	"github.com/pefman/w40k-duel/internal/stats"
 )
 
 // POST /api/stats/save
@@ -23,7 +23,7 @@ func SaveStatsHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	// Merge with existing stats and keep the biggest maxAttack
-	existing := models.GetUserStats(req.Username)
+	existing := stats.GetUserStats(req.Username)
 	// Shallow copy existing into merged
 	merged := map[string]interface{}{}
 	for k, v := range existing { merged[k] = v }
@@ -64,7 +64,7 @@ func SaveStatsHandler(w http.ResponseWriter, r *http.Request) {
 			}
 		}
 	}
-	models.SaveUserStats(req.Username, merged)
+	stats.SaveUserStats(req.Username, merged)
 	w.WriteHeader(204)
 }
 
@@ -75,9 +75,9 @@ func GetStatsHandler(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "missing username", 400)
 		return
 	}
-	stats := models.GetUserStats(username)
+	s := stats.GetUserStats(username)
 	w.Header().Set("Content-Type", "application/json")
-	json.NewEncoder(w).Encode(stats)
+	json.NewEncoder(w).Encode(s)
 }
 
 // GET /api/stats/max-attack?username=...
@@ -87,7 +87,7 @@ func GetMaxAttackHandler(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "missing username", 400)
 		return
 	}
-	stats := models.GetUserStats(username)
+	stats := stats.GetUserStats(username)
 	var out interface{}
 	if v, ok := stats["maxAttack"]; ok {
 		out = v
@@ -108,13 +108,13 @@ func PostGlobalMaxAttackToday(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	if req.Attack == nil { w.WriteHeader(204); return }
-	models.SaveGlobalMaxAttack(req.Attack)
+	stats.SaveGlobalMaxAttack(req.Attack)
 	w.WriteHeader(204)
 }
 
 // GET /api/stats/max-attack/today
 func GetGlobalMaxAttackToday(w http.ResponseWriter, r *http.Request) {
-	out := models.GetGlobalMaxAttackToday()
+	out := stats.GetGlobalMaxAttackToday()
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(out)
 }

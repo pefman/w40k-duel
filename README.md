@@ -1,6 +1,6 @@
 # Warhammer 40K Duel Simulator
 
-A real-time multiplayer dueling game based on Warhammer 40K 10th Edition rules. Features WebSocket-based combat, multi-weapon sequences, manual save rolls, and AI opponents.
+A lightweight API and static UI to simulate 40K 10th Edition shooting exchanges, track stats, and browse unit data.
 
 ## 🎮 Features
 
@@ -36,8 +36,7 @@ A real-time multiplayer dueling game based on Warhammer 40K 10th Edition rules. 
 ## 🏗️ Architecture
 
 ### Services
-1. **API Service** (`cmd/api/`): CSV-backed REST API serving faction/unit data
-2. **Game Service** (`cmd/game/`): WebSocket game server with embedded web UI
+1. **API Service** (`cmd/api/`): CSV-backed REST API serving faction/unit data and static UI
 
 ### Data Flow
 ```
@@ -62,12 +61,8 @@ CSV Data → API Service → Game Service → WebSocket → Browser Client
 git clone <repository-url>
 cd w40k-duel
 
-# Start both services with dev script
-scripts/dev.sh restart
-
-# Or start individually:
-scripts/api.sh restart     # API on :8080
-scripts/game.sh restart    # Game on :8081
+# Start the API locally
+scripts/dev.sh restart     # API on :8080
 
 # View logs
 scripts/dev.sh logs
@@ -91,8 +86,7 @@ Notes:
 
 ```
 ├── cmd/
-│   ├── api/           # CSV-backed API server
-│   └── game/          # Game server + embedded UI
+│   └── api/           # CSV-backed API server
 ├── scripts/           # Development helper scripts
 │   ├── api.sh         # API service management
 │   ├── game.sh        # Game service management
@@ -102,7 +96,6 @@ Notes:
 │   ├── Datasheets_weapons.csv
 │   └── ...
 ├── Dockerfile.api     # API container
-├── Dockerfile.game    # Game container
 └── README*.md         # Documentation
 ```
 
@@ -141,8 +134,8 @@ docker-compose up
 # Build and push API image via Cloud Build (optional)
 ./scripts/deploy_cloud_run_cloudbuild.sh   # uses cloudbuild_api.yaml
 
-# Or build locally and deploy
-./scripts/deploy_cloud_run.sh              # builds Docker locally, pushes, deploys
+# Or build locally and deploy (defaults to service name w40k-duel)
+./scripts/deploy_cloud_run.sh
 
 # Deploy using a stable service config (always same service/region/image path)
 gcloud run services replace cloudrun_api.yaml --region europe-west1

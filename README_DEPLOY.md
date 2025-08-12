@@ -1,8 +1,7 @@
 # Deploying go40k duel to Google Cloud Run
 
-This project has two services:
-- API (CSV-backed data service)
-- Game (WebSocket game server + embedded UI)
+This project currently deploys one service:
+- API (CSV-backed data service and static UI)
 
 ## Prerequisites
 - gcloud CLI installed and authenticated
@@ -23,38 +22,24 @@ gcloud config set project "$PROJECT_ID"
 gcloud auth configure-docker ${REGION}-docker.pkg.dev
 
 # Build API
-docker build -f Dockerfile.api -t ${REGION}-docker.pkg.dev/${PROJECT_ID}/${REPO}/w40k-api:latest .
-# Build Game
-docker build -f Dockerfile.game -t ${REGION}-docker.pkg.dev/${PROJECT_ID}/${REPO}/w40k-game:latest .
+docker build -f Dockerfile.api -t ${REGION}-docker.pkg.dev/${PROJECT_ID}/${REPO}/w40k-duel:latest .
 
 # Push
-docker push ${REGION}-docker.pkg.dev/${PROJECT_ID}/${REPO}/w40k-api:latest
-docker push ${REGION}-docker.pkg.dev/${PROJECT_ID}/${REPO}/w40k-game:latest
+docker push ${REGION}-docker.pkg.dev/${PROJECT_ID}/${REPO}/w40k-duel:latest
 ```
 
 ## Deploy to Cloud Run
 
 ```bash
 # API service
-gcloud run deploy w40k-api \
-  --image=${REGION}-docker.pkg.dev/${PROJECT_ID}/${REPO}/w40k-api:latest \
+gcloud run deploy w40k-duel \
+  --image=${REGION}-docker.pkg.dev/${PROJECT_ID}/${REPO}/w40k-duel:latest \
   --region=${REGION} \
   --allow-unauthenticated \
   --port=8080
 
-# Get API URL
-API_URL=$(gcloud run services describe w40k-api --region ${REGION} --format='value(status.url)')
-
-# Game service (pass API URL)
-gcloud run deploy w40k-game \
-  --image=${REGION}-docker.pkg.dev/${PROJECT_ID}/${REPO}/w40k-game:latest \
-  --region=${REGION} \
-  --allow-unauthenticated \
-  --port=8081 \
-  --set-env-vars=DATA_API_BASE=${API_URL}
-
 # Verify
-open $(gcloud run services describe w40k-game --region ${REGION} --format='value(status.url)')
+open $(gcloud run services describe w40k-duel --region ${REGION} --format='value(status.url)')
 ```
 
 ### Stable deployment using a service config

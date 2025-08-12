@@ -7,7 +7,7 @@ set -euo pipefail
 PROJECT_ID="${PROJECT_ID:-w40k-468120}"
 REGION="${REGION:-europe-west1}"
 REPO="${REPO:-containers}"
-SERVICE="${SERVICE:-w40k-api}"
+SERVICE="${SERVICE:-w40k-duel}"
 IMAGE_URI="${REGION}-docker.pkg.dev/${PROJECT_ID}/${REPO}/${SERVICE}:latest"
 
 echo "Project:   ${PROJECT_ID}"

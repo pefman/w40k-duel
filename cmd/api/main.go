@@ -14,7 +14,7 @@ import (
 	"sync"
 	"time"
 
-	game "github.com/pefman/w40k-duel/internal/game"
+	game "github.com/pefman/w40k-duel/internal/engine"
 )
 
 type Faction struct {

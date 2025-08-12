@@ -1,4 +1,4 @@
-package game
+package engine
 
 // UnitSnapshot captures the minimal stats needed for resolution
 type UnitSnapshot struct {

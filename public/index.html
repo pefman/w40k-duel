@@ -339,6 +339,14 @@ var stats = {};
         factions = await resp.json();
         factionSelect.innerHTML = '<option value="">Select Faction</option>' +
           factions.map(f => `<option value="${f.id}">${f.name}</option>`).join('');
+        // Auto-select first faction to make units appear immediately
+        if (Array.isArray(factions) && factions.length > 0) {
+          const first = factions[0];
+          if (first && first.id) {
+            factionSelect.value = first.id;
+            loadUnitsForFaction(first.id);
+          }
+        }
       } catch(e){
         factionSelect.innerHTML = '<option value="">(failed to load factions)</option>';
       }

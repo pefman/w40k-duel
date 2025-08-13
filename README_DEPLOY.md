@@ -57,3 +57,23 @@ Notes:
 - Both services respect Cloud Run's `PORT` env var. Game also reads `DATA_API_BASE`.
 - If using a different region or repo name, adjust variables accordingly.
 - WebSockets are supported by Cloud Run.
+
+## ✅ Post-deploy validation (Cloud Run)
+
+### UI checks
+- Open the live app in two browsers: https://w40k-duel-85079828466.europe-west1.run.app
+- Click “Matchmake” in both; confirm the weapon selection hides instantly and stays hidden.
+- In the lobby, queued players show a badge “queue · Npts” while waiting.
+- The match proceeds turn-by-turn; both clients’ HP update in sync; a winner overlay is shown at the end.
+
+### API sanity
+```bash
+# Health
+curl -s https://w40k-duel-85079828466.europe-west1.run.app/api/healthz
+
+# PvP debug (queue and active matches)
+curl -s https://w40k-duel-85079828466.europe-west1.run.app/api/pvp/debug
+
+# Lobby state
+curl -s https://w40k-duel-85079828466.europe-west1.run.app/api/lobby
+```

@@ -1,5 +1,15 @@
 steps:
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-f', 'Dockerfile.api', '-t', '${_IMAGE_URI}', '.']
+    args:
+      - build
+      - -f
+      - Dockerfile.api
+      - --build-arg
+      - GIT_COMMIT=${COMMIT_SHA}
+      - --build-arg
+      - BUILD_TIME=${BUILD_ID}
+      - -t
+      - ${_IMAGE_URI}
+      - .
 images:
   - '${_IMAGE_URI}'

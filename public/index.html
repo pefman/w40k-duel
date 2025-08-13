@@ -38,6 +38,13 @@
 
   <!-- Main Content -->
   <main class="container">
+    <!-- Build info footer bar -->
+    <div id="buildInfoBar" class="position-fixed bottom-0 start-0 end-0 py-1 px-2" style="background:rgba(0,0,0,0.7); border-top:1px solid rgba(201,167,83,.4); z-index:1030;">
+      <div class="container d-flex justify-content-between small" style="color:#8aa0b8;">
+        <div>Build: <span id="buildCommit">dev</span></div>
+        <div><span id="buildTime"></span></div>
+      </div>
+    </div>
     <!-- Selection controls -->
     <div class="row mb-3 selection-BOX_sel_">
       <div class="col-12 col-md-4 mb-2 mb-md-0">
@@ -81,6 +88,26 @@
             <button id="btnSelectAllMelee" class="btn btn-sm btn-outline-info" title="Select the default melee weapon">Select All Melee</button>
             <button id="btnMaxPower" class="btn btn-sm btn-warning" title="Automatically select the highest damage weapons available">⚡ Max Power!</button>
             <button id="btnClearWeapons" class="btn btn-sm btn-outline-secondary" title="Clear all weapon selections">Clear All</button>
+            <button id="btnCalcOdds" class="btn btn-sm btn-outline-warning" title="Estimate win% vs mirror enemy">Calculate Odds</button>
+            <span id="calcOddsResult" class="small text-secondary"></span>
+          </div>
+          <!-- Optional: Opponent selection for odds -->
+          <div class="row g-2 mb-2">
+            <div class="col-12 col-md-4">
+              <label class="form-label small text-secondary" for="oppFactionSelect">Opponent Faction (optional)</label>
+              <select id="oppFactionSelect" class="form-select form-select-sm">
+                <option value="">(same as yours)</option>
+              </select>
+            </div>
+            <div class="col-12 col-md-4">
+              <label class="form-label small text-secondary" for="oppUnitSelect">Opponent Unit (optional)</label>
+              <select id="oppUnitSelect" class="form-select form-select-sm" disabled>
+                <option value="">(same unit)</option>
+              </select>
+            </div>
+            <div class="col-12 col-md-4 d-flex align-items-end">
+              <div class="small text-secondary">Tip: leave blank to mirror your unit.</div>
+            </div>
           </div>
           <div id="weaponSelectBox" class="row g-2"></div>
         </div>
@@ -693,6 +720,7 @@ var stats = {};
     document.getElementById('btnSelectAllMelee')?.addEventListener('click', selectAllMelee);
     document.getElementById('btnMaxPower')?.addEventListener('click', selectMaxPower);
     document.getElementById('btnClearWeapons')?.addEventListener('click', clearAllWeapons);
+  document.getElementById('btnCalcOdds')?.addEventListener('click', calculateOdds);
 
     // Read selected weapon type
     function getWeaponType(){
@@ -707,8 +735,95 @@ var stats = {};
       weaponType: getWeaponType()
     });
 
-    // Init
-    loadFactions();
+  function getSelectedWeaponsPayload(type){
+      const items = type === 'melee' ? weaponCatalog.melee : weaponCatalog.ranged;
+      const selected = [];
+      if (type === 'melee') {
+        const nm = weaponSelection.melee;
+        if (nm) {
+          const w = items.find(x=> x.name === nm);
+          if (w) selected.push({name: w.name, type: type, attacks: String(w.attacks), skill: Number(w.skill||4), strength: Number(w.strength||4), ap: Number(w.ap||0), damage: String(w.damage), abilities: w.abilities||[]});
+        }
+      } else {
+        const set = weaponSelection.ranged;
+        items.forEach(w=> { if (set.has(w.name)) selected.push({name: w.name, type: type, attacks: String(w.attacks), skill: Number(w.skill||4), strength: Number(w.strength||4), ap: Number(w.ap||0), damage: String(w.damage), abilities: w.abilities||[]}); });
+      }
+      return selected;
+    }
+
+    // Opponent controls
+    const oppFactionSelect = document.getElementById('oppFactionSelect');
+    const oppUnitSelect = document.getElementById('oppUnitSelect');
+    function syncOppFactionOptions(){
+      if (!oppFactionSelect) return;
+      // Copy options from main factionSelect
+      const opts = Array.from(factionSelect.options).map(o=>({v:o.value, t:o.textContent}));
+      oppFactionSelect.innerHTML = '<option value="">(same as yours)</option>' + opts.filter(o=>o.v).map(o=>`<option value="${o.v}">${o.t}</option>`).join('');
+    }
+    function clearOppUnits(){ if(oppUnitSelect){ oppUnitSelect.innerHTML = '<option value="">(same unit)</option>'; oppUnitSelect.disabled = true; } }
+    oppFactionSelect?.addEventListener('change', async (e)=>{
+      const fid = e.target.value;
+      clearOppUnits();
+      if (!fid) return;
+      try{
+        oppUnitSelect.disabled = true;
+        oppUnitSelect.innerHTML = '<option value="">Loading…</option>';
+        const units = await fetch(`/api/${encodeURIComponent(fid)}/units`).then(r=>r.json());
+        oppUnitSelect.innerHTML = '<option value="">(choose opponent unit)</option>' + units.map(u=> `<option value="${u.id||u.ID}">${u.name||u.Name}</option>`).join('');
+        oppUnitSelect.disabled = false;
+      }catch{ clearOppUnits(); }
+    });
+
+    async function calculateOdds(){
+      const out = document.getElementById('calcOddsResult');
+      const btn = document.getElementById('btnCalcOdds');
+      if (out) out.textContent = '';
+      if (btn) { btn.disabled = true; btn.textContent = 'Calculating...'; }
+      const fid = factionSelect.value; const uid = unitSelect.value; if (!fid || !uid) { if (out) out.textContent = 'Select a unit first.'; return; }
+      const type = getWeaponType();
+      const weapons = getSelectedWeaponsPayload(type);
+      if (weapons.length === 0) { if (out) out.textContent = 'Select at least one weapon.'; if (btn){ btn.disabled=false; btn.textContent='Calculate Odds'; } return; }
+      const username = (sessionStorage.getItem('username')||'Anonymous');
+      const oppF = oppFactionSelect?.value || fid;
+      const oppU = oppUnitSelect?.value || uid;
+      const body = {
+        a: { name: username, faction_id: fid, unit_id: uid, weapons },
+        b: { name: 'Opponent', faction_id: oppF, unit_id: oppU, weapons },
+        trials: 400,
+        rotate: true
+      };
+      try {
+        const resp = await fetch('/api/sim/odds', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(body)});
+        if (!resp.ok) {
+          const err = await resp.json().catch(()=>({message:'server error'}));
+          throw new Error(err.message || 'server error');
+        }
+        const data = await resp.json();
+        const a = Math.round((data.a_win_rate||0)*100);
+        const b = Math.round((data.b_win_rate||0)*100);
+        if (out) out.textContent = `Win chance: You ${a}% · Opponent ${b}% (n=${data.trials})`;
+      } catch (e) {
+        if (out) out.textContent = 'Calculation failed';
+      }
+      finally { if (btn){ btn.disabled=false; btn.textContent='Calculate Odds'; } }
+    }
+
+  // Init
+  loadFactions();
+  syncOppFactionOptions();
+    // Fetch build info
+    (async ()=>{
+      try{
+        const r = await fetch('/api/version');
+        if(!r.ok) return;
+        const v = await r.json();
+        const c = String(v.commit||'dev');
+        const short = c.length>8 ? c.substring(0,8) : c;
+        document.getElementById('buildCommit')?.textContent = short;
+        const bt = v.build_time ? String(v.build_time) : '';
+        document.getElementById('buildTime')?.textContent = bt;
+      }catch{}
+    })();
     // Canvas helpers
     const canvas = document.getElementById('gameCanvas');
     const ctx = canvas.getContext('2d');

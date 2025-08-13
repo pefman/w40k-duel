@@ -18,6 +18,12 @@ import (
 	game "github.com/pefman/w40k-duel/internal/engine"
 )
 
+// Build metadata injected via -ldflags
+var (
+	commit    = "dev"
+	buildTime = ""
+)
+
 type Faction struct {
 	ID   string `json:"id"`
 	Name string `json:"name"`
@@ -509,6 +515,182 @@ func getenv(k, def string) string {
 	return def
 }
 
+// ---- Helpers for PvP legality checks ----
+func isMeleeType(typ, rng string) bool {
+	lt := strings.ToLower(strings.TrimSpace(typ))
+	lr := strings.ToLower(strings.TrimSpace(rng))
+	if strings.Contains(lt, "melee") || lt == "m" {
+		return true
+	}
+	if strings.Contains(lr, "melee") {
+		return true
+	}
+	return false
+}
+
+func parseFirstInt(s string) (int, bool) {
+	s = strings.TrimSpace(s)
+	num := ""
+	for _, r := range s {
+		if r >= '0' && r <= '9' {
+			num += string(r)
+		} else if num != "" {
+			break
+		}
+	}
+	if num == "" {
+		return 0, false
+	}
+	n, err := strconv.Atoi(num)
+	if err != nil {
+		return 0, false
+	}
+	return n, true
+}
+
+// Given a faction and unit, validate membership and build canonical player data from server store.
+func canonicalizePlayerData(store *Store, factionID, unitID string, requested []struct {
+	Name      string   `json:"name"`
+	Type      string   `json:"type"`
+	Attacks   string   `json:"attacks"`
+	Skill     int      `json:"skill"`
+	Strength  int      `json:"strength"`
+	AP        int      `json:"ap"`
+	Damage    string   `json:"damage"`
+	Abilities []string `json:"abilities,omitempty"`
+}, preferCategory string) (PvPPlayerData, error) {
+	// Validate unit exists and belongs to faction
+	u, ok := store.UnitsByID[unitID]
+	if !ok {
+		return PvPPlayerData{}, fmt.Errorf("unknown unit: %s", unitID)
+	}
+	if strings.TrimSpace(strings.ToUpper(u.FactionID)) != strings.TrimSpace(strings.ToUpper(factionID)) {
+		return PvPPlayerData{}, fmt.Errorf("unit %s does not belong to faction %s", unitID, factionID)
+	}
+
+	// Determine unit W from first model (fallback to 10 if not available)
+	hp := 10
+	if models, ok := store.ModelsByDS[unitID]; ok && len(models) > 0 {
+		if n, err := strconv.Atoi(strings.TrimSpace(models[0].W)); err == nil && n > 0 {
+			hp = n
+		}
+	}
+
+	// Map unit weapons by name and type string for lookup
+	unitWeapons := store.WeaponsByDS[unitID]
+	if len(unitWeapons) == 0 {
+		// Some datasheets may not have weapons; still allow empty but return error if requested > 0
+		if len(requested) > 0 {
+			return PvPPlayerData{}, fmt.Errorf("unit has no weapons in datastore")
+		}
+	}
+
+	// Helper to match a requested weapon to a canonical weapon entry
+	findCanonical := func(reqName, reqType, reqAtt string) (Weapon, bool) {
+		rname := strings.ToLower(strings.TrimSpace(reqName))
+		rtype := strings.ToLower(strings.TrimSpace(reqType))
+		ratt := strings.ToLower(strings.TrimSpace(reqAtt))
+		// First pass: name + type + attacks
+		for _, w := range unitWeapons {
+			if strings.ToLower(strings.TrimSpace(w.Name)) == rname && strings.ToLower(strings.TrimSpace(w.Type)) == rtype && strings.ToLower(strings.TrimSpace(w.Attacks)) == ratt {
+				return w, true
+			}
+		}
+		// Second pass: name + type
+		for _, w := range unitWeapons {
+			if strings.ToLower(strings.TrimSpace(w.Name)) == rname && strings.ToLower(strings.TrimSpace(w.Type)) == rtype {
+				return w, true
+			}
+		}
+		// Third pass: name only
+		for _, w := range unitWeapons {
+			if strings.ToLower(strings.TrimSpace(w.Name)) == rname {
+				return w, true
+			}
+		}
+		return Weapon{}, false
+	}
+
+	// Build canonical weapons and enforce single category
+	canonicalWeapons := make([]struct {
+		Name      string   `json:"name"`
+		Type      string   `json:"type"`
+		Attacks   string   `json:"attacks"`
+		Skill     int      `json:"skill"`
+		Strength  int      `json:"strength"`
+		AP        int      `json:"ap"`
+		Damage    string   `json:"damage"`
+		Abilities []string `json:"abilities,omitempty"`
+	}, 0, len(requested))
+
+	var category string // "melee" or "ranged"
+	for _, rw := range requested {
+		cw, ok := findCanonical(rw.Name, rw.Type, rw.Attacks)
+		if !ok {
+			return PvPPlayerData{}, fmt.Errorf("weapon not allowed for unit: %s", rw.Name)
+		}
+		isM := isMeleeType(cw.Type, cw.Range)
+		c := "ranged"
+		if isM {
+			c = "melee"
+		}
+		if category == "" {
+			category = c
+		} else if category != c {
+			return PvPPlayerData{}, fmt.Errorf("mixed weapon categories not allowed (must be all %s)", category)
+		}
+		// If a preferred category was provided (e.g., from opponent), enforce it
+		if preferCategory != "" && c != preferCategory {
+			return PvPPlayerData{}, fmt.Errorf("weapon category must be %s", preferCategory)
+		}
+
+		// Derive skill from BS/WS if possible; fallback to requested
+		skill := rw.Skill
+		if n, ok := parseFirstInt(cw.BSOrWS); ok && n >= 2 && n <= 6 {
+			skill = n
+		}
+		// Strength, AP from store when parsable; otherwise fallback
+		str := rw.Strength
+		if n, err := strconv.Atoi(strings.TrimSpace(cw.Strength)); err == nil {
+			str = n
+		}
+		ap := rw.AP
+		if n, err := strconv.Atoi(strings.TrimSpace(cw.AP)); err == nil {
+			ap = n
+		}
+		canonicalWeapons = append(canonicalWeapons, struct {
+			Name      string   `json:"name"`
+			Type      string   `json:"type"`
+			Attacks   string   `json:"attacks"`
+			Skill     int      `json:"skill"`
+			Strength  int      `json:"strength"`
+			AP        int      `json:"ap"`
+			Damage    string   `json:"damage"`
+			Abilities []string `json:"abilities,omitempty"`
+		}{
+			Name:      cw.Name,
+			Type:      cw.Type,
+			Attacks:   cw.Attacks,
+			Skill:     skill,
+			Strength:  str,
+			AP:        ap,
+			Damage:    cw.Damage,
+			Abilities: rw.Abilities, // abilities may be derived elsewhere; keep client-provided for now
+		})
+	}
+
+	// Compose PvPPlayerData
+	out := PvPPlayerData{
+		FactionID: factionID,
+		UnitID:    unitID,
+		Weapons:   canonicalWeapons,
+		HP:        hp,
+		MaxHP:     hp,
+		Ready:     true,
+	}
+	return out, nil
+}
+
 // simple CORS for GET/OPTIONS
 func withCORS(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
@@ -914,6 +1096,19 @@ func main() {
 		writeJSON(w, map[string]string{"status": "ok"})
 	})
 
+	// Version
+	mux.HandleFunc("/api/version", func(w http.ResponseWriter, r *http.Request) {
+		if r.Method != http.MethodGet {
+			writeError(w, http.StatusMethodNotAllowed, "GET only")
+			return
+		}
+		writeJSON(w, map[string]any{
+			"commit":     commit,
+			"build_time": buildTime,
+			"version":    "w40k-duel",
+		})
+	})
+
 	// Lobby endpoints
 	// GET /api/lobby -> list of users with phases
 	mux.HandleFunc("/api/lobby", func(w http.ResponseWriter, r *http.Request) {
@@ -972,6 +1167,23 @@ func main() {
 			writeError(w, http.StatusBadRequest, "invalid JSON")
 			return
 		}
+
+		// Guard: prevent AI sims that involve players currently in active PvP matches
+		// If either attacker or defender name matches a player in an active PvP match, block the request.
+		attName := strings.TrimSpace(req.Attacker.Name)
+		defName := strings.TrimSpace(req.Defender.Name)
+		if attName != "" {
+			if m := pvpMatchmaker.findMatchForPlayer(attName); m != nil && m.Status == "active" {
+				writeError(w, http.StatusConflict, fmt.Sprintf("player %s is in an active PvP match", attName))
+				return
+			}
+		}
+		if defName != "" {
+			if m := pvpMatchmaker.findMatchForPlayer(defName); m != nil && m.Status == "active" {
+				writeError(w, http.StatusConflict, fmt.Sprintf("player %s is in an active PvP match", defName))
+				return
+			}
+		}
 		att := game.UnitSnapshot{ID: req.Attacker.ID, Name: req.Attacker.Name, T: req.Attacker.T, W: req.Attacker.W, Sv: req.Attacker.Sv, InvSv: req.Attacker.InvSv, Keywords: req.Attacker.Keywords, Abilities: req.Attacker.Abilities}
 		def := game.UnitSnapshot{ID: req.Defender.ID, Name: req.Defender.Name, T: req.Defender.T, W: req.Defender.W, Sv: req.Defender.Sv, InvSv: req.Defender.InvSv, Keywords: req.Defender.Keywords, Abilities: req.Defender.Abilities}
 		wep := game.WeaponSnapshot{Name: req.Weapon.Name, Type: req.Weapon.Type, Attacks: req.Weapon.Attacks, Skill: req.Weapon.Skill, Strength: req.Weapon.Strength, AP: req.Weapon.AP, Damage: req.Weapon.Damage, Abilities: req.Weapon.Abilities}
@@ -995,6 +1207,154 @@ func main() {
 			}
 		}
 		writeJSON(w, res)
+	})
+
+	// POST /api/sim/odds - Monte Carlo estimate of win rates between two units
+	mux.HandleFunc("/api/sim/odds", func(w http.ResponseWriter, r *http.Request) {
+		if r.Method != http.MethodPost {
+			writeError(w, http.StatusMethodNotAllowed, "POST only")
+			return
+		}
+		var req struct {
+			A struct {
+				Name      string `json:"name"`
+				FactionID string `json:"faction_id"`
+				UnitID    string `json:"unit_id"`
+				Weapons   []struct {
+					Name      string   `json:"name"`
+					Type      string   `json:"type"`
+					Attacks   string   `json:"attacks"`
+					Skill     int      `json:"skill"`
+					Strength  int      `json:"strength"`
+					AP        int      `json:"ap"`
+					Damage    string   `json:"damage"`
+					Abilities []string `json:"abilities,omitempty"`
+				} `json:"weapons"`
+			} `json:"a"`
+			B struct {
+				Name      string `json:"name"`
+				FactionID string `json:"faction_id"`
+				UnitID    string `json:"unit_id"`
+				Weapons   []struct {
+					Name      string   `json:"name"`
+					Type      string   `json:"type"`
+					Attacks   string   `json:"attacks"`
+					Skill     int      `json:"skill"`
+					Strength  int      `json:"strength"`
+					AP        int      `json:"ap"`
+					Damage    string   `json:"damage"`
+					Abilities []string `json:"abilities,omitempty"`
+				} `json:"weapons"`
+			} `json:"b"`
+			Trials int  `json:"trials"`
+			Rotate bool `json:"rotate"`
+		}
+		if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
+			writeError(w, http.StatusBadRequest, "invalid JSON")
+			return
+		}
+		if strings.TrimSpace(req.A.UnitID) == "" || strings.TrimSpace(req.B.UnitID) == "" {
+			writeError(w, http.StatusBadRequest, "missing units")
+			return
+		}
+		if req.Trials <= 0 || req.Trials > 5000 {
+			req.Trials = 400
+		}
+
+		// Canonicalize both sides; enforce same category if either side has weapons
+		prefer := ""
+		if len(req.A.Weapons) > 0 {
+			if isMeleeType(req.A.Weapons[0].Type, "") {
+				prefer = "melee"
+			} else {
+				prefer = "ranged"
+			}
+		} else if len(req.B.Weapons) > 0 {
+			if isMeleeType(req.B.Weapons[0].Type, "") {
+				prefer = "melee"
+			} else {
+				prefer = "ranged"
+			}
+		}
+		aData, err := canonicalizePlayerData(store, req.A.FactionID, req.A.UnitID, req.A.Weapons, prefer)
+		if err != nil {
+			writeError(w, http.StatusBadRequest, "A: "+err.Error())
+			return
+		}
+		bData, err := canonicalizePlayerData(store, req.B.FactionID, req.B.UnitID, req.B.Weapons, prefer)
+		if err != nil {
+			writeError(w, http.StatusBadRequest, "B: "+err.Error())
+			return
+		}
+
+		// Simulation loop
+		aWins, bWins := 0, 0
+		totalRounds := 0
+		for t := 0; t < req.Trials; t++ {
+			aHP := aData.MaxHP
+			bHP := bData.MaxHP
+			turn := 0 // 0 -> A, 1 -> B
+			round := 1
+			for step := 0; step < 1000; step++ { // safety cap
+				if turn == 0 {
+					// A attacks B
+					if len(aData.Weapons) == 0 {
+						bWins++
+						break
+					}
+					idx := 0
+					if req.Rotate && len(aData.Weapons) > 0 {
+						idx = (round - 1) % len(aData.Weapons)
+					}
+					w := aData.Weapons[idx]
+					att := game.UnitSnapshot{ID: req.A.UnitID, Name: req.A.Name, T: 4, W: aHP, Sv: 3}
+					def := game.UnitSnapshot{ID: req.B.UnitID, Name: req.B.Name, T: 4, W: bHP, Sv: 3}
+					wep := game.WeaponSnapshot{Name: w.Name, Type: w.Type, Attacks: w.Attacks, Skill: w.Skill, Strength: w.Strength, AP: w.AP, Damage: w.Damage, Abilities: w.Abilities}
+					res := game.ResolveShooting(att, def, wep)
+					bHP -= res.DamageTotal
+					if bHP <= 0 {
+						aWins++
+						totalRounds += round
+						break
+					}
+					turn = 1
+				} else {
+					// B attacks A
+					if len(bData.Weapons) == 0 {
+						aWins++
+						break
+					}
+					idx := 0
+					if req.Rotate && len(bData.Weapons) > 0 {
+						idx = (round - 1) % len(bData.Weapons)
+					}
+					w := bData.Weapons[idx]
+					att := game.UnitSnapshot{ID: req.B.UnitID, Name: req.B.Name, T: 4, W: bHP, Sv: 3}
+					def := game.UnitSnapshot{ID: req.A.UnitID, Name: req.A.Name, T: 4, W: aHP, Sv: 3}
+					wep := game.WeaponSnapshot{Name: w.Name, Type: w.Type, Attacks: w.Attacks, Skill: w.Skill, Strength: w.Strength, AP: w.AP, Damage: w.Damage, Abilities: w.Abilities}
+					res := game.ResolveShooting(att, def, wep)
+					aHP -= res.DamageTotal
+					if aHP <= 0 {
+						bWins++
+						totalRounds += round
+						break
+					}
+					turn = 0
+					round++
+				}
+			}
+		}
+		writeJSON(w, map[string]any{
+			"a_win_rate": float64(aWins) / float64(req.Trials),
+			"b_win_rate": float64(bWins) / float64(req.Trials),
+			"trials":     req.Trials,
+			"avg_rounds": func() float64 {
+				if aWins+bWins == 0 {
+					return 0
+				}
+				return float64(totalRounds) / float64(aWins+bWins)
+			}(),
+		})
 	})
 
 	// GET /api/match/{id} -> full match log
@@ -1048,7 +1408,10 @@ func main() {
 			writeError(w, http.StatusMethodNotAllowed, "POST only")
 			return
 		}
-		var body struct{ Name, Phase string; Points int }
+		var body struct {
+			Name, Phase string
+			Points      int
+		}
 		if err := json.NewDecoder(r.Body).Decode(&body); err != nil || strings.TrimSpace(body.Name) == "" {
 			writeError(w, http.StatusBadRequest, "invalid payload")
 			return
@@ -1112,19 +1475,19 @@ func main() {
 			return
 		}
 
+		// Canonicalize player's submitted data against server datastore (legality checks)
+		playerData, err := canonicalizePlayerData(store, req.FactionID, req.UnitID, req.Weapons, "")
+		if err != nil {
+			writeError(w, http.StatusBadRequest, err.Error())
+			return
+		}
+
 		// Look for another player in PvP queue
 		waitingPlayer := pvpMatchmaker.findWaitingPlayer(playerName)
 
 		if waitingPlayer == nil {
 			// No opponent found, add this player to PvP queue
-			pvpMatchmaker.addToQueue(playerName, PvPPlayerData{
-				FactionID: req.FactionID,
-				UnitID:    req.UnitID,
-				Weapons:   req.Weapons,
-				HP:        req.HP,
-				MaxHP:     req.MaxHP,
-				Ready:     true,
-			})
+			pvpMatchmaker.addToQueue(playerName, playerData)
 
 			writeJSON(w, map[string]interface{}{
 				"status":  "queued",
@@ -1137,14 +1500,7 @@ func main() {
 		match := pvpMatchmaker.createMatch(playerName, waitingPlayer.name)
 
 		// Set player data for both players
-		currentPlayerData := PvPPlayerData{
-			FactionID: req.FactionID,
-			UnitID:    req.UnitID,
-			Weapons:   req.Weapons,
-			HP:        req.HP,
-			MaxHP:     req.MaxHP,
-			Ready:     true,
-		}
+		currentPlayerData := playerData
 
 		if match.Player1 == playerName {
 			match.Player1Data = currentPlayerData
@@ -1242,15 +1598,22 @@ func main() {
 
 		playerName := strings.TrimSpace(req.Name)
 		if match.Player2 == playerName && !match.Player2Data.Ready {
-			// Player 2 joining with their data
-			match.Player2Data = PvPPlayerData{
-				FactionID: req.FactionID,
-				UnitID:    req.UnitID,
-				Weapons:   req.Weapons,
-				HP:        req.HP,
-				MaxHP:     req.MaxHP,
-				Ready:     true,
+			// Enforce same weapon category as opponent for fairness
+			prefer := ""
+			if len(match.Player1Data.Weapons) > 0 {
+				if isMeleeType(match.Player1Data.Weapons[0].Type, "") {
+					prefer = "melee"
+				} else {
+					prefer = "ranged"
+				}
 			}
+			player2Data, err := canonicalizePlayerData(store, req.FactionID, req.UnitID, req.Weapons, prefer)
+			if err != nil {
+				writeError(w, http.StatusBadRequest, err.Error())
+				return
+			}
+			// Player 2 joining with canonical data
+			match.Player2Data = player2Data
 
 			// If both players are ready, start the match
 			if match.Player1Data.Ready && match.Player2Data.Ready {

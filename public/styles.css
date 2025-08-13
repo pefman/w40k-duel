@@ -148,3 +148,22 @@ h1, h2{ color: var(--wr-gold-2); }
 /* Links (if any) */
 a{ color: #77b3ff; }
 a:hover{ color: #a7ccff; }
+
+/* Mobile tweaks */
+@media (max-width: 576px){
+  header.banner .container{ gap: .5rem; }
+  .username-input-BOX_ui_{ width: 100%; }
+  .selection-BOX_sel_ .btn-group{ flex-wrap: wrap; }
+  .action-buttons-BOX_ab_ .btn{ flex: 1 1 auto; min-width: 42%; }
+  .weapon-option{ padding: .5rem; }
+  .weapon-option .wo-stats{ font-size: .85rem; }
+  .weapon-option .wo-desc{ font-size: .8rem; }
+  #textLog{ font-size: .85rem; max-height: 180px; }
+  .vo-card{ width: 92vw; padding: 16px; }
+  .vo-title{ font-size: 1.25rem; }
+  .vo-sub{ font-size: .9rem; }
+  .stats-box{ padding: .75rem !important; }
+  .weapon-type-BOX_wt_ label{ padding:.25rem .5rem; }
+  .stats-BOX_sb_ .card-body{ padding: .75rem !important; }
+  #calcOddsResult{ display:block; margin-top: .25rem; }
+}

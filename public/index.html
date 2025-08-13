@@ -52,7 +52,7 @@
         <select id="factionSelect" class="form-select"></select>
       </div>
       <div class="col-12 col-md-4 mb-2 mb-md-0">
-        <label for="unitSelect" class="form-label">Unit</label>
+        <label for="unitSelect" class="form-label">Unit <span id="unitCount" class="badge bg-secondary align-middle" style="display:none;">0</span></label>
         <select id="unitSelect" class="form-select" disabled></select>
       </div>
       <div class="col-12 col-md-4">
@@ -347,6 +347,8 @@ var stats = {};
             loadUnitsForFaction(first.id);
           }
         }
+  // Also sync opponent faction dropdown now that we have the list
+  try { syncOppFactionOptions(); } catch {}
       } catch(e){
         factionSelect.innerHTML = '<option value="">(failed to load factions)</option>';
       }
@@ -373,6 +375,8 @@ var stats = {};
           }
         }
         if (!Array.isArray(units)) units = [];
+        const uc = document.getElementById('unitCount');
+        if (uc){ uc.textContent = String(units.length); uc.style.display = units.length ? '' : 'none'; }
         unitSelect.innerHTML = (units.length ? '<option value="">Select Unit</option>' : '<option value="">(no units found)</option>') +
           units.map(u => {
             const id = u.ID || u.id || u.Name || u.name;
@@ -383,6 +387,15 @@ var stats = {};
             const ptsTxt = pts ? ` — ${pts}pts` : '';
             return `<option value="${id}" data-points="${pts}">${name} (T ${t} / W ${w})${ptsTxt}</option>`;
           }).join('');
+        // Auto-select first unit to immediately populate weapons UI
+        if (units.length > 0) {
+          const first = units[0];
+          const firstId = first.ID || first.id || first.Name || first.name;
+          if (firstId) {
+            unitSelect.value = firstId;
+            unitSelect.dispatchEvent(new Event('change'));
+          }
+        }
       } catch(e){
         unitSelect.innerHTML = '<option value="">(failed to load units)</option>';
       } finally {
@@ -842,9 +855,15 @@ var stats = {};
         const v = await r.json();
         const c = String(v.commit||'dev');
         const short = c.length>8 ? c.substring(0,8) : c;
-        document.getElementById('buildCommit')?.textContent = short;
+        {
+          const el = document.getElementById('buildCommit');
+          if (el) el.textContent = short;
+        }
         const bt = v.build_time ? String(v.build_time) : '';
-        document.getElementById('buildTime')?.textContent = bt;
+        {
+          const el2 = document.getElementById('buildTime');
+          if (el2) el2.textContent = bt;
+        }
       }catch{}
     })();
     // Canvas helpers

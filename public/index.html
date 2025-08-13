@@ -355,23 +355,38 @@ var stats = {};
     async function loadUnitsForFaction(fid){
       unitSelect.disabled = true;
       unitSelect.innerHTML = '<option value="">Loading units…</option>';
-      if(!fid){ unitSelect.innerHTML = '<option value="">Select unit</option>'; return; }
+      if(!fid){ unitSelect.innerHTML = '<option value="">Select unit</option>'; unitSelect.disabled = false; return; }
+      const tryLoad = async (path)=>{
+        const r = await fetch(path);
+        if (!r.ok) throw new Error('units fetch failed');
+        return r.json();
+      };
+      const toSlug = (s)=> (s||'').toLowerCase().replace(/’/g,'').replace(/'/g,'').replace(/&/g,'and').replace(/\s+/g,'-').replace(/\//g,'-').replace(/--+/g,'-');
       try {
-    const resp = await fetch(`/api/${encodeURIComponent(fid)}/units`);
-        const units = await resp.json();
-        unitSelect.innerHTML = '<option value="">Select Unit</option>' +
+        let units = await tryLoad(`/api/${encodeURIComponent(fid)}/units`).catch(()=>[]);
+        // Fallback: try slug if ID path yields empty
+        if (!Array.isArray(units) || units.length === 0) {
+          const fac = (Array.isArray(factions)? factions:[]).find(f=> f.id===fid || String(f.id).toLowerCase()===String(fid).toLowerCase());
+          if (fac && fac.name) {
+            const slug = toSlug(fac.name);
+            try { units = await tryLoad(`/api/${encodeURIComponent(slug)}/units`); } catch {}
+          }
+        }
+        if (!Array.isArray(units)) units = [];
+        unitSelect.innerHTML = (units.length ? '<option value="">Select Unit</option>' : '<option value="">(no units found)</option>') +
           units.map(u => {
             const id = u.ID || u.id || u.Name || u.name;
             const name = u.Name || u.name || 'Unit';
             const t = (u.T ?? u.t ?? '–');
             const w = (u.W ?? u.w ?? '–');
-      const pts = (u.points || u.Points || '').toString();
-      const ptsTxt = pts ? ` — ${pts}pts` : '';
-      return `<option value="${id}" data-points="${pts}">${name} (T ${t} / W ${w})${ptsTxt}</option>`;
+            const pts = (u.points || u.Points || '').toString();
+            const ptsTxt = pts ? ` — ${pts}pts` : '';
+            return `<option value="${id}" data-points="${pts}">${name} (T ${t} / W ${w})${ptsTxt}</option>`;
           }).join('');
-        unitSelect.disabled = false;
       } catch(e){
         unitSelect.innerHTML = '<option value="">(failed to load units)</option>';
+      } finally {
+        unitSelect.disabled = false;
       }
     }
 

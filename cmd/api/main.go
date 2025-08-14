@@ -9,6 +9,7 @@ import (
 	"net/http"
 	"os"
 	"path/filepath"
+	"runtime"
 	"sort"
 	"strconv"
 	"strings"
@@ -23,6 +24,9 @@ var (
 	commit    = "dev"
 	buildTime = ""
 )
+
+// Service start time for uptime reporting
+var serviceStart = time.Now()
 
 type Faction struct {
 	ID   string `json:"id"`
@@ -1796,6 +1800,38 @@ func main() {
 			sort.Slice(out, func(i, j int) bool { return strings.ToLower(out[i].Name) < strings.ToLower(out[j].Name) })
 		}
 		writeJSON(w, out)
+	})
+
+	// GET /api/metrics - basic service statistics
+	mux.HandleFunc("/api/metrics", func(w http.ResponseWriter, r *http.Request) {
+		// uptime
+		uptime := time.Since(serviceStart)
+		secs := int64(uptime / time.Second)
+		h := secs / 3600
+		m := (secs % 3600) / 60
+		s := secs % 60
+		uptimeHuman := fmt.Sprintf("%02d:%02d:%02d", h, m, s)
+		// memory
+		var ms runtime.MemStats
+		runtime.ReadMemStats(&ms)
+		// players online (in lobby)
+		lobbyOnline := len(lobby.list())
+		// pvp counts
+		pvpQueue, pvpActive := 0, 0
+		pvpMatchmaker.mu.Lock()
+		pvpQueue = len(pvpMatchmaker.queue)
+		pvpActive = len(pvpMatchmaker.matches)
+		pvpMatchmaker.mu.Unlock()
+		writeJSON(w, map[string]any{
+			"uptime_sec":         secs,
+			"uptime_human":       uptimeHuman,
+			"mem_alloc_bytes":    ms.Alloc,
+			"mem_sys_bytes":      ms.Sys,
+			"goroutines":         runtime.NumGoroutine(),
+			"lobby_online":       lobbyOnline,
+			"pvp_queue":          pvpQueue,
+			"pvp_active_matches": pvpActive,
+		})
 	})
 
 	// GET /api/{faction}/units  (faction is faction_id, e.g., AC, ORK)

@@ -38,11 +38,17 @@
 
   <!-- Main Content -->
   <main class="container">
-    <!-- Build info footer bar -->
+    <!-- Build info + metrics footer bar -->
     <div id="buildInfoBar" class="position-fixed bottom-0 start-0 end-0 py-1 px-2" style="background:rgba(0,0,0,0.7); border-top:1px solid rgba(201,167,83,.4); z-index:1030;">
-      <div class="container d-flex justify-content-between small" style="color:#8aa0b8;">
-        <div>Build: <span id="buildCommit">dev</span></div>
-        <div><span id="buildTime"></span></div>
+      <div class="container d-flex justify-content-between small flex-wrap gap-2" style="color:#8aa0b8;">
+        <div>Build: <span id="buildCommit">dev</span> <span id="buildTime" class="ms-2"></span></div>
+        <div class="d-flex gap-3 flex-wrap">
+          <div>Uptime: <span id="mUptime">—</span></div>
+          <div>Mem: <span id="mMem">—</span></div>
+          <div>Players: <span id="mPlayers">0</span></div>
+          <div>Queue: <span id="mQueue">0</span></div>
+          <div>Matches: <span id="mMatches">0</span></div>
+        </div>
       </div>
     </div>
     <!-- Selection controls -->
@@ -865,6 +871,28 @@ var stats = {};
           if (el2) el2.textContent = bt;
         }
       }catch{}
+    })();
+    // Poll metrics
+    (function metricsPoll(){
+      const fmtBytes = (n)=>{
+        const units=['B','KB','MB','GB']; let i=0; let x=Number(n)||0; while(x>=1024&&i<units.length-1){x/=1024;i++;}
+        return (i<=1?Math.round(x):x.toFixed(1)) + units[i];
+      };
+      const tick = async ()=>{
+        try{
+          const r = await fetch('/api/metrics');
+          if(r.ok){
+            const m = await r.json();
+            const u = document.getElementById('mUptime'); if(u) u.textContent = m.uptime_human || (m.uptime_sec+"s");
+            const mem = document.getElementById('mMem'); if(mem) mem.textContent = fmtBytes(m.mem_alloc_bytes||0);
+            const p = document.getElementById('mPlayers'); if(p) p.textContent = String(m.lobby_online||0);
+            const q = document.getElementById('mQueue'); if(q) q.textContent = String(m.pvp_queue||0);
+            const ma = document.getElementById('mMatches'); if(ma) ma.textContent = String(m.pvp_active_matches||0);
+          }
+        }catch{}
+        setTimeout(tick, 3000);
+      };
+      tick();
     })();
     // Canvas helpers
     const canvas = document.getElementById('gameCanvas');

@@ -1078,7 +1078,23 @@ func main() {
 
 	mux := http.NewServeMux()
 	// Serve static mockup from ./public at root
-	mux.Handle("/", http.FileServer(http.Dir("public")))
+	// Add no-cache headers for index.html to avoid stale UI in browsers
+	staticFS := http.FileServer(http.Dir("public"))
+	mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		// Let API routes pass through (shouldn't match here if registered earlier)
+		if strings.HasPrefix(r.URL.Path, "/api/") {
+			http.NotFound(w, r)
+			return
+		}
+		if r.URL.Path == "/" || r.URL.Path == "/index.html" {
+			w.Header().Set("Cache-Control", "no-cache, no-store, must-revalidate")
+			w.Header().Set("Pragma", "no-cache")
+			w.Header().Set("Expires", "0")
+			http.ServeFile(w, r, filepath.Join("public", "index.html"))
+			return
+		}
+		staticFS.ServeHTTP(w, r)
+	})
 	// Statistics endpoints
 	mux.HandleFunc("/api/stats/save", SaveStatsHandler)
 	mux.HandleFunc("/api/stats/get", GetStatsHandler)

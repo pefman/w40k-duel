@@ -94,8 +94,7 @@
             <button id="btnSelectAllMelee" class="btn btn-sm btn-outline-info" title="Select the default melee weapon">Select All Melee</button>
             <button id="btnMaxPower" class="btn btn-sm btn-warning" title="Automatically select the highest damage weapons available">⚡ Max Power!</button>
             <button id="btnClearWeapons" class="btn btn-sm btn-outline-secondary" title="Clear all weapon selections">Clear All</button>
-            <button id="btnCalcOdds" class="btn btn-sm btn-outline-warning" title="Estimate win% vs mirror enemy">Calculate Odds</button>
-            <span id="calcOddsResult" class="small text-secondary"></span>
+            <!-- Calculate Odds feature removed -->
           </div>
           
           <div id="weaponSelectBox" class="row g-2"></div>
@@ -744,7 +743,7 @@ var stats = {};
     document.getElementById('btnSelectAllMelee')?.addEventListener('click', selectAllMelee);
     document.getElementById('btnMaxPower')?.addEventListener('click', selectMaxPower);
     document.getElementById('btnClearWeapons')?.addEventListener('click', clearAllWeapons);
-  document.getElementById('btnCalcOdds')?.addEventListener('click', calculateOdds);
+  // Calculate Odds feature removed
 
     // Read selected weapon type
     function getWeaponType(){
@@ -779,39 +778,7 @@ var stats = {};
   function syncOppFactionOptions(){}
   function clearOppUnits(){}
 
-    async function calculateOdds(){
-      const out = document.getElementById('calcOddsResult');
-      const btn = document.getElementById('btnCalcOdds');
-      if (out) out.textContent = '';
-      if (btn) { btn.disabled = true; btn.textContent = 'Calculating...'; }
-      const fid = factionSelect.value; const uid = unitSelect.value; if (!fid || !uid) { if (out) out.textContent = 'Select a unit first.'; return; }
-      const type = getWeaponType();
-      const weapons = getSelectedWeaponsPayload(type);
-      if (weapons.length === 0) { if (out) out.textContent = 'Select at least one weapon.'; if (btn){ btn.disabled=false; btn.textContent='Calculate Odds'; } return; }
-      const username = (sessionStorage.getItem('username')||'Anonymous');
-  const oppF = fid; // mirror
-  const oppU = uid; // mirror
-      const body = {
-        a: { name: username, faction_id: fid, unit_id: uid, weapons },
-        b: { name: 'Opponent', faction_id: oppF, unit_id: oppU, weapons },
-        trials: 400,
-        rotate: true
-      };
-      try {
-        const resp = await fetch('/api/sim/odds', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(body)});
-        if (!resp.ok) {
-          const err = await resp.json().catch(()=>({message:'server error'}));
-          throw new Error(err.message || 'server error');
-        }
-        const data = await resp.json();
-        const a = Math.round((data.a_win_rate||0)*100);
-        const b = Math.round((data.b_win_rate||0)*100);
-        if (out) out.textContent = `Win chance: You ${a}% · Opponent ${b}% (n=${data.trials})`;
-      } catch (e) {
-        if (out) out.textContent = 'Calculation failed';
-      }
-      finally { if (btn){ btn.disabled=false; btn.textContent='Calculate Odds'; } }
-    }
+  // Calculate Odds feature removed
 
   // Init
   loadFactions();

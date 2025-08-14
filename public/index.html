@@ -41,7 +41,7 @@
     <!-- Build info + metrics footer bar -->
     <div id="buildInfoBar" class="position-fixed bottom-0 start-0 end-0 py-1 px-2" style="background:rgba(0,0,0,0.7); border-top:1px solid rgba(201,167,83,.4); z-index:1030;">
       <div class="container d-flex justify-content-between small flex-wrap gap-2" style="color:#8aa0b8;">
-        <div>Build: <span id="buildCommit">dev</span> <span id="buildTime" class="ms-2"></span></div>
+  <div>Commit: <span id="buildCommit">dev</span> <span id="buildTime" class="ms-2"></span></div>
         <div class="d-flex gap-3 flex-wrap">
           <div>Uptime: <span id="mUptime">—</span></div>
           <div>Mem: <span id="mMem">—</span></div>
@@ -816,22 +816,26 @@ var stats = {};
   // Init
   loadFactions();
   syncOppFactionOptions();
-    // Fetch build info
+    // Fetch build info (commit hash + build time)
     (async ()=>{
       try{
         const r = await fetch('/api/version');
         if(!r.ok) return;
         const v = await r.json();
-        const c = String(v.commit||'dev');
-        const short = c.length>8 ? c.substring(0,8) : c;
-        {
-          const el = document.getElementById('buildCommit');
-          if (el) el.textContent = short;
-        }
-        const bt = v.build_time ? String(v.build_time) : '';
-        {
-          const el2 = document.getElementById('buildTime');
-          if (el2) el2.textContent = bt;
+        const full = String(v.commit||'dev');
+        const short = full.length>8 ? full.substring(0,8) : full;
+        const el = document.getElementById('buildCommit');
+        if (el) { el.textContent = short; el.title = full; }
+        const rawBT = v.build_time || v.buildTime || '';
+        const el2 = document.getElementById('buildTime');
+        if (el2) {
+          let disp = '';
+          if (rawBT) {
+            const d = new Date(String(rawBT));
+            disp = isNaN(d.getTime()) ? String(rawBT) : d.toLocaleString();
+          }
+          el2.textContent = disp;
+          if (rawBT) el2.title = `Built: ${rawBT}`;
         }
       }catch{}
     })();

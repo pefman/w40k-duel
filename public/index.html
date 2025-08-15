@@ -52,6 +52,18 @@
       </div>
     </div>
     <!-- Selection controls -->
+    <!-- Fight mode selection (new first step) -->
+    <div class="row mb-3" id="fightModeRow">
+      <div class="col-12">
+        <label class="form-label">Choose Battle Type</label>
+        <div class="d-flex flex-wrap gap-2">
+          <button class="btn btn-warning" id="modeAI" type="button">Fight AI</button>
+          <button class="btn btn-outline-warning" id="modePVP" type="button">Matchmake</button>
+          <button class="btn btn-outline-warning" id="modeCustom" type="button">Custom</button>
+          <div class="text-secondary small d-flex align-items-center ms-2">Select a mode to begin.</div>
+        </div>
+      </div>
+    </div>
     <div class="row mb-3 selection-BOX_sel_">
       <div class="col-12 col-md-4 mb-2 mb-md-0">
         <label for="factionSelect" class="form-label">Faction</label>
@@ -72,7 +84,7 @@
           </div>
           <div class="action-buttons-BOX_ab_ btn-group" role="group" aria-label="Actions">
             <button id="btnFightAI" class="btn btn-outline-warning">Fight AI</button>
-            <button id="btnFightAICustom" class="btn btn-outline-warning" title="Fight a chosen opponent unit">AI Custom</button>
+            <button id="btnFightCustom" class="btn btn-outline-warning" title="Fight a chosen opponent unit">Custom</button>
             <button id="btnMatchmake" class="btn btn-outline-warning">Matchmake</button>
             <button id="btnCancelMatchmake" class="btn btn-outline-danger d-none">Cancel Search</button>
           </div>
@@ -100,7 +112,7 @@
           
           <div id="weaponSelectBox" class="row g-2"></div>
           <!-- Opponent selection for custom AI fights -->
-          <div class="row g-2 mt-3" id="customOpponentRow">
+      <div class="row g-2 mt-3 d-none" id="customOpponentRow">
             <div class="col-12 col-md-6 col-lg-4">
               <label class="form-label small text-secondary" for="oppFactionSelect">Opponent Faction (custom)</label>
               <select id="oppFactionSelect" class="form-select form-select-sm">
@@ -114,7 +126,7 @@
               </select>
             </div>
             <div class="col-12 col-lg-4 d-flex align-items-end">
-              <div class="small text-secondary">Use AI Custom to fight this specific unit.</div>
+        <div class="small text-secondary">Use Custom to fight this specific unit.</div>
             </div>
           </div>
         </div>
@@ -1440,6 +1452,37 @@ var stats = {};
       return sel;
     }
   const selectionRow = document.querySelector('.selection-BOX_sel_');
+  const fightModeRow = document.getElementById('fightModeRow');
+  let fightMode = null; // 'ai' | 'pvp' | 'custom'
+  // Hide selection & weapon UI until a mode is chosen
+  selectionRow.classList.add('d-none');
+  if (weaponSelectRow) weaponSelectRow.classList.add('d-none');
+  function applyFightMode(){
+    if (!fightMode){ selectionRow.classList.add('d-none'); if (weaponSelectRow) weaponSelectRow.classList.add('d-none'); return; }
+    selectionRow.classList.remove('d-none');
+    // Show weapon selection only after unit chosen (populateWeaponSelection handles) and mode chosen
+    allowSelectionUI = true;
+    // Toggle start buttons
+    const btnAI = document.getElementById('btnFightAI');
+    const btnMM = document.getElementById('btnMatchmake');
+    const btnCustom = document.getElementById('btnFightCustom');
+    if (btnAI) btnAI.classList.toggle('d-none', fightMode !== 'ai');
+    if (btnMM) btnMM.classList.toggle('d-none', fightMode !== 'pvp');
+    if (btnCustom) btnCustom.classList.toggle('d-none', fightMode !== 'custom');
+    // Opponent row only for custom
+    const customRow = document.getElementById('customOpponentRow');
+    if (customRow) customRow.classList.toggle('d-none', fightMode !== 'custom');
+    // Highlight mode buttons
+    document.getElementById('modeAI').classList.toggle('btn-warning', fightMode==='ai');
+    document.getElementById('modeAI').classList.toggle('btn-outline-warning', fightMode!=='ai');
+    document.getElementById('modePVP').classList.toggle('btn-warning', fightMode==='pvp');
+    document.getElementById('modePVP').classList.toggle('btn-outline-warning', fightMode!=='pvp');
+    document.getElementById('modeCustom').classList.toggle('btn-warning', fightMode==='custom');
+    document.getElementById('modeCustom').classList.toggle('btn-outline-warning', fightMode!=='custom');
+  }
+  document.getElementById('modeAI').addEventListener('click', ()=>{ fightMode='ai'; applyFightMode(); });
+  document.getElementById('modePVP').addEventListener('click', ()=>{ fightMode='pvp'; applyFightMode(); });
+  document.getElementById('modeCustom').addEventListener('click', ()=>{ fightMode='custom'; applyFightMode(); });
   const statsBox = document.getElementById('statsBox');
     function hidePreMatchUI(){
       console.log('hidePreMatchUI called');
@@ -1473,7 +1516,8 @@ var stats = {};
       }
     }
     function showPostMatchUI(){
-  if (selectionRow) selectionRow.classList.remove('d-none');
+  // After match, keep current mode UI if any; if none, show mode selection only
+  if (fightMode) selectionRow.classList.remove('d-none'); else selectionRow.classList.add('d-none');
   if (statsBox) statsBox.classList.remove('d-none');
   // Show weapon selection after fight
   allowSelectionUI = true;
@@ -1783,7 +1827,7 @@ var stats = {};
     });
 
   // Custom AI fight (uses explicitly chosen opponent faction/unit)
-  document.getElementById('btnFightAICustom').addEventListener('click', async ()=>{
+  document.getElementById('btnFightCustom').addEventListener('click', async ()=>{
     const sel = ensureSelection();
     if (!sel) return;
     // Determine opponent choices
@@ -1867,7 +1911,7 @@ var stats = {};
       const winner = myHP<=0 ? (oppDetail.name||'AI') : aiHP<=0 ? (sel.user||'You') : 'Stopped';
       aggregate.Logs.push(`== ${winner} wins ==`); setTextLog(aggregate.Logs);
       drawFightPhase(detail, oppDetail, myHP, detail.stats.W, aiHP, oppDetail.stats.W, aggregate, `Combat (Match ${matchId})`);
-      try { showWinnerOverlay({ winner, loser: winner===(sel.user||'You')? (oppDetail.name||'AI') : (sel.user||'You'), mode: 'AI Custom', matchId }); } catch {}
+  try { showWinnerOverlay({ winner, loser: winner===(sel.user||'You')? (oppDetail.name||'AI') : (sel.user||'You'), mode: 'Custom', matchId }); } catch {}
       try { fetch('/api/lobby/phase', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({name: sel.user, phase: winner===(sel.user||'You')?'just won':'just lost'})}); } catch {}
       updateStatistics(aggregate);
     } catch(e){ console.error(e); alert('Custom AI fight failed: '+ (e && e.message || e)); showPostMatchUI(); }

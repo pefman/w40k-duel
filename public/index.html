@@ -1565,14 +1565,42 @@ var stats = {};
         } catch { /* ignore, falls back below */ }
         const oppRanged = uniqByBase(oppAllWeapons.filter(w=>w.type==='ranged' && w.isStandard));
         const oppMelee  = uniqByBase(oppAllWeapons.filter(w=>w.type==='melee' && w.isStandard));
-  let oppWeps = [];
+        // Full lists (without default filter) for fallback
+        const oppRangedAll = uniqByBase(oppAllWeapons.filter(w=>w.type==='ranged'));
+        const oppMeleeAll  = uniqByBase(oppAllWeapons.filter(w=>w.type==='melee'));
+        let oppWeps = [];
+        let aiFallbackNote = '';
         if (sel.weaponType === 'ranged') {
-          // 40K: models can shoot all their ranged weapons; use all default ranged (deduped by base name)
-          oppWeps = oppRanged;
-        } else {
-          if (oppMelee.length) oppWeps = [oppMelee[0]];
+          // Prefer default ranged, else any ranged, else a single melee
+          if (oppRanged.length) {
+            oppWeps = oppRanged;
+          } else if (oppRangedAll.length) {
+            oppWeps = oppRangedAll;
+            aiFallbackNote = '(fallback: all ranged)';
+          } else if (oppMeleeAll.length) {
+            oppWeps = [oppMeleeAll[0]];
+            aiFallbackNote = '(fallback: melee)';
+          }
+        } else { // melee fight
+          if (oppMelee.length) {
+            oppWeps = [oppMelee[0]];
+          } else if (oppMeleeAll.length) {
+            oppWeps = [oppMeleeAll[0]];
+            aiFallbackNote = '(fallback: any melee)';
+          } else if (oppRangedAll.length) {
+            // If no melee at all, allow ranged volley
+            oppWeps = oppRangedAll;
+            aiFallbackNote = '(fallback: ranged)';
+          }
         }
-  // No fallback: AI must use default wargear only. If none for the chosen type, it will not fire this round.
+        if (!oppWeps.length) {
+          // Absolute last resort: pick first 1-2 weapons from all list
+            oppWeps = oppAllWeapons.slice(0,2);
+            if (oppWeps.length) aiFallbackNote = '(fallback: any weapon)';
+        }
+        // Append fallback note to log later by storing on object
+        try { if (aiFallbackNote) { console.debug('AI weapon fallback used', aiFallbackNote, oppWeps.map(w=>w.name)); } } catch {}
+  // Fallbacks above ensure AI always fires when weapons exist
   // Fight loop until winner (safety cap rounds=20)
     const matchId = `m_${Date.now().toString(36)}_${Math.random().toString(36).slice(2,7)}`;
         // Show and reset text log panel
@@ -1642,7 +1670,7 @@ var stats = {};
           if (stopRequested || aiHP <= 0) break;
           // Player selection debug removed to keep logs concise
           // AI volley: use chosen opponent weapons
-          try { aggregate.Logs.push(`AI selected: ${oppWeps.map(w=>w.name).join(', ') || '(none)'}`); setTextLog(aggregate.Logs); } catch {}
+          try { aggregate.Logs.push(`AI selected: ${oppWeps.map(w=>w.name).join(', ') || '(none)'} ${aiFallbackNote}`.trim()); setTextLog(aggregate.Logs); } catch {}
           for (const wpn of oppWeps) {
             const payload = {
               attacker: { id: oppUnitId, name: oppDetail.name || 'AI', T: oppDetail.stats.T, W: aiHP, Sv: oppDetail.stats.Sv, InvSv: oppDetail.stats.InvSv, keywords: (oppDetail.keywords||[]), abilities: (oppDetail.abilities||[]) },

@@ -89,7 +89,6 @@
             <button id="btnFightCustom" class="btn btn-outline-warning" title="Fight a chosen opponent unit">Custom</button>
             <button id="btnMatchmake" class="btn btn-outline-warning">Matchmake</button>
             <button id="btnCancelMatchmake" class="btn btn-outline-danger d-none">Cancel Search</button>
-            <button id="btnStartBattle" class="btn btn-warning d-none" title="Start the configured battle">Start Battle</button>
           </div>
         </div>
       </div>
@@ -157,7 +156,12 @@
         </div>
       </div>
     </div>
-
+    <!-- Unified Start Battle row (moved below weapon selection, above lobby) -->
+    <div class="row mb-3 d-none" id="startBattleRow">
+      <div class="col-12 text-center">
+        <button id="btnStartBattle" class="btn btn-warning btn-lg px-5">Start Battle</button>
+      </div>
+    </div>
     <div class="row mb-3">
       <div class="col-12">
         <div class="game-window-BOX_gw_ game-surface p-2 d-none" id="gameWindow">
@@ -1566,7 +1570,7 @@ var stats = {};
   selectionRow.classList.add('d-none');
   if (weaponSelectRow) weaponSelectRow.classList.add('d-none');
   function applyFightMode(){
-    if (!fightMode){ selectionRow.classList.add('d-none'); if (weaponSelectRow) weaponSelectRow.classList.add('d-none'); return; }
+  if (!fightMode){ selectionRow.classList.add('d-none'); if (weaponSelectRow) weaponSelectRow.classList.add('d-none'); const sbRowHide=document.getElementById('startBattleRow'); if (sbRowHide) sbRowHide.classList.add('d-none'); return; }
     selectionRow.classList.remove('d-none');
     // Show weapon selection only after unit chosen (populateWeaponSelection handles) and mode chosen
     allowSelectionUI = true;
@@ -1592,7 +1596,9 @@ var stats = {};
     });
   if (fightMode === 'custom') { try { populateOpponentWeaponSelection(); } catch(e) { console.warn('opp weapon populate failed', e); } }
   const sb = document.getElementById('btnStartBattle');
-  if (sb) { const labels={ai:'Start AI Battle',pvp:'Start Match',custom:'Start Custom Battle'}; sb.textContent=labels[fightMode]||'Start Battle'; sb.classList.remove('d-none'); }
+  const sbRow = document.getElementById('startBattleRow');
+  if (sbRow) sbRow.classList.remove('d-none');
+  if (sb) { const labels={ai:'Start AI Battle',pvp:'Start Match',custom:'Start Custom Battle'}; sb.textContent=labels[fightMode]||'Start Battle'; }
   }
   document.getElementById('modeAI').addEventListener('click', ()=>{ fightMode='ai'; applyFightMode(); });
   document.getElementById('modePVP').addEventListener('click', ()=>{ fightMode='pvp'; applyFightMode(); });
@@ -1618,6 +1624,8 @@ var stats = {};
       } else {
         console.log('Weapon select row not found');
       }
+  const sbRow = document.getElementById('startBattleRow');
+  if (sbRow) sbRow.classList.add('d-none');
       
       // Update lobby status when hiding UI
       const sel = window.currentSelection && window.currentSelection();
@@ -1636,6 +1644,8 @@ var stats = {};
   // Show weapon selection after fight
   allowSelectionUI = !!fightMode; // only allow if a mode is active
   if (weaponSelectRow) weaponSelectRow.classList.toggle('d-none', !allowSelectionUI);
+  const sbRow2 = document.getElementById('startBattleRow');
+  if (sbRow2) sbRow2.classList.toggle('d-none', !fightMode);
   // Re-enable pre-match actions
   try {
     const btnAI = document.getElementById('btnFightAI');

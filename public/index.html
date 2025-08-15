@@ -72,6 +72,7 @@
           </div>
           <div class="action-buttons-BOX_ab_ btn-group" role="group" aria-label="Actions">
             <button id="btnFightAI" class="btn btn-outline-warning">Fight AI</button>
+            <button id="btnFightAICustom" class="btn btn-outline-warning" title="Fight a chosen opponent unit">AI Custom</button>
             <button id="btnMatchmake" class="btn btn-outline-warning">Matchmake</button>
             <button id="btnCancelMatchmake" class="btn btn-outline-danger d-none">Cancel Search</button>
           </div>
@@ -98,6 +99,24 @@
           </div>
           
           <div id="weaponSelectBox" class="row g-2"></div>
+          <!-- Opponent selection for custom AI fights -->
+          <div class="row g-2 mt-3" id="customOpponentRow">
+            <div class="col-12 col-md-6 col-lg-4">
+              <label class="form-label small text-secondary" for="oppFactionSelect">Opponent Faction (custom)</label>
+              <select id="oppFactionSelect" class="form-select form-select-sm">
+                <option value="">(same as yours)</option>
+              </select>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+              <label class="form-label small text-secondary" for="oppUnitSelect">Opponent Unit (custom)</label>
+              <select id="oppUnitSelect" class="form-select form-select-sm" disabled>
+                <option value="">(same unit)</option>
+              </select>
+            </div>
+            <div class="col-12 col-lg-4 d-flex align-items-end">
+              <div class="small text-secondary">Use AI Custom to fight this specific unit.</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -774,9 +793,35 @@ var stats = {};
       return selected;
     }
 
-  // Opponent controls removed; odds will mirror your unit by default
-  function syncOppFactionOptions(){}
-  function clearOppUnits(){}
+  // Opponent controls (for custom AI fight)
+  const oppFactionSelect = document.getElementById('oppFactionSelect');
+  const oppUnitSelect = document.getElementById('oppUnitSelect');
+  function syncOppFactionOptions(){
+    if (!oppFactionSelect) return;
+    // Copy options from main factionSelect
+    const opts = Array.from(factionSelect.options).map(o=>({v:o.value, t:o.textContent}));
+    const current = oppFactionSelect.value;
+    oppFactionSelect.innerHTML = '<option value="">(same as yours)</option>' + opts.filter(o=>o.v).map(o=>`<option value="${o.v}">${o.t}</option>`).join('');
+    // Try to retain selection if still valid
+    if (current && Array.from(oppFactionSelect.options).some(o=>o.value===current)) {
+      oppFactionSelect.value = current;
+    }
+  }
+  function clearOppUnits(){
+    if(oppUnitSelect){ oppUnitSelect.innerHTML = '<option value="">(same unit)</option>'; oppUnitSelect.disabled = true; }
+  }
+  oppFactionSelect?.addEventListener('change', async (e)=>{
+    const fid = e.target.value;
+    clearOppUnits();
+    if (!fid) return;
+    try{
+      oppUnitSelect.disabled = true;
+      oppUnitSelect.innerHTML = '<option value="">Loading…</option>';
+      const units = await fetch(`/api/${encodeURIComponent(fid)}/units`).then(r=>r.json());
+      oppUnitSelect.innerHTML = '<option value="">(choose unit)</option>' + units.map(u=> `<option value="${u.id||u.ID}">${u.name||u.Name}</option>`).join('');
+      oppUnitSelect.disabled = false;
+    }catch{ clearOppUnits(); }
+  });
 
   // Calculate Odds feature removed
 
@@ -1736,6 +1781,97 @@ var stats = {};
         alert('Failed to simulate shooting: ' + (e && e.message || e));
       }
     });
+
+  // Custom AI fight (uses explicitly chosen opponent faction/unit)
+  document.getElementById('btnFightAICustom').addEventListener('click', async ()=>{
+    const sel = ensureSelection();
+    if (!sel) return;
+    // Determine opponent choices
+    let oppFactionId = oppFactionSelect?.value || sel.factionId;
+    let oppUnitId = oppUnitSelect?.value || sel.unitId;
+    // If faction selected but unit not yet, attempt to auto-load first unit
+    if (oppFactionSelect?.value && !oppUnitSelect?.value) {
+      try {
+        const units = await fetch(`/api/${encodeURIComponent(oppFactionSelect.value)}/units`).then(r=>r.json());
+        if (units && units.length) { oppUnitId = units[0].id || units[0].ID; }
+      } catch {}
+    }
+    console.log('Custom AI fight vs', oppFactionId, oppUnitId);
+    // Reuse existing AI fight logic by setting a flag & invoking similar flow
+    // Copied minimal core of AI fight to avoid side-effects from random selection
+    hidePreMatchUI();
+    hasFightStarted = true;
+    showFightSurface();
+    if (weaponSelectRow) weaponSelectRow.classList.add('d-none');
+    fetch('/api/lobby/phase', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({name: sel.user, phase: 'vs-ai'})}).catch(()=>{});
+    try {
+      const detail = await getUnitDetail(sel.factionId, sel.unitId);
+      // Build player weapons
+      let weps = [];
+      if (sel.weaponType === 'ranged') {
+        if (weaponSelection.ranged.size > 0) {
+          const byName = new Map(); weaponCatalog.ranged.forEach(w=> byName.set(w.name,w));
+          const names = Array.from(weaponSelection.ranged.values());
+          weps = names.map(n=> byName.get(n)).filter(Boolean);
+        }
+        if (weps.length === 0) {
+          const defaults = weaponCatalog.ranged.filter(w=> w.isStandard);
+          weps = defaults.length ? defaults : weaponCatalog.ranged.slice(0,2);
+        }
+      } else { // melee
+        if (weaponSelection.melee) {
+          weps = weaponCatalog.melee.filter(w=> w.name === weaponSelection.melee);
+        }
+        if (weps.length === 0) {
+          const defM = weaponCatalog.melee.find(w=> w.isStandard) || weaponCatalog.melee[0];
+          if (defM) weps = [defM];
+        }
+      }
+      // Opponent detail
+      const oppDetail = await getUnitDetail(oppFactionId, oppUnitId);
+      const oppAllWeapons = await pickAnyWeapons(oppFactionId, oppUnitId);
+      const baseName = (n)=> String(n||'').split(/\s[–—-]\s/)[0].trim();
+      const uniqByBase = (arr)=>{ const seen=new Set(); const out=[]; for (const w of arr){ const b=baseName(w.name); if(!seen.has(b)){seen.add(b); out.push(w);} } return out; };
+      let oppWeps = [];
+      const oppDefaultsR = uniqByBase(oppAllWeapons.filter(w=> w.type==='ranged'));
+      const oppDefaultsM = uniqByBase(oppAllWeapons.filter(w=> w.type==='melee'));
+      if (sel.weaponType === 'ranged') { oppWeps = oppDefaultsR; } else { if (oppDefaultsM.length) oppWeps = [oppDefaultsM[0]]; else oppWeps = oppDefaultsR.slice(0,2); }
+      // Begin simplified fight loop (reuse core from main AI fight with minimal duplication)
+      showLogRow(); clearTextLog();
+      const matchId = `m_${Date.now().toString(36)}_${Math.random().toString(36).slice(2,7)}`; if (matchIdLabel) matchIdLabel.textContent = matchId;
+      let myHP = detail.stats.W; let aiHP = oppDetail.stats.W; const aggregate = {Attacks:0, Hits:0, Wounds:0, Saved:0, Unsaved:0, DamageTotal:0, Logs:[]}; let round=1; let stopRequested=false; document.getElementById('btnStopFight')?.addEventListener('click', ()=>{ stopRequested=true; }, { once:true });
+      while(!stopRequested && myHP>0 && aiHP>0){
+        aggregate.Logs.push(`— Round ${round} —`); setTextLog(aggregate.Logs);
+        // Player volleys
+        aggregate.Logs.push(`Player selected: ${weps.map(w=>w.name).join(', ') || '(none)'}`); setTextLog(aggregate.Logs);
+        for (const wpn of weps){
+          const payload = { attacker:{ id: sel.unitId, name: sel.user||'You', T: detail.stats.T, W: myHP, Sv: detail.stats.Sv, InvSv: detail.stats.InvSv, keywords:detail.keywords||[], abilities:detail.abilities||[] }, defender:{ id: oppUnitId, name: oppDetail.name||'AI', T: oppDetail.stats.T, W: aiHP, Sv: oppDetail.stats.Sv, InvSv: oppDetail.stats.InvSv, keywords:oppDetail.keywords||[], abilities:oppDetail.abilities||[] }, weapon: wpn, match_id: matchId, meta:{ actor: sel.user||'You', round, step:1 } };
+          const resp = await fetch('/api/sim/shoot', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(payload)}); const res = await resp.json();
+          aggregate.Attacks += (res.attacks||res.Attacks||0); aggregate.Hits += (res.hits||res.Hits||0); aggregate.Wounds += (res.wounds||res.Wounds||0); aggregate.Saved += (res.saved||res.Saved||0); aggregate.Unsaved += (res.unsaved||res.Unsaved||0); aggregate.DamageTotal += (res.damage_total||res.DamageTotal||0);
+          aiHP = Math.max(0, (res.defender_wounds ?? res.DefenderWounds ?? aiHP));
+          (res.logs||res.Logs||[]).forEach(l=> aggregate.Logs.push(`${sel.user||'You'} ${detail.name} ${wpn.name}: ${l}`));
+          drawFightPhase(detail, oppDetail, myHP, detail.stats.W, aiHP, oppDetail.stats.W, aggregate, `Combat (Match ${matchId})`, null, { attacker: sel.user||'You', weaponName: wpn.name, defender: oppDetail.name||'AI', weaponAbilities: wpn.abilities||[], usedLeft: weps, usedRight: oppWeps }); setTextLog(aggregate.Logs); await sleep(120); if (aiHP<=0||stopRequested) break;
+        }
+        if (aiHP<=0||stopRequested) break;
+        // AI volley
+        aggregate.Logs.push(`AI selected: ${oppWeps.map(w=>w.name).join(', ') || '(none)'}`); setTextLog(aggregate.Logs);
+        for (const wpn of oppWeps){
+          const payload = { attacker:{ id: oppUnitId, name: oppDetail.name||'AI', T: oppDetail.stats.T, W: aiHP, Sv: oppDetail.stats.Sv, InvSv: oppDetail.stats.InvSv, keywords:oppDetail.keywords||[], abilities:oppDetail.abilities||[] }, defender:{ id: sel.unitId, name: sel.user||'You', T: detail.stats.T, W: myHP, Sv: detail.stats.Sv, InvSv: detail.stats.InvSv, keywords:detail.keywords||[], abilities:detail.abilities||[] }, weapon: wpn, match_id: matchId, meta:{ actor: 'AI', round, step:2 } };
+          const resp = await fetch('/api/sim/shoot', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(payload)}); const res = await resp.json();
+          myHP = Math.max(0, (res.defender_wounds ?? res.DefenderWounds ?? myHP));
+          (res.logs||res.Logs||[]).forEach(l=> aggregate.Logs.push(`AI ${oppDetail.name||'Unit'} ${wpn.name}: ${l}`));
+          drawFightPhase(detail, oppDetail, myHP, detail.stats.W, aiHP, oppDetail.stats.W, aggregate, `Combat (Match ${matchId})`, null, { attacker: oppDetail.name||'AI', weaponName: wpn.name, defender: sel.user||'You', weaponAbilities: wpn.abilities||[], usedLeft: weps, usedRight: oppWeps }); setTextLog(aggregate.Logs); await sleep(120); if (myHP<=0||stopRequested) break;
+        }
+        round++;
+      }
+      const winner = myHP<=0 ? (oppDetail.name||'AI') : aiHP<=0 ? (sel.user||'You') : 'Stopped';
+      aggregate.Logs.push(`== ${winner} wins ==`); setTextLog(aggregate.Logs);
+      drawFightPhase(detail, oppDetail, myHP, detail.stats.W, aiHP, oppDetail.stats.W, aggregate, `Combat (Match ${matchId})`);
+      try { showWinnerOverlay({ winner, loser: winner===(sel.user||'You')? (oppDetail.name||'AI') : (sel.user||'You'), mode: 'AI Custom', matchId }); } catch {}
+      try { fetch('/api/lobby/phase', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({name: sel.user, phase: winner===(sel.user||'You')?'just won':'just lost'})}); } catch {}
+      updateStatistics(aggregate);
+    } catch(e){ console.error(e); alert('Custom AI fight failed: '+ (e && e.message || e)); showPostMatchUI(); }
+  });
 
   // Statistics update logic
   function updateStatistics(aggregate) {

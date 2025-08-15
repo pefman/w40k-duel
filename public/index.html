@@ -89,6 +89,7 @@
             <button id="btnFightCustom" class="btn btn-outline-warning" title="Fight a chosen opponent unit">Custom</button>
             <button id="btnMatchmake" class="btn btn-outline-warning">Matchmake</button>
             <button id="btnCancelMatchmake" class="btn btn-outline-danger d-none">Cancel Search</button>
+            <button id="btnStartBattle" class="btn btn-warning d-none" title="Start the configured battle">Start Battle</button>
           </div>
         </div>
       </div>
@@ -174,6 +175,10 @@
         <div class="vo-actions">
           <button id="voNewMatch" class="btn btn-warning">New Match</button>
           <button id="voClose" class="btn btn-outline-secondary">Close</button>
+        </div>
+        <div id="voRematchContainer" class="mt-2">
+          <a id="voRematchAnchor" href="#" class="small text-info text-decoration-none d-none">Rematch this setup</a>
+          <span id="voRematchCopied" class="small text-success d-none ms-2">(copied)</span>
         </div>
       </div>
     </div>
@@ -1073,6 +1078,20 @@ var stats = {};
       mode.textContent = o.mode || 'Match';
       mid.textContent = o.matchId || '—';
       overlay.classList.remove('d-none');
+      // Build rematch link if config captured
+      try {
+        const anchor = document.getElementById('voRematchAnchor');
+        const copied = document.getElementById('voRematchCopied');
+        if (copied) copied.classList.add('d-none');
+        if (window._lastFightConfig && typeof buildEncodedConfig==='function') {
+          const enc = buildEncodedConfig(window._lastFightConfig);
+          if (anchor) {
+            anchor.href = enc.url;
+            anchor.classList.remove('d-none');
+            anchor.onclick = async (ev)=> { ev.preventDefault(); try { await navigator.clipboard.writeText(enc.url); if (copied){copied.classList.remove('d-none'); setTimeout(()=>copied.classList.add('d-none'),1500);} } catch {}; hideWinnerOverlay(); applyEncodedConfig(enc.encoded); };
+          }
+        } else if (anchor) { anchor.classList.add('d-none'); }
+      } catch {}
     }
     function hideWinnerOverlay(){
       document.getElementById('victoryOverlay')?.classList.add('d-none');
@@ -1572,6 +1591,8 @@ var stats = {};
       el.classList.toggle('btn-outline-warning', fightMode!==key);
     });
   if (fightMode === 'custom') { try { populateOpponentWeaponSelection(); } catch(e) { console.warn('opp weapon populate failed', e); } }
+  const sb = document.getElementById('btnStartBattle');
+  if (sb) { const labels={ai:'Start AI Battle',pvp:'Start Match',custom:'Start Custom Battle'}; sb.textContent=labels[fightMode]||'Start Battle'; sb.classList.remove('d-none'); }
   }
   document.getElementById('modeAI').addEventListener('click', ()=>{ fightMode='ai'; applyFightMode(); });
   document.getElementById('modePVP').addEventListener('click', ()=>{ fightMode='pvp'; applyFightMode(); });
@@ -1909,6 +1930,7 @@ var stats = {};
   } catch {}
   // Update statistics after fight
   updateStatistics(aggregate);
+  try { window._lastFightConfig = buildFightConfig('ai', { sel, detail, weps, oppDetail, oppWeps }); } catch {}
   // Keep the canvas visible after the fight ends, including when stopped.
       } catch (e) {
         console.error(e);
@@ -2027,6 +2049,7 @@ var stats = {};
   try { showWinnerOverlay({ winner, loser: winner===(sel.user||'You')? (oppDetail.name||'AI') : (sel.user||'You'), mode: 'Custom', matchId }); } catch {}
       try { fetch('/api/lobby/phase', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({name: sel.user, phase: winner===(sel.user||'You')?'just won':'just lost'})}); } catch {}
       updateStatistics(aggregate);
+  try { window._lastFightConfig = buildFightConfig('custom', { sel, detail, weps, oppDetail, oppWeps }); } catch {}
     } catch(e){ console.error(e); alert('Custom AI fight failed: '+ (e && e.message || e)); showPostMatchUI(); }
   });
 
@@ -2715,6 +2738,24 @@ var stats = {};
       const id = (matchIdLabel?.textContent || '').trim();
       if (id && id !== '—') downloadJSONLog(id);
     });
+    // Unified Start Battle button
+    document.getElementById('btnStartBattle')?.addEventListener('click', ()=>{
+      if (!fightMode) return;
+      if (fightMode==='ai') document.getElementById('btnFightAI')?.click();
+      else if (fightMode==='pvp') document.getElementById('btnMatchmake')?.click();
+      else if (fightMode==='custom') document.getElementById('btnFightCustom')?.click();
+    });
+    // Config encoding/decoding for rematch links
+    function buildFightConfig(mode, ctx){
+      const base={v:1,mode,faction:ctx.sel.factionId,unit:ctx.sel.unitId,weapons:{ranged:Array.from(weaponSelection.ranged||[]),melee:weaponSelection.melee||null}};
+      if (mode==='custom') base.opp={faction:(oppFactionSelect?.value)||ctx.sel.factionId,unit:(oppUnitSelect?.value)||ctx.sel.unitId,weapons:{ranged:Array.from((window._oppWeapons?.selection.ranged)||[]),melee:(window._oppWeapons?.selection.melee)||null}};
+      return base;
+    }
+    function buildEncodedConfig(cfg){ const json=JSON.stringify(cfg); const b64=btoa(unescape(encodeURIComponent(json))).replace(/=+$/,'').replace(/\+/g,'-').replace(/\//g,'_'); const url=location.origin+location.pathname+'?cfg='+b64; return {encoded:b64,url}; }
+    function decodeConfigParam(str){ try { const pad=s=> s + '==='.slice((s.length+3)%4); const b64=str.replace(/-/g,'+').replace(/_/g,'/'); const json=decodeURIComponent(escape(atob(pad(b64)))); return JSON.parse(json); } catch { return null; } }
+    function applyEncodedConfig(encoded){ const cfg=decodeConfigParam(encoded); if(cfg) applyConfig(cfg); }
+    function applyConfig(cfg){ if(!cfg||!cfg.faction||!cfg.unit) return; fightMode=cfg.mode||'ai'; applyFightMode(); const after=()=>{ factionSelect.value=cfg.faction; factionSelect.dispatchEvent(new Event('change')); const waitUnit=()=>{ if(unitSelect.querySelector(`option[value="${cfg.unit}"]`)){ unitSelect.value=cfg.unit; unitSelect.dispatchEvent(new Event('change')); setTimeout(()=>{ if(cfg.weapons){ weaponSelection.ranged=new Set(cfg.weapons.ranged||[]); weaponSelection.melee=cfg.weapons.melee||null; renderWeaponSelection(); } if(cfg.mode==='custom'&&cfg.opp){ if(oppFactionSelect){ oppFactionSelect.value=cfg.opp.faction||''; oppFactionSelect.dispatchEvent(new Event('change')); } const applyOpp=()=>{ if(cfg.opp.unit&&oppUnitSelect&&oppUnitSelect.querySelector(`option[value="${cfg.opp.unit}"]`)){ oppUnitSelect.value=cfg.opp.unit; oppUnitSelect.dispatchEvent(new Event('change')); setTimeout(()=>{ if(window._oppWeapons){ window._oppWeapons.selection.ranged=new Set(cfg.opp.weapons?.ranged||[]); window._oppWeapons.selection.melee=cfg.opp.weapons?.melee||null; renderOppWeaponSelection(); } },200); } else setTimeout(applyOpp,150); }; setTimeout(applyOpp,150); } },200); } else setTimeout(waitUnit,150); }; waitUnit(); }; if(!factions||!factions.length) setTimeout(after,300); else after(); }
+    (function(){ const p=new URLSearchParams(location.search).get('cfg'); if(p) applyEncodedConfig(p); })();
   </script>
 </body>
 </html>

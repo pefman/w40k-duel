@@ -55,12 +55,14 @@
     <!-- Fight mode selection (new first step) -->
     <div class="row mb-3" id="fightModeRow">
       <div class="col-12">
-        <label class="form-label">Choose Battle Type</label>
-        <div class="d-flex flex-wrap gap-2">
-          <button class="btn btn-warning" id="modeAI" type="button">Fight AI</button>
-          <button class="btn btn-outline-warning" id="modePVP" type="button">Matchmake</button>
-          <button class="btn btn-outline-warning" id="modeCustom" type="button">Custom</button>
-          <div class="text-secondary small d-flex align-items-center ms-2">Select a mode to begin.</div>
+        <div class="stats-box p-3 text-center">
+          <h2 class="h6 text-warning m-0 mb-2">Battle Type</h2>
+          <div class="d-flex flex-wrap justify-content-center gap-2 mb-2">
+            <button class="btn btn-outline-warning" id="modeAI" type="button">Fight AI</button>
+            <button class="btn btn-outline-warning" id="modePVP" type="button">Matchmake</button>
+            <button class="btn btn-outline-warning" id="modeCustom" type="button">Custom</button>
+          </div>
+          <div class="text-secondary small">Select a mode to begin.</div>
         </div>
       </div>
     </div>
@@ -1474,12 +1476,13 @@ var stats = {};
     const customRow = document.getElementById('customOpponentRow');
     if (customRow) customRow.classList.toggle('d-none', fightMode !== 'custom');
     // Highlight mode buttons
-    document.getElementById('modeAI').classList.toggle('btn-warning', fightMode==='ai');
-    document.getElementById('modeAI').classList.toggle('btn-outline-warning', fightMode!=='ai');
-    document.getElementById('modePVP').classList.toggle('btn-warning', fightMode==='pvp');
-    document.getElementById('modePVP').classList.toggle('btn-outline-warning', fightMode!=='pvp');
-    document.getElementById('modeCustom').classList.toggle('btn-warning', fightMode==='custom');
-    document.getElementById('modeCustom').classList.toggle('btn-outline-warning', fightMode!=='custom');
+    ['AI','PVP','Custom'].forEach(k=>{
+      const el = document.getElementById('mode'+k);
+      if (!el) return;
+      const key = k.toLowerCase();
+      el.classList.toggle('btn-warning', fightMode===key);
+      el.classList.toggle('btn-outline-warning', fightMode!==key);
+    });
   }
   document.getElementById('modeAI').addEventListener('click', ()=>{ fightMode='ai'; applyFightMode(); });
   document.getElementById('modePVP').addEventListener('click', ()=>{ fightMode='pvp'; applyFightMode(); });

@@ -432,8 +432,8 @@ var stats = {};
     const weaponSelectSummary = document.getElementById('weaponSelectSummary');
   const weaponCatalog = { ranged: [], melee: [] };
   const weaponSelection = { ranged: new Set(), melee: null };
-  // Controls whether the weapon selection panel may be shown
-  let allowSelectionUI = true;
+  // Controls whether the weapon selection panel may be shown (hidden until battle type chosen)
+  let allowSelectionUI = false;
 
     function renderWeaponSelection(){
       if (!weaponSelectBox) return;
@@ -1462,6 +1462,7 @@ var stats = {};
     selectionRow.classList.remove('d-none');
     // Show weapon selection only after unit chosen (populateWeaponSelection handles) and mode chosen
     allowSelectionUI = true;
+  if (weaponSelectRow && unitSelect.value) weaponSelectRow.classList.remove('d-none');
     // Toggle start buttons
     const btnAI = document.getElementById('btnFightAI');
     const btnMM = document.getElementById('btnMatchmake');
@@ -1520,7 +1521,7 @@ var stats = {};
   if (fightMode) selectionRow.classList.remove('d-none'); else selectionRow.classList.add('d-none');
   if (statsBox) statsBox.classList.remove('d-none');
   // Show weapon selection after fight
-  allowSelectionUI = true;
+  allowSelectionUI = !!fightMode; // only allow if a mode is active
   if (weaponSelectRow) weaponSelectRow.classList.toggle('d-none', !allowSelectionUI);
   // Re-enable pre-match actions
   try {

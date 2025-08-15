@@ -131,6 +131,28 @@
         <div class="small text-secondary">Use Custom to fight this specific unit.</div>
             </div>
           </div>
+          <!-- Opponent weapon selection (Custom mode only) -->
+          <div class="mt-4 d-none" id="oppWeaponSelectRow">
+            <div class="d-flex align-items-center justify-content-between mb-2 flex-wrap gap-2">
+              <h3 class="h6 text-info m-0">Opponent Weapons</h3>
+              <div class="text-secondary small" id="oppWeaponSelectSummary">—</div>
+            </div>
+            <div class="d-flex gap-2 mb-3 flex-wrap">
+              <button id="btnOppDefaultLayout" class="btn btn-sm btn-success" title="Select the opponent's default wargear">⚔️ Default</button>
+              <button id="btnOppSelectAllRanged" class="btn btn-sm btn-outline-info" title="Select one of each ranged weapon group">All Ranged</button>
+              <button id="btnOppSelectAllMelee" class="btn btn-sm btn-outline-info" title="Select a melee weapon">Melee</button>
+              <button id="btnOppMaxPower" class="btn btn-sm btn-warning" title="Pick the most damaging loadout">⚡ Max Power</button>
+              <button id="btnOppClearWeapons" class="btn btn-sm btn-outline-secondary" title="Clear opponent weapons">Clear</button>
+              <div class="btn-group ms-2" role="group" aria-label="Opponent weapon view type">
+                <input type="radio" class="btn-check" name="oppWeaponType" id="oppWtRanged" autocomplete="off" checked>
+                <label class="btn btn-outline-info btn-sm" for="oppWtRanged">Ranged</label>
+                <input type="radio" class="btn-check" name="oppWeaponType" id="oppWtMelee" autocomplete="off">
+                <label class="btn btn-outline-info btn-sm" for="oppWtMelee">Melee</label>
+              </div>
+            </div>
+            <div id="oppWeaponSelectBox" class="row g-2"></div>
+            <div class="text-secondary small mt-2">Only used in Custom fights. Leave empty for auto defaults.</div>
+          </div>
         </div>
       </div>
     </div>
@@ -608,6 +630,9 @@ var stats = {};
       const fid = factionSelect.value;
       const uid = e.target.value;
       populateWeaponSelection(fid, uid);
+      if (fightMode==='custom' && (!document.getElementById('oppFactionSelect')?.value && !document.getElementById('oppUnitSelect')?.value)) {
+        try { populateOpponentWeaponSelection(); } catch {}
+      }
     });
 
     document.getElementById('wtRanged').addEventListener('change', ()=> { renderWeaponSelection(); updateQuickSelectButtons(); });
@@ -778,6 +803,67 @@ var stats = {};
     document.getElementById('btnClearWeapons')?.addEventListener('click', clearAllWeapons);
   // Calculate Odds feature removed
 
+    /* Opponent weapon selection (Custom mode) */
+    const oppWeaponSelectRow = document.getElementById('oppWeaponSelectRow');
+    const oppWeaponSelectBox = document.getElementById('oppWeaponSelectBox');
+    const oppWeaponSelectSummary = document.getElementById('oppWeaponSelectSummary');
+    const oppWeaponCatalog = { ranged: [], melee: [] };
+    const oppWeaponSelection = { ranged: new Set(), melee: null };
+    function getOppWeaponType(){ return document.getElementById('oppWtMelee')?.checked ? 'melee':'ranged'; }
+    function renderOppWeaponSelection(){
+      if (!oppWeaponSelectBox) return;
+      const type = getOppWeaponType();
+      const items = type==='melee'? oppWeaponCatalog.melee : oppWeaponCatalog.ranged;
+      const isMelee = type==='melee';
+      const selCount = isMelee ? (oppWeaponSelection.melee?1:0) : oppWeaponSelection.ranged.size;
+      const capTxt = isMelee? 'select 1':'select any';
+      if (oppWeaponSelectSummary) oppWeaponSelectSummary.textContent = `${type.toUpperCase()} — ${selCount} selected (${capTxt})`;
+      const groupByBase={};
+      items.forEach((w,i)=>{ const m=w.name.match(/^(.*?)(?: \((.*?)\))?$/); const base=m?m[1].trim():w.name; const mode=m&&m[2]?m[2].trim():'Standard'; (groupByBase[base]||(groupByBase[base]=[])).push({...w,mode,idx:i}); });
+      const controls = Object.entries(groupByBase).map(([base,arr])=>{
+        if (arr.length===1){
+          const w=arr[0]; const id=`oppwp_${type}_${w.idx}`; const ab=(w.abilities&&w.abilities.length)?`[${w.abilities.join(', ')}]`:''; const rangeTxt=(w.range&&w.range.toLowerCase()!=='melee')?` | ${w.range}`:''; const descRaw=(w.desc||'').trim().replace(/\s+/g,' '); const descTxt=cleanDescriptionAgainstAbilities(descRaw,w.abilities||[]); const defLbl=w.isStandard?'<span class="wo-default text-primary ms-2" style="font-weight:600;">(default)</span>':''; return `<div class="col-12 col-md-6"><div class="weapon-option"><div class="d-flex gap-2 align-items-start"><input class="form-check-input mt-1" type="${isMelee?'radio':'checkbox'}" ${isMelee?'name="oppMeleeWpn"':''} id="${id}" data-name="${encodeURIComponent(w.name)}" ${isMelee?(oppWeaponSelection.melee===w.name?'checked':''):(oppWeaponSelection.ranged.has(w.name)?'checked':'')}><label class="form-check-label w-100" for="${id}"><div class="wo-name">${w.name} ${ab?`<span class=\"wo-abilities\">${ab}</span>`:''} ${defLbl}</div><div class="wo-stats">A ${w.attacks} | Skill ${w.skill}+ | S ${w.strength} | AP ${w.ap} | D ${w.damage}${rangeTxt}</div>${descTxt?`<div class=\"wo-desc\">${descTxt}</div>`:''}</label></div></div></div>`; }
+        const radioName=`oppwpgrp_${type}_${base.replace(/\W/g,'_')}`;
+        const radios = arr.map(w=>{ const id=`oppwp_${type}_${w.idx}`; const ab=(w.abilities&&w.abilities.length)?`[${w.abilities.join(', ')}]`:''; const rangeTxt=(w.range&&w.range.toLowerCase()!=='melee')?` | ${w.range}`:''; const descRaw=(w.desc||'').trim().replace(/\s+/g,' '); const descTxt=cleanDescriptionAgainstAbilities(descRaw,w.abilities||[]); const defLbl=(w.isStandard&&w.mode==='Standard')?'<span class="wo-default text-primary ms-2" style="font-weight:600;">(default)</span>':''; const checked=isMelee?(oppWeaponSelection.melee===w.name?'checked':''):(oppWeaponSelection.ranged.has(w.name)?'checked':''); return `<div class=\"weapon-option\"><div class=\"d-flex gap-2 align-items-start\"><input class=\"form-check-input mt-1\" type=\"radio\" name=\"${radioName}\" id=\"${id}\" data-name=\"${encodeURIComponent(w.name)}\" ${checked}><label class=\"form-check-label w-100\" for=\"${id}\"><div class=\"wo-name\">${base} <span class=\"wo-mode text-info ms-1\">(${w.mode})</span> ${ab?`<span class=\"wo-abilities\">${ab}</span>`:''} ${defLbl}</div><div class=\"wo-stats\">A ${w.attacks} | Skill ${w.skill}+ | S ${w.strength} | AP ${w.ap} | D ${w.damage}${rangeTxt}</div>${descTxt?`<div class=\"wo-desc\">${descTxt}</div>`:''}</label></div></div>`; }).join('');
+        return `<div class="col-12 col-md-6"><div class="wo-group">${radios}</div></div>`;
+      }).join('');
+      oppWeaponSelectBox.innerHTML = controls || '<div class="col-12 text-secondary">No weapons found for this type.</div>';
+      oppWeaponSelectBox.querySelectorAll('input.form-check-input').forEach(inp=>{ inp.addEventListener('change', ev=>{ const nm=decodeURIComponent(ev.target.getAttribute('data-name')||''); if(!nm) return; const label=inp.closest('.wo-group')?.querySelector('.wo-name')?.textContent || inp.closest('.weapon-option')?.querySelector('.wo-name')?.textContent || ''; const baseMatch=label.match(/^(.*?)(?:\s*\(|$)/); const base=baseMatch?baseMatch[1].trim():nm; if(isMelee){ oppWeaponSelection.melee=nm; } else { Object.keys(groupByBase).forEach(b=>{ if(b===base) groupByBase[b].forEach(w=> oppWeaponSelection.ranged.delete(w.name)); }); oppWeaponSelection.ranged.add(nm);} renderOppWeaponSelection(); }); });
+    }
+    async function populateOpponentWeaponSelection(){
+      if (fightMode !== 'custom'){ oppWeaponSelectRow?.classList.add('d-none'); return; }
+      const fid = (document.getElementById('oppFactionSelect')?.value) || factionSelect.value;
+      const uid = (document.getElementById('oppUnitSelect')?.value) || unitSelect.value;
+      if(!fid || !uid){ oppWeaponSelectRow?.classList.add('d-none'); return; }
+      try {
+        const [all, options] = await Promise.all([
+          pickAnyWeapons(fid, uid),
+          fetch(`/api/${encodeURIComponent(fid)}/${encodeURIComponent(uid)}/options`).then(r=>r.json()).catch(()=>[])
+        ]);
+        const computeFlags=(weps,opts)=>{ const norm=s=>String(s||'').toLowerCase().replace(/[–—]/g,'-').replace(/\s+/g,' ').trim(); const baseNameOf=n=>norm(String(n||'').split(/\s[–—-]\s/)[0]); const pluralize=b=>b.endsWith('s')?b:b+'s'; const text=norm((Array.isArray(opts)?opts:[]).map(o=>(o.description||o.Description||'')).join(' \n ')); const names=weps.map(w=>w.name); const bases=names.map(n=>baseNameOf(n)); const plurals=bases.map(b=>pluralize(b)); const flags=new Map(names.map(n=>[n,true])); const replRe=/(replace(?:d)?)[\s\S]*? with [\s\S]*?(?:\.|\n|$)/g; let m; while((m=replRe.exec(text))){ const seg=m[0]; const wi=seg.indexOf(' with '); if(wi<0) continue; const left=seg.slice(0,wi); const right=seg.slice(wi+6); for(let i=0;i<names.length;i++){const b=bases[i],p=plurals[i]; if(left.includes(b)||left.includes(p)) flags.set(names[i],true); if(right.includes(b)||right.includes(p)) flags.set(names[i],false);} } const equipRe=/(equipped with|can be equipped with|can be equipped|can be given)[\s\S]*?(?:\.|\n|$)/g; while((m=equipRe.exec(text))){ const seg=m[0]; for(let i=0;i<names.length;i++){ const b=bases[i],p=plurals[i]; if(seg.includes(b)||seg.includes(p)) flags.set(names[i],false);} } return flags; };
+        const flags = computeFlags(all, options); all.forEach(w=> w.isStandard = !!flags.get(w.name));
+        oppWeaponCatalog.ranged = all.filter(w=> w.type==='ranged');
+        oppWeaponCatalog.melee = all.filter(w=> w.type==='melee');
+        oppWeaponSelection.ranged = new Set(oppWeaponCatalog.ranged.filter(w=>w.isStandard).map(w=>w.name));
+        oppWeaponSelection.melee = oppWeaponCatalog.melee.find(w=> w.isStandard)?.name || null;
+        oppWeaponSelectRow?.classList.remove('d-none');
+        renderOppWeaponSelection();
+      } catch { oppWeaponSelectRow?.classList.add('d-none'); }
+    }
+    function oppSelectDefault(){ oppWeaponSelection.ranged.clear(); oppWeaponCatalog.ranged.filter(w=>w.isStandard).forEach(w=> oppWeaponSelection.ranged.add(w.name)); const defM=oppWeaponCatalog.melee.find(w=>w.isStandard); oppWeaponSelection.melee=defM?defM.name:null; document.getElementById('oppWtRanged').checked=true; renderOppWeaponSelection(); }
+    function oppSelectAllRanged(){ oppWeaponSelection.ranged.clear(); const baseSet=new Set(); oppWeaponCatalog.ranged.forEach(w=>{ const base=w.name.split(/\s[–—-]\s/)[0].trim(); if(!baseSet.has(base)){ baseSet.add(base); const grp=oppWeaponCatalog.ranged.filter(x=> x.name.split(/\s[–—-]\s/)[0].trim()===base); const pref=grp.find(x=>x.isStandard)||grp[0]; oppWeaponSelection.ranged.add(pref.name);} }); document.getElementById('oppWtRanged').checked=true; renderOppWeaponSelection(); }
+    function oppSelectAllMelee(){ const defM=oppWeaponCatalog.melee.find(w=>w.isStandard)||oppWeaponCatalog.melee[0]; oppWeaponSelection.melee=defM?defM.name:null; document.getElementById('oppWtMelee').checked=true; renderOppWeaponSelection(); }
+    function oppSelectMaxPower(){ const btn=document.getElementById('btnOppMaxPower'); const orig=btn?.textContent; if(btn){btn.textContent='⚡ ...'; btn.disabled=true;} const score=w=>{ const A=parseFloat(w.attacks)||1; const D=parseFloat(w.damage)||1; const S=parseFloat(w.strength)||4; const ap=Math.abs(parseFloat(w.ap)||0); const sMod=S>=8?1.5:S>=6?1.2:1.0; const apMod=ap>=3?1.3:ap>=2?1.15:ap>=1?1.1:1.0; return A*D*sMod*apMod; }; oppWeaponSelection.ranged.clear(); oppWeaponSelection.melee=null; const groups={}; oppWeaponCatalog.ranged.forEach(w=>{ const b=w.name.split(/\s[–—-]\s/)[0].trim(); if(!groups[b]||score(w)>score(groups[b])) groups[b]=w; }); Object.values(groups).forEach(w=> oppWeaponSelection.ranged.add(w.name)); let bestM=null,bestS=0; oppWeaponCatalog.melee.forEach(w=>{ const s=score(w); if(s>bestS){bestS=s; bestM=w;} }); oppWeaponSelection.melee=bestM?.name||null; document.getElementById('oppWtRanged').checked=true; renderOppWeaponSelection(); setTimeout(()=>{ if(btn){btn.textContent=orig; btn.disabled=false;} },400); }
+    function oppClear(){ oppWeaponSelection.ranged.clear(); oppWeaponSelection.melee=null; renderOppWeaponSelection(); }
+    document.getElementById('btnOppDefaultLayout')?.addEventListener('click', oppSelectDefault);
+    document.getElementById('btnOppSelectAllRanged')?.addEventListener('click', oppSelectAllRanged);
+    document.getElementById('btnOppSelectAllMelee')?.addEventListener('click', oppSelectAllMelee);
+    document.getElementById('btnOppMaxPower')?.addEventListener('click', oppSelectMaxPower);
+    document.getElementById('btnOppClearWeapons')?.addEventListener('click', oppClear);
+    document.getElementById('oppWtRanged')?.addEventListener('change', ()=> renderOppWeaponSelection());
+    document.getElementById('oppWtMelee')?.addEventListener('change', ()=> renderOppWeaponSelection());
+    window._oppWeapons = { catalog: oppWeaponCatalog, selection: oppWeaponSelection };
+
     // Read selected weapon type
     function getWeaponType(){
       return document.getElementById('wtMelee').checked ? 'melee' : 'ranged';
@@ -836,6 +922,7 @@ var stats = {};
       oppUnitSelect.disabled = false;
     }catch{ clearOppUnits(); }
   });
+  oppUnitSelect?.addEventListener('change', ()=>{ if (fightMode==='custom') { try { populateOpponentWeaponSelection(); } catch {} } });
 
   // Calculate Odds feature removed
 
@@ -1475,6 +1562,7 @@ var stats = {};
     // Opponent row only for custom
     const customRow = document.getElementById('customOpponentRow');
     if (customRow) customRow.classList.toggle('d-none', fightMode !== 'custom');
+  if (fightMode !== 'custom') { document.getElementById('oppWeaponSelectRow')?.classList.add('d-none'); }
     // Highlight mode buttons
     ['AI','PVP','Custom'].forEach(k=>{
       const el = document.getElementById('mode'+k);
@@ -1483,6 +1571,7 @@ var stats = {};
       el.classList.toggle('btn-warning', fightMode===key);
       el.classList.toggle('btn-outline-warning', fightMode!==key);
     });
+  if (fightMode === 'custom') { try { populateOpponentWeaponSelection(); } catch(e) { console.warn('opp weapon populate failed', e); } }
   }
   document.getElementById('modeAI').addEventListener('click', ()=>{ fightMode='ai'; applyFightMode(); });
   document.getElementById('modePVP').addEventListener('click', ()=>{ fightMode='pvp'; applyFightMode(); });
@@ -1881,9 +1970,29 @@ var stats = {};
       const baseName = (n)=> String(n||'').split(/\s[–—-]\s/)[0].trim();
       const uniqByBase = (arr)=>{ const seen=new Set(); const out=[]; for (const w of arr){ const b=baseName(w.name); if(!seen.has(b)){seen.add(b); out.push(w);} } return out; };
       let oppWeps = [];
-      const oppDefaultsR = uniqByBase(oppAllWeapons.filter(w=> w.type==='ranged'));
-      const oppDefaultsM = uniqByBase(oppAllWeapons.filter(w=> w.type==='melee'));
-      if (sel.weaponType === 'ranged') { oppWeps = oppDefaultsR; } else { if (oppDefaultsM.length) oppWeps = [oppDefaultsM[0]]; else oppWeps = oppDefaultsR.slice(0,2); }
+      // Use manual opponent selection if present
+      const manualRanged = Array.from((window._oppWeapons?.selection.ranged)||[]);
+      const manualMelee = window._oppWeapons?.selection.melee || null;
+      if (manualRanged.length || manualMelee) {
+        if (manualRanged.length) {
+          const byName = new Map(oppAllWeapons.filter(w=>w.type==='ranged').map(w=>[w.name,w]));
+          manualRanged.forEach(n=>{ const w=byName.get(n); if(w) oppWeps.push(w); });
+        }
+        if (manualMelee) {
+          const m = oppAllWeapons.find(w=> w.type==='melee' && w.name===manualMelee);
+          if (m) oppWeps.push(m);
+        }
+        if (!oppWeps.length) {
+          // fallback if selections invalid
+          const oppDefaultsR = uniqByBase(oppAllWeapons.filter(w=> w.type==='ranged'));
+          const oppDefaultsM = uniqByBase(oppAllWeapons.filter(w=> w.type==='melee'));
+          if (sel.weaponType === 'ranged') { oppWeps = oppDefaultsR; } else { if (oppDefaultsM.length) oppWeps = [oppDefaultsM[0]]; else oppWeps = oppDefaultsR.slice(0,2); }
+        }
+      } else {
+        const oppDefaultsR = uniqByBase(oppAllWeapons.filter(w=> w.type==='ranged'));
+        const oppDefaultsM = uniqByBase(oppAllWeapons.filter(w=> w.type==='melee'));
+        if (sel.weaponType === 'ranged') { oppWeps = oppDefaultsR; } else { if (oppDefaultsM.length) oppWeps = [oppDefaultsM[0]]; else oppWeps = oppDefaultsR.slice(0,2); }
+      }
       // Begin simplified fight loop (reuse core from main AI fight with minimal duplication)
       showLogRow(); clearTextLog();
       const matchId = `m_${Date.now().toString(36)}_${Math.random().toString(36).slice(2,7)}`; if (matchIdLabel) matchIdLabel.textContent = matchId;

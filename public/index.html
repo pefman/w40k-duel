@@ -177,6 +177,7 @@
         <div class="vo-sub" id="voSubtitle">Glory to the winner.</div>
         <div class="vo-meta" id="voMeta">Mode: <span id="voMode">—</span> • Match: <code id="voMatch">—</code></div>
         <div class="vo-actions">
+          <button id="voFightAgain" class="btn btn-success">Fight Again</button>
           <button id="voNewMatch" class="btn btn-warning">New Match</button>
           <button id="voClose" class="btn btn-outline-secondary">Close</button>
         </div>
@@ -1085,11 +1086,22 @@ var stats = {};
       const sub = document.getElementById('voSubtitle');
       const mode = document.getElementById('voMode');
       const mid = document.getElementById('voMatch');
+      const fightAgainBtn = document.getElementById('voFightAgain');
+      
       title.textContent = `🏆 ${o.winner ? o.winner + ' wins' : 'Victory'}`;
       sub.textContent = o.subtitle || (o.loser ? `Defeated ${o.loser}` : 'Glory to the victor.');
       mode.textContent = o.mode || 'Match';
       mid.textContent = o.matchId || '—';
+      
+      // Show/hide Fight Again button based on fight type and config availability
+      if (fightAgainBtn) {
+        const canFightAgain = window._lastFightConfig && 
+          (window._lastFightConfig.mode === 'ai' || window._lastFightConfig.mode === 'custom');
+        fightAgainBtn.classList.toggle('d-none', !canFightAgain);
+      }
+      
       overlay.classList.remove('d-none');
+      
       // Build rematch link if config captured
       try {
         const anchor = document.getElementById('voRematchAnchor');
@@ -1109,6 +1121,23 @@ var stats = {};
       document.getElementById('victoryOverlay')?.classList.add('d-none');
     }
     document.getElementById('voClose')?.addEventListener('click', ()=>{ hideWinnerOverlay(); });
+    document.getElementById('voFightAgain')?.addEventListener('click', async ()=>{
+      hideWinnerOverlay();
+      // Restart the same fight using stored config
+      if (window._lastFightConfig) {
+        const mode = window._lastFightConfig.mode;
+        if (mode === 'ai') {
+          document.getElementById('btnFightAI')?.click();
+        } else if (mode === 'custom') {
+          document.getElementById('btnFightCustom')?.click();
+        }
+        // Note: PvP fights can't be restarted the same way due to matchmaking
+      } else {
+        // Fallback: show post-match UI if no config stored
+        showPostMatchUI();
+        drawSplash();
+      }
+    });
     document.getElementById('voNewMatch')?.addEventListener('click', async ()=>{
       hideWinnerOverlay();
       // Set lobby phase back to idle if we know username

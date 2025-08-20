@@ -493,7 +493,7 @@ var stats = {};
         if (arr.length === 1) {
           const w = arr[0];
           const id = `wp_${type}_${w.idx}`;
-          const ab = (Array.isArray(w.abilities) && w.abilities.length) ? `[${w.abilities.join(', ')}]` : '';
+          const ab = (Array.isArray(w.abilities) && w.abilities.length) ? formatAbilitiesWithTooltips(w.abilities) : '';
           const rangeTxt = (w.range && w.range.toLowerCase()!=='melee') ? ` | ${w.range}` : '';
           const descRaw = (w.desc||'').trim().replace(/\s+/g,' ');
           const descTxt = cleanDescriptionAgainstAbilities(descRaw, w.abilities||[]);
@@ -515,7 +515,7 @@ var stats = {};
         const radioName = `wpgrp_${type}_${base.replace(/\W/g,'_')}`;
         const radios = arr.map(w=>{
           const id = `wp_${type}_${w.idx}`;
-          const ab = (Array.isArray(w.abilities) && w.abilities.length) ? `[${w.abilities.join(', ')}]` : '';
+          const ab = (Array.isArray(w.abilities) && w.abilities.length) ? formatAbilitiesWithTooltips(w.abilities) : '';
           const rangeTxt = (w.range && w.range.toLowerCase()!=='melee') ? ` | ${w.range}` : '';
           const descRaw = (w.desc||'').trim().replace(/\s+/g,' ');
           const descTxt = cleanDescriptionAgainstAbilities(descRaw, w.abilities||[]);
@@ -832,9 +832,9 @@ var stats = {};
       items.forEach((w,i)=>{ const m=w.name.match(/^(.*?)(?: \((.*?)\))?$/); const base=m?m[1].trim():w.name; const mode=m&&m[2]?m[2].trim():'Standard'; (groupByBase[base]||(groupByBase[base]=[])).push({...w,mode,idx:i}); });
       const controls = Object.entries(groupByBase).map(([base,arr])=>{
         if (arr.length===1){
-          const w=arr[0]; const id=`oppwp_${type}_${w.idx}`; const ab=(w.abilities&&w.abilities.length)?`[${w.abilities.join(', ')}]`:''; const rangeTxt=(w.range&&w.range.toLowerCase()!=='melee')?` | ${w.range}`:''; const descRaw=(w.desc||'').trim().replace(/\s+/g,' '); const descTxt=cleanDescriptionAgainstAbilities(descRaw,w.abilities||[]); const defLbl=w.isStandard?'<span class="wo-default text-primary ms-2" style="font-weight:600;">(default)</span>':''; return `<div class="col-12 col-md-6"><div class="weapon-option"><div class="d-flex gap-2 align-items-start"><input class="form-check-input mt-1" type="${isMelee?'radio':'checkbox'}" ${isMelee?'name="oppMeleeWpn"':''} id="${id}" data-name="${encodeURIComponent(w.name)}" ${isMelee?(oppWeaponSelection.melee===w.name?'checked':''):(oppWeaponSelection.ranged.has(w.name)?'checked':'')}><label class="form-check-label w-100" for="${id}"><div class="wo-name">${w.name} ${ab?`<span class=\"wo-abilities\">${ab}</span>`:''} ${defLbl}</div><div class="wo-stats">A ${w.attacks} | Skill ${w.skill}+ | S ${w.strength} | AP ${w.ap} | D ${w.damage}${rangeTxt}</div>${descTxt?`<div class=\"wo-desc\">${descTxt}</div>`:''}</label></div></div></div>`; }
+          const w=arr[0]; const id=`oppwp_${type}_${w.idx}`; const ab=(w.abilities&&w.abilities.length)?formatAbilitiesWithTooltips(w.abilities):''; const rangeTxt=(w.range&&w.range.toLowerCase()!=='melee')?` | ${w.range}`:''; const descRaw=(w.desc||'').trim().replace(/\s+/g,' '); const descTxt=cleanDescriptionAgainstAbilities(descRaw,w.abilities||[]); const defLbl=w.isStandard?'<span class="wo-default text-primary ms-2" style="font-weight:600;">(default)</span>':''; return `<div class="col-12 col-md-6"><div class="weapon-option"><div class="d-flex gap-2 align-items-start"><input class="form-check-input mt-1" type="${isMelee?'radio':'checkbox'}" ${isMelee?'name="oppMeleeWpn"':''} id="${id}" data-name="${encodeURIComponent(w.name)}" ${isMelee?(oppWeaponSelection.melee===w.name?'checked':''):(oppWeaponSelection.ranged.has(w.name)?'checked':'')}><label class="form-check-label w-100" for="${id}"><div class="wo-name">${w.name} ${ab?`<span class=\"wo-abilities\">${ab}</span>`:''} ${defLbl}</div><div class="wo-stats">A ${w.attacks} | Skill ${w.skill}+ | S ${w.strength} | AP ${w.ap} | D ${w.damage}${rangeTxt}</div>${descTxt?`<div class=\"wo-desc\">${descTxt}</div>`:''}</label></div></div></div>`; }
         const radioName=`oppwpgrp_${type}_${base.replace(/\W/g,'_')}`;
-        const radios = arr.map(w=>{ const id=`oppwp_${type}_${w.idx}`; const ab=(w.abilities&&w.abilities.length)?`[${w.abilities.join(', ')}]`:''; const rangeTxt=(w.range&&w.range.toLowerCase()!=='melee')?` | ${w.range}`:''; const descRaw=(w.desc||'').trim().replace(/\s+/g,' '); const descTxt=cleanDescriptionAgainstAbilities(descRaw,w.abilities||[]); const defLbl=(w.isStandard&&w.mode==='Standard')?'<span class="wo-default text-primary ms-2" style="font-weight:600;">(default)</span>':''; const checked=isMelee?(oppWeaponSelection.melee===w.name?'checked':''):(oppWeaponSelection.ranged.has(w.name)?'checked':''); return `<div class=\"weapon-option\"><div class=\"d-flex gap-2 align-items-start\"><input class=\"form-check-input mt-1\" type=\"radio\" name=\"${radioName}\" id=\"${id}\" data-name=\"${encodeURIComponent(w.name)}\" ${checked}><label class=\"form-check-label w-100\" for=\"${id}\"><div class=\"wo-name\">${base} <span class=\"wo-mode text-info ms-1\">(${w.mode})</span> ${ab?`<span class=\"wo-abilities\">${ab}</span>`:''} ${defLbl}</div><div class=\"wo-stats\">A ${w.attacks} | Skill ${w.skill}+ | S ${w.strength} | AP ${w.ap} | D ${w.damage}${rangeTxt}</div>${descTxt?`<div class=\"wo-desc\">${descTxt}</div>`:''}</label></div></div>`; }).join('');
+        const radios = arr.map(w=>{ const id=`oppwp_${type}_${w.idx}`; const ab=(w.abilities&&w.abilities.length)?formatAbilitiesWithTooltips(w.abilities):''; const rangeTxt=(w.range&&w.range.toLowerCase()!=='melee')?` | ${w.range}`:''; const descRaw=(w.desc||'').trim().replace(/\s+/g,' '); const descTxt=cleanDescriptionAgainstAbilities(descRaw,w.abilities||[]); const defLbl=(w.isStandard&&w.mode==='Standard')?'<span class="wo-default text-primary ms-2" style="font-weight:600;">(default)</span>':''; const checked=isMelee?(oppWeaponSelection.melee===w.name?'checked':''):(oppWeaponSelection.ranged.has(w.name)?'checked':''); return `<div class=\"weapon-option\"><div class=\"d-flex gap-2 align-items-start\"><input class=\"form-check-input mt-1\" type=\"radio\" name=\"${radioName}\" id=\"${id}\" data-name=\"${encodeURIComponent(w.name)}\" ${checked}><label class=\"form-check-label w-100\" for=\"${id}\"><div class=\"wo-name\">${base} <span class=\"wo-mode text-info ms-1\">(${w.mode})</span> ${ab?`<span class=\"wo-abilities\">${ab}</span>`:''} ${defLbl}</div><div class=\"wo-stats\">A ${w.attacks} | Skill ${w.skill}+ | S ${w.strength} | AP ${w.ap} | D ${w.damage}${rangeTxt}</div>${descTxt?`<div class=\"wo-desc\">${descTxt}</div>`:''}</label></div></div>`; }).join('');
         return `<div class="col-12 col-md-6"><div class="wo-group">${radios}</div></div>`;
       }).join('');
       oppWeaponSelectBox.innerHTML = controls || '<div class="col-12 text-secondary">No weapons found for this type.</div>';
@@ -1285,6 +1285,43 @@ var stats = {};
       });
       return kept.join(', ');
     }
+
+    // Weapon ability descriptions for tooltips
+    const abilityDescriptions = {
+      'Torrent': 'This weapon automatically hits its target.',
+      'Lethal Hits': 'Critical hits automatically wound the target.',
+      'Twin-linked': 'Re-roll failed hit rolls.',
+      'Devastating Wounds': 'Critical wounds inflict mortal wounds.',
+      'Heavy': '-1 to hit if the firing unit moved.',
+      'Blast': 'Cannot target units within engagement range.',
+      'Indirect Fire': 'Can target units not visible to the bearer.',
+      'Ignores Cover': 'Target cannot benefit from cover saves.',
+      'Assault': 'Can be used even if the bearer advanced.',
+      'Pistol': 'Can be used in close combat.',
+      'Grenade': 'Can only be used once per battle.',
+      'Hazardous': 'On unmodified hit roll of 1, bearer suffers 1 mortal wound.',
+      'Melta': 'Increased damage at close range.',
+      'Rapid Fire': 'Double attacks when at half range or less.'
+    };
+
+    // Create ability span with tooltip
+    function createAbilityWithTooltip(ability) {
+      const baseAbility = ability.replace(/\s\d+(\+)?$/, ''); // Remove numbers like "Sustained Hits 1" -> "Sustained Hits"
+      const description = abilityDescriptions[baseAbility] || abilityDescriptions[ability];
+      
+      if (description) {
+        return `<span title="${description}" style="cursor: help; text-decoration: underline; text-decoration-style: dotted;">${ability}</span>`;
+      }
+      return ability;
+    }
+
+    // Process abilities array into tooltipped HTML
+    function formatAbilitiesWithTooltips(abilities) {
+      if (!Array.isArray(abilities) || abilities.length === 0) return '';
+      const tooltippedAbilities = abilities.map(createAbilityWithTooltip);
+      return `[${tooltippedAbilities.join(', ')}]`;
+    }
+
   // (no-op placeholder removed)
     async function pickWeapons(fid, uid, type){
       const resp = await fetch(`/api/${encodeURIComponent(fid)}/${encodeURIComponent(uid)}/weapons`);

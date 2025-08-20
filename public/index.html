@@ -927,7 +927,15 @@ var stats = {};
       oppUnitSelect.disabled = true;
       oppUnitSelect.innerHTML = '<option value="">Loading…</option>';
       const units = await fetch(`/api/${encodeURIComponent(fid)}/units`).then(r=>r.json());
-      oppUnitSelect.innerHTML = '<option value="">(choose unit)</option>' + units.map(u=> `<option value="${u.id||u.ID}">${u.name||u.Name}</option>`).join('');
+      oppUnitSelect.innerHTML = '<option value="">(choose unit)</option>' + units.map(u => {
+        const id = u.ID || u.id || u.Name || u.name;
+        const name = u.Name || u.name || 'Unit';
+        const t = (u.T ?? u.t ?? '–');
+        const w = (u.W ?? u.w ?? '–');
+        const pts = (u.points || u.Points || '').toString();
+        const ptsTxt = pts ? ` — ${pts}pts` : '';
+        return `<option value="${id}" data-points="${pts}">${name} (T ${t} / W ${w})${ptsTxt}</option>`;
+      }).join('');
       oppUnitSelect.disabled = false;
     }catch{ clearOppUnits(); }
   });
